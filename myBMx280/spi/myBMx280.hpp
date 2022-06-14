@@ -65,6 +65,8 @@ class myBMx280 {
 		static const uint8_t STANDBY_TIME_1000MS	= 0x05;
 		static const uint8_t STANDBY_TIME_10MS		= 0x06;
 		static const uint8_t STANDBY_TIME_20MS		= 0x07;
+		static const uint8_t STANDBY_TIME_2000MS	= 0x06; // For BMP280 only.
+		static const uint8_t STANDBY_TIME_4000MS	= 0x07; // For BMP280 only.
 		// Filter Modes:
 		static const uint8_t FILTER_OFF	= 0x00;
 		static const uint8_t FILTER_2	= 0x01;
@@ -80,7 +82,16 @@ class myBMx280 {
 		static const uint8_t DEFAULT_CONFIG 		= 0b10000000;// Default config, Standby 500us, filter off, spi3wire off.
 		static const uint8_t DEFAULT_HUM_SETTINGS 	= 0b00000001;// Default humidity settings, hum OSR x1.
 		static const uint8_t DEFAULT_MEAS_SETTINGS	= 0b00100101;// Default settings, temp OSR x1, pres OSR x1, forced mode.
-
+		// Config Masks:
+		static const uint8_t CONFIG_STANDBY_MASK	= 0b11100000;
+		static const uint8_t CONFIG_FILTER_MASK		= 0b00011100;
+		static const uint8_t CONFIG_3WIRE_MASK		= 0b00000001;
+		// Measure Control Masks:
+		static const uint8_t MEAS_TEMP_OSR_MASK		= 0b11100000;
+		static const uint8_t MEAS_PRES_OSR_MASK		= 0b00011100;
+		static const uint8_t MEAS_MODE_MASK			= 0b00000011;
+		// Humidity Control Masks:
+		static const uint8_t HUM_OSR_MASK			= 0b00000111;
 	/* Public variables: */
 		bool have_humidity = false;
 		bool forced_mode = false;
@@ -90,14 +101,26 @@ class myBMx280 {
 
 	/* Public functions: */
 		myBMx280(spi_inst_t *spiObj, const uint8_t csPin, const uint8_t clkPin, const uint8_t misoPin, const uint8_t mosiPin);
-		uint8_t getID();
-		uint8_t getStatus();
-		uint8_t getConfig();
-		void	setConfig(const uint8_t value);
-		uint8_t getMeasCtrl();
-		void	setMeasCtrl(const uint8_t value);
-		uint8_t getHumCtrl();
-		void	setHumCtrl(const uint8_t value);
+		uint8_t getID();								// Get the chip ID byte.
+		uint8_t getStatus();							// Get the status byte.
+		uint8_t getConfig();							// Get the configuration byte.
+		void	setConfig(const uint8_t value);			// Set the configuration byte.
+		uint8_t getMeasCtrl();							// Get the measure control byte.
+		void	setMeasCtrl(const uint8_t value);		// Set the Measure control byte.
+		uint8_t getHumCtrl();							// Get the humidity control byte.
+		void	setHumCtrl(const uint8_t value);		// Set the Humidity control byte.
+		uint8_t	getStandbyTime();						// Set the inactive duration in normal mode. (standby time)
+		bool	setStandbyTime(const uint8_t value);	// Set the inactive duration in normal mode. (standby time) Returns True if set, False if not set.
+		uint8_t getFilter();							// Get the IIR filter setting.
+		bool	setFilter(const uint8_t value);			// Set the IIR filter setting. Return true if set, false if not set.
+		uint8_t getTemperatureOSR();					// Get the temperature oversampling rate
+		bool	setTemperatureOSR(const uint8_t value);	// Set the temperature oversampling rate. Returns true if set, false if not set.
+		uint8_t getPressureOSR();						// Get the pressure oversampling rate.
+		bool	setPressureOSR(const uint8_t value);	// Set the pressure oversampling rate. Returns true if set, false if not set.
+		uint8_t getHumidityOSR();						// Get the humidity oversampling rate.
+		bool 	setHumidityOSR(const uint8_t value);	// Set the humidity oversampling rate. returns true if set, false if not set.
+		uint8_t getMode();								// get the operating mode of the chip.
+		bool 	setMode(const uint8_t value);			// Set the operating mode of the chip.
 		void reset();
 		bool initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS);
 		void update();
@@ -170,7 +193,7 @@ uint8_t myBMx280::getConfig() {
 }
 
 void myBMx280::setConfig(const uint8_t value) {
-	uint8_t writeValue = value & 0b11111110; // Make sure 3 wire mode is disabled.
+	uint8_t writeValue = value & ~CONFIG_3WIRE_MASK; // Make sure 3 wire mode is disabled.
 	__writeRegister__(REG_CONFIG_ADDR, writeValue);
 }
 
@@ -181,7 +204,7 @@ uint8_t myBMx280::getMeasCtrl() {
 }
 
 void myBMx280::setMeasCtrl(const uint8_t value) {
-	uint8_t mode = value & 0x03;
+	uint8_t mode = value & MEAS_MODE_MASK;
 	if (mode == 0x01 or mode == 0x02) {
 		forced_mode = true;
 	} else {
@@ -209,6 +232,98 @@ void myBMx280::setHumCtrl(const uint8_t value) {
 
 void myBMx280::reset() {
 	__writeRegister__(REG_RESET_ADDR, RESET_VALUE);
+}
+
+uint8_t myBMx280::getStandbyTime(){
+	uint8_t standbyTime = getConfig() & CONFIG_STANDBY_MASK;
+	standbyTime = standbyTime >> 5;
+	return standbyTime;
+}
+
+bool myBMx280::setStandbyTime(const uint8_t value) {
+	if (value > STANDBY_TIME_20MS) {
+		return false;
+	}
+	uint8_t config = getConfig();
+	config &= ~CONFIG_STANDBY_MASK;
+	config |= (value << 5);
+	setConfig(config);
+	return true;
+}
+
+uint8_t myBMx280::getFilter() {
+	uint8_t filter = getConfig() & CONFIG_FILTER_MASK;
+	filter = filter >> 2;
+	return filter;
+}
+
+bool myBMx280::setFilter(const uint8_t value) {
+	if (value > FILTER_16) {
+		return false;
+	}
+	uint8_t config = getConfig();
+	config &= ~CONFIG_FILTER_MASK;
+	config |= (value << 2);
+	setConfig(config);
+	return true;
+}
+
+uint8_t myBMx280::getTemperatureOSR() {
+	uint8_t osr = getMeasCtrl() & MEAS_TEMP_OSR_MASK;
+	osr = osr >> 5;
+	return osr;
+}
+
+bool myBMx280::setTemperatureOSR(const uint8_t value) {
+	if (value > OSR_X16) { return false; }
+	uint8_t measCtrl = getMeasCtrl();
+	measCtrl &= ~MEAS_TEMP_OSR_MASK;
+	measCtrl |= (value << 5);
+	setMeasCtrl(measCtrl);
+	return true;
+}
+
+uint8_t myBMx280::getPressureOSR() {
+	uint8_t osr = getMeasCtrl() & MEAS_PRES_OSR_MASK;
+	osr = osr >> 2;
+	return osr;
+}
+
+bool myBMx280::setPressureOSR(const uint8_t value) {
+	if (value > OSR_X16) { return false; }
+	uint8_t measCtrl = getMeasCtrl();
+	measCtrl &= ~MEAS_PRES_OSR_MASK;
+	measCtrl |= (value << 2);
+	setMeasCtrl(measCtrl);
+	return true;
+}
+
+uint8_t myBMx280::getHumidityOSR() {
+	uint8_t osr = getHumCtrl() & HUM_OSR_MASK;
+	return osr;
+}
+
+bool myBMx280::setHumidityOSR(const uint8_t value) {
+	if (value > OSR_X16) { return false; }
+	uint8_t humCtrl = getHumCtrl();
+	humCtrl &= ~HUM_OSR_MASK;
+	humCtrl |= value;
+	setHumCtrl(humCtrl);
+	return true;
+}
+
+uint8_t myBMx280::getMode() {
+	uint8_t mode = getMeasCtrl() & MEAS_MODE_MASK;
+	return mode;
+}
+
+bool myBMx280::setMode(const uint8_t value) {
+	if (value > MODE_NORMAL) { return false; }
+	uint8_t measCtrl = getMeasCtrl();
+	measCtrl &= ~MEAS_MODE_MASK;
+	measCtrl |= value;
+	setMeasCtrl(measCtrl);
+	return true;
 }
 
 bool myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const uint8_t humCtrl) {
