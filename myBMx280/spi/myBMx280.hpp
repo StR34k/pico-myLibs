@@ -68,8 +68,10 @@ bool myBMx280::initialize() {
 	switch (chip_id) {
 		case CHIPMODEL_BME280:
 			_have_humidity = true;
+			break;
 		case CHIPMODEL_BMP280:
 			_have_humidity = false;
+			break;
 		default:
 			return false;
 	}
