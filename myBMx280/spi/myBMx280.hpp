@@ -2,7 +2,7 @@
 #define MY_BMx280_H
 
 #include <hardware/spi.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 
 class myBMx280 {
 
