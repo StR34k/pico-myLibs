@@ -62,7 +62,7 @@ bool myBMx280::initialize() {
 // Setup CS Pin as OUTPUT HIGH.
     gpio_set_dir(_csPin, GPIO_OUT);
     gpio_put(_csPin, true);
-
+	__breakpoint();
 // Read Chip ID and set have humidity:
 	uint8_t chip_id = readID();
 	switch (chip_id) {
