@@ -2,7 +2,7 @@
 #define MY_BMx280_H
 
 #include <hardware/spi.h>
-
+#include <stdlib.h>
 class myBMx280 {
 
 	public:
@@ -62,9 +62,9 @@ bool myBMx280::initialize() {
 // Setup CS Pin as OUTPUT HIGH.
     gpio_set_dir(_csPin, GPIO_OUT);
     gpio_put(_csPin, true);
-	__breakpoint();
 // Read Chip ID and set have humidity:
 	uint8_t chip_id = readID();
+	printf("id 0x%x", chip_id);
 	switch (chip_id) {
 		case CHIPMODEL_BME280:
 			_have_humidity = true;
