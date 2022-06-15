@@ -142,7 +142,7 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
     gpio_put(_csPin, true); // Set cs High.
     if (_useHWSPI == true) {
-        __breakpoint();
+        // __breakpoint();
         spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
         gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
@@ -168,7 +168,7 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
         gpio_put(_sio2Pin, true); // set sio2 High.
     }
-    __breakpoint();
+    // __breakpoint();
 // Initialze comms:
     __resetComms__();
     switch (_commsMode)
@@ -236,8 +236,11 @@ uint16_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const uint16_t length) {
 }
 
 uint16_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const uint16_t length) {
-    int32_t bytesSent = spi_write_blocking(_spiPort, buffer, length);
     __breakpoint();
+    uint8_t value = spi_is_writable(_spiPort);
+    printf("isWriteable: %i\n", value);
+    int32_t bytesSent = spi_write_blocking(_spiPort, buffer, length);
+    // __breakpoint();
     return (uint16_t)bytesSent;
 }
 
