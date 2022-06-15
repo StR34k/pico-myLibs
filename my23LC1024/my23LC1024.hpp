@@ -187,10 +187,10 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         break;    
     }
 // Verify mode, which verifies comms:
-    bool verified = false;
-    uint8_t mode = __readModeRegister__();
-    printf("mode: 0x%x\n", mode);
-    return true;
+    // bool verified = false;
+    // uint8_t mode = __readModeRegister__();
+    // printf("mode: 0x%x\n", mode);
+    // return true;
 }
 
 /*
