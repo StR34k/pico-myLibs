@@ -258,12 +258,11 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
 }
 
 bool inline my23LC1024::isIdle() {
-    __breakpoint();
-    if (_status & STATUS_STATE_MASK == 0) {
-        return true;
-    }
-    return false;
-    // return ((_status & STATUS_STATE_MASK) == 0);
+    // if (_status & STATUS_STATE_MASK == 0) {
+        // return true;
+    // }
+    // return false;
+    return ((_status & STATUS_STATE_MASK) == 0);
 }
 
 bool inline my23LC1024::isBusy() {
@@ -350,10 +349,35 @@ int32_t my23LC1024::read() {
     if (isHeld() == true) {
         return ERROR_SRAM_HELD;
     }
-    if (__getState__() != STATUS_STATE_READ) {
+    if (isReading() == false) {
         return ERROR_NOT_READING;
     }
     return (int32_t)__readByte__();
+}
+
+int32_t my23LC1024::readBuffer(uint8_t *buffer, uint32_t length) {
+    if (isIdle() == true) {
+        return ERROR_SRAM_IDLE;
+    }
+    if (isHeld() == true) {
+        return ERROR_SRAM_HELD;
+    }
+    if (isReading() == false) {
+        return ERROR_NOT_READING;
+    }
+    return (int32_t)__readBuffer__(buffer, length);
+}
+
+int32_t my23LC1024::write(const uint8_t value) {
+    if (isIdle() == true) {
+        return ERROR_SRAM_IDLE;
+    }
+    if (isHeld() == true) {
+        return ERROR_SRAM_HELD;
+    }
+    if (isWriting() == false) {
+        
+    }
 }
 
 int32_t my23LC1024::stop() {
@@ -364,13 +388,15 @@ int32_t my23LC1024::stop() {
         return ERROR_SRAM_HELD;
     }
     __deselectChip__();
-    switch (_commsMode){
-        case COMM_MODE_SDI:
-            ;
-            break;
-        case COMM_MODE_SQI:
-            ;
-            break;
+    if (isReading() == true) {
+        switch (_commsMode){
+            case COMM_MODE_SDI:
+                ;
+                break;
+            case COMM_MODE_SQI:
+                ;
+                break;
+        }
     }
     __setStateIdle__();
     return ERROR_NO_ERROR;
@@ -481,20 +507,18 @@ void my23LC1024::__resetComms__() {
 }
 
 int32_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const uint32_t length) {
-    int32_t bytesRead = spi_read_blocking(_spiPort, 0x00, buffer, length);
-    return bytesRead;
+    return spi_read_blocking(_spiPort, 0x00, buffer, length);
 }
 
 int32_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const uint32_t length) {
-    int32_t bytesSent = spi_write_blocking(_spiPort, buffer, length);
-    return bytesSent;
+    return spi_write_blocking(_spiPort, buffer, length);
 }
 
 uint8_t my23LC1024::__readByte__() {
     if (_useHWSPI == true) {
-        uint8_t buffer[1];
-        __HWSPIRead__(buffer, 1);
-        return buffer[0];
+        uint8_t value;
+        __HWSPIRead__(&value, 1);
+        return value;
     } else {
         uint8_t value;
         switch (_commsMode) {
@@ -514,8 +538,7 @@ uint8_t my23LC1024::__readByte__() {
 
 int32_t my23LC1024::__readBuffer__(uint8_t *buffer, uint32_t length) {
     if (_useHWSPI == true) {
-        int32_t bytesRead = __HWSPIRead__(buffer, length);
-        return bytesRead;
+        return __HWSPIRead__(buffer, length);
     } else {
         uint16_t value;
         switch (_commsMode) {
