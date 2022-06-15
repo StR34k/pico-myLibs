@@ -258,7 +258,12 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
 }
 
 bool inline my23LC1024::isIdle() {
-    return ((_status & STATUS_STATE_MASK) == 0);
+    __breakpoint();
+    if (_status & STATUS_STATE_MASK == 0) {
+        return true;
+    }
+    return false;
+    // return ((_status & STATUS_STATE_MASK) == 0);
 }
 
 bool inline my23LC1024::isBusy() {
@@ -368,6 +373,7 @@ int32_t my23LC1024::stop() {
             break;
     }
     __setStateIdle__();
+    return ERROR_NO_ERROR;
 }
 /*********************************************************************
  * Private functions:

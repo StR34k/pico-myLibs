@@ -3,7 +3,7 @@
 #include "hardware/structs/rosc.h"
 #include <pico/time.h>
 
-void seed_random_from_rosc() {
+void my_seed_random_from_rosc() {
     uint32_t randomSeed;
     bool randomBit;
     for (uint8_t i=0; i<32; i++) {
