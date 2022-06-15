@@ -2,8 +2,10 @@
 #ifndef MY23LC1024_H
 #define MY23LC1024_H
 #include "../myStandardDefines.hpp"
-#include <pico/stdlib.h>
+// #include <pico/stdlib.h>
+#include <pico/time.h>
 #include <hardware/spi.h>
+
 class my23LC1024 {
 
     public:
@@ -20,27 +22,30 @@ class my23LC1024 {
 		static const uint8_t RSTIO_INSTRUCTION	= 0xFF; // Reset comms mode.
 		static const uint8_t RDMR_INSTRUCTION	= 0x05; // Read mode register.
 		static const uint8_t WRMR_INSTRUCTION	= 0x01; // Write mode register.
+        // Sram operating modes:
+        static const uint8_t SRAM_MODE_BYTE     = 0x00; // Sram single byte mode.
+        static const uint8_t SRAM_MODE_SEQ      = 0x40; // Sram sequential mode, default mode, and our mode.
+        static const uint8_t SRAM_MODE_PAGE     = 0x80; // Sram 32 byte page mode.
         // Valid address Mask, and length:
         static const uint32_t VALID_ADDRESS_MASK    = 0x0001FFFF; // 0b 0000 0000 0000 0001 1111 1111 1111 1111
         static const uint32_t MAX_LENGTH = VALID_ADDRESS_MASK +1; // Set the max length.
     /* Constructor: */
-        // HW SPI Constructors:
+//         // HW SPI Constructors:
         my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin);
         my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin);
-        // Bit Bang comms Constructors:
+//         // Bit Bang comms Constructors:
         my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin);
         my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin);
         my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin);
     /* Functions: */
         bool        initialize(const uint8_t commsMode);                        // Return true if comms verified, false if not.
-        bool        startRead(const uint32_t address);                          // Start the read process.
-        uint8_t     read();                                                     // Read a single byte returns byte read.
-        uint32_t    readBuffer(uint8_t *buffer, uint32_t length);               // Read a series of bytes. returns number of bytes read.
-        bool        startWrite(const uint32_t address);                         // start the write process.
-        void        write(const uint8_t value);                                 // write a single byte.
-        uint32_t    writeBuffer(const uint8_t *value, const uint32_t length);   // Write a series of bytes.
-        bool        stop();                                                     // stop the read / write process.
-
+        int16_t     startRead(const uint32_t address);                          // Start the read process. return 0 for okay, negative for error code.
+        int16_t     read();                                                     // Read a single byte returns byte read. 0 -> 255 byte read, negative for error code.
+        int16_t     readBuffer(uint8_t *buffer, uint16_t length);               // Read a series of bytes. Positive returns number of bytes read, negative for error code.
+        int16_t     startWrite(const uint32_t address);                         // start the write process returns 0 for okay, negative for error code.
+        int16_t     write(const uint8_t value);                                 // write a single byte. returns 0 for okay, negative for error code.
+        int16_t     writeBuffer(const uint8_t *value, const uint16_t length);   // Write a series of bytes. returns Positive for num bytes writtend, negative for error code.
+        int16_t     stop();                                                     // stop the read / write process. returns 0 for okay, negative for error code.
 
     private:
     /* Variables: */
@@ -52,10 +57,13 @@ class my23LC1024 {
         uint8_t _holdPin;       // the hold pin.
         uint8_t _sio2Pin;       // the sio2 pin.
         uint8_t _commsMode;     // the comms mode.
-        bool _useHWSPI = true;  // if we are useing hw spi
+        bool _useHWSPI = false; // if we are useing hw spi
     /* Functions: */
-        void        __selectChip__();                                               // Lower the cs line.
-        void        __deselectChip__();                                             // raise the cs line.        
+        void inline __selectChip__();                                               // Lower the cs line.
+        void inline __deselectChip__();                                             // raise the cs line.
+        void inline __setSPIPinModes__();                                           // Set the pin modes for Bit banged SPI.
+        void inline __setSDIPinModes__(const bool isOutput);                        // Set the pin modes for bit banged SDI.
+        void inline __setSQIPinModes__(const bool isOutput);                        // Set the pin modes for bit banged SQI.
         void        __resetComms__();                                               // Reset the comms mode to SPI.
         uint16_t    __HWSPIRead__(uint8_t *buffer, const uint16_t length);          // Use hw spi to read.
         uint16_t    __HWSPIWrite__(const uint8_t *buffer, const uint16_t length);   // Use hw spi to write.
@@ -71,7 +79,7 @@ class my23LC1024 {
 /*
  * Constructors:
  */
-// HW SPI Constructors:
+/* HW SPI Constructors: */
 // HW SPI without hold.
 my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) {
     _spiPort = spiPort;
@@ -85,7 +93,7 @@ my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t s
 }
 // HW SPI with hold.
 my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin) {
-    _spiPort = _spiPort;
+    _spiPort = spiPort;
     _csPin = csPin;
     _sckPin = sckPin;
     _misoPin = misoPin;
@@ -94,7 +102,7 @@ my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t s
     _sio2Pin = MY_NOT_A_PIN;
     _useHWSPI = true;
 }
-// Bit Bang comms Constructors:
+/* Bit Bang comms Constructors: */
 // SPI / SDI with no hold.
 my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) {
     _csPin = csPin;
@@ -128,82 +136,110 @@ my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t 
 /*
  * Public functions:
  */
+
 bool my23LC1024::initialize(const uint8_t commsMode) {
 // Store comms mode:
-    // _commsMode = commsMode;
+    _commsMode = commsMode;
 // Do some basic checks:
-    // if (commsMode == COMM_MODE_SQI) { // SQI requires hold and sio2 to be defined.
-    //     if (_holdPin == MY_NOT_A_PIN) { return false; } 
-    //     if (_sio2Pin == MY_NOT_A_PIN) { return false; }
-    // }
-// Set pin funtions, modes, and initial states for spi pins:
-    // gpio_set_function(_csPin,   GPIO_FUNC_SIO); // Set cs as gpio.
-    // gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
-    // gpio_put(_csPin, true); // Set cs High.
-    // if (_useHWSPI == true) {
-    uint32_t baud = spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
-    printf("Baud: %i\n", baud);
-    // gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
-    // gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
-    // gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
-    // } else {
-    //     gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
-    //     gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
-    //     gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
-    //     gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
-    //     gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
-    //     gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
-    //     gpio_put(_sckPin, false); // set sck Low
-    //     gpio_put(_mosiPin, false); // set mosi low
-    // }
+    if (commsMode == COMM_MODE_SQI) { // SQI requires hold and sio2 to be defined.
+        if (_holdPin == MY_NOT_A_PIN) { return false; } 
+        if (_sio2Pin == MY_NOT_A_PIN) { return false; }
+    }
+// Set pin functions, modes, and initial states:
+    gpio_set_function(_csPin,   GPIO_FUNC_SIO); // Set cs as gpio.
+    gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
+    gpio_put(_csPin, true); // Set cs High.
+    if (_useHWSPI == true) {
+        spi_init(_spiPort, 1000*20000); // init spi at 20 Mhz.
+        gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
+        gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
+        gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
+    } else {
+        gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
+        gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
+        gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
+        gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
+        gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
+        gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
+        gpio_put(_sckPin, false); // set sck Low
+        gpio_put(_mosiPin, false); // set mosi low
+    }
 // Set pin functions, modes, and inital state of hold and sio2:
-    // if (_holdPin != MY_NOT_A_PIN) {
-    //     gpio_set_function(_holdPin, GPIO_FUNC_SIO); // Set hold as gpio.
-    //     gpio_set_dir(_holdPin, GPIO_OUT); // Set hold as output.
-    //     gpio_put(_holdPin, true); // set hold High.
-    // }
-    // if (_sio2Pin != MY_NOT_A_PIN) {
-    //     gpio_set_function(_sio2Pin, GPIO_FUNC_SIO); // set sio2 as gpio.
-    //     gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
-    //     gpio_put(_sio2Pin, true); // set sio2 High.
-    // }
-
-    // uint8_t command = RDMR_INSTRUCTION;
-    // uint8_t mode;
-    // __selectChip__();
-    // spi_write_blocking(_spiPort, &command, 1);
-    // spi_read_blocking(_spiPort, 0x00, &mode, 1);
-    // __deselectChip__();
-    // printf("Got mode: 0x%x\n", mode);
-    return true;
+    if (_holdPin != MY_NOT_A_PIN) {
+        gpio_set_function(_holdPin, GPIO_FUNC_SIO); // Set hold as gpio.
+        gpio_set_dir(_holdPin, GPIO_OUT); // Set hold as output.
+        gpio_put(_holdPin, true); // set hold High.
+    }
+    if (_sio2Pin != MY_NOT_A_PIN) {
+        gpio_set_function(_sio2Pin, GPIO_FUNC_SIO); // set sio2 as gpio.
+        gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
+        gpio_put(_sio2Pin, true); // set sio2 High.
+    }
 // Initialze comms:
     __resetComms__();
-    switch (_commsMode)
-    {
-    case COMM_MODE_SDI:
-        ;
-        break;
-    case COMM_MODE_SQI:
-        ;
-        break;    
+    if (_useHWSPI == false) {
+        switch (_commsMode) {
+            case COMM_MODE_SDI:
+                ;
+                break;
+            case COMM_MODE_SQI:
+                ;
+                break;    
+        }
     }
-// Verify mode, which verifies comms:
-    // bool verified = false;
-    // uint8_t mode = __readModeRegister__();
-    // printf("mode: 0x%x\n", mode);
-    // return true;
+// Validate comms by checking mode, setting it something, and checking it again.
+//   Then reset it back to sequential mode.
+    uint8_t mode = __readModeRegister__();
+    printf("Got mode: 0x%x\n", mode);
+
+
+
+    return true;
 }
 
 /*
  * Private functions:
  */
-void my23LC1024::__selectChip__() { gpio_put(_csPin, false); }
+void inline my23LC1024::__selectChip__() { gpio_put(_csPin, false); }
 
-void my23LC1024::__deselectChip__() { gpio_put(_csPin, true); }
+void inline my23LC1024::__deselectChip__() { gpio_put(_csPin, true); }
+
+void inline my23LC1024::__setSPIPinModes__() {
+    gpio_set_dir(_misoPin, GPIO_IN);
+    gpio_set_dir(_mosiPin, GPIO_OUT);
+}
+
+void inline my23LC1024::__setSDIPinModes__(const bool isOutput) {
+    if (isOutput == true) {
+        gpio_set_dir(_misoPin, GPIO_OUT);
+        gpio_set_dir(_mosiPin, GPIO_OUT);
+    } else {
+        gpio_set_dir(_misoPin, GPIO_IN);
+        gpio_set_dir(_mosiPin, GPIO_IN);
+    }
+}
+
+void inline my23LC1024::__setSQIPinModes__(const bool isOutput) {
+    if (isOutput == true) {
+        gpio_set_dir(_misoPin, GPIO_OUT);
+        gpio_set_dir(_mosiPin, GPIO_OUT);
+        gpio_set_dir(_holdPin, GPIO_OUT);
+        gpio_set_dir(_sio2Pin, GPIO_OUT);
+    } else {
+        gpio_set_dir(_misoPin, GPIO_IN);
+        gpio_set_dir(_mosiPin, GPIO_IN);
+        gpio_set_dir(_holdPin, GPIO_IN);
+        gpio_set_dir(_sio2Pin, GPIO_IN);
+    }
+}
 
 void my23LC1024::__resetComms__() {
-// Only reset comms if in bit bang mode:
-    if (_useHWSPI == false) {
+    if (_useHWSPI == true) {
+        __selectChip__();
+        uint8_t resetCommand = RSTIO_INSTRUCTION;
+        spi_write_blocking(_spiPort, &resetCommand, 1);
+        __deselectChip__();
+    } else {
         gpio_put(_mosiPin, true);           // Set mosi high
         gpio_set_dir(_misoPin, GPIO_OUT);    // set Miso output
         gpio_put(_mosiPin, true);           // set miso high.
@@ -234,7 +270,6 @@ void my23LC1024::__resetComms__() {
     // Reset miso line to input:
         gpio_set_dir(_misoPin, GPIO_IN);
     }
-
 }
 
 uint16_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const uint16_t length) {
@@ -243,11 +278,7 @@ uint16_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const uint16_t length) {
 }
 
 uint16_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const uint16_t length) {
-    __breakpoint();
-    uint8_t value = spi_is_writable(_spiPort);
-    printf("isWriteable: %i\n", value);
     int32_t bytesSent = spi_write_blocking(_spiPort, buffer, length);
-    // __breakpoint();
     return (uint16_t)bytesSent;
 }
 
@@ -327,7 +358,7 @@ uint16_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const uint16_t lengt
                 value = 0x00;
                 break;
             case COMM_MODE_SQI:
-                /*code */
+                value = 0x00;
                 break;        
         }
         return value;
@@ -336,7 +367,6 @@ uint16_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const uint16_t lengt
 
 uint8_t my23LC1024::__readModeRegister__() {
     __selectChip__();
-    __breakpoint();
     __writeByte__(RDMR_INSTRUCTION);
     uint8_t value = __readByte__();
     __deselectChip__();
