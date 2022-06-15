@@ -258,10 +258,6 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
 }
 
 bool inline my23LC1024::isIdle() {
-    // if (_status & STATUS_STATE_MASK == 0) {
-        // return true;
-    // }
-    // return false;
     return ((_status & STATUS_STATE_MASK) == 0);
 }
 
@@ -368,6 +364,27 @@ int32_t my23LC1024::readBuffer(uint8_t *buffer, uint32_t length) {
     return (int32_t)__readBuffer__(buffer, length);
 }
 
+int32_t my23LC1024::startWrite(const uint32_t address) {
+    if (address > VALID_ADDRESS_MASK) {
+        return ERROR_INVAID_ADDRESS;
+    }
+    if (isHeld() == true) {
+        return ERROR_SRAM_HELD;
+    }
+    if (isBusy() == true) {
+        return ERROR_SRAM_BUSY;
+    }
+    uint8_t buffer[4] = {
+        WRITE_INSTRUCTION,                                       // Send write instruction 
+        (uint8_t)((address & ADDRESS_HIGH_BYTE_MASK) >> 16),    // Send high byte of address.
+        (uint8_t)((address & ADDRESS_MIDDLE_BYTE_MASK) >> 8),   // Send middle byte of address.
+        (uint8_t)(address & ADDRESS_LOW_BYTE_MASK)              // Send low byte of address.
+    };
+    __selectChip__();
+    __writeBuffer__(buffer, 4);
+    __setStateWrite__();
+}
+
 int32_t my23LC1024::write(const uint8_t value) {
     if (isIdle() == true) {
         return ERROR_SRAM_IDLE;
@@ -376,7 +393,21 @@ int32_t my23LC1024::write(const uint8_t value) {
         return ERROR_SRAM_HELD;
     }
     if (isWriting() == false) {
-        
+        return ERROR_NOT_WRITING;
+    }
+    __writeByte__(value);
+    return ERROR_NO_ERROR;
+}
+
+int32_t my23LC1024::writeBuffer(const uint8_t *buffer, const uint32_t length) {
+    if (isIdle() == true) {
+        return ERROR_SRAM_IDLE;
+    }
+    if (isHeld() == true) {
+        return ERROR_SRAM_HELD;
+    }
+    if (isWriting() == false) {
+        return ERROR_NOT_WRITING;
     }
 }
 
