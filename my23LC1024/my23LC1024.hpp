@@ -140,33 +140,33 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     gpio_set_function(_csPin,   GPIO_FUNC_SIO); // Set cs as gpio.
     gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
     gpio_put(_csPin, true); // Set cs High.
-    if (_useHWSPI == true) {
+    // if (_useHWSPI == true) {
         uint32_t baud = spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
         printf("Baud: %i\n", baud);
         gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
         gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
-    } else {
-        gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
-        gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
-        gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
-        gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
-        gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
-        gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
-        gpio_put(_sckPin, false); // set sck Low
-        gpio_put(_mosiPin, false); // set mosi low
-    }
+    // } else {
+    //     gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
+    //     gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
+    //     gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
+    //     gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
+    //     gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
+    //     gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
+    //     gpio_put(_sckPin, false); // set sck Low
+    //     gpio_put(_mosiPin, false); // set mosi low
+    // }
 // Set pin functions, modes, and inital state of hold and sio2:
-    if (_holdPin != MY_NOT_A_PIN) {
-        gpio_set_function(_holdPin, GPIO_FUNC_SIO); // Set hold as gpio.
-        gpio_set_dir(_holdPin, GPIO_OUT); // Set hold as output.
-        gpio_put(_holdPin, true); // set hold High.
-    }
-    if (_sio2Pin != MY_NOT_A_PIN) {
-        gpio_set_function(_sio2Pin, GPIO_FUNC_SIO); // set sio2 as gpio.
-        gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
-        gpio_put(_sio2Pin, true); // set sio2 High.
-    }
+    // if (_holdPin != MY_NOT_A_PIN) {
+    //     gpio_set_function(_holdPin, GPIO_FUNC_SIO); // Set hold as gpio.
+    //     gpio_set_dir(_holdPin, GPIO_OUT); // Set hold as output.
+    //     gpio_put(_holdPin, true); // set hold High.
+    // }
+    // if (_sio2Pin != MY_NOT_A_PIN) {
+    //     gpio_set_function(_sio2Pin, GPIO_FUNC_SIO); // set sio2 as gpio.
+    //     gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
+    //     gpio_put(_sio2Pin, true); // set sio2 High.
+    // }
 
     // uint8_t command = RDMR_INSTRUCTION;
     // uint8_t mode;
