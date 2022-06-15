@@ -324,6 +324,7 @@ uint16_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const uint16_t lengt
 
 uint8_t my23LC1024::__readModeRegister__() {
     __selectChip__();
+    __breakpoint();
     __writeByte__(RDMR_INSTRUCTION);
     uint8_t value = __readByte__();
     __deselectChip__();
