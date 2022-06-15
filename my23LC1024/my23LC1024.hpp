@@ -130,22 +130,22 @@ my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t 
  */
 bool my23LC1024::initialize(const uint8_t commsMode) {
 // Store comms mode:
-    _commsMode = commsMode;
+    // _commsMode = commsMode;
 // Do some basic checks:
-    if (commsMode == COMM_MODE_SQI) { // SQI requires hold and sio2 to be defined.
-        if (_holdPin == MY_NOT_A_PIN) { return false; } 
-        if (_sio2Pin == MY_NOT_A_PIN) { return false; }
-    }
+    // if (commsMode == COMM_MODE_SQI) { // SQI requires hold and sio2 to be defined.
+    //     if (_holdPin == MY_NOT_A_PIN) { return false; } 
+    //     if (_sio2Pin == MY_NOT_A_PIN) { return false; }
+    // }
 // Set pin funtions, modes, and initial states for spi pins:
-    gpio_set_function(_csPin,   GPIO_FUNC_SIO); // Set cs as gpio.
-    gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
-    gpio_put(_csPin, true); // Set cs High.
+    // gpio_set_function(_csPin,   GPIO_FUNC_SIO); // Set cs as gpio.
+    // gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
+    // gpio_put(_csPin, true); // Set cs High.
     // if (_useHWSPI == true) {
-        uint32_t baud = spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
-        printf("Baud: %i\n", baud);
-        gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
-        gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
-        gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
+    uint32_t baud = spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
+    printf("Baud: %i\n", baud);
+    // gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
+    // gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
+    // gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
     // } else {
     //     gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
     //     gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
