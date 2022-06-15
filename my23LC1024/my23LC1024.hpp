@@ -141,7 +141,8 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
     gpio_put(_csPin, true); // Set cs High.
     if (_useHWSPI == true) {
-        spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
+        uint32_t baud = spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
+        printf("Baud: %i\n", baud);
         gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
         gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
