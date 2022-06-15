@@ -167,13 +167,13 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_put(_sio2Pin, true); // set sio2 High.
     }
 
-    uint8_t command = RDMR_INSTRUCTION;
-    uint8_t mode;
-    __selectChip__();
-    spi_write_blocking(_spiPort, &command, 1);
-    spi_read_blocking(_spiPort, 0x00, &mode, 1);
-    __deselectChip__();
-    printf("Got mode: 0x%x\n", mode);
+    // uint8_t command = RDMR_INSTRUCTION;
+    // uint8_t mode;
+    // __selectChip__();
+    // spi_write_blocking(_spiPort, &command, 1);
+    // spi_read_blocking(_spiPort, 0x00, &mode, 1);
+    // __deselectChip__();
+    // printf("Got mode: 0x%x\n", mode);
     return true;
 // Initialze comms:
     __resetComms__();
