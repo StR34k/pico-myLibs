@@ -129,6 +129,7 @@ my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t 
  * Public functions:
  */
 bool my23LC1024::initialize(const uint8_t commsMode) {
+    __breakpoint();
 // Store comms mode:
     _commsMode = commsMode;
 // Do some basic checks:
@@ -166,6 +167,7 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
         gpio_put(_sio2Pin, true); // set sio2 High.
     }
+    __breakpoint();
 // Initialze comms:
     __resetComms__();
     switch (_commsMode)
