@@ -129,7 +129,6 @@ my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t 
  * Public functions:
  */
 bool my23LC1024::initialize(const uint8_t commsMode) {
-    __breakpoint();
 // Store comms mode:
     _commsMode = commsMode;
 // Do some basic checks:
@@ -142,7 +141,6 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
     gpio_put(_csPin, true); // Set cs High.
     if (_useHWSPI == true) {
-        // __breakpoint();
         spi_init(_spiPort, 1000*20000); // Init spi at 20 Mhz
         gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
@@ -168,7 +166,15 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
         gpio_put(_sio2Pin, true); // set sio2 High.
     }
-    // __breakpoint();
+
+    uint8_t command = RDMR_INSTRUCTION;
+    uint8_t mode;
+    __selectChip__();
+    spi_write_blocking(_spiPort, &command, 1);
+    spi_read_blocking(_spiPort, 0x00, &mode, 1);
+    __deselectChip__();
+    printf("Got mode: 0x%x\n", mode);
+    return true;
 // Initialze comms:
     __resetComms__();
     switch (_commsMode)
