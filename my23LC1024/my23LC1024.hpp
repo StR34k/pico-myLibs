@@ -29,8 +29,8 @@ class my23LC1024 {
         static const uint8_t SRAM_MODE_SEQ      = 0x40; // Sram sequential mode, default mode, and our mode.
         static const uint8_t SRAM_MODE_PAGE     = 0x80; // Sram 32 byte page mode.
         // Valid address Mask, and length:
-        static const uint32_t VALID_ADDRESS_MASK    = 0x0001FFFF; // 0b 0000 0000 0000 0001 1111 1111 1111 1111
-        static const uint32_t MAX_LENGTH = VALID_ADDRESS_MASK +1; // Set the max length.
+        static const int32_t MAX_ADDRESS    = 0x0001FFFF; // 0b 0000 0000 0000 0001 1111 1111 1111 1111
+        static const int32_t LENGTH = MAX_ADDRESS +1; // Set the max length.
         static const uint32_t ADDRESS_HIGH_BYTE_MASK    = 0x00010000; // The mask for a valid high byte.
         static const uint32_t ADDRESS_MIDDLE_BYTE_MASK  = 0x0000FF00; // The mask for a valid middle byte.
         static const uint32_t ADDRESS_LOW_BYTE_MASK     = 0x000000FF; // The mask for a valid low byte.
@@ -67,7 +67,6 @@ class my23LC1024 {
         my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin); // Sqi. no hold.
     /* Functions: */
         bool            initialize(const uint8_t commsMode);                        // Return true if comms verified, false if not.
-        bool inline     validateAddress(const int32_t address);                     // Return true if address is valid, false if not.
         bool inline     isIdle();                                                   // Return True if currently idle.
         bool inline     isBusy();                                                   // Return true if currently reading or writing.
         bool inline     isReading();                                                // Return true if currently in a read.
@@ -75,8 +74,8 @@ class my23LC1024 {
         bool inline     isHeld();                                                   // Return true if comms are held.
         int32_t         setHold();                                                  // Set the hold. returns 0 on success or negative for error code.
         int32_t         clearHold();                                                // Clear the hold. returns 0 on success or negative for error code.
-        int32_t inline  getNextAddress();                                           // Return the next address. -1 means address hasn't been set.
-        int32_t inline  getLastAddress();                                           // Return the last address read / written. -1 means no address has been read / written.
+        int32_t inline  getNextIndex();                                             // Return the next address. -1 means address hasn't been set.
+        int32_t inline  getLastIndex();                                             // Return the last address read / written. -1 means no address has been read / written.
         int32_t         startRead(const int32_t address);                           // Start the read process. return 0 for okay, negative for error code.
         int32_t         read();                                                     // Read a single byte returns byte read. 0 -> 255 byte read, negative for error code.
         int32_t         startWrite(const int32_t address);                          // start the write process returns 0 for okay, negative for error code.
@@ -95,15 +94,15 @@ class my23LC1024 {
         uint8_t _commsMode;         // the comms mode.
         bool    _useHWSPI = false;  // true if we are useing hw spi.
         uint8_t _status = 0x00;     // the status byte. Packed uint8.
-        int32_t _nextAddress = -1;  // The next address to read / write.
-        int32_t _lastAddress = -1;  // The last address read / written.
+        int32_t _nextIndex = -1;  // The next address to read / write.
+        int32_t _lastIndex = -1;  // The last address read / written.
         uint8_t _lastState;         // The last reading or writing state. for mimicing hold.
 
     /* Functions: */
         void inline __selectChip__();                                               // Lower the cs line.
         void inline __deselectChip__();                                             // raise the cs line.
-        void inline __incrementAddress__();                                         // Increment the stored address, wrapping at max address.
-        void inline __setAddress__(int32_t value);                                 // Set the address we're working on.
+        void inline __incrementIndex__();                                         // Increment the stored address, wrapping at max address.
+        void inline __setNextIndex__(int32_t value);                              // Set the address we're working on.
         uint8_t inline __getState__();                                              // return the state bits from the status byte.
         void inline __setStateIdle__();                                             // Set the state bits in the status byte to idle.
         void inline __setStateRead__();                                             // Set the state bits in the status byte to reading.
@@ -118,6 +117,10 @@ class my23LC1024 {
         int32_t    __HWSPIWrite__(const uint8_t *buffer, const int32_t length);     // Use hw spi to write.
         int32_t     __SPIRead__(uint8_t *buffer, const int32_t length);             // Bit banged SPI read.
         int32_t     __SPIWrite__(const uint8_t *buffer, const int32_t length);      // Bit banged SPI write.
+        int32_t     __SDIRead__(uint8_t *buffer, const int32_t length);             // Bit banged SDI read.
+        int32_t     __SDIWrite__(const uint8_t *buffer, const int32_t length);      // Bit banged SDI write.
+        int32_t     __SQIRead__(uint8_t *buffer, const int32_t length);             // Bit banged SQI write.
+        int32_t     __SQIWrite__(const uint8_t *buffer, const int32_t length);      // Bit banged SQI write.
         void        __writeByte__(const uint8_t value);                             // Select the right write function and transfer a single byte.
         int32_t    __writeBuffer__(const uint8_t *buffer, const int32_t length);    // Select the right write function and transfer a series of bytes. Returns the number of bytes written.
         uint8_t     __readByte__();                                                 // Select the right read function and read a single byte. returns byte read.
@@ -189,6 +192,7 @@ my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t 
  **************************************************************************/
 
 bool my23LC1024::initialize(const uint8_t commsMode) {
+    // __breakpoint();
 // Store comms mode:
     _commsMode = commsMode;
 // Do some basic checks:
@@ -197,7 +201,7 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         if (_sio2Pin == MY_NOT_A_PIN) { return false; }
     }
 // Set pin functions, modes, and initial states:
-    gpio_set_function(_csPin,   GPIO_FUNC_SIO); // Set cs as gpio.
+    gpio_init(_csPin); // Initialize cs pin.
     gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
     gpio_put(_csPin, true); // Set cs High.
     if (_useHWSPI == true) {
@@ -206,37 +210,40 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
         gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
     } else {
-        if (_commsMode != COMM_MODE_SPI) { // Bit baged spi is dealt with in myBitBangSPI
-            gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
-            gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
-            gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
-            gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
-            gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
-            gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
-            gpio_put(_sckPin, false); // set sck Low
-            gpio_put(_mosiPin, false); // set mosi low
-        }
+        gpio_init(_sckPin);
+        gpio_init(_misoPin);
+        gpio_init(_mosiPin);
+        gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
+        gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
+        gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
+        gpio_put(_sckPin, false); // set sck Low
+        gpio_put(_mosiPin, false); // set mosi low
     }
 // Set pin functions, modes, and inital state of hold and sio2:
     if (_holdPin != MY_NOT_A_PIN) {
-        gpio_set_function(_holdPin, GPIO_FUNC_SIO); // Set hold as gpio.
+        gpio_init(_holdPin); // Set hold as gpio.
         gpio_set_dir(_holdPin, GPIO_OUT); // Set hold as output.
         gpio_put(_holdPin, true); // set hold High.
     }
     if (_sio2Pin != MY_NOT_A_PIN) {
-        gpio_set_function(_sio2Pin, GPIO_FUNC_SIO); // set sio2 as gpio.
+        gpio_init(_sio2Pin); // set sio2 as gpio.
         gpio_set_dir(_sio2Pin, GPIO_OUT); // set sio2 as output.
         gpio_put(_sio2Pin, true); // set sio2 High.
     }
 // Initialze comms:
+    // __breakpoint();
     __resetComms__();
+    // __breakpoint();
     if (_useHWSPI == false) {
         switch (_commsMode) {
             case COMM_MODE_SPI:
                 mySPIMaster::initialize(_sckPin, _misoPin, _mosiPin);
                 break;
             case COMM_MODE_SDI:
-                ;
+                mySPIMaster::initialize(_sckPin,_misoPin, _mosiPin);
+                mySPIMaster::transfer(EDIO_INSTRUCTION);
+                // __breakpoint();
+                __setSDIPinModes__(true);
                 break;
             case COMM_MODE_SQI:
                 ;
@@ -246,9 +253,11 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
 // Validate comms by checking mode, setting it something, and checking it again.
 //   Then reset it back to sequential mode.
     // Read mode:
+    __breakpoint();
     uint8_t mode = __readModeRegister__();
     uint8_t expectedMode;
     // Make sure mode is valid:
+    printf("Got mode: 0x%x\n", mode);
     if (mode != SRAM_MODE_BYTE and mode != SRAM_MODE_SEQ and mode != SRAM_MODE_PAGE) {
         return false; // Invalid value returned.
     }
@@ -269,12 +278,6 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     if (mode != SRAM_MODE_SEQ) {
         __writeModeRegister__(SRAM_MODE_SEQ);
     }
-    return true;
-}
-
-bool inline my23LC1024::validateAddress(const int32_t address) {
-    if (address > VALID_ADDRESS_MASK) { return false; }
-    if (address < 0) { return false; }
     return true;
 }
 
@@ -317,60 +320,81 @@ int32_t my23LC1024::clearHold() {
     return 0;
 }
 
-int32_t inline my23LC1024::getNextAddress() {
-    return _nextAddress;
+int32_t inline my23LC1024::getNextIndex() {
+    return _nextIndex;
 }
 
-int32_t inline my23LC1024::getLastAddress() {
-    return _lastAddress;
+int32_t inline my23LC1024::getLastIndex() {
+    return _lastIndex;
 }
 
 int32_t my23LC1024::startRead(const int32_t address) {
-    if (validateAddress(address)) { return ERROR_INVAID_ADDRESS; }
+// Do checks:
     if (isHeld() == true) { return ERROR_SRAM_HELD; }
     if (isBusy() == true) { return ERROR_SRAM_BUSY; }
+// Convert address to an index:
+    int32_t index = address;
+    if (address < 0) { index = LENGTH - abs(address); }
+// Setup read instructions:
     uint8_t buffer[4] = {
         READ_INSTRUCTION,                                       // Send read instruction 
-        (uint8_t)((address & ADDRESS_HIGH_BYTE_MASK) >> 16),    // Send high byte of address.
-        (uint8_t)((address & ADDRESS_MIDDLE_BYTE_MASK) >> 8),   // Send middle byte of address.
-        (uint8_t)(address & ADDRESS_LOW_BYTE_MASK)              // Send low byte of address.
+        (uint8_t)((index & ADDRESS_HIGH_BYTE_MASK) >> 16),    // Send high byte of address.
+        (uint8_t)((index & ADDRESS_MIDDLE_BYTE_MASK) >> 8),   // Send middle byte of address.
+        (uint8_t)(index & ADDRESS_LOW_BYTE_MASK)              // Send low byte of address.
     };
+// Start Read:
     __selectChip__();
     __writeBuffer__(buffer, 4);
+// Set pin modes and read dummy byte if required:
     switch (_commsMode) {
         case COMM_MODE_SDI:
-            ; 
+            // Set pin modes.
+            __setSDIPinModes__(false);
+            // Read dummy byte.
+            __readByte__();
             break;
         case COMM_MODE_SQI:
-            ;
+            // Set pin modes.
+            __setSQIPinModes__(false);
+            // Read dummy byte.
+            __readByte__();
             break;
     }
-    __setAddress__(address);
+// Set the states:
+    __setNextIndex__(index);
     __setStateRead__();
     return 0;
 }
 
 int32_t my23LC1024::read() {
+// Do checks:
     if (isIdle() == true) { return ERROR_SRAM_IDLE; }
     if (isHeld() == true) { return ERROR_SRAM_HELD; }
     if (isReading() == false) { return ERROR_NOT_READING; }
-    __incrementAddress__();
+// Set state
+    __incrementIndex__();
+// read the byte:
     return (int32_t)__readByte__();
 }
 
 int32_t my23LC1024::startWrite(const int32_t address) {
-    if (validateAddress(address)) { return ERROR_INVAID_ADDRESS; }
+// Do checks:
     if (isHeld() == true) { return ERROR_SRAM_HELD; }
     if (isBusy() == true) { return ERROR_SRAM_BUSY; }
+// Convert address to index:
+    int32_t index = address;
+    if (address < 0) { index = LENGTH - abs(address); }
     uint8_t buffer[4] = {
         WRITE_INSTRUCTION,                                       // Send write instruction 
-        (uint8_t)((address & ADDRESS_HIGH_BYTE_MASK) >> 16),    // Send high byte of address.
-        (uint8_t)((address & ADDRESS_MIDDLE_BYTE_MASK) >> 8),   // Send middle byte of address.
-        (uint8_t)(address & ADDRESS_LOW_BYTE_MASK)              // Send low byte of address.
+        (uint8_t)((index & ADDRESS_HIGH_BYTE_MASK) >> 16),    // Send high byte of address.
+        (uint8_t)((index & ADDRESS_MIDDLE_BYTE_MASK) >> 8),   // Send middle byte of address.
+        (uint8_t)(index & ADDRESS_LOW_BYTE_MASK)              // Send low byte of address.
     };
+// Start the write:
     __selectChip__();
     __writeBuffer__(buffer, 4);
-    __setAddress__(address);
+// Set the states:
+    __setNextIndex__(index);
     __setStateWrite__();
     return ERROR_NO_ERROR;
 }
@@ -380,7 +404,7 @@ int32_t my23LC1024::write(const uint8_t value) {
     if (isHeld() == true) { return ERROR_SRAM_HELD; }
     if (isWriting() == false) { return ERROR_NOT_WRITING; }
     __writeByte__(value);
-    __incrementAddress__();
+    __incrementIndex__();
     return ERROR_NO_ERROR;
 }
 
@@ -391,9 +415,11 @@ int32_t my23LC1024::stop() {
     if (isReading() == true) {
         switch (_commsMode){
             case COMM_MODE_SDI:
+                // Set pin modes.
                 ;
                 break;
             case COMM_MODE_SQI:
+                // Set pin modes.
                 ;
                 break;
         }
@@ -412,15 +438,14 @@ void inline my23LC1024::__deselectChip__() {
     gpio_put(_csPin, true);
 }
 
-void inline my23LC1024::__setAddress__(const int32_t value) {
-    _lastAddress = _nextAddress;
-    _nextAddress = value;
+void inline my23LC1024::__setNextIndex__(const int32_t value) {
+    _nextIndex = value;
 }
 
-void inline my23LC1024::__incrementAddress__() {
-    _lastAddress = _nextAddress;
-    _nextAddress += 1;
-    if (_nextAddress == MAX_LENGTH) { _nextAddress = 0; }
+void inline my23LC1024::__incrementIndex__() {
+    _lastIndex = _nextIndex;
+    _nextIndex += 1;
+    if (_nextIndex > MAX_ADDRESS) { _nextIndex = 0; }
 }
 
 uint8_t inline my23LC1024::__getState__() {
@@ -487,7 +512,7 @@ void my23LC1024::__resetComms__() {
     } else {
         gpio_put(_mosiPin, true);           // Set mosi high
         gpio_set_dir(_misoPin, GPIO_OUT);    // set Miso output
-        gpio_put(_mosiPin, true);           // set miso high.
+        gpio_put(_misoPin, true);           // set miso high.
         if (_holdPin != MY_NOT_A_PIN) {
             gpio_put(_holdPin, true);           // set hold pin high if exists.
         }
@@ -512,6 +537,15 @@ void my23LC1024::__resetComms__() {
             sleep_us(1);                // wait for a microsecond.
         }
         __deselectChip__();
+    // Select and toggle clock 8 times to send reset in SPI mode:
+        __selectChip__();
+        for (uint8_t i=0; i<8; i++) {
+            gpio_put(_sckPin, true);    // Raise clock
+            sleep_us(1);                // Wait for a microsecond.
+            gpio_put(_sckPin, false);   // lower clock
+            sleep_us(1);                // wait for a microsecond.
+        }
+        __deselectChip__();
     // Reset miso line to input:
         gpio_set_dir(_misoPin, GPIO_IN);
     }
@@ -526,11 +560,80 @@ int32_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const int32_t length) 
 }
 
 int32_t my23LC1024::__SPIRead__(uint8_t *buffer, const int32_t length) {
-
+    // __breakpoint();
+    int32_t bytesRead = 0;
+    for (uint32_t i=0; i< length; i++) {
+        buffer[i] = mySPIMaster::transfer(0x00);
+        bytesRead++;
+    }    
+    return bytesRead;
 }
 
 int32_t my23LC1024::__SPIWrite__(const uint8_t *buffer, const int32_t length) {
+    int32_t bytesSent = 0;
+    for (uint32_t i=0; i<length; i++) {
+        mySPIMaster::transfer(buffer[i]);
+        bytesSent++;
+    }
+    return bytesSent;
+}
 
+int32_t my23LC1024::__SDIRead__(uint8_t *buffer, const int32_t length) {
+// Set the variables:    
+    int32_t bytesRead = 0;
+    const uint8_t sio0 = _mosiPin;
+    const uint8_t sio1 = _misoPin;
+    for (int32_t i=0; i<length; i++) {
+        uint8_t value = 0x00;
+        for (uint8_t j=0; j<4; j++) {
+        // Shift incoming value;
+            value <<= 2;
+        // Raise the clock:
+            gpio_put(_sckPin,true);
+            sleep_us(1);
+        // Read the pins:
+            if (gpio_get(sio1) == true) { value |= 0x02; }
+            if (gpio_get(sio0) == true) { value |= 0x01; }
+        // Lower the clock:
+            gpio_put(_sckPin, false);
+            sleep_us(1);
+        }
+        bytesRead += 1;
+    }
+    return bytesRead;
+}
+
+int32_t my23LC1024::__SDIWrite__(const uint8_t *buffer, const int32_t length) {
+// Set variables:
+    // __breakpoint();
+    int32_t bytesSent = 0;
+    const uint8_t sio0 = _mosiPin;
+    const uint8_t sio1 = _misoPin;
+    for (int32_t i=0; i< length; i++) {
+        uint8_t value = buffer[i];
+        for (uint8_t j=0; j<4; j++) {
+        // Set the Pins:
+            gpio_put(sio1, (bool)(value & 0x80));
+            gpio_put(sio0, (bool)(value & 0x40));
+        // Toggle the clock:
+            gpio_put(_sckPin, true);
+            sleep_us(1);
+            gpio_put(_sckPin, false);
+            sleep_us(1);
+        // Shift the value:
+            value <<= 2;
+        }
+        bytesSent += 1;
+    }
+    return bytesSent;
+}
+
+int32_t my23LC1024::__SQIRead__(uint8_t *buffer, const int32_t length) {
+    return 0;
+}
+
+int32_t my23LC1024::__SQIWrite__(const uint8_t *buffer, const int32_t length) {
+    return 0;
 }
 
 uint8_t my23LC1024::__readByte__() {
@@ -542,33 +645,33 @@ uint8_t my23LC1024::__readByte__() {
         uint8_t value;
         switch (_commsMode) {
             case COMM_MODE_SPI:
-                value = 0x00;
+                __SPIRead__(&value, 1);
                 break;
             case COMM_MODE_SDI:
-                value = 0x00;
+                __SDIRead__(&value, 1);
                 break;
             case COMM_MODE_SQI:
-                value = 0x00;
+                __SQIRead__(&value, 1);
                 break;
         }
         return value;
     }
 }
 
-int32_t my23LC1024::__readBuffer__(uint8_t *buffer, int32_t length) {
+int32_t my23LC1024::__readBuffer__(uint8_t *buffer, const int32_t length) {
     if (_useHWSPI == true) {
         return __HWSPIRead__(buffer, length);
     } else {
         int32_t bytesRead;
         switch (_commsMode) {
             case COMM_MODE_SPI:
-                bytesRead = 0x00;
+                bytesRead = __SPIRead__(buffer, length);
                 break;
             case COMM_MODE_SDI:
-                bytesRead = 0x00;
+                bytesRead = __SDIRead__(buffer, length);
                 break;
             case COMM_MODE_SQI:
-                bytesRead = 0x00;
+                bytesRead = __SQIRead__(buffer, length);
                 break;
         }
         return bytesRead;
@@ -582,13 +685,13 @@ void my23LC1024::__writeByte__(const uint8_t value) {
     } else {
         switch (_commsMode) {
         case COMM_MODE_SPI:
-            ;
+            __SPIWrite__(&value, 1);
             break;
         case COMM_MODE_SDI:
-            ;
+            __SDIWrite__(&value, 1);
             break;
         case COMM_MODE_SQI:
-            ;
+            __SQIWrite__(&value, 1);
             break;
         }
     }
@@ -601,13 +704,13 @@ int32_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const int32_t length)
         int32_t bytesSent;
         switch (_commsMode) {
             case COMM_MODE_SPI:
-                bytesSent = 0x00;
+                bytesSent = __SPIWrite__(buffer, length);
                 break;
             case COMM_MODE_SDI:
-                bytesSent = 0x00;
+                bytesSent = __SDIWrite__(buffer, length);
                 break;
             case COMM_MODE_SQI:
-                bytesSent = 0x00;
+                bytesSent = __SQIWrite__(buffer, length);
                 break;        
         }
         return bytesSent;
@@ -615,10 +718,30 @@ int32_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const int32_t length)
 }
 
 uint8_t my23LC1024::__readModeRegister__() {
+    // __breakpoint();
     __selectChip__();
     __writeByte__(RDMR_INSTRUCTION);
+    switch (_commsMode) {
+        case COMM_MODE_SDI:
+            __setSDIPinModes__(false);
+            __readByte__();
+            break;
+        case COMM_MODE_SQI:
+            __setSQIPinModes__(false);
+            __readByte__();
+            break;
+    }
     uint8_t value = __readByte__();
     __deselectChip__();
+    switch (_commsMode) {
+        case COMM_MODE_SDI:
+            __setSDIPinModes__(true);
+            break;
+        case COMM_MODE_SQI:
+            __setSQIPinModes__(true);
+            break;
+    }
+
     return value;
 }
 

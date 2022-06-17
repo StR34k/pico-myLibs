@@ -26,7 +26,7 @@ namespace mySPIMaster {
     bool        _msbFirst;  // Bit order. true = MSB first, false = LSB first. Defaults to MSB first.
     uint64_t    _delayUS;   // Amount of time to delay before transitions in microseconds. Defaults to 1.
 /* Functions */
-    bool __validateMode(const uint8_t mode) {
+    bool __validateMode__(const uint8_t mode) {
         if (mode > MODE_3) { return false; }
         return true;
     }
@@ -36,9 +36,12 @@ namespace mySPIMaster {
         gpio_put(_mosi, !_cpha);
     }
 
-    void initialize(const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, 
+    bool initialize(const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, 
                         const bool msbFirst=true, uint64_t delayUS=1) {
     // Store pins and states for later.
+        if (__validateMode__(mode) == false) {
+            return false;
+        }
         _sck = sck;
         _miso = miso;
         _mosi = mosi;
@@ -60,24 +63,24 @@ namespace mySPIMaster {
                 _cpha = true;
         }
     // Set gpio Functions:
-        gpio_set_function(_sck,  GPIO_FUNC_SIO);
-        gpio_set_function(_miso, GPIO_FUNC_SIO);
-        gpio_set_function(_mosi, GPIO_FUNC_SIO);
+        gpio_init(_sck);
+        gpio_init(_miso);
+        gpio_init(_mosi);
     // Set gpio Directions:
         gpio_set_dir(_sck,  GPIO_OUT);
         gpio_set_dir(_miso, GPIO_IN);
         gpio_set_dir(_mosi, GPIO_OUT);
     // Set Idle states:
         __setIdle__();
-    
+        return true;
     }
 
     uint8_t transfer(const uint8_t value) {
         uint8_t mask;
         uint8_t readValue = 0x00;
 
-        // Set read / write mask
         for (uint8_t i=0; i<8; i++) {
+        // Set read / write mask
             if (_msbFirst == true) {
                 mask = (1 << (7-i));
             } else {
