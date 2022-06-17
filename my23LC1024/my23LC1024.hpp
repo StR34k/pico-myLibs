@@ -46,39 +46,40 @@ class my23LC1024 {
         static const uint8_t STATUS_IS_HELD         = 0x04; // Value if bit is set. 0b 0000 0100
         // Error codes:
         static const int32_t ERROR_NO_ERROR = MY_NO_ERROR;                          // No error.
-        static const int32_t ERROR_INVAID_ADDRESS = MY_ERROR_INVALID_ADDRESS;       // An invalid address was passed to a function.
-        static const int32_t ERROR_SRAM_HELD = MY_ERROR_SRAM_HELD;                  // Sram has been held by the hold pin.
-        static const int32_t ERROR_SRAM_BUSY = MY_ERROR_SRAM_BUSY;                  // Sram is already busy.
-        static const int32_t ERROR_SRAM_IDLE = MY_ERROR_SRAM_IDLE;                  // Sram is already idle.
-        static const int32_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_HOLD_NOT_DEFINED;    // Hold pin is not defined.
-        static const int32_t ERROR_SIO2_NOT_DEFINED = MY_ERROR_SIO2_NOT_DEFINED;    // Sio2 pin is not defined.
-        static const int32_t ERROR_SRAM_NOT_HELD = MY_ERROR_SRAM_NOT_HELD;          // Sram is not held.
-        static const int32_t ERROR_NOT_READING = MY_ERROR_NOT_READING;              // Sram is not in the reading state.
-        static const int32_t ERROR_NOT_WRITING = MY_ERROR_NOT_WRITING;              // Sram is not in the writing state.
+        static const int32_t ERROR_INVAID_ADDRESS = MY_ERROR_MY23LC1024_INVALID_ADDRESS;       // An invalid address was passed to a function.
+        static const int32_t ERROR_SRAM_HELD = MY_ERROR_MY23LC1024_SRAM_HELD;                  // Sram has been held by the hold pin.
+        static const int32_t ERROR_SRAM_BUSY = MY_ERROR_MY23LC1024_SRAM_BUSY;                  // Sram is already busy.
+        static const int32_t ERROR_SRAM_IDLE = MY_ERROR_MY23LC1024_SRAM_IDLE;                  // Sram is already idle.
+        static const int32_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED;    // Hold pin is not defined.
+        static const int32_t ERROR_SIO2_NOT_DEFINED = MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED;    // Sio2 pin is not defined.
+        static const int32_t ERROR_SRAM_NOT_HELD = MY_ERROR_MY23LC1024_SRAM_NOT_HELD;          // Sram is not held.
+        static const int32_t ERROR_NOT_READING = MY_ERROR_MY23LC1024_NOT_READING;              // Sram is not in the reading state.
+        static const int32_t ERROR_NOT_WRITING = MY_ERROR_MY23LC1024_NOT_WRITING;              // Sram is not in the writing state.
+        static const int32_t ERROR_HOLD_NOT_AVAILABLE = MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE;// Hold function is not available.
     /* Constructor: */
         // HW SPI Constructors:
-        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin);
-        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin);
+        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin); // HW SPI no hold.
+        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin); // HW SPI with hold.
         // Bit Bang comms Constructors:
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin);
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin);
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin);
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin); // Bit banged spi / sdi, no hold.
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin); // Bit banged spi / sdi with hold.
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin); // Sqi. no hold.
     /* Functions: */
-        bool        initialize(const uint8_t commsMode);                        // Return true if comms verified, false if not.
-        bool inline isIdle();                                                   // Return True if currently idle.
-        bool inline isBusy();                                                   // Return true if currently reading or writing.
-        bool inline isReading();                                                // Return true if currently in a read.
-        bool inline isWriting();                                                // return true if currently in a write.
-        bool inline isHeld();                                                   // Return true if comms are held.
-        int32_t     setHold();                                                  // Set the hold. returns 0 on success or negative for error code.
-        int32_t     clearHold();                                                // Clear the hold. returns 0 on success or negative for error code.
-        int32_t     startRead(const uint32_t address);                          // Start the read process. return 0 for okay, negative for error code.
-        int32_t     read();                                                     // Read a single byte returns byte read. 0 -> 255 byte read, negative for error code.
-        int32_t     readBuffer(uint8_t *buffer, uint32_t length);               // Read a series of bytes. Positive returns number of bytes read, negative for error code.
-        int32_t     startWrite(const uint32_t address);                         // start the write process returns 0 for okay, negative for error code.
-        int32_t     write(const uint8_t value);                                 // write a single byte. returns 0 for okay, negative for error code.
-        int32_t     writeBuffer(const uint8_t *value, const uint32_t length);   // Write a series of bytes. returns Positive for num bytes writtend, negative for error code.
-        int32_t     stop();                                                     // stop the read / write process. returns 0 for okay, negative for error code.
+        bool            initialize(const uint8_t commsMode);                        // Return true if comms verified, false if not.
+        bool inline     isIdle();                                                   // Return True if currently idle.
+        bool inline     isBusy();                                                   // Return true if currently reading or writing.
+        bool inline     isReading();                                                // Return true if currently in a read.
+        bool inline     isWriting();                                                // return true if currently in a write.
+        bool inline     isHeld();                                                   // Return true if comms are held.
+        int32_t         setHold();                                                  // Set the hold. returns 0 on success or negative for error code.
+        int32_t         clearHold();                                                // Clear the hold. returns 0 on success or negative for error code.
+        int32_t inline  getNextAddress();                                           // Return the next address. -1 means address hasn't been set.
+        int32_t inline  getLastAddress();                                           // Return the last address read / written. -1 means no address has been read / written.
+        int32_t         startRead(const uint32_t address);                          // Start the read process. return 0 for okay, negative for error code.
+        int32_t         read();                                                     // Read a single byte returns byte read. 0 -> 255 byte read, negative for error code.
+        int32_t         startWrite(const uint32_t address);                         // start the write process returns 0 for okay, negative for error code.
+        int32_t         write(const uint8_t value);                                 // write a single byte. returns 0 for okay, negative for error code.
+        int32_t         stop();                                                     // stop the read / write process. returns 0 for okay, negative for error code.
 
     private:
     /* Variables: */
@@ -92,10 +93,15 @@ class my23LC1024 {
         uint8_t _commsMode;         // the comms mode.
         bool    _useHWSPI = false;  // true if we are useing hw spi.
         uint8_t _status = 0x00;     // the status byte. Packed uint8.
+        int32_t _nextAddress;       // The next address to read / write.
+        int32_t _lastAddress;       // The last address read / written.
+        uint8_t _lastState;         // The last reading or writing state. for mimicing hold.
 
     /* Functions: */
         void inline __selectChip__();                                               // Lower the cs line.
         void inline __deselectChip__();                                             // raise the cs line.
+        void inline __incrementAddress__();                                         // Increment the stored address, wrapping at max address.
+        void inline __setAddress__(int32_t value);                                 // Set the address we're working on.
         uint8_t inline __getState__();                                              // return the state bits from the status byte.
         void inline __setStateIdle__();                                             // Set the state bits in the status byte to idle.
         void inline __setStateRead__();                                             // Set the state bits in the status byte to reading.
@@ -106,12 +112,14 @@ class my23LC1024 {
         void inline __setSDIPinModes__(const bool isOutput);                        // Set the pin modes for bit banged SDI.
         void inline __setSQIPinModes__(const bool isOutput);                        // Set the pin modes for bit banged SQI.
         void        __resetComms__();                                               // Reset the comms mode to SPI.
-        int32_t    __HWSPIRead__(uint8_t *buffer, const uint32_t length);          // Use hw spi to read.
-        int32_t    __HWSPIWrite__(const uint8_t *buffer, const uint32_t length);   // Use hw spi to write.
+        int32_t    __HWSPIRead__(uint8_t *buffer, const int32_t length);          // Use hw spi to read.
+        int32_t    __HWSPIWrite__(const uint8_t *buffer, const int32_t length);   // Use hw spi to write.
+        int32_t     __SPIRead(uint8_t *buffer, int32_t length);                    // Bit banged SPI read.
+        int32_t     __SPIWrite__(uint8_t *buffer, const int32_t length);           // Bit banged SPI write.
         void        __writeByte__(const uint8_t value);                             // Select the right write function and transfer a single byte.
-        int32_t    __writeBuffer__(const uint8_t *buffer, const uint32_t length);  // Select the right write function and transfer a series of bytes. Returns the number of bytes written.
+        int32_t    __writeBuffer__(const uint8_t *buffer, const int32_t length);  // Select the right write function and transfer a series of bytes. Returns the number of bytes written.
         uint8_t     __readByte__();                                                 // Select the right read function and read a single byte. returns byte read.
-        int32_t    __readBuffer__(uint8_t *buffer, const uint32_t length);         // Select the right read function and read a series of bytes. returns number of bytes read.
+        int32_t    __readBuffer__(uint8_t *buffer, const int32_t length);         // Select the right read function and read a series of bytes. returns number of bytes read.
         uint8_t     __readModeRegister__();                                         // Return the value of the mode register.
         void        __writeModeRegister__(uint8_t value);                           // Set the value of the mode register.
 
@@ -307,6 +315,13 @@ int32_t my23LC1024::clearHold() {
     return 0;
 }
 
+int32_t inline my23LC1024::getNextAddress() {
+    return _nextAddress;
+}
+
+int32_t inline my23LC1024::getLastAddress() {
+    return _lastAddress;
+}
 
 int32_t my23LC1024::startRead(const uint32_t address) {
     if (address > VALID_ADDRESS_MASK) {
@@ -334,6 +349,7 @@ int32_t my23LC1024::startRead(const uint32_t address) {
             ;
             break;
     }
+    __setAddress__(address);
     __setStateRead__();
     return 0;
 }
@@ -348,20 +364,8 @@ int32_t my23LC1024::read() {
     if (isReading() == false) {
         return ERROR_NOT_READING;
     }
+    __incrementAddress__();
     return (int32_t)__readByte__();
-}
-
-int32_t my23LC1024::readBuffer(uint8_t *buffer, uint32_t length) {
-    if (isIdle() == true) {
-        return ERROR_SRAM_IDLE;
-    }
-    if (isHeld() == true) {
-        return ERROR_SRAM_HELD;
-    }
-    if (isReading() == false) {
-        return ERROR_NOT_READING;
-    }
-    return (int32_t)__readBuffer__(buffer, length);
 }
 
 int32_t my23LC1024::startWrite(const uint32_t address) {
@@ -382,7 +386,9 @@ int32_t my23LC1024::startWrite(const uint32_t address) {
     };
     __selectChip__();
     __writeBuffer__(buffer, 4);
+    __setAddress__(address);
     __setStateWrite__();
+    return ERROR_NO_ERROR;
 }
 
 int32_t my23LC1024::write(const uint8_t value) {
@@ -396,19 +402,8 @@ int32_t my23LC1024::write(const uint8_t value) {
         return ERROR_NOT_WRITING;
     }
     __writeByte__(value);
+    __incrementAddress__();
     return ERROR_NO_ERROR;
-}
-
-int32_t my23LC1024::writeBuffer(const uint8_t *buffer, const uint32_t length) {
-    if (isIdle() == true) {
-        return ERROR_SRAM_IDLE;
-    }
-    if (isHeld() == true) {
-        return ERROR_SRAM_HELD;
-    }
-    if (isWriting() == false) {
-        return ERROR_NOT_WRITING;
-    }
 }
 
 int32_t my23LC1024::stop() {
@@ -441,6 +436,19 @@ void inline my23LC1024::__selectChip__() {
 
 void inline my23LC1024::__deselectChip__() {
     gpio_put(_csPin, true);
+}
+
+void inline my23LC1024::__setAddress__(const int32_t value) {
+    _lastAddress = _nextAddress;
+    _nextAddress = value;
+}
+
+void inline my23LC1024::__incrementAddress__() {
+    _lastAddress = _nextAddress;
+    _nextAddress += 1;
+    if (_nextAddress == MAX_LENGTH) {
+        _nextAddress = 0;
+    }
 }
 
 uint8_t inline my23LC1024::__getState__() {
@@ -537,11 +545,11 @@ void my23LC1024::__resetComms__() {
     }
 }
 
-int32_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const uint32_t length) {
+int32_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const int32_t length) {
     return spi_read_blocking(_spiPort, 0x00, buffer, length);
 }
 
-int32_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const uint32_t length) {
+int32_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const int32_t length) {
     return spi_write_blocking(_spiPort, buffer, length);
 }
 
@@ -567,23 +575,23 @@ uint8_t my23LC1024::__readByte__() {
     }
 }
 
-int32_t my23LC1024::__readBuffer__(uint8_t *buffer, uint32_t length) {
+int32_t my23LC1024::__readBuffer__(uint8_t *buffer, int32_t length) {
     if (_useHWSPI == true) {
         return __HWSPIRead__(buffer, length);
     } else {
-        uint16_t value;
+        int32_t bytesRead;
         switch (_commsMode) {
             case COMM_MODE_SPI:
-                value = 0x00;
+                bytesRead = 0x00;
                 break;
             case COMM_MODE_SDI:
-                value = 0x00;
+                bytesRead = 0x00;
                 break;
             case COMM_MODE_SQI:
-                value = 0x00;
+                bytesRead = 0x00;
                 break;
         }
-        return value;
+        return bytesRead;
     }
 }
 
@@ -606,24 +614,23 @@ void my23LC1024::__writeByte__(const uint8_t value) {
     }
 }
 
-int32_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const uint32_t length) {
+int32_t my23LC1024::__writeBuffer__(const uint8_t *buffer, const int32_t length) {
     if (_useHWSPI == true) {
-        int32_t bytesSent = __HWSPIWrite__(buffer, length);
-        return bytesSent;
+        return __HWSPIWrite__(buffer, length);
     } else {
-        uint16_t value;
+        int32_t bytesSent;
         switch (_commsMode) {
             case COMM_MODE_SPI:
-                value = 0x00;
+                bytesSent = 0x00;
                 break;
             case COMM_MODE_SDI:
-                value = 0x00;
+                bytesSent = 0x00;
                 break;
             case COMM_MODE_SQI:
-                value = 0x00;
+                bytesSent = 0x00;
                 break;        
         }
-        return value;
+        return bytesSent;
     }
 }
 
