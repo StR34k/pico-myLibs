@@ -275,6 +275,7 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
 bool inline my23LC1024::validateAddress(const int32_t address) {
     if (address > VALID_ADDRESS_MASK) { return false; }
     if (address < 0) { return false; }
+    return true;
 }
 
 bool inline my23LC1024::isIdle() {
