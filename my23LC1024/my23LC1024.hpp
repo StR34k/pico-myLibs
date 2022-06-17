@@ -57,14 +57,48 @@ class my23LC1024 {
         static const int32_t ERROR_NOT_READING = MY_ERROR_MY23LC1024_NOT_READING;              // Sram is not in the reading state.
         static const int32_t ERROR_NOT_WRITING = MY_ERROR_MY23LC1024_NOT_WRITING;              // Sram is not in the writing state.
         static const int32_t ERROR_HOLD_NOT_AVAILABLE = MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE;// Hold function is not available.
+    /* Pin assignment:*/
+        // const spi_inst_t *_spiPort;
+        const uint8_t _csPin = MY_NOT_A_PIN;
+        const uint8_t _sckPin = MY_NOT_A_PIN;
+        const uint8_t _misoPin = MY_NOT_A_PIN;
+        const uint8_t _mosiPin = MY_NOT_A_PIN;
+        const uint8_t _holdPin = MY_NOT_A_PIN;
+        const uint8_t _sio2Pin = MY_NOT_A_PIN;
+
     /* Constructor: */
-        // HW SPI Constructors:
-        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin); // HW SPI no hold.
-        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin); // HW SPI with hold.
-        // Bit Bang comms Constructors:
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin); // Bit banged spi / sdi, no hold.
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin); // Bit banged spi / sdi with hold.
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin); // Sqi. no hold.
+    // HW SPI Constructors:
+        // HW SPI no hold.
+        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
+                        const uint8_t mosiPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin) {
+            _spiPort = spiPort;
+            _useHWSPI = true;
+        }
+        // HW SPI with hold.
+        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
+                        const uint8_t mosiPin, const uint8_t holdPin) :  _csPin (csPin), _sckPin (sckPin), 
+                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (_holdPin) {
+            _spiPort = spiPort;
+            _useHWSPI = true;
+        }
+    // Bit Bang comms Constructors:
+        // Bit banged spi / sdi, no hold.
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) :
+                        _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin) {
+            _useHWSPI = false;
+        }
+        // Bit banged spi / sdi with hold.
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
+                         const uint8_t holdPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin),
+                         _mosiPin (mosiPin), _holdPin(holdPin) {
+            _useHWSPI = false;
+        }
+        // Sqi. no hold.
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, 
+                        const uint8_t holdPin, const uint8_t sio2Pin) : _csPin (csPin), _sckPin (sckPin),
+                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (holdPin), _sio2Pin (sio2Pin) {
+            _useHWSPI = false;
+        }
     /* Functions: */
         bool            initialize(const uint8_t commsMode);                        // Return true if comms verified, false if not.
         bool inline     isIdle();                                                   // Return True if currently idle.
@@ -85,18 +119,18 @@ class my23LC1024 {
     private:
     /* Variables: */
         spi_inst_t *_spiPort;       // The spi object from the sdk
-        uint8_t _csPin;             // The cs pin
-        uint8_t _sckPin;            // the sck pin
-        uint8_t _misoPin;           // the rx pin
-        uint8_t _mosiPin;           // the tx pin
-        uint8_t _holdPin;           // the hold pin.
-        uint8_t _sio2Pin;           // the sio2 pin.
+        // uint8_t _csPin;             // The cs pin
+        // uint8_t _sckPin;            // the sck pin
+        // uint8_t _misoPin;           // the rx pin
+        // uint8_t _mosiPin;           // the tx pin
+        // uint8_t _holdPin;           // the hold pin.
+        // uint8_t _sio2Pin;           // the sio2 pin.
         uint8_t _commsMode;         // the comms mode.
         bool    _useHWSPI = false;  // true if we are useing hw spi.
         uint8_t _status = 0x00;     // the status byte. Packed uint8.
         int32_t _nextIndex = -1;  // The next address to read / write.
         int32_t _lastIndex = -1;  // The last address read / written.
-        uint8_t _lastState;         // The last reading or writing state. for mimicing hold.
+        // uint8_t _lastState;         // The last reading or writing state. for mimicing hold.
 
     /* Functions: */
         void inline __selectChip__();                                               // Lower the cs line.
@@ -130,63 +164,6 @@ class my23LC1024 {
 
 };
 
-/***********************************************************************************
- * Constructors:
- ***********************************************************************************/
-/* HW SPI Constructors: */
-// HW SPI without hold.
-my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) {
-    _spiPort = spiPort;
-    _csPin = csPin;
-    _sckPin = sckPin;
-    _misoPin = misoPin;
-    _mosiPin = mosiPin;
-    _holdPin = MY_NOT_A_PIN;
-    _sio2Pin = MY_NOT_A_PIN;
-    _useHWSPI = true;
-}
-// HW SPI with hold.
-my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin) {
-    _spiPort = spiPort;
-    _csPin = csPin;
-    _sckPin = sckPin;
-    _misoPin = misoPin;
-    _mosiPin = mosiPin;
-    _holdPin = holdPin;
-    _sio2Pin = MY_NOT_A_PIN;
-    _useHWSPI = true;
-}
-/* Bit Bang comms Constructors: */
-// SPI / SDI with no hold.
-my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) {
-    _csPin = csPin;
-    _sckPin = sckPin;
-    _misoPin = misoPin;
-    _mosiPin = mosiPin;
-    _holdPin = MY_NOT_A_PIN;
-    _sio2Pin = MY_NOT_A_PIN;
-    _useHWSPI = false;
-}
-// SPI / SDI with hold.
-my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin) {
-    _csPin = csPin;
-    _sckPin = sckPin;
-    _misoPin = misoPin;
-    _mosiPin = mosiPin;
-    _holdPin = holdPin;
-    _sio2Pin = MY_NOT_A_PIN;    
-    _useHWSPI = false;
-}
-// SQI
-my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin) {
-    _csPin = csPin;
-    _sckPin = sckPin;
-    _misoPin = misoPin;
-    _mosiPin = mosiPin;
-    _holdPin = holdPin;
-    _sio2Pin = sio2Pin;
-    _useHWSPI = false;
-}
 /**************************************************************************
  * Public functions:
  **************************************************************************/
@@ -200,25 +177,21 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         if (_holdPin == MY_NOT_A_PIN) { return false; } 
         if (_sio2Pin == MY_NOT_A_PIN) { return false; }
     }
-// Set pin functions, modes, and initial states:
-    gpio_init(_csPin); // Initialize cs pin.
+// Initialize pins as GPIO for now.
+    gpio_init(_csPin);
+    gpio_init(_sckPin);
+    gpio_init(_misoPin);
+    gpio_init(_mosiPin);
+// Set Directions
     gpio_set_dir(_csPin, GPIO_OUT); // Set cs as output.
+    gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
+    gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
+    gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
+// Set initial states:
     gpio_put(_csPin, true); // Set cs High.
-    if (_useHWSPI == true) {
-        spi_init(_spiPort, 1000*20000); // init spi at 20 Mhz.
-        gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
-        gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
-        gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
-    } else {
-        gpio_init(_sckPin);
-        gpio_init(_misoPin);
-        gpio_init(_mosiPin);
-        gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
-        gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
-        gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
-        gpio_put(_sckPin, false); // set sck Low
-        gpio_put(_mosiPin, false); // set mosi low
-    }
+    gpio_put(_sckPin, false); // set sck Low
+    gpio_put(_mosiPin, false); // set mosi low
+    
 // Set pin functions, modes, and inital state of hold and sio2:
     if (_holdPin != MY_NOT_A_PIN) {
         gpio_init(_holdPin); // Set hold as gpio.
@@ -231,29 +204,40 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_put(_sio2Pin, true); // set sio2 High.
     }
 // Initialze comms:
-    // __breakpoint();
     __resetComms__();
-    // __breakpoint();
-    if (_useHWSPI == false) {
+
+    if (_useHWSPI == true) {
+        spi_init(_spiPort, 1000*20000); // init spi at 20 Mhz.
+        gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
+        gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
+        gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
+    } else {
         switch (_commsMode) {
             case COMM_MODE_SPI:
                 mySPIMaster::initialize(_sckPin, _misoPin, _mosiPin);
                 break;
             case COMM_MODE_SDI:
                 mySPIMaster::initialize(_sckPin,_misoPin, _mosiPin);
+                __breakpoint();
+                __selectChip__();
                 mySPIMaster::transfer(EDIO_INSTRUCTION);
-                // __breakpoint();
+                __deselectChip__();
                 __setSDIPinModes__(true);
                 break;
             case COMM_MODE_SQI:
-                ;
+                mySPIMaster::initialize(_sckPin, _misoPin, _mosiPin);
+                __selectChip__();
+                mySPIMaster::transfer(EQIO_INSTRUCTION);
+                __deselectChip__();
+                __setSQIPinModes__(true);
                 break;    
         }
     }
 // Validate comms by checking mode, setting it something, and checking it again.
 //   Then reset it back to sequential mode.
     // Read mode:
-    __breakpoint();
+    // return true;
+    // __breakpoint();
     uint8_t mode = __readModeRegister__();
     uint8_t expectedMode;
     // Make sure mode is valid:
@@ -504,51 +488,44 @@ void inline my23LC1024::__setSQIPinModes__(const bool isOutput) {
 }
 
 void my23LC1024::__resetComms__() {
-    if (_useHWSPI == true) {
-        __selectChip__();
-        uint8_t resetCommand = RSTIO_INSTRUCTION;
-        spi_write_blocking(_spiPort, &resetCommand, 1);
-        __deselectChip__();
-    } else {
-        gpio_put(_mosiPin, true);           // Set mosi high
-        gpio_set_dir(_misoPin, GPIO_OUT);    // set Miso output
-        gpio_put(_misoPin, true);           // set miso high.
-        if (_holdPin != MY_NOT_A_PIN) {
-            gpio_put(_holdPin, true);           // set hold pin high if exists.
-        }
-        if (_sio2Pin != MY_NOT_A_PIN) {
-            gpio_put(_sio2Pin, true);           // set sio2 pin high if exists.
-        }
-    // Select and toggle clock 2 times to clear from SQI:
-        __selectChip__();
-        for (uint8_t i=0; i<2; i++) {
-            gpio_put(_sckPin, true);    // Raise clock
-            sleep_us(1);                // Wait for a microsecond.
-            gpio_put(_sckPin, false);   // lower clock
-            sleep_us(1);                // wait for a microsecond.
-        }
-        __deselectChip__();
-    // Select and toggle clock 4 times to clear from SDI:
-        __selectChip__();
-        for (uint8_t i=0; i<4; i++) {
-            gpio_put(_sckPin, true);    // Raise clock
-            sleep_us(1);                // Wait for a microsecond.
-            gpio_put(_sckPin, false);   // lower clock
-            sleep_us(1);                // wait for a microsecond.
-        }
-        __deselectChip__();
-    // Select and toggle clock 8 times to send reset in SPI mode:
-        __selectChip__();
-        for (uint8_t i=0; i<8; i++) {
-            gpio_put(_sckPin, true);    // Raise clock
-            sleep_us(1);                // Wait for a microsecond.
-            gpio_put(_sckPin, false);   // lower clock
-            sleep_us(1);                // wait for a microsecond.
-        }
-        __deselectChip__();
-    // Reset miso line to input:
-        gpio_set_dir(_misoPin, GPIO_IN);
+    gpio_put(_mosiPin, true);           // Set mosi high
+    gpio_set_dir(_misoPin, GPIO_OUT);    // set Miso output
+    gpio_put(_misoPin, true);           // set miso high.
+    if (_holdPin != MY_NOT_A_PIN) {
+        gpio_put(_holdPin, true);           // set hold pin high if exists.
     }
+    if (_sio2Pin != MY_NOT_A_PIN) {
+        gpio_put(_sio2Pin, true);           // set sio2 pin high if exists.
+    }
+// Select and toggle clock 2 times to clear from SQI:
+    __selectChip__();
+    for (uint8_t i=0; i<2; i++) {
+        gpio_put(_sckPin, true);    // Raise clock
+        sleep_us(1);                // Wait for a microsecond.
+        gpio_put(_sckPin, false);   // lower clock
+        sleep_us(1);                // wait for a microsecond.
+    }
+    __deselectChip__();
+// Select and toggle clock 4 times to clear from SDI:
+    __selectChip__();
+    for (uint8_t i=0; i<4; i++) {
+        gpio_put(_sckPin, true);    // Raise clock
+        sleep_us(1);                // Wait for a microsecond.
+        gpio_put(_sckPin, false);   // lower clock
+        sleep_us(1);                // wait for a microsecond.
+    }
+        __deselectChip__();
+// Select and toggle clock 8 times to send reset in SPI mode:
+    __selectChip__();
+    for (uint8_t i=0; i<8; i++) {
+        gpio_put(_sckPin, true);    // Raise clock
+        sleep_us(1);                // Wait for a microsecond.
+        gpio_put(_sckPin, false);   // lower clock
+        sleep_us(1);                // wait for a microsecond.
+    }
+    __deselectChip__();
+// Reset miso line to input:
+    gpio_set_dir(_misoPin, GPIO_IN);
 }
 
 int32_t my23LC1024::__HWSPIRead__(uint8_t *buffer, const int32_t length) {

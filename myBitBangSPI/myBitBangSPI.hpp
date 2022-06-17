@@ -39,6 +39,7 @@ namespace mySPIMaster {
     bool initialize(const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, 
                         const bool msbFirst=true, uint64_t delayUS=1) {
     // Store pins and states for later.
+        __breakpoint();
         if (__validateMode__(mode) == false) {
             return false;
         }
@@ -80,7 +81,8 @@ namespace mySPIMaster {
         uint8_t readValue = 0x00;
 
         for (uint8_t i=0; i<8; i++) {
-        // Set read / write mask
+        // Set read / write mask 00111011
+            // __breakpoint();
             if (_msbFirst == true) {
                 mask = (1 << (7-i));
             } else {
@@ -108,6 +110,7 @@ namespace mySPIMaster {
             }
         // Delay:
             sleep_us(_delayUS);
+            // __breakpoint();
         }
         return readValue;
     }
