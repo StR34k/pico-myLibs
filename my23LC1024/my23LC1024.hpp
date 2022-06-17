@@ -3,6 +3,7 @@
 #define MY23LC1024_H
 #include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
+#include "../myBitBangSPI/myBitBangSPI.hpp"
 #include <pico/stdlib.h>
 #include <pico/time.h>
 #include <hardware/spi.h>
@@ -205,14 +206,16 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
         gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
     } else {
-        gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
-        gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
-        gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
-        gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
-        gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
-        gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
-        gpio_put(_sckPin, false); // set sck Low
-        gpio_put(_mosiPin, false); // set mosi low
+        if (_commsMode != COMM_MODE_SPI) { // Bit baged spi is dealt with in myBitBangSPI
+            gpio_set_function(_sckPin,   GPIO_FUNC_SIO); // set sck as gpio.
+            gpio_set_function(_misoPin,  GPIO_FUNC_SIO); // Set miso as gpio. 
+            gpio_set_function(_mosiPin,  GPIO_FUNC_SIO); // set mosi as gpio.
+            gpio_set_dir(_sckPin, GPIO_OUT); // Set sck as output.
+            gpio_set_dir(_misoPin, GPIO_IN); // Set miso as input.
+            gpio_set_dir(_mosiPin, GPIO_OUT); // Set mosi as output.
+            gpio_put(_sckPin, false); // set sck Low
+            gpio_put(_mosiPin, false); // set mosi low
+        }
     }
 // Set pin functions, modes, and inital state of hold and sio2:
     if (_holdPin != MY_NOT_A_PIN) {
@@ -229,6 +232,9 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     __resetComms__();
     if (_useHWSPI == false) {
         switch (_commsMode) {
+            case COMM_MODE_SPI:
+                mySPIMaster::initialize(_sckPin, _misoPin, _mosiPin);
+                break;
             case COMM_MODE_SDI:
                 ;
                 break;
