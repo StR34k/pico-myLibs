@@ -1,0 +1,7 @@
+Report generated on: Sun Jun 19 10:04:00 UTC 2022
+Packages upgraded:
+Listing...
+cloud-init/jammy-updates 22.2-0ubuntu1~22.04.2 all [upgradable from: 22.2-0ubuntu1~22.04.1]
+python3-software-properties/jammy-updates 0.99.22.2 all [upgradable from: 0.99.22.1]
+software-properties-common/jammy-updates 0.99.22.2 all [upgradable from: 0.99.22.1]
+Reboot required. Rebooted at: Sun Jun 19 10:04:14 UTC 2022

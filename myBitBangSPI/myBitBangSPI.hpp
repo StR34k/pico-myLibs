@@ -39,7 +39,7 @@ namespace mySPIMaster {
     bool initialize(const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, 
                         const bool msbFirst=true, uint64_t delayUS=1) {
     // Store pins and states for later.
-        __breakpoint();
+        // __breakpoint();
         if (__validateMode__(mode) == false) {
             return false;
         }

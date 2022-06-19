@@ -3,7 +3,7 @@
 #define MY23LC1024_H
 #include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
-#include "../myBitBangSPI/myBitBangSPI.hpp"
+// #include "../myBitBangSPI/myBitBangSPI.hpp"
 #include <pico/stdlib.h>
 #include <pico/time.h>
 #include <hardware/spi.h>
@@ -70,14 +70,15 @@ class my23LC1024 {
     // HW SPI Constructors:
         // HW SPI no hold.
         my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
-                        const uint8_t mosiPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin) {
+                        const uint8_t mosiPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin), 
+                        _mosiPin (mosiPin) {
             _spiPort = spiPort;
             _useHWSPI = true;
         }
         // HW SPI with hold.
         my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
                         const uint8_t mosiPin, const uint8_t holdPin) :  _csPin (csPin), _sckPin (sckPin), 
-                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (_holdPin) {
+                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (holdPin) {
             _spiPort = spiPort;
             _useHWSPI = true;
         }
@@ -205,29 +206,32 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     }
 // Initialze comms:
     __resetComms__();
-
+    // __breakpoint();
     if (_useHWSPI == true) {
         spi_init(_spiPort, 1000*20000); // init spi at 20 Mhz.
         gpio_set_function(_sckPin,  GPIO_FUNC_SPI); // set sck as spi.
         gpio_set_function(_misoPin, GPIO_FUNC_SPI); // set miso as spi.
         gpio_set_function(_mosiPin, GPIO_FUNC_SPI); // set mosi as spi.
     } else {
+        uint8_t instruction;
         switch (_commsMode) {
             case COMM_MODE_SPI:
-                mySPIMaster::initialize(_sckPin, _misoPin, _mosiPin);
+                __setSPIPinModes__();
                 break;
             case COMM_MODE_SDI:
-                mySPIMaster::initialize(_sckPin,_misoPin, _mosiPin);
-                __breakpoint();
+                __setSPIPinModes__();
                 __selectChip__();
-                mySPIMaster::transfer(EDIO_INSTRUCTION);
+                // uint8_t cmd = EDIO_INSTRUCTION;
+                instruction = EDIO_INSTRUCTION;
+                __SPIWrite__(&instruction, 1);
                 __deselectChip__();
                 __setSDIPinModes__(true);
                 break;
             case COMM_MODE_SQI:
-                mySPIMaster::initialize(_sckPin, _misoPin, _mosiPin);
+                __setSPIPinModes__();
                 __selectChip__();
-                mySPIMaster::transfer(EQIO_INSTRUCTION);
+                instruction = EQIO_INSTRUCTION;
+                __SPIWrite__(&instruction, 1);
                 __deselectChip__();
                 __setSQIPinModes__(true);
                 break;    
@@ -514,7 +518,7 @@ void my23LC1024::__resetComms__() {
         gpio_put(_sckPin, false);   // lower clock
         sleep_us(1);                // wait for a microsecond.
     }
-        __deselectChip__();
+    __deselectChip__();
 // Select and toggle clock 8 times to send reset in SPI mode:
     __selectChip__();
     for (uint8_t i=0; i<8; i++) {
@@ -537,19 +541,41 @@ int32_t my23LC1024::__HWSPIWrite__(const uint8_t *buffer, const int32_t length) 
 }
 
 int32_t my23LC1024::__SPIRead__(uint8_t *buffer, const int32_t length) {
-    // __breakpoint();
     int32_t bytesRead = 0;
     for (uint32_t i=0; i< length; i++) {
-        buffer[i] = mySPIMaster::transfer(0x00);
-        bytesRead++;
-    }    
+        uint8_t value;
+        for (uint8_t j=0; j<8; j++) {
+            // Set clock high
+            gpio_put(_sckPin, true);
+            sleep_us(1);
+            // read miso
+            value <<= 1;
+            value |= (uint8_t)gpio_get(_misoPin);
+            // set clock low
+            gpio_put(_sckPin, false);
+            sleep_us(1);
+        }
+        buffer[i] = value;
+        bytesRead++;   
+    }
     return bytesRead;
 }
 
 int32_t my23LC1024::__SPIWrite__(const uint8_t *buffer, const int32_t length) {
     int32_t bytesSent = 0;
     for (uint32_t i=0; i<length; i++) {
-        mySPIMaster::transfer(buffer[i]);
+        uint8_t value = buffer[i];
+        for (uint8_t j=0; j<8; j++) {
+            // Write mosi
+            gpio_put(_mosiPin, (bool)(value&0x80));
+            value <<= 1;
+            // set clock high.
+            gpio_put(_sckPin, true);
+            sleep_us(1);
+            // set clock low.
+            gpio_put(_sckPin, false);
+            sleep_us(1);
+        }
         bytesSent++;
     }
     return bytesSent;
@@ -564,13 +590,14 @@ int32_t my23LC1024::__SDIRead__(uint8_t *buffer, const int32_t length) {
         uint8_t value = 0x00;
         for (uint8_t j=0; j<4; j++) {
         // Shift incoming value;
-            value <<= 2;
         // Raise the clock:
             gpio_put(_sckPin,true);
             sleep_us(1);
         // Read the pins:
-            if (gpio_get(sio1) == true) { value |= 0x02; }
-            if (gpio_get(sio0) == true) { value |= 0x01; }
+            value <<= 1;
+            value |= gpio_get(sio1);
+            value <<= 1;
+            value |= gpio_get(sio0);
         // Lower the clock:
             gpio_put(_sckPin, false);
             sleep_us(1);
@@ -582,7 +609,7 @@ int32_t my23LC1024::__SDIRead__(uint8_t *buffer, const int32_t length) {
 
 int32_t my23LC1024::__SDIWrite__(const uint8_t *buffer, const int32_t length) {
 // Set variables:
-    // __breakpoint();
+    __breakpoint();
     int32_t bytesSent = 0;
     const uint8_t sio0 = _mosiPin;
     const uint8_t sio1 = _misoPin;
@@ -657,8 +684,7 @@ int32_t my23LC1024::__readBuffer__(uint8_t *buffer, const int32_t length) {
 
 void my23LC1024::__writeByte__(const uint8_t value) {
     if (_useHWSPI == true) {
-        uint8_t buffer[1] = { value };
-        __HWSPIWrite__(buffer, 1);
+        __HWSPIWrite__(&value, 1);
     } else {
         switch (_commsMode) {
         case COMM_MODE_SPI:
