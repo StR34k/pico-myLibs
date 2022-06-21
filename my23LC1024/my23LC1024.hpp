@@ -4,7 +4,7 @@
 #include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
 // #include "../myBitBangSPI/myBitBangSPI.hpp"
-#include <pico/stdlib.h>
+// #include <pico/stdlib.h>
 #include <pico/time.h>
 #include <hardware/spi.h>
 
@@ -46,25 +46,25 @@ class my23LC1024 {
         static const uint8_t STATUS_HOLD_MASK       = 0X04; // Bit set if held.     0b 0000 0100
         static const uint8_t STATUS_IS_HELD         = 0x04; // Value if bit is set. 0b 0000 0100
         // Error codes:
-        static const int32_t ERROR_NO_ERROR = MY_NO_ERROR;                          // No error.
-        static const int32_t ERROR_INVAID_ADDRESS = MY_ERROR_MY23LC1024_INVALID_ADDRESS;       // An invalid address was passed to a function.
-        static const int32_t ERROR_SRAM_HELD = MY_ERROR_MY23LC1024_SRAM_HELD;                  // Sram has been held by the hold pin.
-        static const int32_t ERROR_SRAM_BUSY = MY_ERROR_MY23LC1024_SRAM_BUSY;                  // Sram is already busy.
-        static const int32_t ERROR_SRAM_IDLE = MY_ERROR_MY23LC1024_SRAM_IDLE;                  // Sram is already idle.
-        static const int32_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED;    // Hold pin is not defined.
-        static const int32_t ERROR_SIO2_NOT_DEFINED = MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED;    // Sio2 pin is not defined.
-        static const int32_t ERROR_SRAM_NOT_HELD = MY_ERROR_MY23LC1024_SRAM_NOT_HELD;          // Sram is not held.
-        static const int32_t ERROR_NOT_READING = MY_ERROR_MY23LC1024_NOT_READING;              // Sram is not in the reading state.
-        static const int32_t ERROR_NOT_WRITING = MY_ERROR_MY23LC1024_NOT_WRITING;              // Sram is not in the writing state.
-        static const int32_t ERROR_HOLD_NOT_AVAILABLE = MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE;// Hold function is not available.
+        static const int32_t NO_ERROR = MY_NO_ERROR;                                      //    0 : No error.
+        static const int32_t ERROR_SRAM_HELD = MY_ERROR_MY23LC1024_SRAM_HELD;                   // -300 : Sram has been held by the hold pin.
+        static const int32_t ERROR_INVAID_ADDRESS = MY_ERROR_MY23LC1024_INVALID_ADDRESS;        // -301 : An invalid address was passed to a function.
+        static const int32_t ERROR_SRAM_BUSY = MY_ERROR_MY23LC1024_SRAM_BUSY;                   // -302 : Sram is already busy.
+        static const int32_t ERROR_SRAM_IDLE = MY_ERROR_MY23LC1024_SRAM_IDLE;                   // -303 : Sram is already idle.
+        static const int32_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED;     // -304 : Hold pin is not defined.
+        static const int32_t ERROR_SIO2_NOT_DEFINED = MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED;     // -305 : Sio2 pin is not defined.
+        static const int32_t ERROR_SRAM_NOT_HELD = MY_ERROR_MY23LC1024_SRAM_NOT_HELD;           // -306 : Sram is not held.
+        static const int32_t ERROR_NOT_READING = MY_ERROR_MY23LC1024_NOT_READING;               // -307 : Sram is not in the reading state.
+        static const int32_t ERROR_NOT_WRITING = MY_ERROR_MY23LC1024_NOT_WRITING;               // -308 : Sram is not in the writing state.
+        static const int32_t ERROR_HOLD_NOT_AVAILABLE = MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE; // -309 : Hold function is not available.
+        static const int32_t ERROR_COMM_CHECK_FAILED = MY_EROOR_MY23LC1024_COMM_CHECK_FAILED;   // -310 : Comms check failed during Init.
     /* Pin assignment:*/
-        // const spi_inst_t *_spiPort;
-        const uint8_t _csPin = MY_NOT_A_PIN;
-        const uint8_t _sckPin = MY_NOT_A_PIN;
-        const uint8_t _misoPin = MY_NOT_A_PIN;
-        const uint8_t _mosiPin = MY_NOT_A_PIN;
-        const uint8_t _holdPin = MY_NOT_A_PIN;
-        const uint8_t _sio2Pin = MY_NOT_A_PIN;
+        const uint8_t _csPin    = MY_NOT_A_PIN;
+        const uint8_t _sckPin   = MY_NOT_A_PIN;
+        const uint8_t _misoPin  = MY_NOT_A_PIN;
+        const uint8_t _mosiPin  = MY_NOT_A_PIN;
+        const uint8_t _holdPin  = MY_NOT_A_PIN;
+        const uint8_t _sio2Pin  = MY_NOT_A_PIN;
 
     /* Constructor: */
     // HW SPI Constructors:
@@ -101,7 +101,8 @@ class my23LC1024 {
             _useHWSPI = false;
         }
     /* Functions: */
-        bool            initialize(const uint8_t commsMode);                        // Return true if comms verified, false if not.
+        int32_t        initialize(const uint8_t commsMode=COMM_MODE_SPI);          // Return 0 if initialized, error code if not.
+        bool inline     validateAddress(const int32_t address);                     // Return True if address valid.
         bool inline     isIdle();                                                   // Return True if currently idle.
         bool inline     isBusy();                                                   // Return true if currently reading or writing.
         bool inline     isReading();                                                // Return true if currently in a read.
@@ -120,12 +121,6 @@ class my23LC1024 {
     private:
     /* Variables: */
         spi_inst_t *_spiPort;       // The spi object from the sdk
-        // uint8_t _csPin;             // The cs pin
-        // uint8_t _sckPin;            // the sck pin
-        // uint8_t _misoPin;           // the rx pin
-        // uint8_t _mosiPin;           // the tx pin
-        // uint8_t _holdPin;           // the hold pin.
-        // uint8_t _sio2Pin;           // the sio2 pin.
         uint8_t _commsMode;         // the comms mode.
         bool    _useHWSPI = false;  // true if we are useing hw spi.
         uint8_t _status = 0x00;     // the status byte. Packed uint8.
@@ -169,14 +164,14 @@ class my23LC1024 {
  * Public functions:
  **************************************************************************/
 
-bool my23LC1024::initialize(const uint8_t commsMode) {
+int32_t my23LC1024::initialize(const uint8_t commsMode) {
     // __breakpoint();
 // Store comms mode:
     _commsMode = commsMode;
 // Do some basic checks:
     if (commsMode == COMM_MODE_SQI) { // SQI requires hold and sio2 to be defined.
-        if (_holdPin == MY_NOT_A_PIN) { return false; } 
-        if (_sio2Pin == MY_NOT_A_PIN) { return false; }
+        if (_holdPin == MY_NOT_A_PIN) { return ERROR_HOLD_NOT_DEFINED; } 
+        if (_sio2Pin == MY_NOT_A_PIN) { return ERROR_SIO2_NOT_DEFINED; }
     }
 // Initialize pins as GPIO for now.
     gpio_init(_csPin);
@@ -221,7 +216,6 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
             case COMM_MODE_SDI:
                 __setSPIPinModes__();
                 __selectChip__();
-                // uint8_t cmd = EDIO_INSTRUCTION;
                 instruction = EDIO_INSTRUCTION;
                 __SPIWrite__(&instruction, 1);
                 __deselectChip__();
@@ -245,9 +239,8 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     uint8_t mode = __readModeRegister__();
     uint8_t expectedMode;
     // Make sure mode is valid:
-    printf("Got mode: 0x%x\n", mode);
     if (mode != SRAM_MODE_BYTE and mode != SRAM_MODE_SEQ and mode != SRAM_MODE_PAGE) {
-        return false; // Invalid value returned.
+        return ERROR_COMM_CHECK_FAILED; // Invalid value returned.
     }
     // Write the mode register to a different non zero value. byte mode is 0x00 which could be an error.
     if (mode != SRAM_MODE_SEQ) {
@@ -260,12 +253,17 @@ bool my23LC1024::initialize(const uint8_t commsMode) {
     // Read the mode register and verify:
     mode = __readModeRegister__();
     if (mode != expectedMode) {
-        return false;
+        return ERROR_COMM_CHECK_FAILED;
     }
     // Set the mode to sequential mode if not already.
     if (mode != SRAM_MODE_SEQ) {
         __writeModeRegister__(SRAM_MODE_SEQ);
     }
+    return NO_ERROR;
+}
+
+bool inline my23LC1024::validateAddress(const int32_t address) {
+    if (abs(address) > MAX_ADDRESS) { return false; }
     return true;
 }
 
@@ -320,6 +318,7 @@ int32_t my23LC1024::startRead(const int32_t address) {
 // Do checks:
     if (isHeld() == true) { return ERROR_SRAM_HELD; }
     if (isBusy() == true) { return ERROR_SRAM_BUSY; }
+    if (validateAddress(address) == false) { return ERROR_INVAID_ADDRESS; }
 // Convert address to an index:
     int32_t index = address;
     if (address < 0) { index = LENGTH - abs(address); }
@@ -369,6 +368,7 @@ int32_t my23LC1024::startWrite(const int32_t address) {
 // Do checks:
     if (isHeld() == true) { return ERROR_SRAM_HELD; }
     if (isBusy() == true) { return ERROR_SRAM_BUSY; }
+    if (validateAddress(address) == false) { return ERROR_INVAID_ADDRESS; }
 // Convert address to index:
     int32_t index = address;
     if (address < 0) { index = LENGTH - abs(address); }
@@ -384,7 +384,7 @@ int32_t my23LC1024::startWrite(const int32_t address) {
 // Set the states:
     __setNextIndex__(index);
     __setStateWrite__();
-    return ERROR_NO_ERROR;
+    return NO_ERROR;
 }
 
 int32_t my23LC1024::write(const uint8_t value) {
@@ -393,7 +393,7 @@ int32_t my23LC1024::write(const uint8_t value) {
     if (isWriting() == false) { return ERROR_NOT_WRITING; }
     __writeByte__(value);
     __incrementIndex__();
-    return ERROR_NO_ERROR;
+    return NO_ERROR;
 }
 
 int32_t my23LC1024::stop() {
@@ -413,7 +413,7 @@ int32_t my23LC1024::stop() {
         }
     }
     __setStateIdle__();
-    return ERROR_NO_ERROR;
+    return NO_ERROR;
 }
 /*********************************************************************
  * Private functions:
@@ -470,24 +470,57 @@ void inline my23LC1024::__setSPIPinModes__() {
 void inline my23LC1024::__setSDIPinModes__(const bool isOutput) {
     if (isOutput == true) {
         gpio_set_dir(_misoPin, GPIO_OUT);
+        gpio_set_pulls(_misoPin, false, false);
+
         gpio_set_dir(_mosiPin, GPIO_OUT);
+        gpio_set_pulls(_mosiPin, false, false);
     } else {
+        gpio_put(_misoPin, false);
         gpio_set_dir(_misoPin, GPIO_IN);
+        gpio_set_input_enabled(_misoPin, true);
+        gpio_pull_up(_misoPin);
+
+        gpio_put(_mosiPin, false);
         gpio_set_dir(_mosiPin, GPIO_IN);
+        gpio_set_input_enabled(_mosiPin, true);
+        gpio_pull_up(_mosiPin);
     }
 }
 
 void inline my23LC1024::__setSQIPinModes__(const bool isOutput) {
     if (isOutput == true) {
         gpio_set_dir(_misoPin, GPIO_OUT);
+        gpio_set_pulls(_misoPin, false, false);
+
         gpio_set_dir(_mosiPin, GPIO_OUT);
+        gpio_set_pulls(_mosiPin, false, false);
+
         gpio_set_dir(_holdPin, GPIO_OUT);
+        gpio_set_pulls(_holdPin, false, false);
+
         gpio_set_dir(_sio2Pin, GPIO_OUT);
+        gpio_set_pulls(_sio2Pin, false, false);
     } else {
+        gpio_put(_misoPin, false);
         gpio_set_dir(_misoPin, GPIO_IN);
+        gpio_set_input_enabled(_misoPin, true);
+        gpio_pull_up(_misoPin);
+
+        gpio_put(_mosiPin, false);
         gpio_set_dir(_mosiPin, GPIO_IN);
+        gpio_set_input_enabled(_mosiPin, true);
+        gpio_pull_up(_mosiPin);
+
+        gpio_put(_holdPin, false);
         gpio_set_dir(_holdPin, GPIO_IN);
+        gpio_set_input_enabled(_holdPin, true);
+        gpio_pull_up(_holdPin);
+        
+        
+        gpio_put(_sio2Pin, false);
         gpio_set_dir(_sio2Pin, GPIO_IN);
+        gpio_set_input_enabled(_sio2Pin, true);
+        gpio_pull_up(_sio2Pin);
     }
 }
 
@@ -598,10 +631,12 @@ int32_t my23LC1024::__SDIRead__(uint8_t *buffer, const int32_t length) {
             value |= gpio_get(sio1);
             value <<= 1;
             value |= gpio_get(sio0);
+            // __breakpoint();
         // Lower the clock:
             gpio_put(_sckPin, false);
             sleep_us(1);
         }
+        buffer[i] = value;
         bytesRead += 1;
     }
     return bytesRead;
@@ -609,7 +644,7 @@ int32_t my23LC1024::__SDIRead__(uint8_t *buffer, const int32_t length) {
 
 int32_t my23LC1024::__SDIWrite__(const uint8_t *buffer, const int32_t length) {
 // Set variables:
-    __breakpoint();
+    // __breakpoint();
     int32_t bytesSent = 0;
     const uint8_t sio0 = _mosiPin;
     const uint8_t sio1 = _misoPin;
@@ -624,6 +659,7 @@ int32_t my23LC1024::__SDIWrite__(const uint8_t *buffer, const int32_t length) {
             sleep_us(1);
             gpio_put(_sckPin, false);
             sleep_us(1);
+            // __breakpoint();
         // Shift the value:
             value <<= 2;
         }
@@ -633,11 +669,82 @@ int32_t my23LC1024::__SDIWrite__(const uint8_t *buffer, const int32_t length) {
 }
 
 int32_t my23LC1024::__SQIRead__(uint8_t *buffer, const int32_t length) {
-    return 0;
+    const uint8_t sio0 = _mosiPin;
+    const uint8_t sio1 = _misoPin;
+    const uint8_t sio2 = _sio2Pin;
+    const uint8_t sio3 = _holdPin;
+    int32_t bytesRead = 0;
+    for (int32_t i=0; i<length; i++) {
+        uint8_t value = 0x00;
+        // Set clock high
+        gpio_put(_sckPin, true);
+        sleep_us(1);
+        // read upper nibble
+        value |= gpio_get(sio3);
+        value <<= 1;
+        value |= gpio_get(sio2);
+        value <<= 1;
+        value |= gpio_get(sio1);
+        value <<= 1;
+        value |= gpio_get(sio0);
+        value <<= 1;        
+        // __breakpoint();
+        // set clock low
+        gpio_put(_sckPin, false);
+        sleep_us(1);
+        // set clock high
+        gpio_put(_sckPin, true);
+        sleep_us(1);
+        // read lower nibble
+        value |= gpio_get(sio3);
+        value <<= 1;
+        value |= gpio_get(sio2);
+        value <<= 1;
+        value |= gpio_get(sio1);
+        value <<= 1;
+        value |= gpio_get(sio0);
+        // __breakpoint();
+        // set clock low
+        gpio_put(_sckPin, false);
+        sleep_us(1);
+        buffer[i] = value;
+        bytesRead++;
+    }
+    return bytesRead;
 }
 
 int32_t my23LC1024::__SQIWrite__(const uint8_t *buffer, const int32_t length) {
-    return 0;
+    const uint8_t sio0 = _mosiPin;
+    const uint8_t sio1 = _misoPin;
+    const uint8_t sio2 = _sio2Pin;
+    const uint8_t sio3 = _holdPin;
+    int32_t bytesSent = 0;
+    for (int32_t i = 0; i<length; i++) {
+    // Write upper nibble:
+        gpio_put(sio3, (bool)(buffer[i] & 0x80));
+        gpio_put(sio2, (bool)(buffer[i] & 0x40));
+        gpio_put(sio1, (bool)(buffer[i] & 0x20));
+        gpio_put(sio0, (bool)(buffer[i] & 0x10));
+        // __breakpoint();
+    // Toggle clock:
+        gpio_put(_sckPin, true);
+        sleep_us(1);
+        gpio_put(_sckPin, false);
+        sleep_us(1);
+    // Write lower nibble:
+        gpio_put(sio3, (bool)(buffer[i] & 0x08));
+        gpio_put(sio2, (bool)(buffer[i] & 0x04));
+        gpio_put(sio1, (bool)(buffer[i] & 0x02));
+        gpio_put(sio0, (bool)(buffer[i] & 0x01));
+        // __breakpoint();
+    // Toggle clock:
+        gpio_put(_sckPin, true);
+        sleep_us(1);
+        gpio_put(_sckPin, false);
+        sleep_us(1);
+        bytesSent++;
+    }
+    return bytesSent;
 }
 
 uint8_t my23LC1024::__readByte__() {
@@ -727,11 +834,11 @@ uint8_t my23LC1024::__readModeRegister__() {
     switch (_commsMode) {
         case COMM_MODE_SDI:
             __setSDIPinModes__(false);
-            __readByte__();
+            // __readByte__();
             break;
         case COMM_MODE_SQI:
             __setSQIPinModes__(false);
-            __readByte__();
+            // __readByte__();
             break;
     }
     uint8_t value = __readByte__();
