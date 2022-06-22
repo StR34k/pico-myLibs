@@ -34,7 +34,11 @@ class myHC12 {
         static const uint8_t POWER_14DBM = 0x06;
         static const uint8_t POWER_17DBM = 0x07;
         static const uint8_t POWER_20DBM = 0x08;
-
+        // Error codes:
+        static const int16_t ERROR_INVALID_BAUD = MY_ERROR_MYHC12_INVALID_BAUD;         // -350 : Invalid baud provided.
+        static const int16_t ERROR_INVALID_CHANNEL = MY_ERROR_MYHC12_INVALID_CHANNEL;   // -351 : Invalid channel provided.
+        static const int16_t ERROR_INVALID_MODE = MY_ERROR_MYHC12_INVALID_MODE;         // -352 : Invalid mode provided.
+        static const int16_t ERROR_INVALID_POWER = MY_ERROR_MYHC12_INVALID_POWER;       // -353 : Invalid power level provided.
     /* Constructors: */
         myHC12(uart_inst_t *uartPort, const uint8_t rxPin, const uint8_t txPin) : 
                     _rxPin (rxPin), _txPin (txPin) {
@@ -46,11 +50,17 @@ class myHC12 {
             _uartPort = uartPort;
         }
     /* Functions: */
+        // Validation funcitons:
         bool    validBaud(const uint8_t baud);
         bool    validChannel(const uint8_t channel);
         bool    validPower(const uint8_t power);
         bool    validMode(const uint8_t mode);
-
+        // Set functions:
+        int16_t setBaud(const uint8_t baud);
+        int16_t setChannel(const uint8_t channel);
+        int16_t setPower(const uint8_t power);
+        int16_t setMode(const uint8_t mode);
+        // Initialize function:
         int16_t initialize(const uint8_t baud=BAUD_9600, const uint8_t channel=MIN_CHANNEL, 
                                 const uint8_t txPower=POWER_20DBM, const uint8_t mode=MODE_FU3);
     private:
@@ -64,6 +74,7 @@ class myHC12 {
         uint8_t _mode = MODE_FU3;
         uint8_t _channel = MIN_CHANNEL;
         uint32_t _txDelay = 80; // Default tx delay in milliseconds.
+    /* Functions: */
 
 };
 
@@ -71,7 +82,11 @@ class myHC12 {
  *  Public Functions:
  */
 bool myHC12::validBaud(const uint8_t baud) {
-    if (baud > BAUD_115200) { return false; }
+    if (_mode == MODE_FU2 and baud > BAUD_4800) {
+        return false;
+    }else if (baud > BAUD_115200) { 
+        return false;
+    }
     return true;
 }
 
@@ -92,13 +107,33 @@ bool myHC12::validPower(const uint8_t power) {
 
 int16_t myHC12::initialize(const uint8_t baud, const uint8_t channel, const uint8_t txPower, 
                                 const uint8_t mode) {
+// Validate arguments:
+    if (validBaud(baud) == false) { return ERROR_INVALID_BAUD; }
+    if (validChannel(channel) == false) { return ERROR_INVALID_CHANNEL; }
+    if (validMode(mode) == false) { return ERROR_INVALID_MODE; }
+    if (validPower(txPower) == false) { return ERROR_INVALID_POWER; }
     uart_init(_uartPort, 9600);
     gpio_set_function(_rxPin, GPIO_FUNC_UART);
     gpio_set_function(_txPin, GPIO_FUNC_UART);
     if (_setPin != MY_NOT_A_PIN) {
+    // Init the gpio:
         gpio_init(_setPin);
         gpio_set_dir(_setPin, GPIO_OUT);
         gpio_put(_setPin, true);
+    // if we're given a mode, switch to mode.
+        sleep_ms(500);
+        gpio_put(_setPin, false);
+        uart_puts(_uartPort, "AT");
+        char buffer[10];
+        // uart_read_blocking(_uartPort, buffer, 1);
+        buffer[0] = uart_getc(_uartPort);
+        // uart_getc(_)
+        printf("Buffer: %s\n", buffer[0]);    
+    // If we're given a baud switch:
+    // If we're give a channel switch to channel:
+    // if we're given a power level switch powerlevels.
+    
+    
     }
     return MY_NO_ERROR;
 }
