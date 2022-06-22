@@ -9,15 +9,17 @@
 
 
 //************* General Error codes: 0-99 *****************//
-    #ifndef MY_OKAY
-        #define MY_OKAY                                         0
-    #endif
     #ifndef MY_NO_ERROR
-        #define MY_NO_ERROR                                     0
+        #define MY_NO_ERROR                                  0
     #endif
     #ifndef MY_GENERAL_ERROR
-        #define MY_GENERAL_ERROR                                -1
+        #define MY_GENERAL_ERROR                            -1
     #endif
+    #define MY_INVALID_PIN                                  -2  // An invalid pin number was passed.
+    #define MY_INVALID_BIT_MASK                             -3  // An invalid bit mask was passed.
+    #define MY_TIMEOUT                                      -4  // A time out has been reached.
+    #define MY_INVALID_DIR                                  -5  // A pin is set to wront direction for operation requested.
+
 
 //************* myADC error codes (200-249)  **************//
 // *NOTE: Error codes are such a that the pico would stop operating
@@ -47,7 +49,9 @@
     #define MY_ERROR_MYHC12_INVALID_POWER                   -353
 
 
-
+// *************** mySNx4HC595 error codes (400-449) ****************//
+    #define MY_ERROR_MY595_ENABLE_NOT_DEFINED               -400
+    #define MY_ERROR_MY595_CLEAR_NOT_DEFINED                -401
 
 
 
