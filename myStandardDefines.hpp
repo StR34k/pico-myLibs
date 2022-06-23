@@ -1,4 +1,8 @@
 /**
+ * Standard defines and helper macros.
+ * Set some defines used by pico-myLibs. Some error values overlap with myErrorCodes.hpp, values here take
+ * precidence over myErrorCodes.hpp
+ 
  * @file myStandardDefines.hpp
  * @author Peter Nearing (pnearing@protonmail.com)
  * @brief Standard defines for pico-myLibs
@@ -10,10 +14,10 @@
  */
 
 /**
- * Standard defines and helper macros.
+ * @brief Standard defines:
  * Set some defines used by pico-myLibs. Some error values overlap with myErrorCodes.hpp, values here take
  * precidence over myErrorCodes.hpp
- */
+  */
 #ifndef MY_STANDARD_DEFINES_H
     #define MY_STANDARD_DEFINES_H
 /* Pin defines */

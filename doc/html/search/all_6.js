@@ -1,9 +1,20 @@
 var searchData=
 [
-  ['filter_5f16_72',['FILTER_16',['../classmy_b_mx280.html#a0aa50e080904003cd5575740146a86c5',1,'myBMx280']]],
-  ['filter_5f2_73',['FILTER_2',['../classmy_b_mx280.html#a2f11c98f38b4294980160496305bd202',1,'myBMx280']]],
-  ['filter_5f4_74',['FILTER_4',['../classmy_b_mx280.html#a86810edd5c7714abcef2b79c8a2bc864',1,'myBMx280']]],
-  ['filter_5f8_75',['FILTER_8',['../classmy_b_mx280.html#ab0b6524a00b30e1d560cc6c5110cffb7',1,'myBMx280']]],
-  ['filter_5foff_76',['FILTER_OFF',['../classmy_b_mx280.html#a56eeb6451826aa4d2278dbb5d876404c',1,'myBMx280']]],
-  ['forced_5fmode_77',['forced_mode',['../classmy_b_mx280.html#ac3cb2da4406c6dbe052ba0043c14c90c',1,'myBMx280']]]
+  ['getadcinit_56',['getADCInit',['../namespacemy_a_d_c.html#a769381b85630da9c5cb7e21c2efcd3d3',1,'myADC']]],
+  ['getchannelinit_57',['getChannelInit',['../namespacemy_a_d_c.html#af351cc973db0eb54ab75f168073511b3',1,'myADC']]],
+  ['getconfig_58',['getConfig',['../classmy_b_mx280.html#a4ddde06e95b11dbd7d1a1aa185d24725',1,'myBMx280']]],
+  ['getfilter_59',['getFilter',['../classmy_b_mx280.html#a83b9821be0b0035051804dba7c9d33bc',1,'myBMx280']]],
+  ['gethumctrl_60',['getHumCtrl',['../classmy_b_mx280.html#a7aac4a5d1473a66c289fd6bcab90e7ee',1,'myBMx280']]],
+  ['gethumidityosr_61',['getHumidityOSR',['../classmy_b_mx280.html#aff41a6ed4b5146ba137fe8126884631f',1,'myBMx280']]],
+  ['getid_62',['getID',['../classmy_b_mx280.html#a234df64896c1cc82bb51a79f00bc44f5',1,'myBMx280']]],
+  ['getlastindex_63',['getLastIndex',['../classmy23_l_c1024.html#a64a9b1bf245eeff9041a0e083684c2b1',1,'my23LC1024']]],
+  ['getmeasctrl_64',['getMeasCtrl',['../classmy_b_mx280.html#a5f47ddd9bc9aed4e4e8dae8cba6161b3',1,'myBMx280']]],
+  ['getmode_65',['getMode',['../classmy_b_mx280.html#ab4e9a7dbdfe835fef3c30e528444db2b',1,'myBMx280']]],
+  ['getnextindex_66',['getNextIndex',['../classmy23_l_c1024.html#a81380a372dfc49a10d1835edb54dcd09',1,'my23LC1024']]],
+  ['getpininit_67',['getPinInit',['../namespacemy_a_d_c.html#a2d2e722aff828d134b0b6ec14cd5e062',1,'myADC']]],
+  ['getpressureosr_68',['getPressureOSR',['../classmy_b_mx280.html#a38131c72afebec4eb60284315b369894',1,'myBMx280']]],
+  ['getstandbytime_69',['getStandbyTime',['../classmy_b_mx280.html#abc8fbd1144ef0ec495421c21e25fbcfa',1,'myBMx280']]],
+  ['getstatus_70',['getStatus',['../classmy_b_mx280.html#af42db5a5807c2f440aa49e85df4f033f',1,'myBMx280']]],
+  ['gettemperatureinit_71',['getTemperatureInit',['../namespacemy_a_d_c.html#a8149d0bbac7fe32f6f14852c0af850a3',1,'myADC']]],
+  ['gettemperatureosr_72',['getTemperatureOSR',['../classmy_b_mx280.html#ac4870a8b89307db9c7c03cdc5f304ef4',1,'myBMx280']]]
 ];

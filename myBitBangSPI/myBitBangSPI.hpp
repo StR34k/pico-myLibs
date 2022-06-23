@@ -9,14 +9,33 @@
 #include <hardware/gpio.h>
 #include <pico/time.h>
 
+#include "../myStandardDefines.hpp"
+/**
+ * @brief SPI Master namespace
+ * 
+ */
 namespace mySPIMaster {
 /* Constants */
+    /**
+     * @brief SPI Mode 0
+     * 
+     */
     const uint8_t   MODE_0 = 0x00;    // CPOL = 0     CPHA = 0
+    /**
+     * @brief SPI Mode 1
+     * 
+     */
     const uint8_t   MODE_1 = 0x01;    // CPOL = 0     CPHA = 1
+    /**
+     * @brief SPI Mode 2
+     * 
+     */
     const uint8_t   MODE_2 = 0x02;    // CPOL = 1     CPHA = 0
+    /**
+     * @brief SPI Mode 3
+     * 
+     */
     const uint8_t   MODE_3 = 0x03;    // CPOL = 1     CPHA = 1
-    const bool      MSB_FIRST = true;
-    const bool      LSB_FIRST = false;  
 /* Variables */
     uint8_t     _sck;       // SPI Clock pin
     uint8_t     _miso;      // SPI RX pin
@@ -26,16 +45,28 @@ namespace mySPIMaster {
     bool        _msbFirst;  // Bit order. true = MSB first, false = LSB first. Defaults to MSB first.
     uint64_t    _delayUS;   // Amount of time to delay before transitions in microseconds. Defaults to 1.
 /* Functions */
+    /** @private */
     bool __validateMode__(const uint8_t mode) {
         if (mode > MODE_3) { return false; }
         return true;
     }
-
+    /** @private */
     void __setIdle__() {
         gpio_put(_sck, _cpol);
         gpio_put(_mosi, !_cpha);
     }
-
+    /**
+     * @brief Initialize SPI master
+     * 
+     * @param sck Clock pin
+     * @param miso Miso pin
+     * @param mosi Mosi pin
+     * @param mode SPI Mode
+     * @param msbFirst Bit order (true=msb_first)
+     * @param delayUS Clock delay in microseconds, default 1.
+     * @return true If initialized okay
+     * @return false If not initilized okay.
+     */
     bool initialize(const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, 
                         const bool msbFirst=true, uint64_t delayUS=1) {
     // Store pins and states for later.
@@ -75,7 +106,12 @@ namespace mySPIMaster {
         __setIdle__();
         return true;
     }
-
+    /**
+     * @brief transfer a byte
+     * 
+     * @param value Value to send
+     * @return uint8_t Value recieved.
+     */
     uint8_t transfer(const uint8_t value) {
         uint8_t mask;
         uint8_t readValue = 0x00;
@@ -110,7 +146,6 @@ namespace mySPIMaster {
             }
         // Delay:
             sleep_us(_delayUS);
-            // __breakpoint();
         }
         return readValue;
     }

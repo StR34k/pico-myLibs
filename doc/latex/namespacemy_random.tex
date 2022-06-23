@@ -1,25 +1,35 @@
 \hypertarget{namespacemy_random}{}\doxysection{my\+Random Namespace Reference}
 \label{namespacemy_random}\index{myRandom@{myRandom}}
+
+
+Random helper functions\+: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}.  
+
+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespacemy_random_ae848cb202320c7f66c45510dac700d51}{rosc\+Random\+Bit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return a single random bit from the random oscilator. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_random_a6235e7827e6c3d291181b9382e52e343}{rosc\+Random\+Byte}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return a random byte from the random oscilator. \end{DoxyCompactList}\item 
 uint \mbox{\hyperlink{namespacemy_random_a51f5ef73de0142d0678191c18baf73d6}{rosc\+Random\+Word}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em return a random word from the random oscilator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespacemy_random_aefc2ec79485692c91817233f7620e15e}{seed\+From\+R\+O\+SC}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Seed srand with a seed generated from the random oscilator. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a8707f89eee39cc8e7fd07eb8ff8d0cfe}{seed\+From\+A\+D\+C\+Channel}} (uint8\+\_\+t adc\+Channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Generate a random seed by readin a floatind A\+DC pin, in arduino style. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_random_ad174b8308a90ddbdee56cdbca0f79978}{seed\+From\+A\+D\+C\+Pin}} (uint8\+\_\+t adc\+Pin)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Seed srand from a floating analog pin. in arduino style. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a33a40b83686ad71b89a618cb7559779d}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em no error. Value 0 (N\+O\+\_\+\+E\+R\+R\+OR) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Random helper functions\+: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}. 
+
 
 
 \doxysubsection{Function Documentation}
@@ -29,35 +39,84 @@ int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a33a40b83686ad71b89a618cb755977
 \doxysubsubsection{\texorpdfstring{roscRandomBit()}{roscRandomBit()}}
 {\footnotesize\ttfamily bool my\+Random\+::rosc\+Random\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Return a single random bit from the random oscilator. 
+
+\begin{DoxyReturn}{Returns}
+Random bit. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_random_a6235e7827e6c3d291181b9382e52e343}\label{namespacemy_random_a6235e7827e6c3d291181b9382e52e343}} 
 \index{myRandom@{myRandom}!roscRandomByte@{roscRandomByte}}
 \index{roscRandomByte@{roscRandomByte}!myRandom@{myRandom}}
 \doxysubsubsection{\texorpdfstring{roscRandomByte()}{roscRandomByte()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+Random\+::rosc\+Random\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Return a random byte from the random oscilator. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t random byte 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_random_a51f5ef73de0142d0678191c18baf73d6}\label{namespacemy_random_a51f5ef73de0142d0678191c18baf73d6}} 
 \index{myRandom@{myRandom}!roscRandomWord@{roscRandomWord}}
 \index{roscRandomWord@{roscRandomWord}!myRandom@{myRandom}}
 \doxysubsubsection{\texorpdfstring{roscRandomWord()}{roscRandomWord()}}
 {\footnotesize\ttfamily uint my\+Random\+::rosc\+Random\+Word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+return a random word from the random oscilator. 
+
+\begin{DoxyReturn}{Returns}
+uint random word 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_random_a8707f89eee39cc8e7fd07eb8ff8d0cfe}\label{namespacemy_random_a8707f89eee39cc8e7fd07eb8ff8d0cfe}} 
 \index{myRandom@{myRandom}!seedFromADCChannel@{seedFromADCChannel}}
 \index{seedFromADCChannel@{seedFromADCChannel}!myRandom@{myRandom}}
 \doxysubsubsection{\texorpdfstring{seedFromADCChannel()}{seedFromADCChannel()}}
 {\footnotesize\ttfamily int16\+\_\+t my\+Random\+::seed\+From\+A\+D\+C\+Channel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+Channel }\end{DoxyParamCaption})}
 
+
+
+Generate a random seed by readin a floatind A\+DC pin, in arduino style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc\+Channel} & Channel to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. Error codes are from \mbox{\hyperlink{namespacemy_a_d_c}{my\+A\+DC}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_random_ad174b8308a90ddbdee56cdbca0f79978}\label{namespacemy_random_ad174b8308a90ddbdee56cdbca0f79978}} 
 \index{myRandom@{myRandom}!seedFromADCPin@{seedFromADCPin}}
 \index{seedFromADCPin@{seedFromADCPin}!myRandom@{myRandom}}
 \doxysubsubsection{\texorpdfstring{seedFromADCPin()}{seedFromADCPin()}}
 {\footnotesize\ttfamily int16\+\_\+t my\+Random\+::seed\+From\+A\+D\+C\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+Pin }\end{DoxyParamCaption})}
 
+
+
+Seed srand from a floating analog pin. in arduino style. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc\+Pin} & Pin to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. Error codes are from \mbox{\hyperlink{namespacemy_a_d_c}{my\+A\+DC}}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_random_aefc2ec79485692c91817233f7620e15e}\label{namespacemy_random_aefc2ec79485692c91817233f7620e15e}} 
 \index{myRandom@{myRandom}!seedFromROSC@{seedFromROSC}}
 \index{seedFromROSC@{seedFromROSC}!myRandom@{myRandom}}
 \doxysubsubsection{\texorpdfstring{seedFromROSC()}{seedFromROSC()}}
 {\footnotesize\ttfamily void my\+Random\+::seed\+From\+R\+O\+SC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Seed srand with a seed generated from the random oscilator. 
 
 
 
@@ -67,4 +126,8 @@ int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a33a40b83686ad71b89a618cb755977
 \index{NO\_ERROR@{NO\_ERROR}!myRandom@{myRandom}}
 \doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
 {\footnotesize\ttfamily int16\+\_\+t my\+Random\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}}
+
+
+
+no error. Value 0 (N\+O\+\_\+\+E\+R\+R\+OR) 
 

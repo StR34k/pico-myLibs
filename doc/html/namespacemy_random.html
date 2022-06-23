@@ -69,28 +69,40 @@ $(function() {
 <div class="title">myRandom Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Random helper functions: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by: <a href="https://github.com/raspberrypi/pico-sdk/issues/569">https://github.com/raspberrypi/pico-sdk/issues/569</a>.  
+<a href="namespacemy_random.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae848cb202320c7f66c45510dac700d51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a> ()</td></tr>
+<tr class="memdesc:ae848cb202320c7f66c45510dac700d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a single random bit from the random oscilator.  <a href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">More...</a><br /></td></tr>
 <tr class="separator:ae848cb202320c7f66c45510dac700d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6235e7827e6c3d291181b9382e52e343"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">roscRandomByte</a> ()</td></tr>
+<tr class="memdesc:a6235e7827e6c3d291181b9382e52e343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a random byte from the random oscilator.  <a href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">More...</a><br /></td></tr>
 <tr class="separator:a6235e7827e6c3d291181b9382e52e343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51f5ef73de0142d0678191c18baf73d6"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">roscRandomWord</a> ()</td></tr>
+<tr class="memdesc:a51f5ef73de0142d0678191c18baf73d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a random word from the random oscilator.  <a href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">More...</a><br /></td></tr>
 <tr class="separator:a51f5ef73de0142d0678191c18baf73d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefc2ec79485692c91817233f7620e15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">seedFromROSC</a> ()</td></tr>
+<tr class="memdesc:aefc2ec79485692c91817233f7620e15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed srand with a seed generated from the random oscilator.  <a href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">More...</a><br /></td></tr>
 <tr class="separator:aefc2ec79485692c91817233f7620e15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8707f89eee39cc8e7fd07eb8ff8d0cfe"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">seedFromADCChannel</a> (uint8_t adcChannel)</td></tr>
+<tr class="memdesc:a8707f89eee39cc8e7fd07eb8ff8d0cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random seed by readin a floatind ADC pin, in arduino style.  <a href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">More...</a><br /></td></tr>
 <tr class="separator:a8707f89eee39cc8e7fd07eb8ff8d0cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad174b8308a90ddbdee56cdbca0f79978"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">seedFromADCPin</a> (uint8_t adcPin)</td></tr>
+<tr class="memdesc:ad174b8308a90ddbdee56cdbca0f79978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed srand from a floating analog pin. in arduino style.  <a href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">More...</a><br /></td></tr>
 <tr class="separator:ad174b8308a90ddbdee56cdbca0f79978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a33a40b83686ad71b89a618cb7559779d"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a> = <a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></td></tr>
+<tr class="memdesc:a33a40b83686ad71b89a618cb7559779d"><td class="mdescLeft">&#160;</td><td class="mdescRight">no error. Value 0 (NO_ERROR)  <a href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">More...</a><br /></td></tr>
 <tr class="separator:a33a40b83686ad71b89a618cb7559779d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Random helper functions: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by: <a href="https://github.com/raspberrypi/pico-sdk/issues/569">https://github.com/raspberrypi/pico-sdk/issues/569</a>. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae848cb202320c7f66c45510dac700d51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae848cb202320c7f66c45510dac700d51">&#9670;&nbsp;</a></span>roscRandomBit()</h2>
 
@@ -105,6 +117,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return a single random bit from the random oscilator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Random bit. </dd></dl>
 
 </div>
 </div>
@@ -123,6 +138,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Return a random byte from the random oscilator. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t random byte </dd></dl>
+
 </div>
 </div>
 <a id="a51f5ef73de0142d0678191c18baf73d6"></a>
@@ -139,6 +157,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>return a random word from the random oscilator. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint random word </dd></dl>
 
 </div>
 </div>
@@ -158,6 +179,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generate a random seed by readin a floatind ADC pin, in arduino style. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adcChannel</td><td>Channel to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t returns 0 (NO_ERROR) for okay, negative for error code. Error codes are from <a class="el" href="namespacemy_a_d_c.html" title="High level functions for the ADC. Helper functions to track and set state of ADC pins.">myADC</a> </dd></dl>
+
 </div>
 </div>
 <a id="ad174b8308a90ddbdee56cdbca0f79978"></a>
@@ -176,6 +206,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Seed srand from a floating analog pin. in arduino style. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adcPin</td><td>Pin to read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t returns 0 (NO_ERROR) for okay, negative for error code. Error codes are from <a class="el" href="namespacemy_a_d_c.html" title="High level functions for the ADC. Helper functions to track and set state of ADC pins.">myADC</a>. </dd></dl>
+
 </div>
 </div>
 <a id="aefc2ec79485692c91817233f7620e15e"></a>
@@ -193,6 +232,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Seed srand with a seed generated from the random oscilator. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -207,6 +248,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>no error. Value 0 (NO_ERROR) </p>
 
 </div>
 </div>

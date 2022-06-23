@@ -75,6 +75,9 @@ $(function() {
 <div class="title">myADC.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>High level functions for the ADC.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;hardware/adc.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="my_error_codes_8hpp_source.html">../myErrorCodes.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -82,9 +85,9 @@ Include dependency graph for myADC.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_a_d_c_8hpp__incl.png" border="0" usemap="#my_a_d_c_2my_a_d_c_8hpp" alt=""/></div>
 <map name="my_a_d_c_2my_a_d_c_8hpp" id="my_a_d_c_2my_a_d_c_8hpp">
-<area shape="rect" title=" " alt="" coords="72,5,224,32"/>
+<area shape="rect" title="High level functions for the ADC." alt="" coords="72,5,224,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,128,107"/>
-<area shape="rect" href="my_error_codes_8hpp.html" title=" " alt="" coords="152,80,307,107"/>
+<area shape="rect" href="my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="152,80,307,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -92,8 +95,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_a_d_c_8hpp__dep__incl.png" border="0" usemap="#my_a_d_c_2my_a_d_c_8hppdep" alt=""/></div>
 <map name="my_a_d_c_2my_a_d_c_8hppdep" id="my_a_d_c_2my_a_d_c_8hppdep">
-<area shape="rect" title=" " alt="" coords="31,5,183,32"/>
-<area shape="rect" href="my_random_8hpp.html" title=" " alt="" coords="5,80,209,107"/>
+<area shape="rect" title="High level functions for the ADC." alt="" coords="31,5,183,32"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers:" alt="" coords="5,80,209,107"/>
 </map>
 </div>
 </div>
@@ -102,6 +105,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacemy_a_d_c"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html">myADC</a></td></tr>
+<tr class="memdesc:namespacemy_a_d_c"><td class="mdescLeft">&#160;</td><td class="mdescRight">High level functions for the ADC. Helper functions to track and set state of ADC pins. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -144,70 +148,94 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adbe3ac5640b1cf77753358761b53cd70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#adbe3ac5640b1cf77753358761b53cd70">myADC::validChannel</a> (const uint8_t channel)</td></tr>
+<tr class="memdesc:adbe3ac5640b1cf77753358761b53cd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if valid channel. Verify that a channel provided is valid for the rp2040.  <a href="namespacemy_a_d_c.html#adbe3ac5640b1cf77753358761b53cd70">More...</a><br /></td></tr>
 <tr class="separator:adbe3ac5640b1cf77753358761b53cd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2863082cacee0cc8613a9a6b0cf86b0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a2863082cacee0cc8613a9a6b0cf86b0f">myADC::validUserChannel</a> (const uint8_t channel)</td></tr>
+<tr class="memdesc:a2863082cacee0cc8613a9a6b0cf86b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if channel is a user channel. Verify that a channel provided is a valid user channel (not connected to temp sensor.)  <a href="namespacemy_a_d_c.html#a2863082cacee0cc8613a9a6b0cf86b0f">More...</a><br /></td></tr>
 <tr class="separator:a2863082cacee0cc8613a9a6b0cf86b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1cb8a836866e5349bcc895d86b0c44f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#af1cb8a836866e5349bcc895d86b0c44f">myADC::validPin</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:af1cb8a836866e5349bcc895d86b0c44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if a pin is an ADC pin. Verify that a pin provided is a valid ADC pin on the rp2040.  <a href="namespacemy_a_d_c.html#af1cb8a836866e5349bcc895d86b0c44f">More...</a><br /></td></tr>
 <tr class="separator:af1cb8a836866e5349bcc895d86b0c44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6dad0222962dbe15710f09a04081d45"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#aa6dad0222962dbe15710f09a04081d45">myADC::channelToPin</a> (uint8_t channel)</td></tr>
+<tr class="memdesc:aa6dad0222962dbe15710f09a04081d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a channel to a pin number.  <a href="namespacemy_a_d_c.html#aa6dad0222962dbe15710f09a04081d45">More...</a><br /></td></tr>
 <tr class="separator:aa6dad0222962dbe15710f09a04081d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad51d32581fc7f3501da7acc7daf2609e"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#ad51d32581fc7f3501da7acc7daf2609e">myADC::pinToChannel</a> (uint8_t pin)</td></tr>
+<tr class="memdesc:ad51d32581fc7f3501da7acc7daf2609e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a pin number to a channel.  <a href="namespacemy_a_d_c.html#ad51d32581fc7f3501da7acc7daf2609e">More...</a><br /></td></tr>
 <tr class="separator:ad51d32581fc7f3501da7acc7daf2609e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a769381b85630da9c5cb7e21c2efcd3d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a769381b85630da9c5cb7e21c2efcd3d3">myADC::getADCInit</a> ()</td></tr>
+<tr class="memdesc:a769381b85630da9c5cb7e21c2efcd3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if ADC init has been called.  <a href="namespacemy_a_d_c.html#a769381b85630da9c5cb7e21c2efcd3d3">More...</a><br /></td></tr>
 <tr class="separator:a769381b85630da9c5cb7e21c2efcd3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af351cc973db0eb54ab75f168073511b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#af351cc973db0eb54ab75f168073511b3">myADC::getChannelInit</a> (uint8_t channel)</td></tr>
+<tr class="memdesc:af351cc973db0eb54ab75f168073511b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if channel has been initialized.  <a href="namespacemy_a_d_c.html#af351cc973db0eb54ab75f168073511b3">More...</a><br /></td></tr>
 <tr class="separator:af351cc973db0eb54ab75f168073511b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d2e722aff828d134b0b6ec14cd5e062"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a2d2e722aff828d134b0b6ec14cd5e062">myADC::getPinInit</a> (uint8_t pin)</td></tr>
+<tr class="memdesc:a2d2e722aff828d134b0b6ec14cd5e062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if pin has been initialized.  <a href="namespacemy_a_d_c.html#a2d2e722aff828d134b0b6ec14cd5e062">More...</a><br /></td></tr>
 <tr class="separator:a2d2e722aff828d134b0b6ec14cd5e062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8149d0bbac7fe32f6f14852c0af850a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a8149d0bbac7fe32f6f14852c0af850a3">myADC::getTemperatureInit</a> ()</td></tr>
+<tr class="memdesc:a8149d0bbac7fe32f6f14852c0af850a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if temperature sensor is initialized.  <a href="namespacemy_a_d_c.html#a8149d0bbac7fe32f6f14852c0af850a3">More...</a><br /></td></tr>
 <tr class="separator:a8149d0bbac7fe32f6f14852c0af850a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0570132fc06639058a54a7ce837774"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a7c0570132fc06639058a54a7ce837774">myADC::_setADCInit</a> ()</td></tr>
-<tr class="separator:a7c0570132fc06639058a54a7ce837774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3aa0a1c7cb40fbf48833568286df7a4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a3aa0a1c7cb40fbf48833568286df7a4f">myADC::_setChannelInit</a> (const uint8_t channel)</td></tr>
-<tr class="separator:a3aa0a1c7cb40fbf48833568286df7a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad87af1a19e660f1717fa8f899634a53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#aad87af1a19e660f1717fa8f899634a53">myADC::_setPinInit</a> (const uint8_t pin)</td></tr>
-<tr class="separator:aad87af1a19e660f1717fa8f899634a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9c684d1217452421b422add56b9f19b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#aa9c684d1217452421b422add56b9f19b">myADC::_setTemperatureInit</a> (const bool value)</td></tr>
-<tr class="separator:aa9c684d1217452421b422add56b9f19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4e69194cfba84ed337e42199cb5d2ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a> ()</td></tr>
+<tr class="memdesc:ab4e69194cfba84ed337e42199cb5d2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call adc_init. Calles adc_init from the pico-sdk. This function is safe to call multiple times, as we only call adc_init once.  <a href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">More...</a><br /></td></tr>
 <tr class="separator:ab4e69194cfba84ed337e42199cb5d2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">myADC::initChannel</a> (const uint8_t channel)</td></tr>
+<tr class="memdesc:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the pin and call adc_gpio_init. Selects the pin given a channel, and call adc_gpio_init for the pin, this is safe to call multiple times as it tracks if it's been called.  <a href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">More...</a><br /></td></tr>
 <tr class="separator:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">myADC::initPin</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call adc_gpio_init for a given pin. Calls adc_gpio_init for a given pin, this is safe to call multiple times as the state is tracked.  <a href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">More...</a><br /></td></tr>
 <tr class="separator:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef42fd77039b42b16381116cf07f2c6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#aef42fd77039b42b16381116cf07f2c6d">myADC::initTemperature</a> ()</td></tr>
-<tr class="separator:aef42fd77039b42b16381116cf07f2c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9a06bce3b20c065e34951797c953a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a6e9a06bce3b20c065e34951797c953a8">myADC::deinitTemperature</a> ()</td></tr>
-<tr class="separator:a6e9a06bce3b20c065e34951797c953a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9657ed5dc89996688e4a4a231296d923"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923">myADC::initTemperature</a> ()</td></tr>
+<tr class="memdesc:a9657ed5dc89996688e4a4a231296d923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the temperature sensor. Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is therefore safe to call multiple times.  <a href="namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923">More...</a><br /></td></tr>
+<tr class="separator:a9657ed5dc89996688e4a4a231296d923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a2acb6329cb0845a868f4f1168c8c6f2a">myADC::deinitTemperature</a> ()</td></tr>
+<tr class="memdesc:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">De intialize the temperature sensor. Calls adc_set_temp_sensor_enabled with false, and tracks it. this function is therefore safe to call multiple times.  <a href="namespacemy_a_d_c.html#a2acb6329cb0845a868f4f1168c8c6f2a">More...</a><br /></td></tr>
+<tr class="separator:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ba44744ea6e65481a0971037ec2bcbb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">myADC::readChannelRaw</a> (const uint8_t channel)</td></tr>
+<tr class="memdesc:a4ba44744ea6e65481a0971037ec2bcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the raw ADC reading for a channel.  <a href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">More...</a><br /></td></tr>
 <tr class="separator:a4ba44744ea6e65481a0971037ec2bcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74933447e2b9ad0028968f6eeeb100e2"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">myADC::readPinRaw</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a74933447e2b9ad0028968f6eeeb100e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the raw ADC for a given pin.  <a href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">More...</a><br /></td></tr>
 <tr class="separator:a74933447e2b9ad0028968f6eeeb100e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a671539306cf3cfa2fb6c51d198f9b7a8">myADC::readTemperatureRaw</a> ()</td></tr>
+<tr class="memdesc:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the raw temperature value.  <a href="namespacemy_a_d_c.html#a671539306cf3cfa2fb6c51d198f9b7a8">More...</a><br /></td></tr>
 <tr class="separator:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d31547a4eaa72ebc16374fe26800c43"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a9d31547a4eaa72ebc16374fe26800c43">myADC::readChannelVoltage</a> (const uint8_t channel, const float vRef=3.3f)</td></tr>
+<tr class="memdesc:a9d31547a4eaa72ebc16374fe26800c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the voltage of a channel given VREF.  <a href="namespacemy_a_d_c.html#a9d31547a4eaa72ebc16374fe26800c43">More...</a><br /></td></tr>
 <tr class="separator:a9d31547a4eaa72ebc16374fe26800c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#ae6b47e4bca38fc1b64e36ab0b871597b">myADC::readPinVoltage</a> (const uint8_t pin, const float vRef=3.3f)</td></tr>
+<tr class="memdesc:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the voltage of a pin, given VREF.  <a href="namespacemy_a_d_c.html#ae6b47e4bca38fc1b64e36ab0b871597b">More...</a><br /></td></tr>
 <tr class="separator:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e98c17e5ae09e42007161d736c9a7a1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a6e98c17e5ae09e42007161d736c9a7a1">myADC::readTemperature</a> (const bool returnDegC=true)</td></tr>
+<tr class="memdesc:a6e98c17e5ae09e42007161d736c9a7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return temperature of sensor.  <a href="namespacemy_a_d_c.html#a6e98c17e5ae09e42007161d736c9a7a1">More...</a><br /></td></tr>
 <tr class="separator:a6e98c17e5ae09e42007161d736c9a7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a074ad71083eb4dca197b6999f2b7fa4a"><td class="memItemLeft" align="right" valign="top">const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a074ad71083eb4dca197b6999f2b7fa4a">myADC::NO_ERROR</a> = <a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></td></tr>
+<tr class="memdesc:a074ad71083eb4dca197b6999f2b7fa4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error. Value: 0 No error.  <a href="namespacemy_a_d_c.html#a074ad71083eb4dca197b6999f2b7fa4a">More...</a><br /></td></tr>
 <tr class="separator:a074ad71083eb4dca197b6999f2b7fa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dc6fb2d6ad07737f34eb5333b74d62a"><td class="memItemLeft" align="right" valign="top">const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a4dc6fb2d6ad07737f34eb5333b74d62a">myADC::ERROR_INVALID_CHANNEL</a> = <a class="el" href="my_error_codes_8hpp.html#a82dcf6aea656d7115fda3375f0ae17a4">MY_ERROR_ADC_INVALID_CHANNEL</a></td></tr>
+<tr class="memdesc:a4dc6fb2d6ad07737f34eb5333b74d62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid channel. Value -200 An invalid channel was provided.  <a href="namespacemy_a_d_c.html#a4dc6fb2d6ad07737f34eb5333b74d62a">More...</a><br /></td></tr>
 <tr class="separator:a4dc6fb2d6ad07737f34eb5333b74d62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57cca4cd31e53c88894c3a6a7f2c7dc9"><td class="memItemLeft" align="right" valign="top">const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a57cca4cd31e53c88894c3a6a7f2c7dc9">myADC::ERROR_INVALID_PIN</a> = <a class="el" href="my_error_codes_8hpp.html#ac886b8bb68eac8a1ec75c6fe4b859828">MY_ERROR_ADC_INVALID_PIN</a></td></tr>
+<tr class="memdesc:a57cca4cd31e53c88894c3a6a7f2c7dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid pin. Value -201 An invalid pin was provided, ie pin is not associated with a channel.  <a href="namespacemy_a_d_c.html#a57cca4cd31e53c88894c3a6a7f2c7dc9">More...</a><br /></td></tr>
 <tr class="separator:a57cca4cd31e53c88894c3a6a7f2c7dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b879e4bddb15292c6d5faf0253d67b4"><td class="memItemLeft" align="right" valign="top">const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a6b879e4bddb15292c6d5faf0253d67b4">myADC::ERROR_ADC_NOT_INIT</a> = <a class="el" href="my_error_codes_8hpp.html#af0e1bae518d67d8dfff2d20e8bb36ebc">MY_ERROR_ADC_ADC_NOT_INIT</a></td></tr>
+<tr class="memdesc:a6b879e4bddb15292c6d5faf0253d67b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC not initialized. Value -202 Initialize has not been called for the ADC at time of read.  <a href="namespacemy_a_d_c.html#a6b879e4bddb15292c6d5faf0253d67b4">More...</a><br /></td></tr>
 <tr class="separator:a6b879e4bddb15292c6d5faf0253d67b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acea36bce50ad7c01628b139d12f26a05"><td class="memItemLeft" align="right" valign="top">const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#acea36bce50ad7c01628b139d12f26a05">myADC::ERROR_CHANNEL_NOT_INIT</a> = <a class="el" href="my_error_codes_8hpp.html#ab8f5305db7c7e613e006fbb5932a2ae8">MY_ERROR_ADC_CHANNEL_NOT_INIT</a></td></tr>
+<tr class="memdesc:acea36bce50ad7c01628b139d12f26a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel not intialized. Value -203 Channel was not initialized at time of read.  <a href="namespacemy_a_d_c.html#acea36bce50ad7c01628b139d12f26a05">More...</a><br /></td></tr>
 <tr class="separator:acea36bce50ad7c01628b139d12f26a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5884e24154b4512ba54e37a97975dc82"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a5884e24154b4512ba54e37a97975dc82">myADC::_status</a> = 0x00</td></tr>
-<tr class="separator:a5884e24154b4512ba54e37a97975dc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d448bbc390378f0c7b2d13a313d3d0"><td class="memItemLeft" align="right" valign="top">const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#ad3d448bbc390378f0c7b2d13a313d3d0">myADC::ERROR_CHANNEL_ALREADY_INIT</a> = <a class="el" href="my_error_codes_8hpp.html#aed50b26c1428d1e3874c01d97f6ae8cb">MY_ERROR_ADC_CHANNEL_ALREADY_INIT</a></td></tr>
+<tr class="memdesc:ad3d448bbc390378f0c7b2d13a313d3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel already initialized. Channel was already initialized when init was called.  <a href="namespacemy_a_d_c.html#ad3d448bbc390378f0c7b2d13a313d3d0">More...</a><br /></td></tr>
+<tr class="separator:ad3d448bbc390378f0c7b2d13a313d3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>High level functions for the ADC. </p>
+<dl class="section author"><dt>Author</dt><dd>Peter Nearing (<a href="#" onclick="location.href='mai'+'lto:'+'pne'+'ar'+'ing'+'@p'+'rot'+'on'+'mai'+'l.'+'com'; return false;">pnear<span style="display: none;">.nosp@m.</span>ing@<span style="display: none;">.nosp@m.</span>proto<span style="display: none;">.nosp@m.</span>nmai<span style="display: none;">.nosp@m.</span>l.com</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-06-23</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a17942e486864565d446a33a57e4d37c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17942e486864565d446a33a57e4d37c2">&#9670;&nbsp;</a></span>_MY_ADC_MASK</h2>
 

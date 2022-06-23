@@ -1,11 +1,390 @@
+/**
+ * @file myBMx280.hpp
+ * @author Peter Nearing (pnearing@protonmail.com)
+ * @brief Class to handle BMx280 devices in SPI mode.
+ * @version 0.1
+ * @date 2022-06-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef MY_BMx280_H
 #define MY_BMx280_H
 
 #include <hardware/spi.h>
-
+/**
+ * @brief Class to handle BME280 sensor in spi mode.
+ * 
+ */
 class myBMx280 {
 
 	public:
+	/* Constants: */
+		// Chipsets:
+		/**
+		 * @brief Chip model bmp280. No humidity
+		 * 
+		 */
+		static const uint8_t CHIPMODEL_BMP280 = 0x58; // No humidity.
+		/**
+		 * @brief Chip mode BME 280. Has humidity.
+		 * 
+		 */
+		static const uint8_t CHIPMODEL_BME280 = 0x60; // Has humidity.
+		// Oversampling rate, off turns reading off.:
+		/**
+		 * @brief Over sampling off.
+		 * @note turns off reading.
+		 */
+		static const uint8_t OSR_OFF	= 0X00;
+		/**
+		 * @brief Oversampling x1
+		 * 
+		 */
+		static const uint8_t OSR_X1		= 0X01;
+		/**
+		 * @brief Oversampling x2
+		 * 
+		 */
+		static const uint8_t OSR_X2		= 0X02;
+		/**
+		 * @brief Oversampling x4
+		 * 
+		 */
+		static const uint8_t OSR_X4		= 0X03;
+		/**
+		 * @brief Oversampling x8
+		 * 
+		 */
+		static const uint8_t OSR_X8		= 0X04;
+		/**
+		 * @brief Oversampling x16
+		 * 
+		 */
+		static const uint8_t OSR_X16	= 0X05;
+		// Chip Modes:
+		/**
+		 * @brief Chip mode Sleep
+		 * 
+		 */
+		static const uint8_t MODE_SLEEP		= 0X00;
+		/**
+		 * @brief Chip mode forced.
+		 * This is the default mode.
+		 */
+		static const uint8_t MODE_FORCED	= 0X01;
+		/**
+		 * @brief Chip mode normal.
+		 * 
+		 */
+		static const uint8_t MODE_NORMAL	= 0X03;
+		// Standby Times:		
+		/**
+		 * @brief Standby time of 500 microseconds.
+		 * 
+		 */
+		static const uint8_t STANDBY_TIME_500US		= 0x00;
+		/**
+		 * @brief Standby time of 6.25 milliseconds
+		 * 
+		 */
+		static const uint8_t STANDBY_TIME_62500US	= 0x01;
+		/**
+		 * @brief Standby time of 125 milliseconds
+		 * 
+		 */
+		static const uint8_t STANDBY_TIME_125MS		= 0x02;
+		/**
+		 * @brief Standby time of 250 milliseconds.
+		 * 
+		 */
+		static const uint8_t STANDBY_TIME_250MS		= 0x03;
+		/**
+		 * @brief Standby time of 50 milliseconds
+		 * 
+		 */
+		static const uint8_t STANDBY_TIME_50MS		= 0x04;
+		/**
+		 * @brief Standby time of 1000 milliseconds (1 second)
+		 * 
+		 */
+		static const uint8_t STANDBY_TIME_1000MS	= 0x05;
+		/**
+		 * @brief Standby time of 10 milliseconds.
+		 * @note BME280 only.
+		 */
+		static const uint8_t STANDBY_TIME_10MS		= 0x06;
+		/**
+		 * @brief Standby time of 20 milliseconds.
+		 * @note BME280 only.
+		 */
+		static const uint8_t STANDBY_TIME_20MS		= 0x07;
+		/**
+		 * @brief Standby time of 2000 milliseconds (2 seconds.)
+		 * @note BMP280 only.
+		 */
+		static const uint8_t STANDBY_TIME_2000MS	= 0x06; // For BMP280 only.
+		/**
+		 * @brief Standby time of 4000 milliseconds (4 seconds)
+		 * @note BMP280 only.
+		 */
+		static const uint8_t STANDBY_TIME_4000MS	= 0x07; // For BMP280 only.
+		// Filter Modes:
+		/**
+		 * @brief Filter Off
+		 * 
+		 */
+		static const uint8_t FILTER_OFF	= 0x00;
+		/**
+		 * @brief Filter at 2 samples.
+		 * 
+		 */
+		static const uint8_t FILTER_2	= 0x01;
+		/**
+		 * @brief Filter at 4 samples.
+		 * 
+		 */
+		static const uint8_t FILTER_4	= 0x02;
+		/**
+		 * @brief Filter at 8 samples
+		 * 
+		 */
+		static const uint8_t FILTER_8	= 0x03;
+		/**
+		 * @brief Filter at 16 samples
+		 * 
+		 */
+		static const uint8_t FILTER_16	= 0x04;
+		// Config Masks:
+		/**
+		 * @brief Standby time mask of the config byte
+		 * 
+		 */
+		static const uint8_t CONFIG_STANDBY_MASK	= 0b11100000;
+		/**
+		 * @brief Filter mask of the config byte.
+		 * 
+		 */
+		static const uint8_t CONFIG_FILTER_MASK		= 0b00011100;
+		/**
+		 * @brief 3 wire communications mode of the config byte.
+		 * @note This library will fail in 3 wire mode.
+		 */
+		static const uint8_t CONFIG_3WIRE_MASK		= 0b00000001;
+		// Measure Control Masks:
+		/**
+		 * @brief Temperature OSR mask of the measCtrl byte
+		 * 
+		 */
+		static const uint8_t MEAS_TEMP_OSR_MASK		= 0b11100000;
+		/**
+		 * @brief Pressure OSR mask of the measCtrl byte
+		 * 
+		 */
+		static const uint8_t MEAS_PRES_OSR_MASK		= 0b00011100;
+		/**
+		 * @brief Measure mode mask of the measCtrl byte
+		 * 
+		 */
+		static const uint8_t MEAS_MODE_MASK			= 0b00000011;
+		// Humidity Control Masks:
+		/**
+		 * @brief Humidity OSR mask of the humCtrl byte.
+		 * 
+		 */
+		static const uint8_t HUM_OSR_MASK			= 0b00000111;
+	/* Public variables: */
+		/**
+		 * @brief True if the sensor has humidity
+		 * 
+		 */
+		bool have_humidity = false;
+		/**
+		 * @brief True if sensor is in forced mode.
+		 * 
+		 */
+		bool forced_mode = false;
+		/**
+		 * @brief Temperature in DegC
+		 * 
+		 */
+		float temperature = 0.0;
+		/**
+		 * @brief Pressure in Pa
+		 * 
+		 */
+		float pressure = 0.0;
+		/**
+		 * @brief Humidity in RH%
+		 * 
+		 */
+		float humidity = 0.0;
+
+	/* Public functions: */
+		/**
+		 * @brief Construct a new my BMx280 object. HW SPI
+		 * 
+		 * @param spiObj SPI Port
+		 * @param csPin Chip select pin
+		 * @param clkPin Clock pin
+		 * @param misoPin Miso pin
+		 * @param mosiPin Mosi pin
+		 */
+		myBMx280(spi_inst_t *spiObj, const uint8_t csPin, const uint8_t clkPin, const uint8_t misoPin, const uint8_t mosiPin);
+		/**
+		 * @brief Get the chip id byte.
+		 * 
+		 * @return uint8_t Chip id one of MODEL_BME280 or MODEL_BMP280
+		 */
+		uint8_t getID();								// Get the chip ID byte.
+		/**
+		 * @brief Get the Status byte
+		 * 
+		 * @return uint8_t Status byte.
+		 */
+		uint8_t getStatus();							// Get the status byte.
+		/**
+		 * @brief Get the Config Byte.
+		 * 
+		 * @return uint8_t Config byte.
+		 */
+		uint8_t getConfig();							// Get the configuration byte.
+		/**
+		 * @brief Set the Config byte.
+		 * @note When setting the config byte, the comms mode is overridden.
+		 * @param value Config byte
+		 */
+		void	setConfig(const uint8_t value);			// Set the configuration byte.
+		/**
+		 * @brief Get the Meas Ctrl Byte
+		 * 
+		 * @return uint8_t Meas ctrl byte
+		 */
+		uint8_t getMeasCtrl();							// Get the measure control byte.
+		/**
+		 * @brief Set the Meas Ctrl byte
+		 * 
+		 * @param value measCtrl value.
+		 */
+		void	setMeasCtrl(const uint8_t value);		// Set the Measure control byte.
+		/**
+		 * @brief Get the Hum Ctrl byte
+		 * 
+		 * @return uint8_t humCtrl byte
+		 */
+		uint8_t getHumCtrl();							// Get the humidity control byte.
+		/**
+		 * @brief Set the Hum Ctrl byte
+		 * 
+		 * @param value humCtrl value to set
+		 */
+		void	setHumCtrl(const uint8_t value);		// Set the Humidity control byte.
+		/**
+		 * @brief Get the Standby Time
+		 * Get the inactive duration in normal mode. (standby time)
+		 * @return uint8_t returns one of the STANDBY_TIME_ values.
+		 */
+		uint8_t	getStandbyTime();						// Get the inactive duration in normal mode. (standby time)
+		/**
+		 * @brief Set the Standby Time
+		 * Set the inactive duration in normal mode. (standby time)
+		 * @param value Standby time value, one of the STANDBY_TIME_ values.
+		 * @return true If set
+		 * @return false if not set.
+		 */
+		bool	setStandbyTime(const uint8_t value);	// Set the inactive duration in normal mode. (standby time) Returns True if set, False if not set.
+		/**
+		 * @brief Get the Filter 
+		 * Get the IIR filter setting
+		 * @return uint8_t returns the filter, one of the FILTER_ values.
+		 */
+		uint8_t getFilter();							// Get the IIR filter setting.
+		/**
+		 * @brief Set the Filter
+		 * Set the IIR filter setting
+		 * @param value one of the FILTER_ values.
+		 * @return true If the filter was set.
+		 * @return false if the filter was not set.
+		 */
+		bool	setFilter(const uint8_t value);			// Set the IIR filter setting. Return true if set, false if not set.
+		/**
+		 * @brief Get the Temperature OSR
+		 * Get temperature oversampling rate.
+		 * @return uint8_t returns one of the OSR_ values.
+		 */
+		uint8_t getTemperatureOSR();					// Get the temperature oversampling rate
+		/**
+		 * @brief Set the Temperature OSR 
+		 * Set the temperature oversampling rate.
+		 * @param value one of the OSR_ values.
+		 * @return true if set.
+		 * @return false if not set.
+		 */
+		bool	setTemperatureOSR(const uint8_t value);	// Set the temperature oversampling rate. Returns true if set, false if not set.
+		/**
+		 * @brief Get the Pressure OSR
+		 * Get the pressure oversampling rate.
+		 * @return uint8_t oversampling rate, one of OSR_ values.
+		 */
+		uint8_t getPressureOSR();						// Get the pressure oversampling rate.
+		/**
+		 * @brief Set the Pressure OSR
+		 * Set the pressure oversampling rate.
+		 * @param value The oversampling rate, one of the OSR_ values.
+		 * @return true if set.
+		 * @return false if not set.
+		 */
+		bool	setPressureOSR(const uint8_t value);	// Set the pressure oversampling rate. Returns true if set, false if not set.
+		/**
+		 * @brief Get the Humidity OSR
+		 * Get the humidity oversampling rate.
+		 * @return uint8_t oversampling rate, one of the OSR_ values.
+		 */
+		uint8_t getHumidityOSR();						// Get the humidity oversampling rate.
+		/**
+		 * @brief Set the Humidity OSR
+		 * Set the humidity oversampling rate.
+		 * @param value The oversampling rate, one of the OSR_ values.
+		 * @return true if set.
+		 * @return false if not set.
+		 */
+		bool 	setHumidityOSR(const uint8_t value);	// Set the humidity oversampling rate. returns true if set, false if not set.
+		/**
+		 * @brief Get the Mode.
+		 * return the operating mode of the chip.
+		 * @return uint8_t the mode one of the MODE_ values.
+		 */
+		uint8_t getMode();								// get the operating mode of the chip.
+		/**
+		 * @brief Set the Mode.
+		 * Set the operating mode of the chip.
+		 * @param value The operating mode, one of the MODE_ values.
+		 * @return true if set.
+		 * @return false if not set.
+		 */
+		bool 	setMode(const uint8_t value);			// Set the operating mode of the chip.
+		/**
+		 * @brief reset the chip.
+		 * 
+		 */
+		void 	reset();
+		/**
+		 * @brief Initialize the chip.
+		 * 
+		 * @param config The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode.
+		 * @param measCtrl The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED.
+		 * @param humCtrl the humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1
+		 * @return true if initialized okay.
+		 * @return false if not initialized okay.
+		 */
+		bool 	initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS);
+		/**
+		 * @brief Update the temperature, humidity and pressure values.
+		 * Read and update the pressure temperature and humidity values. Will force a reading if in forced mode.
+		 */
+		void 	update();
+
+	private:
 	/* Constants: */
 		// Read bit for reading regitsters:
 		static const uint8_t READ_BIT = 0x80;
@@ -41,37 +420,6 @@ class myBMx280 {
 		static const uint8_t REG_DATA_START_ADDR	= 0XF7;
 		static const uint8_t BME280_DATA_LEN		= 8;
 		static const uint8_t BMP280_DATA_LEN		= 6;
-		// Chipsets:
-		static const uint8_t CHIPMODEL_BMP280 = 0x58; // No humidity.
-		static const uint8_t CHIPMODEL_BME280 = 0x60; // Has humidity.
-		// Oversampling rate, off turns reading off.:
-		static const uint8_t OSR_OFF	= 0X00;
-		static const uint8_t OSR_X1		= 0X01;
-		static const uint8_t OSR_X2		= 0X02;
-		static const uint8_t OSR_X4		= 0X03;
-		static const uint8_t OSR_X8		= 0X04;
-		static const uint8_t OSR_X16	= 0X05;
-		// Chip Modes:
-		static const uint8_t MODE_SLEEP		= 0X00;
-		static const uint8_t MODE_FORCED	= 0X01;
-		static const uint8_t MODE_NORMAL	= 0X03;
-		// Standby Times:		
-		static const uint8_t STANDBY_TIME_500US		= 0x00;
-		static const uint8_t STANDBY_TIME_62500US	= 0x01;
-		static const uint8_t STANDBY_TIME_125MS		= 0x02;
-		static const uint8_t STANDBY_TIME_250MS		= 0x03;
-		static const uint8_t STANDBY_TIME_50MS		= 0x04;
-		static const uint8_t STANDBY_TIME_1000MS	= 0x05;
-		static const uint8_t STANDBY_TIME_10MS		= 0x06;
-		static const uint8_t STANDBY_TIME_20MS		= 0x07;
-		static const uint8_t STANDBY_TIME_2000MS	= 0x06; // For BMP280 only.
-		static const uint8_t STANDBY_TIME_4000MS	= 0x07; // For BMP280 only.
-		// Filter Modes:
-		static const uint8_t FILTER_OFF	= 0x00;
-		static const uint8_t FILTER_2	= 0x01;
-		static const uint8_t FILTER_4	= 0x02;
-		static const uint8_t FILTER_8	= 0x03;
-		static const uint8_t FILTER_16	= 0x04;
 		// SPI Modes:
 		static const uint8_t SPI_3WIRE_FALSE	= 0x00;
 		static const uint8_t SPI_3WIRE_TRUE		= 0x01;
@@ -81,50 +429,7 @@ class myBMx280 {
 		static const uint8_t DEFAULT_CONFIG 		= 0b10000000;// Default config, Standby 500us, filter off, spi3wire off.
 		static const uint8_t DEFAULT_HUM_SETTINGS 	= 0b00000001;// Default humidity settings, hum OSR x1.
 		static const uint8_t DEFAULT_MEAS_SETTINGS	= 0b00100101;// Default settings, temp OSR x1, pres OSR x1, forced mode.
-		// Config Masks:
-		static const uint8_t CONFIG_STANDBY_MASK	= 0b11100000;
-		static const uint8_t CONFIG_FILTER_MASK		= 0b00011100;
-		static const uint8_t CONFIG_3WIRE_MASK		= 0b00000001;
-		// Measure Control Masks:
-		static const uint8_t MEAS_TEMP_OSR_MASK		= 0b11100000;
-		static const uint8_t MEAS_PRES_OSR_MASK		= 0b00011100;
-		static const uint8_t MEAS_MODE_MASK			= 0b00000011;
-		// Humidity Control Masks:
-		static const uint8_t HUM_OSR_MASK			= 0b00000111;
-	/* Public variables: */
-		bool have_humidity = false;
-		bool forced_mode = false;
-		float temperature = 0.0;
-		float pressure = 0.0;
-		float humidity = 0.0;
 
-	/* Public functions: */
-		myBMx280(spi_inst_t *spiObj, const uint8_t csPin, const uint8_t clkPin, const uint8_t misoPin, const uint8_t mosiPin);
-		uint8_t getID();								// Get the chip ID byte.
-		uint8_t getStatus();							// Get the status byte.
-		uint8_t getConfig();							// Get the configuration byte.
-		void	setConfig(const uint8_t value);			// Set the configuration byte.
-		uint8_t getMeasCtrl();							// Get the measure control byte.
-		void	setMeasCtrl(const uint8_t value);		// Set the Measure control byte.
-		uint8_t getHumCtrl();							// Get the humidity control byte.
-		void	setHumCtrl(const uint8_t value);		// Set the Humidity control byte.
-		uint8_t	getStandbyTime();						// Set the inactive duration in normal mode. (standby time)
-		bool	setStandbyTime(const uint8_t value);	// Set the inactive duration in normal mode. (standby time) Returns True if set, False if not set.
-		uint8_t getFilter();							// Get the IIR filter setting.
-		bool	setFilter(const uint8_t value);			// Set the IIR filter setting. Return true if set, false if not set.
-		uint8_t getTemperatureOSR();					// Get the temperature oversampling rate
-		bool	setTemperatureOSR(const uint8_t value);	// Set the temperature oversampling rate. Returns true if set, false if not set.
-		uint8_t getPressureOSR();						// Get the pressure oversampling rate.
-		bool	setPressureOSR(const uint8_t value);	// Set the pressure oversampling rate. Returns true if set, false if not set.
-		uint8_t getHumidityOSR();						// Get the humidity oversampling rate.
-		bool 	setHumidityOSR(const uint8_t value);	// Set the humidity oversampling rate. returns true if set, false if not set.
-		uint8_t getMode();								// get the operating mode of the chip.
-		bool 	setMode(const uint8_t value);			// Set the operating mode of the chip.
-		void reset();
-		bool initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS);
-		void update();
-
-	private:
 	/* Private Variables: */
 		// SPI Variables:
 		spi_inst_t *_spiObj;

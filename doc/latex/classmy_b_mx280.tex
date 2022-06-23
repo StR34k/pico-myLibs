@@ -2,209 +2,151 @@
 \label{classmy_b_mx280}\index{myBMx280@{myBMx280}}
 
 
+Class to handle B\+M\+E280 sensor in spi mode.  
+
+
+
+
 {\ttfamily \#include $<$my\+B\+Mx280.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classmy_b_mx280_a11a6f44a23c7d13c571ab0371b566034}{my\+B\+Mx280}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Obj, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t clk\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new my B\+Mx280 object. HW S\+PI. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}{get\+ID}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the chip id byte. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}{get\+Status}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Status byte. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}{get\+Config}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Config Byte. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}{set\+Config}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Config byte. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}{get\+Meas\+Ctrl}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Meas Ctrl Byte. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}{set\+Meas\+Ctrl}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Meas Ctrl byte. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}{get\+Hum\+Ctrl}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Hum Ctrl byte. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}{set\+Hum\+Ctrl}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Hum Ctrl byte. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}{get\+Standby\+Time}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Standby Time Get the inactive duration in normal mode. (standby time) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}{set\+Standby\+Time}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Standby Time Set the inactive duration in normal mode. (standby time) \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}{get\+Filter}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Filter Get the I\+IR filter setting. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}{set\+Filter}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Filter Set the I\+IR filter setting. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}{get\+Temperature\+O\+SR}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Temperature O\+SR Get temperature oversampling rate. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}{set\+Temperature\+O\+SR}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Temperature O\+SR Set the temperature oversampling rate. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a38131c72afebec4eb60284315b369894}{get\+Pressure\+O\+SR}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Pressure O\+SR Get the pressure oversampling rate. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}{set\+Pressure\+O\+SR}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Pressure O\+SR Set the pressure oversampling rate. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}{get\+Humidity\+O\+SR}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Humidity O\+SR Get the humidity oversampling rate. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}{set\+Humidity\+O\+SR}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Humidity O\+SR Set the humidity oversampling rate. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}{get\+Mode}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Mode. return the operating mode of the chip. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}{set\+Mode}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Mode. Set the operating mode of the chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}{reset}} ()
-\item 
-bool \mbox{\hyperlink{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}{initialize}} (const uint8\+\_\+t config=\mbox{\hyperlink{classmy_b_mx280_a43c6f80e3b61e9bcb276b6496cfeee04}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG}}, const uint8\+\_\+t meas\+Ctrl=\mbox{\hyperlink{classmy_b_mx280_a3ca7059a5e686ae33ca8088625f5d0ac}{D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}, const uint8\+\_\+t hum\+Ctrl=\mbox{\hyperlink{classmy_b_mx280_aacd05bac36535d3fd51e2d89347a94d7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS}})
-\item 
+\begin{DoxyCompactList}\small\item\em reset the chip. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}{initialize}} (const uint8\+\_\+t config=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG, const uint8\+\_\+t meas\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const uint8\+\_\+t hum\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS)
+\begin{DoxyCompactList}\small\item\em Initialize the chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}{update}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{classmy_b_mx280_a5a35ac34ffbed89862e078a958ee3eaf}{have\+\_\+humidity}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em True if the sensor has humidity. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_ac3cb2da4406c6dbe052ba0043c14c90c}{forced\+\_\+mode}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em True if sensor is in forced mode. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classmy_b_mx280_aa0fc7f87475c9b3a6811af678a52df59}{temperature}} = 0.\+0
-\item 
+\begin{DoxyCompactList}\small\item\em Temperature in DegC. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classmy_b_mx280_a82f1bbe1f755a4333ce30789c250e8b1}{pressure}} = 0.\+0
-\item 
+\begin{DoxyCompactList}\small\item\em Pressure in Pa. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classmy_b_mx280_aab26b0fc79283e8626e27575ca9c5d58}{humidity}} = 0.\+0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Humidity in RH\%. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a69bbefb84d24b59614f537d256158618}{R\+E\+A\+D\+\_\+\+B\+IT}} = 0x80
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a577c271e9d9a1c46edf0fbdefe1ee0c0}{R\+E\+G\+\_\+\+I\+D\+\_\+\+A\+D\+DR}} = 0x\+D0
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aecb876eaab3148322c61d60317b05102}{R\+E\+G\+\_\+\+R\+E\+S\+E\+T\+\_\+\+A\+D\+DR}} = 0\+X\+E0
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a36ec1359ce600ba294b70ff2478f07c8}{R\+E\+G\+\_\+\+C\+T\+R\+L\+\_\+\+H\+U\+M\+\_\+\+A\+D\+DR}} = 0\+X\+F2
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae88cc635d4f0ec22105688a0772e0a8c}{R\+E\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+D\+DR}} = 0\+X\+F3
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_afa14404c854c58ccfb8731080bc0052a}{R\+E\+G\+\_\+\+C\+T\+R\+L\+\_\+\+M\+E\+A\+S\+\_\+\+A\+D\+DR}} = 0\+X\+F4
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a353adc2ecb8afa5aed396c5df63fbc46}{R\+E\+G\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+A\+D\+DR}} = 0\+X\+F5
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_afc44c3e7e08628720dcde72d534f5674}{R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+D\+I\+G\+\_\+\+T1\+\_\+\+A\+D\+DR}} = 0\+X88
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4c83b40a58d317c319bb3fd58f5fa809}{R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+D\+I\+G\+\_\+\+T2\+\_\+\+A\+D\+DR}} = 0\+X8A
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ade53d30d87a1ed81903a47b215e61f27}{R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+D\+I\+G\+\_\+\+T3\+\_\+\+A\+D\+DR}} = 0\+X8C
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a27861b3baee6735c67ca4fc4b1a83bb6}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P1\+\_\+\+A\+D\+DR}} = 0\+X8E
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5a017826f301caafefe29870128958a6}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P2\+\_\+\+A\+D\+DR}} = 0\+X90
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a501ee1c81feca34a20a4cc2a6ee5b721}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P3\+\_\+\+A\+D\+DR}} = 0\+X92
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a9904b49de9a1206c10b0563985be15dd}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P4\+\_\+\+A\+D\+DR}} = 0\+X94
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a7135cf4faf0ad09ba971b4b9ff35e60e}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P5\+\_\+\+A\+D\+DR}} = 0\+X96
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a3d6987322a4bed92841a3fd86d65d241}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P6\+\_\+\+A\+D\+DR}} = 0\+X98
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a39876e5d3967aeaacd6457e51d2dfe1b}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P7\+\_\+\+A\+D\+DR}} = 0\+X9A
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_acae2531436dfb44681c3d8d7b3870c25}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P8\+\_\+\+A\+D\+DR}} = 0\+X9C
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a70269ca02ab86abee15e48d016525d56}{R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P9\+\_\+\+A\+D\+DR}} = 0\+X9E
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a9658b0dedd0ed4030ac2563468ad0575}{R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H1\+\_\+\+A\+D\+DR}} = 0\+X\+A1
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a08e08408145a7510b40884fd06e1c62f}{R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H2\+\_\+\+A\+D\+DR}} = 0\+X\+E1
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa06b34b27867f4026f39bc02b0c40891}{R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H3\+\_\+\+A\+D\+DR}} = 0\+X\+E3
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae38dc9b2b7a2a08342fa1d0030e2f106}{R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H4\+\_\+\+A\+D\+DR}} = 0\+X\+E4
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ad4c46109c1bc07afa3baddf67261519c}{R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H5\+\_\+\+A\+D\+DR}} = 0\+X\+E5
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8b7803c679f0c2bf973951bbb4d4cdb7}{R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H6\+\_\+\+A\+D\+DR}} = 0\+X\+E7
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a6edb3f652790d9c6a6759e11e7bfd9d5}{R\+E\+G\+\_\+\+D\+A\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+A\+D\+DR}} = 0\+X\+F7
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a0888bf91fdca18f4c59cd9a969dcbb41}{B\+M\+E280\+\_\+\+D\+A\+T\+A\+\_\+\+L\+EN}} = 8
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a2fab55f2be32dc78c965e6a49c5fbe1e}{B\+M\+P280\+\_\+\+D\+A\+T\+A\+\_\+\+L\+EN}} = 6
-\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a03ade9503e345f635840c542ea9b4df6}{C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+P280}} = 0x58
-\item 
+\begin{DoxyCompactList}\small\item\em Chip model bmp280. No humidity. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a7fc85018ed00938fca8c7e2f48e6f3f1}{C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+E280}} = 0x60
-\item 
+\begin{DoxyCompactList}\small\item\em Chip mode B\+ME 280. Has humidity. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a0054c4f259771ed3f55e640a86015603}{O\+S\+R\+\_\+\+O\+FF}} = 0\+X00
-\item 
+\begin{DoxyCompactList}\small\item\em Over sampling off. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a837eb94f86543bfd6d7250b603a4b1bb}{O\+S\+R\+\_\+\+X1}} = 0\+X01
-\item 
+\begin{DoxyCompactList}\small\item\em Oversampling x1. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a17fd3cc3a320c474f899b05efdb15fa1}{O\+S\+R\+\_\+\+X2}} = 0\+X02
-\item 
+\begin{DoxyCompactList}\small\item\em Oversampling x2. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_acfd6c59d9e13bb1b6284e1cb7afd628a}{O\+S\+R\+\_\+\+X4}} = 0\+X03
-\item 
+\begin{DoxyCompactList}\small\item\em Oversampling x4. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1394192053125f397319c5ff272a8193}{O\+S\+R\+\_\+\+X8}} = 0\+X04
-\item 
+\begin{DoxyCompactList}\small\item\em Oversampling x8. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae6651f6e8af79fc6b7348c44d1e66fcc}{O\+S\+R\+\_\+\+X16}} = 0\+X05
-\item 
+\begin{DoxyCompactList}\small\item\em Oversampling x16. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a69e9a865d0b89867c5c6e7d3a87cca3f}{M\+O\+D\+E\+\_\+\+S\+L\+E\+EP}} = 0\+X00
-\item 
+\begin{DoxyCompactList}\small\item\em Chip mode Sleep. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a224352010506cad82524e9627294ac8c}{M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED}} = 0\+X01
-\item 
+\begin{DoxyCompactList}\small\item\em Chip mode forced. This is the default mode. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a64420c3b133828e93f8a2f55bb5fe591}{M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL}} = 0\+X03
-\item 
+\begin{DoxyCompactList}\small\item\em Chip mode normal. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8a6acdaf21c7248ee7a5d236404a29cf}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+500\+US}} = 0x00
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 500 microseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae5b81163edbe58bbf58371d8e172b46e}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+62500\+US}} = 0x01
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 6.\+25 milliseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a2c09d27bfd365cddf6a6388c25b5cde8}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+125\+MS}} = 0x02
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 125 milliseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa85875cad79cc29e126497336e3de017}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+250\+MS}} = 0x03
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 250 milliseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a95be261831d42ede70f8d2c03647e7e5}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+50\+MS}} = 0x04
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 50 milliseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a363f20c8705a33f356009ae2d94321db}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+1000\+MS}} = 0x05
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 1000 milliseconds (1 second) \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a93b11893a6330129f5dbde1606d4fce0}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+10\+MS}} = 0x06
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 10 milliseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a339bcda5ce37c8478827e56c8ddda09a}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+20\+MS}} = 0x07
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 20 milliseconds. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a187fe4ecc31022adb2b5f1eeb8fb4729}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+2000\+MS}} = 0x06
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 2000 milliseconds (2 seconds.) \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4ff7ca27faa9b8cba30fca17381ace74}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+4000\+MS}} = 0x07
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time of 4000 milliseconds (4 seconds) \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a56eeb6451826aa4d2278dbb5d876404c}{F\+I\+L\+T\+E\+R\+\_\+\+O\+FF}} = 0x00
-\item 
+\begin{DoxyCompactList}\small\item\em Filter Off. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a2f11c98f38b4294980160496305bd202}{F\+I\+L\+T\+E\+R\+\_\+2}} = 0x01
-\item 
+\begin{DoxyCompactList}\small\item\em Filter at 2 samples. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a86810edd5c7714abcef2b79c8a2bc864}{F\+I\+L\+T\+E\+R\+\_\+4}} = 0x02
-\item 
+\begin{DoxyCompactList}\small\item\em Filter at 4 samples. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab0b6524a00b30e1d560cc6c5110cffb7}{F\+I\+L\+T\+E\+R\+\_\+8}} = 0x03
-\item 
+\begin{DoxyCompactList}\small\item\em Filter at 8 samples. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a0aa50e080904003cd5575740146a86c5}{F\+I\+L\+T\+E\+R\+\_\+16}} = 0x04
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5d2ca87d70662184674d8c9503cb5577}{S\+P\+I\+\_\+3\+W\+I\+R\+E\+\_\+\+F\+A\+L\+SE}} = 0x00
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8d0fe77e4e91493e6888c68fae35a5a5}{S\+P\+I\+\_\+3\+W\+I\+R\+E\+\_\+\+T\+R\+UE}} = 0x01
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4acbf67939638536f12ac6b78aa23fa8}{R\+E\+S\+E\+T\+\_\+\+V\+A\+L\+UE}} = 0x\+B6
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a43c6f80e3b61e9bcb276b6496cfeee04}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG}} = 0b10000000
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aacd05bac36535d3fd51e2d89347a94d7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS}} = 0b00000001
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a3ca7059a5e686ae33ca8088625f5d0ac}{D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS}} = 0b00100101
-\item 
+\begin{DoxyCompactList}\small\item\em Filter at 16 samples. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a641888a3f044b98dfd55adffb8c80c85}{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+M\+A\+SK}} = 0b11100000
-\item 
+\begin{DoxyCompactList}\small\item\em Standby time mask of the config byte. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a57f22c4f42ef7a5e75b42d44491e1b16}{C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+M\+A\+SK}} = 0b00011100
-\item 
+\begin{DoxyCompactList}\small\item\em Filter mask of the config byte. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa3563047e2d21a7f7bd040d73625ef3c}{C\+O\+N\+F\+I\+G\+\_\+3\+W\+I\+R\+E\+\_\+\+M\+A\+SK}} = 0b00000001
-\item 
+\begin{DoxyCompactList}\small\item\em 3 wire communications mode of the config byte. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5e2ff856f84235aa509cec4ec0f37d1c}{M\+E\+A\+S\+\_\+\+T\+E\+M\+P\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b11100000
-\item 
+\begin{DoxyCompactList}\small\item\em Temperature O\+SR mask of the meas\+Ctrl byte. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a63af92960dd5568af66970b8a9317b96}{M\+E\+A\+S\+\_\+\+P\+R\+E\+S\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b00011100
-\item 
+\begin{DoxyCompactList}\small\item\em Pressure O\+SR mask of the meas\+Ctrl byte. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aee9089b4ccd1c0a96f20b6a313ed3da4}{M\+E\+A\+S\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}} = 0b00000011
-\item 
+\begin{DoxyCompactList}\small\item\em Measure mode mask of the meas\+Ctrl byte. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de452465328702986ded1460}{H\+U\+M\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b00000111
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Humidity O\+SR mask of the hum\+Ctrl byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle B\+M\+E280 sensor in spi mode. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -216,6 +158,23 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 
 
 
+Construct a new my B\+Mx280 object. HW S\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Obj} & S\+PI Port \\
+\hline
+{\em cs\+Pin} & Chip select pin \\
+\hline
+{\em clk\+Pin} & Clock pin \\
+\hline
+{\em miso\+Pin} & Miso pin \\
+\hline
+{\em mosi\+Pin} & Mosi pin \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}\label{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}} 
 \index{myBMx280@{myBMx280}!getConfig@{getConfig}}
@@ -223,77 +182,176 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Config Byte. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Config byte. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}\label{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}} 
 \index{myBMx280@{myBMx280}!getFilter@{getFilter}}
 \index{getFilter@{getFilter}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getFilter()}{getFilter()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Filter Get the I\+IR filter setting. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t returns the filter, one of the F\+I\+L\+T\+E\+R\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}\label{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}} 
 \index{myBMx280@{myBMx280}!getHumCtrl@{getHumCtrl}}
 \index{getHumCtrl@{getHumCtrl}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getHumCtrl()}{getHumCtrl()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Hum\+Ctrl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Hum Ctrl byte. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t hum\+Ctrl byte 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}\label{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}} 
 \index{myBMx280@{myBMx280}!getHumidityOSR@{getHumidityOSR}}
 \index{getHumidityOSR@{getHumidityOSR}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getHumidityOSR()}{getHumidityOSR()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Humidity\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Humidity O\+SR Get the humidity oversampling rate. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t oversampling rate, one of the O\+S\+R\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}\label{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}} 
 \index{myBMx280@{myBMx280}!getID@{getID}}
 \index{getID@{getID}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getID()}{getID()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the chip id byte. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Chip id one of M\+O\+D\+E\+L\+\_\+\+B\+M\+E280 or M\+O\+D\+E\+L\+\_\+\+B\+M\+P280 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}\label{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}} 
 \index{myBMx280@{myBMx280}!getMeasCtrl@{getMeasCtrl}}
 \index{getMeasCtrl@{getMeasCtrl}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getMeasCtrl()}{getMeasCtrl()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Meas\+Ctrl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Meas Ctrl Byte. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Meas ctrl byte 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}\label{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}} 
 \index{myBMx280@{myBMx280}!getMode@{getMode}}
 \index{getMode@{getMode}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Mode. return the operating mode of the chip. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t the mode one of the M\+O\+D\+E\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a38131c72afebec4eb60284315b369894}\label{classmy_b_mx280_a38131c72afebec4eb60284315b369894}} 
 \index{myBMx280@{myBMx280}!getPressureOSR@{getPressureOSR}}
 \index{getPressureOSR@{getPressureOSR}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getPressureOSR()}{getPressureOSR()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Pressure\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Pressure O\+SR Get the pressure oversampling rate. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t oversampling rate, one of O\+S\+R\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}\label{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}} 
 \index{myBMx280@{myBMx280}!getStandbyTime@{getStandbyTime}}
 \index{getStandbyTime@{getStandbyTime}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getStandbyTime()}{getStandbyTime()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Standby\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Standby Time Get the inactive duration in normal mode. (standby time) 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t returns one of the S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}\label{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}} 
 \index{myBMx280@{myBMx280}!getStatus@{getStatus}}
 \index{getStatus@{getStatus}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Status byte. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Status byte. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}\label{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}} 
 \index{myBMx280@{myBMx280}!getTemperatureOSR@{getTemperatureOSR}}
 \index{getTemperatureOSR@{getTemperatureOSR}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{getTemperatureOSR()}{getTemperatureOSR()}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Temperature\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the Temperature O\+SR Get temperature oversampling rate. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t returns one of the O\+S\+R\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}\label{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}} 
 \index{myBMx280@{myBMx280}!initialize@{initialize}}
 \index{initialize@{initialize}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
-{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily \mbox{\hyperlink{classmy_b_mx280_a43c6f80e3b61e9bcb276b6496cfeee04}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG}}},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily \mbox{\hyperlink{classmy_b_mx280_a3ca7059a5e686ae33ca8088625f5d0ac}{D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily \mbox{\hyperlink{classmy_b_mx280_aacd05bac36535d3fd51e2d89347a94d7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS} }\end{DoxyParamCaption})}
 
+
+
+Initialize the chip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. \\
+\hline
+{\em meas\+Ctrl} & The meas\+Ctrl byte to write to the chip, defaults to temperature =O\+S\+R\+\_\+\+X1, pressure=O\+S\+R\+\_\+\+X1, mode = M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED. \\
+\hline
+{\em hum\+Ctrl} & the hum\+Ctrl byte to write to the chip if available, defaults to humidty = O\+S\+R\+\_\+\+X1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if initialized okay. 
+
+false if not initialized okay. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}\label{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}} 
 \index{myBMx280@{myBMx280}!reset@{reset}}
 \index{reset@{reset}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset the chip. 
 
 \mbox{\Hypertarget{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}\label{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}} 
 \index{myBMx280@{myBMx280}!setConfig@{setConfig}}
@@ -301,54 +359,168 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{setConfig()}{setConfig()}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Config byte. 
+
+\begin{DoxyNote}{Note}
+When setting the config byte, the comms mode is overridden. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Config byte \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}\label{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}} 
 \index{myBMx280@{myBMx280}!setFilter@{setFilter}}
 \index{setFilter@{setFilter}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Filter (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Filter Set the I\+IR filter setting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & one of the F\+I\+L\+T\+E\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the filter was set. 
+
+false if the filter was not set. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}\label{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}} 
 \index{myBMx280@{myBMx280}!setHumCtrl@{setHumCtrl}}
 \index{setHumCtrl@{setHumCtrl}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setHumCtrl()}{setHumCtrl()}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Hum\+Ctrl (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Hum Ctrl byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & hum\+Ctrl value to set \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}\label{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}} 
 \index{myBMx280@{myBMx280}!setHumidityOSR@{setHumidityOSR}}
 \index{setHumidityOSR@{setHumidityOSR}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setHumidityOSR()}{setHumidityOSR()}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Humidity\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Humidity O\+SR Set the humidity oversampling rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The oversampling rate, one of the O\+S\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if set. 
+
+false if not set. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}\label{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}} 
 \index{myBMx280@{myBMx280}!setMeasCtrl@{setMeasCtrl}}
 \index{setMeasCtrl@{setMeasCtrl}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setMeasCtrl()}{setMeasCtrl()}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Meas\+Ctrl (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Meas Ctrl byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & meas\+Ctrl value. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}\label{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}} 
 \index{myBMx280@{myBMx280}!setMode@{setMode}}
 \index{setMode@{setMode}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Mode (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Mode. Set the operating mode of the chip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The operating mode, one of the M\+O\+D\+E\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if set. 
+
+false if not set. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}\label{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}} 
 \index{myBMx280@{myBMx280}!setPressureOSR@{setPressureOSR}}
 \index{setPressureOSR@{setPressureOSR}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setPressureOSR()}{setPressureOSR()}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Pressure\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Pressure O\+SR Set the pressure oversampling rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The oversampling rate, one of the O\+S\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if set. 
+
+false if not set. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}\label{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}} 
 \index{myBMx280@{myBMx280}!setStandbyTime@{setStandbyTime}}
 \index{setStandbyTime@{setStandbyTime}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setStandbyTime()}{setStandbyTime()}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Standby\+Time (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Standby Time Set the inactive duration in normal mode. (standby time) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Standby time value, one of the S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If set 
+
+false if not set. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}\label{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}} 
 \index{myBMx280@{myBMx280}!setTemperatureOSR@{setTemperatureOSR}}
 \index{setTemperatureOSR@{setTemperatureOSR}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{setTemperatureOSR()}{setTemperatureOSR()}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Temperature\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Set the Temperature O\+SR Set the temperature oversampling rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & one of the O\+S\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if set. 
+
+false if not set. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}\label{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}} 
 \index{myBMx280@{myBMx280}!update@{update}}
 \index{update@{update}!myBMx280@{myBMx280}}
@@ -357,24 +529,20 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 
 
 
+Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. 
+
+
+
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classmy_b_mx280_a0888bf91fdca18f4c59cd9a969dcbb41}\label{classmy_b_mx280_a0888bf91fdca18f4c59cd9a969dcbb41}} 
-\index{myBMx280@{myBMx280}!BME280\_DATA\_LEN@{BME280\_DATA\_LEN}}
-\index{BME280\_DATA\_LEN@{BME280\_DATA\_LEN}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{BME280\_DATA\_LEN}{BME280\_DATA\_LEN}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+B\+M\+E280\+\_\+\+D\+A\+T\+A\+\_\+\+L\+EN = 8\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a2fab55f2be32dc78c965e6a49c5fbe1e}\label{classmy_b_mx280_a2fab55f2be32dc78c965e6a49c5fbe1e}} 
-\index{myBMx280@{myBMx280}!BMP280\_DATA\_LEN@{BMP280\_DATA\_LEN}}
-\index{BMP280\_DATA\_LEN@{BMP280\_DATA\_LEN}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{BMP280\_DATA\_LEN}{BMP280\_DATA\_LEN}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+B\+M\+P280\+\_\+\+D\+A\+T\+A\+\_\+\+L\+EN = 6\hspace{0.3cm}{\ttfamily [static]}}
-
 \mbox{\Hypertarget{classmy_b_mx280_a7fc85018ed00938fca8c7e2f48e6f3f1}\label{classmy_b_mx280_a7fc85018ed00938fca8c7e2f48e6f3f1}} 
 \index{myBMx280@{myBMx280}!CHIPMODEL\_BME280@{CHIPMODEL\_BME280}}
 \index{CHIPMODEL\_BME280@{CHIPMODEL\_BME280}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CHIPMODEL\_BME280}{CHIPMODEL\_BME280}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+E280 = 0x60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chip mode B\+ME 280. Has humidity. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a03ade9503e345f635840c542ea9b4df6}\label{classmy_b_mx280_a03ade9503e345f635840c542ea9b4df6}} 
 \index{myBMx280@{myBMx280}!CHIPMODEL\_BMP280@{CHIPMODEL\_BMP280}}
@@ -382,17 +550,32 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{CHIPMODEL\_BMP280}{CHIPMODEL\_BMP280}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+P280 = 0x58\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Chip model bmp280. No humidity. 
+
 \mbox{\Hypertarget{classmy_b_mx280_aa3563047e2d21a7f7bd040d73625ef3c}\label{classmy_b_mx280_aa3563047e2d21a7f7bd040d73625ef3c}} 
 \index{myBMx280@{myBMx280}!CONFIG\_3WIRE\_MASK@{CONFIG\_3WIRE\_MASK}}
 \index{CONFIG\_3WIRE\_MASK@{CONFIG\_3WIRE\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CONFIG\_3WIRE\_MASK}{CONFIG\_3WIRE\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+3\+W\+I\+R\+E\+\_\+\+M\+A\+SK = 0b00000001\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+3 wire communications mode of the config byte. 
+
+\begin{DoxyNote}{Note}
+This library will fail in 3 wire mode. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy_b_mx280_a57f22c4f42ef7a5e75b42d44491e1b16}\label{classmy_b_mx280_a57f22c4f42ef7a5e75b42d44491e1b16}} 
 \index{myBMx280@{myBMx280}!CONFIG\_FILTER\_MASK@{CONFIG\_FILTER\_MASK}}
 \index{CONFIG\_FILTER\_MASK@{CONFIG\_FILTER\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CONFIG\_FILTER\_MASK}{CONFIG\_FILTER\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+M\+A\+SK = 0b00011100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filter mask of the config byte. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a641888a3f044b98dfd55adffb8c80c85}\label{classmy_b_mx280_a641888a3f044b98dfd55adffb8c80c85}} 
 \index{myBMx280@{myBMx280}!CONFIG\_STANDBY\_MASK@{CONFIG\_STANDBY\_MASK}}
@@ -400,23 +583,9 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{CONFIG\_STANDBY\_MASK}{CONFIG\_STANDBY\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+M\+A\+SK = 0b11100000\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy_b_mx280_a43c6f80e3b61e9bcb276b6496cfeee04}\label{classmy_b_mx280_a43c6f80e3b61e9bcb276b6496cfeee04}} 
-\index{myBMx280@{myBMx280}!DEFAULT\_CONFIG@{DEFAULT\_CONFIG}}
-\index{DEFAULT\_CONFIG@{DEFAULT\_CONFIG}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{DEFAULT\_CONFIG}{DEFAULT\_CONFIG}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG = 0b10000000\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy_b_mx280_aacd05bac36535d3fd51e2d89347a94d7}\label{classmy_b_mx280_aacd05bac36535d3fd51e2d89347a94d7}} 
-\index{myBMx280@{myBMx280}!DEFAULT\_HUM\_SETTINGS@{DEFAULT\_HUM\_SETTINGS}}
-\index{DEFAULT\_HUM\_SETTINGS@{DEFAULT\_HUM\_SETTINGS}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{DEFAULT\_HUM\_SETTINGS}{DEFAULT\_HUM\_SETTINGS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS = 0b00000001\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy_b_mx280_a3ca7059a5e686ae33ca8088625f5d0ac}\label{classmy_b_mx280_a3ca7059a5e686ae33ca8088625f5d0ac}} 
-\index{myBMx280@{myBMx280}!DEFAULT\_MEAS\_SETTINGS@{DEFAULT\_MEAS\_SETTINGS}}
-\index{DEFAULT\_MEAS\_SETTINGS@{DEFAULT\_MEAS\_SETTINGS}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{DEFAULT\_MEAS\_SETTINGS}{DEFAULT\_MEAS\_SETTINGS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS = 0b00100101\hspace{0.3cm}{\ttfamily [static]}}
+Standby time mask of the config byte. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a0aa50e080904003cd5575740146a86c5}\label{classmy_b_mx280_a0aa50e080904003cd5575740146a86c5}} 
 \index{myBMx280@{myBMx280}!FILTER\_16@{FILTER\_16}}
@@ -424,11 +593,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{FILTER\_16}{FILTER\_16}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+16 = 0x04\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Filter at 16 samples. 
+
 \mbox{\Hypertarget{classmy_b_mx280_a2f11c98f38b4294980160496305bd202}\label{classmy_b_mx280_a2f11c98f38b4294980160496305bd202}} 
 \index{myBMx280@{myBMx280}!FILTER\_2@{FILTER\_2}}
 \index{FILTER\_2@{FILTER\_2}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_2}{FILTER\_2}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+2 = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filter at 2 samples. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a86810edd5c7714abcef2b79c8a2bc864}\label{classmy_b_mx280_a86810edd5c7714abcef2b79c8a2bc864}} 
 \index{myBMx280@{myBMx280}!FILTER\_4@{FILTER\_4}}
@@ -436,11 +613,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{FILTER\_4}{FILTER\_4}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+4 = 0x02\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Filter at 4 samples. 
+
 \mbox{\Hypertarget{classmy_b_mx280_ab0b6524a00b30e1d560cc6c5110cffb7}\label{classmy_b_mx280_ab0b6524a00b30e1d560cc6c5110cffb7}} 
 \index{myBMx280@{myBMx280}!FILTER\_8@{FILTER\_8}}
 \index{FILTER\_8@{FILTER\_8}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_8}{FILTER\_8}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+8 = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filter at 8 samples. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a56eeb6451826aa4d2278dbb5d876404c}\label{classmy_b_mx280_a56eeb6451826aa4d2278dbb5d876404c}} 
 \index{myBMx280@{myBMx280}!FILTER\_OFF@{FILTER\_OFF}}
@@ -448,11 +633,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{FILTER\_OFF}{FILTER\_OFF}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+\+O\+FF = 0x00\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Filter Off. 
+
 \mbox{\Hypertarget{classmy_b_mx280_ac3cb2da4406c6dbe052ba0043c14c90c}\label{classmy_b_mx280_ac3cb2da4406c6dbe052ba0043c14c90c}} 
 \index{myBMx280@{myBMx280}!forced\_mode@{forced\_mode}}
 \index{forced\_mode@{forced\_mode}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{forced\_mode}{forced\_mode}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::forced\+\_\+mode = false}
+
+
+
+True if sensor is in forced mode. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a5a35ac34ffbed89862e078a958ee3eaf}\label{classmy_b_mx280_a5a35ac34ffbed89862e078a958ee3eaf}} 
 \index{myBMx280@{myBMx280}!have\_humidity@{have\_humidity}}
@@ -460,11 +653,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{have\_humidity}{have\_humidity}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::have\+\_\+humidity = false}
 
+
+
+True if the sensor has humidity. 
+
 \mbox{\Hypertarget{classmy_b_mx280_ab981e0e9de452465328702986ded1460}\label{classmy_b_mx280_ab981e0e9de452465328702986ded1460}} 
 \index{myBMx280@{myBMx280}!HUM\_OSR\_MASK@{HUM\_OSR\_MASK}}
 \index{HUM\_OSR\_MASK@{HUM\_OSR\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{HUM\_OSR\_MASK}{HUM\_OSR\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+H\+U\+M\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b00000111\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Humidity O\+SR mask of the hum\+Ctrl byte. 
 
 \mbox{\Hypertarget{classmy_b_mx280_aab26b0fc79283e8626e27575ca9c5d58}\label{classmy_b_mx280_aab26b0fc79283e8626e27575ca9c5d58}} 
 \index{myBMx280@{myBMx280}!humidity@{humidity}}
@@ -472,11 +673,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{humidity}{humidity}}
 {\footnotesize\ttfamily float my\+B\+Mx280\+::humidity = 0.\+0}
 
+
+
+Humidity in RH\%. 
+
 \mbox{\Hypertarget{classmy_b_mx280_aee9089b4ccd1c0a96f20b6a313ed3da4}\label{classmy_b_mx280_aee9089b4ccd1c0a96f20b6a313ed3da4}} 
 \index{myBMx280@{myBMx280}!MEAS\_MODE\_MASK@{MEAS\_MODE\_MASK}}
 \index{MEAS\_MODE\_MASK@{MEAS\_MODE\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MEAS\_MODE\_MASK}{MEAS\_MODE\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK = 0b00000011\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Measure mode mask of the meas\+Ctrl byte. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a63af92960dd5568af66970b8a9317b96}\label{classmy_b_mx280_a63af92960dd5568af66970b8a9317b96}} 
 \index{myBMx280@{myBMx280}!MEAS\_PRES\_OSR\_MASK@{MEAS\_PRES\_OSR\_MASK}}
@@ -484,11 +693,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{MEAS\_PRES\_OSR\_MASK}{MEAS\_PRES\_OSR\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+P\+R\+E\+S\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b00011100\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Pressure O\+SR mask of the meas\+Ctrl byte. 
+
 \mbox{\Hypertarget{classmy_b_mx280_a5e2ff856f84235aa509cec4ec0f37d1c}\label{classmy_b_mx280_a5e2ff856f84235aa509cec4ec0f37d1c}} 
 \index{myBMx280@{myBMx280}!MEAS\_TEMP\_OSR\_MASK@{MEAS\_TEMP\_OSR\_MASK}}
 \index{MEAS\_TEMP\_OSR\_MASK@{MEAS\_TEMP\_OSR\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MEAS\_TEMP\_OSR\_MASK}{MEAS\_TEMP\_OSR\_MASK}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+T\+E\+M\+P\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b11100000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Temperature O\+SR mask of the meas\+Ctrl byte. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a224352010506cad82524e9627294ac8c}\label{classmy_b_mx280_a224352010506cad82524e9627294ac8c}} 
 \index{myBMx280@{myBMx280}!MODE\_FORCED@{MODE\_FORCED}}
@@ -496,11 +713,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{MODE\_FORCED}{MODE\_FORCED}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Chip mode forced. This is the default mode. 
+
 \mbox{\Hypertarget{classmy_b_mx280_a64420c3b133828e93f8a2f55bb5fe591}\label{classmy_b_mx280_a64420c3b133828e93f8a2f55bb5fe591}} 
 \index{myBMx280@{myBMx280}!MODE\_NORMAL@{MODE\_NORMAL}}
 \index{MODE\_NORMAL@{MODE\_NORMAL}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MODE\_NORMAL}{MODE\_NORMAL}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Chip mode normal. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a69e9a865d0b89867c5c6e7d3a87cca3f}\label{classmy_b_mx280_a69e9a865d0b89867c5c6e7d3a87cca3f}} 
 \index{myBMx280@{myBMx280}!MODE\_SLEEP@{MODE\_SLEEP}}
@@ -508,17 +733,32 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{MODE\_SLEEP}{MODE\_SLEEP}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+S\+L\+E\+EP = 0\+X00\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Chip mode Sleep. 
+
 \mbox{\Hypertarget{classmy_b_mx280_a0054c4f259771ed3f55e640a86015603}\label{classmy_b_mx280_a0054c4f259771ed3f55e640a86015603}} 
 \index{myBMx280@{myBMx280}!OSR\_OFF@{OSR\_OFF}}
 \index{OSR\_OFF@{OSR\_OFF}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_OFF}{OSR\_OFF}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+O\+FF = 0\+X00\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Over sampling off. 
+
+\begin{DoxyNote}{Note}
+turns off reading. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy_b_mx280_a837eb94f86543bfd6d7250b603a4b1bb}\label{classmy_b_mx280_a837eb94f86543bfd6d7250b603a4b1bb}} 
 \index{myBMx280@{myBMx280}!OSR\_X1@{OSR\_X1}}
 \index{OSR\_X1@{OSR\_X1}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X1}{OSR\_X1}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X1 = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Oversampling x1. 
 
 \mbox{\Hypertarget{classmy_b_mx280_ae6651f6e8af79fc6b7348c44d1e66fcc}\label{classmy_b_mx280_ae6651f6e8af79fc6b7348c44d1e66fcc}} 
 \index{myBMx280@{myBMx280}!OSR\_X16@{OSR\_X16}}
@@ -526,11 +766,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{OSR\_X16}{OSR\_X16}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X16 = 0\+X05\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Oversampling x16. 
+
 \mbox{\Hypertarget{classmy_b_mx280_a17fd3cc3a320c474f899b05efdb15fa1}\label{classmy_b_mx280_a17fd3cc3a320c474f899b05efdb15fa1}} 
 \index{myBMx280@{myBMx280}!OSR\_X2@{OSR\_X2}}
 \index{OSR\_X2@{OSR\_X2}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X2}{OSR\_X2}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X2 = 0\+X02\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Oversampling x2. 
 
 \mbox{\Hypertarget{classmy_b_mx280_acfd6c59d9e13bb1b6284e1cb7afd628a}\label{classmy_b_mx280_acfd6c59d9e13bb1b6284e1cb7afd628a}} 
 \index{myBMx280@{myBMx280}!OSR\_X4@{OSR\_X4}}
@@ -538,11 +786,19 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{OSR\_X4}{OSR\_X4}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X4 = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Oversampling x4. 
+
 \mbox{\Hypertarget{classmy_b_mx280_a1394192053125f397319c5ff272a8193}\label{classmy_b_mx280_a1394192053125f397319c5ff272a8193}} 
 \index{myBMx280@{myBMx280}!OSR\_X8@{OSR\_X8}}
 \index{OSR\_X8@{OSR\_X8}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X8}{OSR\_X8}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X8 = 0\+X04\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Oversampling x8. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a82f1bbe1f755a4333ce30789c250e8b1}\label{classmy_b_mx280_a82f1bbe1f755a4333ce30789c250e8b1}} 
 \index{myBMx280@{myBMx280}!pressure@{pressure}}
@@ -550,179 +806,9 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{pressure}{pressure}}
 {\footnotesize\ttfamily float my\+B\+Mx280\+::pressure = 0.\+0}
 
-\mbox{\Hypertarget{classmy_b_mx280_a69bbefb84d24b59614f537d256158618}\label{classmy_b_mx280_a69bbefb84d24b59614f537d256158618}} 
-\index{myBMx280@{myBMx280}!READ\_BIT@{READ\_BIT}}
-\index{READ\_BIT@{READ\_BIT}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{READ\_BIT}{READ\_BIT}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+A\+D\+\_\+\+B\+IT = 0x80\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy_b_mx280_a353adc2ecb8afa5aed396c5df63fbc46}\label{classmy_b_mx280_a353adc2ecb8afa5aed396c5df63fbc46}} 
-\index{myBMx280@{myBMx280}!REG\_CONFIG\_ADDR@{REG\_CONFIG\_ADDR}}
-\index{REG\_CONFIG\_ADDR@{REG\_CONFIG\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_CONFIG\_ADDR}{REG\_CONFIG\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+A\+D\+DR = 0\+X\+F5\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy_b_mx280_a36ec1359ce600ba294b70ff2478f07c8}\label{classmy_b_mx280_a36ec1359ce600ba294b70ff2478f07c8}} 
-\index{myBMx280@{myBMx280}!REG\_CTRL\_HUM\_ADDR@{REG\_CTRL\_HUM\_ADDR}}
-\index{REG\_CTRL\_HUM\_ADDR@{REG\_CTRL\_HUM\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_CTRL\_HUM\_ADDR}{REG\_CTRL\_HUM\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+C\+T\+R\+L\+\_\+\+H\+U\+M\+\_\+\+A\+D\+DR = 0\+X\+F2\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_afa14404c854c58ccfb8731080bc0052a}\label{classmy_b_mx280_afa14404c854c58ccfb8731080bc0052a}} 
-\index{myBMx280@{myBMx280}!REG\_CTRL\_MEAS\_ADDR@{REG\_CTRL\_MEAS\_ADDR}}
-\index{REG\_CTRL\_MEAS\_ADDR@{REG\_CTRL\_MEAS\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_CTRL\_MEAS\_ADDR}{REG\_CTRL\_MEAS\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+C\+T\+R\+L\+\_\+\+M\+E\+A\+S\+\_\+\+A\+D\+DR = 0\+X\+F4\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a6edb3f652790d9c6a6759e11e7bfd9d5}\label{classmy_b_mx280_a6edb3f652790d9c6a6759e11e7bfd9d5}} 
-\index{myBMx280@{myBMx280}!REG\_DATA\_START\_ADDR@{REG\_DATA\_START\_ADDR}}
-\index{REG\_DATA\_START\_ADDR@{REG\_DATA\_START\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_DATA\_START\_ADDR}{REG\_DATA\_START\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+D\+A\+T\+A\+\_\+\+S\+T\+A\+R\+T\+\_\+\+A\+D\+DR = 0\+X\+F7\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a9658b0dedd0ed4030ac2563468ad0575}\label{classmy_b_mx280_a9658b0dedd0ed4030ac2563468ad0575}} 
-\index{myBMx280@{myBMx280}!REG\_HUM\_DIG\_H1\_ADDR@{REG\_HUM\_DIG\_H1\_ADDR}}
-\index{REG\_HUM\_DIG\_H1\_ADDR@{REG\_HUM\_DIG\_H1\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_HUM\_DIG\_H1\_ADDR}{REG\_HUM\_DIG\_H1\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H1\+\_\+\+A\+D\+DR = 0\+X\+A1\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a08e08408145a7510b40884fd06e1c62f}\label{classmy_b_mx280_a08e08408145a7510b40884fd06e1c62f}} 
-\index{myBMx280@{myBMx280}!REG\_HUM\_DIG\_H2\_ADDR@{REG\_HUM\_DIG\_H2\_ADDR}}
-\index{REG\_HUM\_DIG\_H2\_ADDR@{REG\_HUM\_DIG\_H2\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_HUM\_DIG\_H2\_ADDR}{REG\_HUM\_DIG\_H2\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H2\+\_\+\+A\+D\+DR = 0\+X\+E1\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_aa06b34b27867f4026f39bc02b0c40891}\label{classmy_b_mx280_aa06b34b27867f4026f39bc02b0c40891}} 
-\index{myBMx280@{myBMx280}!REG\_HUM\_DIG\_H3\_ADDR@{REG\_HUM\_DIG\_H3\_ADDR}}
-\index{REG\_HUM\_DIG\_H3\_ADDR@{REG\_HUM\_DIG\_H3\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_HUM\_DIG\_H3\_ADDR}{REG\_HUM\_DIG\_H3\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H3\+\_\+\+A\+D\+DR = 0\+X\+E3\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_ae38dc9b2b7a2a08342fa1d0030e2f106}\label{classmy_b_mx280_ae38dc9b2b7a2a08342fa1d0030e2f106}} 
-\index{myBMx280@{myBMx280}!REG\_HUM\_DIG\_H4\_ADDR@{REG\_HUM\_DIG\_H4\_ADDR}}
-\index{REG\_HUM\_DIG\_H4\_ADDR@{REG\_HUM\_DIG\_H4\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_HUM\_DIG\_H4\_ADDR}{REG\_HUM\_DIG\_H4\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H4\+\_\+\+A\+D\+DR = 0\+X\+E4\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_ad4c46109c1bc07afa3baddf67261519c}\label{classmy_b_mx280_ad4c46109c1bc07afa3baddf67261519c}} 
-\index{myBMx280@{myBMx280}!REG\_HUM\_DIG\_H5\_ADDR@{REG\_HUM\_DIG\_H5\_ADDR}}
-\index{REG\_HUM\_DIG\_H5\_ADDR@{REG\_HUM\_DIG\_H5\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_HUM\_DIG\_H5\_ADDR}{REG\_HUM\_DIG\_H5\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H5\+\_\+\+A\+D\+DR = 0\+X\+E5\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a8b7803c679f0c2bf973951bbb4d4cdb7}\label{classmy_b_mx280_a8b7803c679f0c2bf973951bbb4d4cdb7}} 
-\index{myBMx280@{myBMx280}!REG\_HUM\_DIG\_H6\_ADDR@{REG\_HUM\_DIG\_H6\_ADDR}}
-\index{REG\_HUM\_DIG\_H6\_ADDR@{REG\_HUM\_DIG\_H6\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_HUM\_DIG\_H6\_ADDR}{REG\_HUM\_DIG\_H6\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+H\+U\+M\+\_\+\+D\+I\+G\+\_\+\+H6\+\_\+\+A\+D\+DR = 0\+X\+E7\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a577c271e9d9a1c46edf0fbdefe1ee0c0}\label{classmy_b_mx280_a577c271e9d9a1c46edf0fbdefe1ee0c0}} 
-\index{myBMx280@{myBMx280}!REG\_ID\_ADDR@{REG\_ID\_ADDR}}
-\index{REG\_ID\_ADDR@{REG\_ID\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_ID\_ADDR}{REG\_ID\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+I\+D\+\_\+\+A\+D\+DR = 0x\+D0\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a27861b3baee6735c67ca4fc4b1a83bb6}\label{classmy_b_mx280_a27861b3baee6735c67ca4fc4b1a83bb6}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P1\_ADDR@{REG\_PRES\_DIG\_P1\_ADDR}}
-\index{REG\_PRES\_DIG\_P1\_ADDR@{REG\_PRES\_DIG\_P1\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P1\_ADDR}{REG\_PRES\_DIG\_P1\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P1\+\_\+\+A\+D\+DR = 0\+X8E\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a5a017826f301caafefe29870128958a6}\label{classmy_b_mx280_a5a017826f301caafefe29870128958a6}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P2\_ADDR@{REG\_PRES\_DIG\_P2\_ADDR}}
-\index{REG\_PRES\_DIG\_P2\_ADDR@{REG\_PRES\_DIG\_P2\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P2\_ADDR}{REG\_PRES\_DIG\_P2\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P2\+\_\+\+A\+D\+DR = 0\+X90\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a501ee1c81feca34a20a4cc2a6ee5b721}\label{classmy_b_mx280_a501ee1c81feca34a20a4cc2a6ee5b721}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P3\_ADDR@{REG\_PRES\_DIG\_P3\_ADDR}}
-\index{REG\_PRES\_DIG\_P3\_ADDR@{REG\_PRES\_DIG\_P3\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P3\_ADDR}{REG\_PRES\_DIG\_P3\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P3\+\_\+\+A\+D\+DR = 0\+X92\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a9904b49de9a1206c10b0563985be15dd}\label{classmy_b_mx280_a9904b49de9a1206c10b0563985be15dd}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P4\_ADDR@{REG\_PRES\_DIG\_P4\_ADDR}}
-\index{REG\_PRES\_DIG\_P4\_ADDR@{REG\_PRES\_DIG\_P4\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P4\_ADDR}{REG\_PRES\_DIG\_P4\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P4\+\_\+\+A\+D\+DR = 0\+X94\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a7135cf4faf0ad09ba971b4b9ff35e60e}\label{classmy_b_mx280_a7135cf4faf0ad09ba971b4b9ff35e60e}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P5\_ADDR@{REG\_PRES\_DIG\_P5\_ADDR}}
-\index{REG\_PRES\_DIG\_P5\_ADDR@{REG\_PRES\_DIG\_P5\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P5\_ADDR}{REG\_PRES\_DIG\_P5\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P5\+\_\+\+A\+D\+DR = 0\+X96\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a3d6987322a4bed92841a3fd86d65d241}\label{classmy_b_mx280_a3d6987322a4bed92841a3fd86d65d241}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P6\_ADDR@{REG\_PRES\_DIG\_P6\_ADDR}}
-\index{REG\_PRES\_DIG\_P6\_ADDR@{REG\_PRES\_DIG\_P6\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P6\_ADDR}{REG\_PRES\_DIG\_P6\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P6\+\_\+\+A\+D\+DR = 0\+X98\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a39876e5d3967aeaacd6457e51d2dfe1b}\label{classmy_b_mx280_a39876e5d3967aeaacd6457e51d2dfe1b}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P7\_ADDR@{REG\_PRES\_DIG\_P7\_ADDR}}
-\index{REG\_PRES\_DIG\_P7\_ADDR@{REG\_PRES\_DIG\_P7\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P7\_ADDR}{REG\_PRES\_DIG\_P7\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P7\+\_\+\+A\+D\+DR = 0\+X9A\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_acae2531436dfb44681c3d8d7b3870c25}\label{classmy_b_mx280_acae2531436dfb44681c3d8d7b3870c25}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P8\_ADDR@{REG\_PRES\_DIG\_P8\_ADDR}}
-\index{REG\_PRES\_DIG\_P8\_ADDR@{REG\_PRES\_DIG\_P8\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P8\_ADDR}{REG\_PRES\_DIG\_P8\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P8\+\_\+\+A\+D\+DR = 0\+X9C\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a70269ca02ab86abee15e48d016525d56}\label{classmy_b_mx280_a70269ca02ab86abee15e48d016525d56}} 
-\index{myBMx280@{myBMx280}!REG\_PRES\_DIG\_P9\_ADDR@{REG\_PRES\_DIG\_P9\_ADDR}}
-\index{REG\_PRES\_DIG\_P9\_ADDR@{REG\_PRES\_DIG\_P9\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_PRES\_DIG\_P9\_ADDR}{REG\_PRES\_DIG\_P9\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+P\+R\+E\+S\+\_\+\+D\+I\+G\+\_\+\+P9\+\_\+\+A\+D\+DR = 0\+X9E\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_aecb876eaab3148322c61d60317b05102}\label{classmy_b_mx280_aecb876eaab3148322c61d60317b05102}} 
-\index{myBMx280@{myBMx280}!REG\_RESET\_ADDR@{REG\_RESET\_ADDR}}
-\index{REG\_RESET\_ADDR@{REG\_RESET\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_RESET\_ADDR}{REG\_RESET\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+R\+E\+S\+E\+T\+\_\+\+A\+D\+DR = 0\+X\+E0\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_ae88cc635d4f0ec22105688a0772e0a8c}\label{classmy_b_mx280_ae88cc635d4f0ec22105688a0772e0a8c}} 
-\index{myBMx280@{myBMx280}!REG\_STATUS\_ADDR@{REG\_STATUS\_ADDR}}
-\index{REG\_STATUS\_ADDR@{REG\_STATUS\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_STATUS\_ADDR}{REG\_STATUS\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+D\+DR = 0\+X\+F3\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_afc44c3e7e08628720dcde72d534f5674}\label{classmy_b_mx280_afc44c3e7e08628720dcde72d534f5674}} 
-\index{myBMx280@{myBMx280}!REG\_TEMP\_DIG\_T1\_ADDR@{REG\_TEMP\_DIG\_T1\_ADDR}}
-\index{REG\_TEMP\_DIG\_T1\_ADDR@{REG\_TEMP\_DIG\_T1\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_TEMP\_DIG\_T1\_ADDR}{REG\_TEMP\_DIG\_T1\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+D\+I\+G\+\_\+\+T1\+\_\+\+A\+D\+DR = 0\+X88\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a4c83b40a58d317c319bb3fd58f5fa809}\label{classmy_b_mx280_a4c83b40a58d317c319bb3fd58f5fa809}} 
-\index{myBMx280@{myBMx280}!REG\_TEMP\_DIG\_T2\_ADDR@{REG\_TEMP\_DIG\_T2\_ADDR}}
-\index{REG\_TEMP\_DIG\_T2\_ADDR@{REG\_TEMP\_DIG\_T2\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_TEMP\_DIG\_T2\_ADDR}{REG\_TEMP\_DIG\_T2\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+D\+I\+G\+\_\+\+T2\+\_\+\+A\+D\+DR = 0\+X8A\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_ade53d30d87a1ed81903a47b215e61f27}\label{classmy_b_mx280_ade53d30d87a1ed81903a47b215e61f27}} 
-\index{myBMx280@{myBMx280}!REG\_TEMP\_DIG\_T3\_ADDR@{REG\_TEMP\_DIG\_T3\_ADDR}}
-\index{REG\_TEMP\_DIG\_T3\_ADDR@{REG\_TEMP\_DIG\_T3\_ADDR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{REG\_TEMP\_DIG\_T3\_ADDR}{REG\_TEMP\_DIG\_T3\_ADDR}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+D\+I\+G\+\_\+\+T3\+\_\+\+A\+D\+DR = 0\+X8C\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a4acbf67939638536f12ac6b78aa23fa8}\label{classmy_b_mx280_a4acbf67939638536f12ac6b78aa23fa8}} 
-\index{myBMx280@{myBMx280}!RESET\_VALUE@{RESET\_VALUE}}
-\index{RESET\_VALUE@{RESET\_VALUE}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{RESET\_VALUE}{RESET\_VALUE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+R\+E\+S\+E\+T\+\_\+\+V\+A\+L\+UE = 0x\+B6\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a5d2ca87d70662184674d8c9503cb5577}\label{classmy_b_mx280_a5d2ca87d70662184674d8c9503cb5577}} 
-\index{myBMx280@{myBMx280}!SPI\_3WIRE\_FALSE@{SPI\_3WIRE\_FALSE}}
-\index{SPI\_3WIRE\_FALSE@{SPI\_3WIRE\_FALSE}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{SPI\_3WIRE\_FALSE}{SPI\_3WIRE\_FALSE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+P\+I\+\_\+3\+W\+I\+R\+E\+\_\+\+F\+A\+L\+SE = 0x00\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy_b_mx280_a8d0fe77e4e91493e6888c68fae35a5a5}\label{classmy_b_mx280_a8d0fe77e4e91493e6888c68fae35a5a5}} 
-\index{myBMx280@{myBMx280}!SPI\_3WIRE\_TRUE@{SPI\_3WIRE\_TRUE}}
-\index{SPI\_3WIRE\_TRUE@{SPI\_3WIRE\_TRUE}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{SPI\_3WIRE\_TRUE}{SPI\_3WIRE\_TRUE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+P\+I\+\_\+3\+W\+I\+R\+E\+\_\+\+T\+R\+UE = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+Pressure in Pa. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a363f20c8705a33f356009ae2d94321db}\label{classmy_b_mx280_a363f20c8705a33f356009ae2d94321db}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_1000MS@{STANDBY\_TIME\_1000MS}}
@@ -730,17 +816,32 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_1000MS}{STANDBY\_TIME\_1000MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+1000\+MS = 0x05\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 1000 milliseconds (1 second) 
+
 \mbox{\Hypertarget{classmy_b_mx280_a93b11893a6330129f5dbde1606d4fce0}\label{classmy_b_mx280_a93b11893a6330129f5dbde1606d4fce0}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_10MS@{STANDBY\_TIME\_10MS}}
 \index{STANDBY\_TIME\_10MS@{STANDBY\_TIME\_10MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_10MS}{STANDBY\_TIME\_10MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+10\+MS = 0x06\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 10 milliseconds. 
+
+\begin{DoxyNote}{Note}
+B\+M\+E280 only. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy_b_mx280_a2c09d27bfd365cddf6a6388c25b5cde8}\label{classmy_b_mx280_a2c09d27bfd365cddf6a6388c25b5cde8}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_125MS@{STANDBY\_TIME\_125MS}}
 \index{STANDBY\_TIME\_125MS@{STANDBY\_TIME\_125MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_125MS}{STANDBY\_TIME\_125MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+125\+MS = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Standby time of 125 milliseconds. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a187fe4ecc31022adb2b5f1eeb8fb4729}\label{classmy_b_mx280_a187fe4ecc31022adb2b5f1eeb8fb4729}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_2000MS@{STANDBY\_TIME\_2000MS}}
@@ -748,17 +849,35 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_2000MS}{STANDBY\_TIME\_2000MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+2000\+MS = 0x06\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 2000 milliseconds (2 seconds.) 
+
+\begin{DoxyNote}{Note}
+B\+M\+P280 only. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy_b_mx280_a339bcda5ce37c8478827e56c8ddda09a}\label{classmy_b_mx280_a339bcda5ce37c8478827e56c8ddda09a}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_20MS@{STANDBY\_TIME\_20MS}}
 \index{STANDBY\_TIME\_20MS@{STANDBY\_TIME\_20MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_20MS}{STANDBY\_TIME\_20MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+20\+MS = 0x07\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 20 milliseconds. 
+
+\begin{DoxyNote}{Note}
+B\+M\+E280 only. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy_b_mx280_aa85875cad79cc29e126497336e3de017}\label{classmy_b_mx280_aa85875cad79cc29e126497336e3de017}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_250MS@{STANDBY\_TIME\_250MS}}
 \index{STANDBY\_TIME\_250MS@{STANDBY\_TIME\_250MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_250MS}{STANDBY\_TIME\_250MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+250\+MS = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Standby time of 250 milliseconds. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a4ff7ca27faa9b8cba30fca17381ace74}\label{classmy_b_mx280_a4ff7ca27faa9b8cba30fca17381ace74}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_4000MS@{STANDBY\_TIME\_4000MS}}
@@ -766,11 +885,22 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_4000MS}{STANDBY\_TIME\_4000MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+4000\+MS = 0x07\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 4000 milliseconds (4 seconds) 
+
+\begin{DoxyNote}{Note}
+B\+M\+P280 only. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy_b_mx280_a8a6acdaf21c7248ee7a5d236404a29cf}\label{classmy_b_mx280_a8a6acdaf21c7248ee7a5d236404a29cf}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_500US@{STANDBY\_TIME\_500US}}
 \index{STANDBY\_TIME\_500US@{STANDBY\_TIME\_500US}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_500US}{STANDBY\_TIME\_500US}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+500\+US = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Standby time of 500 microseconds. 
 
 \mbox{\Hypertarget{classmy_b_mx280_a95be261831d42ede70f8d2c03647e7e5}\label{classmy_b_mx280_a95be261831d42ede70f8d2c03647e7e5}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_50MS@{STANDBY\_TIME\_50MS}}
@@ -778,17 +908,29 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de4524653287
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_50MS}{STANDBY\_TIME\_50MS}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+50\+MS = 0x04\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 50 milliseconds. 
+
 \mbox{\Hypertarget{classmy_b_mx280_ae5b81163edbe58bbf58371d8e172b46e}\label{classmy_b_mx280_ae5b81163edbe58bbf58371d8e172b46e}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_62500US@{STANDBY\_TIME\_62500US}}
 \index{STANDBY\_TIME\_62500US@{STANDBY\_TIME\_62500US}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_62500US}{STANDBY\_TIME\_62500US}}
 {\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+62500\+US = 0x01\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Standby time of 6.\+25 milliseconds. 
+
 \mbox{\Hypertarget{classmy_b_mx280_aa0fc7f87475c9b3a6811af678a52df59}\label{classmy_b_mx280_aa0fc7f87475c9b3a6811af678a52df59}} 
 \index{myBMx280@{myBMx280}!temperature@{temperature}}
 \index{temperature@{temperature}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{temperature}{temperature}}
 {\footnotesize\ttfamily float my\+B\+Mx280\+::temperature = 0.\+0}
+
+
+
+Temperature in DegC. 
 
 
 

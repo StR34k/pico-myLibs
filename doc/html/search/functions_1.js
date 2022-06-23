@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['begin_320',['begin',['../classbit_banged_s_p_i.html#a7a5bc5b10e7da6cd6fad6909289a6ae6',1,'bitBangedSPI']]],
-  ['bitbangedspi_321',['bitBangedSPI',['../classbit_banged_s_p_i.html#a92e9f9cb23302d13b29a3f6a83fdc469',1,'bitBangedSPI']]],
-  ['bitmasktopin_322',['bitMaskToPin',['../namespacemy_helpers.html#af614438c04f2644a1d7da251526d2148',1,'myHelpers']]]
+  ['channeltopin_251',['channelToPin',['../namespacemy_a_d_c.html#aa6dad0222962dbe15710f09a04081d45',1,'myADC']]],
+  ['clear_252',['clear',['../classmy595.html#af2008fd88e7505334a97e5abe7bf56e0',1,'my595']]],
+  ['clearhold_253',['clearHold',['../classmy23_l_c1024.html#a5618c8f581b0206ee8c248352aef95a4',1,'my23LC1024']]]
 ];

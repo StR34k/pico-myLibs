@@ -1,17 +1,16 @@
 /**
+ *  Define all error codes.
+ *  All the error code defines for the pico-myLibs. General Error codes are from 0 -> -99, so they
+ *      can be cast to any int type. All other error codes must be cast to int16_t at minimum.
  * @file myErrorCodes.hpp
  * @author Peter Nearing (pnearing@protonmail.com)
- * @brief 
+ * @brief Define all error codes used in pico-myLibs
  * @version 0.1
  * @date 2022-06-23
  * 
  * @copyright Copyright (c) 2022
  * 
- */
-/**
- *  Define all error codes.
- *  All the error code defines for the pico-myLibs. General Error codes are from 0 -> -99, so they
- *      can be cast to any int type. All other error codes must be cast to int16_t at minimum.
+ *
  */
 
 
@@ -77,6 +76,11 @@
      * The channel has not been initialized prior to operation.
      */
     #define MY_ERROR_ADC_CHANNEL_NOT_INIT                   -203
+    /**
+     * @brief Channel already init.
+     * The channel was already initialized when operation requested.
+     */
+    #define MY_ERROR_ADC_CHANNEL_ALREADY_INIT               -204
 
 /************* my23LC1024 error codes (300-349) **********/
     /**
@@ -133,7 +137,7 @@
      * @brief Communication check failed.
      * Communications couldn't be verified.
      */
-    #define MY_EROOR_MY23LC1024_COMM_CHECK_FAILED           -310
+    #define MY_ERROR_MY23LC1024_COMM_CHECK_FAILED           -310
 
 /*************** mySNx4HC595 error codes (400-449) ****************/
     /**

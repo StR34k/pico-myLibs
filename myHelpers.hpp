@@ -1,3 +1,13 @@
+/**
+ * @file myHelpers.hpp
+ * @author Peter Nearing (pnearing@protonmail.com)
+ * @brief Helper functions.
+ * @version 0.1
+ * @date 2022-06-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef MY_HELPERS_H
 #define MY_HELPERS_H
 
@@ -7,7 +17,10 @@
 
 #include "myStandardDefines.hpp"
 #include "myErrorCodes.hpp"
-
+/**
+ * @brief Helper functions.
+ * Define some helper functions for use within pico-myLibs.
+ */
 namespace myHelpers {
     /**
      * @brief Validate if the pin is a valid pin number for the rp2040.

@@ -1,6 +1,12 @@
 \hypertarget{my_standard_defines_8hpp}{}\doxysection{my\+Standard\+Defines.\+hpp File Reference}
 \label{my_standard_defines_8hpp}\index{myStandardDefines.hpp@{myStandardDefines.hpp}}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+
+
+Standard defines for pico-\/my\+Libs.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +17,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}~0x\+FF
-\begin{DoxyCompactList}\small\item\em Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin()}} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Standard defines\+: Set some defines used by pico-\/my\+Libs. Some error values overlap with \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}, values here take precidence over \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~30
 \begin{DoxyCompactList}\small\item\em Number of gpio pins. Number of G\+P\+IO pins on the rp2040. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a57c0b773be8be16ef6615b3681275f09}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+P\+IN}}~29
@@ -26,6 +32,25 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em bit order of L\+SB first. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a11643f271076024c395a93800b3d9546}{\+\_\+\+BV}}(bit)~(1 $<$$<$ (bit))
 \begin{DoxyCompactList}\small\item\em Create a bit mask given a bit number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Standard defines for pico-\/my\+Libs. 
+
+Standard defines and helper macros. Set some defines used by pico-\/my\+Libs. Some error values overlap with \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}, values here take precidence over \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/06-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -97,9 +122,9 @@ No error value. Value to use to represent no error.
 
 
 
-Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin()}} 
+Standard defines\+: Set some defines used by pico-\/my\+Libs. Some error values overlap with \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}, values here take precidence over \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}. 
 
-\mbox{\Hypertarget{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}\label{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}} 
+Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin()}} \mbox{\Hypertarget{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}\label{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_NUM\_PINS@{MY\_NUM\_PINS}}
 \index{MY\_NUM\_PINS@{MY\_NUM\_PINS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_NUM\_PINS}{MY\_NUM\_PINS}}

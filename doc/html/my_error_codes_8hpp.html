@@ -68,17 +68,20 @@ $(function() {
 <div class="title">myErrorCodes.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Define all error codes used in pico-myLibs.  
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_error_codes_8hpp__dep__incl.png" border="0" usemap="#my_error_codes_8hppdep" alt=""/></div>
 <map name="my_error_codes_8hppdep" id="my_error_codes_8hppdep">
-<area shape="rect" title=" " alt="" coords="338,5,481,32"/>
-<area shape="rect" href="my23_l_c1024_8hpp.html" title=" " alt="" coords="5,80,229,107"/>
-<area shape="rect" href="my_a_d_c_8hpp.html" title=" " alt="" coords="253,80,405,107"/>
-<area shape="rect" href="my_helpers_8hpp.html" title=" " alt="" coords="430,80,551,107"/>
+<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="338,5,481,32"/>
+<area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
+<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="430,80,551,107"/>
 <area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="563,155,813,181"/>
-<area shape="rect" href="my_random_8hpp.html" title=" " alt="" coords="147,155,351,181"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers:" alt="" coords="147,155,351,181"/>
 <area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="376,155,539,181"/>
 </map>
 </div>
@@ -117,6 +120,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ab8f5305db7c7e613e006fbb5932a2ae8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ab8f5305db7c7e613e006fbb5932a2ae8">MY_ERROR_ADC_CHANNEL_NOT_INIT</a>&#160;&#160;&#160;-203</td></tr>
 <tr class="memdesc:ab8f5305db7c7e613e006fbb5932a2ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel not initialized. The channel has not been initialized prior to operation.  <a href="my_error_codes_8hpp.html#ab8f5305db7c7e613e006fbb5932a2ae8">More...</a><br /></td></tr>
 <tr class="separator:ab8f5305db7c7e613e006fbb5932a2ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed50b26c1428d1e3874c01d97f6ae8cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#aed50b26c1428d1e3874c01d97f6ae8cb">MY_ERROR_ADC_CHANNEL_ALREADY_INIT</a>&#160;&#160;&#160;-204</td></tr>
+<tr class="memdesc:aed50b26c1428d1e3874c01d97f6ae8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel already init. The channel was already initialized when operation requested.  <a href="my_error_codes_8hpp.html#aed50b26c1428d1e3874c01d97f6ae8cb">More...</a><br /></td></tr>
+<tr class="separator:aed50b26c1428d1e3874c01d97f6ae8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68128ecaa48f01a2db30302cd19d8ea1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a68128ecaa48f01a2db30302cd19d8ea1">MY_ERROR_MY23LC1024_SRAM_HELD</a>&#160;&#160;&#160;-300</td></tr>
 <tr class="memdesc:a68128ecaa48f01a2db30302cd19d8ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sram held. Sram is set to HOLD when operation was requested.  <a href="my_error_codes_8hpp.html#a68128ecaa48f01a2db30302cd19d8ea1">More...</a><br /></td></tr>
 <tr class="separator:a68128ecaa48f01a2db30302cd19d8ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,9 +153,9 @@ Macros</h2></td></tr>
 <tr class="memitem:af4c46a80c254713ad590b7420033fef3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#af4c46a80c254713ad590b7420033fef3">MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE</a>&#160;&#160;&#160;-309</td></tr>
 <tr class="memdesc:af4c46a80c254713ad590b7420033fef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hold not available. Hold function not available in comms mode.  <a href="my_error_codes_8hpp.html#af4c46a80c254713ad590b7420033fef3">More...</a><br /></td></tr>
 <tr class="separator:af4c46a80c254713ad590b7420033fef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c10b50348c74ef850b102206f2d933f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a3c10b50348c74ef850b102206f2d933f">MY_EROOR_MY23LC1024_COMM_CHECK_FAILED</a>&#160;&#160;&#160;-310</td></tr>
-<tr class="memdesc:a3c10b50348c74ef850b102206f2d933f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Communication check failed. Communications couldn't be verified.  <a href="my_error_codes_8hpp.html#a3c10b50348c74ef850b102206f2d933f">More...</a><br /></td></tr>
-<tr class="separator:a3c10b50348c74ef850b102206f2d933f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12330b789b3b03c3f65b26ec53e3ea2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ab12330b789b3b03c3f65b26ec53e3ea2">MY_ERROR_MY23LC1024_COMM_CHECK_FAILED</a>&#160;&#160;&#160;-310</td></tr>
+<tr class="memdesc:ab12330b789b3b03c3f65b26ec53e3ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Communication check failed. Communications couldn't be verified.  <a href="my_error_codes_8hpp.html#ab12330b789b3b03c3f65b26ec53e3ea2">More...</a><br /></td></tr>
+<tr class="separator:ab12330b789b3b03c3f65b26ec53e3ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507132ce31f0514a87d1a09532012c64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a507132ce31f0514a87d1a09532012c64">MY_ERROR_MY595_ENABLE_NOT_DEFINED</a>&#160;&#160;&#160;-400</td></tr>
 <tr class="memdesc:a507132ce31f0514a87d1a09532012c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable pin not defined. The enable pin was not defined when operation was requested.  <a href="my_error_codes_8hpp.html#a507132ce31f0514a87d1a09532012c64">More...</a><br /></td></tr>
 <tr class="separator:a507132ce31f0514a87d1a09532012c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,23 +163,14 @@ Macros</h2></td></tr>
 <tr class="memdesc:a7d6340ef277d5e7013b79f1627e76eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear pin not defined. The clear pin was not defined when operation was requested.  <a href="my_error_codes_8hpp.html#a7d6340ef277d5e7013b79f1627e76eb9">More...</a><br /></td></tr>
 <tr class="separator:a7d6340ef277d5e7013b79f1627e76eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a3c10b50348c74ef850b102206f2d933f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c10b50348c74ef850b102206f2d933f">&#9670;&nbsp;</a></span>MY_EROOR_MY23LC1024_COMM_CHECK_FAILED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MY_EROOR_MY23LC1024_COMM_CHECK_FAILED&#160;&#160;&#160;-310</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Communication check failed. Communications couldn't be verified. </p>
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Define all error codes used in pico-myLibs. </p>
+<p>Define all error codes. All the error code defines for the pico-myLibs. General Error codes are from 0 -&gt; -99, so they can be cast to any int type. All other error codes must be cast to int16_t at minimum.</p>
+<dl class="section author"><dt>Author</dt><dd>Peter Nearing (<a href="#" onclick="location.href='mai'+'lto:'+'pne'+'ar'+'ing'+'@p'+'rot'+'on'+'mai'+'l.'+'com'; return false;">pnear<span style="display: none;">.nosp@m.</span>ing@<span style="display: none;">.nosp@m.</span>proto<span style="display: none;">.nosp@m.</span>nmai<span style="display: none;">.nosp@m.</span>l.com</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-06-23</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="af0e1bae518d67d8dfff2d20e8bb36ebc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0e1bae518d67d8dfff2d20e8bb36ebc">&#9670;&nbsp;</a></span>MY_ERROR_ADC_ADC_NOT_INIT</h2>
 
@@ -187,6 +184,22 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>ADC not initialized. Initialize hasn't been called prior to operation. </p>
+
+</div>
+</div>
+<a id="aed50b26c1428d1e3874c01d97f6ae8cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed50b26c1428d1e3874c01d97f6ae8cb">&#9670;&nbsp;</a></span>MY_ERROR_ADC_CHANNEL_ALREADY_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_ADC_CHANNEL_ALREADY_INIT&#160;&#160;&#160;-204</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Channel already init. The channel was already initialized when operation requested. </p>
 
 </div>
 </div>
@@ -235,6 +248,22 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invalid pin number. An invalid pin number was passed. </p>
+
+</div>
+</div>
+<a id="ab12330b789b3b03c3f65b26ec53e3ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab12330b789b3b03c3f65b26ec53e3ea2">&#9670;&nbsp;</a></span>MY_ERROR_MY23LC1024_COMM_CHECK_FAILED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MY23LC1024_COMM_CHECK_FAILED&#160;&#160;&#160;-310</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Communication check failed. Communications couldn't be verified. </p>
 
 </div>
 </div>

@@ -1,20 +1,13 @@
 var searchData=
 [
-  ['getadcinit_327',['getADCInit',['../namespacemy_a_d_c.html#a769381b85630da9c5cb7e21c2efcd3d3',1,'myADC']]],
-  ['getchannelinit_328',['getChannelInit',['../namespacemy_a_d_c.html#af351cc973db0eb54ab75f168073511b3',1,'myADC']]],
-  ['getconfig_329',['getConfig',['../classmy_b_mx280.html#a4ddde06e95b11dbd7d1a1aa185d24725',1,'myBMx280']]],
-  ['getfilter_330',['getFilter',['../classmy_b_mx280.html#a83b9821be0b0035051804dba7c9d33bc',1,'myBMx280']]],
-  ['gethumctrl_331',['getHumCtrl',['../classmy_b_mx280.html#a7aac4a5d1473a66c289fd6bcab90e7ee',1,'myBMx280']]],
-  ['gethumidityosr_332',['getHumidityOSR',['../classmy_b_mx280.html#aff41a6ed4b5146ba137fe8126884631f',1,'myBMx280']]],
-  ['getid_333',['getID',['../classmy_b_mx280.html#a234df64896c1cc82bb51a79f00bc44f5',1,'myBMx280']]],
-  ['getlastindex_334',['getLastIndex',['../classmy23_l_c1024.html#a64a9b1bf245eeff9041a0e083684c2b1',1,'my23LC1024']]],
-  ['getmeasctrl_335',['getMeasCtrl',['../classmy_b_mx280.html#a5f47ddd9bc9aed4e4e8dae8cba6161b3',1,'myBMx280']]],
-  ['getmode_336',['getMode',['../classmy_b_mx280.html#ab4e9a7dbdfe835fef3c30e528444db2b',1,'myBMx280']]],
-  ['getnextindex_337',['getNextIndex',['../classmy23_l_c1024.html#a81380a372dfc49a10d1835edb54dcd09',1,'my23LC1024']]],
-  ['getpininit_338',['getPinInit',['../namespacemy_a_d_c.html#a2d2e722aff828d134b0b6ec14cd5e062',1,'myADC']]],
-  ['getpressureosr_339',['getPressureOSR',['../classmy_b_mx280.html#a38131c72afebec4eb60284315b369894',1,'myBMx280']]],
-  ['getstandbytime_340',['getStandbyTime',['../classmy_b_mx280.html#abc8fbd1144ef0ec495421c21e25fbcfa',1,'myBMx280']]],
-  ['getstatus_341',['getStatus',['../classmy_b_mx280.html#af42db5a5807c2f440aa49e85df4f033f',1,'myBMx280']]],
-  ['gettemperatureinit_342',['getTemperatureInit',['../namespacemy_a_d_c.html#a8149d0bbac7fe32f6f14852c0af850a3',1,'myADC']]],
-  ['gettemperatureosr_343',['getTemperatureOSR',['../classmy_b_mx280.html#ac4870a8b89307db9c7c03cdc5f304ef4',1,'myBMx280']]]
+  ['initchannel_272',['initChannel',['../namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8',1,'myADC']]],
+  ['initialize_273',['initialize',['../classmy23_l_c1024.html#a41e0e49edf36079e62b0404032984cd0',1,'my23LC1024::initialize()'],['../classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405',1,'myBMx280::initialize()'],['../classmy595.html#a5500cff53bb9c724db9ca64c6ba303ec',1,'my595::initialize()'],['../classmy595.html#aac7cd78f82f0d116baa512dffec05c9b',1,'my595::initialize(const bool enable)'],['../classmy595.html#a0f019532fbe735bc7ad314294f8da8fd',1,'my595::initialize(const uint8_t enable)'],['../namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad',1,'myADC::initialize()'],['../namespacemy_s_p_i_master.html#ae2375849a026b0d5273923b46c322e1a',1,'mySPIMaster::initialize()']]],
+  ['initpin_274',['initPin',['../namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a',1,'myADC']]],
+  ['inittemperature_275',['initTemperature',['../namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923',1,'myADC']]],
+  ['isbusy_276',['isBusy',['../classmy23_l_c1024.html#adda0c49cfd3ece3444ba68f492cd8a15',1,'my23LC1024']]],
+  ['isheld_277',['isHeld',['../classmy23_l_c1024.html#a8d790ae6aa35d1e4735b85d32e59d468',1,'my23LC1024']]],
+  ['isidle_278',['isIdle',['../classmy23_l_c1024.html#a2d3d2b32da91e8224e7f2d6ed300b4cf',1,'my23LC1024']]],
+  ['ispin_279',['isPin',['../namespacemy_helpers.html#a14451ade4ade2ad79e5a2bfd83ad8cac',1,'myHelpers']]],
+  ['isreading_280',['isReading',['../classmy23_l_c1024.html#a18fd8e4540397297d3655e27f21cba81',1,'my23LC1024']]],
+  ['iswriting_281',['isWriting',['../classmy23_l_c1024.html#aa6f757a11be2fd7d4604dfbfcba938f8',1,'my23LC1024']]]
 ];

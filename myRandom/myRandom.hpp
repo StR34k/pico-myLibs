@@ -1,18 +1,15 @@
-/* myRandom.hpp
- *  Provides: seed_from_rosc() and randomBit().
- *  Uses the unconditioned ring oscilator to set the
- *  random seed. We read once a microsecond beacuse
- *  the source is periodic if read too quickly.
- *  Random code provided by: https://github.com/raspberrypi/pico-sdk/issues/569
+/**
+ * @file myRandom.hpp
+ * @author Peter Nearing (pnearing@protonmail.com)
+ * @brief Random helpers:
+ * @version 0.1
+ * @date 2022-06-23
  * 
- *    Functions:
- *      roscRandomBit:      returns a single random bit from the random oscilator.
- *      roscRandomByte:     returns 8 random bits from the random oscilator.
- *      roscRandomWord:     return n bits, where n is sizeof(uint) * 8. as defined by the compliler.
- *      seedFromROSC:       seed srand using random bits from random oscilator.
- *      seedFromADCChannel: seed srand given an unconnected ADC channel.
- *      seedFromADCPin:     same as channel, just takes a pin as an argument.
+ * @copyright Copyright (c) 2022
+ * 
  */
+
+
 #ifndef MY_RANDOM_H
 #define MY_RANDOM_H
 
@@ -20,17 +17,38 @@
 #include <pico/time.h>
 #include "../myStandardDefines.hpp"
 #include "../myADC/myADC.hpp"
-
+/**
+ * @brief Random helper functions:
+ *  Uses the unconditioned ring oscilator to set the
+ *  random seed. We read once a microsecond beacuse
+ *  the source is periodic if read too quickly.
+ *  Random code provided by: https://github.com/raspberrypi/pico-sdk/issues/569
+ * 
+ */
 namespace myRandom {
 /* Constants: */
+    /**
+     * @brief no error. Value 0 (NO_ERROR)
+     * 
+     */
     int16_t NO_ERROR = MY_NO_ERROR;
 /* Funtions: */
     // Return a single random bit from the random oscilator.
+    /**
+     * @brief Return a single random bit from the random oscilator
+     * 
+     * @return Random bit. 
+     */
     bool roscRandomBit() {
         sleep_us(1);    // Sleep so we don't read too often.
         return rosc_hw->randombit; // Return a random bit.
     }
     // Return  a random byte:
+    /**
+     * @brief Return a random byte from the random oscilator
+     * 
+     * @return uint8_t random byte
+     */
     uint8_t roscRandomByte() {
         uint8_t value=0;
         for (uint8_t i=0; i<8; i++) {
@@ -40,6 +58,11 @@ namespace myRandom {
         return value;
     }
     // Return a random word:
+    /**
+     * @brief return a random word from the random oscilator.
+     * 
+     * @return uint random word
+     */
     uint roscRandomWord() {
         uint value;
         uint8_t numBits = sizeof(value) * 8;
@@ -50,6 +73,10 @@ namespace myRandom {
         return value;
     }
     // Seed srand with a randomSeed generated from the random oscilator.
+    /**
+     * @brief Seed srand with a seed generated from the random oscilator.
+     * 
+     */
     void seedFromROSC() {
         uint32_t randomSeed;
         for (uint8_t i=0; i<32; i++) {
@@ -58,7 +85,13 @@ namespace myRandom {
         }
         srand(randomSeed);
     }
-    // Generate a random seed by reading an unconnected adc pin, in arduino style.
+    // Generate a random seed by reading an unconnected adc channel, in arduino style.
+    /**
+     * @brief Generate a random seed by readin a floatind ADC pin, in arduino style.
+     * 
+     * @param adcChannel Channel to read
+     * @return int16_t returns 0 (NO_ERROR) for okay, negative for error code. Error codes are from myADC
+     */
     int16_t seedFromADCChannel(uint8_t adcChannel) {
     // Init variables:
         uint32_t randomSeed = 0;
@@ -78,7 +111,12 @@ namespace myRandom {
         srand(randomSeed);  // Set the seed.
         return NO_ERROR;
     }
-    
+    /**
+     * @brief Seed srand from a floating analog pin. in arduino style
+     * 
+     * @param adcPin Pin to read.
+     * @return int16_t returns 0 (NO_ERROR) for okay, negative for error code. Error codes are from myADC.
+     */
     int16_t seedFromADCPin(uint8_t adcPin) {
     // Init variables:
         uint32_t randomSeed = 0;

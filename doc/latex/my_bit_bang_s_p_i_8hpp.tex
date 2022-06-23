@@ -2,44 +2,37 @@
 \label{my_bit_bang_s_p_i_8hpp}\index{myBitBangSPI/myBitBangSPI.hpp@{myBitBangSPI/myBitBangSPI.hpp}}
 {\ttfamily \#include $<$hardware/gpio.\+h$>$}\newline
 {\ttfamily \#include $<$pico/time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
 Include dependency graph for my\+Bit\+Bang\+S\+P\+I.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=267pt]{my_bit_bang_s_p_i_8hpp__incl}
+\includegraphics[width=350pt]{my_bit_bang_s_p_i_8hpp__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacemy_s_p_i_master}{my\+S\+P\+I\+Master}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em S\+PI Master namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespacemy_s_p_i_master_a4b13b701a57bd67ac93d472b0311d685}{my\+S\+P\+I\+Master\+::\+\_\+\+\_\+validate\+Mode\+\_\+\+\_\+}} (const uint8\+\_\+t mode)
-\item 
-void \mbox{\hyperlink{namespacemy_s_p_i_master_afaf0a30906c72fa5666921fcd5e3cf8f}{my\+S\+P\+I\+Master\+::\+\_\+\+\_\+set\+Idle\+\_\+\+\_\+}} ()
-\item 
 bool \mbox{\hyperlink{namespacemy_s_p_i_master_ae2375849a026b0d5273923b46c322e1a}{my\+S\+P\+I\+Master\+::initialize}} (const uint8\+\_\+t sck, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t mode=M\+O\+D\+E\+\_\+0, const bool msb\+First=true, uint64\+\_\+t delay\+US=1)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize S\+PI master. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a0411d63389a2ee26dd9037ea15b8d49a}{my\+S\+P\+I\+Master\+::transfer}} (const uint8\+\_\+t value)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em transfer a byte \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+0}} = 0x00
-\item 
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 0. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a327f7e0b906a68584a6946af1013a06c}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+1}} = 0x01
-\item 
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 1. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_ac495820c7a7d168e2fd87671f238d275}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+2}} = 0x02
-\item 
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 2. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a6ee14c1d7a398dde1e302e1463305f43}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+3}} = 0x03
-\item 
-const bool \mbox{\hyperlink{namespacemy_s_p_i_master_aa88e1c784f1266d528df19f21c55a3bc}{my\+S\+P\+I\+Master\+::\+M\+S\+B\+\_\+\+F\+I\+R\+ST}} = true
-\item 
-const bool \mbox{\hyperlink{namespacemy_s_p_i_master_a63ea33de30cc7bf9e6a49941431b8346}{my\+S\+P\+I\+Master\+::\+L\+S\+B\+\_\+\+F\+I\+R\+ST}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 3. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a178fcdc2f572bcb8816c27efb8325f8a}{my\+S\+P\+I\+Master\+::\+\_\+sck}}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_aaf7bc453640f4966f2e62c90b7af7f67}{my\+S\+P\+I\+Master\+::\+\_\+miso}}

@@ -1,21 +1,310 @@
-
+/**
+ * @file my23LC1024.hpp
+ * @author Peter Nearing (pnearing@protonmail.com)
+ * @brief Class to use a 23LC1024 spi sram chip.
+ * @version 0.1
+ * @date 2022-06-23
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef MY23LC1024_H
 #define MY23LC1024_H
-#include "../myStandardDefines.hpp"
-#include "../myErrorCodes.hpp"
-// #include "../myBitBangSPI/myBitBangSPI.hpp"
-// #include <pico/stdlib.h>
 #include <pico/time.h>
 #include <hardware/spi.h>
 
+#include "../myStandardDefines.hpp"
+#include "../myErrorCodes.hpp"
+/**
+ * @brief Class to use a 23LC1024 spi sram chip.
+ * 
+ */
 class my23LC1024 {
 
     public:
     /* Constants: */
         // Communication Modes:
+        /**
+         * @brief SPI Communications mode.
+         * Normal SPI interface, can either be bit banged, or hardware.
+         * @note The chip is capable of 20Mhz clock, which is not attainable by hardware.
+         */
         static const uint8_t COMM_MODE_SPI  = 0x00;
+        /**
+         * @brief SDI Communications mode.
+         * SDI, like spi, but transfers 2 bits at a time.
+         */
         static const uint8_t COMM_MODE_SDI  = 0x01;
+        /**
+         * @brief SQI Communications mode.
+         * SQI, like SDI, but uses 4 bits at a time.
+         * @note In my testing this mode is not stable for large read / write.
+         */
         static const uint8_t COMM_MODE_SQI  = 0x02;
+        // Valid address Mask, and length:
+        /**
+         * @brief Max address available
+         * 
+         */
+        static const int32_t MAX_ADDRESS    = 0x0001FFFF; // 0b 0000 0000 0000 0001 1111 1111 1111 1111
+        /**
+         * @brief Size of the sram.
+         * 
+         */
+        static const int32_t LENGTH = MAX_ADDRESS +1; // Set the max length.
+        // Error codes:
+        /**
+         * @brief No error. Value 0
+         * 
+         */
+        static const int32_t NO_ERROR = MY_NO_ERROR;                                      //    0 : No error.
+        /**
+         * @brief Sram held. Value -300
+         * Sram was held when operation requested.
+         */
+        static const int32_t ERROR_SRAM_HELD = MY_ERROR_MY23LC1024_SRAM_HELD;                   // -300 : Sram has been held by the hold pin.
+        /**
+         * @brief Invalid address. Value -301
+         * Sram was passed an invalid address.
+         */
+        static const int32_t ERROR_INVAID_ADDRESS = MY_ERROR_MY23LC1024_INVALID_ADDRESS;        // -301 : An invalid address was passed to a function.
+        /**
+         * @brief Sram busy. Value -302.
+         * Sram was busy at time of request.
+         */
+        static const int32_t ERROR_SRAM_BUSY = MY_ERROR_MY23LC1024_SRAM_BUSY;                   // -302 : Sram is already busy.
+        /**
+         * @brief Sram idle. Value -303
+         * Sram was idle at time of request.
+         */
+        static const int32_t ERROR_SRAM_IDLE = MY_ERROR_MY23LC1024_SRAM_IDLE;                   // -303 : Sram is already idle.
+        /**
+         * @brief Hold not defined. Value -304
+         * Hold pin not defined for operation or comms mode.
+         */
+        static const int32_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED;     // -304 : Hold pin is not defined.
+        /**
+         * @brief Sio2 not defined. Value -305
+         * Sio2 is not defined for comms mode.
+         */
+        static const int32_t ERROR_SIO2_NOT_DEFINED = MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED;     // -305 : Sio2 pin is not defined.
+        /**
+         * @brief Sram not held. Value -306
+         * Sram not held when clear hold requested.
+         */
+        static const int32_t ERROR_SRAM_NOT_HELD = MY_ERROR_MY23LC1024_SRAM_NOT_HELD;           // -306 : Sram is not held.
+        /**
+         * @brief Sram not reading. Value -307
+         * Sram is not in reading state when read requested.
+         */
+        static const int32_t ERROR_NOT_READING = MY_ERROR_MY23LC1024_NOT_READING;               // -307 : Sram is not in the reading state.
+        /**
+         * @brief Sram not writing. Value -308
+         * Sram is not in writing state when write requested.
+         */
+        static const int32_t ERROR_NOT_WRITING = MY_ERROR_MY23LC1024_NOT_WRITING;               // -308 : Sram is not in the writing state.
+        /**
+         * @brief Hold not available. Value -309
+         * Hold not available in comms mode.
+         */
+        static const int32_t ERROR_HOLD_NOT_AVAILABLE = MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE; // -309 : Hold function is not available.
+        /**
+         * @brief Comms check failed. Value -310
+         * Communications check failed during init.
+         */
+        static const int32_t ERROR_COMM_CHECK_FAILED = MY_ERROOR_MY23LC1024_COMM_CHECK_FAILED;   // -310 : Comms check failed during Init.
+
+    /* Constructor: */
+    // HW SPI Constructors:
+        // HW SPI no hold.
+        /**
+         * @brief Construct a new my23LC1024 object. Hardware spi, no hold.
+         * 
+         * @param spiPort Spi port to use.
+         * @param csPin Chip Select pin.
+         * @param sckPin Clock pin
+         * @param misoPin Miso pin
+         * @param mosiPin Mosi pin
+         */
+        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
+                        const uint8_t mosiPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin), 
+                        _mosiPin (mosiPin) {
+            _spiPort = spiPort;
+            _useHWSPI = true;
+        }
+        // HW SPI with hold.
+        /**
+         * @brief Construct a new my23LC1024 object. Hardware SPI with hold.
+         * 
+         * @param spiPort Spi port to use
+         * @param csPin Chip select pin
+         * @param sckPin Clock pin.
+         * @param misoPin Miso pin
+         * @param mosiPin mosi pin.
+         * @param holdPin Hold pin.
+         */
+        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
+                        const uint8_t mosiPin, const uint8_t holdPin) :  _csPin (csPin), _sckPin (sckPin), 
+                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (holdPin) {
+            _spiPort = spiPort;
+            _useHWSPI = true;
+        }
+    // Bit Bang comms Constructors:
+        // Bit banged spi / sdi, no hold.
+        /**
+         * @brief Construct a new my23LC1024 object. Bitbanged SPI / SDI modes, No hold.
+         * 
+         * @param csPin Chip Select pin
+         * @param sckPin Clock pin
+         * @param misoPin Miso pin
+         * @param mosiPin Mosi pin
+         */
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) :
+                        _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin) {
+            _useHWSPI = false;
+        }
+        // Bit banged spi / sdi with hold.
+        /**
+         * @brief Construct a new my23LC1024 object. Bit Banged SPI / SDI modes, with hold.
+         * 
+         * @param csPin Chip select pin.
+         * @param sckPin Clock Pin
+         * @param misoPin Miso pin.
+         * @param mosiPin Mosi pin.
+         * @param holdPin Hold pin.
+         */
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
+                         const uint8_t holdPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin),
+                         _mosiPin (mosiPin), _holdPin(holdPin) {
+            _useHWSPI = false;
+        }
+        // Sqi. no hold.
+        /**
+         * @brief Construct a new my23LC1024 object. Bit Banged SQI mode. Hold not available.
+         * 
+         * @param csPin 
+         * @param sckPin 
+         * @param misoPin 
+         * @param mosiPin 
+         * @param holdPin 
+         * @param sio2Pin 
+         */
+        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, 
+                        const uint8_t holdPin, const uint8_t sio2Pin) : _csPin (csPin), _sckPin (sckPin),
+                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (holdPin), _sio2Pin (sio2Pin) {
+            _useHWSPI = false;
+        }
+    /* Functions: */
+        /**
+         * @brief Initialize the sram to comms mode.
+         * Initialize the sram given comms mode.
+         * @param commsMode Comms mode, defaults to SPI
+         * @return int32_t Retruns 0 (NO_ERROR) if initialized okay, negative for error code.
+         */
+        int32_t        initialize(const uint8_t commsMode=COMM_MODE_SPI);          // Return 0 if initialized, error code if not.
+        /**
+         * @brief Validate an address.
+         * 
+         * @param address Address to validate
+         * @return true is a valid address
+         * @return false if not a valid address.
+         */
+        bool inline     validateAddress(const int32_t address);                     // Return True if address valid.
+        /**
+         * @brief Return true if sram is in idle state.
+         * 
+         * @return true Sram is idle
+         * @return false Sram is busy
+         */
+        bool inline     isIdle();                                                   // Return True if currently idle.
+        /**
+         * @brief return true if sram is in busy state.
+         * 
+         * @return true Sram is busy
+         * @return false Sram is idle.
+         */
+        bool inline     isBusy();                                                   // Return true if currently reading or writing.
+        /**
+         * @brief Return true if sram is in reading state.
+         * 
+         * @return true Sram is reading.
+         * @return false Sram is not reading.
+         */
+        bool inline     isReading();                                                // Return true if currently in a read.
+        /**
+         * @brief Return true if sram is in writing state.
+         * 
+         * @return true Sram is writing.
+         * @return false Sram is not writing.
+         */
+        bool inline     isWriting();                                                // return true if currently in a write.
+        /**
+         * @brief Return true if sram is currently held.
+         * 
+         * @return true Sram is held.
+         * @return false Sram is not held.
+         */
+        bool inline     isHeld();                                                   // Return true if comms are held.
+        /**
+         * @brief Set the Hold state.
+         * 
+         * @return int32_t Return 0 (NO_ERROR) if hold okay, negative for error code.
+         */
+        int32_t         setHold();                                                  // Set the hold. returns 0 on success or negative for error code.
+        /**
+         * @brief Clear the hold state.
+         * 
+         * @return int32_t Returns 0 (NO_ERROR) if cleared okay, negative for error code.
+         */
+        int32_t         clearHold();                                                // Clear the hold. returns 0 on success or negative for error code.
+        /**
+         * @brief Get the Next Index the sram will read / write to.
+         * 
+         * @return int32_t Positive (including zero) is the index. -1 means it hasn't been set, or sram idle.
+         */
+        int32_t inline  getNextIndex();                                             // Return the next address. -1 means address hasn't been set.
+        /**
+         * @brief Get the Last Index the sram read / wrote.
+         * 
+         * @return int32_t Postive (including zero) is the index, -1 means no read / write has occured.
+         */
+        int32_t inline  getLastIndex();                                             // Return the last address read / written. -1 means no address has been read / written.
+        /**
+         * @brief Start the read
+         * Starts the read at the address given.
+         * @param address Address to read from
+         * @return int32_t Returns 0 (NO_ERROR) for okay, negative for error code.
+         */
+        int32_t         startRead(const int32_t address);                           // Start the read process. return 0 for okay, negative for error code.
+        /**
+         * @brief Read a single byte from sram.
+         * Reads a byte and increments the address for the next read operation.
+         * @return int32_t Positive (including 0) byte read, negaitive for error code.
+         */
+        int32_t         read();                                                     // Read a single byte returns byte read. 0 -> 255 byte read, negative for error code.
+        /**
+         * @brief Start the write.
+         * Starts a write at the address given.
+         * @param address Address to write to
+         * @return int32_t returns 0 (NO_ERROR) for okay, negative for error code.
+         */
+        int32_t         startWrite(const int32_t address);                          // start the write process returns 0 for okay, negative for error code.
+        /**
+         * @brief Write a single byte to sram.
+         * Writes the byte to the address, and increments the address for the next write.
+         * @param value Value to write to sram
+         * @return int32_t Returns 0 (NO_ERROR) for okay, negative for error code.
+         */
+        int32_t         write(const uint8_t value);                                 // write a single byte. returns 0 for okay, negative for error code.
+        /**
+         * @brief Stop a read / write.
+         * Stops a read or write process. must be called after start read / write, in order to switch modes.
+         * @return int32_t returns 0 (NO_ERROR) for okay, negative for error code.
+         */
+        int32_t         stop();                                                     // stop the read / write process. returns 0 for okay, negative for error code.
+
+    private:
+    /* Constants: */
 	    // Sram instruction set:
 		static const uint8_t READ_INSTRUCTION	= 0x03; // Start read
 		static const uint8_t WRITE_INSTRUCTION	= 0x02; // Start write
@@ -28,9 +317,7 @@ class my23LC1024 {
         static const uint8_t SRAM_MODE_BYTE     = 0x00; // Sram single byte mode.
         static const uint8_t SRAM_MODE_SEQ      = 0x40; // Sram sequential mode, default mode, and our mode.
         static const uint8_t SRAM_MODE_PAGE     = 0x80; // Sram 32 byte page mode.
-        // Valid address Mask, and length:
-        static const int32_t MAX_ADDRESS    = 0x0001FFFF; // 0b 0000 0000 0000 0001 1111 1111 1111 1111
-        static const int32_t LENGTH = MAX_ADDRESS +1; // Set the max length.
+        // Address Masks:
         static const uint32_t ADDRESS_HIGH_BYTE_MASK    = 0x00010000; // The mask for a valid high byte.
         static const uint32_t ADDRESS_MIDDLE_BYTE_MASK  = 0x0000FF00; // The mask for a valid middle byte.
         static const uint32_t ADDRESS_LOW_BYTE_MASK     = 0x000000FF; // The mask for a valid low byte.
@@ -45,19 +332,6 @@ class my23LC1024 {
         // Hold bit:
         static const uint8_t STATUS_HOLD_MASK       = 0X04; // Bit set if held.     0b 0000 0100
         static const uint8_t STATUS_IS_HELD         = 0x04; // Value if bit is set. 0b 0000 0100
-        // Error codes:
-        static const int32_t NO_ERROR = MY_NO_ERROR;                                      //    0 : No error.
-        static const int32_t ERROR_SRAM_HELD = MY_ERROR_MY23LC1024_SRAM_HELD;                   // -300 : Sram has been held by the hold pin.
-        static const int32_t ERROR_INVAID_ADDRESS = MY_ERROR_MY23LC1024_INVALID_ADDRESS;        // -301 : An invalid address was passed to a function.
-        static const int32_t ERROR_SRAM_BUSY = MY_ERROR_MY23LC1024_SRAM_BUSY;                   // -302 : Sram is already busy.
-        static const int32_t ERROR_SRAM_IDLE = MY_ERROR_MY23LC1024_SRAM_IDLE;                   // -303 : Sram is already idle.
-        static const int32_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED;     // -304 : Hold pin is not defined.
-        static const int32_t ERROR_SIO2_NOT_DEFINED = MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED;     // -305 : Sio2 pin is not defined.
-        static const int32_t ERROR_SRAM_NOT_HELD = MY_ERROR_MY23LC1024_SRAM_NOT_HELD;           // -306 : Sram is not held.
-        static const int32_t ERROR_NOT_READING = MY_ERROR_MY23LC1024_NOT_READING;               // -307 : Sram is not in the reading state.
-        static const int32_t ERROR_NOT_WRITING = MY_ERROR_MY23LC1024_NOT_WRITING;               // -308 : Sram is not in the writing state.
-        static const int32_t ERROR_HOLD_NOT_AVAILABLE = MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE; // -309 : Hold function is not available.
-        static const int32_t ERROR_COMM_CHECK_FAILED = MY_EROOR_MY23LC1024_COMM_CHECK_FAILED;   // -310 : Comms check failed during Init.
     /* Pin assignment:*/
         const uint8_t _csPin    = MY_NOT_A_PIN;
         const uint8_t _sckPin   = MY_NOT_A_PIN;
@@ -65,60 +339,6 @@ class my23LC1024 {
         const uint8_t _mosiPin  = MY_NOT_A_PIN;
         const uint8_t _holdPin  = MY_NOT_A_PIN;
         const uint8_t _sio2Pin  = MY_NOT_A_PIN;
-
-    /* Constructor: */
-    // HW SPI Constructors:
-        // HW SPI no hold.
-        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
-                        const uint8_t mosiPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin), 
-                        _mosiPin (mosiPin) {
-            _spiPort = spiPort;
-            _useHWSPI = true;
-        }
-        // HW SPI with hold.
-        my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, 
-                        const uint8_t mosiPin, const uint8_t holdPin) :  _csPin (csPin), _sckPin (sckPin), 
-                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (holdPin) {
-            _spiPort = spiPort;
-            _useHWSPI = true;
-        }
-    // Bit Bang comms Constructors:
-        // Bit banged spi / sdi, no hold.
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) :
-                        _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin) {
-            _useHWSPI = false;
-        }
-        // Bit banged spi / sdi with hold.
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
-                         const uint8_t holdPin) : _csPin (csPin), _sckPin (sckPin), _misoPin (misoPin),
-                         _mosiPin (mosiPin), _holdPin(holdPin) {
-            _useHWSPI = false;
-        }
-        // Sqi. no hold.
-        my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, 
-                        const uint8_t holdPin, const uint8_t sio2Pin) : _csPin (csPin), _sckPin (sckPin),
-                        _misoPin (misoPin), _mosiPin(mosiPin), _holdPin (holdPin), _sio2Pin (sio2Pin) {
-            _useHWSPI = false;
-        }
-    /* Functions: */
-        int32_t        initialize(const uint8_t commsMode=COMM_MODE_SPI);          // Return 0 if initialized, error code if not.
-        bool inline     validateAddress(const int32_t address);                     // Return True if address valid.
-        bool inline     isIdle();                                                   // Return True if currently idle.
-        bool inline     isBusy();                                                   // Return true if currently reading or writing.
-        bool inline     isReading();                                                // Return true if currently in a read.
-        bool inline     isWriting();                                                // return true if currently in a write.
-        bool inline     isHeld();                                                   // Return true if comms are held.
-        int32_t         setHold();                                                  // Set the hold. returns 0 on success or negative for error code.
-        int32_t         clearHold();                                                // Clear the hold. returns 0 on success or negative for error code.
-        int32_t inline  getNextIndex();                                             // Return the next address. -1 means address hasn't been set.
-        int32_t inline  getLastIndex();                                             // Return the last address read / written. -1 means no address has been read / written.
-        int32_t         startRead(const int32_t address);                           // Start the read process. return 0 for okay, negative for error code.
-        int32_t         read();                                                     // Read a single byte returns byte read. 0 -> 255 byte read, negative for error code.
-        int32_t         startWrite(const int32_t address);                          // start the write process returns 0 for okay, negative for error code.
-        int32_t         write(const uint8_t value);                                 // write a single byte. returns 0 for okay, negative for error code.
-        int32_t         stop();                                                     // stop the read / write process. returns 0 for okay, negative for error code.
-
-    private:
     /* Variables: */
         spi_inst_t *_spiPort;       // The spi object from the sdk
         uint8_t _commsMode;         // the comms mode.
@@ -413,6 +633,7 @@ int32_t my23LC1024::stop() {
         }
     }
     __setStateIdle__();
+    _nextIndex = -1;
     return NO_ERROR;
 }
 /*********************************************************************

@@ -2,147 +2,100 @@
 \label{classmy23_l_c1024}\index{my23LC1024@{my23LC1024}}
 
 
+Class to use a 23L\+C1024 spi sram chip.  
+
+
+
+
 {\ttfamily \#include $<$my23\+L\+C1024.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classmy23_l_c1024_a44143b46c2890c8a5ce2ce688197128e}{my23\+L\+C1024}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Hardware spi, no hold. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy23_l_c1024_a0331994d9c59336295e8dd7678f89c41}{my23\+L\+C1024}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t hold\+Pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Hardware S\+PI with hold. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy23_l_c1024_ae197a48cb053b380864bb8723a0a4919}{my23\+L\+C1024}} (const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Bitbanged S\+PI / S\+DI modes, No hold. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy23_l_c1024_a1862c4507c744c93f0406a2e29766327}{my23\+L\+C1024}} (const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t hold\+Pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Bit Banged S\+PI / S\+DI modes, with hold. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy23_l_c1024_a2ea3b225c3128eb41ba366d1aea011da}{my23\+L\+C1024}} (const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t hold\+Pin, const uint8\+\_\+t sio2\+Pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Bit Banged S\+QI mode. Hold not available. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a41e0e49edf36079e62b0404032984cd0}{initialize}} (const uint8\+\_\+t comms\+Mode=\mbox{\hyperlink{classmy23_l_c1024_a765d708ebd602029835b8db31151b3ad}{C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+PI}})
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the sram to comms mode. Initialize the sram given comms mode. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy23_l_c1024_a854a7e3d1083950e0053d62a50008550}{validate\+Address}} (const int32\+\_\+t address)
-\item 
+\begin{DoxyCompactList}\small\item\em Validate an address. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy23_l_c1024_a2d3d2b32da91e8224e7f2d6ed300b4cf}{is\+Idle}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if sram is in idle state. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy23_l_c1024_adda0c49cfd3ece3444ba68f492cd8a15}{is\+Busy}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em return true if sram is in busy state. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy23_l_c1024_a18fd8e4540397297d3655e27f21cba81}{is\+Reading}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if sram is in reading state. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy23_l_c1024_aa6f757a11be2fd7d4604dfbfcba938f8}{is\+Writing}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if sram is in writing state. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy23_l_c1024_a8d790ae6aa35d1e4735b85d32e59d468}{is\+Held}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if sram is currently held. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_aa9ee15b7c94991f8847e02ce31746964}{set\+Hold}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Set the Hold state. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a5618c8f581b0206ee8c248352aef95a4}{clear\+Hold}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Clear the hold state. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a81380a372dfc49a10d1835edb54dcd09}{get\+Next\+Index}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Next Index the sram will read / write to. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a64a9b1bf245eeff9041a0e083684c2b1}{get\+Last\+Index}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the Last Index the sram read / wrote. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a659be0781c39ee14347975b2b020412f}{start\+Read}} (const int32\+\_\+t address)
-\item 
+\begin{DoxyCompactList}\small\item\em Start the read Starts the read at the address given. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a58d98d853b15455185c3a4173f709fba}{read}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Read a single byte from sram. Reads a byte and increments the address for the next read operation. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a0e5da085faccc337f3490cf0ce31bfd2}{start\+Write}} (const int32\+\_\+t address)
-\item 
+\begin{DoxyCompactList}\small\item\em Start the write. Starts a write at the address given. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a6c42c7de30354a6e60f0367068a47a39}{write}} (const uint8\+\_\+t value)
-\item 
+\begin{DoxyCompactList}\small\item\em Write a single byte to sram. Writes the byte to the address, and increments the address for the next write. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a9880eed7bda607d848371a87473553f7}{stop}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_aa85b2568e71d4e909108124d5c9a849e}{\+\_\+cs\+Pin}} = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}
-\item 
-const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ade2e91b3baa3006310e1b3e3bec07176}{\+\_\+sck\+Pin}} = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}
-\item 
-const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ab4efcfaacefc991cfca646a821511ab0}{\+\_\+miso\+Pin}} = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}
-\item 
-const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a535969a62f25077f09c11d652327c62a}{\+\_\+mosi\+Pin}} = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}
-\item 
-const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a5c191990f6062c5157d353dd1967ef65}{\+\_\+hold\+Pin}} = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}
-\item 
-const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a27d02688245441f00ef65867e4e79a49}{\+\_\+sio2\+Pin}} = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stop a read / write. Stops a read or write process. must be called after start read / write, in order to switch modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a765d708ebd602029835b8db31151b3ad}{C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+PI}} = 0x00
-\item 
+\begin{DoxyCompactList}\small\item\em S\+PI Communications mode. Normal S\+PI interface, can either be bit banged, or hardware. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_abb43f0f96bcc35610c275914c4dfe2ca}{C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+DI}} = 0x01
-\item 
+\begin{DoxyCompactList}\small\item\em S\+DI Communications mode. S\+DI, like spi, but transfers 2 bits at a time. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_af5cd8fde921c82a6d095f73964b7f3db}{C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+QI}} = 0x02
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a00928f48ff290f1d5e6f02bd7e824813}{R\+E\+A\+D\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x03
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_aeb139253a5d596d68203688871573d8c}{W\+R\+I\+T\+E\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x02
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a494065f3c2e884f1ecfc1c0dc2718ba6}{E\+D\+I\+O\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x3B
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a9af22cfd3898d0c6892ddb0bcfb7f5c9}{E\+Q\+I\+O\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x38
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a30b313a7329187aa9c764892889155e9}{R\+S\+T\+I\+O\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x\+FF
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a2bb5bf0284417aed4825e1817b58a7f3}{R\+D\+M\+R\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x05
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a2da6ed7622b45935c977f93abab69817}{W\+R\+M\+R\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON}} = 0x01
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a5c5a6feba83600b3815a2e1afa9db6b8}{S\+R\+A\+M\+\_\+\+M\+O\+D\+E\+\_\+\+B\+Y\+TE}} = 0x00
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a2601642c52f4fae8aef9101a728c93a2}{S\+R\+A\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+EQ}} = 0x40
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad8c27d07db1b0d73796a3780c6b7243a}{S\+R\+A\+M\+\_\+\+M\+O\+D\+E\+\_\+\+P\+A\+GE}} = 0x80
-\item 
+\begin{DoxyCompactList}\small\item\em S\+QI Communications mode. S\+QI, like S\+DI, but uses 4 bits at a time. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ae13240a11b0288cc0f67a6cec6821f8f}{M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS}} = 0x0001\+F\+F\+FF
-\item 
+\begin{DoxyCompactList}\small\item\em Max address available. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a08de9a55e0438e4f176f3823a96aa04f}{L\+E\+N\+G\+TH}} = \mbox{\hyperlink{classmy23_l_c1024_ae13240a11b0288cc0f67a6cec6821f8f}{M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS}} +1
-\item 
-static const uint32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a01a0e69220192f84d7f4267056065119}{A\+D\+D\+R\+E\+S\+S\+\_\+\+H\+I\+G\+H\+\_\+\+B\+Y\+T\+E\+\_\+\+M\+A\+SK}} = 0x00010000
-\item 
-static const uint32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a945382e067eff0ed5afc3d0bffc4b0d0}{A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+M\+A\+SK}} = 0x0000\+F\+F00
-\item 
-static const uint32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a495817c0e1410e42908c736bd546c828}{A\+D\+D\+R\+E\+S\+S\+\_\+\+L\+O\+W\+\_\+\+B\+Y\+T\+E\+\_\+\+M\+A\+SK}} = 0x000000\+FF
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a1178a4cdc72439e901a265eb85254c5a}{S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+A\+SK}} = 0\+X03
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a6facc0bd210c932d57f05917660cda42}{S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+D\+LE}} = 0x00
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a9c2f0a03105e9d42816405fb9553b3d5}{S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+AD}} = 0x01
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a486f41e5903cd1842ac9b5838c237a59}{S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+R\+I\+TE}} = 0x02
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a3e706652ea675a47716d41305c183117}{S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+A\+D\+\_\+\+B\+IT}} = 0\+X01
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ac62b853c868139dfd09a8c20a5ec0b45}{S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+IT}} = 0\+X02
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a2f5ea5df016a42a93f143cb8c432bf69}{S\+T\+A\+T\+U\+S\+\_\+\+H\+O\+L\+D\+\_\+\+M\+A\+SK}} = 0\+X04
-\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ae6510258d2602a7798bb632016f519a3}{S\+T\+A\+T\+U\+S\+\_\+\+I\+S\+\_\+\+H\+E\+LD}} = 0x04
-\item 
+\begin{DoxyCompactList}\small\item\em Size of the sram. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_acb56e481bcc741fb5e98aba8c1bbf859}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
-\item 
+\begin{DoxyCompactList}\small\item\em No error. Value 0. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a87e629bc57276ad82bb20d37cb1e0f5b}{E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+H\+E\+LD}} = \mbox{\hyperlink{my_error_codes_8hpp_a68128ecaa48f01a2db30302cd19d8ea1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+H\+E\+LD}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sram held. Value -\/300 Sram was held when operation requested. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a1cb64f09f1675d529037661bacff7e5f}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} = \mbox{\hyperlink{my_error_codes_8hpp_ab371af3d7428b37317d551b4d6c50256}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}
-\item 
+\begin{DoxyCompactList}\small\item\em Invalid address. Value -\/301 Sram was passed an invalid address. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a455c77d08d6d141ac4294508be6eba96}{E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+B\+U\+SY}} = \mbox{\hyperlink{my_error_codes_8hpp_ae7cbc2ca373688e830504af590530f5a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+B\+U\+SY}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sram busy. Value -\/302. Sram was busy at time of request. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ae440734794c7f49eae776d36a3ed485a}{E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+I\+D\+LE}} = \mbox{\hyperlink{my_error_codes_8hpp_a6655af5c393e4d2c8fbcdbf29a6eaeba}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+I\+D\+LE}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sram idle. Value -\/303 Sram was idle at time of request. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad47a3f8226c3fa040d9bcda7ad93e4cd}{E\+R\+R\+O\+R\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a18df7484ab7267cdc69b6e934e944d82}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
-\item 
+\begin{DoxyCompactList}\small\item\em Hold not defined. Value -\/304 Hold pin not defined for operation or comms mode. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ae9c3f8019d8d9dc808eadb4203ab2278}{E\+R\+R\+O\+R\+\_\+\+S\+I\+O2\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_ad29d2789a70c120ab1c81fa235d84711}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+I\+O2\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sio2 not defined. Value -\/305 Sio2 is not defined for comms mode. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a93528d81af19da3874b1fe0d14093e4f}{E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD}} = \mbox{\hyperlink{my_error_codes_8hpp_ab6261241ad8450ad81dc2184828821c5}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sram not held. Value -\/306 Sram not held when clear hold requested. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_abb69160b0c8329e02eaaa1a1be3e82be}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG}} = \mbox{\hyperlink{my_error_codes_8hpp_aa669aa8b7269bd939b2237ffe07007b4}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sram not reading. Value -\/307 Sram is not in reading state when read requested. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_afdafd89f07b219aac85b34aef86aba17}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG}} = \mbox{\hyperlink{my_error_codes_8hpp_a6bc313204434598fff0a191c18170150}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG}}
-\item 
+\begin{DoxyCompactList}\small\item\em Sram not writing. Value -\/308 Sram is not in writing state when write requested. \end{DoxyCompactList}\item 
 static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_a575d6c6eb0fa3fc88ce78c0680d74d8d}{E\+R\+R\+O\+R\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}} = \mbox{\hyperlink{my_error_codes_8hpp_af4c46a80c254713ad590b7420033fef3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}
-\item 
-static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8637a21aaf4929a}{E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a3c10b50348c74ef850b102206f2d933f}{M\+Y\+\_\+\+E\+R\+O\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Hold not available. Value -\/309 Hold not available in comms mode. \end{DoxyCompactList}\item 
+static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8637a21aaf4929a}{E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}} = M\+Y\+\_\+\+E\+R\+R\+O\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED
+\begin{DoxyCompactList}\small\item\em Comms check failed. Value -\/310 Communications check failed during init. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to use a 23L\+C1024 spi sram chip. 
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -152,30 +105,117 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{my23LC1024()}{my23LC1024()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily my23\+L\+C1024\+::my23\+L\+C1024 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Hardware spi, no hold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & Spi port to use. \\
+\hline
+{\em cs\+Pin} & Chip Select pin. \\
+\hline
+{\em sck\+Pin} & Clock pin \\
+\hline
+{\em miso\+Pin} & Miso pin \\
+\hline
+{\em mosi\+Pin} & Mosi pin \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy23_l_c1024_a0331994d9c59336295e8dd7678f89c41}\label{classmy23_l_c1024_a0331994d9c59336295e8dd7678f89c41}} 
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{my23LC1024()}{my23LC1024()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily my23\+L\+C1024\+::my23\+L\+C1024 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{hold\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Hardware S\+PI with hold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & Spi port to use \\
+\hline
+{\em cs\+Pin} & Chip select pin \\
+\hline
+{\em sck\+Pin} & Clock pin. \\
+\hline
+{\em miso\+Pin} & Miso pin \\
+\hline
+{\em mosi\+Pin} & mosi pin. \\
+\hline
+{\em hold\+Pin} & Hold pin. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy23_l_c1024_ae197a48cb053b380864bb8723a0a4919}\label{classmy23_l_c1024_ae197a48cb053b380864bb8723a0a4919}} 
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{my23LC1024()}{my23LC1024()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily my23\+L\+C1024\+::my23\+L\+C1024 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Bitbanged S\+PI / S\+DI modes, No hold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cs\+Pin} & Chip Select pin \\
+\hline
+{\em sck\+Pin} & Clock pin \\
+\hline
+{\em miso\+Pin} & Miso pin \\
+\hline
+{\em mosi\+Pin} & Mosi pin \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy23_l_c1024_a1862c4507c744c93f0406a2e29766327}\label{classmy23_l_c1024_a1862c4507c744c93f0406a2e29766327}} 
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{my23LC1024()}{my23LC1024()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily my23\+L\+C1024\+::my23\+L\+C1024 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{hold\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Bit Banged S\+PI / S\+DI modes, with hold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cs\+Pin} & Chip select pin. \\
+\hline
+{\em sck\+Pin} & Clock Pin \\
+\hline
+{\em miso\+Pin} & Miso pin. \\
+\hline
+{\em mosi\+Pin} & Mosi pin. \\
+\hline
+{\em hold\+Pin} & Hold pin. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy23_l_c1024_a2ea3b225c3128eb41ba366d1aea011da}\label{classmy23_l_c1024_a2ea3b225c3128eb41ba366d1aea011da}} 
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \index{my23LC1024@{my23LC1024}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{my23LC1024()}{my23LC1024()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily my23\+L\+C1024\+::my23\+L\+C1024 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{hold\+Pin,  }\item[{const uint8\+\_\+t}]{sio2\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a new \mbox{\hyperlink{classmy23_l_c1024}{my23\+L\+C1024}} object. Bit Banged S\+QI mode. Hold not available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cs\+Pin} & \\
+\hline
+{\em sck\+Pin} & \\
+\hline
+{\em miso\+Pin} & \\
+\hline
+{\em mosi\+Pin} & \\
+\hline
+{\em hold\+Pin} & \\
+\hline
+{\em sio2\+Pin} & \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -185,90 +225,227 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{clearHold()}{clearHold()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::clear\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Clear the hold state. 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if cleared okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a64a9b1bf245eeff9041a0e083684c2b1}\label{classmy23_l_c1024_a64a9b1bf245eeff9041a0e083684c2b1}} 
 \index{my23LC1024@{my23LC1024}!getLastIndex@{getLastIndex}}
 \index{getLastIndex@{getLastIndex}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{getLastIndex()}{getLastIndex()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::get\+Last\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the Last Index the sram read / wrote. 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Postive (including zero) is the index, -\/1 means no read / write has occured. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a81380a372dfc49a10d1835edb54dcd09}\label{classmy23_l_c1024_a81380a372dfc49a10d1835edb54dcd09}} 
 \index{my23LC1024@{my23LC1024}!getNextIndex@{getNextIndex}}
 \index{getNextIndex@{getNextIndex}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{getNextIndex()}{getNextIndex()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::get\+Next\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the Next Index the sram will read / write to. 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive (including zero) is the index. -\/1 means it hasn\textquotesingle{}t been set, or sram idle. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a41e0e49edf36079e62b0404032984cd0}\label{classmy23_l_c1024_a41e0e49edf36079e62b0404032984cd0}} 
 \index{my23LC1024@{my23LC1024}!initialize@{initialize}}
 \index{initialize@{initialize}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{comms\+Mode = {\ttfamily \mbox{\hyperlink{classmy23_l_c1024_a765d708ebd602029835b8db31151b3ad}{C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+PI}}} }\end{DoxyParamCaption})}
 
+
+
+Initialize the sram to comms mode. Initialize the sram given comms mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comms\+Mode} & Comms mode, defaults to S\+PI \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Retruns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_adda0c49cfd3ece3444ba68f492cd8a15}\label{classmy23_l_c1024_adda0c49cfd3ece3444ba68f492cd8a15}} 
 \index{my23LC1024@{my23LC1024}!isBusy@{isBusy}}
 \index{isBusy@{isBusy}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{isBusy()}{isBusy()}}
 {\footnotesize\ttfamily bool my23\+L\+C1024\+::is\+Busy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+return true if sram is in busy state. 
+
+\begin{DoxyReturn}{Returns}
+true Sram is busy 
+
+false Sram is idle. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a8d790ae6aa35d1e4735b85d32e59d468}\label{classmy23_l_c1024_a8d790ae6aa35d1e4735b85d32e59d468}} 
 \index{my23LC1024@{my23LC1024}!isHeld@{isHeld}}
 \index{isHeld@{isHeld}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{isHeld()}{isHeld()}}
 {\footnotesize\ttfamily bool my23\+L\+C1024\+::is\+Held (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Return true if sram is currently held. 
+
+\begin{DoxyReturn}{Returns}
+true Sram is held. 
+
+false Sram is not held. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a2d3d2b32da91e8224e7f2d6ed300b4cf}\label{classmy23_l_c1024_a2d3d2b32da91e8224e7f2d6ed300b4cf}} 
 \index{my23LC1024@{my23LC1024}!isIdle@{isIdle}}
 \index{isIdle@{isIdle}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{isIdle()}{isIdle()}}
 {\footnotesize\ttfamily bool my23\+L\+C1024\+::is\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Return true if sram is in idle state. 
+
+\begin{DoxyReturn}{Returns}
+true Sram is idle 
+
+false Sram is busy 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a18fd8e4540397297d3655e27f21cba81}\label{classmy23_l_c1024_a18fd8e4540397297d3655e27f21cba81}} 
 \index{my23LC1024@{my23LC1024}!isReading@{isReading}}
 \index{isReading@{isReading}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{isReading()}{isReading()}}
 {\footnotesize\ttfamily bool my23\+L\+C1024\+::is\+Reading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Return true if sram is in reading state. 
+
+\begin{DoxyReturn}{Returns}
+true Sram is reading. 
+
+false Sram is not reading. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_aa6f757a11be2fd7d4604dfbfcba938f8}\label{classmy23_l_c1024_aa6f757a11be2fd7d4604dfbfcba938f8}} 
 \index{my23LC1024@{my23LC1024}!isWriting@{isWriting}}
 \index{isWriting@{isWriting}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{isWriting()}{isWriting()}}
 {\footnotesize\ttfamily bool my23\+L\+C1024\+::is\+Writing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Return true if sram is in writing state. 
+
+\begin{DoxyReturn}{Returns}
+true Sram is writing. 
+
+false Sram is not writing. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a58d98d853b15455185c3a4173f709fba}\label{classmy23_l_c1024_a58d98d853b15455185c3a4173f709fba}} 
 \index{my23LC1024@{my23LC1024}!read@{read}}
 \index{read@{read}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{read()}{read()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Read a single byte from sram. Reads a byte and increments the address for the next read operation. 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive (including 0) byte read, negaitive for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_aa9ee15b7c94991f8847e02ce31746964}\label{classmy23_l_c1024_aa9ee15b7c94991f8847e02ce31746964}} 
 \index{my23LC1024@{my23LC1024}!setHold@{setHold}}
 \index{setHold@{setHold}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{setHold()}{setHold()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::set\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Set the Hold state. 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if hold okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a659be0781c39ee14347975b2b020412f}\label{classmy23_l_c1024_a659be0781c39ee14347975b2b020412f}} 
 \index{my23LC1024@{my23LC1024}!startRead@{startRead}}
 \index{startRead@{startRead}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{startRead()}{startRead()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::start\+Read (\begin{DoxyParamCaption}\item[{const int32\+\_\+t}]{address }\end{DoxyParamCaption})}
 
+
+
+Start the read Starts the read at the address given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a0e5da085faccc337f3490cf0ce31bfd2}\label{classmy23_l_c1024_a0e5da085faccc337f3490cf0ce31bfd2}} 
 \index{my23LC1024@{my23LC1024}!startWrite@{startWrite}}
 \index{startWrite@{startWrite}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{startWrite()}{startWrite()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::start\+Write (\begin{DoxyParamCaption}\item[{const int32\+\_\+t}]{address }\end{DoxyParamCaption})}
 
+
+
+Start the write. Starts a write at the address given. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to write to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a9880eed7bda607d848371a87473553f7}\label{classmy23_l_c1024_a9880eed7bda607d848371a87473553f7}} 
 \index{my23LC1024@{my23LC1024}!stop@{stop}}
 \index{stop@{stop}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{stop()}{stop()}}
 {\footnotesize\ttfamily int32\+\_\+t my23\+L\+C1024\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Stop a read / write. Stops a read or write process. must be called after start read / write, in order to switch modes. 
+
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a854a7e3d1083950e0053d62a50008550}\label{classmy23_l_c1024_a854a7e3d1083950e0053d62a50008550}} 
 \index{my23LC1024@{my23LC1024}!validateAddress@{validateAddress}}
 \index{validateAddress@{validateAddress}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{validateAddress()}{validateAddress()}}
 {\footnotesize\ttfamily bool my23\+L\+C1024\+::validate\+Address (\begin{DoxyParamCaption}\item[{const int32\+\_\+t}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Validate an address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to validate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is a valid address 
+
+false if not a valid address. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy23_l_c1024_a6c42c7de30354a6e60f0367068a47a39}\label{classmy23_l_c1024_a6c42c7de30354a6e60f0367068a47a39}} 
 \index{my23LC1024@{my23LC1024}!write@{write}}
 \index{write@{write}!my23LC1024@{my23LC1024}}
@@ -277,66 +454,28 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 
 
 
+Write a single byte to sram. Writes the byte to the address, and increments the address for the next write. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to write to sram \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classmy23_l_c1024_aa85b2568e71d4e909108124d5c9a849e}\label{classmy23_l_c1024_aa85b2568e71d4e909108124d5c9a849e}} 
-\index{my23LC1024@{my23LC1024}!\_csPin@{\_csPin}}
-\index{\_csPin@{\_csPin}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{\_csPin}{\_csPin}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+\_\+cs\+Pin = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a5c191990f6062c5157d353dd1967ef65}\label{classmy23_l_c1024_a5c191990f6062c5157d353dd1967ef65}} 
-\index{my23LC1024@{my23LC1024}!\_holdPin@{\_holdPin}}
-\index{\_holdPin@{\_holdPin}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{\_holdPin}{\_holdPin}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+\_\+hold\+Pin = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_ab4efcfaacefc991cfca646a821511ab0}\label{classmy23_l_c1024_ab4efcfaacefc991cfca646a821511ab0}} 
-\index{my23LC1024@{my23LC1024}!\_misoPin@{\_misoPin}}
-\index{\_misoPin@{\_misoPin}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{\_misoPin}{\_misoPin}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+\_\+miso\+Pin = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a535969a62f25077f09c11d652327c62a}\label{classmy23_l_c1024_a535969a62f25077f09c11d652327c62a}} 
-\index{my23LC1024@{my23LC1024}!\_mosiPin@{\_mosiPin}}
-\index{\_mosiPin@{\_mosiPin}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{\_mosiPin}{\_mosiPin}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+\_\+mosi\+Pin = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_ade2e91b3baa3006310e1b3e3bec07176}\label{classmy23_l_c1024_ade2e91b3baa3006310e1b3e3bec07176}} 
-\index{my23LC1024@{my23LC1024}!\_sckPin@{\_sckPin}}
-\index{\_sckPin@{\_sckPin}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{\_sckPin}{\_sckPin}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+\_\+sck\+Pin = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a27d02688245441f00ef65867e4e79a49}\label{classmy23_l_c1024_a27d02688245441f00ef65867e4e79a49}} 
-\index{my23LC1024@{my23LC1024}!\_sio2Pin@{\_sio2Pin}}
-\index{\_sio2Pin@{\_sio2Pin}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{\_sio2Pin}{\_sio2Pin}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+\_\+sio2\+Pin = \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a01a0e69220192f84d7f4267056065119}\label{classmy23_l_c1024_a01a0e69220192f84d7f4267056065119}} 
-\index{my23LC1024@{my23LC1024}!ADDRESS\_HIGH\_BYTE\_MASK@{ADDRESS\_HIGH\_BYTE\_MASK}}
-\index{ADDRESS\_HIGH\_BYTE\_MASK@{ADDRESS\_HIGH\_BYTE\_MASK}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{ADDRESS\_HIGH\_BYTE\_MASK}{ADDRESS\_HIGH\_BYTE\_MASK}}
-{\footnotesize\ttfamily const uint32\+\_\+t my23\+L\+C1024\+::\+A\+D\+D\+R\+E\+S\+S\+\_\+\+H\+I\+G\+H\+\_\+\+B\+Y\+T\+E\+\_\+\+M\+A\+SK = 0x00010000\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a495817c0e1410e42908c736bd546c828}\label{classmy23_l_c1024_a495817c0e1410e42908c736bd546c828}} 
-\index{my23LC1024@{my23LC1024}!ADDRESS\_LOW\_BYTE\_MASK@{ADDRESS\_LOW\_BYTE\_MASK}}
-\index{ADDRESS\_LOW\_BYTE\_MASK@{ADDRESS\_LOW\_BYTE\_MASK}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{ADDRESS\_LOW\_BYTE\_MASK}{ADDRESS\_LOW\_BYTE\_MASK}}
-{\footnotesize\ttfamily const uint32\+\_\+t my23\+L\+C1024\+::\+A\+D\+D\+R\+E\+S\+S\+\_\+\+L\+O\+W\+\_\+\+B\+Y\+T\+E\+\_\+\+M\+A\+SK = 0x000000\+FF\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a945382e067eff0ed5afc3d0bffc4b0d0}\label{classmy23_l_c1024_a945382e067eff0ed5afc3d0bffc4b0d0}} 
-\index{my23LC1024@{my23LC1024}!ADDRESS\_MIDDLE\_BYTE\_MASK@{ADDRESS\_MIDDLE\_BYTE\_MASK}}
-\index{ADDRESS\_MIDDLE\_BYTE\_MASK@{ADDRESS\_MIDDLE\_BYTE\_MASK}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{ADDRESS\_MIDDLE\_BYTE\_MASK}{ADDRESS\_MIDDLE\_BYTE\_MASK}}
-{\footnotesize\ttfamily const uint32\+\_\+t my23\+L\+C1024\+::\+A\+D\+D\+R\+E\+S\+S\+\_\+\+M\+I\+D\+D\+L\+E\+\_\+\+B\+Y\+T\+E\+\_\+\+M\+A\+SK = 0x0000\+F\+F00\hspace{0.3cm}{\ttfamily [static]}}
-
 \mbox{\Hypertarget{classmy23_l_c1024_abb43f0f96bcc35610c275914c4dfe2ca}\label{classmy23_l_c1024_abb43f0f96bcc35610c275914c4dfe2ca}} 
 \index{my23LC1024@{my23LC1024}!COMM\_MODE\_SDI@{COMM\_MODE\_SDI}}
 \index{COMM\_MODE\_SDI@{COMM\_MODE\_SDI}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{COMM\_MODE\_SDI}{COMM\_MODE\_SDI}}
 {\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+DI = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+S\+DI Communications mode. S\+DI, like spi, but transfers 2 bits at a time. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_a765d708ebd602029835b8db31151b3ad}\label{classmy23_l_c1024_a765d708ebd602029835b8db31151b3ad}} 
 \index{my23LC1024@{my23LC1024}!COMM\_MODE\_SPI@{COMM\_MODE\_SPI}}
@@ -344,29 +483,35 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{COMM\_MODE\_SPI}{COMM\_MODE\_SPI}}
 {\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+PI = 0x00\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+S\+PI Communications mode. Normal S\+PI interface, can either be bit banged, or hardware. 
+
+\begin{DoxyNote}{Note}
+The chip is capable of 20Mhz clock, which is not attainable by hardware. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy23_l_c1024_af5cd8fde921c82a6d095f73964b7f3db}\label{classmy23_l_c1024_af5cd8fde921c82a6d095f73964b7f3db}} 
 \index{my23LC1024@{my23LC1024}!COMM\_MODE\_SQI@{COMM\_MODE\_SQI}}
 \index{COMM\_MODE\_SQI@{COMM\_MODE\_SQI}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{COMM\_MODE\_SQI}{COMM\_MODE\_SQI}}
 {\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+C\+O\+M\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+QI = 0x02\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy23_l_c1024_a494065f3c2e884f1ecfc1c0dc2718ba6}\label{classmy23_l_c1024_a494065f3c2e884f1ecfc1c0dc2718ba6}} 
-\index{my23LC1024@{my23LC1024}!EDIO\_INSTRUCTION@{EDIO\_INSTRUCTION}}
-\index{EDIO\_INSTRUCTION@{EDIO\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{EDIO\_INSTRUCTION}{EDIO\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+E\+D\+I\+O\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x3B\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy23_l_c1024_a9af22cfd3898d0c6892ddb0bcfb7f5c9}\label{classmy23_l_c1024_a9af22cfd3898d0c6892ddb0bcfb7f5c9}} 
-\index{my23LC1024@{my23LC1024}!EQIO\_INSTRUCTION@{EQIO\_INSTRUCTION}}
-\index{EQIO\_INSTRUCTION@{EQIO\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{EQIO\_INSTRUCTION}{EQIO\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+E\+Q\+I\+O\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x38\hspace{0.3cm}{\ttfamily [static]}}
 
+S\+QI Communications mode. S\+QI, like S\+DI, but uses 4 bits at a time. 
+
+\begin{DoxyNote}{Note}
+In my testing this mode is not stable for large read / write. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy23_l_c1024_ad31d112bd53358eed8637a21aaf4929a}\label{classmy23_l_c1024_ad31d112bd53358eed8637a21aaf4929a}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_COMM\_CHECK\_FAILED@{ERROR\_COMM\_CHECK\_FAILED}}
 \index{ERROR\_COMM\_CHECK\_FAILED@{ERROR\_COMM\_CHECK\_FAILED}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{ERROR\_COMM\_CHECK\_FAILED}{ERROR\_COMM\_CHECK\_FAILED}}
-{\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a3c10b50348c74ef850b102206f2d933f}{M\+Y\+\_\+\+E\+R\+O\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED = M\+Y\+\_\+\+E\+R\+R\+O\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Comms check failed. Value -\/310 Communications check failed during init. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_a575d6c6eb0fa3fc88ce78c0680d74d8d}\label{classmy23_l_c1024_a575d6c6eb0fa3fc88ce78c0680d74d8d}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_HOLD\_NOT\_AVAILABLE@{ERROR\_HOLD\_NOT\_AVAILABLE}}
@@ -374,11 +519,19 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{ERROR\_HOLD\_NOT\_AVAILABLE}{ERROR\_HOLD\_NOT\_AVAILABLE}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE = \mbox{\hyperlink{my_error_codes_8hpp_af4c46a80c254713ad590b7420033fef3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Hold not available. Value -\/309 Hold not available in comms mode. 
+
 \mbox{\Hypertarget{classmy23_l_c1024_ad47a3f8226c3fa040d9bcda7ad93e4cd}\label{classmy23_l_c1024_ad47a3f8226c3fa040d9bcda7ad93e4cd}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_HOLD\_NOT\_DEFINED@{ERROR\_HOLD\_NOT\_DEFINED}}
 \index{ERROR\_HOLD\_NOT\_DEFINED@{ERROR\_HOLD\_NOT\_DEFINED}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{ERROR\_HOLD\_NOT\_DEFINED}{ERROR\_HOLD\_NOT\_DEFINED}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a18df7484ab7267cdc69b6e934e944d82}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Hold not defined. Value -\/304 Hold pin not defined for operation or comms mode. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_a1cb64f09f1675d529037661bacff7e5f}\label{classmy23_l_c1024_a1cb64f09f1675d529037661bacff7e5f}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_INVAID\_ADDRESS@{ERROR\_INVAID\_ADDRESS}}
@@ -386,11 +539,19 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{ERROR\_INVAID\_ADDRESS}{ERROR\_INVAID\_ADDRESS}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS = \mbox{\hyperlink{my_error_codes_8hpp_ab371af3d7428b37317d551b4d6c50256}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Invalid address. Value -\/301 Sram was passed an invalid address. 
+
 \mbox{\Hypertarget{classmy23_l_c1024_abb69160b0c8329e02eaaa1a1be3e82be}\label{classmy23_l_c1024_abb69160b0c8329e02eaaa1a1be3e82be}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_NOT\_READING@{ERROR\_NOT\_READING}}
 \index{ERROR\_NOT\_READING@{ERROR\_NOT\_READING}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{ERROR\_NOT\_READING}{ERROR\_NOT\_READING}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG = \mbox{\hyperlink{my_error_codes_8hpp_aa669aa8b7269bd939b2237ffe07007b4}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sram not reading. Value -\/307 Sram is not in reading state when read requested. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_afdafd89f07b219aac85b34aef86aba17}\label{classmy23_l_c1024_afdafd89f07b219aac85b34aef86aba17}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_NOT\_WRITING@{ERROR\_NOT\_WRITING}}
@@ -398,11 +559,19 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{ERROR\_NOT\_WRITING}{ERROR\_NOT\_WRITING}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG = \mbox{\hyperlink{my_error_codes_8hpp_a6bc313204434598fff0a191c18170150}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG}}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Sram not writing. Value -\/308 Sram is not in writing state when write requested. 
+
 \mbox{\Hypertarget{classmy23_l_c1024_ae9c3f8019d8d9dc808eadb4203ab2278}\label{classmy23_l_c1024_ae9c3f8019d8d9dc808eadb4203ab2278}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_SIO2\_NOT\_DEFINED@{ERROR\_SIO2\_NOT\_DEFINED}}
 \index{ERROR\_SIO2\_NOT\_DEFINED@{ERROR\_SIO2\_NOT\_DEFINED}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{ERROR\_SIO2\_NOT\_DEFINED}{ERROR\_SIO2\_NOT\_DEFINED}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+S\+I\+O2\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_ad29d2789a70c120ab1c81fa235d84711}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+I\+O2\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sio2 not defined. Value -\/305 Sio2 is not defined for comms mode. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_a455c77d08d6d141ac4294508be6eba96}\label{classmy23_l_c1024_a455c77d08d6d141ac4294508be6eba96}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_SRAM\_BUSY@{ERROR\_SRAM\_BUSY}}
@@ -410,11 +579,19 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{ERROR\_SRAM\_BUSY}{ERROR\_SRAM\_BUSY}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+B\+U\+SY = \mbox{\hyperlink{my_error_codes_8hpp_ae7cbc2ca373688e830504af590530f5a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+B\+U\+SY}}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Sram busy. Value -\/302. Sram was busy at time of request. 
+
 \mbox{\Hypertarget{classmy23_l_c1024_a87e629bc57276ad82bb20d37cb1e0f5b}\label{classmy23_l_c1024_a87e629bc57276ad82bb20d37cb1e0f5b}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_SRAM\_HELD@{ERROR\_SRAM\_HELD}}
 \index{ERROR\_SRAM\_HELD@{ERROR\_SRAM\_HELD}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{ERROR\_SRAM\_HELD}{ERROR\_SRAM\_HELD}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+H\+E\+LD = \mbox{\hyperlink{my_error_codes_8hpp_a68128ecaa48f01a2db30302cd19d8ea1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+H\+E\+LD}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sram held. Value -\/300 Sram was held when operation requested. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_ae440734794c7f49eae776d36a3ed485a}\label{classmy23_l_c1024_ae440734794c7f49eae776d36a3ed485a}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_SRAM\_IDLE@{ERROR\_SRAM\_IDLE}}
@@ -422,11 +599,19 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{ERROR\_SRAM\_IDLE}{ERROR\_SRAM\_IDLE}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+I\+D\+LE = \mbox{\hyperlink{my_error_codes_8hpp_a6655af5c393e4d2c8fbcdbf29a6eaeba}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+I\+D\+LE}}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Sram idle. Value -\/303 Sram was idle at time of request. 
+
 \mbox{\Hypertarget{classmy23_l_c1024_a93528d81af19da3874b1fe0d14093e4f}\label{classmy23_l_c1024_a93528d81af19da3874b1fe0d14093e4f}} 
 \index{my23LC1024@{my23LC1024}!ERROR\_SRAM\_NOT\_HELD@{ERROR\_SRAM\_NOT\_HELD}}
 \index{ERROR\_SRAM\_NOT\_HELD@{ERROR\_SRAM\_NOT\_HELD}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{ERROR\_SRAM\_NOT\_HELD}{ERROR\_SRAM\_NOT\_HELD}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+E\+R\+R\+O\+R\+\_\+\+S\+R\+A\+M\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD = \mbox{\hyperlink{my_error_codes_8hpp_ab6261241ad8450ad81dc2184828821c5}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sram not held. Value -\/306 Sram not held when clear hold requested. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_a08de9a55e0438e4f176f3823a96aa04f}\label{classmy23_l_c1024_a08de9a55e0438e4f176f3823a96aa04f}} 
 \index{my23LC1024@{my23LC1024}!LENGTH@{LENGTH}}
@@ -434,11 +619,19 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{LENGTH}{LENGTH}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+L\+E\+N\+G\+TH = \mbox{\hyperlink{classmy23_l_c1024_ae13240a11b0288cc0f67a6cec6821f8f}{M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS}} +1\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Size of the sram. 
+
 \mbox{\Hypertarget{classmy23_l_c1024_ae13240a11b0288cc0f67a6cec6821f8f}\label{classmy23_l_c1024_ae13240a11b0288cc0f67a6cec6821f8f}} 
 \index{my23LC1024@{my23LC1024}!MAX\_ADDRESS@{MAX\_ADDRESS}}
 \index{MAX\_ADDRESS@{MAX\_ADDRESS}!my23LC1024@{my23LC1024}}
 \doxysubsubsection{\texorpdfstring{MAX\_ADDRESS}{MAX\_ADDRESS}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS = 0x0001\+F\+F\+FF\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Max address available. 
 
 \mbox{\Hypertarget{classmy23_l_c1024_acb56e481bcc741fb5e98aba8c1bbf859}\label{classmy23_l_c1024_acb56e481bcc741fb5e98aba8c1bbf859}} 
 \index{my23LC1024@{my23LC1024}!NO\_ERROR@{NO\_ERROR}}
@@ -446,101 +639,9 @@ static const int32\+\_\+t \mbox{\hyperlink{classmy23_l_c1024_ad31d112bd53358eed8
 \doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
 {\footnotesize\ttfamily const int32\+\_\+t my23\+L\+C1024\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy23_l_c1024_a2bb5bf0284417aed4825e1817b58a7f3}\label{classmy23_l_c1024_a2bb5bf0284417aed4825e1817b58a7f3}} 
-\index{my23LC1024@{my23LC1024}!RDMR\_INSTRUCTION@{RDMR\_INSTRUCTION}}
-\index{RDMR\_INSTRUCTION@{RDMR\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{RDMR\_INSTRUCTION}{RDMR\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+R\+D\+M\+R\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x05\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy23_l_c1024_a00928f48ff290f1d5e6f02bd7e824813}\label{classmy23_l_c1024_a00928f48ff290f1d5e6f02bd7e824813}} 
-\index{my23LC1024@{my23LC1024}!READ\_INSTRUCTION@{READ\_INSTRUCTION}}
-\index{READ\_INSTRUCTION@{READ\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{READ\_INSTRUCTION}{READ\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+R\+E\+A\+D\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x03\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classmy23_l_c1024_a30b313a7329187aa9c764892889155e9}\label{classmy23_l_c1024_a30b313a7329187aa9c764892889155e9}} 
-\index{my23LC1024@{my23LC1024}!RSTIO\_INSTRUCTION@{RSTIO\_INSTRUCTION}}
-\index{RSTIO\_INSTRUCTION@{RSTIO\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{RSTIO\_INSTRUCTION}{RSTIO\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+R\+S\+T\+I\+O\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x\+FF\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a5c5a6feba83600b3815a2e1afa9db6b8}\label{classmy23_l_c1024_a5c5a6feba83600b3815a2e1afa9db6b8}} 
-\index{my23LC1024@{my23LC1024}!SRAM\_MODE\_BYTE@{SRAM\_MODE\_BYTE}}
-\index{SRAM\_MODE\_BYTE@{SRAM\_MODE\_BYTE}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{SRAM\_MODE\_BYTE}{SRAM\_MODE\_BYTE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+R\+A\+M\+\_\+\+M\+O\+D\+E\+\_\+\+B\+Y\+TE = 0x00\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_ad8c27d07db1b0d73796a3780c6b7243a}\label{classmy23_l_c1024_ad8c27d07db1b0d73796a3780c6b7243a}} 
-\index{my23LC1024@{my23LC1024}!SRAM\_MODE\_PAGE@{SRAM\_MODE\_PAGE}}
-\index{SRAM\_MODE\_PAGE@{SRAM\_MODE\_PAGE}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{SRAM\_MODE\_PAGE}{SRAM\_MODE\_PAGE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+R\+A\+M\+\_\+\+M\+O\+D\+E\+\_\+\+P\+A\+GE = 0x80\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a2601642c52f4fae8aef9101a728c93a2}\label{classmy23_l_c1024_a2601642c52f4fae8aef9101a728c93a2}} 
-\index{my23LC1024@{my23LC1024}!SRAM\_MODE\_SEQ@{SRAM\_MODE\_SEQ}}
-\index{SRAM\_MODE\_SEQ@{SRAM\_MODE\_SEQ}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{SRAM\_MODE\_SEQ}{SRAM\_MODE\_SEQ}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+R\+A\+M\+\_\+\+M\+O\+D\+E\+\_\+\+S\+EQ = 0x40\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a2f5ea5df016a42a93f143cb8c432bf69}\label{classmy23_l_c1024_a2f5ea5df016a42a93f143cb8c432bf69}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_HOLD\_MASK@{STATUS\_HOLD\_MASK}}
-\index{STATUS\_HOLD\_MASK@{STATUS\_HOLD\_MASK}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_HOLD\_MASK}{STATUS\_HOLD\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+H\+O\+L\+D\+\_\+\+M\+A\+SK = 0\+X04\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_ae6510258d2602a7798bb632016f519a3}\label{classmy23_l_c1024_ae6510258d2602a7798bb632016f519a3}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_IS\_HELD@{STATUS\_IS\_HELD}}
-\index{STATUS\_IS\_HELD@{STATUS\_IS\_HELD}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_IS\_HELD}{STATUS\_IS\_HELD}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+I\+S\+\_\+\+H\+E\+LD = 0x04\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a6facc0bd210c932d57f05917660cda42}\label{classmy23_l_c1024_a6facc0bd210c932d57f05917660cda42}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_STATE\_IDLE@{STATUS\_STATE\_IDLE}}
-\index{STATUS\_STATE\_IDLE@{STATUS\_STATE\_IDLE}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_STATE\_IDLE}{STATUS\_STATE\_IDLE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+I\+D\+LE = 0x00\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a1178a4cdc72439e901a265eb85254c5a}\label{classmy23_l_c1024_a1178a4cdc72439e901a265eb85254c5a}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_STATE\_MASK@{STATUS\_STATE\_MASK}}
-\index{STATUS\_STATE\_MASK@{STATUS\_STATE\_MASK}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_STATE\_MASK}{STATUS\_STATE\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+M\+A\+SK = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a9c2f0a03105e9d42816405fb9553b3d5}\label{classmy23_l_c1024_a9c2f0a03105e9d42816405fb9553b3d5}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_STATE\_READ@{STATUS\_STATE\_READ}}
-\index{STATUS\_STATE\_READ@{STATUS\_STATE\_READ}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_STATE\_READ}{STATUS\_STATE\_READ}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+AD = 0x01\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a3e706652ea675a47716d41305c183117}\label{classmy23_l_c1024_a3e706652ea675a47716d41305c183117}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_STATE\_READ\_BIT@{STATUS\_STATE\_READ\_BIT}}
-\index{STATUS\_STATE\_READ\_BIT@{STATUS\_STATE\_READ\_BIT}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_STATE\_READ\_BIT}{STATUS\_STATE\_READ\_BIT}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+E\+A\+D\+\_\+\+B\+IT = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a486f41e5903cd1842ac9b5838c237a59}\label{classmy23_l_c1024_a486f41e5903cd1842ac9b5838c237a59}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_STATE\_WRITE@{STATUS\_STATE\_WRITE}}
-\index{STATUS\_STATE\_WRITE@{STATUS\_STATE\_WRITE}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_STATE\_WRITE}{STATUS\_STATE\_WRITE}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+R\+I\+TE = 0x02\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_ac62b853c868139dfd09a8c20a5ec0b45}\label{classmy23_l_c1024_ac62b853c868139dfd09a8c20a5ec0b45}} 
-\index{my23LC1024@{my23LC1024}!STATUS\_STATE\_WRITE\_BIT@{STATUS\_STATE\_WRITE\_BIT}}
-\index{STATUS\_STATE\_WRITE\_BIT@{STATUS\_STATE\_WRITE\_BIT}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{STATUS\_STATE\_WRITE\_BIT}{STATUS\_STATE\_WRITE\_BIT}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+S\+T\+A\+T\+U\+S\+\_\+\+S\+T\+A\+T\+E\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+IT = 0\+X02\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_aeb139253a5d596d68203688871573d8c}\label{classmy23_l_c1024_aeb139253a5d596d68203688871573d8c}} 
-\index{my23LC1024@{my23LC1024}!WRITE\_INSTRUCTION@{WRITE\_INSTRUCTION}}
-\index{WRITE\_INSTRUCTION@{WRITE\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{WRITE\_INSTRUCTION}{WRITE\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+W\+R\+I\+T\+E\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x02\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{classmy23_l_c1024_a2da6ed7622b45935c977f93abab69817}\label{classmy23_l_c1024_a2da6ed7622b45935c977f93abab69817}} 
-\index{my23LC1024@{my23LC1024}!WRMR\_INSTRUCTION@{WRMR\_INSTRUCTION}}
-\index{WRMR\_INSTRUCTION@{WRMR\_INSTRUCTION}!my23LC1024@{my23LC1024}}
-\doxysubsubsection{\texorpdfstring{WRMR\_INSTRUCTION}{WRMR\_INSTRUCTION}}
-{\footnotesize\ttfamily const uint8\+\_\+t my23\+L\+C1024\+::\+W\+R\+M\+R\+\_\+\+I\+N\+S\+T\+R\+U\+C\+T\+I\+ON = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+No error. Value 0. 
 
 
 

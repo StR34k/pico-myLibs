@@ -74,6 +74,9 @@ $(function() {
 <div class="title">myRandom.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Random helpers:  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;hardware/structs/rosc.h&quot;</code><br />
 <code>#include &lt;pico/time.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="my_standard_defines_8hpp_source.html">../myStandardDefines.hpp</a>&quot;</code><br />
@@ -83,13 +86,13 @@ Include dependency graph for myRandom.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_random_8hpp__incl.png" border="0" usemap="#my_random_2my_random_8hpp" alt=""/></div>
 <map name="my_random_2my_random_8hpp" id="my_random_2my_random_8hpp">
-<area shape="rect" title=" " alt="" coords="232,5,436,32"/>
+<area shape="rect" title="Random helpers:" alt="" coords="232,5,436,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,180,107"/>
 <area shape="rect" title=" " alt="" coords="204,80,299,107"/>
-<area shape="rect" href="my_standard_defines_8hpp.html" title=" " alt="" coords="323,80,513,107"/>
-<area shape="rect" href="my_a_d_c_8hpp.html" title=" " alt="" coords="537,80,701,107"/>
+<area shape="rect" href="my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="323,80,513,107"/>
+<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="537,80,701,107"/>
 <area shape="rect" title=" " alt="" coords="477,155,599,181"/>
-<area shape="rect" href="my_error_codes_8hpp.html" title=" " alt="" coords="623,155,778,181"/>
+<area shape="rect" href="my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="623,155,778,181"/>
 </map>
 </div>
 </div>
@@ -98,29 +101,43 @@ Include dependency graph for myRandom.hpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacemy_random"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html">myRandom</a></td></tr>
+<tr class="memdesc:namespacemy_random"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random helper functions: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by: <a href="https://github.com/raspberrypi/pico-sdk/issues/569">https://github.com/raspberrypi/pico-sdk/issues/569</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae848cb202320c7f66c45510dac700d51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">myRandom::roscRandomBit</a> ()</td></tr>
+<tr class="memdesc:ae848cb202320c7f66c45510dac700d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a single random bit from the random oscilator.  <a href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">More...</a><br /></td></tr>
 <tr class="separator:ae848cb202320c7f66c45510dac700d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6235e7827e6c3d291181b9382e52e343"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">myRandom::roscRandomByte</a> ()</td></tr>
+<tr class="memdesc:a6235e7827e6c3d291181b9382e52e343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a random byte from the random oscilator.  <a href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">More...</a><br /></td></tr>
 <tr class="separator:a6235e7827e6c3d291181b9382e52e343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51f5ef73de0142d0678191c18baf73d6"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">myRandom::roscRandomWord</a> ()</td></tr>
+<tr class="memdesc:a51f5ef73de0142d0678191c18baf73d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a random word from the random oscilator.  <a href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">More...</a><br /></td></tr>
 <tr class="separator:a51f5ef73de0142d0678191c18baf73d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefc2ec79485692c91817233f7620e15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">myRandom::seedFromROSC</a> ()</td></tr>
+<tr class="memdesc:aefc2ec79485692c91817233f7620e15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed srand with a seed generated from the random oscilator.  <a href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">More...</a><br /></td></tr>
 <tr class="separator:aefc2ec79485692c91817233f7620e15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8707f89eee39cc8e7fd07eb8ff8d0cfe"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">myRandom::seedFromADCChannel</a> (uint8_t adcChannel)</td></tr>
+<tr class="memdesc:a8707f89eee39cc8e7fd07eb8ff8d0cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random seed by readin a floatind ADC pin, in arduino style.  <a href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">More...</a><br /></td></tr>
 <tr class="separator:a8707f89eee39cc8e7fd07eb8ff8d0cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad174b8308a90ddbdee56cdbca0f79978"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">myRandom::seedFromADCPin</a> (uint8_t adcPin)</td></tr>
+<tr class="memdesc:ad174b8308a90ddbdee56cdbca0f79978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed srand from a floating analog pin. in arduino style.  <a href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">More...</a><br /></td></tr>
 <tr class="separator:ad174b8308a90ddbdee56cdbca0f79978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a33a40b83686ad71b89a618cb7559779d"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">myRandom::NO_ERROR</a> = <a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></td></tr>
+<tr class="memdesc:a33a40b83686ad71b89a618cb7559779d"><td class="mdescLeft">&#160;</td><td class="mdescRight">no error. Value 0 (NO_ERROR)  <a href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">More...</a><br /></td></tr>
 <tr class="separator:a33a40b83686ad71b89a618cb7559779d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Random helpers: </p>
+<dl class="section author"><dt>Author</dt><dd>Peter Nearing (<a href="#" onclick="location.href='mai'+'lto:'+'pne'+'ar'+'ing'+'@p'+'rot'+'on'+'mai'+'l.'+'com'; return false;">pnear<span style="display: none;">.nosp@m.</span>ing@<span style="display: none;">.nosp@m.</span>proto<span style="display: none;">.nosp@m.</span>nmai<span style="display: none;">.nosp@m.</span>l.com</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-06-23</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

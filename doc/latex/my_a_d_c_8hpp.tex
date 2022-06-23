@@ -1,5 +1,10 @@
 \hypertarget{my_a_d_c_8hpp}{}\doxysection{my\+A\+D\+C/my\+A\+DC.hpp File Reference}
 \label{my_a_d_c_8hpp}\index{myADC/myADC.hpp@{myADC/myADC.hpp}}
+
+
+High level functions for the A\+DC.  
+
+
 {\ttfamily \#include $<$hardware/adc.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../my\+Error\+Codes.\+hpp\char`\"{}}\newline
 Include dependency graph for my\+A\+D\+C.\+hpp\+:\nopagebreak
@@ -9,7 +14,8 @@ Include dependency graph for my\+A\+D\+C.\+hpp\+:\nopagebreak
 \includegraphics[width=306pt]{my_a_d_c_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +26,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacemy_a_d_c}{my\+A\+DC}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em High level functions for the A\+DC. Helper functions to track and set state of A\+DC pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,68 +68,77 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_adbe3ac5640b1cf77753358761b53cd70}{my\+A\+D\+C\+::valid\+Channel}} (const uint8\+\_\+t channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if valid channel. Verify that a channel provided is valid for the rp2040. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_a2863082cacee0cc8613a9a6b0cf86b0f}{my\+A\+D\+C\+::valid\+User\+Channel}} (const uint8\+\_\+t channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if channel is a user channel. Verify that a channel provided is a valid user channel (not connected to temp sensor.) \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_af1cb8a836866e5349bcc895d86b0c44f}{my\+A\+D\+C\+::valid\+Pin}} (const uint8\+\_\+t pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if a pin is an A\+DC pin. Verify that a pin provided is a valid A\+DC pin on the rp2040. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_aa6dad0222962dbe15710f09a04081d45}{my\+A\+D\+C\+::channel\+To\+Pin}} (uint8\+\_\+t channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Convert a channel to a pin number. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_ad51d32581fc7f3501da7acc7daf2609e}{my\+A\+D\+C\+::pin\+To\+Channel}} (uint8\+\_\+t pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Convert a pin number to a channel. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_a769381b85630da9c5cb7e21c2efcd3d3}{my\+A\+D\+C\+::get\+A\+D\+C\+Init}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if A\+DC init has been called. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_af351cc973db0eb54ab75f168073511b3}{my\+A\+D\+C\+::get\+Channel\+Init}} (uint8\+\_\+t channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if channel has been initialized. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_a2d2e722aff828d134b0b6ec14cd5e062}{my\+A\+D\+C\+::get\+Pin\+Init}} (uint8\+\_\+t pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if pin has been initialized. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_a8149d0bbac7fe32f6f14852c0af850a3}{my\+A\+D\+C\+::get\+Temperature\+Init}} ()
-\item 
-void \mbox{\hyperlink{namespacemy_a_d_c_a7c0570132fc06639058a54a7ce837774}{my\+A\+D\+C\+::\+\_\+set\+A\+D\+C\+Init}} ()
-\item 
-void \mbox{\hyperlink{namespacemy_a_d_c_a3aa0a1c7cb40fbf48833568286df7a4f}{my\+A\+D\+C\+::\+\_\+set\+Channel\+Init}} (const uint8\+\_\+t channel)
-\item 
-void \mbox{\hyperlink{namespacemy_a_d_c_aad87af1a19e660f1717fa8f899634a53}{my\+A\+D\+C\+::\+\_\+set\+Pin\+Init}} (const uint8\+\_\+t pin)
-\item 
-void \mbox{\hyperlink{namespacemy_a_d_c_aa9c684d1217452421b422add56b9f19b}{my\+A\+D\+C\+::\+\_\+set\+Temperature\+Init}} (const bool value)
-\item 
+\begin{DoxyCompactList}\small\item\em Return true if temperature sensor is initialized. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_a_d_c_ab4e69194cfba84ed337e42199cb5d2ad}{my\+A\+D\+C\+::initialize}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Call adc\+\_\+init. Calles adc\+\_\+init from the pico-\/sdk. This function is safe to call multiple times, as we only call adc\+\_\+init once. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a23b6fffa3d0999aa87c8c947f9be8bd8}{my\+A\+D\+C\+::init\+Channel}} (const uint8\+\_\+t channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Select the pin and call adc\+\_\+gpio\+\_\+init. Selects the pin given a channel, and call adc\+\_\+gpio\+\_\+init for the pin, this is safe to call multiple times as it tracks if it\textquotesingle{}s been called. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a906ca96df5fd11d7c9f7a5b37e35875a}{my\+A\+D\+C\+::init\+Pin}} (const uint8\+\_\+t pin)
-\item 
-void \mbox{\hyperlink{namespacemy_a_d_c_aef42fd77039b42b16381116cf07f2c6d}{my\+A\+D\+C\+::init\+Temperature}} ()
-\item 
-void \mbox{\hyperlink{namespacemy_a_d_c_a6e9a06bce3b20c065e34951797c953a8}{my\+A\+D\+C\+::deinit\+Temperature}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Call adc\+\_\+gpio\+\_\+init for a given pin. Calls adc\+\_\+gpio\+\_\+init for a given pin, this is safe to call multiple times as the state is tracked. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a9657ed5dc89996688e4a4a231296d923}{my\+A\+D\+C\+::init\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the temperature sensor. Calls adc\+\_\+set\+\_\+temp\+\_\+sensor\+\_\+enabled with true, and tracks if it\textquotesingle{}s been called, this function is therefore safe to call multiple times. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a2acb6329cb0845a868f4f1168c8c6f2a}{my\+A\+D\+C\+::deinit\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em De intialize the temperature sensor. Calls adc\+\_\+set\+\_\+temp\+\_\+sensor\+\_\+enabled with false, and tracks it. this function is therefore safe to call multiple times. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a4ba44744ea6e65481a0971037ec2bcbb}{my\+A\+D\+C\+::read\+Channel\+Raw}} (const uint8\+\_\+t channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Return the raw A\+DC reading for a channel. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a74933447e2b9ad0028968f6eeeb100e2}{my\+A\+D\+C\+::read\+Pin\+Raw}} (const uint8\+\_\+t pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Return the raw A\+DC for a given pin. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a671539306cf3cfa2fb6c51d198f9b7a8}{my\+A\+D\+C\+::read\+Temperature\+Raw}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Read the raw temperature value. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacemy_a_d_c_a9d31547a4eaa72ebc16374fe26800c43}{my\+A\+D\+C\+::read\+Channel\+Voltage}} (const uint8\+\_\+t channel, const float v\+Ref=3.\+3f)
-\item 
+\begin{DoxyCompactList}\small\item\em Calculate the voltage of a channel given V\+R\+EF. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacemy_a_d_c_ae6b47e4bca38fc1b64e36ab0b871597b}{my\+A\+D\+C\+::read\+Pin\+Voltage}} (const uint8\+\_\+t pin, const float v\+Ref=3.\+3f)
-\item 
+\begin{DoxyCompactList}\small\item\em Calculate the voltage of a pin, given V\+R\+EF. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacemy_a_d_c_a6e98c17e5ae09e42007161d736c9a7a1}{my\+A\+D\+C\+::read\+Temperature}} (const bool return\+DegC=true)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Return temperature of sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a074ad71083eb4dca197b6999f2b7fa4a}{my\+A\+D\+C\+::\+N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
-\item 
+\begin{DoxyCompactList}\small\item\em No error. Value\+: 0 No error. \end{DoxyCompactList}\item 
 const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a4dc6fb2d6ad07737f34eb5333b74d62a}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+N\+N\+EL}} = \mbox{\hyperlink{my_error_codes_8hpp_a82dcf6aea656d7115fda3375f0ae17a4}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}
-\item 
+\begin{DoxyCompactList}\small\item\em Invalid channel. Value -\/200 An invalid channel was provided. \end{DoxyCompactList}\item 
 const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a57cca4cd31e53c88894c3a6a7f2c7dc9}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_ac886b8bb68eac8a1ec75c6fe4b859828}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}
-\item 
+\begin{DoxyCompactList}\small\item\em Invalid pin. Value -\/201 An invalid pin was provided, ie pin is not associated with a channel. \end{DoxyCompactList}\item 
 const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a6b879e4bddb15292c6d5faf0253d67b4}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}} = \mbox{\hyperlink{my_error_codes_8hpp_af0e1bae518d67d8dfff2d20e8bb36ebc}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+A\+D\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}}
-\item 
+\begin{DoxyCompactList}\small\item\em A\+DC not initialized. Value -\/202 Initialize has not been called for the A\+DC at time of read. \end{DoxyCompactList}\item 
 const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_acea36bce50ad7c01628b139d12f26a05}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}} = \mbox{\hyperlink{my_error_codes_8hpp_ab8f5305db7c7e613e006fbb5932a2ae8}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}}
-\item 
-volatile uint8\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a5884e24154b4512ba54e37a97975dc82}{my\+A\+D\+C\+::\+\_\+status}} = 0x00
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Channel not intialized. Value -\/203 Channel was not initialized at time of read. \end{DoxyCompactList}\item 
+const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_ad3d448bbc390378f0c7b2d13a313d3d0}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+IT}} = \mbox{\hyperlink{my_error_codes_8hpp_aed50b26c1428d1e3874c01d97f6ae8cb}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+IT}}
+\begin{DoxyCompactList}\small\item\em Channel already initialized. Channel was already initialized when init was called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+High level functions for the A\+DC. 
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/06-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
 
 
 \doxysubsection{Macro Definition Documentation}

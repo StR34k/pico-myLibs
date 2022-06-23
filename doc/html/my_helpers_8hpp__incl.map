@@ -1,8 +1,8 @@
 <map id="myHelpers.hpp" name="myHelpers.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="301,5,423,32"/>
+<area shape="rect" id="node1" title="Helper functions." alt="" coords="301,5,423,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,132,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="157,80,290,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="315,80,409,107"/>
-<area shape="rect" id="node5" href="$my_standard_defines_8hpp.html" title=" " alt="" coords="434,80,613,107"/>
-<area shape="rect" id="node6" href="$my_error_codes_8hpp.html" title=" " alt="" coords="637,80,780,107"/>
+<area shape="rect" id="node5" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="434,80,613,107"/>
+<area shape="rect" id="node6" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="637,80,780,107"/>
 </map>

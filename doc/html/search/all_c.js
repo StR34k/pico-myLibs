@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['no_5ferror_178',['NO_ERROR',['../classmy23_l_c1024.html#acb56e481bcc741fb5e98aba8c1bbf859',1,'my23LC1024::NO_ERROR()'],['../classmy595.html#a3cd30dc7b674c443473953c9c989e63d',1,'my595::NO_ERROR()'],['../namespacemy_a_d_c.html#a074ad71083eb4dca197b6999f2b7fa4a',1,'myADC::NO_ERROR()'],['../namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d',1,'myRandom::NO_ERROR()']]],
-  ['no_5fpin_179',['NO_PIN',['../classbit_banged_s_p_i.html#ae37bfd1778c325ebbf3905b1983e34fdaf741705d2055df2f28ae5169ca0676ee',1,'bitBangedSPI']]]
+  ['osr_5foff_159',['OSR_OFF',['../classmy_b_mx280.html#a0054c4f259771ed3f55e640a86015603',1,'myBMx280']]],
+  ['osr_5fx1_160',['OSR_X1',['../classmy_b_mx280.html#a837eb94f86543bfd6d7250b603a4b1bb',1,'myBMx280']]],
+  ['osr_5fx16_161',['OSR_X16',['../classmy_b_mx280.html#ae6651f6e8af79fc6b7348c44d1e66fcc',1,'myBMx280']]],
+  ['osr_5fx2_162',['OSR_X2',['../classmy_b_mx280.html#a17fd3cc3a320c474f899b05efdb15fa1',1,'myBMx280']]],
+  ['osr_5fx4_163',['OSR_X4',['../classmy_b_mx280.html#acfd6c59d9e13bb1b6284e1cb7afd628a',1,'myBMx280']]],
+  ['osr_5fx8_164',['OSR_X8',['../classmy_b_mx280.html#a1394192053125f397319c5ff272a8193',1,'myBMx280']]]
 ];

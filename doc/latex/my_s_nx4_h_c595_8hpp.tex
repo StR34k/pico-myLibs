@@ -21,7 +21,7 @@ Include dependency graph for my\+S\+Nx4\+H\+C595.\+hpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classmy595}{my595}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A Class to use a 595 shift register. Use start\+Write to start a write to the shift register, then write\+Bit or write\+Byte to send data to the register. stop\+Write is then called to latch in the data. Daisy chained shift registers can be written to by calling write bit / write byte multiple times. If you want to define clear without without defining enable, you can set enable to M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN to disable it. To use P\+WM on the enable pin, call initialize with a uint8\+\_\+t value to initilize the P\+WM, otherwise we default back to G\+P\+IO, and calling set\+Enable with a uint8\+\_\+t value, will be turned into a boolean. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

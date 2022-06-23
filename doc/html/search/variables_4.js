@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['default_5fconfig_432',['DEFAULT_CONFIG',['../classmy_b_mx280.html#a43c6f80e3b61e9bcb276b6496cfeee04',1,'myBMx280']]],
-  ['default_5fhum_5fsettings_433',['DEFAULT_HUM_SETTINGS',['../classmy_b_mx280.html#aacd05bac36535d3fd51e2d89347a94d7',1,'myBMx280']]],
-  ['default_5fmeas_5fsettings_434',['DEFAULT_MEAS_SETTINGS',['../classmy_b_mx280.html#a3ca7059a5e686ae33ca8088625f5d0ac',1,'myBMx280']]]
+  ['have_5fhumidity_372',['have_humidity',['../classmy_b_mx280.html#a5a35ac34ffbed89862e078a958ee3eaf',1,'myBMx280']]],
+  ['hum_5fosr_5fmask_373',['HUM_OSR_MASK',['../classmy_b_mx280.html#ab981e0e9de452465328702986ded1460',1,'myBMx280']]],
+  ['humidity_374',['humidity',['../classmy_b_mx280.html#aab26b0fc79283e8626e27575ca9c5d58',1,'myBMx280']]]
 ];

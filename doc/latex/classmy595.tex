@@ -2,6 +2,11 @@
 \label{classmy595}\index{my595@{my595}}
 
 
+A Class to use a 595 shift register. Use start\+Write to start a write to the shift register, then write\+Bit or write\+Byte to send data to the register. stop\+Write is then called to latch in the data. Daisy chained shift registers can be written to by calling write bit / write byte multiple times. If you want to define clear without without defining enable, you can set enable to M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN to disable it. To use P\+WM on the enable pin, call initialize with a uint8\+\_\+t value to initilize the P\+WM, otherwise we default back to G\+P\+IO, and calling set\+Enable with a uint8\+\_\+t value, will be turned into a boolean.  
+
+
+
+
 {\ttfamily \#include $<$my\+S\+Nx4\+H\+C595.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -10,9 +15,9 @@
 \mbox{\hyperlink{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data, const uint8\+\_\+t enable)
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy595_a36a35a18fdf3044151d27dd57f1d0343}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data, const uint8\+\_\+t enable, const uint8\+\_\+t \mbox{\hyperlink{classmy595_af2008fd88e7505334a97e5abe7bf56e0}{clear}})
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable and clear pin. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_a5500cff53bb9c724db9ca64c6ba303ec}{initialize}} ()
 \begin{DoxyCompactList}\small\item\em intiialize()\+: Initalize the shfit register. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_aac7cd78f82f0d116baa512dffec05c9b}{initialize}} (const bool enable)
@@ -37,15 +42,15 @@ int16\+\_\+t \mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\
 \begin{DoxyCompactItemize}
 \item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy595_a3cd30dc7b674c443473953c9c989e63d}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
-\item 
+\begin{DoxyCompactList}\small\item\em No error\+: 0. \end{DoxyCompactList}\item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}{E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
-\item 
+\begin{DoxyCompactList}\small\item\em Enable pin not defined. Value\+: -\/400. \end{DoxyCompactList}\item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy595_a347e44e1395b941004a7b512f6c6cb65}{E\+R\+R\+O\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clear pin not defined. Value\+: -\/401. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Use start\+Write to start a write to the shift register, then write\+Bit or write\+Byte to send data to the register. stop\+Write is then called to latch in the data. Daisy chained shift registers can be written to by calling write bit / write byte multiple times. If you want to define clear without without defining enable, you can set enable to M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN to disable it. To use P\+WM on the enable pin, call initialize with a uint8\+\_\+t value to initilize the P\+WM, otherwise we default back to G\+P\+IO, and calling set\+Enable with a uint8\+\_\+t value, will be turned into a boolean.
+A Class to use a 595 shift register. Use start\+Write to start a write to the shift register, then write\+Bit or write\+Byte to send data to the register. stop\+Write is then called to latch in the data. Daisy chained shift registers can be written to by calling write bit / write byte multiple times. If you want to define clear without without defining enable, you can set enable to M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN to disable it. To use P\+WM on the enable pin, call initialize with a uint8\+\_\+t value to initilize the P\+WM, otherwise we default back to G\+P\+IO, and calling set\+Enable with a uint8\+\_\+t value, will be turned into a boolean. 
 
 Datasheet\+: \href{https://www.ti.com/lit/ds/symlink/sn74hc595.pdf}{\texttt{ https\+://www.\+ti.\+com/lit/ds/symlink/sn74hc595.\+pdf}} 
 
@@ -77,7 +82,7 @@ Construct a new \mbox{\hyperlink{classmy595}{my595}} object.
 
 
 
-Construct a new \mbox{\hyperlink{classmy595}{my595}} object. 
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -98,8 +103,11 @@ Construct a new \mbox{\hyperlink{classmy595}{my595}} object.
 
 
 
-Construct a new \mbox{\hyperlink{classmy595}{my595}} object. 
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable and clear pin. 
 
+\begin{DoxyNote}{Note}
+enable pin can be set to M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN, or any other invalid pin number to disable. 
+\end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
 {\em latch} & Latch pin number. \\
@@ -277,19 +285,31 @@ Write a byte to the shift register.
 \doxysubsubsection{\texorpdfstring{ERROR\_CLEAR\_NOT\_DEFINED}{ERROR\_CLEAR\_NOT\_DEFINED}}
 {\footnotesize\ttfamily const int16\+\_\+t my595\+::\+E\+R\+R\+O\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
 
--\/401 \+: Clear pin not defined. \mbox{\Hypertarget{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}\label{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}} 
+
+
+Clear pin not defined. Value\+: -\/401. 
+
+\mbox{\Hypertarget{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}\label{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}} 
 \index{my595@{my595}!ERROR\_ENABLE\_NOT\_DEFINED@{ERROR\_ENABLE\_NOT\_DEFINED}}
 \index{ERROR\_ENABLE\_NOT\_DEFINED@{ERROR\_ENABLE\_NOT\_DEFINED}!my595@{my595}}
 \doxysubsubsection{\texorpdfstring{ERROR\_ENABLE\_NOT\_DEFINED}{ERROR\_ENABLE\_NOT\_DEFINED}}
 {\footnotesize\ttfamily const int16\+\_\+t my595\+::\+E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
 
--\/400 \+: Enable pin not defined. \mbox{\Hypertarget{classmy595_a3cd30dc7b674c443473953c9c989e63d}\label{classmy595_a3cd30dc7b674c443473953c9c989e63d}} 
+
+
+Enable pin not defined. Value\+: -\/400. 
+
+\mbox{\Hypertarget{classmy595_a3cd30dc7b674c443473953c9c989e63d}\label{classmy595_a3cd30dc7b674c443473953c9c989e63d}} 
 \index{my595@{my595}!NO\_ERROR@{NO\_ERROR}}
 \index{NO\_ERROR@{NO\_ERROR}!my595@{my595}}
 \doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
 {\footnotesize\ttfamily const int16\+\_\+t my595\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
 
-0 \+: No error. 
+
+
+No error\+: 0. 
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

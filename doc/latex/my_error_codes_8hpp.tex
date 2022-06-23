@@ -1,6 +1,12 @@
 \hypertarget{my_error_codes_8hpp}{}\doxysection{my\+Error\+Codes.\+hpp File Reference}
 \label{my_error_codes_8hpp}\index{myErrorCodes.hpp@{myErrorCodes.hpp}}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+
+
+Define all error codes used in pico-\/my\+Libs.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,6 +36,8 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em A\+DC not initialized. Initialize hasn\textquotesingle{}t been called prior to operation. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_ab8f5305db7c7e613e006fbb5932a2ae8}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}}~-\/203
 \begin{DoxyCompactList}\small\item\em Channel not initialized. The channel has not been initialized prior to operation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_aed50b26c1428d1e3874c01d97f6ae8cb}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+IT}}~-\/204
+\begin{DoxyCompactList}\small\item\em Channel already init. The channel was already initialized when operation requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a68128ecaa48f01a2db30302cd19d8ea1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+S\+R\+A\+M\+\_\+\+H\+E\+LD}}~-\/300
 \begin{DoxyCompactList}\small\item\em Sram held. Sram is set to H\+O\+LD when operation was requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_ab371af3d7428b37317d551b4d6c50256}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}~-\/301
@@ -50,7 +58,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Sram not writing. Sram was not in writing state when operation was requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_af4c46a80c254713ad590b7420033fef3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}~-\/309
 \begin{DoxyCompactList}\small\item\em Hold not available. Hold function not available in comms mode. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_error_codes_8hpp_a3c10b50348c74ef850b102206f2d933f}{M\+Y\+\_\+\+E\+R\+O\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~-\/310
+\#define \mbox{\hyperlink{my_error_codes_8hpp_ab12330b789b3b03c3f65b26ec53e3ea2}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~-\/310
 \begin{DoxyCompactList}\small\item\em Communication check failed. Communications couldn\textquotesingle{}t be verified. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}~-\/400
 \begin{DoxyCompactList}\small\item\em Enable pin not defined. The enable pin was not defined when operation was requested. \end{DoxyCompactList}\item 
@@ -58,17 +66,26 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Clear pin not defined. The clear pin was not defined when operation was requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Define all error codes used in pico-\/my\+Libs. 
+
+Define all error codes. All the error code defines for the pico-\/my\+Libs. General Error codes are from 0 -\/$>$ -\/99, so they can be cast to any int type. All other error codes must be cast to int16\+\_\+t at minimum.
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/06-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{my_error_codes_8hpp_a3c10b50348c74ef850b102206f2d933f}\label{my_error_codes_8hpp_a3c10b50348c74ef850b102206f2d933f}} 
-\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_EROOR\_MY23LC1024\_COMM\_CHECK\_FAILED@{MY\_EROOR\_MY23LC1024\_COMM\_CHECK\_FAILED}}
-\index{MY\_EROOR\_MY23LC1024\_COMM\_CHECK\_FAILED@{MY\_EROOR\_MY23LC1024\_COMM\_CHECK\_FAILED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_EROOR\_MY23LC1024\_COMM\_CHECK\_FAILED}{MY\_EROOR\_MY23LC1024\_COMM\_CHECK\_FAILED}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+O\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED~-\/310}
-
-
-
-Communication check failed. Communications couldn\textquotesingle{}t be verified. 
-
 \mbox{\Hypertarget{my_error_codes_8hpp_af0e1bae518d67d8dfff2d20e8bb36ebc}\label{my_error_codes_8hpp_af0e1bae518d67d8dfff2d20e8bb36ebc}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_ADC\_ADC\_NOT\_INIT@{MY\_ERROR\_ADC\_ADC\_NOT\_INIT}}
 \index{MY\_ERROR\_ADC\_ADC\_NOT\_INIT@{MY\_ERROR\_ADC\_ADC\_NOT\_INIT}!myErrorCodes.hpp@{myErrorCodes.hpp}}
@@ -78,6 +95,16 @@ Communication check failed. Communications couldn\textquotesingle{}t be verified
 
 
 A\+DC not initialized. Initialize hasn\textquotesingle{}t been called prior to operation. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_aed50b26c1428d1e3874c01d97f6ae8cb}\label{my_error_codes_8hpp_aed50b26c1428d1e3874c01d97f6ae8cb}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_ADC\_CHANNEL\_ALREADY\_INIT@{MY\_ERROR\_ADC\_CHANNEL\_ALREADY\_INIT}}
+\index{MY\_ERROR\_ADC\_CHANNEL\_ALREADY\_INIT@{MY\_ERROR\_ADC\_CHANNEL\_ALREADY\_INIT}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_ADC\_CHANNEL\_ALREADY\_INIT}{MY\_ERROR\_ADC\_CHANNEL\_ALREADY\_INIT}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+I\+N\+IT~-\/204}
+
+
+
+Channel already init. The channel was already initialized when operation requested. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_ab8f5305db7c7e613e006fbb5932a2ae8}\label{my_error_codes_8hpp_ab8f5305db7c7e613e006fbb5932a2ae8}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_ADC\_CHANNEL\_NOT\_INIT@{MY\_ERROR\_ADC\_CHANNEL\_NOT\_INIT}}
@@ -108,6 +135,16 @@ Invalid A\+DC channel. An invalid A\+DC channel was passed.
 
 
 Invalid pin number. An invalid pin number was passed. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_ab12330b789b3b03c3f65b26ec53e3ea2}\label{my_error_codes_8hpp_ab12330b789b3b03c3f65b26ec53e3ea2}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED@{MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED}}
+\index{MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED@{MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED}{MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED~-\/310}
+
+
+
+Communication check failed. Communications couldn\textquotesingle{}t be verified. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_af4c46a80c254713ad590b7420033fef3}\label{my_error_codes_8hpp_af4c46a80c254713ad590b7420033fef3}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MY23LC1024\_HOLD\_NOT\_AVAILABLE@{MY\_ERROR\_MY23LC1024\_HOLD\_NOT\_AVAILABLE}}

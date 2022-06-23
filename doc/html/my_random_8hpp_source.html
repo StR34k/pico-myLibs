@@ -70,123 +70,107 @@ $(function() {
 <div class="title">myRandom.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="my_random_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* myRandom.hpp</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  Provides: seed_from_rosc() and randomBit().</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Uses the unconditioned ring oscilator to set the</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  random seed. We read once a microsecond beacuse</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  the source is periodic if read too quickly.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  Random code provided by: https://github.com/raspberrypi/pico-sdk/issues/569</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *    Functions:</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *      roscRandomBit:      returns a single random bit from the random oscilator.</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *      roscRandomByte:     returns 8 random bits from the random oscilator.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *      roscRandomWord:     return n bits, where n is sizeof(uint) * 8. as defined by the compliler.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *      seedFromROSC:       seed srand using random bits from random oscilator.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *      seedFromADCChannel: seed srand given an unconnected ADC channel.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *      seedFromADCPin:     same as channel, just takes a pin as an argument.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef MY_RANDOM_H</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define MY_RANDOM_H</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;hardware/structs/rosc.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;pico/time.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;../myStandardDefines.hpp&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../myADC/myADC.hpp&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespacemy_random.html">   24</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemy_random.html">myRandom</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/* Constants: */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">   26</a></span>&#160;    int16_t <a class="code" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a> = <a class="code" href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/* Funtions: */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Return a single random bit from the random oscilator.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">   29</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>() {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        sleep_us(1);    <span class="comment">// Sleep so we don&#39;t read too often.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> rosc_hw-&gt;randombit; <span class="comment">// Return a random bit.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Return  a random byte:</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">   34</a></span>&#160;    uint8_t <a class="code" href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">roscRandomByte</a>() {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        uint8_t value=0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;8; i++) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            value |= <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            value &lt;&lt;= 1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Return a random word:</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">   43</a></span>&#160;    uint <a class="code" href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">roscRandomWord</a>() {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        uint value;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        uint8_t numBits = <span class="keyword">sizeof</span>(value) * 8;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;numBits; i++) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            value |= <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            value &lt;&lt;= 1;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Seed srand with a randomSeed generated from the random oscilator.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">seedFromROSC</a>() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        uint32_t randomSeed;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;32; i++) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            randomSeed |= <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            randomSeed &lt;&lt;= 1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        srand(randomSeed);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Generate a random seed by reading an unconnected adc pin, in arduino style.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">   62</a></span>&#160;    int16_t <a class="code" href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">seedFromADCChannel</a>(uint8_t adcChannel) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Init variables:</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        uint32_t randomSeed = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        int16_t returnValue;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Init ADC, and channel:</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        returnValue = <a class="code" href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">myADC::initChannel</a>(adcChannel);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; } <span class="comment">// If there is an error return the error.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Take 4 readings, only looking at the last 8 bits of each reading, for the total 32 bits:</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;4; i++) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            returnValue = <a class="code" href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">myADC::readChannelRaw</a>(adcChannel); <span class="comment">// Read the channel</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; }      <span class="comment">// if error return false.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            randomSeed &lt;&lt;= 8;                       <span class="comment">// Shift the value.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            randomSeed |= (uint8_t)returnValue;         <span class="comment">// Store the reading.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            sleep_us(1);                            <span class="comment">// Delay to give adc time to &#39;randomize&#39;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        srand(randomSeed);  <span class="comment">// Set the seed.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">   82</a></span>&#160;    int16_t <a class="code" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">seedFromADCPin</a>(uint8_t adcPin) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Init variables:</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        uint32_t randomSeed = 0;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        int16_t returnValue;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Init ADC, and channel:</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        returnValue = <a class="code" href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">myADC::initPin</a>(adcPin);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; } <span class="comment">// if error return error code.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Take 4 readings, only looking at the last 8 bits of each reading, for the total 32 bits:</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;4; i++) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            returnValue = <a class="code" href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">myADC::readPinRaw</a>(adcPin); <span class="comment">// Read the pin</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; }      <span class="comment">// if error return error code.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            randomSeed &lt;&lt;= 8;                       <span class="comment">// Shift the value.</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            randomSeed |= (uint8_t)returnValue;         <span class="comment">// Store the reading.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            sleep_us(1);                            <span class="comment">// Delay to give adc time to &#39;randomize&#39;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        srand(randomSeed);  <span class="comment">// Set the seed.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="my_random_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef MY_RANDOM_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define MY_RANDOM_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;hardware/structs/rosc.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;pico/time.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../myStandardDefines.hpp&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;../myADC/myADC.hpp&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacemy_random.html">   28</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemy_random.html">myRandom</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* Constants: */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">   34</a></span>&#160;    int16_t <a class="code" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a> = <a class="code" href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Funtions: */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Return a single random bit from the random oscilator.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">   42</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">bool</span> <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        sleep_us(1);    <span class="comment">// Sleep so we don&#39;t read too often.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> rosc_hw-&gt;randombit; <span class="comment">// Return a random bit.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Return  a random byte:</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">   52</a></span>&#160;<span class="comment"></span>    uint8_t <a class="code" href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">roscRandomByte</a>() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        uint8_t value=0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;8; i++) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            value |= <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            value &lt;&lt;= 1;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Return a random word:</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">   66</a></span>&#160;<span class="comment"></span>    uint <a class="code" href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">roscRandomWord</a>() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        uint value;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        uint8_t numBits = <span class="keyword">sizeof</span>(value) * 8;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;numBits; i++) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            value |= <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            value &lt;&lt;= 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Seed srand with a randomSeed generated from the random oscilator.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">   80</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">seedFromROSC</a>() {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        uint32_t randomSeed;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;32; i++) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            randomSeed |= <a class="code" href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">roscRandomBit</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            randomSeed &lt;&lt;= 1;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        srand(randomSeed);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Generate a random seed by reading an unconnected adc channel, in arduino style.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">   95</a></span>&#160;<span class="comment"></span>    int16_t <a class="code" href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">seedFromADCChannel</a>(uint8_t adcChannel) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Init variables:</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        uint32_t randomSeed = 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        int16_t returnValue;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Init ADC, and channel:</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        returnValue = <a class="code" href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">myADC::initChannel</a>(adcChannel);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; } <span class="comment">// If there is an error return the error.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Take 4 readings, only looking at the last 8 bits of each reading, for the total 32 bits:</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;4; i++) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            returnValue = <a class="code" href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">myADC::readChannelRaw</a>(adcChannel); <span class="comment">// Read the channel</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; }      <span class="comment">// if error return false.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            randomSeed &lt;&lt;= 8;                       <span class="comment">// Shift the value.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            randomSeed |= (uint8_t)returnValue;         <span class="comment">// Store the reading.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            sleep_us(1);                            <span class="comment">// Delay to give adc time to &#39;randomize&#39;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        srand(randomSeed);  <span class="comment">// Set the seed.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">  120</a></span>&#160;    int16_t <a class="code" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">seedFromADCPin</a>(uint8_t adcPin) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Init variables:</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        uint32_t randomSeed = 0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        int16_t returnValue;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Init ADC, and channel:</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        returnValue = <a class="code" href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">myADC::initPin</a>(adcPin);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; } <span class="comment">// if error return error code.</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Take 4 readings, only looking at the last 8 bits of each reading, for the total 32 bits:</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">for</span> (uint8_t i=0; i&lt;4; i++) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            returnValue = <a class="code" href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">myADC::readPinRaw</a>(adcPin); <span class="comment">// Read the pin</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; }      <span class="comment">// if error return error code.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            randomSeed &lt;&lt;= 8;                       <span class="comment">// Shift the value.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            randomSeed |= (uint8_t)returnValue;         <span class="comment">// Store the reading.</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            sleep_us(1);                            <span class="comment">// Delay to give adc time to &#39;randomize&#39;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        srand(randomSeed);  <span class="comment">// Set the seed.</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacemy_random_html_aefc2ec79485692c91817233f7620e15e"><div class="ttname"><a href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">myRandom::seedFromROSC</a></div><div class="ttdeci">void seedFromROSC()</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:53</div></div>
-<div class="ttc" id="anamespacemy_a_d_c_html_a74933447e2b9ad0028968f6eeeb100e2"><div class="ttname"><a href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">myADC::readPinRaw</a></div><div class="ttdeci">int16_t readPinRaw(const uint8_t pin)</div><div class="ttdef"><b>Definition:</b> myADC.hpp:182</div></div>
-<div class="ttc" id="anamespacemy_random_html_ae848cb202320c7f66c45510dac700d51"><div class="ttname"><a href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">myRandom::roscRandomBit</a></div><div class="ttdeci">bool roscRandomBit()</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:29</div></div>
-<div class="ttc" id="anamespacemy_random_html_a51f5ef73de0142d0678191c18baf73d6"><div class="ttname"><a href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">myRandom::roscRandomWord</a></div><div class="ttdeci">uint roscRandomWord()</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:43</div></div>
-<div class="ttc" id="anamespacemy_a_d_c_html_a23b6fffa3d0999aa87c8c947f9be8bd8"><div class="ttname"><a href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">myADC::initChannel</a></div><div class="ttdeci">int16_t initChannel(const uint8_t channel)</div><div class="ttdef"><b>Definition:</b> myADC.hpp:149</div></div>
-<div class="ttc" id="amy_error_codes_8hpp_html_aa0aa05b5f194b52a2bbe65e4b8acc206"><div class="ttname"><a href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></div><div class="ttdeci">#define MY_NO_ERROR</div><div class="ttdoc">No error value. Value to use for no error.</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:15</div></div>
-<div class="ttc" id="anamespacemy_a_d_c_html_a4ba44744ea6e65481a0971037ec2bcbb"><div class="ttname"><a href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">myADC::readChannelRaw</a></div><div class="ttdeci">int16_t readChannelRaw(const uint8_t channel)</div><div class="ttdef"><b>Definition:</b> myADC.hpp:174</div></div>
-<div class="ttc" id="anamespacemy_random_html_a8707f89eee39cc8e7fd07eb8ff8d0cfe"><div class="ttname"><a href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">myRandom::seedFromADCChannel</a></div><div class="ttdeci">int16_t seedFromADCChannel(uint8_t adcChannel)</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:62</div></div>
-<div class="ttc" id="anamespacemy_random_html_a6235e7827e6c3d291181b9382e52e343"><div class="ttname"><a href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">myRandom::roscRandomByte</a></div><div class="ttdeci">uint8_t roscRandomByte()</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:34</div></div>
-<div class="ttc" id="anamespacemy_random_html_ad174b8308a90ddbdee56cdbca0f79978"><div class="ttname"><a href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">myRandom::seedFromADCPin</a></div><div class="ttdeci">int16_t seedFromADCPin(uint8_t adcPin)</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:82</div></div>
-<div class="ttc" id="anamespacemy_random_html"><div class="ttname"><a href="namespacemy_random.html">myRandom</a></div><div class="ttdef"><b>Definition:</b> myRandom.hpp:24</div></div>
-<div class="ttc" id="anamespacemy_random_html_a33a40b83686ad71b89a618cb7559779d"><div class="ttname"><a href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">myRandom::NO_ERROR</a></div><div class="ttdeci">int16_t NO_ERROR</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:26</div></div>
-<div class="ttc" id="anamespacemy_a_d_c_html_a906ca96df5fd11d7c9f7a5b37e35875a"><div class="ttname"><a href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">myADC::initPin</a></div><div class="ttdeci">int16_t initPin(const uint8_t pin)</div><div class="ttdef"><b>Definition:</b> myADC.hpp:156</div></div>
-<div class="ttc" id="anamespacemy_a_d_c_html_ab4e69194cfba84ed337e42199cb5d2ad"><div class="ttname"><a href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdef"><b>Definition:</b> myADC.hpp:140</div></div>
+<div class="ttc" id="anamespacemy_random_html_aefc2ec79485692c91817233f7620e15e"><div class="ttname"><a href="namespacemy_random.html#aefc2ec79485692c91817233f7620e15e">myRandom::seedFromROSC</a></div><div class="ttdeci">void seedFromROSC()</div><div class="ttdoc">Seed srand with a seed generated from the random oscilator.</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:80</div></div>
+<div class="ttc" id="anamespacemy_a_d_c_html_a74933447e2b9ad0028968f6eeeb100e2"><div class="ttname"><a href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">myADC::readPinRaw</a></div><div class="ttdeci">int16_t readPinRaw(const uint8_t pin)</div><div class="ttdoc">Return the raw ADC for a given pin.</div><div class="ttdef"><b>Definition:</b> myADC.hpp:301</div></div>
+<div class="ttc" id="anamespacemy_random_html_ae848cb202320c7f66c45510dac700d51"><div class="ttname"><a href="namespacemy_random.html#ae848cb202320c7f66c45510dac700d51">myRandom::roscRandomBit</a></div><div class="ttdeci">bool roscRandomBit()</div><div class="ttdoc">Return a single random bit from the random oscilator.</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:42</div></div>
+<div class="ttc" id="anamespacemy_random_html_a51f5ef73de0142d0678191c18baf73d6"><div class="ttname"><a href="namespacemy_random.html#a51f5ef73de0142d0678191c18baf73d6">myRandom::roscRandomWord</a></div><div class="ttdeci">uint roscRandomWord()</div><div class="ttdoc">return a random word from the random oscilator.</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:66</div></div>
+<div class="ttc" id="anamespacemy_a_d_c_html_a23b6fffa3d0999aa87c8c947f9be8bd8"><div class="ttname"><a href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">myADC::initChannel</a></div><div class="ttdeci">int16_t initChannel(const uint8_t channel)</div><div class="ttdoc">Select the pin and call adc_gpio_init. Selects the pin given a channel, and call adc_gpio_init for th...</div><div class="ttdef"><b>Definition:</b> myADC.hpp:232</div></div>
+<div class="ttc" id="amy_error_codes_8hpp_html_aa0aa05b5f194b52a2bbe65e4b8acc206"><div class="ttname"><a href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></div><div class="ttdeci">#define MY_NO_ERROR</div><div class="ttdoc">No error value. Value to use for no error.</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:25</div></div>
+<div class="ttc" id="anamespacemy_a_d_c_html_a4ba44744ea6e65481a0971037ec2bcbb"><div class="ttname"><a href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">myADC::readChannelRaw</a></div><div class="ttdeci">int16_t readChannelRaw(const uint8_t channel)</div><div class="ttdoc">Return the raw ADC reading for a channel.</div><div class="ttdef"><b>Definition:</b> myADC.hpp:287</div></div>
+<div class="ttc" id="anamespacemy_random_html_a8707f89eee39cc8e7fd07eb8ff8d0cfe"><div class="ttname"><a href="namespacemy_random.html#a8707f89eee39cc8e7fd07eb8ff8d0cfe">myRandom::seedFromADCChannel</a></div><div class="ttdeci">int16_t seedFromADCChannel(uint8_t adcChannel)</div><div class="ttdoc">Generate a random seed by readin a floatind ADC pin, in arduino style.</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:95</div></div>
+<div class="ttc" id="anamespacemy_random_html_a6235e7827e6c3d291181b9382e52e343"><div class="ttname"><a href="namespacemy_random.html#a6235e7827e6c3d291181b9382e52e343">myRandom::roscRandomByte</a></div><div class="ttdeci">uint8_t roscRandomByte()</div><div class="ttdoc">Return a random byte from the random oscilator.</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:52</div></div>
+<div class="ttc" id="anamespacemy_random_html_ad174b8308a90ddbdee56cdbca0f79978"><div class="ttname"><a href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">myRandom::seedFromADCPin</a></div><div class="ttdeci">int16_t seedFromADCPin(uint8_t adcPin)</div><div class="ttdoc">Seed srand from a floating analog pin. in arduino style.</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:120</div></div>
+<div class="ttc" id="anamespacemy_random_html"><div class="ttname"><a href="namespacemy_random.html">myRandom</a></div><div class="ttdoc">Random helper functions: Uses the unconditioned ring oscilator to set the random seed....</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:28</div></div>
+<div class="ttc" id="anamespacemy_random_html_a33a40b83686ad71b89a618cb7559779d"><div class="ttname"><a href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">myRandom::NO_ERROR</a></div><div class="ttdeci">int16_t NO_ERROR</div><div class="ttdoc">no error. Value 0 (NO_ERROR)</div><div class="ttdef"><b>Definition:</b> myRandom.hpp:34</div></div>
+<div class="ttc" id="anamespacemy_a_d_c_html_a906ca96df5fd11d7c9f7a5b37e35875a"><div class="ttname"><a href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">myADC::initPin</a></div><div class="ttdeci">int16_t initPin(const uint8_t pin)</div><div class="ttdoc">Call adc_gpio_init for a given pin. Calls adc_gpio_init for a given pin, this is safe to call multipl...</div><div class="ttdef"><b>Definition:</b> myADC.hpp:246</div></div>
+<div class="ttc" id="anamespacemy_a_d_c_html_ab4e69194cfba84ed337e42199cb5d2ad"><div class="ttname"><a href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">myADC::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Call adc_init. Calles adc_init from the pico-sdk. This function is safe to call multiple times,...</div><div class="ttdef"><b>Definition:</b> myADC.hpp:216</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
