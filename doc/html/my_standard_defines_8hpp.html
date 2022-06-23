@@ -76,7 +76,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" title=" " alt="" coords="275,5,453,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title=" " alt="" coords="5,80,229,107"/>
 <area shape="rect" href="my_helpers_8hpp.html" title=" " alt="" coords="254,80,375,107"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title=" " alt="" coords="288,155,539,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="288,155,539,181"/>
 <area shape="rect" href="my_random_8hpp.html" title=" " alt="" coords="451,80,655,107"/>
 <area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="101,155,264,181"/>
 </map>
@@ -87,20 +87,28 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a63d864d514c4553329aa333b23e9eef7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a63d864d514c4553329aa333b23e9eef7">MY_NOT_A_PIN</a>&#160;&#160;&#160;0xFF</td></tr>
+<tr class="memdesc:a63d864d514c4553329aa333b23e9eef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not a pin value. Value to use for an undefined pin, fails <a class="el" href="namespacemy_helpers.html#a14451ade4ade2ad79e5a2bfd83ad8cac" title="Validate if the pin is a valid pin number for the rp2040.">myHelpers::isPin()</a>  <a href="my_standard_defines_8hpp.html#a63d864d514c4553329aa333b23e9eef7">More...</a><br /></td></tr>
 <tr class="separator:a63d864d514c4553329aa333b23e9eef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5759402c576f78019d1fbd429ae2802e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a5759402c576f78019d1fbd429ae2802e">MY_NUM_PINS</a>&#160;&#160;&#160;30</td></tr>
+<tr class="memdesc:a5759402c576f78019d1fbd429ae2802e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of gpio pins. Number of GPIO pins on the rp2040.  <a href="my_standard_defines_8hpp.html#a5759402c576f78019d1fbd429ae2802e">More...</a><br /></td></tr>
 <tr class="separator:a5759402c576f78019d1fbd429ae2802e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c0b773be8be16ef6615b3681275f09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a57c0b773be8be16ef6615b3681275f09">MY_MAX_PIN</a>&#160;&#160;&#160;29</td></tr>
+<tr class="memdesc:a57c0b773be8be16ef6615b3681275f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max valid pin number. The highest pin number on the rp2040.  <a href="my_standard_defines_8hpp.html#a57c0b773be8be16ef6615b3681275f09">More...</a><br /></td></tr>
 <tr class="separator:a57c0b773be8be16ef6615b3681275f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error value. Value to use to represent no error.  <a href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">More...</a><br /></td></tr>
 <tr class="separator:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ab9569b2a283a5cd23b09c2c68b4b6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">MY_GENERAL_ERROR</a>&#160;&#160;&#160;-1</td></tr>
+<tr class="memdesc:a6ab9569b2a283a5cd23b09c2c68b4b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">General error value. General error for when no other error code applies.  <a href="my_standard_defines_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">More...</a><br /></td></tr>
 <tr class="separator:a6ab9569b2a283a5cd23b09c2c68b4b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f1093563dc14c2923f33412a982e83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ad2f1093563dc14c2923f33412a982e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit order of MSB first.  <a href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">More...</a><br /></td></tr>
 <tr class="separator:ad2f1093563dc14c2923f33412a982e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa93c5c73d56a97871b8c595f38fabeba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#aa93c5c73d56a97871b8c595f38fabeba">LSB_FIRST</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:aa93c5c73d56a97871b8c595f38fabeba"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit order of LSB first.  <a href="my_standard_defines_8hpp.html#aa93c5c73d56a97871b8c595f38fabeba">More...</a><br /></td></tr>
 <tr class="separator:aa93c5c73d56a97871b8c595f38fabeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11643f271076024c395a93800b3d9546"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a11643f271076024c395a93800b3d9546">_BV</a>(bit)&#160;&#160;&#160;(1 &lt;&lt; (bit))</td></tr>
+<tr class="memdesc:a11643f271076024c395a93800b3d9546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a bit mask given a bit number.  <a href="my_standard_defines_8hpp.html#a11643f271076024c395a93800b3d9546">More...</a><br /></td></tr>
 <tr class="separator:a11643f271076024c395a93800b3d9546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -120,6 +128,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create a bit mask given a bit number. </p>
+
 </div>
 </div>
 <a id="aa93c5c73d56a97871b8c595f38fabeba"></a>
@@ -133,6 +143,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>bit order of LSB first. </p>
 
 </div>
 </div>
@@ -148,6 +160,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>bit order of MSB first. </p>
+
 </div>
 </div>
 <a id="a6ab9569b2a283a5cd23b09c2c68b4b6b"></a>
@@ -161,6 +175,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>General error value. General error for when no other error code applies. </p>
 
 </div>
 </div>
@@ -176,6 +192,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Max valid pin number. The highest pin number on the rp2040. </p>
+
 </div>
 </div>
 <a id="aa0aa05b5f194b52a2bbe65e4b8acc206"></a>
@@ -189,6 +207,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>No error value. Value to use to represent no error. </p>
 
 </div>
 </div>
@@ -204,6 +224,8 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Not a pin value. Value to use for an undefined pin, fails <a class="el" href="namespacemy_helpers.html#a14451ade4ade2ad79e5a2bfd83ad8cac" title="Validate if the pin is a valid pin number for the rp2040.">myHelpers::isPin()</a> </p>
+
 </div>
 </div>
 <a id="a5759402c576f78019d1fbd429ae2802e"></a>
@@ -217,6 +239,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of gpio pins. Number of GPIO pins on the rp2040. </p>
 
 </div>
 </div>

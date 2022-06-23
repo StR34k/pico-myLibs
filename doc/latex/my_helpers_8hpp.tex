@@ -40,10 +40,14 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a0a18293ace9520f747d10be28debd
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6f4493da21359cff8f937ac1b9cc93d7}{my\+Helpers\+::wait\+For\+Low64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_abaf1792ba912a18d81d699d03b227637}{my\+Helpers\+::wait\+For\+High64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
-\item 
+\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}{my\+Helpers\+::wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout)
-\item 
+\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}{my\+Helpers\+::wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout)
-\item 
+\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}{my\+Helpers\+::pulse\+In32}} (const uint8\+\_\+t pin, const bool state, uint32\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{my\+Helpers\+::pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em Read a pulse on a pin 64 bit. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}{my\+Helpers\+::map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. \end{DoxyCompactList}\end{DoxyCompactItemize}

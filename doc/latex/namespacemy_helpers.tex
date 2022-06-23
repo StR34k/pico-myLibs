@@ -16,13 +16,17 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a0a18293ace9520f747d10be28debd
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6f4493da21359cff8f937ac1b9cc93d7}{wait\+For\+Low64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_abaf1792ba912a18d81d699d03b227637}{wait\+For\+High64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
-\item 
+\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}{wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout)
-\item 
+\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}{wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout)
-\item 
+\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}{pulse\+In32}} (const uint8\+\_\+t pin, const bool state, uint32\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em Read a pulse on a pin 64 bit. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}{map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -56,7 +60,7 @@ Validate if the pin is a valid pin number for the rp2040.
 
 
 \begin{DoxyParams}{Parameters}
-{\em pin} & uint8\+\_\+t pin to validate \\
+{\em pin} & Pin to validate. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -70,7 +74,27 @@ false is not a valid pin
 \doxysubsubsection{\texorpdfstring{map()}{map()}}
 {\footnotesize\ttfamily int32\+\_\+t my\+Helpers\+::map (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x,  }\item[{int32\+\_\+t}]{in\+\_\+min,  }\item[{int32\+\_\+t}]{in\+\_\+max,  }\item[{int32\+\_\+t}]{out\+\_\+min,  }\item[{int32\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
 
-Map function\+: Descripttion \mbox{\Hypertarget{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}\label{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}} 
+
+
+Map a value from one range to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Value to map \\
+\hline
+{\em in\+\_\+min} & In range minimum \\
+\hline
+{\em in\+\_\+max} & In range maximum \\
+\hline
+{\em out\+\_\+min} & Out range minimum. \\
+\hline
+{\em out\+\_\+max} & Out range maximum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t The mapped value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}\label{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}} 
 \index{myHelpers@{myHelpers}!pinToBitMask@{pinToBitMask}}
 \index{pinToBitMask@{pinToBitMask}!myHelpers@{myHelpers}}
 \doxysubsubsection{\texorpdfstring{pinToBitMask()}{pinToBitMask()}}
@@ -86,7 +110,51 @@ Return the bit mask for a single pin.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int32\+\_\+t Postive = bitmask, Negaitve = error code. 
+Postive = bitmask, Negaitve = error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}\label{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}} 
+\index{myHelpers@{myHelpers}!pulseIn32@{pulseIn32}}
+\index{pulseIn32@{pulseIn32}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{pulseIn32()}{pulseIn32()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+Helpers\+::pulse\+In32 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const bool}]{state,  }\item[{uint32\+\_\+t}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Read a pulse on a pin 32 bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to read pulse on. \\
+\hline
+{\em state} & True waits for a high pulse, False waits for a low pulse. \\
+\hline
+{\em timeout} & Timeout time in microseconds. A timeout value of 0 (the default) blocks indefinatly. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive = time elapsed in microseconds, negative = error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}\label{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}} 
+\index{myHelpers@{myHelpers}!pulseIn64@{pulseIn64}}
+\index{pulseIn64@{pulseIn64}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{pulseIn64()}{pulseIn64()}}
+{\footnotesize\ttfamily int64\+\_\+t my\+Helpers\+::pulse\+In64 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const bool}]{state,  }\item[{uint64\+\_\+t}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Read a pulse on a pin 64 bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to read pulse on. \\
+\hline
+{\em state} & True waits for a high pulse, False waits for a low pulse. \\
+\hline
+{\em timeout} & Timeout time in microseconds. A timeout value of 0 (the default) blocks indefinatly. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t Positive = time elapsed in microseconds, negative = error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}\label{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}} 
 \index{myHelpers@{myHelpers}!waitForChange32@{waitForChange32}}
@@ -94,13 +162,41 @@ int32\+\_\+t Postive = bitmask, Negaitve = error code.
 \doxysubsubsection{\texorpdfstring{waitForChange32()}{waitForChange32()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily int32\+\_\+t my\+Helpers\+::wait\+For\+Change32 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
 
-wait\+For\+Change32\+: Description\+: busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. Params\+: uint8\+\_\+t pin to read. uint32\+\_\+t timeout in microseconds. Returns\+: int32\+\_\+t Positive\+: amount of time elapsed in microseconds, Negaitive Error code. \mbox{\Hypertarget{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}\label{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}} 
+
+
+busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to read. \\
+\hline
+{\em timeout} & Timeout time in microseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive = time elapsed in microseconds, negative = error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}\label{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}} 
 \index{myHelpers@{myHelpers}!waitForChange32@{waitForChange32}}
 \index{waitForChange32@{waitForChange32}!myHelpers@{myHelpers}}
 \doxysubsubsection{\texorpdfstring{waitForChange32()}{waitForChange32()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily int64\+\_\+t my\+Helpers\+::wait\+For\+Change32 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint64\+\_\+t}]{timeout }\end{DoxyParamCaption})}
 
-wait\+For\+Change64\+: Description\+: busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. Params\+: uint8\+\_\+t pin to read. uint64\+\_\+t timeout in microseconds. Returns\+: int64\+\_\+t Positive\+: amount of time elapsed in microseconds, Negaitive Error code. \mbox{\Hypertarget{namespacemy_helpers_a0a18293ace9520f747d10be28debd1af}\label{namespacemy_helpers_a0a18293ace9520f747d10be28debd1af}} 
+
+
+busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to read. \\
+\hline
+{\em timeout} & Timeout time in microseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t Positive = time elapsed in microseconds, negaive = error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a0a18293ace9520f747d10be28debd1af}\label{namespacemy_helpers_a0a18293ace9520f747d10be28debd1af}} 
 \index{myHelpers@{myHelpers}!waitForHigh32@{waitForHigh32}}
 \index{waitForHigh32@{waitForHigh32}!myHelpers@{myHelpers}}
 \doxysubsubsection{\texorpdfstring{waitForHigh32()}{waitForHigh32()}}
@@ -112,13 +208,13 @@ busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means 
 
 
 \begin{DoxyParams}{Parameters}
-{\em pin} & uint8\+\_\+t pin to read. \\
+{\em pin} & Pin to read. \\
 \hline
-{\em timeout} & uint32\+\_\+t timeout time in microseconds. \\
+{\em timeout} & Timeout time in microseconds. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int32\+\_\+t Positive = elapsed time in microseconds, negaitve = error code. 
+Positive = elapsed time in microseconds, negaitve = error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_abaf1792ba912a18d81d699d03b227637}\label{namespacemy_helpers_abaf1792ba912a18d81d699d03b227637}} 
 \index{myHelpers@{myHelpers}!waitForHigh64@{waitForHigh64}}
@@ -126,7 +222,21 @@ int32\+\_\+t Positive = elapsed time in microseconds, negaitve = error code.
 \doxysubsubsection{\texorpdfstring{waitForHigh64()}{waitForHigh64()}}
 {\footnotesize\ttfamily int64\+\_\+t my\+Helpers\+::wait\+For\+High64 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint64\+\_\+t}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
 
-wait\+For\+High64\+: Description\+: busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. Params\+: uint8\+\_\+t pin to read. uint64\+\_\+t timeout in microseconds. Returns\+: int64\+\_\+t Positive\+: amount of time elapsed in microseconds, Negaitive Error code. \mbox{\Hypertarget{namespacemy_helpers_a38a808b90655c2168a57e48826abeab5}\label{namespacemy_helpers_a38a808b90655c2168a57e48826abeab5}} 
+
+
+busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to readk. \\
+\hline
+{\em timeout} & Timeout time in microseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t Positive time elapsed, negaitve error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a38a808b90655c2168a57e48826abeab5}\label{namespacemy_helpers_a38a808b90655c2168a57e48826abeab5}} 
 \index{myHelpers@{myHelpers}!waitForLow32@{waitForLow32}}
 \index{waitForLow32@{waitForLow32}!myHelpers@{myHelpers}}
 \doxysubsubsection{\texorpdfstring{waitForLow32()}{waitForLow32()}}
@@ -138,13 +248,13 @@ busy wait until L\+OW signal, or timeout. a timeout of 0 (the default) means tha
 
 
 \begin{DoxyParams}{Parameters}
-{\em pin} & uint8\+\_\+t pin to read \\
+{\em pin} & Pin to read \\
 \hline
-{\em timeout} & uint32\+\_\+t timeout time in microseconds \\
+{\em timeout} & Timeout time in microseconds \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int32\+\_\+t Postive = time elapsed in microseconds, negative error code. 
+Postive = time elapsed in microseconds, negative error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_a6f4493da21359cff8f937ac1b9cc93d7}\label{namespacemy_helpers_a6f4493da21359cff8f937ac1b9cc93d7}} 
 \index{myHelpers@{myHelpers}!waitForLow64@{waitForLow64}}
@@ -158,11 +268,11 @@ busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeou
 
 
 \begin{DoxyParams}{Parameters}
-{\em pin} & uint8\+\_\+t pin to read \\
+{\em pin} & pin to read \\
 \hline
-{\em timeout} & uint64\+\_\+t timeout time in microseconds \\
+{\em timeout} & timeout time in microseconds \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int64\+\_\+t positive = elapsed time in microseconds, negative = error code. 
+positive = elapsed time in microseconds, negative = error code. 
 \end{DoxyReturn}

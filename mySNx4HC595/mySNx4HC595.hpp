@@ -1,6 +1,25 @@
-/* Datasheet: https://www.ti.com/lit/ds/symlink/sn74hc595.pdf?ts=1647947714454&ref_url=https%253A%252F%252Fwww.google.com%252F
-*/
+/**
+ * @file mySNx4HC595.hpp
+ * @author Peter Nearing (pnearing@protonmail.com)
+ * @brief Class to use a 595 shift register.
+ * @version 0.1
+ * @date 2022-06-23
+ * 
+ * @copyright Copyright (c) 2022
+ */
 
+/**      
+ *      A Class to use a 595 shift register.
+ *      Use startWrite to start a write to the shift register, then writeBit or writeByte to send data to 
+ *      the register. stopWrite is then called to latch in the data.  Daisy chained shift registers can be
+ *      written to by calling write bit / write byte multiple times. If you want to define clear without
+ *      without defining enable, you can set enable to MY_NOT_A_PIN to disable it. To use PWM on the enable
+ *      pin, call initialize with a uint8_t value to initilize the PWM, otherwise we default back to GPIO,
+ *      and calling setEnable with a uint8_t value, will be turned into a boolean.
+ * 
+ *      Datasheet: https://www.ti.com/lit/ds/symlink/sn74hc595.pdf
+ * 
+ */
 #ifndef MY_SNX4HC595_H
 #define MY_SNX4HC595_H
 
@@ -15,16 +34,40 @@ class my595 {
     public:
     /* Constants: */
         // Errors:
-        static const int16_t NO_ERROR = MY_NO_ERROR;
-        static const int16_t ERROR_ENABLE_NOT_DEFINED = MY_ERROR_MY595_ENABLE_NOT_DEFINED;  // -400 : Enable pin not defined.
-        static const int16_t ERROR_CLEAR_NOT_DEFINED = MY_ERROR_MY595_CLEAR_NOT_DEFINED;    // -401 : Clear pin not defined.
+        static const int16_t NO_ERROR = MY_NO_ERROR;                                        /**< 0 : No error. */
+        static const int16_t ERROR_ENABLE_NOT_DEFINED = MY_ERROR_MY595_ENABLE_NOT_DEFINED;  /**< -400 : Enable pin not defined. */
+        static const int16_t ERROR_CLEAR_NOT_DEFINED = MY_ERROR_MY595_CLEAR_NOT_DEFINED;    /**< -401 : Clear pin not defined. */
 
 
     /* Constructors: */
+        /**
+         * @brief Construct a new my595 object
+         * 
+         * @param latch Latch pin number.
+         * @param clock Clock pin number.
+         * @param data Data pin number.
+         */
         my595(const uint8_t latch, const uint8_t clock, const uint8_t data) : _latchPin (latch),
                     _clkPin (clock), _dataPin(data) {}
+        /**
+         * @brief Construct a new my595 object
+         * 
+         * @param latch Latch pin number
+         * @param clock Clock pin number.
+         * @param data Data pin number.
+         * @param enable Enable pin number.
+         */
         my595(const uint8_t latch, const uint8_t clock, const uint8_t data, const uint8_t enable) :
                     _latchPin (latch), _clkPin (clock), _dataPin (data), _enablePin (enable) {}
+        /**
+         * @brief Construct a new my595 object
+         * 
+         * @param latch Latch pin number.
+         * @param clock Clock pin number.
+         * @param data Data pin number.
+         * @param enable Enable pin number.
+         * @param clear Clear pin number.
+         */
         my595(const uint8_t latch, const uint8_t clock, const uint8_t data, const uint8_t enable,
                     const uint8_t clear) : _latchPin (latch), _clkPin (clock), _dataPin (data),
                     _enablePin (enable), _clearPin (clear) {}

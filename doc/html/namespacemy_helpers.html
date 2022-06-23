@@ -90,12 +90,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6f4493da21359cff8f937ac1b9cc93d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a6f4493da21359cff8f937ac1b9cc93d7">More...</a><br /></td></tr>
 <tr class="separator:a6f4493da21359cff8f937ac1b9cc93d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaf1792ba912a18d81d699d03b227637"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">waitForHigh64</a> (const uint8_t pin, const uint64_t timeout=0)</td></tr>
+<tr class="memdesc:abaf1792ba912a18d81d699d03b227637"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">More...</a><br /></td></tr>
 <tr class="separator:abaf1792ba912a18d81d699d03b227637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5c257b6614735aa6aff6053bf55540b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">waitForChange32</a> (const uint8_t pin, const uint32_t timeout)</td></tr>
+<tr class="memdesc:af5c257b6614735aa6aff6053bf55540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">More...</a><br /></td></tr>
 <tr class="separator:af5c257b6614735aa6aff6053bf55540b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dda3e87f687845f9f5b5b77ee704492"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a9dda3e87f687845f9f5b5b77ee704492">waitForChange32</a> (const uint8_t pin, const uint64_t timeout)</td></tr>
+<tr class="memdesc:a9dda3e87f687845f9f5b5b77ee704492"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a9dda3e87f687845f9f5b5b77ee704492">More...</a><br /></td></tr>
 <tr class="separator:a9dda3e87f687845f9f5b5b77ee704492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed812889291962e16cc8826eaedaa25"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a8ed812889291962e16cc8826eaedaa25">pulseIn32</a> (const uint8_t pin, const bool state, uint32_t timeout=0)</td></tr>
+<tr class="memdesc:a8ed812889291962e16cc8826eaedaa25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 32 bit.  <a href="namespacemy_helpers.html#a8ed812889291962e16cc8826eaedaa25">More...</a><br /></td></tr>
+<tr class="separator:a8ed812889291962e16cc8826eaedaa25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d7c32f82edecaad34f24de7435033f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">pulseIn64</a> (const uint8_t pin, const bool state, uint64_t timeout=0)</td></tr>
+<tr class="memdesc:a90d7c32f82edecaad34f24de7435033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 64 bit.  <a href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">More...</a><br /></td></tr>
+<tr class="separator:a90d7c32f82edecaad34f24de7435033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2">map</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
+<tr class="memdesc:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another.  <a href="namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2">More...</a><br /></td></tr>
 <tr class="separator:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -161,7 +171,7 @@ Functions</h2></td></tr>
 <p>Validate if the pin is a valid pin number for the rp2040. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>uint8_t pin to validate </td></tr>
+    <tr><td class="paramname">pin</td><td>Pin to validate. </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,7 +224,19 @@ false is not a valid pin </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Map function: Descripttion </p>
+
+<p>Map a value from one range to another. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value to map </td></tr>
+    <tr><td class="paramname">in_min</td><td>In range minimum </td></tr>
+    <tr><td class="paramname">in_max</td><td>In range maximum </td></tr>
+    <tr><td class="paramname">out_min</td><td>Out range minimum. </td></tr>
+    <tr><td class="paramname">out_max</td><td>Out range maximum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t The mapped value. </dd></dl>
 
 </div>
 </div>
@@ -249,7 +271,97 @@ false is not a valid pin </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t Postive = bitmask, Negaitve = error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Postive = bitmask, Negaitve = error code. </dd></dl>
+
+</div>
+</div>
+<a id="a8ed812889291962e16cc8826eaedaa25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed812889291962e16cc8826eaedaa25">&#9670;&nbsp;</a></span>pulseIn32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myHelpers::pulseIn32 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a pulse on a pin 32 bit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to read pulse on. </td></tr>
+    <tr><td class="paramname">state</td><td>True waits for a high pulse, False waits for a low pulse. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds. A timeout value of 0 (the default) blocks indefinatly. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Positive = time elapsed in microseconds, negative = error code. </dd></dl>
+
+</div>
+</div>
+<a id="a90d7c32f82edecaad34f24de7435033f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d7c32f82edecaad34f24de7435033f">&#9670;&nbsp;</a></span>pulseIn64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t myHelpers::pulseIn64 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a pulse on a pin 64 bit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to read pulse on. </td></tr>
+    <tr><td class="paramname">state</td><td>True waits for a high pulse, False waits for a low pulse. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds. A timeout value of 0 (the default) blocks indefinatly. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t Positive = time elapsed in microseconds, negative = error code. </dd></dl>
 
 </div>
 </div>
@@ -278,7 +390,16 @@ false is not a valid pin </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>waitForChange32: Description: busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. Params: uint8_t pin to read. uint32_t timeout in microseconds. Returns: int32_t Positive: amount of time elapsed in microseconds, Negaitive Error code. </p>
+
+<p>busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Positive = time elapsed in microseconds, negative = error code. </dd></dl>
 
 </div>
 </div>
@@ -307,7 +428,16 @@ false is not a valid pin </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>waitForChange64: Description: busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. Params: uint8_t pin to read. uint64_t timeout in microseconds. Returns: int64_t Positive: amount of time elapsed in microseconds, Negaitive Error code. </p>
+
+<p>busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t Positive = time elapsed in microseconds, negaive = error code. </dd></dl>
 
 </div>
 </div>
@@ -340,12 +470,12 @@ false is not a valid pin </dd></dl>
 <p>busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>uint8_t pin to read. </td></tr>
-    <tr><td class="paramname">timeout</td><td>uint32_t timeout time in microseconds. </td></tr>
+    <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t Positive = elapsed time in microseconds, negaitve = error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Positive = elapsed time in microseconds, negaitve = error code. </dd></dl>
 
 </div>
 </div>
@@ -374,7 +504,16 @@ false is not a valid pin </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>waitForHigh64: Description: busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. Params: uint8_t pin to read. uint64_t timeout in microseconds. Returns: int64_t Positive: amount of time elapsed in microseconds, Negaitive Error code. </p>
+
+<p>busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to readk. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int64_t Positive time elapsed, negaitve error code. </dd></dl>
 
 </div>
 </div>
@@ -407,12 +546,12 @@ false is not a valid pin </dd></dl>
 <p>busy wait until LOW signal, or timeout. a timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>uint8_t pin to read </td></tr>
-    <tr><td class="paramname">timeout</td><td>uint32_t timeout time in microseconds </td></tr>
+    <tr><td class="paramname">pin</td><td>Pin to read </td></tr>
+    <tr><td class="paramname">timeout</td><td>Timeout time in microseconds </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t Postive = time elapsed in microseconds, negative error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Postive = time elapsed in microseconds, negative error code. </dd></dl>
 
 </div>
 </div>
@@ -445,12 +584,12 @@ false is not a valid pin </dd></dl>
 <p>busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>uint8_t pin to read </td></tr>
-    <tr><td class="paramname">timeout</td><td>uint64_t timeout time in microseconds </td></tr>
+    <tr><td class="paramname">pin</td><td>pin to read </td></tr>
+    <tr><td class="paramname">timeout</td><td>timeout time in microseconds </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int64_t positive = elapsed time in microseconds, negative = error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>positive = elapsed time in microseconds, negative = error code. </dd></dl>
 
 </div>
 </div>
