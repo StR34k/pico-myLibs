@@ -10,32 +10,33 @@
 
 namespace myHelpers {
     /**
-     *  isPin:
-     *      Description: Validate if the pin is a valid pin number for the rp2040.
-     *      Params: uint8_t pin number.
-     *      Returns: true if valid, false if not.
+     * @brief Validate if the pin is a valid pin number for the rp2040.
+     * 
+     * @param pin Pin to validate.
+     * @return true is a valid pin
+     * @return false is not a valid pin
      */
-    bool isPin(const uint8_t pin) {
+    bool inline isPin(const uint8_t pin) {
         if (pin < MY_MAX_PIN) { return true; }
         return false;
     }
     /**
-     * pinToBitMask:
-     *      Description: Return the bit mask for a single pin.
-     *      Params: uint8_t pin number.
-     *      Returns: Positive is a bitmask, negative is an error code.
+     * @brief Return the bit mask for a single pin.
+     * 
+     * @param pin Pin to generate the bit mask for
+     * @return Postive = bitmask, Negaitve = error code.
      */
-    int32_t pinToBitMask(const uint8_t pin) {
+    int32_t inline pinToBitMask(const uint8_t pin) {
         if (isPin(pin) == false ) { return MY_INVALID_PIN; }
         return (1 << pin);
     }
     /**
-     * bitMaskToPin:
-     *      Description: Return a pin number given a valid bit mask.
-     *      Params: uint32_t a bitmask for a single pin.
-     *      Return: Positive is pin number, negative is an error code.
+     * @brief Return a pin number given a valid bit mask.
+     * 
+     * @param bitMask The bit mask for a single pin.
+     * @return int8_t The pin associated with the bitmask.
      */
-    int8_t bitMaskToPin(const uint32_t bitMask) {
+    int8_t inline bitMaskToPin(const uint32_t bitMask) {
         switch (bitMask) {
         case 0x00000001: return 0;
         case 0x00000002: return 1;
@@ -71,16 +72,16 @@ namespace myHelpers {
         }
     }
     /**
-     * waitForLow32:
-     *      Description: busy wait until LOW signal, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until LOW signal, or timeout. a timeout of 0 (the default)
      *                      means that it will block until LOW. If the pin is already LOW, it
      *                      will return immediatly with a value of 0. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
-     *      Params: uint8_t pin to read.
-     *              uint32_t timeout in microseconds.
-     *      Returns: int32_t Postive is amount of time elapsed in microseconds. Negative is error code.
-     */           
+     * 
+     * @param pin Pin to read
+     * @param timeout Timeout time in microseconds
+     * @return Postive = time elapsed in microseconds, negative error code.
+     */
     int32_t waitForLow32(const uint8_t pin, const uint32_t timeout=0) {
         uint32_t startTime;     // Time started.
         uint32_t timeoutTime;   // absolute timeout time.
@@ -96,7 +97,7 @@ namespace myHelpers {
             startTime = time_us_32();
             timeoutTime = startTime + timeout;
             while (state == true) {
-                if (time_us_32() == timeout) { return MY_TIMEOUT; }
+                if (time_us_32() >= timeout) { return MY_TIMEOUT; }
                 state = gpio_get(pin);
             }
             stopTime = time_us_32();
@@ -112,16 +113,16 @@ namespace myHelpers {
         return (stopTime-startTime);
     }
     /**
-     * waitForHigh32:
-     *      Description: busy wait until HIGH signal, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until HIGH signal, or timeout. a timeout of 0 (the default)
      *                      means that it will block until HIGH. If the pin is already HIGH, it
      *                      will return immediatly with a value of 0. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
-     *      Params: uint8_t pin to read.
-     *              uint32_t timeout in microseconds.
-     *      Returns: int32_t Postive is amount of time elapsed in microseconds. Negative is error code.
-     */           
+     * 
+     * @param pin Pin to read.
+     * @param timeout Timeout time in microseconds.
+     * @return Positive = elapsed time in microseconds, negaitve  = error code.
+     */
     int32_t waitForHigh32(const uint8_t pin, const uint32_t timeout=0) {
         uint32_t startTime;     // Time started.
         uint32_t timeoutTime;   // absolute timeout time.
@@ -137,7 +138,7 @@ namespace myHelpers {
             startTime = time_us_32();
             timeoutTime = startTime + timeout;
             while (state == false) {
-                if (time_us_32() == timeout) { return MY_TIMEOUT; }
+                if (time_us_32() >= timeout) { return MY_TIMEOUT; }
                 state = gpio_get(pin);
             }
             stopTime = time_us_32();
@@ -153,16 +154,17 @@ namespace myHelpers {
         return (stopTime-startTime);
     }
     /**
-     * waitForLow64:
-     *      Description: busy wait until LOW signal, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until LOW signal, or timeout.
+     *                      Busy wait until LOW signal or timeout. A timeout of 0 (the default)
      *                      means that it will block until LOW. If the pin is already LOW, it
      *                      will return immediatly with a value of 0. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
-     *      Params: uint8_t pin to read.
-     *              uint64_t timeout in microseconds.
-     *      Returns: int64_t Positive: amount of time elapsed in microseconds, Negaitive Error code.
-     */           
+     * 
+     * @param pin pin to read
+     * @param timeout timeout time in microseconds
+     * @return positive = elapsed time in microseconds, negative = error code.
+     */
     int64_t waitForLow64(const uint8_t pin, const uint64_t timeout=0) {
         uint64_t startTime;     // Time started.
         uint64_t timeoutTime;   // absolute timeout time.
@@ -178,7 +180,7 @@ namespace myHelpers {
             startTime = time_us_64();
             timeoutTime = startTime + timeout;
             while (state == true) {
-                if (time_us_64() == timeout) { return MY_TIMEOUT; }
+                if (time_us_64() >= timeout) { return MY_TIMEOUT; }
                 state = gpio_get(pin);
             }
             stopTime = time_us_64();
@@ -194,16 +196,16 @@ namespace myHelpers {
         return (stopTime-startTime);
     }
     /**
-     * waitForHigh64:
-     *      Description: busy wait until HIGH signal, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until HIGH signal, or timeout. a timeout of 0 (the default)
      *                      means that it will block until HIGH. If the pin is already HIGH, it
      *                      will return immediatly with a value of 0. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
-     *      Params: uint8_t pin to read.
-     *              uint64_t timeout in microseconds.
-     *      Returns: int64_t Positive: amount of time elapsed in microseconds, Negaitive Error code.
-     */           
+     * 
+     * @param pin Pin to readk.
+     * @param timeout Timeout time in microseconds
+     * @return int64_t Positive time elapsed, negaitve error code.
+     */
     int64_t waitForHigh64(const uint8_t pin, const uint64_t timeout=0) {
         uint64_t startTime;     // Time started.
         uint64_t timeoutTime;   // absolute timeout time.
@@ -219,7 +221,7 @@ namespace myHelpers {
             startTime = time_us_64();
             timeoutTime = startTime + timeout;
             while (state == false) {
-                if (time_us_64() == timeout) { return MY_TIMEOUT; }
+                if (time_us_64() >= timeout) { return MY_TIMEOUT; }
                 state = gpio_get(pin);
             }
             stopTime = time_us_64();
@@ -235,14 +237,14 @@ namespace myHelpers {
         return (stopTime-startTime);
     }
     /**
-     * waitForChange32:
-     *      Description: busy wait until pin change, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until pin change, or timeout. a timeout of 0 (the default)
      *                      means that it will block until change. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
-     *      Params: uint8_t pin to read.
-     *              uint32_t timeout in microseconds.
-     *      Returns: int32_t Positive: amount of time elapsed in microseconds, Negaitive Error code.
+     * 
+     * @param pin Pin to read.
+     * @param timeout Timeout time in microseconds.
+     * @return int32_t Positive = time elapsed in microseconds, negative = error code.
      */
     int32_t waitForChange32(const uint8_t pin, const uint32_t timeout) {
         uint32_t startTime;     // Time started.
@@ -260,7 +262,7 @@ namespace myHelpers {
             startTime = time_us_32();
             timeoutTime = startTime + timeout;
             while (state != waitState) {
-                if (time_us_32() == timeout) { return MY_TIMEOUT; }
+                if (time_us_32() >= timeout) { return MY_TIMEOUT; }
                 state = gpio_get(pin);
             }
             stopTime = time_us_32();
@@ -276,14 +278,14 @@ namespace myHelpers {
         return (stopTime-startTime);
     }
     /**
-     * waitForChange64:
-     *      Description: busy wait until pin change, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until pin change, or timeout. a timeout of 0 (the default)
      *                      means that it will block until change. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
-     *      Params: uint8_t pin to read.
-     *              uint64_t timeout in microseconds.
-     *      Returns: int64_t Positive: amount of time elapsed in microseconds, Negaitive Error code.
+     * 
+     * @param pin Pin to read.
+     * @param timeout Timeout time in microseconds.
+     * @return int64_t Positive = time elapsed in microseconds, negaive = error code.
      */
     int64_t waitForChange32(const uint8_t pin, const uint64_t timeout) {
         uint32_t startTime;     // Time started.
@@ -301,7 +303,7 @@ namespace myHelpers {
             startTime = time_us_64();
             timeoutTime = startTime + timeout;
             while (state != waitState) {
-                if (time_us_64() == timeout) { return MY_TIMEOUT; }
+                if (time_us_64() >= timeout) { return MY_TIMEOUT; }
                 state = gpio_get(pin);
             }
             stopTime = time_us_64();
@@ -315,6 +317,121 @@ namespace myHelpers {
         }
     // Return the time delta:
         return (stopTime-startTime);
+    }
+    /**
+     * @brief Read a pulse on a pin 32 bit. 
+     * 
+     * @param pin Pin to read pulse on.
+     * @param state True waits for a high pulse, False waits for a low pulse.
+     * @param timeout Timeout time in microseconds. A timeout value of 0 (the default) blocks indefinatly.
+     * @return int32_t Positive = time elapsed in microseconds, negative = error code.
+     */
+    int32_t pulseIn32(const uint8_t pin, const bool state, uint32_t timeout=0) {
+        uint32_t startTime;
+        uint32_t stopTime;
+        uint32_t timeoutTime;
+    // Check Pin:
+        if (myHelpers::isPin(pin) == false) { return MY_INVALID_PIN; }
+        if (gpio_get_dir(pin) == GPIO_OUT) { return MY_INVALID_DIR; }
+    // If a timeout was requested:
+        if (timeout > 0){
+            startTime = time_us_32();
+            timeoutTime = startTime + timeout;
+        // Wait for previous pulse to end:
+            while (gpio_get(pin) == state) {
+                if (time_us_32() >= timeoutTime) { return MY_TIMEOUT; }
+            }
+        // Wait for pulse to start
+            while (gpio_get(pin) != state) {
+                if (time_us_32() >= timeoutTime) { return MY_TIMEOUT; }
+            }
+        // Wait for pulse to stop.
+            while (gpio_get(pin) == state) {
+                if (time_us_32() >= timeoutTime) { return MY_TIMEOUT; }
+            }
+            stopTime = time_us_32();
+
+        } else {
+        // Wait for previous pulse to end:
+            while (gpio_get(pin) == state) {
+                tight_loop_contents();
+            }
+        // Wait for pulse to start
+            while (gpio_get(pin) != state) {
+                tight_loop_contents();
+            }
+        // Wait for pulse to stop.
+            while (gpio_get(pin) == state) {
+                tight_loop_contents();
+            }
+            stopTime = time_us_32();
+        }
+    // Return the time delta:
+        return (stopTime - startTime);
+    }
+    /**
+     * @brief Read a pulse on a pin 64 bit. 
+     * 
+     * @param pin Pin to read pulse on.
+     * @param state True waits for a high pulse, False waits for a low pulse.
+     * @param timeout Timeout time in microseconds. A timeout value of 0 (the default) blocks indefinatly.
+     * @return int64_t Positive = time elapsed in microseconds, negative = error code.
+     */
+    int64_t pulseIn64(const uint8_t pin, const bool state, uint64_t timeout=0) {
+        uint64_t startTime;
+        uint64_t stopTime;
+        uint64_t timeoutTime;
+    // Check Pin:
+        if (myHelpers::isPin(pin) == false) { return MY_INVALID_PIN; }
+        if (gpio_get_dir(pin) == GPIO_OUT) { return MY_INVALID_DIR; }
+    // If a timeout was requested:
+        if (timeout > 0){
+            startTime = time_us_64();
+            timeoutTime = startTime + timeout;
+        // Wait for previous pulse to end:
+            while (gpio_get(pin) == state) {
+                if (time_us_64() >= timeoutTime) { return MY_TIMEOUT; }
+            }
+        // Wait for pulse to start
+            while (gpio_get(pin) != state) {
+                if (time_us_64() >= timeoutTime) { return MY_TIMEOUT; }
+            }
+        // Wait for pulse to stop.
+            while (gpio_get(pin) == state) {
+                if (time_us_64() >= timeoutTime) { return MY_TIMEOUT; }
+            }
+            stopTime = time_us_64();
+
+        } else {
+        // Wait for previous pulse to end:
+            while (gpio_get(pin) == state) {
+                tight_loop_contents();
+            }
+        // Wait for pulse to start
+            while (gpio_get(pin) != state) {
+                tight_loop_contents();
+            }
+        // Wait for pulse to stop.
+            while (gpio_get(pin) == state) {
+                tight_loop_contents();
+            }
+            stopTime = time_us_64();
+        }
+    // Return the time delta:
+        return (stopTime - startTime);
+    }
+    /**
+     * @brief Map a value from one range to another.
+     * 
+     * @param x Value to map
+     * @param in_min In range minimum
+     * @param in_max In range maximum
+     * @param out_min Out range minimum.
+     * @param out_max Out range maximum.
+     * @return int32_t The mapped value.
+     */
+    int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max) {
+        return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
     }
 };
 

@@ -1,0 +1,49 @@
+\hypertarget{my_helpers_8hpp}{}\doxysection{my\+Helpers.\+hpp File Reference}
+\label{my_helpers_8hpp}\index{myHelpers.hpp@{myHelpers.hpp}}
+{\ttfamily \#include $<$hardware/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$hardware/timer.\+h$>$}\newline
+{\ttfamily \#include $<$pico/time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}my\+Standard\+Defines.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+Error\+Codes.\+hpp\char`\"{}}\newline
+Include dependency graph for my\+Helpers.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_helpers_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_helpers_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemy_helpers}{my\+Helpers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Validate if the pin is a valid pin number for the rp2040. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}{my\+Helpers\+::pin\+To\+Bit\+Mask}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Return the bit mask for a single pin. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af614438c04f2644a1d7da251526d2148}{my\+Helpers\+::bit\+Mask\+To\+Pin}} (const uint32\+\_\+t bit\+Mask)
+\begin{DoxyCompactList}\small\item\em Return a pin number given a valid bit mask. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a38a808b90655c2168a57e48826abeab5}{my\+Helpers\+::wait\+For\+Low32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. a timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a0a18293ace9520f747d10be28debd1af}{my\+Helpers\+::wait\+For\+High32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6f4493da21359cff8f937ac1b9cc93d7}{my\+Helpers\+::wait\+For\+Low64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
+\begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_abaf1792ba912a18d81d699d03b227637}{my\+Helpers\+::wait\+For\+High64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
+\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}{my\+Helpers\+::wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout)
+\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}{my\+Helpers\+::wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout)
+\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}{my\+Helpers\+::map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
+\end{DoxyCompactItemize}

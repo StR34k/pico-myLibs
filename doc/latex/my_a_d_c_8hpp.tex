@@ -1,0 +1,231 @@
+\hypertarget{my_a_d_c_8hpp}{}\doxysection{my\+A\+D\+C/my\+A\+DC.hpp File Reference}
+\label{my_a_d_c_8hpp}\index{myADC/myADC.hpp@{myADC/myADC.hpp}}
+{\ttfamily \#include $<$hardware/adc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../my\+Error\+Codes.\+hpp\char`\"{}}\newline
+Include dependency graph for my\+A\+D\+C.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{my_a_d_c_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{my_a_d_c_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemy_a_d_c}{my\+A\+DC}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a9053fa943d81edc75db9501fc1604b2b}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0}}~0
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_afd389a7e781bbbae4d9aae81953f1c0d}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1}}~1
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a1ee5a037cc1dffe4895a449ceef93ea2}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}}~2
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a3a39b396083dba32fe743db906e9906c}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3}}~3
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a83b5556a35c674f23d7e853dbe49bfa7}{M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+EL}}~4
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a20ee37de7d6f4889bfa7dd8d13edfad4}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+P\+IN}}~26
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_aec9c7149e1b9e0d8d2936d1c169ba624}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+P\+IN}}~27
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_ae38eade8c0033d4314d3a1f3d6c25869}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2\+\_\+\+P\+IN}}~28
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a696237a6f2c685f59c66cfd8be54ec6c}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3\+\_\+\+P\+IN}}~29
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a5141a7a2adc1cba13006a42131708b73}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+U\+S\+E\+R\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}~4
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a3369223d68c96a5cce3cdfac062a81b3}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}~5
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_ad8409749f0526bbc4d6acac8c6abd034}{\+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+M\+A\+SK}}~0b00000001
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_aff8aaf64ac8d5339c83265b20498a84b}{\+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+M\+A\+SK}}~0b00000010
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_af070f7298de98381999cf8a1b9767f0c}{\+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2\+\_\+\+M\+A\+SK}}~0b00000100
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_af3a5a86680b29a7953c8424573894459}{\+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3\+\_\+\+M\+A\+SK}}~0b00001000
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_aa11fcbcceb2e7f41fc22770cdc747c94}{\+\_\+\+M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+SK}}~0b00010000
+\item 
+\#define \mbox{\hyperlink{my_a_d_c_8hpp_a17942e486864565d446a33a57e4d37c2}{\+\_\+\+M\+Y\+\_\+\+A\+D\+C\+\_\+\+M\+A\+SK}}~0b00100000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_adbe3ac5640b1cf77753358761b53cd70}{my\+A\+D\+C\+::valid\+Channel}} (const uint8\+\_\+t channel)
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_a2863082cacee0cc8613a9a6b0cf86b0f}{my\+A\+D\+C\+::valid\+User\+Channel}} (const uint8\+\_\+t channel)
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_af1cb8a836866e5349bcc895d86b0c44f}{my\+A\+D\+C\+::valid\+Pin}} (const uint8\+\_\+t pin)
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_aa6dad0222962dbe15710f09a04081d45}{my\+A\+D\+C\+::channel\+To\+Pin}} (uint8\+\_\+t channel)
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_ad51d32581fc7f3501da7acc7daf2609e}{my\+A\+D\+C\+::pin\+To\+Channel}} (uint8\+\_\+t pin)
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_a769381b85630da9c5cb7e21c2efcd3d3}{my\+A\+D\+C\+::get\+A\+D\+C\+Init}} ()
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_af351cc973db0eb54ab75f168073511b3}{my\+A\+D\+C\+::get\+Channel\+Init}} (uint8\+\_\+t channel)
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_a2d2e722aff828d134b0b6ec14cd5e062}{my\+A\+D\+C\+::get\+Pin\+Init}} (uint8\+\_\+t pin)
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_a8149d0bbac7fe32f6f14852c0af850a3}{my\+A\+D\+C\+::get\+Temperature\+Init}} ()
+\item 
+void \mbox{\hyperlink{namespacemy_a_d_c_a7c0570132fc06639058a54a7ce837774}{my\+A\+D\+C\+::\+\_\+set\+A\+D\+C\+Init}} ()
+\item 
+void \mbox{\hyperlink{namespacemy_a_d_c_a3aa0a1c7cb40fbf48833568286df7a4f}{my\+A\+D\+C\+::\+\_\+set\+Channel\+Init}} (const uint8\+\_\+t channel)
+\item 
+void \mbox{\hyperlink{namespacemy_a_d_c_aad87af1a19e660f1717fa8f899634a53}{my\+A\+D\+C\+::\+\_\+set\+Pin\+Init}} (const uint8\+\_\+t pin)
+\item 
+void \mbox{\hyperlink{namespacemy_a_d_c_aa9c684d1217452421b422add56b9f19b}{my\+A\+D\+C\+::\+\_\+set\+Temperature\+Init}} (const bool value)
+\item 
+bool \mbox{\hyperlink{namespacemy_a_d_c_ab4e69194cfba84ed337e42199cb5d2ad}{my\+A\+D\+C\+::initialize}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a23b6fffa3d0999aa87c8c947f9be8bd8}{my\+A\+D\+C\+::init\+Channel}} (const uint8\+\_\+t channel)
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a906ca96df5fd11d7c9f7a5b37e35875a}{my\+A\+D\+C\+::init\+Pin}} (const uint8\+\_\+t pin)
+\item 
+void \mbox{\hyperlink{namespacemy_a_d_c_aef42fd77039b42b16381116cf07f2c6d}{my\+A\+D\+C\+::init\+Temperature}} ()
+\item 
+void \mbox{\hyperlink{namespacemy_a_d_c_a6e9a06bce3b20c065e34951797c953a8}{my\+A\+D\+C\+::deinit\+Temperature}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a4ba44744ea6e65481a0971037ec2bcbb}{my\+A\+D\+C\+::read\+Channel\+Raw}} (const uint8\+\_\+t channel)
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a74933447e2b9ad0028968f6eeeb100e2}{my\+A\+D\+C\+::read\+Pin\+Raw}} (const uint8\+\_\+t pin)
+\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a671539306cf3cfa2fb6c51d198f9b7a8}{my\+A\+D\+C\+::read\+Temperature\+Raw}} ()
+\item 
+float \mbox{\hyperlink{namespacemy_a_d_c_a9d31547a4eaa72ebc16374fe26800c43}{my\+A\+D\+C\+::read\+Channel\+Voltage}} (const uint8\+\_\+t channel, const float v\+Ref=3.\+3f)
+\item 
+float \mbox{\hyperlink{namespacemy_a_d_c_ae6b47e4bca38fc1b64e36ab0b871597b}{my\+A\+D\+C\+::read\+Pin\+Voltage}} (const uint8\+\_\+t pin, const float v\+Ref=3.\+3f)
+\item 
+float \mbox{\hyperlink{namespacemy_a_d_c_a6e98c17e5ae09e42007161d736c9a7a1}{my\+A\+D\+C\+::read\+Temperature}} (const bool return\+DegC=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a074ad71083eb4dca197b6999f2b7fa4a}{my\+A\+D\+C\+::\+N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a4dc6fb2d6ad07737f34eb5333b74d62a}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+N\+N\+EL}} = \mbox{\hyperlink{my_error_codes_8hpp_a82dcf6aea656d7115fda3375f0ae17a4}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a57cca4cd31e53c88894c3a6a7f2c7dc9}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_ac886b8bb68eac8a1ec75c6fe4b859828}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a6b879e4bddb15292c6d5faf0253d67b4}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}} = \mbox{\hyperlink{my_error_codes_8hpp_af0e1bae518d67d8dfff2d20e8bb36ebc}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+A\+D\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_acea36bce50ad7c01628b139d12f26a05}{my\+A\+D\+C\+::\+E\+R\+R\+O\+R\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}} = \mbox{\hyperlink{my_error_codes_8hpp_ab8f5305db7c7e613e006fbb5932a2ae8}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}}
+\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a5884e24154b4512ba54e37a97975dc82}{my\+A\+D\+C\+::\+\_\+status}} = 0x00
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{my_a_d_c_8hpp_a17942e486864565d446a33a57e4d37c2}\label{my_a_d_c_8hpp_a17942e486864565d446a33a57e4d37c2}} 
+\index{myADC.hpp@{myADC.hpp}!\_MY\_ADC\_MASK@{\_MY\_ADC\_MASK}}
+\index{\_MY\_ADC\_MASK@{\_MY\_ADC\_MASK}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{\_MY\_ADC\_MASK}{\_MY\_ADC\_MASK}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+A\+D\+C\+\_\+\+M\+A\+SK~0b00100000}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_ad8409749f0526bbc4d6acac8c6abd034}\label{my_a_d_c_8hpp_ad8409749f0526bbc4d6acac8c6abd034}} 
+\index{myADC.hpp@{myADC.hpp}!\_MY\_CHANNEL\_0\_MASK@{\_MY\_CHANNEL\_0\_MASK}}
+\index{\_MY\_CHANNEL\_0\_MASK@{\_MY\_CHANNEL\_0\_MASK}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{\_MY\_CHANNEL\_0\_MASK}{\_MY\_CHANNEL\_0\_MASK}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+M\+A\+SK~0b00000001}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_aff8aaf64ac8d5339c83265b20498a84b}\label{my_a_d_c_8hpp_aff8aaf64ac8d5339c83265b20498a84b}} 
+\index{myADC.hpp@{myADC.hpp}!\_MY\_CHANNEL\_1\_MASK@{\_MY\_CHANNEL\_1\_MASK}}
+\index{\_MY\_CHANNEL\_1\_MASK@{\_MY\_CHANNEL\_1\_MASK}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{\_MY\_CHANNEL\_1\_MASK}{\_MY\_CHANNEL\_1\_MASK}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+M\+A\+SK~0b00000010}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_af070f7298de98381999cf8a1b9767f0c}\label{my_a_d_c_8hpp_af070f7298de98381999cf8a1b9767f0c}} 
+\index{myADC.hpp@{myADC.hpp}!\_MY\_CHANNEL\_2\_MASK@{\_MY\_CHANNEL\_2\_MASK}}
+\index{\_MY\_CHANNEL\_2\_MASK@{\_MY\_CHANNEL\_2\_MASK}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{\_MY\_CHANNEL\_2\_MASK}{\_MY\_CHANNEL\_2\_MASK}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2\+\_\+\+M\+A\+SK~0b00000100}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_af3a5a86680b29a7953c8424573894459}\label{my_a_d_c_8hpp_af3a5a86680b29a7953c8424573894459}} 
+\index{myADC.hpp@{myADC.hpp}!\_MY\_CHANNEL\_3\_MASK@{\_MY\_CHANNEL\_3\_MASK}}
+\index{\_MY\_CHANNEL\_3\_MASK@{\_MY\_CHANNEL\_3\_MASK}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{\_MY\_CHANNEL\_3\_MASK}{\_MY\_CHANNEL\_3\_MASK}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3\+\_\+\+M\+A\+SK~0b00001000}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_aa11fcbcceb2e7f41fc22770cdc747c94}\label{my_a_d_c_8hpp_aa11fcbcceb2e7f41fc22770cdc747c94}} 
+\index{myADC.hpp@{myADC.hpp}!\_MY\_TEMP\_CHANNEL\_MASK@{\_MY\_TEMP\_CHANNEL\_MASK}}
+\index{\_MY\_TEMP\_CHANNEL\_MASK@{\_MY\_TEMP\_CHANNEL\_MASK}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{\_MY\_TEMP\_CHANNEL\_MASK}{\_MY\_TEMP\_CHANNEL\_MASK}}
+{\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+SK~0b00010000}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a9053fa943d81edc75db9501fc1604b2b}\label{my_a_d_c_8hpp_a9053fa943d81edc75db9501fc1604b2b}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_0@{MY\_CHANNEL\_0}}
+\index{MY\_CHANNEL\_0@{MY\_CHANNEL\_0}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_0}{MY\_CHANNEL\_0}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0~0}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a20ee37de7d6f4889bfa7dd8d13edfad4}\label{my_a_d_c_8hpp_a20ee37de7d6f4889bfa7dd8d13edfad4}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_0\_PIN@{MY\_CHANNEL\_0\_PIN}}
+\index{MY\_CHANNEL\_0\_PIN@{MY\_CHANNEL\_0\_PIN}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_0\_PIN}{MY\_CHANNEL\_0\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+P\+IN~26}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_afd389a7e781bbbae4d9aae81953f1c0d}\label{my_a_d_c_8hpp_afd389a7e781bbbae4d9aae81953f1c0d}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_1@{MY\_CHANNEL\_1}}
+\index{MY\_CHANNEL\_1@{MY\_CHANNEL\_1}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_1}{MY\_CHANNEL\_1}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1~1}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_aec9c7149e1b9e0d8d2936d1c169ba624}\label{my_a_d_c_8hpp_aec9c7149e1b9e0d8d2936d1c169ba624}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_1\_PIN@{MY\_CHANNEL\_1\_PIN}}
+\index{MY\_CHANNEL\_1\_PIN@{MY\_CHANNEL\_1\_PIN}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_1\_PIN}{MY\_CHANNEL\_1\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+P\+IN~27}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a1ee5a037cc1dffe4895a449ceef93ea2}\label{my_a_d_c_8hpp_a1ee5a037cc1dffe4895a449ceef93ea2}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_2@{MY\_CHANNEL\_2}}
+\index{MY\_CHANNEL\_2@{MY\_CHANNEL\_2}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_2}{MY\_CHANNEL\_2}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2~2}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_ae38eade8c0033d4314d3a1f3d6c25869}\label{my_a_d_c_8hpp_ae38eade8c0033d4314d3a1f3d6c25869}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_2\_PIN@{MY\_CHANNEL\_2\_PIN}}
+\index{MY\_CHANNEL\_2\_PIN@{MY\_CHANNEL\_2\_PIN}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_2\_PIN}{MY\_CHANNEL\_2\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2\+\_\+\+P\+IN~28}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a3a39b396083dba32fe743db906e9906c}\label{my_a_d_c_8hpp_a3a39b396083dba32fe743db906e9906c}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_3@{MY\_CHANNEL\_3}}
+\index{MY\_CHANNEL\_3@{MY\_CHANNEL\_3}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_3}{MY\_CHANNEL\_3}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3~3}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a696237a6f2c685f59c66cfd8be54ec6c}\label{my_a_d_c_8hpp_a696237a6f2c685f59c66cfd8be54ec6c}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_3\_PIN@{MY\_CHANNEL\_3\_PIN}}
+\index{MY\_CHANNEL\_3\_PIN@{MY\_CHANNEL\_3\_PIN}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_3\_PIN}{MY\_CHANNEL\_3\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3\+\_\+\+P\+IN~29}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a3369223d68c96a5cce3cdfac062a81b3}\label{my_a_d_c_8hpp_a3369223d68c96a5cce3cdfac062a81b3}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_NUM\_CHANNELS@{MY\_NUM\_CHANNELS}}
+\index{MY\_NUM\_CHANNELS@{MY\_NUM\_CHANNELS}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_NUM\_CHANNELS}{MY\_NUM\_CHANNELS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+N\+U\+M\+\_\+\+C\+H\+A\+N\+N\+E\+LS~5}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a5141a7a2adc1cba13006a42131708b73}\label{my_a_d_c_8hpp_a5141a7a2adc1cba13006a42131708b73}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_NUM\_USER\_CHANNELS@{MY\_NUM\_USER\_CHANNELS}}
+\index{MY\_NUM\_USER\_CHANNELS@{MY\_NUM\_USER\_CHANNELS}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_NUM\_USER\_CHANNELS}{MY\_NUM\_USER\_CHANNELS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+N\+U\+M\+\_\+\+U\+S\+E\+R\+\_\+\+C\+H\+A\+N\+N\+E\+LS~4}
+
+\mbox{\Hypertarget{my_a_d_c_8hpp_a83b5556a35c674f23d7e853dbe49bfa7}\label{my_a_d_c_8hpp_a83b5556a35c674f23d7e853dbe49bfa7}} 
+\index{myADC.hpp@{myADC.hpp}!MY\_TEMP\_CHANNEL@{MY\_TEMP\_CHANNEL}}
+\index{MY\_TEMP\_CHANNEL@{MY\_TEMP\_CHANNEL}!myADC.hpp@{myADC.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_TEMP\_CHANNEL}{MY\_TEMP\_CHANNEL}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+EL~4}
+

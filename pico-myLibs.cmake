@@ -1,0 +1,7 @@
+add_subdirectory("/home/streak/pico/pico-myLibs/mySNx4HC595/" "/home/streak/pico/pico-myLibs/mySNx4HC595/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myADC/" "/home/streak/pico/pico-myLibs/myADC/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myPWM/" "/home/streak/pico/pico-myLibs/myPWM/")
+add_subdirectory("/home/streak/pico/pico-myLibs/my23LC1024/" "/home/streak/pico/pico-myLibs/my23LC1024/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myBitBangSPI/" "/home/streak/pico/pico-myLibs/myBitBangSPI/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myBMx280/" "/home/streak/pico/pico-myLibs/myBMx280/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myRandom/" "/home/streak/pico/pico-myLibs/myRandom/")

@@ -1,0 +1,158 @@
+\hypertarget{classmy595}{}\doxysection{my595 Class Reference}
+\label{classmy595}\index{my595@{my595}}
+
+
+{\ttfamily \#include $<$my\+S\+Nx4\+H\+C595.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data)
+\item 
+\mbox{\hyperlink{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data, const uint8\+\_\+t enable)
+\item 
+\mbox{\hyperlink{classmy595_a36a35a18fdf3044151d27dd57f1d0343}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data, const uint8\+\_\+t enable, const uint8\+\_\+t \mbox{\hyperlink{classmy595_af2008fd88e7505334a97e5abe7bf56e0}{clear}})
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy595_a5500cff53bb9c724db9ca64c6ba303ec}{initialize}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy595_aac7cd78f82f0d116baa512dffec05c9b}{initialize}} (const bool enable)
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy595_a0f019532fbe735bc7ad314294f8da8fd}{initialize}} (const uint8\+\_\+t enable)
+\item 
+void \mbox{\hyperlink{classmy595_aa03073404926ec209783cd8feb834510}{start\+Write}} ()
+\begin{DoxyCompactList}\small\item\em Start Write for daisy chained shift registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy595_a0b886b7e7e9ac2a375f693508ce98d7b}{write\+Bit}} (const bool value)
+\item 
+void \mbox{\hyperlink{classmy595_af804c81577a2341ec91aad39647f7088}{write\+Byte}} (const uint8\+\_\+t value, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\item 
+void \mbox{\hyperlink{classmy595_a575e17d7ede1ebbfe36859d3bea00f25}{stop\+Write}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy595_af2008fd88e7505334a97e5abe7bf56e0}{clear}} ()
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy595_ac75aa0572f671b59784f92e02dd74a00}{set\+Enable}} (const bool value)
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\+Enable}} (const uint8\+\_\+t value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy595_a3cd30dc7b674c443473953c9c989e63d}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}{E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy595_a347e44e1395b941004a7b512f6c6cb65}{E\+R\+R\+O\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}\label{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}} 
+\index{my595@{my595}!my595@{my595}}
+\index{my595@{my595}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}\label{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}} 
+\index{my595@{my595}!my595@{my595}}
+\index{my595@{my595}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{data,  }\item[{const uint8\+\_\+t}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmy595_a36a35a18fdf3044151d27dd57f1d0343}\label{classmy595_a36a35a18fdf3044151d27dd57f1d0343}} 
+\index{my595@{my595}!my595@{my595}}
+\index{my595@{my595}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{data,  }\item[{const uint8\+\_\+t}]{enable,  }\item[{const uint8\+\_\+t}]{clear }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy595_af2008fd88e7505334a97e5abe7bf56e0}\label{classmy595_af2008fd88e7505334a97e5abe7bf56e0}} 
+\index{my595@{my595}!clear@{clear}}
+\index{clear@{clear}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_a5500cff53bb9c724db9ca64c6ba303ec}\label{classmy595_a5500cff53bb9c724db9ca64c6ba303ec}} 
+\index{my595@{my595}!initialize@{initialize}}
+\index{initialize@{initialize}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_aac7cd78f82f0d116baa512dffec05c9b}\label{classmy595_aac7cd78f82f0d116baa512dffec05c9b}} 
+\index{my595@{my595}!initialize@{initialize}}
+\index{initialize@{initialize}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::initialize (\begin{DoxyParamCaption}\item[{const bool}]{enable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_a0f019532fbe735bc7ad314294f8da8fd}\label{classmy595_a0f019532fbe735bc7ad314294f8da8fd}} 
+\index{my595@{my595}!initialize@{initialize}}
+\index{initialize@{initialize}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_ac75aa0572f671b59784f92e02dd74a00}\label{classmy595_ac75aa0572f671b59784f92e02dd74a00}} 
+\index{my595@{my595}!setEnable@{setEnable}}
+\index{setEnable@{setEnable}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{setEnable()}{setEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::set\+Enable (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_a14e48f6b42453b0bf506575bfae378ff}\label{classmy595_a14e48f6b42453b0bf506575bfae378ff}} 
+\index{my595@{my595}!setEnable@{setEnable}}
+\index{setEnable@{setEnable}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{setEnable()}{setEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::set\+Enable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_aa03073404926ec209783cd8feb834510}\label{classmy595_aa03073404926ec209783cd8feb834510}} 
+\index{my595@{my595}!startWrite@{startWrite}}
+\index{startWrite@{startWrite}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{startWrite()}{startWrite()}}
+{\footnotesize\ttfamily void my595\+::start\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start Write for daisy chained shift registers. 
+
+\mbox{\Hypertarget{classmy595_a575e17d7ede1ebbfe36859d3bea00f25}\label{classmy595_a575e17d7ede1ebbfe36859d3bea00f25}} 
+\index{my595@{my595}!stopWrite@{stopWrite}}
+\index{stopWrite@{stopWrite}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{stopWrite()}{stopWrite()}}
+{\footnotesize\ttfamily void my595\+::stop\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_a0b886b7e7e9ac2a375f693508ce98d7b}\label{classmy595_a0b886b7e7e9ac2a375f693508ce98d7b}} 
+\index{my595@{my595}!writeBit@{writeBit}}
+\index{writeBit@{writeBit}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{writeBit()}{writeBit()}}
+{\footnotesize\ttfamily void my595\+::write\+Bit (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmy595_af804c81577a2341ec91aad39647f7088}\label{classmy595_af804c81577a2341ec91aad39647f7088}} 
+\index{my595@{my595}!writeByte@{writeByte}}
+\index{writeByte@{writeByte}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{writeByte()}{writeByte()}}
+{\footnotesize\ttfamily void my595\+::write\+Byte (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value,  }\item[{const bool}]{bit\+Order = {\ttfamily \mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}}} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy595_a347e44e1395b941004a7b512f6c6cb65}\label{classmy595_a347e44e1395b941004a7b512f6c6cb65}} 
+\index{my595@{my595}!ERROR\_CLEAR\_NOT\_DEFINED@{ERROR\_CLEAR\_NOT\_DEFINED}}
+\index{ERROR\_CLEAR\_NOT\_DEFINED@{ERROR\_CLEAR\_NOT\_DEFINED}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{ERROR\_CLEAR\_NOT\_DEFINED}{ERROR\_CLEAR\_NOT\_DEFINED}}
+{\footnotesize\ttfamily const int16\+\_\+t my595\+::\+E\+R\+R\+O\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}\label{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}} 
+\index{my595@{my595}!ERROR\_ENABLE\_NOT\_DEFINED@{ERROR\_ENABLE\_NOT\_DEFINED}}
+\index{ERROR\_ENABLE\_NOT\_DEFINED@{ERROR\_ENABLE\_NOT\_DEFINED}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{ERROR\_ENABLE\_NOT\_DEFINED}{ERROR\_ENABLE\_NOT\_DEFINED}}
+{\footnotesize\ttfamily const int16\+\_\+t my595\+::\+E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy595_a3cd30dc7b674c443473953c9c989e63d}\label{classmy595_a3cd30dc7b674c443473953c9c989e63d}} 
+\index{my595@{my595}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my595\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+S\+Nx4\+H\+C595/\mbox{\hyperlink{my_s_nx4_h_c595_8hpp}{my\+S\+Nx4\+H\+C595.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,150 @@
+\hypertarget{namespacemy_s_p_i_master}{}\doxysection{my\+S\+P\+I\+Master Namespace Reference}
+\label{namespacemy_s_p_i_master}\index{mySPIMaster@{mySPIMaster}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_master_a4b13b701a57bd67ac93d472b0311d685}{\+\_\+\+\_\+validate\+Mode\+\_\+\+\_\+}} (const uint8\+\_\+t mode)
+\item 
+void \mbox{\hyperlink{namespacemy_s_p_i_master_afaf0a30906c72fa5666921fcd5e3cf8f}{\+\_\+\+\_\+set\+Idle\+\_\+\+\_\+}} ()
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_master_ae2375849a026b0d5273923b46c322e1a}{initialize}} (const uint8\+\_\+t sck, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t mode=\mbox{\hyperlink{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}{M\+O\+D\+E\+\_\+0}}, const bool msb\+First=true, uint64\+\_\+t delay\+US=1)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a0411d63389a2ee26dd9037ea15b8d49a}{transfer}} (const uint8\+\_\+t value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}{M\+O\+D\+E\+\_\+0}} = 0x00
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a327f7e0b906a68584a6946af1013a06c}{M\+O\+D\+E\+\_\+1}} = 0x01
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_ac495820c7a7d168e2fd87671f238d275}{M\+O\+D\+E\+\_\+2}} = 0x02
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a6ee14c1d7a398dde1e302e1463305f43}{M\+O\+D\+E\+\_\+3}} = 0x03
+\item 
+const bool \mbox{\hyperlink{namespacemy_s_p_i_master_aa88e1c784f1266d528df19f21c55a3bc}{M\+S\+B\+\_\+\+F\+I\+R\+ST}} = true
+\item 
+const bool \mbox{\hyperlink{namespacemy_s_p_i_master_a63ea33de30cc7bf9e6a49941431b8346}{L\+S\+B\+\_\+\+F\+I\+R\+ST}} = false
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a178fcdc2f572bcb8816c27efb8325f8a}{\+\_\+sck}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_aaf7bc453640f4966f2e62c90b7af7f67}{\+\_\+miso}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a82a0559b124ef806380f8b64ddaf5be2}{\+\_\+mosi}}
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_master_ad5befbda155e9f67c2abb73130854a75}{\+\_\+cpol}}
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_master_a41f5f93de781b51c1d257f82d3b37a03}{\+\_\+cpha}}
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_master_a4c41627d65ac0ae8354990afc8ef6a64}{\+\_\+msb\+First}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a7890af7bb6848cfa0c575ce1b33d6be6}{\+\_\+delay\+US}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemy_s_p_i_master_afaf0a30906c72fa5666921fcd5e3cf8f}\label{namespacemy_s_p_i_master_afaf0a30906c72fa5666921fcd5e3cf8f}} 
+\index{mySPIMaster@{mySPIMaster}!\_\_setIdle\_\_@{\_\_setIdle\_\_}}
+\index{\_\_setIdle\_\_@{\_\_setIdle\_\_}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_\_setIdle\_\_()}{\_\_setIdle\_\_()}}
+{\footnotesize\ttfamily void my\+S\+P\+I\+Master\+::\+\_\+\+\_\+set\+Idle\+\_\+\+\_\+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a4b13b701a57bd67ac93d472b0311d685}\label{namespacemy_s_p_i_master_a4b13b701a57bd67ac93d472b0311d685}} 
+\index{mySPIMaster@{mySPIMaster}!\_\_validateMode\_\_@{\_\_validateMode\_\_}}
+\index{\_\_validateMode\_\_@{\_\_validateMode\_\_}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_\_validateMode\_\_()}{\_\_validateMode\_\_()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+Master\+::\+\_\+\+\_\+validate\+Mode\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_ae2375849a026b0d5273923b46c322e1a}\label{namespacemy_s_p_i_master_ae2375849a026b0d5273923b46c322e1a}} 
+\index{mySPIMaster@{mySPIMaster}!initialize@{initialize}}
+\index{initialize@{initialize}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+Master\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{sck,  }\item[{const uint8\+\_\+t}]{miso,  }\item[{const uint8\+\_\+t}]{mosi,  }\item[{const uint8\+\_\+t}]{mode = {\ttfamily \mbox{\hyperlink{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}{M\+O\+D\+E\+\_\+0}}},  }\item[{const bool}]{msb\+First = {\ttfamily true},  }\item[{uint64\+\_\+t}]{delay\+US = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a0411d63389a2ee26dd9037ea15b8d49a}\label{namespacemy_s_p_i_master_a0411d63389a2ee26dd9037ea15b8d49a}} 
+\index{mySPIMaster@{mySPIMaster}!transfer@{transfer}}
+\index{transfer@{transfer}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{transfer()}{transfer()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+Master\+::transfer (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a41f5f93de781b51c1d257f82d3b37a03}\label{namespacemy_s_p_i_master_a41f5f93de781b51c1d257f82d3b37a03}} 
+\index{mySPIMaster@{mySPIMaster}!\_cpha@{\_cpha}}
+\index{\_cpha@{\_cpha}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_cpha}{\_cpha}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+Master\+::\+\_\+cpha}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_ad5befbda155e9f67c2abb73130854a75}\label{namespacemy_s_p_i_master_ad5befbda155e9f67c2abb73130854a75}} 
+\index{mySPIMaster@{mySPIMaster}!\_cpol@{\_cpol}}
+\index{\_cpol@{\_cpol}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_cpol}{\_cpol}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+Master\+::\+\_\+cpol}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a7890af7bb6848cfa0c575ce1b33d6be6}\label{namespacemy_s_p_i_master_a7890af7bb6848cfa0c575ce1b33d6be6}} 
+\index{mySPIMaster@{mySPIMaster}!\_delayUS@{\_delayUS}}
+\index{\_delayUS@{\_delayUS}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_delayUS}{\_delayUS}}
+{\footnotesize\ttfamily uint64\+\_\+t my\+S\+P\+I\+Master\+::\+\_\+delay\+US}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_aaf7bc453640f4966f2e62c90b7af7f67}\label{namespacemy_s_p_i_master_aaf7bc453640f4966f2e62c90b7af7f67}} 
+\index{mySPIMaster@{mySPIMaster}!\_miso@{\_miso}}
+\index{\_miso@{\_miso}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_miso}{\_miso}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+Master\+::\+\_\+miso}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a82a0559b124ef806380f8b64ddaf5be2}\label{namespacemy_s_p_i_master_a82a0559b124ef806380f8b64ddaf5be2}} 
+\index{mySPIMaster@{mySPIMaster}!\_mosi@{\_mosi}}
+\index{\_mosi@{\_mosi}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_mosi}{\_mosi}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+Master\+::\+\_\+mosi}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a4c41627d65ac0ae8354990afc8ef6a64}\label{namespacemy_s_p_i_master_a4c41627d65ac0ae8354990afc8ef6a64}} 
+\index{mySPIMaster@{mySPIMaster}!\_msbFirst@{\_msbFirst}}
+\index{\_msbFirst@{\_msbFirst}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_msbFirst}{\_msbFirst}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+Master\+::\+\_\+msb\+First}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a178fcdc2f572bcb8816c27efb8325f8a}\label{namespacemy_s_p_i_master_a178fcdc2f572bcb8816c27efb8325f8a}} 
+\index{mySPIMaster@{mySPIMaster}!\_sck@{\_sck}}
+\index{\_sck@{\_sck}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_sck}{\_sck}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+Master\+::\+\_\+sck}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a63ea33de30cc7bf9e6a49941431b8346}\label{namespacemy_s_p_i_master_a63ea33de30cc7bf9e6a49941431b8346}} 
+\index{mySPIMaster@{mySPIMaster}!LSB\_FIRST@{LSB\_FIRST}}
+\index{LSB\_FIRST@{LSB\_FIRST}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{LSB\_FIRST}{LSB\_FIRST}}
+{\footnotesize\ttfamily const bool my\+S\+P\+I\+Master\+::\+L\+S\+B\+\_\+\+F\+I\+R\+ST = false}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}\label{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}} 
+\index{mySPIMaster@{mySPIMaster}!MODE\_0@{MODE\_0}}
+\index{MODE\_0@{MODE\_0}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_0}{MODE\_0}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+0 = 0x00}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a327f7e0b906a68584a6946af1013a06c}\label{namespacemy_s_p_i_master_a327f7e0b906a68584a6946af1013a06c}} 
+\index{mySPIMaster@{mySPIMaster}!MODE\_1@{MODE\_1}}
+\index{MODE\_1@{MODE\_1}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_1}{MODE\_1}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+1 = 0x01}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_ac495820c7a7d168e2fd87671f238d275}\label{namespacemy_s_p_i_master_ac495820c7a7d168e2fd87671f238d275}} 
+\index{mySPIMaster@{mySPIMaster}!MODE\_2@{MODE\_2}}
+\index{MODE\_2@{MODE\_2}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_2}{MODE\_2}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+2 = 0x02}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_a6ee14c1d7a398dde1e302e1463305f43}\label{namespacemy_s_p_i_master_a6ee14c1d7a398dde1e302e1463305f43}} 
+\index{mySPIMaster@{mySPIMaster}!MODE\_3@{MODE\_3}}
+\index{MODE\_3@{MODE\_3}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_3}{MODE\_3}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+3 = 0x03}
+
+\mbox{\Hypertarget{namespacemy_s_p_i_master_aa88e1c784f1266d528df19f21c55a3bc}\label{namespacemy_s_p_i_master_aa88e1c784f1266d528df19f21c55a3bc}} 
+\index{mySPIMaster@{mySPIMaster}!MSB\_FIRST@{MSB\_FIRST}}
+\index{MSB\_FIRST@{MSB\_FIRST}!mySPIMaster@{mySPIMaster}}
+\doxysubsubsection{\texorpdfstring{MSB\_FIRST}{MSB\_FIRST}}
+{\footnotesize\ttfamily const bool my\+S\+P\+I\+Master\+::\+M\+S\+B\+\_\+\+F\+I\+R\+ST = true}
+
