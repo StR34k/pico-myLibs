@@ -1,0 +1,237 @@
+\hypertarget{classmy165}{}\doxysection{my165 Class Reference}
+\label{classmy165}\index{my165@{my165}}
+
+
+Class to handle a 165 shift register. Class to handle a 165 shift register. Datasheet\+: \href{https://www.ti.com/lit/ds/symlink/sn74hc165.pdf}{\texttt{ https\+://www.\+ti.\+com/lit/ds/symlink/sn74hc165.\+pdf}}.  
+
+
+
+
+{\ttfamily \#include $<$my\+S\+Nx4\+H\+C165.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy165_a0d0db4bf21a0b5d3ab62c8d4375fd75f}{my165}} (const uint8\+\_\+t clk\+Pin, const uint8\+\_\+t data\+Pin, const uint8\+\_\+t load\+Pin)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy165}{my165}} object. No enable pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy165_ad6095886860745c2862323e8e429d8c1}{my165}} (const uint8\+\_\+t clk\+Pin, const uint8\+\_\+t data\+Pin, const uint8\+\_\+t load\+Pin, const uint8\+\_\+t enable\+Pin)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy165}{my165}} object. With enable pin. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy165_acafba6cf0bce8ff499a69fc9f3f2409f}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the gpio pins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy165_a07c896204f41ac0de6b66303616d6a65}{start\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Start a read. Loads values from parralell input and sets up to tranfer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy165_a642f5c43d51e9ed5641532b7fbb5b1e2}{read\+Bit}} ()
+\begin{DoxyCompactList}\small\item\em Read a single bit. Reads a bit and clocks in the next bit. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classmy165_a00d17aa90a2b786dd548a45b831d3fda}{read\+Byte}} (const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\begin{DoxyCompactList}\small\item\em Read a byte. Reads a byte from the shift register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy165_a995a811daf1687924b85d98e41b61a82}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop a read. Resets all pins to idle states. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy165_a469230f3907f11e2d6f9762b1b809f01}{set\+Enable}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Set the Clock Inhibit. (enable) Set the clock inhibit pin, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy165_a8aa05b64751e48a39286f9798e42c0fe}{get\+Enable}} ()
+\begin{DoxyCompactList}\small\item\em Get the clock inhibit. (enable) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy165_a0f7eb58a657c4f682ebd010dcd8e73e9}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\begin{DoxyCompactList}\small\item\em No error. Value 0 No error occured. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy165_ae623c16db4860d21d07b85987a720d68}{E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a46b96dd35f551c00bbfbef9d40301cf0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\begin{DoxyCompactList}\small\item\em Enable not defined. Value -\/350 The enable pin was not defined at time of operation. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy165_a14d36a146be9d9e7d6647a68e164471f}{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+N\+A\+B\+L\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a282bdbe2e4c2246d3792f35571cef2a1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+N\+A\+B\+L\+ED}}
+\begin{DoxyCompactList}\small\item\em Clock already enabled. Value -\/351 The clock inhibit is already in enabled state when operation was requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy165_a29bff993545f3ef918188e81219ea2a1}{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_ab3c6ab113035add569b2a064197b6426}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+D\+R\+E\+A\+D\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED}}
+\begin{DoxyCompactList}\small\item\em Clock already disabled. Value -\/352 The clock inhibit is alread in disabled state when opertation was requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle a 165 shift register. Class to handle a 165 shift register. Datasheet\+: \href{https://www.ti.com/lit/ds/symlink/sn74hc165.pdf}{\texttt{ https\+://www.\+ti.\+com/lit/ds/symlink/sn74hc165.\+pdf}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy165_a0d0db4bf21a0b5d3ab62c8d4375fd75f}\label{classmy165_a0d0db4bf21a0b5d3ab62c8d4375fd75f}} 
+\index{my165@{my165}!my165@{my165}}
+\index{my165@{my165}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{my165()}{my165()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily my165\+::my165 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{clk\+Pin,  }\item[{const uint8\+\_\+t}]{data\+Pin,  }\item[{const uint8\+\_\+t}]{load\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy165}{my165}} object. No enable pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clk\+Pin} & Clock pin. \\
+\hline
+{\em data\+Pin} & Data pin. \\
+\hline
+{\em load\+Pin} & Load pin. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy165_ad6095886860745c2862323e8e429d8c1}\label{classmy165_ad6095886860745c2862323e8e429d8c1}} 
+\index{my165@{my165}!my165@{my165}}
+\index{my165@{my165}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{my165()}{my165()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily my165\+::my165 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{clk\+Pin,  }\item[{const uint8\+\_\+t}]{data\+Pin,  }\item[{const uint8\+\_\+t}]{load\+Pin,  }\item[{const uint8\+\_\+t}]{enable\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy165}{my165}} object. With enable pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clk\+Pin} & Clock pin. \\
+\hline
+{\em data\+Pin} & Data pin. \\
+\hline
+{\em load\+Pin} & Load pin. \\
+\hline
+{\em enable\+Pin} & Enable pin. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy165_a8aa05b64751e48a39286f9798e42c0fe}\label{classmy165_a8aa05b64751e48a39286f9798e42c0fe}} 
+\index{my165@{my165}!getEnable@{getEnable}}
+\index{getEnable@{getEnable}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{getEnable()}{getEnable()}}
+{\footnotesize\ttfamily bool my165\+::get\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the clock inhibit. (enable) 
+
+\begin{DoxyReturn}{Returns}
+true Clock is enabled. 
+
+false Clock is disabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy165_acafba6cf0bce8ff499a69fc9f3f2409f}\label{classmy165_acafba6cf0bce8ff499a69fc9f3f2409f}} 
+\index{my165@{my165}!initialize@{initialize}}
+\index{initialize@{initialize}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily int16\+\_\+t my165\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the gpio pins. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for initialize okay, negaitve for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy165_a642f5c43d51e9ed5641532b7fbb5b1e2}\label{classmy165_a642f5c43d51e9ed5641532b7fbb5b1e2}} 
+\index{my165@{my165}!readBit@{readBit}}
+\index{readBit@{readBit}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{readBit()}{readBit()}}
+{\footnotesize\ttfamily bool my165\+::read\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read a single bit. Reads a bit and clocks in the next bit. 
+
+\begin{DoxyReturn}{Returns}
+Bit read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy165_a00d17aa90a2b786dd548a45b831d3fda}\label{classmy165_a00d17aa90a2b786dd548a45b831d3fda}} 
+\index{my165@{my165}!readByte@{readByte}}
+\index{readByte@{readByte}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{readByte()}{readByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t my165\+::read\+Byte (\begin{DoxyParamCaption}\item[{const bool}]{bit\+Order = {\ttfamily \mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}}} }\end{DoxyParamCaption})}
+
+
+
+Read a byte. Reads a byte from the shift register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+Order} & True for M\+SB first(default), false for L\+SB first. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Byte read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy165_a469230f3907f11e2d6f9762b1b809f01}\label{classmy165_a469230f3907f11e2d6f9762b1b809f01}} 
+\index{my165@{my165}!setEnable@{setEnable}}
+\index{setEnable@{setEnable}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{setEnable()}{setEnable()}}
+{\footnotesize\ttfamily int16\+\_\+t my165\+::set\+Enable (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Clock Inhibit. (enable) Set the clock inhibit pin, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & True to enable clock, false to disable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t return 0(N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy165_a07c896204f41ac0de6b66303616d6a65}\label{classmy165_a07c896204f41ac0de6b66303616d6a65}} 
+\index{my165@{my165}!startRead@{startRead}}
+\index{startRead@{startRead}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{startRead()}{startRead()}}
+{\footnotesize\ttfamily void my165\+::start\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start a read. Loads values from parralell input and sets up to tranfer. 
+
+\mbox{\Hypertarget{classmy165_a995a811daf1687924b85d98e41b61a82}\label{classmy165_a995a811daf1687924b85d98e41b61a82}} 
+\index{my165@{my165}!stop@{stop}}
+\index{stop@{stop}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void my165\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop a read. Resets all pins to idle states. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy165_a29bff993545f3ef918188e81219ea2a1}\label{classmy165_a29bff993545f3ef918188e81219ea2a1}} 
+\index{my165@{my165}!ERROR\_ALREADY\_DISABLED@{ERROR\_ALREADY\_DISABLED}}
+\index{ERROR\_ALREADY\_DISABLED@{ERROR\_ALREADY\_DISABLED}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{ERROR\_ALREADY\_DISABLED}{ERROR\_ALREADY\_DISABLED}}
+{\footnotesize\ttfamily const int16\+\_\+t my165\+::\+E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED = \mbox{\hyperlink{my_error_codes_8hpp_ab3c6ab113035add569b2a064197b6426}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+D\+R\+E\+A\+D\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clock already disabled. Value -\/352 The clock inhibit is alread in disabled state when opertation was requested. 
+
+\mbox{\Hypertarget{classmy165_a14d36a146be9d9e7d6647a68e164471f}\label{classmy165_a14d36a146be9d9e7d6647a68e164471f}} 
+\index{my165@{my165}!ERROR\_ALREADY\_ENABLED@{ERROR\_ALREADY\_ENABLED}}
+\index{ERROR\_ALREADY\_ENABLED@{ERROR\_ALREADY\_ENABLED}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{ERROR\_ALREADY\_ENABLED}{ERROR\_ALREADY\_ENABLED}}
+{\footnotesize\ttfamily const int16\+\_\+t my165\+::\+E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+N\+A\+B\+L\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a282bdbe2e4c2246d3792f35571cef2a1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+N\+A\+B\+L\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clock already enabled. Value -\/351 The clock inhibit is already in enabled state when operation was requested. 
+
+\mbox{\Hypertarget{classmy165_ae623c16db4860d21d07b85987a720d68}\label{classmy165_ae623c16db4860d21d07b85987a720d68}} 
+\index{my165@{my165}!ERROR\_ENABLE\_NOT\_DEFINED@{ERROR\_ENABLE\_NOT\_DEFINED}}
+\index{ERROR\_ENABLE\_NOT\_DEFINED@{ERROR\_ENABLE\_NOT\_DEFINED}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{ERROR\_ENABLE\_NOT\_DEFINED}{ERROR\_ENABLE\_NOT\_DEFINED}}
+{\footnotesize\ttfamily const int16\+\_\+t my165\+::\+E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a46b96dd35f551c00bbfbef9d40301cf0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable not defined. Value -\/350 The enable pin was not defined at time of operation. 
+
+\mbox{\Hypertarget{classmy165_a0f7eb58a657c4f682ebd010dcd8e73e9}\label{classmy165_a0f7eb58a657c4f682ebd010dcd8e73e9}} 
+\index{my165@{my165}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!my165@{my165}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my165\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No error. Value 0 No error occured. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+S\+Nx4\+H\+C165/\mbox{\hyperlink{my_s_nx4_h_c165_8hpp}{my\+S\+Nx4\+H\+C165.\+hpp}}\end{DoxyCompactItemize}

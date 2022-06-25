@@ -95,9 +95,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_helpers_8hpp__dep__incl.png" border="0" usemap="#my_helpers_8hppdep" alt=""/></div>
 <map name="my_helpers_8hppdep" id="my_helpers_8hppdep">
-<area shape="rect" title="Helper functions." alt="" coords="141,5,262,32"/>
+<area shape="rect" title="Helper functions." alt="" coords="257,5,378,32"/>
 <area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="5,80,168,107"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="192,80,443,107"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="192,80,443,107"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="467,80,717,107"/>
 </map>
 </div>
 </div>
@@ -130,7 +131,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6f4493da21359cff8f937ac1b9cc93d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a6f4493da21359cff8f937ac1b9cc93d7">More...</a><br /></td></tr>
 <tr class="separator:a6f4493da21359cff8f937ac1b9cc93d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaf1792ba912a18d81d699d03b227637"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">myHelpers::waitForHigh64</a> (const uint8_t pin, const uint64_t timeout=0)</td></tr>
-<tr class="memdesc:abaf1792ba912a18d81d699d03b227637"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">More...</a><br /></td></tr>
+<tr class="memdesc:abaf1792ba912a18d81d699d03b227637"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. A timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">More...</a><br /></td></tr>
 <tr class="separator:abaf1792ba912a18d81d699d03b227637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5c257b6614735aa6aff6053bf55540b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">myHelpers::waitForChange32</a> (const uint8_t pin, const uint32_t timeout)</td></tr>
 <tr class="memdesc:af5c257b6614735aa6aff6053bf55540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">More...</a><br /></td></tr>

@@ -76,13 +76,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_error_codes_8hpp__dep__incl.png" border="0" usemap="#my_error_codes_8hppdep" alt=""/></div>
 <map name="my_error_codes_8hppdep" id="my_error_codes_8hppdep">
-<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="338,5,481,32"/>
+<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="371,5,514,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
 <area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
-<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="430,80,551,107"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="563,155,813,181"/>
-<area shape="rect" href="my_random_8hpp.html" title="Random helpers:" alt="" coords="147,155,351,181"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="376,155,539,181"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="546,80,667,107"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="284,155,535,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="745,155,996,181"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers:" alt="" coords="55,155,259,181"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="559,155,721,181"/>
 </map>
 </div>
 </div>
@@ -156,6 +157,15 @@ Macros</h2></td></tr>
 <tr class="memitem:ab12330b789b3b03c3f65b26ec53e3ea2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ab12330b789b3b03c3f65b26ec53e3ea2">MY_ERROR_MY23LC1024_COMM_CHECK_FAILED</a>&#160;&#160;&#160;-310</td></tr>
 <tr class="memdesc:ab12330b789b3b03c3f65b26ec53e3ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Communication check failed. Communications couldn't be verified.  <a href="my_error_codes_8hpp.html#ab12330b789b3b03c3f65b26ec53e3ea2">More...</a><br /></td></tr>
 <tr class="separator:ab12330b789b3b03c3f65b26ec53e3ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46b96dd35f551c00bbfbef9d40301cf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a46b96dd35f551c00bbfbef9d40301cf0">MY_ERROR_MY165_ENABLE_NOT_DEFINED</a>&#160;&#160;&#160;-350</td></tr>
+<tr class="memdesc:a46b96dd35f551c00bbfbef9d40301cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable pin not defined. The enable pin was not defined when operation was requested.  <a href="my_error_codes_8hpp.html#a46b96dd35f551c00bbfbef9d40301cf0">More...</a><br /></td></tr>
+<tr class="separator:a46b96dd35f551c00bbfbef9d40301cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282bdbe2e4c2246d3792f35571cef2a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a282bdbe2e4c2246d3792f35571cef2a1">MY_ERROR_MY165_ALREADY_ENABLED</a>&#160;&#160;&#160;-351</td></tr>
+<tr class="memdesc:a282bdbe2e4c2246d3792f35571cef2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock already enabled. The clock inhibit is already in enabled state when operation was requested.  <a href="my_error_codes_8hpp.html#a282bdbe2e4c2246d3792f35571cef2a1">More...</a><br /></td></tr>
+<tr class="separator:a282bdbe2e4c2246d3792f35571cef2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c6ab113035add569b2a064197b6426"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ab3c6ab113035add569b2a064197b6426">MY_ERROR_MY165_ADREADY_DISABLED</a>&#160;&#160;&#160;-352</td></tr>
+<tr class="memdesc:ab3c6ab113035add569b2a064197b6426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock already disabled. The clock inhibit is alread in disabled state when opertation was requested.  <a href="my_error_codes_8hpp.html#ab3c6ab113035add569b2a064197b6426">More...</a><br /></td></tr>
+<tr class="separator:ab3c6ab113035add569b2a064197b6426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507132ce31f0514a87d1a09532012c64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a507132ce31f0514a87d1a09532012c64">MY_ERROR_MY595_ENABLE_NOT_DEFINED</a>&#160;&#160;&#160;-400</td></tr>
 <tr class="memdesc:a507132ce31f0514a87d1a09532012c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable pin not defined. The enable pin was not defined when operation was requested.  <a href="my_error_codes_8hpp.html#a507132ce31f0514a87d1a09532012c64">More...</a><br /></td></tr>
 <tr class="separator:a507132ce31f0514a87d1a09532012c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,6 +258,54 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invalid pin number. An invalid pin number was passed. </p>
+
+</div>
+</div>
+<a id="ab3c6ab113035add569b2a064197b6426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c6ab113035add569b2a064197b6426">&#9670;&nbsp;</a></span>MY_ERROR_MY165_ADREADY_DISABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MY165_ADREADY_DISABLED&#160;&#160;&#160;-352</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock already disabled. The clock inhibit is alread in disabled state when opertation was requested. </p>
+
+</div>
+</div>
+<a id="a282bdbe2e4c2246d3792f35571cef2a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a282bdbe2e4c2246d3792f35571cef2a1">&#9670;&nbsp;</a></span>MY_ERROR_MY165_ALREADY_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MY165_ALREADY_ENABLED&#160;&#160;&#160;-351</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock already enabled. The clock inhibit is already in enabled state when operation was requested. </p>
+
+</div>
+</div>
+<a id="a46b96dd35f551c00bbfbef9d40301cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46b96dd35f551c00bbfbef9d40301cf0">&#9670;&nbsp;</a></span>MY_ERROR_MY165_ENABLE_NOT_DEFINED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MY165_ENABLE_NOT_DEFINED&#160;&#160;&#160;-350</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable pin not defined. The enable pin was not defined when operation was requested. </p>
 
 </div>
 </div>

@@ -60,6 +60,12 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Hold not available. Hold function not available in comms mode. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_ab12330b789b3b03c3f65b26ec53e3ea2}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y23\+L\+C1024\+\_\+\+C\+O\+M\+M\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~-\/310
 \begin{DoxyCompactList}\small\item\em Communication check failed. Communications couldn\textquotesingle{}t be verified. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a46b96dd35f551c00bbfbef9d40301cf0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}~-\/350
+\begin{DoxyCompactList}\small\item\em Enable pin not defined. The enable pin was not defined when operation was requested. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a282bdbe2e4c2246d3792f35571cef2a1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+N\+A\+B\+L\+ED}}~-\/351
+\begin{DoxyCompactList}\small\item\em Clock already enabled. The clock inhibit is already in enabled state when operation was requested. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_ab3c6ab113035add569b2a064197b6426}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+D\+R\+E\+A\+D\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED}}~-\/352
+\begin{DoxyCompactList}\small\item\em Clock already disabled. The clock inhibit is alread in disabled state when opertation was requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}~-\/400
 \begin{DoxyCompactList}\small\item\em Enable pin not defined. The enable pin was not defined when operation was requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}~-\/401
@@ -135,6 +141,36 @@ Invalid A\+DC channel. An invalid A\+DC channel was passed.
 
 
 Invalid pin number. An invalid pin number was passed. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_ab3c6ab113035add569b2a064197b6426}\label{my_error_codes_8hpp_ab3c6ab113035add569b2a064197b6426}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MY165\_ADREADY\_DISABLED@{MY\_ERROR\_MY165\_ADREADY\_DISABLED}}
+\index{MY\_ERROR\_MY165\_ADREADY\_DISABLED@{MY\_ERROR\_MY165\_ADREADY\_DISABLED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MY165\_ADREADY\_DISABLED}{MY\_ERROR\_MY165\_ADREADY\_DISABLED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+D\+R\+E\+A\+D\+Y\+\_\+\+D\+I\+S\+A\+B\+L\+ED~-\/352}
+
+
+
+Clock already disabled. The clock inhibit is alread in disabled state when opertation was requested. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a282bdbe2e4c2246d3792f35571cef2a1}\label{my_error_codes_8hpp_a282bdbe2e4c2246d3792f35571cef2a1}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MY165\_ALREADY\_ENABLED@{MY\_ERROR\_MY165\_ALREADY\_ENABLED}}
+\index{MY\_ERROR\_MY165\_ALREADY\_ENABLED@{MY\_ERROR\_MY165\_ALREADY\_ENABLED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MY165\_ALREADY\_ENABLED}{MY\_ERROR\_MY165\_ALREADY\_ENABLED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+E\+N\+A\+B\+L\+ED~-\/351}
+
+
+
+Clock already enabled. The clock inhibit is already in enabled state when operation was requested. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a46b96dd35f551c00bbfbef9d40301cf0}\label{my_error_codes_8hpp_a46b96dd35f551c00bbfbef9d40301cf0}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MY165\_ENABLE\_NOT\_DEFINED@{MY\_ERROR\_MY165\_ENABLE\_NOT\_DEFINED}}
+\index{MY\_ERROR\_MY165\_ENABLE\_NOT\_DEFINED@{MY\_ERROR\_MY165\_ENABLE\_NOT\_DEFINED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MY165\_ENABLE\_NOT\_DEFINED}{MY\_ERROR\_MY165\_ENABLE\_NOT\_DEFINED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y165\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED~-\/350}
+
+
+
+Enable pin not defined. The enable pin was not defined when operation was requested. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_ab12330b789b3b03c3f65b26ec53e3ea2}\label{my_error_codes_8hpp_ab12330b789b3b03c3f65b26ec53e3ea2}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED@{MY\_ERROR\_MY23LC1024\_COMM\_CHECK\_FAILED}}

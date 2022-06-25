@@ -209,7 +209,8 @@ namespace myHelpers {
         return (stopTime-startTime);
     }
     /**
-     * @brief busy wait until HIGH signal, or timeout. a timeout of 0 (the default)
+     * @brief busy wait until HIGH signal, or timeout. 
+     *                      A timeout of 0 (the default)
      *                      means that it will block until HIGH. If the pin is already HIGH, it
      *                      will return immediatly with a value of 0. If timeout is reached it
      *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5

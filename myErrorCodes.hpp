@@ -139,6 +139,23 @@
      */
     #define MY_ERROR_MY23LC1024_COMM_CHECK_FAILED           -310
 
+/*************** mySNx4HC165 error codes (350-399) *****************/
+    /**
+     * @brief Enable pin not defined.
+     * The enable pin was not defined when operation was requested.
+     */
+    #define MY_ERROR_MY165_ENABLE_NOT_DEFINED               -350
+    /**
+     * @brief Clock already enabled.
+     * The clock inhibit is already in enabled state when operation was requested.
+     */
+    #define MY_ERROR_MY165_ALREADY_ENABLED                  -351
+    /**
+     * @brief Clock already disabled.
+     * The clock inhibit is alread in disabled state when opertation was requested.
+     */
+    #define MY_ERROR_MY165_ADREADY_DISABLED                 -352
+    
 /*************** mySNx4HC595 error codes (400-449) ****************/
     /**
      * @brief Enable pin not defined.

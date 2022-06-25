@@ -5,3 +5,4 @@ add_subdirectory("/home/streak/pico/pico-myLibs/my23LC1024/" "/home/streak/pico/
 add_subdirectory("/home/streak/pico/pico-myLibs/myBitBangSPI/" "/home/streak/pico/pico-myLibs/myBitBangSPI/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myBMx280/" "/home/streak/pico/pico-myLibs/myBMx280/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myRandom/" "/home/streak/pico/pico-myLibs/myRandom/")
+add_subdirectory("/home/streak/pico/pico-myLibs/mySNx4HC165/" "/home/streak/pico/pico-myLibs/mySNx4HC165/")
