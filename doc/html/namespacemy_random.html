@@ -93,11 +93,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ad174b8308a90ddbdee56cdbca0f79978"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">seedFromADCPin</a> (uint8_t adcPin)</td></tr>
 <tr class="memdesc:ad174b8308a90ddbdee56cdbca0f79978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed srand from a floating analog pin. in arduino style.  <a href="namespacemy_random.html#ad174b8308a90ddbdee56cdbca0f79978">More...</a><br /></td></tr>
 <tr class="separator:ad174b8308a90ddbdee56cdbca0f79978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01905594927f22bd8400ec6c02f1f874"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a01905594927f22bd8400ec6c02f1f874">seedFromTemperatureSensor</a> ()</td></tr>
+<tr class="memdesc:a01905594927f22bd8400ec6c02f1f874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed srand from the internal temperature sensor. Read the temperature sensor four times and use the last 8 bits of each reading to create a random seed.  <a href="namespacemy_random.html#a01905594927f22bd8400ec6c02f1f874">More...</a><br /></td></tr>
+<tr class="separator:a01905594927f22bd8400ec6c02f1f874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a33a40b83686ad71b89a618cb7559779d"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">NO_ERROR</a> = <a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></td></tr>
-<tr class="memdesc:a33a40b83686ad71b89a618cb7559779d"><td class="mdescLeft">&#160;</td><td class="mdescRight">no error. Value 0 (NO_ERROR)  <a href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">More...</a><br /></td></tr>
+<tr class="memdesc:a33a40b83686ad71b89a618cb7559779d"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error. Value 0 (NO_ERROR)  <a href="namespacemy_random.html#a33a40b83686ad71b89a618cb7559779d">More...</a><br /></td></tr>
 <tr class="separator:a33a40b83686ad71b89a618cb7559779d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -236,6 +239,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a01905594927f22bd8400ec6c02f1f874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01905594927f22bd8400ec6c02f1f874">&#9670;&nbsp;</a></span>seedFromTemperatureSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myRandom::seedFromTemperatureSensor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Seed srand from the internal temperature sensor. Read the temperature sensor four times and use the last 8 bits of each reading to create a random seed. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a33a40b83686ad71b89a618cb7559779d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33a40b83686ad71b89a618cb7559779d">&#9670;&nbsp;</a></span>NO_ERROR</h2>
@@ -249,7 +272,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>no error. Value 0 (NO_ERROR) </p>
+<p>No error. Value 0 (NO_ERROR) </p>
 
 </div>
 </div>

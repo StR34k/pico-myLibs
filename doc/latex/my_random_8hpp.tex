@@ -2,14 +2,15 @@
 \label{my_random_8hpp}\index{myRandom/myRandom.hpp@{myRandom/myRandom.hpp}}
 
 
-Random helpers\+:  
+Random helpers.  
 
 
 {\ttfamily \#include \char`\"{}hardware/structs/rosc.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$pico/time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../my\+A\+D\+C/my\+A\+D\+C.\+hpp\char`\"{}}\newline
-Include dependency graph for my\+Random.\+hpp\+:\nopagebreak
+Include dependency graph for my\+Random.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,16 +36,18 @@ void \mbox{\hyperlink{namespacemy_random_aefc2ec79485692c91817233f7620e15e}{my\+
 int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a8707f89eee39cc8e7fd07eb8ff8d0cfe}{my\+Random\+::seed\+From\+A\+D\+C\+Channel}} (uint8\+\_\+t adc\+Channel)
 \begin{DoxyCompactList}\small\item\em Generate a random seed by readin a floatind A\+DC pin, in arduino style. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_random_ad174b8308a90ddbdee56cdbca0f79978}{my\+Random\+::seed\+From\+A\+D\+C\+Pin}} (uint8\+\_\+t adc\+Pin)
-\begin{DoxyCompactList}\small\item\em Seed srand from a floating analog pin. in arduino style. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Seed srand from a floating analog pin. in arduino style. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a01905594927f22bd8400ec6c02f1f874}{my\+Random\+::seed\+From\+Temperature\+Sensor}} ()
+\begin{DoxyCompactList}\small\item\em Seed srand from the internal temperature sensor. Read the temperature sensor four times and use the last 8 bits of each reading to create a random seed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a33a40b83686ad71b89a618cb7559779d}{my\+Random\+::\+N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
-\begin{DoxyCompactList}\small\item\em no error. Value 0 (N\+O\+\_\+\+E\+R\+R\+OR) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em No error. Value 0 (N\+O\+\_\+\+E\+R\+R\+OR) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Random helpers\+: 
+Random helpers. 
 
 \begin{DoxyAuthor}{Author}
 Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
