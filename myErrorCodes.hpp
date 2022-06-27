@@ -167,7 +167,11 @@
      * The clear pin was not defined when operation was requested.
      */
     #define MY_ERROR_MY595_CLEAR_NOT_DEFINED                -401
-
+    /**
+     * @brief Operation not available.
+     * The bit write operation is not available in hardware SPI mode.
+     */
+    #define MY_ERROR_MY595_OPERATION_NOT_AVAILABLE          -402
 
 
 #endif
