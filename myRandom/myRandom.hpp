@@ -1,7 +1,7 @@
 /**
  * @file myRandom.hpp
  * @author Peter Nearing (pnearing@protonmail.com)
- * @brief Random helpers:
+ * @brief Random helpers.
  * @version 0.1
  * @date 2022-06-23
  * 
@@ -28,7 +28,7 @@
 namespace myRandom {
 /* Constants: */
     /**
-     * @brief no error. Value 0 (NO_ERROR)
+     * @brief No error. Value 0 (NO_ERROR)
      * 
      */
     int16_t NO_ERROR = MY_NO_ERROR;
@@ -123,7 +123,9 @@ namespace myRandom {
         int16_t returnValue;
     // Init ADC, and channel:
         myADC::initialize();
-        returnValue = myADC::initPin(adcPin);
+        if (myADC::getChannelInit(adcPin) == false) {
+            returnValue = myADC::initPin(adcPin);
+        }
         if (returnValue < 0) { return returnValue; } // if error return error code.
     // Take 4 readings, only looking at the last 8 bits of each reading, for the total 32 bits:
         for (uint8_t i=0; i<4; i++) {
@@ -134,6 +136,32 @@ namespace myRandom {
             sleep_us(1);                            // Delay to give adc time to 'randomize'
         }
         srand(randomSeed);  // Set the seed.
+        return NO_ERROR;
+    }
+    /**
+     * @brief Seed srand from the internal temperature sensor.
+     * Read the temperature sensor four times and use the last 8 bits of each reading
+     * to create a random seed.
+     * @return int16_t Returns 0 (NO_ERROR) if okay, negative for error code.
+     */
+    int16_t seedFromTemperatureSensor() {
+    // Init variables:
+        uint32_t randomSeed = 0;
+        int16_t returnValue;
+    // Init ADC and temp sensor:
+        myADC::initialize();
+        if (myADC::getTemperatureInit() == false) {
+            returnValue = myADC::initTemperature();
+        }
+    // Take 4 readings, only looking at the last 8 bits of each reading for a total of 32 bits:
+        for (uint8_t i=0; i<4; i++) {
+            returnValue = myADC::readTemperatureRaw();  // Read the temperature
+            if (returnValue < 0) { return returnValue; } // If it generated an error pass it on.
+            randomSeed <<=8;    // Shift seed to make room.
+            ramdomSeed |= (uint8_t)returnValue; // Store the lower 8 bits of the reading.
+            sleep_us(1); // Delay to give time for reading to change.
+        }
+        srand(randomSeed);
         return NO_ERROR;
     }
 };

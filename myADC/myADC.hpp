@@ -361,7 +361,7 @@ namespace myADC {
         if (returnDegC == true) {
             return degC; // return Deg C.
         } else {
-            return ((degC * (9.0f / 5.0f)) + 32.0); // return Deg F
+            return ((degC * (9.0f / 5.0f)) + 32.0f); // return Deg F
         }
     }
 };
