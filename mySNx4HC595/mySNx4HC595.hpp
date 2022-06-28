@@ -35,7 +35,7 @@ class my595 {
     /* Constants: */
         // Errors:
         /**
-         * @brief No error: 0
+         * @brief No error. Value: 0
          */
         static const int16_t NO_ERROR = MY_NO_ERROR; 
         /**
@@ -61,8 +61,9 @@ class my595 {
          * @param clock clock pin number.
          * @param data Data pin number.
          */
-        my595(spi_inst_t *spiPort, const uint8_t latch, const uint8_t clock, const uint8_t data) :
-                    _latchPin (latch), _clkPin (clock), _dataPin (data) {
+        my595(spi_inst_t *spiPort, const uint8_t latch, const uint8_t clock, const uint8_t miso, 
+                    const uint8_t mosi) : _latchPin (latch), _clkPin (clock), _dataTXPin (mosi),
+                    _dataRXPin (miso) {
             _spiPort = spiPort;
             _useHardware = true;
         }
@@ -75,8 +76,9 @@ class my595 {
          * @param data Data pin number.
          * @param enable Enable pin number.
          */
-        my595(spi_inst_t *spiPort, const uint8_t latch, const uint8_t clock, const uint8_t data, 
-                    const uint8_t enable) : _latchPin (latch), _clkPin (clock), _dataPin (data) {
+        my595(spi_inst_t *spiPort, const uint8_t latch, const uint8_t clock, const uint8_t miso, 
+                    const uint8_t mosi, const uint8_t enable) : _latchPin (latch), _clkPin (clock),
+                    _dataTXPin (mosi), _dataRXPin (miso) {
             _spiPort = spiPort;
             _useHardware = true;
         }
@@ -90,9 +92,10 @@ class my595 {
          * @param enable 
          * @param clear 
          */
-        my595(spi_inst_t *spiPort, const uint8_t latch, const uint8_t clock, const uint8_t data,
-                    const uint8_t enable, const uint8_t clear) : _latchPin (latch), _clkPin (clock),
-                    _dataPin (data), _enablePin (enable), _clearPin(clear) {
+        my595(spi_inst_t *spiPort, const uint8_t latch, const uint8_t clock, const uint8_t miso,
+                    const uint8_t mosi, const uint8_t enable, const uint8_t clear) : _latchPin (latch),
+                    _clkPin (clock),_dataRXPin (miso), _dataTXPin (mosi), _enablePin (enable),
+                    _clearPin(clear) {
             _spiPort = spiPort;
             _useHardware = true;
         }
@@ -104,7 +107,7 @@ class my595 {
          * @param data Data pin number.
          */
         my595(const uint8_t latch, const uint8_t clock, const uint8_t data) : _latchPin (latch),
-                    _clkPin (clock), _dataPin(data) {
+                    _clkPin (clock), _dataTXPin(data) {
             _useHardware = false;
         }
         /**
@@ -116,7 +119,7 @@ class my595 {
          * @param enable Enable pin number.
          */
         my595(const uint8_t latch, const uint8_t clock, const uint8_t data, const uint8_t enable) :
-                    _latchPin (latch), _clkPin (clock), _dataPin (data), _enablePin (enable) {
+                    _latchPin (latch), _clkPin (clock), _dataTXPin (data), _enablePin (enable) {
             _useHardware = false;
         }
         /**
@@ -129,7 +132,7 @@ class my595 {
          * @param clear Clear pin number.
          */
         my595(const uint8_t latch, const uint8_t clock, const uint8_t data, const uint8_t enable,
-                    const uint8_t clear) : _latchPin (latch), _clkPin (clock), _dataPin (data),
+                    const uint8_t clear) : _latchPin (latch), _clkPin (clock), _dataTXPin (data),
                     _enablePin (enable), _clearPin (clear) {
             _useHardware = false;
         }
@@ -151,7 +154,8 @@ class my595 {
         spi_inst_t    *_spiPort;
         const uint8_t _latchPin = MY_NOT_A_PIN;
         const uint8_t _clkPin = MY_NOT_A_PIN;
-        const uint8_t _dataPin = MY_NOT_A_PIN;
+        const uint8_t _dataTXPin = MY_NOT_A_PIN;
+        const uint8_t _dataRXPin = MY_NOT_A_PIN;
         const uint8_t _enablePin = MY_NOT_A_PIN;
         const uint8_t _clearPin = MY_NOT_A_PIN;
         uint8_t       _pwmSlice;
@@ -164,6 +168,7 @@ class my595 {
         void __initClearPin__();
         bool __initEnableGPIO__(const bool value);
         bool __initEnablePWM__(const uint8_t value);
+        uint8_t __reverseByte__(const uint8_t value); // Switch a bit from msb to lsb first.
 };
 /**
  * @brief intiialize(): Initalize the shfit register.
@@ -175,7 +180,7 @@ class my595 {
 int16_t my595::initialize() {
 // Check pins:
     if (myHelpers::isPin(_latchPin) == false) { return MY_INVALID_PIN; }
-    if (myHelpers::isPin(_dataPin) == false) { return MY_INVALID_PIN; }
+    if (myHelpers::isPin(_dataTXPin) == false) { return MY_INVALID_PIN; }
     if (myHelpers::isPin(_clkPin) == false) { return MY_INVALID_PIN; }
 // Init Pins:
     if (_useHardware == false) {
@@ -200,7 +205,7 @@ int16_t my595::initialize() {
 int16_t my595::initialize(const bool enable) {
 // Check pins:
     if (myHelpers::isPin(_latchPin) == false) { return MY_INVALID_PIN; }
-    if (myHelpers::isPin(_dataPin) == false) { return MY_INVALID_PIN; }
+    if (myHelpers::isPin(_dataTXPin) == false) { return MY_INVALID_PIN; }
     if (myHelpers::isPin(_clkPin) == false) { return MY_INVALID_PIN; }
 // Init Pins:
     if (_useHardware == false) {
@@ -225,7 +230,7 @@ int16_t my595::initialize(const bool enable) {
 int16_t my595::initialize(const uint8_t enable) {
 // Check pins:
     if (myHelpers::isPin(_latchPin) == false) { return MY_INVALID_PIN; }
-    if (myHelpers::isPin(_dataPin) == false) { return MY_INVALID_PIN; }
+    if (myHelpers::isPin(_dataTXPin) == false) { return MY_INVALID_PIN; }
     if (myHelpers::isPin(_clkPin) == false) { return MY_INVALID_PIN; }
 // Init Pins:
     if (_useHardware == false) {
@@ -255,7 +260,7 @@ void my595::startWrite() {
  */
 int16_t my595::writeBit(const bool value) {
     if (_useHardware == true) { return ERROR_OPERATION_NOT_AVAILABLE; }
-    gpio_put(_dataPin, value); // Set data pin.
+    gpio_put(_dataTXPin, value); // Set data pin.
     gpio_put(_clkPin, true);
     gpio_put(_clkPin, false);
     return NO_ERROR;
@@ -267,22 +272,28 @@ int16_t my595::writeBit(const bool value) {
  * @param bitOrder True = MSB first, False = LSB first.
  */
 void my595::writeByte(const uint8_t value, const bool bitOrder) {
+    // __breakpoint();
     if (_useHardware == false) {
         uint8_t val = value;    // copy the value so we can shift it 
         for (uint8_t i=0; i<8; i++) {
         // Write the bit:
             if (bitOrder == MSB_FIRST) {
-                gpio_put(_dataPin, (bool)(val&0x80));
+                gpio_put(_dataTXPin, (bool)(val&0x80));
                 val <<= 1;
             } else {
-                gpio_put(_dataPin, (bool)(val&0x01));
+                gpio_put(_dataTXPin, (bool)(val&0x01));
                 val >>= 1;
             }
+        // Toggle the clock:
             gpio_put(_clkPin, true);
             gpio_put(_clkPin, false);
         }
     } else {
-        spi_write_blocking(_spiPort, &value, 1);
+        uint8_t val = value;
+        if (bitOrder == LSB_FIRST) {
+            val = __reverseByte__(value);
+        }
+        spi_write_blocking(_spiPort, &val, 1);
     }
 }
 /**
@@ -346,19 +357,20 @@ int16_t my595::setEnable(const uint8_t value) {
 void my595::__initDataPinsGPIO__() {
     gpio_init(_latchPin);
     gpio_init(_clkPin);
-    gpio_init(_dataPin);
+    gpio_init(_dataTXPin);
     gpio_set_dir(_latchPin, GPIO_OUT);
     gpio_set_dir(_clkPin, GPIO_OUT);
-    gpio_set_dir(_dataPin, GPIO_OUT);
+    gpio_set_dir(_dataTXPin, GPIO_OUT);
     gpio_put(_latchPin, true);
     gpio_put(_clkPin, false);
-    gpio_put(_dataPin, false);
+    gpio_put(_dataTXPin, false);
 }
 
 void my595::__initSPI__() {
-    spi_init(_spiPort, 1000*5000); // init spi at 5 Mhz.
+    spi_init(_spiPort, 1000*4000); // init spi at 5 Mhz.
     gpio_set_function(_clkPin,  GPIO_FUNC_SPI); // set sck as spi.
-    gpio_set_function(_dataPin, GPIO_FUNC_SPI); // set data as spi.
+    gpio_set_function(_dataTXPin, GPIO_FUNC_SPI); // set data (mosi) as spi.
+    gpio_set_function(17, GPIO_FUNC_SPI); // Set mosi as spi.
 }
 
 void my595::__initClearPin__() {
@@ -391,5 +403,16 @@ bool my595::__initEnablePWM__(const uint8_t value) {
         return true;
     }
     return false;
+}
+
+uint8_t my595::__reverseByte__(const uint8_t value) {
+    uint8_t returnValue = 0x00;
+    for (uint8_t i=0; i<8; i++) {
+        returnValue <<= 1;
+        if ((bool)(value & (1<<i)) == true) {
+            returnValue |= 0x01;
+        }
+    }
+    return returnValue;
 }
 #endif
