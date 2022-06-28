@@ -367,10 +367,10 @@ void my595::__initDataPinsGPIO__() {
 }
 
 void my595::__initSPI__() {
-    spi_init(_spiPort, 1000*4000); // init spi at 5 Mhz.
+    spi_init(_spiPort, 1000*5000); // init spi at 5 Mhz.
     gpio_set_function(_clkPin,  GPIO_FUNC_SPI); // set sck as spi.
     gpio_set_function(_dataTXPin, GPIO_FUNC_SPI); // set data (mosi) as spi.
-    gpio_set_function(17, GPIO_FUNC_SPI); // Set mosi as spi.
+    gpio_set_function(_dataRXPin, GPIO_FUNC_SPI); // Set mosi as spi.
 }
 
 void my595::__initClearPin__() {
