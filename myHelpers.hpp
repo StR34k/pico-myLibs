@@ -460,6 +460,24 @@ namespace myHelpers {
     int64_t map64(int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max) {
         return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
     }
+    /**
+     * @brief Reverse a byte.
+     * Sets the msb = to lsb. and so on until the byte is reversed. used to convert
+     * from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.
+     * @param value 
+     * @return uint8_t 
+     */
+    uint8_t reverseByte(const uint8_t value) {
+        uint8_t returnValue = 0x00;
+        for (uint8_t i=0; i<8; i++) {
+            returnValue <<= 1;
+            if ((bool)(value & (1<<i)) == true) {
+                returnValue |= 0x01;
+            }
+        }
+        return returnValue;
+    }
+
 };
 
 #endif

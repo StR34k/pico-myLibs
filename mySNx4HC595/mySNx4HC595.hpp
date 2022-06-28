@@ -137,16 +137,77 @@ class my595 {
             _useHardware = false;
         }
     /* Functions: */
+        /**
+         * @brief intiialize(): Initalize the shfit register.
+         * 
+         *  Initialize with no params assumes output enabled in gpio mode.
+         * 
+         * @return int16_t Return 0 (MY_NO_ERROR) for okay, negative for error code.
+         */
         int16_t initialize();
+        /**
+         * @brief initialize(bool): Initialize the shift register.
+         *  Initialize the shift register, and if defined set enable to enable value.
+         * 
+         * @param enable If the output's should be enabled on init.
+         * @return int16_t returns 0 (MY_NO_ERROR) for okay, and negative for error code.
+         */
         int16_t initialize(const bool enable);
+        /**
+         * @brief initialize(uint8_t): Initialize the shift register.
+         *      Initialize the shift register in PWM mode.
+         * @param enable The value to set pwm to 255=always on, 0 = always off.
+         * @return int16_t returns 0 (MY_NO_ERROR) for okay, and negative for error code.
+         */
         int16_t initialize(const uint8_t enable);
-
+        /**
+         * @brief Start Write to the shift register.
+         * 
+         */
         void    startWrite(); // Lowers the latch.
+        /**
+         * @brief Clock in a single bit to the shift register.
+         * 
+         * @param value Value to clock in.
+         * @return int16_t Returns 0 for no error, negative is error code.
+         * @note Will return an error if in hardware spi mode.
+         */
         int16_t writeBit(const bool value); // Shift in one bit.
+        /**
+         * @brief Write a byte to the shift register
+         * 
+         * @param value Byte to send to shift register
+         * @param bitOrder True = MSB first, False = LSB first.
+         */
         void    writeByte(const uint8_t value, const bool bitOrder=MSB_FIRST); // Shift in one byte.
+        /**
+         * @brief Stop the write.
+         * Stop the write and latch in data.
+         */
         void    stopWrite(); // raise the latch.
+        /**
+         * @brief Pulse the clear pin to clear the shift register.
+         * 
+         * @return int16_t 0=No error(MY_NO_ERROR), negative error code.
+         */
         int16_t clear();
+        /**
+         * @brief setEnable(bool): Set the enable pin.
+         * Sets the enable pin, boolean mode. If enable has been initialized in PWM mode, it will
+         * write the appropriate PWM value to turn on / off the enable.
+         * @param value True = output enabled, False = output disabled.
+         * @return int16_t returns 0 (MY_NO_ERROR) for okay, negative for error code.
+         */
         int16_t setEnable(const bool value);
+        /**
+         * @brief setEnable(uint8_t): Set the enable pin pwm value.
+         * Sets the enable pin, PWM mode.  If enable has been initialized in PWM mode, it will
+         * write the given value, if enable is not in pwm mode, it will turn on / off the enable
+         * pin based on the value given. if value > 127, then the chip is enabled. Otherwise the
+         * chip will be disabled.
+         * @param value Value to set pwm to (used for brightness).
+         * @return int16_t Returns 0(MY_NO_ERROR) for okay, and negative for error code.
+         */
         int16_t setEnable(const uint8_t value);
 
     private:
@@ -168,15 +229,8 @@ class my595 {
         void __initClearPin__();
         bool __initEnableGPIO__(const bool value);
         bool __initEnablePWM__(const uint8_t value);
-        uint8_t __reverseByte__(const uint8_t value); // Switch a bit from msb to lsb first.
 };
-/**
- * @brief intiialize(): Initalize the shfit register.
- * 
- *  Initialize with no params assumes output enabled in gpio mode.
- * 
- * @return int16_t Return 0 (MY_NO_ERROR) for okay, negative for error code.
- */
+
 int16_t my595::initialize() {
 // Check pins:
     if (myHelpers::isPin(_latchPin) == false) { return MY_INVALID_PIN; }
@@ -195,13 +249,7 @@ int16_t my595::initialize() {
     _usePWM = false;
     return NO_ERROR;
 }
-/**
- * @brief initialize(bool): Initialize the shift register.
- *  Initialize the shift register, and if defined set enable to enable value.
- * 
- * @param enable If the output's should be enabled on init.
- * @return int16_t returns 0 (MY_NO_ERROR) for okay, and negative for error code.
- */
+
 int16_t my595::initialize(const bool enable) {
 // Check pins:
     if (myHelpers::isPin(_latchPin) == false) { return MY_INVALID_PIN; }
@@ -221,12 +269,7 @@ int16_t my595::initialize(const bool enable) {
     _usePWM = false;
     return NO_ERROR;
 }
-/**
- * @brief initialize(uint8_t): Initialize the shift register.
- *      Initialize the shift register in PWM mode.
- * @param enable The value to set pwm to 255=always on, 0 = always off.
- * @return int16_t returns 0 (MY_NO_ERROR) for okay, and negative for error code.
- */
+
 int16_t my595::initialize(const uint8_t enable) {
 // Check pins:
     if (myHelpers::isPin(_latchPin) == false) { return MY_INVALID_PIN; }
@@ -245,19 +288,11 @@ int16_t my595::initialize(const uint8_t enable) {
     _usePWM = true;
     return NO_ERROR;
 }
-/**
- * @brief Start Write to the shift register.
- * 
- */
+
 void my595::startWrite() {
     gpio_put(_latchPin, false); // lower the latch.
 }
-/**
- * @brief Clock in a single bit to the shift register.
- * 
- * @param value Value to clock in.
- * @return int16_t Returns 0 for no error, negative is error code.
- */
+
 int16_t my595::writeBit(const bool value) {
     if (_useHardware == true) { return ERROR_OPERATION_NOT_AVAILABLE; }
     gpio_put(_dataTXPin, value); // Set data pin.
@@ -265,14 +300,8 @@ int16_t my595::writeBit(const bool value) {
     gpio_put(_clkPin, false);
     return NO_ERROR;
 }
-/**
- * @brief Write a byte to the shift register
- * 
- * @param value Byte to send to shift register
- * @param bitOrder True = MSB first, False = LSB first.
- */
+
 void my595::writeByte(const uint8_t value, const bool bitOrder) {
-    // __breakpoint();
     if (_useHardware == false) {
         uint8_t val = value;    // copy the value so we can shift it 
         for (uint8_t i=0; i<8; i++) {
@@ -291,35 +320,23 @@ void my595::writeByte(const uint8_t value, const bool bitOrder) {
     } else {
         uint8_t val = value;
         if (bitOrder == LSB_FIRST) {
-            val = __reverseByte__(value);
+            val = myHelpers::reverseByte(value);
         }
         spi_write_blocking(_spiPort, &val, 1);
     }
 }
-/**
- * @brief Stop the write and latch in data.
- * 
- */
+
 void my595::stopWrite() {
     gpio_put(_latchPin, true);
 }
-/**
- * @brief Pulse the clear pin to clear the shift register.
- * 
- * @return int16_t 0=No error(MY_NO_ERROR), negative error code.
- */
+
 int16_t my595::clear() {
     if (myHelpers::isPin(_clearPin) == false) { return ERROR_CLEAR_NOT_DEFINED; }
     gpio_put(_clearPin, false);
     gpio_put(_clearPin, true);
     return NO_ERROR;
 }
-/**
- * @brief setEnable(bool): Set the enable pin.
- * 
- * @param value True = output enabled, False = output disabled.
- * @return int16_t returns 0 (MY_NO_ERROR) for okay, negative for error code.
- */
+
 int16_t my595::setEnable(const bool value) {
     if (myHelpers::isPin(_enablePin) == false) { return ERROR_ENABLE_NOT_DEFINED; }
     if (_usePWM == true) {
@@ -333,12 +350,7 @@ int16_t my595::setEnable(const bool value) {
     }
     return NO_ERROR;
 }
-/**
- * @brief setEnable(uint8_t): Set the enable pin pwm value.
- * 
- * @param value Value to set pwm to (used for brightness).
- * @return int16_t Returns 0(MY_NO_ERROR) for okay, and negative for error code.
- */
+
 int16_t my595::setEnable(const uint8_t value) {
     if (myHelpers::isPin(_enablePin) == false) { return ERROR_ENABLE_NOT_DEFINED; }
     if (_usePWM == true) {
@@ -405,14 +417,4 @@ bool my595::__initEnablePWM__(const uint8_t value) {
     return false;
 }
 
-uint8_t my595::__reverseByte__(const uint8_t value) {
-    uint8_t returnValue = 0x00;
-    for (uint8_t i=0; i<8; i++) {
-        returnValue <<= 1;
-        if ((bool)(value & (1<<i)) == true) {
-            returnValue |= 0x01;
-        }
-    }
-    return returnValue;
-}
 #endif
