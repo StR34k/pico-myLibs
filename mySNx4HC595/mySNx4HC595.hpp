@@ -193,18 +193,18 @@ class my595 {
         int16_t clear();
         /**
          * @brief setEnable(bool): Set the enable pin.
-         * Sets the enable pin, boolean mode. If enable has been initialized in PWM mode, it will
+         * Sets the enable pin, in boolean mode. If enable has been initialized in PWM mode, it will
          * write the appropriate PWM value to turn on / off the enable.
          * @param value True = output enabled, False = output disabled.
-         * @return int16_t returns 0 (MY_NO_ERROR) for okay, negative for error code.
+         * @return int16_t returns 0 (MY_NO_ERROR) for okay, negative for error code. (ERROR_CLEAR)
          */
         int16_t setEnable(const bool value);
         /**
          * @brief setEnable(uint8_t): Set the enable pin pwm value.
-         * Sets the enable pin, PWM mode.  If enable has been initialized in PWM mode, it will
-         * write the given value, if enable is not in pwm mode, it will turn on / off the enable
-         * pin based on the value given. if value > 127, then the chip is enabled. Otherwise the
-         * chip will be disabled.
+         * Sets the enable pin, in PWM mode.  If enable has been initialized in PWM mode, it will
+         * write the given value, where 255 is always on, and 0 is always off if enable is not in
+         * pwm mode, it will turn on / off the enable pin based on the value given. if value > 127,
+         * then the chip is enabled. Otherwise the chip will be disabled.
          * @param value Value to set pwm to (used for brightness).
          * @return int16_t Returns 0(MY_NO_ERROR) for okay, and negative for error code.
          */

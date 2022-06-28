@@ -2,7 +2,7 @@
  * Standard defines and helper macros.
  * Set some defines used by pico-myLibs. Some error values overlap with myErrorCodes.hpp, values here take
  * precidence over myErrorCodes.hpp
- 
+ *  
  * @file myStandardDefines.hpp
  * @author Peter Nearing (pnearing@protonmail.com)
  * @brief Standard defines for pico-myLibs
@@ -20,7 +20,7 @@
   */
 #ifndef MY_STANDARD_DEFINES_H
     #define MY_STANDARD_DEFINES_H
-/* Pin defines */
+/* General Pin defines */
     /**
      * @brief Not a pin value.
      * Value to use for an undefined pin, fails myHelpers::isPin()
@@ -36,7 +36,65 @@
      * The highest pin number on the rp2040.
      */
     #define MY_MAX_PIN 29
-/* error defines: Note see myErrorCodes.hpp for a full list of codes for all error codes.*/
+/* ADC Pin Defines: */
+    /**
+     * @brief Channel 0 pin.
+     * The pin number for ADC channel 0.
+     */
+    #define MY_ADC_CHANNEL_0_PIN    26
+    /**
+     * @brief Channel 1 pin.
+     * The pin number for ADC channel 1.
+     */
+    #define MY_ADC_CHANNEL_1_PIN    27
+    /**
+     * @brief Channel 2 pin.
+     * The pin number for ADC channel 2.
+     */
+    #define MY_ADC_CHANNEL_2_PIN    28
+    /**
+     * @brief Channel 3 pin.
+     * The pin number for ADC channel 3.
+     */
+    #define MY_ADC_CHANNEL_3_PIN    29
+/* ADC Channel Defines: */
+    /**
+     * @brief ADC Channel 0
+     * The channel number for adc user channel 0
+     */
+    #define MY_ADC_CHANNEL_0        0
+    /**
+     * @brief ADC Channel 1
+     * The channel number for adc user channel 1
+     */
+    #define MY_ADC_CHANNEL_1        1
+    /**
+     * @brief ADC Channel 2
+     * The channel number for adc user channel 2
+     */
+    #define MY_ADC_CHANNEL_2        2
+    /**
+     * @brief ADC Channel 3
+     * The channel number for adc user channel 3
+     */
+    #define MY_ADC_CHANNEL_3        3
+    /**
+     * @brief Temperature channel.
+     * The channel number for the internal temerature sensor.
+     */
+    #define MY_ADC_TEMP_CHANNEL     4
+    /**
+     * @brief Number of user channels.
+     * The number for user channels (ie channels mapped to pins) on the rp2040.
+     */
+    #define MY_ADC_NUM_USER_CHANNELS    4
+    /**
+     * @brief Number of ADC channels.
+     * The total number of ADC channels, including the internal temperature sensor for the rp2040.
+     */
+    #define MY_ADC_NUM_CHANNELS     5
+    
+/* Error Defines: Note see myErrorCodes.hpp for a full list of codes for all error codes.*/
     #ifndef MY_NO_ERROR
         /**
          * @brief No error value.

@@ -13,22 +13,10 @@
 #define MY_ADC_H
 
 #include <hardware/adc.h>
+
+#include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
 
-// Channel numbers:
-#define MY_CHANNEL_0 0
-#define MY_CHANNEL_1 1
-#define MY_CHANNEL_2 2
-#define MY_CHANNEL_3 3
-#define MY_TEMP_CHANNEL 4
-// Pin numbers:
-#define MY_CHANNEL_0_PIN 26
-#define MY_CHANNEL_1_PIN 27
-#define MY_CHANNEL_2_PIN 28
-#define MY_CHANNEL_3_PIN 29
-// Num channels:
-#define MY_NUM_USER_CHANNELS 4
-#define MY_NUM_CHANNELS 5
 // Status feild assignments:
 #define _MY_CHANNEL_0_MASK      0b00000001
 #define _MY_CHANNEL_1_MASK      0b00000010
@@ -36,6 +24,7 @@
 #define _MY_CHANNEL_3_MASK      0b00001000
 #define _MY_TEMP_CHANNEL_MASK   0b00010000
 #define _MY_ADC_MASK            0b00100000
+
 /**
  * @brief High level functions for the ADC.
  * Helper functions to track and set state of ADC pins.
@@ -86,7 +75,7 @@ namespace myADC {
      * @return false Channel is invalid.
      */
     bool inline validChannel(const uint8_t channel) {
-        if (channel > (MY_NUM_CHANNELS - 1)) { return false; }
+        if (channel > (MY_ADC_NUM_CHANNELS - 1)) { return false; }
         return true;
     }
     /**
@@ -97,7 +86,7 @@ namespace myADC {
      * @return false Channel is not a user channel.
      */
     bool inline validUserChannel(const uint8_t channel) {
-        if (channel > (MY_NUM_USER_CHANNELS - 1)) { return false; }
+        if (channel > (MY_ADC_NUM_USER_CHANNELS - 1)) { return false; }
         return true;
     }
     /**
@@ -108,7 +97,7 @@ namespace myADC {
      * @return false 
      */
     bool inline validPin(const uint8_t pin) {
-        if (pin < MY_CHANNEL_0_PIN or pin > MY_CHANNEL_3_PIN) { return false; }
+        if (pin < MY_ADC_CHANNEL_0_PIN or pin > MY_ADC_CHANNEL_3_PIN) { return false; }
         return true;
     }
 // Lookup functions:
@@ -120,7 +109,7 @@ namespace myADC {
      */
     int16_t inline channelToPin (uint8_t channel) {
         if (validUserChannel(channel) == false) { return ERROR_INVALID_CHANNEL; }
-        return (channel + MY_CHANNEL_0_PIN);
+        return (channel + MY_ADC_CHANNEL_0_PIN);
     }
     /**
      * @brief Convert a pin number to a channel.
@@ -130,10 +119,9 @@ namespace myADC {
      */
     int16_t inline pinToChannel (uint8_t pin) {
         if (validPin(pin) == false) { return ERROR_INVALID_PIN; }
-        return (pin - MY_CHANNEL_0_PIN);
+        return (pin - MY_ADC_CHANNEL_0_PIN);
     }
 // Status byte functions:
-    // If ADC is init.
     /**
      * @brief Return true if ADC init has been called.
      * 
@@ -143,7 +131,6 @@ namespace myADC {
     bool inline getADCInit() {
         return (bool)(_status & _MY_ADC_MASK);
     }
-    // If a given channel is init:
     /**
      * @brief Return true if channel has been initialized.
      * 
@@ -155,7 +142,6 @@ namespace myADC {
         if (validUserChannel(channel) == false) { return false; }
         return (bool)(_status & (1<<channel));
     }
-    // If a given pin is init:
     /**
      * @brief Return true if pin has been initialized.
      * 
@@ -167,7 +153,6 @@ namespace myADC {
         if (validPin(pin) == false) { return false; }
         return (bool) (_status & (1 << pinToChannel(pin)));
     }
-    // If the temp sensor is init:
     /**
      * @brief Return true if temperature sensor is initialized.
      * 
@@ -205,7 +190,6 @@ namespace myADC {
         }
     }
 // Initialize functions:
-    // Call adc init.
     /**
      * @brief Call adc_init.
      * Calles adc_init from the pico-sdk. This function is safe to call multiple times, as we only call
@@ -221,53 +205,56 @@ namespace myADC {
         }
         return false;
     }
-    // Select the pin from a given channel and call adc_gpio_init.
     /**
      * @brief Select the pin and call adc_gpio_init.
      * Selects the pin given a channel, and call adc_gpio_init for the pin, this is safe to call multiple
-     * times as it tracks if it's been called.
+     * times as it tracks if it's been called. Returns an error code if the ADC hasn't been initialized,
+     * or if the channel is an invalid value, or if the channel has already been initialized.
      * @param channel Channel to initialize.
      * @return int16_t Returns 0 (NO_ERROR) for no error, negative for error code.
      */
     int16_t inline initChannel(const uint8_t channel) {
+        if (getADCInit() == false) { return ERROR_ADC_NOT_INIT; }
         if (validUserChannel(channel) == false) { return ERROR_INVALID_CHANNEL; }
         if (getChannelInit(channel) == true) { return ERROR_CHANNEL_ALREADY_INIT; }
         adc_gpio_init(channelToPin(channel));
         _setChannelInit(channel);
         return NO_ERROR;
     }
-    // Call adc_gpio_init for a given pin.
     /**
      * @brief Call adc_gpio_init for a given pin.
      * Calls adc_gpio_init for a given pin, this is safe to call multiple times as the state is tracked.
-     * @param pin Pin to initialize
-     * @return int16_t Return 0 (NO_ERROR) for no error, negative for error code.
+     * It will return an error code if the ADC hasn't been initialized, if the pin is an invalid ADC pin,
+     * or if the pin has already been initialized.
+     * @param pin Pin to initialize.
+     * @return int16_t Returns 0 (NO_ERROR) for no error, negative for error code.
      */
     int16_t inline initPin(const uint8_t pin) {
+        if (getADCInit() == false) { return ERROR_ADC_NOT_INIT; }
         if (validPin(pin) == false) { return ERROR_INVALID_PIN; }
         if (getPinInit(pin) == true) { return ERROR_CHANNEL_ALREADY_INIT; }
         adc_gpio_init(pin);
         _setPinInit(pin);
         return NO_ERROR;
     }
-    // Initialize the temperature sensor.
     /**
      * @brief Initialize the temperature sensor.
-     * Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is therefore
-     * safe to call multiple times.
+     * Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is
+     * therefore safe to call multiple times. It will return an error code if the ADC has not been 
+     * initialized, or if the temperature channel has already been initialized.
      * @return int16_t Returns 0 (NO_ERROR) for init okay, and negative for error code. (already init.)
      */
     int16_t inline initTemperature() {
+        if (getADCInit() == false) { return ERROR_ADC_NOT_INIT; }
         if (getTemperatureInit() == true) { return ERROR_CHANNEL_ALREADY_INIT; }
         adc_set_temp_sensor_enabled(true);
         _setTemperatureInit(true);
         return NO_ERROR;
     }
-    // De initialzie the temperature sensor.
     /**
      * @brief De intialize the temperature sensor.
      * Calls adc_set_temp_sensor_enabled with false, and tracks it. this function is therefore safe to call
-     * multiple times.
+     * multiple times. Returns an error code if the temperature channel is not initialized.
      * @return int16_t Return 0 (NO_ERROR) for deinit okay, and negative for error code (already de init.) 
      */
     int16_t inline deinitTemperature() {
@@ -277,54 +264,58 @@ namespace myADC {
         return NO_ERROR;
     }
 // Raw Read functions:
-    // Return the raw ADC reading for a given channel.
     /**
      * @brief Return the raw ADC reading for a channel.
-     * 
+     * Selects the given channel and preforms a read, and returns the value. Returns an error code if
+     * the ADC has not been initialized, an invalid channel has been given, or if the given channel has
+     * not been initialized.
      * @param channel Channel to read
      * @return int16_t Positive (including zero) adc reading, negative for error code.
      */
     int16_t readChannelRaw(const uint8_t channel) {
-        if (validUserChannel(channel)== false) { return ERROR_INVALID_CHANNEL; }
         if (getADCInit() == false) { return ERROR_ADC_NOT_INIT; }
+        if (validUserChannel(channel)== false) { return ERROR_INVALID_CHANNEL; }
         if (getChannelInit(channel) == false) { return ERROR_CHANNEL_NOT_INIT; }
         adc_select_input(channel);      // Select channel.
         return (int16_t)(adc_read());   // return reading.
     }
-    // Select the appropriate channel given a pin, and return the raw reading.
     /**
      * @brief Return the raw ADC for a given pin.
-     * 
+     * Selects the appropriate channel given a pin, preforms a read, and returns the value. Returns an
+     * error code if the ADC has not been initialized, the pin is an invalid ADC pin, or if the pin
+     * has not been initialized.
      * @param pin Pin to read.
      * @return int16_t Positive (including zero) adc reading, negative for error code.
      */
     int16_t readPinRaw(const uint8_t pin) {
-        if (validPin(pin) == false) { return ERROR_INVALID_PIN; }
         if (getADCInit() == false) { return ERROR_ADC_NOT_INIT; }
+        if (validPin(pin) == false) { return ERROR_INVALID_PIN; }
         if (getPinInit(pin) == false) { return ERROR_CHANNEL_NOT_INIT; }
         adc_select_input(pinToChannel(pin));    // Select channel.
         return (int16_t)(adc_read());           // return reading.
     }
-    // Select the temperature channel and return the raw reading.
     /**
      * @brief Read the raw temperature value.
-     * 
+     * Selects the internal temperature sensor, preforms the read, and returns the value. Returns an
+     * error code if the ADC has not been initialized, or if the internal temperature sensor channel
+     * has not been initialized.
      * @return int16_t Positive (including zero) adc reading, negative for error code.
      */
     int16_t readTemperatureRaw() {
         if (getADCInit() == false) { return ERROR_ADC_NOT_INIT; }
         if (getTemperatureInit() == false) { return ERROR_CHANNEL_NOT_INIT; }
-        adc_select_input(MY_TEMP_CHANNEL);  // Select temp channel.
+        adc_select_input(MY_ADC_TEMP_CHANNEL);  // Select temp channel.
         return (int16_t)(adc_read());       // return reading.
     }
 // Converted read functions:
-    // Calculate the voltage given VREF, and a channel.
     /**
      * @brief Calculate the voltage of a channel given VREF.
-     * 
+     * Selects the given channel, preforms a read, converts it to a voltage given VREF,
+     * and returns the value. Returns an error code if the ADC has not been intialized,
+     * if the channel is invalid, or the channel has not been initialized.
      * @param channel Channel to read.
      * @param vRef Voltage applied to the vref pin, default 3.3v
-     * @return float Voltage on channel.
+     * @return float: Positive (including zero) is Voltage on channel. Negative is error code.
      */
     float readChannelVoltage(const uint8_t channel, const float vRef=3.3f) {
         const float conversion_factor = vRef / (1 << 12);   // Calculate conversion factor
@@ -332,13 +323,14 @@ namespace myADC {
         if (reading < 0) { return (float)reading; } // If error returned return the error.
         return (float) ((float)reading * conversion_factor);
     }
-    // Calculate the voltage given VREF and a pin.
     /**
      * @brief Calculate the voltage of a pin, given VREF
-     * 
+     * Selects the appropriate channel given a pin, preforms a read, converts it to a voltage
+     * given VREF, and returns the value.  Returns an error code if the ADC has not been
+     * initialized, the pin is an invalid ADC pin, or if the pin has not been initialized.
      * @param pin Pin to read.
      * @param vRef Voltage applied to the VREF pin, default 3.3v
-     * @return float Voltage on pin.
+     * @return float: Positive (including zero) is Voltage on pin. Negative is error code.
      */
     float readPinVoltage(const uint8_t pin, const float vRef=3.3f) {
         const float conversion_factor = vRef / (1 << 12);   // Calculate conversion factor
@@ -346,12 +338,14 @@ namespace myADC {
         if (reading < 0) { return (float)reading; } // if error returned pass on the error.
         return (float) ((float)reading*conversion_factor);
     }
-    // Return the temperature in degress celcius / farenheit.
     /**
      * @brief Return temperature of sensor.
-     * 
+     * Selects the internal temperature sensor channel, preforms a read, and converts it to either
+     * degress celcius or degrees farenheit. Returns an error code if the ADC has not been initialized,
+     * or if the internal temperature sensor channel has not been initialized.
      * @param returnDegC True, return DegC, False, retrun DegF.
-     * @return float Temperature.
+     * @return float Values greater than -199.99... is the temperature. Values of -200 or less are
+     *              error codes.
      */
     float readTemperature(const bool returnDegC=true) {
         float conversion_factor = 3.3f / (1 << 12); // Calculate the conversion factor.
