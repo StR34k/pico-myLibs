@@ -117,6 +117,21 @@
      * The defalt PWM frequency in hz.
      */
     #define MY_PWM_DEFAULT_FREQ 125000000
+
+/*
+ * ############################# SPI Defines: ###############################
+ */
+    /**
+     * @brief Number of spi ports.
+     * Number of spi ports on the rp2040. There are 2 ports.
+     */
+    #define MY_SPI_NUM_PORTS 2
+    /**
+     * @brief Number of possible spi pins.
+     * Number of possible options for each type of spi pin. IE: SPI0 RX pin can be set to 1 of 4 pins.
+     * @note Some pins on SPI port 1 only have 3 options.
+     */
+    #define MY_SPI_NUM_PINS 4
 /* 
  *############################## Error Defines: ####################################
  * Note see myErrorCodes.hpp for a full list of codes for all error codes.

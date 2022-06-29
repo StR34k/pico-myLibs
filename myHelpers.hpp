@@ -461,13 +461,13 @@ namespace myHelpers {
         return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
     }
     /**
-     * @brief Reverse a byte.
-     * Sets the msb = to lsb. and so on until the byte is reversed. used to convert
+     * @brief Reverse an 8 bit word.
+     * Sets the msb = to lsb. and so on until the word is reversed. used to convert
      * from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.
-     * @param value 
-     * @return uint8_t 
+     * @param value Word to reverse.
+     * @return uint8_t Reversed word.
      */
-    uint8_t reverseByte(const uint8_t value) {
+    uint8_t reverse8(const uint8_t value) {
         uint8_t returnValue = 0x00;
         for (uint8_t i=0; i<8; i++) {
             returnValue <<= 1;
@@ -477,7 +477,22 @@ namespace myHelpers {
         }
         return returnValue;
     }
-
+    /**
+     * @brief Reverse a 16 bit word.
+     * Sets MSB = to LSB, and so on until the word is reversed. Used to convert
+     * from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.
+     * @param value Word to reverse.
+     * @return uint16_t Reversed word.
+     */
+    uint16_t reverse16(const uint16_t value) {
+        uint16_t returnValue = 0x0000;
+        for (uint8_t i=0; i<16; i++) {
+            returnValue <<= 1;
+            if ((bool)(value& (1 << i)) == true) {
+                returnValue |= 0x01;
+            }
+        }
+    }
 };
 
 #endif

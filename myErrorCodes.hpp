@@ -13,7 +13,6 @@
  *
  */
 
-
 #ifndef MY_ERROR_CODES
     #define MY_ERROR_CODES
 /************* General Error codes: 0-99 *****************/
@@ -125,6 +124,37 @@
      * The provided level is greater than wrap value.
      */
     #define MY_PWM_INVALID_LEVEL                            -112
+/************** mySPI error codes (150-199) ******************/
+    /**
+     * @brief Invalid clock pin.
+     * The provided clock pin is not a valid clock pin for the spi port.
+     */
+    #define MY_SPI_INVALID_CLOCK_PIN                        -150
+    /**
+     * @brief Invalid MISO pin.
+     * The provided MISO pin is not a valid MISO pin for the spi port.
+     */
+    #define MY_SPI_INVALID_MISO_PIN                         -151
+    /**
+     * @brief Invalid MOSI pin.
+     * The provided MOSI pin is not a valid MOSI pin for the spi port.
+     */
+    #define MY_SPI_INVALID_MOSI_PIN                         -152
+    /**
+     * @brief Invalid chip select pin
+     * The provided chip select pin is not a valid chip select pin for the spi port.
+     */
+    #define MY_SPI_INVALID_CS_PIN                           -153
+    /**
+     * @brief Port already initialized.
+     * The spi port is already initialized.
+     */
+    #define MY_SPI_INITIALIZED                              -154
+    /**
+     * @brief Port already deinitialized.
+     * The spi port is already deinialized.
+     */
+    #define MY_SPI_NOT_INITIALIZED                          -155
 /************* myADC error codes (200-249)  **************/
 // *NOTE: Error codes are such a that the pico would stop operating
 //          if the temperature were ever hit.

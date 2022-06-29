@@ -320,7 +320,7 @@ void my595::writeByte(const uint8_t value, const bool bitOrder) {
     } else {
         uint8_t val = value;
         if (bitOrder == LSB_FIRST) {
-            val = myHelpers::reverseByte(value);
+            val = myHelpers::reverse8(value);
         }
         spi_write_blocking(_spiPort, &val, 1);
     }
