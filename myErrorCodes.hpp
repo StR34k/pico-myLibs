@@ -31,28 +31,95 @@
          */
         #define MY_GENERAL_ERROR -1
     #endif
+    #ifndef MY_INVALID_PIN
+        /**
+         * @brief invalid pin number.
+         * An invalid pin number was passed.
+         */
+        #define MY_INVALID_PIN                                  -2
+    #endif
+    #ifndef MY_INVALID_BIT_MASK
+        /**
+         * @brief invalid bit mask.
+         * An invalid bit mask was passed.
+         */
+        #define MY_INVALID_BIT_MASK                             -3
+    #endif
+    #ifndef MY_TIMEOUT
+        /**
+         * @brief Timeout reached.
+         * A timeout has been reached.
+         */
+        #define MY_TIMEOUT                                      -4
+    #endif
+    #ifndef MY_INVALID_DIR
+        /**
+         * @brief Invalid direction
+         * A pin is set to wrong direction for operation requested.
+         */
+        #define MY_INVALID_DIR                                  -5
+    #endif
+/************* myPWM error codes (100-149) ******************/
     /**
-     * @brief invalid pin number.
-     * An invalid pin number was passed.
+     * @brief Pin not initialized.
+     * Initialize has not been called for the pin.
      */
-    #define MY_INVALID_PIN                                  -2
+    #define MY_PWM_PIN_NOT_INIT                             -100
     /**
-     * @brief invalid bit mask.
-     * An invalid bit mask was passed.
+     * @brief Pin already initialized.
+     * The pin is already initialized as a PWM pin.
      */
-    #define MY_INVALID_BIT_MASK                             -3
+    #define MY_PWM_PIN_ALREADY_INIT                         -101
     /**
-     * @brief timeout reached.
-     * A timeout has been reached.
+     * @brief Invalid slice number.
+     * An invalid slice number was passed.
      */
-    #define MY_TIMEOUT                                      -4
+    #define MY_PWM_INVALID_SLICE                            -102
     /**
-     * @brief invalid direction
-     * A pin is set to wrong direction for operation requested.
+     * @brief Slice already enabled.
+     * The slice has already been enabled.
      */
-    #define MY_INVALID_DIR                                  -5
-
-
+    #define MY_PWM_SLICE_ALREADY_ENABLED                    -103
+    /**
+     * @brief Slice already disabled.
+     * The slice has already been disabled.
+     */
+    #define MY_PWM_SLICE_ALREADY_DISABLED                   -104
+    /**
+     * @brief Phase correct enabled.
+     * Phase correct has already been enabled.
+     */
+    #define MY_PWM_PHASE_CORRECT_ENABLED                    -105
+    /**
+     * @brief Phase correct disabled.
+     * Phase correct has already been disabled.
+     */
+    #define MY_PWM_PHASE_CORRECT_DISABLED                   -106
+    /**
+     * @brief Invalid frequency.
+     * An invalid frequency was passed.
+     */
+    #define MY_PWM_INVALID_FREQ                             -107
+    /**
+     * @brief Invalid channel.
+     * An invalid channel was passed.
+     */
+    #define MY_PWM_INVALID_CHANNEL                          -108
+    /**
+     * @brief Invalid duty.
+     * An invalid duty value was passed (must be between 0-100 inclusive).
+     */
+    #define MY_PWM_INVALID_DUTY                             -109
+    /**
+     * @brief Invalid divisor integer.
+     * The provided divisor integer is invalid (must be greater than 0).
+     */
+    #define MY_PWM_INVALID_DIVISOR_INT                      -110
+    /**
+     * @brief Invalid divisor fraction.
+     * The provided divisor fraction is invalid (must be 0-15 inclusive).
+     */
+    #define MY_PWM_INVALID_DIVISOR_FRAC                     -111
 /************* myADC error codes (200-249)  **************/
 // *NOTE: Error codes are such a that the pico would stop operating
 //          if the temperature were ever hit.

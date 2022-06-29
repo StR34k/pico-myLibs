@@ -148,11 +148,10 @@ int16_t my165::initialize(){
 
 void my165::startRead() {
 // Pulse load pin to load values:
-    sleep_ms(500);
     gpio_put(_loadPin, false);
     sleep_ms(500);
     gpio_put(_loadPin, true);
-    gpio_put(_clkPin, true);
+    sleep_ms(500);
 }
 
 uint8_t my165::readByte(const bool bitOrder) {
@@ -161,7 +160,7 @@ uint8_t my165::readByte(const bool bitOrder) {
     for (uint8_t i=0; i<9; i++) {
 
         gpio_put(_clkPin, true); // Set clock high.
-        sleep_ms(500);
+        sleep_ms(1000);
     // Read bit:
         if (bitOrder == MSB_FIRST) { // MSB first
             value <<= 1;
@@ -171,8 +170,8 @@ uint8_t my165::readByte(const bool bitOrder) {
             if (gpio_get(_dataPin) == true) { value |= 0x80; }
         }
         gpio_put(_clkPin, false); // Set clock low.
-        sleep_ms(500);
-        __breakpoint();
+        sleep_ms(1000);
+        // __breakpoint();
     }
     return value;
 }

@@ -20,7 +20,9 @@
   */
 #ifndef MY_STANDARD_DEFINES_H
     #define MY_STANDARD_DEFINES_H
-/* General Pin defines */
+/*
+ * ############################# General Pin defines  ############################
+ */
     /**
      * @brief Not a pin value.
      * Value to use for an undefined pin, fails myHelpers::isPin()
@@ -36,7 +38,9 @@
      * The highest pin number on the rp2040.
      */
     #define MY_MAX_PIN 29
-/* ADC Pin Defines: */
+/*
+ * ################################ADC Pin Defines:##################################
+ */
     /**
      * @brief Channel 0 pin.
      * The pin number for ADC channel 0.
@@ -57,7 +61,9 @@
      * The pin number for ADC channel 3.
      */
     #define MY_ADC_CHANNEL_3_PIN    29
-/* ADC Channel Defines: */
+/*
+ * ############################ ADC Channel Defines: ########################
+ */
     /**
      * @brief ADC Channel 0
      * The channel number for adc user channel 0
@@ -93,8 +99,28 @@
      * The total number of ADC channels, including the internal temperature sensor for the rp2040.
      */
     #define MY_ADC_NUM_CHANNELS     5
-    
-/* Error Defines: Note see myErrorCodes.hpp for a full list of codes for all error codes.*/
+/*
+ * ############################ PWM Defines #####################################
+ */
+    /**
+     * @brief Number of slices.
+     * Number of PWM slices on the rp2040. There are 8 slices, with 2 channels each.
+     */
+    #define MY_PWM_NUM_SLICE    8
+    /**
+     * @brief Number of channels per slice.
+     * Number of PWM channels per slice on the rp2040. There are 8 slices with 2 channels each.
+     */
+    #define MY_PWM_NUM_CHANNEL  2
+    /**
+     * @brief Default PWM frequency.
+     * The defalt PWM frequency in hz.
+     */
+    #define MY_PWM_DEFAULT_FREQ 125000000
+/* 
+ *############################## Error Defines: ####################################
+ * Note see myErrorCodes.hpp for a full list of codes for all error codes.
+ */
     #ifndef MY_NO_ERROR
         /**
          * @brief No error value.
@@ -109,8 +135,38 @@
          */
         #define MY_GENERAL_ERROR -1
     #endif
+    #ifndef MY_INVALID_PIN
+        /**
+         * @brief invalid pin number.
+         * An invalid pin number was passed.
+         */
+        #define MY_INVALID_PIN                                  -2
+    #endif
+    #ifndef MY_INVALID_BIT_MASK
+        /**
+         * @brief invalid bit mask.
+         * An invalid bit mask was passed.
+         */
+        #define MY_INVALID_BIT_MASK                             -3
+    #endif
+    #ifndef MY_TIMEOUT
+        /**
+         * @brief Timeout reached.
+         * A timeout has been reached.
+         */
+        #define MY_TIMEOUT                                      -4
+    #endif
+    #ifndef MY_INVALID_DIR
+        /**
+         * @brief Invalid direction
+         * A pin is set to wrong direction for operation requested.
+         */
+        #define MY_INVALID_DIR                                  -5
+    #endif
 
-/* Bit orders: */
+/* 
+ * ################################ Bit orders: ##############################
+ */
     #ifndef MSB_FIRST
         /**
          * @brief bit order of MSB first.
@@ -123,7 +179,9 @@
          */
         #define LSB_FIRST 0
     #endif
-/* Macros: */
+/* 
+ * ################################### Macros: #################################
+ */
     #ifndef _BV
         /**
          * @brief Create a bit mask given a bit number.
