@@ -97,6 +97,11 @@ namespace myPWM {
      * The fraction portion of the supplied divisor is invalid. Must be 0-15 inclusive.
      */
     static const int16_t ERROR_INVALID_DIVISOR_FRAC = MY_PWM_INVALID_DIVISOR_FRAC;
+    /**
+     * @brief Invalid level. Value -112.
+     * The provided level must be less than or equal to wrap.
+     */
+    static const int16_t ERROR_INVALID_LEVEL = MY_PWM_INVALID_LEVEL;
 /*
  * ####################### Variables: ###############################
  */
@@ -588,44 +593,46 @@ namespace myPWM {
 /* Level functions: */
     /**
      * @brief Set the level given slice and channel.
-     * Sets the level given a slice and channel. Returns 0 (NO_ERROR) for set okay, otherwise if 
-     * an invalid slice or channel are given, an error code is returned.
+     * Sets the level given a slice and channel. Returns positive for level set, otherwise if 
+     * an invalid slice, channel, or level are given, an error code is returned.
      * @param slice Slice to set.
      * @param channel Channel to set.
-     * @param value Value to set level to.
-     * @return int16_t Returns 0 (NO_ERROR) for set okay, negative for error code.
+     * @param value Value to set level to. must be less than or equal to wrap for the slice.
+     * @return int16_t Positive, including zero for level set, negative for error code.
      */
     int16_t setLevel(const uint8_t slice, const uint8_t channel, const uint16_t value) {
         if (isSlice(slice) == false) { return ERROR_INVALID_SLICE; }
         if (isChannel(channel) == false) { return ERROR_INVALID_CHANNEL; }
+        if (value > getWrap(slice)) { return ERROR_INVALID_LEVEL; }
         __setLevel__(slice, channel, value);
-        return NO_ERROR;
+        return value;
     }
     /**
      * @brief Set the level given a pin.
-     * Sets the level given a pin. Returns 0 (NO_ERROR) if set okay, otherwise if an
+     * Sets the level given a pin. Returns positive for level set, otherwise if an
      * invalid pin is passed, an error code is returned.
-     * @param pin 
-     * @param value 
-     * @return int16_t 
+     * @param pin Pin to set level of.
+     * @param value Value to set level to. Must be less than or equal to wrap for the slice.
+     * @return int16_t Positive, including zero, level set, negative for error code.
      */
     int16_t setPinLevel(const uint8_t pin, const uint16_t value) {
         if (myHelpers::isPin(pin) == false) { return ERROR_INVALID_PIN; }
         uint8_t slice = pwm_gpio_to_slice_num(pin);
+        if (value > getWrap(slice)) { return ERROR_INVALID_LEVEL; }
         uint8_t channel = pwm_gpio_to_channel(pin);
         __setLevel__(slice, channel, value);
-        return NO_ERROR;
+        return value;
     }
 /* Duty functions: */
     /**
      * @brief Calculate and set level given duty cycle.
-     * Calculate and set the level of a given slice and channel. Returns 0 (NO_ERROR) if
-     * the level was set okay, otherwise if an invalid slice, channel or duty are passed
+     * Calculate and set the level of a given slice and channel. Returns positive (including zero)
+     * returns the level, otherwise if an invalid slice, channel or duty are passed
      * an error code is returned.
      * @param slice Slice to set level of.
      * @param channel Channel to set level of.
      * @param duty Duty cycle to set. Valid values 0-100 inclusive.
-     * @return int32_t Returns 0 (NO_ERROR) if set okay, negative for error code.
+     * @return int32_t Returns Positive (including 0) level set, negative for error code.
      */
     int32_t setDuty(const uint8_t slice, const uint8_t channel, const uint8_t duty) {
         // __breakpoint();
@@ -634,15 +641,15 @@ namespace myPWM {
         if (duty > 100) { return ERROR_INVALID_DUTY; }
         uint16_t level = getWrap(slice) * duty / 100;
         __setLevel__(slice, channel, level);
-        return NO_ERROR;
+        return level;
     }
     /**
      * @brief Set the level of a pin given a duty cycle.
-     * Calculate and set the level given a duty cycle. Returns 0 (NO_ERROR) if the level
-     * was set okay, otherwise if an invalid duty or pin are passed, and error code is returned.
+     * Calculate and set the level given a duty cycle. Returns positive (including zero)
+     * is the level set, otherwise if an invalid duty or pin are passed, and error code is returned.
      * @param pin Pin to set the level of.
      * @param duty Duty cycle. Valid values 0-100 inclusive.
-     * @return int32_t Return 0 (NO_ERROR) if set okay, negative for error code.
+     * @return int32_t Return positive (including zero) for the level set, negative for error code.
      */
     int32_t setPinDuty(const uint8_t pin, const uint8_t duty) {
         if (myHelpers::isPin(pin) == false) { return ERROR_INVALID_PIN; }
@@ -650,7 +657,7 @@ namespace myPWM {
         uint8_t channel = pwm_gpio_to_channel(pin);
         uint16_t level = getWrap(slice) * duty / 100;
         __setLevel__(slice, channel, level);
-        return NO_ERROR;
+        return level;
     }
 };
 #endif

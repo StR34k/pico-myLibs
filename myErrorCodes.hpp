@@ -120,6 +120,11 @@
      * The provided divisor fraction is invalid (must be 0-15 inclusive).
      */
     #define MY_PWM_INVALID_DIVISOR_FRAC                     -111
+    /**
+     * @brief Invalid level.
+     * The provided level is greater than wrap value.
+     */
+    #define MY_PWM_INVALID_LEVEL                            -112
 /************* myADC error codes (200-249)  **************/
 // *NOTE: Error codes are such a that the pico would stop operating
 //          if the temperature were ever hit.
