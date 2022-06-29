@@ -387,5 +387,63 @@ namespace mySPI {
         }
         return bytes;
     }
+    /**
+     * @brief Write 16 lsb blocking.
+     * Write a 16bit word LSB first to SPI. 
+     * @param spiPort SPI port instance
+     * @param src Data to write.
+     * @param len Length of buffer in half words (bytes).
+     * @return int Number of half words transfered (bytes).
+     */
+    int write16_lsb_blocking(spi_inst_t *spiPort, const uint16_t *src, size_t len) {
+        int bytes = 0;
+        uint16_t reversedWord;
+        for (size_t i=0; i<(len/2); i++) {
+            reversedWord = myHelpers::reverse16(src[i]);
+            spi_write16_blocking(spiPort, &reversedWord, 2);
+            bytes += 2;
+        }
+        return bytes;
+    }
+    /**
+     * @brief Read 16 LSB first.
+     * Read a 16 bit word from SPI and reverse the data so it's LSB first.
+     * @param spiPort SPI port instance.
+     * @param repeatedData Data to repeat when transfering.
+     * @param dst Buffer for recieved data.
+     * @param len Length of buffer in half words (bytes).
+     * @return int Returns Number of half words read (bytes).
+     */
+    int read16_lsb_blocking(spi_inst_t *spiPort, uint16_t repeatedData, uint16_t *dst, size_t len) {
+        int bytes = 0;
+        uint16_t recievedData;
+        for (size_t i=0; i<(len/2); i++) {
+            spi_read16_blocking(spiPort, repeatedData, &recievedData, 2);
+            dst[i] = myHelpers::reverse16(recievedData);
+            bytes += 2;
+        }
+        return bytes;
+    }
+    /**
+     * @brief Transfer 16 bit words LSB first.
+     * Transfer 16 bit words, reversing the data so it's LSB first.
+     * @param spiPort SPI port instance.
+     * @param src Buffer to send.
+     * @param dst Buffer to recieve.
+     * @param len Length of buffer in half words(bytes).
+     * @return int Number of half words transfered (bytes).
+     */
+    int write16_read16_lsb_blocking(spi_inst_t *spiPort, const uint16_t *src, uint16_t *dst, size_t len) {
+        int bytes = 0;
+        uint16_t reversedWord;
+        uint16_t recievedWord;
+        for (size_t i=0; i<(len/2); i++) {
+            reversedWord = myHelpers::reverse16(src[i]);
+            spi_write16_read16_blocking(spiPort, &reversedWord, &recievedWord, 2);
+            dst[i] = myHelpers::reverse16(recievedWord);
+            bytes += 2;
+        }
+        return bytes;
+    }
 };
 #endif

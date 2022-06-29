@@ -492,6 +492,7 @@ namespace myHelpers {
                 returnValue |= 0x01;
             }
         }
+        return returnValue;
     }
 };
 
