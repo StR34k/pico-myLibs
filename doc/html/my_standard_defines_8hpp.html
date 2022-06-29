@@ -76,15 +76,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_standard_defines_8hpp__dep__incl.png" border="0" usemap="#my_standard_defines_8hppdep" alt=""/></div>
 <map name="my_standard_defines_8hppdep" id="my_standard_defines_8hppdep">
-<area shape="rect" title="Standard defines for pico&#45;myLibs." alt="" coords="589,5,768,32"/>
+<area shape="rect" title="Standard defines for pico&#45;myLibs." alt="" coords="668,5,847,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
-<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="304,80,456,107"/>
-<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="222,155,426,181"/>
+<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="247,155,451,181"/>
 <area shape="rect" href="my_bit_bang_s_p_i_8hpp.html" title=" " alt="" coords="481,80,719,107"/>
-<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="795,80,917,107"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="593,155,756,181"/>
-<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="780,155,1031,181"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1055,155,1305,181"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="846,80,967,107"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="485,155,648,181"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="672,155,923,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="947,155,1197,181"/>
+<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="1221,155,1357,181"/>
 </map>
 </div>
 </div>
@@ -143,6 +144,12 @@ Macros</h2></td></tr>
 <tr class="memitem:a7c2e0364c8daad6803ff16a9bc8edee3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a7c2e0364c8daad6803ff16a9bc8edee3">MY_PWM_DEFAULT_FREQ</a>&#160;&#160;&#160;125000000</td></tr>
 <tr class="memdesc:a7c2e0364c8daad6803ff16a9bc8edee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default PWM frequency. The defalt PWM frequency in hz.  <a href="my_standard_defines_8hpp.html#a7c2e0364c8daad6803ff16a9bc8edee3">More...</a><br /></td></tr>
 <tr class="separator:a7c2e0364c8daad6803ff16a9bc8edee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010c388af8af6a1b64c0cd19673a84f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a010c388af8af6a1b64c0cd19673a84f1">MY_SPI_NUM_PORTS</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a010c388af8af6a1b64c0cd19673a84f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of spi ports. Number of spi ports on the rp2040. There are 2 ports.  <a href="my_standard_defines_8hpp.html#a010c388af8af6a1b64c0cd19673a84f1">More...</a><br /></td></tr>
+<tr class="separator:a010c388af8af6a1b64c0cd19673a84f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc19cea4d6a0d674e4c6c738cb6ff13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#addc19cea4d6a0d674e4c6c738cb6ff13">MY_SPI_NUM_PINS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:addc19cea4d6a0d674e4c6c738cb6ff13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of possible spi pins. Number of possible options for each type of spi pin. IE: SPI0 RX pin can be set to 1 of 4 pins.  <a href="my_standard_defines_8hpp.html#addc19cea4d6a0d674e4c6c738cb6ff13">More...</a><br /></td></tr>
+<tr class="separator:addc19cea4d6a0d674e4c6c738cb6ff13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error value. Value to use to represent no error.  <a href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">More...</a><br /></td></tr>
 <tr class="separator:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -581,6 +588,39 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of slices. Number of PWM slices on the rp2040. There are 8 slices, with 2 channels each. </p>
+
+</div>
+</div>
+<a id="addc19cea4d6a0d674e4c6c738cb6ff13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc19cea4d6a0d674e4c6c738cb6ff13">&#9670;&nbsp;</a></span>MY_SPI_NUM_PINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_SPI_NUM_PINS&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of possible spi pins. Number of possible options for each type of spi pin. IE: SPI0 RX pin can be set to 1 of 4 pins. </p>
+<dl class="section note"><dt>Note</dt><dd>Some pins on SPI port 1 only have 3 options. </dd></dl>
+
+</div>
+</div>
+<a id="a010c388af8af6a1b64c0cd19673a84f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010c388af8af6a1b64c0cd19673a84f1">&#9670;&nbsp;</a></span>MY_SPI_NUM_PORTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_SPI_NUM_PORTS&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of spi ports. Number of spi ports on the rp2040. There are 2 ports. </p>
 
 </div>
 </div>

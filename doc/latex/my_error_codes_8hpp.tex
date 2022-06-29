@@ -5,7 +5,8 @@
 Define all error codes used in pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -53,6 +54,18 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Invalid divisor fraction. The provided divisor fraction is invalid (must be 0-\/15 inclusive). \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_adc3b4358d7073c69d68408cdd89a99ee}{M\+Y\+\_\+\+P\+W\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+V\+EL}}~-\/112
 \begin{DoxyCompactList}\small\item\em Invalid level. The provided level is greater than wrap value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_ae5d91381bb62cabc3da94f7f35c7c13a}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+IN}}~-\/150
+\begin{DoxyCompactList}\small\item\em Invalid clock pin. The provided clock pin is not a valid clock pin for the spi port. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a3bbfb58cffc41ccf814bde1e64c61b4b}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+S\+O\+\_\+\+P\+IN}}~-\/151
+\begin{DoxyCompactList}\small\item\em Invalid M\+I\+SO pin. The provided M\+I\+SO pin is not a valid M\+I\+SO pin for the spi port. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a8ae7231d42f1d8ccb5ecf5539e909931}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+S\+I\+\_\+\+P\+IN}}~-\/152
+\begin{DoxyCompactList}\small\item\em Invalid M\+O\+SI pin. The provided M\+O\+SI pin is not a valid M\+O\+SI pin for the spi port. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a424696301531a8b229a6bd302372ef56}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}}~-\/153
+\begin{DoxyCompactList}\small\item\em Invalid chip select pin The provided chip select pin is not a valid chip select pin for the spi port. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_aa23f96ee67b24cf723e2371f6fe093c2}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~-\/154
+\begin{DoxyCompactList}\small\item\em Port already initialized. The spi port is already initialized. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a95e1c66fee26c70a964858498f140c82}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~-\/155
+\begin{DoxyCompactList}\small\item\em Port already deinitialized. The spi port is already deinialized. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a82dcf6aea656d7115fda3375f0ae17a4}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}~-\/200
 \begin{DoxyCompactList}\small\item\em Invalid A\+DC channel. An invalid A\+DC channel was passed. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_ac886b8bb68eac8a1ec75c6fe4b859828}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}~-\/201
@@ -518,6 +531,66 @@ Slice already disabled. The slice has already been disabled.
 
 
 Slice already enabled. The slice has already been enabled. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_aa23f96ee67b24cf723e2371f6fe093c2}\label{my_error_codes_8hpp_aa23f96ee67b24cf723e2371f6fe093c2}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_SPI\_INITIALIZED@{MY\_SPI\_INITIALIZED}}
+\index{MY\_SPI\_INITIALIZED@{MY\_SPI\_INITIALIZED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_INITIALIZED}{MY\_SPI\_INITIALIZED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~-\/154}
+
+
+
+Port already initialized. The spi port is already initialized. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_ae5d91381bb62cabc3da94f7f35c7c13a}\label{my_error_codes_8hpp_ae5d91381bb62cabc3da94f7f35c7c13a}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_SPI\_INVALID\_CLOCK\_PIN@{MY\_SPI\_INVALID\_CLOCK\_PIN}}
+\index{MY\_SPI\_INVALID\_CLOCK\_PIN@{MY\_SPI\_INVALID\_CLOCK\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_INVALID\_CLOCK\_PIN}{MY\_SPI\_INVALID\_CLOCK\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+IN~-\/150}
+
+
+
+Invalid clock pin. The provided clock pin is not a valid clock pin for the spi port. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a424696301531a8b229a6bd302372ef56}\label{my_error_codes_8hpp_a424696301531a8b229a6bd302372ef56}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_SPI\_INVALID\_CS\_PIN@{MY\_SPI\_INVALID\_CS\_PIN}}
+\index{MY\_SPI\_INVALID\_CS\_PIN@{MY\_SPI\_INVALID\_CS\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_INVALID\_CS\_PIN}{MY\_SPI\_INVALID\_CS\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN~-\/153}
+
+
+
+Invalid chip select pin The provided chip select pin is not a valid chip select pin for the spi port. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a3bbfb58cffc41ccf814bde1e64c61b4b}\label{my_error_codes_8hpp_a3bbfb58cffc41ccf814bde1e64c61b4b}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_SPI\_INVALID\_MISO\_PIN@{MY\_SPI\_INVALID\_MISO\_PIN}}
+\index{MY\_SPI\_INVALID\_MISO\_PIN@{MY\_SPI\_INVALID\_MISO\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_INVALID\_MISO\_PIN}{MY\_SPI\_INVALID\_MISO\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+S\+O\+\_\+\+P\+IN~-\/151}
+
+
+
+Invalid M\+I\+SO pin. The provided M\+I\+SO pin is not a valid M\+I\+SO pin for the spi port. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a8ae7231d42f1d8ccb5ecf5539e909931}\label{my_error_codes_8hpp_a8ae7231d42f1d8ccb5ecf5539e909931}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_SPI\_INVALID\_MOSI\_PIN@{MY\_SPI\_INVALID\_MOSI\_PIN}}
+\index{MY\_SPI\_INVALID\_MOSI\_PIN@{MY\_SPI\_INVALID\_MOSI\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_INVALID\_MOSI\_PIN}{MY\_SPI\_INVALID\_MOSI\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+S\+I\+\_\+\+P\+IN~-\/152}
+
+
+
+Invalid M\+O\+SI pin. The provided M\+O\+SI pin is not a valid M\+O\+SI pin for the spi port. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a95e1c66fee26c70a964858498f140c82}\label{my_error_codes_8hpp_a95e1c66fee26c70a964858498f140c82}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_SPI\_NOT\_INITIALIZED@{MY\_SPI\_NOT\_INITIALIZED}}
+\index{MY\_SPI\_NOT\_INITIALIZED@{MY\_SPI\_NOT\_INITIALIZED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_NOT\_INITIALIZED}{MY\_SPI\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~-\/155}
+
+
+
+Port already deinitialized. The spi port is already deinialized. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}\label{my_error_codes_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_TIMEOUT@{MY\_TIMEOUT}}

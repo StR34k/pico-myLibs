@@ -95,10 +95,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_helpers_8hpp__dep__incl.png" border="0" usemap="#my_helpers_8hppdep" alt=""/></div>
 <map name="my_helpers_8hppdep" id="my_helpers_8hppdep">
-<area shape="rect" title="Helper functions." alt="" coords="257,5,378,32"/>
+<area shape="rect" title="Helper functions." alt="" coords="394,5,515,32"/>
 <area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="5,80,168,107"/>
 <area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="192,80,443,107"/>
 <area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="467,80,717,107"/>
+<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="741,80,877,107"/>
 </map>
 </div>
 </div>
@@ -151,9 +152,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a24b232780b4b52e9b1bce28bedc847ad"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">myHelpers::map64</a> (int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max)</td></tr>
 <tr class="memdesc:a24b232780b4b52e9b1bce28bedc847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 64 Bit.  <a href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">More...</a><br /></td></tr>
 <tr class="separator:a24b232780b4b52e9b1bce28bedc847ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac871d86adb103356b59521f9bccb93f7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#ac871d86adb103356b59521f9bccb93f7">myHelpers::reverseByte</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:ac871d86adb103356b59521f9bccb93f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#ac871d86adb103356b59521f9bccb93f7">More...</a><br /></td></tr>
-<tr class="separator:ac871d86adb103356b59521f9bccb93f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">myHelpers::reverse8</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">More...</a><br /></td></tr>
+<tr class="separator:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf69943e1bd4b5bf362a45915d4fcd33"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aaf69943e1bd4b5bf362a45915d4fcd33">myHelpers::reverse16</a> (const uint16_t value)</td></tr>
+<tr class="memdesc:aaf69943e1bd4b5bf362a45915d4fcd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse a 16 bit word. Sets MSB = to LSB, and so on until the word is reversed. Used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#aaf69943e1bd4b5bf362a45915d4fcd33">More...</a><br /></td></tr>
+<tr class="separator:aaf69943e1bd4b5bf362a45915d4fcd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions. </p>

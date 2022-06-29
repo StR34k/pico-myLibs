@@ -1,0 +1,458 @@
+\hypertarget{namespacemy_s_p_i}{}\doxysection{my\+S\+PI Namespace Reference}
+\label{namespacemy_s_p_i}\index{mySPI@{mySPI}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_ac802815fd2fa397a8480e7d64d9e054f}{is\+Clock\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Validate a clock pin for given spi port. Returns true if the supplied pin is a clock pin for the spi port, and false if not, or the pin provided is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a0a817d5aefcee34bc437dc9393e37dc7}{is\+Miso\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Is a M\+I\+SO pin. Returns ture if pin is a valid M\+I\+SO pin for the provided spi port. Returns false if not, or the pin is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_af403fe475973b54fd6da7ccebd52cb69}{is\+Mosi\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Is a M\+O\+SI pin. Returns true if pin is a M\+O\+SI pin for the provided spi port. Returns false if not, or the pin is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a8e2b563c37b382352bb153c2bd0066f3}{is\+Chip\+Select\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Is a chip select pin. Returns true if pin is a valid chip select pin for the provided spi port. Returns false if not, or pin is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a541cd6563037fb4ee86027cd0e7ba97c}{get\+Port\+Init}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get spi port initialized. Returns true if the specified S\+PI port is initialized. False if not. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_adf634a49249a31ce5e06f75600232c42}{get\+Clock\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the clock pin for given S\+PI port. Returns the pin that was set as the clock pin. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if the pin wasn\textquotesingle{}t set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a8516d12ef7a4b8ec0147d8a7062cc10c}{get\+Miso\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the M\+I\+SO pin for the given S\+PI port. Returns the pin number that was set as M\+I\+SO pin. Returns 255(M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if no pin set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a001bf65c5453561c3a8ba8de46b7686c}{get\+Mosi\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the M\+O\+SI pin for the given S\+PI port. Returns the pin number that was set as M\+O\+SI. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_aee9f65b28319541291fc08419806e2fa}{get\+Chip\+Select\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the chip select pin for the given S\+PI port. Returns the pin number that was set as chip select. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a8903b8658f822498b147fb77de1255a7}{is\+Master}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Check if spi port is initialized as master. Returns true if spi is initialized as a master.\+a. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a661a7a5affe0a4c66f3543a7bdaca7d4}{initialize\+Master}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint32\+\_\+t baud\+Rate)
+\begin{DoxyCompactList}\small\item\em Initialize S\+PI port in master mode. Initialzed a S\+PI port in master mode. If an invalid pin is passed, an error is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a06697f2eb682fb20bfa6416a8d4a6874}{initialize\+Slave}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t chip\+Select\+Pin, const uint32\+\_\+t baud\+Rate)
+\begin{DoxyCompactList}\small\item\em Initialize a S\+PI port in slave mode. Initialize a S\+PI port in slave mode. Returns positive for achieved baud rate. Otherwise if an invalid pin, or if the port is already initialized, an error code will be returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_aa364b31dfaeb6beb494ef516569c55f4}{deinitialize}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Deintialize S\+PI port. Deinitializes a given S\+PI port. Returns an error code if not initialized. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_a83e14f857748736ecec6825593e72ac8}{write\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t $\ast$src, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Write L\+SB first blocking. Reverses the bit order of the data, and sends via spi. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_a74c6689ad203395c3a72d566b9751c43}{read\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, uint8\+\_\+t repeated\+Data, uint8\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read L\+SB first blocking. Reads data from S\+PI and reverses the bit order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_a952020ded7de1084f6ec1d59b98387c0}{write\+\_\+read\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t $\ast$src, uint8\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read / write L\+SB first blocking. Transfers a buffer, and reverses the data so it\textquotesingle{}s sent lsb first. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_af9f02e9a23e376e91c42a3f7ca0021ed}{write16\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint16\+\_\+t $\ast$src, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Write 16 lsb blocking. Write a 16bit word L\+SB first to S\+PI. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_ac38425941754cd3a5318d8e68fbbf4cf}{read16\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, uint16\+\_\+t repeated\+Data, uint16\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read 16 L\+SB first. Read a 16 bit word from S\+PI and reverse the data so it\textquotesingle{}s L\+SB first. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_ad6118e764622b04486bb2fd073cff5a5}{write16\+\_\+read16\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint16\+\_\+t $\ast$src, uint16\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Transfer 16 bit words L\+SB first. Transfer 16 bit words, reversing the data so it\textquotesingle{}s L\+SB first. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemy_s_p_i_aa364b31dfaeb6beb494ef516569c55f4}\label{namespacemy_s_p_i_aa364b31dfaeb6beb494ef516569c55f4}} 
+\index{mySPI@{mySPI}!deinitialize@{deinitialize}}
+\index{deinitialize@{deinitialize}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{deinitialize()}{deinitialize()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+S\+P\+I\+::deinitialize (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Deintialize S\+PI port. Deinitializes a given S\+PI port. Returns an error code if not initialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance to deinitialize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if deinit okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_aee9f65b28319541291fc08419806e2fa}\label{namespacemy_s_p_i_aee9f65b28319541291fc08419806e2fa}} 
+\index{mySPI@{mySPI}!getChipSelectPin@{getChipSelectPin}}
+\index{getChipSelectPin@{getChipSelectPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{getChipSelectPin()}{getChipSelectPin()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+::get\+Chip\+Select\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Get the chip select pin for the given S\+PI port. Returns the pin number that was set as chip select. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port Instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns the pin number assigned as chip select. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_adf634a49249a31ce5e06f75600232c42}\label{namespacemy_s_p_i_adf634a49249a31ce5e06f75600232c42}} 
+\index{mySPI@{mySPI}!getClockPin@{getClockPin}}
+\index{getClockPin@{getClockPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{getClockPin()}{getClockPin()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+::get\+Clock\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Get the clock pin for given S\+PI port. Returns the pin that was set as the clock pin. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if the pin wasn\textquotesingle{}t set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns pin number assigned to clock pin, or 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if no pin set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a8516d12ef7a4b8ec0147d8a7062cc10c}\label{namespacemy_s_p_i_a8516d12ef7a4b8ec0147d8a7062cc10c}} 
+\index{mySPI@{mySPI}!getMisoPin@{getMisoPin}}
+\index{getMisoPin@{getMisoPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{getMisoPin()}{getMisoPin()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+::get\+Miso\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Get the M\+I\+SO pin for the given S\+PI port. Returns the pin number that was set as M\+I\+SO pin. Returns 255(M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if no pin set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns the pin number assigned as M\+I\+SO. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a001bf65c5453561c3a8ba8de46b7686c}\label{namespacemy_s_p_i_a001bf65c5453561c3a8ba8de46b7686c}} 
+\index{mySPI@{mySPI}!getMosiPin@{getMosiPin}}
+\index{getMosiPin@{getMosiPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{getMosiPin()}{getMosiPin()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+S\+P\+I\+::get\+Mosi\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Get the M\+O\+SI pin for the given S\+PI port. Returns the pin number that was set as M\+O\+SI. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port Instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Returns the pin number assigned as M\+O\+SI. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a541cd6563037fb4ee86027cd0e7ba97c}\label{namespacemy_s_p_i_a541cd6563037fb4ee86027cd0e7ba97c}} 
+\index{mySPI@{mySPI}!getPortInit@{getPortInit}}
+\index{getPortInit@{getPortInit}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{getPortInit()}{getPortInit()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+::get\+Port\+Init (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Get spi port initialized. Returns true if the specified S\+PI port is initialized. False if not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & spi\+\_\+inst\+\_\+t Spi port instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true S\+PI port is initialized. 
+
+false S\+PI port is not initialized. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a661a7a5affe0a4c66f3543a7bdaca7d4}\label{namespacemy_s_p_i_a661a7a5affe0a4c66f3543a7bdaca7d4}} 
+\index{mySPI@{mySPI}!initializeMaster@{initializeMaster}}
+\index{initializeMaster@{initializeMaster}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{initializeMaster()}{initializeMaster()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+S\+P\+I\+::initialize\+Master (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{clock\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint32\+\_\+t}]{baud\+Rate }\end{DoxyParamCaption})}
+
+
+
+Initialize S\+PI port in master mode. Initialzed a S\+PI port in master mode. If an invalid pin is passed, an error is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance to initialize. \\
+\hline
+{\em clock\+Pin} & Clock pin. \\
+\hline
+{\em miso\+Pin} & M\+I\+SO pin. \\
+\hline
+{\em mosi\+Pin} & M\+O\+SI pin. \\
+\hline
+{\em baud\+Rate} & Requested baud rate in Hz \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns positive, for achieved baud rate, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a06697f2eb682fb20bfa6416a8d4a6874}\label{namespacemy_s_p_i_a06697f2eb682fb20bfa6416a8d4a6874}} 
+\index{mySPI@{mySPI}!initializeSlave@{initializeSlave}}
+\index{initializeSlave@{initializeSlave}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{initializeSlave()}{initializeSlave()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+S\+P\+I\+::initialize\+Slave (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{clock\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{chip\+Select\+Pin,  }\item[{const uint32\+\_\+t}]{baud\+Rate }\end{DoxyParamCaption})}
+
+
+
+Initialize a S\+PI port in slave mode. Initialize a S\+PI port in slave mode. Returns positive for achieved baud rate. Otherwise if an invalid pin, or if the port is already initialized, an error code will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance to initialize. \\
+\hline
+{\em clock\+Pin} & Clock pin. \\
+\hline
+{\em miso\+Pin} & M\+I\+SO pin. \\
+\hline
+{\em mosi\+Pin} & M\+O\+SI pin. \\
+\hline
+{\em chip\+Select\+Pin} & Chip select pin. \\
+\hline
+{\em baud\+Rate} & Requested baud rate in Hz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns positive for baud rate achieved, or negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a8e2b563c37b382352bb153c2bd0066f3}\label{namespacemy_s_p_i_a8e2b563c37b382352bb153c2bd0066f3}} 
+\index{mySPI@{mySPI}!isChipSelectPin@{isChipSelectPin}}
+\index{isChipSelectPin@{isChipSelectPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{isChipSelectPin()}{isChipSelectPin()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+::is\+Chip\+Select\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Is a chip select pin. Returns true if pin is a valid chip select pin for the provided spi port. Returns false if not, or pin is invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & spi\+\_\+inst\+\_\+t Spi port instance. \\
+\hline
+{\em pin} & Pin to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pin is a valid chip select pin. 
+
+false Pin is not a valid chip select pin, or is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_ac802815fd2fa397a8480e7d64d9e054f}\label{namespacemy_s_p_i_ac802815fd2fa397a8480e7d64d9e054f}} 
+\index{mySPI@{mySPI}!isClockPin@{isClockPin}}
+\index{isClockPin@{isClockPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{isClockPin()}{isClockPin()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+::is\+Clock\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Validate a clock pin for given spi port. Returns true if the supplied pin is a clock pin for the spi port, and false if not, or the pin provided is invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & spi\+\_\+inst\+\_\+t Spi port instance. \\
+\hline
+{\em pin} & Pin number to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pin is a valid clock pin. 
+
+false Pin is not a valid clock pin, or is not a vaild pin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a8903b8658f822498b147fb77de1255a7}\label{namespacemy_s_p_i_a8903b8658f822498b147fb77de1255a7}} 
+\index{mySPI@{mySPI}!isMaster@{isMaster}}
+\index{isMaster@{isMaster}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{isMaster()}{isMaster()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+::is\+Master (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port }\end{DoxyParamCaption})}
+
+
+
+Check if spi port is initialized as master. Returns true if spi is initialized as a master.\+a. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true S\+PI port is initialized as master. 
+
+false S\+PI port is initialized as slave. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a0a817d5aefcee34bc437dc9393e37dc7}\label{namespacemy_s_p_i_a0a817d5aefcee34bc437dc9393e37dc7}} 
+\index{mySPI@{mySPI}!isMisoPin@{isMisoPin}}
+\index{isMisoPin@{isMisoPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{isMisoPin()}{isMisoPin()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+::is\+Miso\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Is a M\+I\+SO pin. Returns ture if pin is a valid M\+I\+SO pin for the provided spi port. Returns false if not, or the pin is invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & spi\+\_\+inst\+\_\+t Spi port instance. \\
+\hline
+{\em pin} & Pin to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pin is a valid M\+I\+SO pin. 
+
+false Pin is not a valid M\+I\+SO pin, or the pin is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_af403fe475973b54fd6da7ccebd52cb69}\label{namespacemy_s_p_i_af403fe475973b54fd6da7ccebd52cb69}} 
+\index{mySPI@{mySPI}!isMosiPin@{isMosiPin}}
+\index{isMosiPin@{isMosiPin}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{isMosiPin()}{isMosiPin()}}
+{\footnotesize\ttfamily bool my\+S\+P\+I\+::is\+Mosi\+Pin (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Is a M\+O\+SI pin. Returns true if pin is a M\+O\+SI pin for the provided spi port. Returns false if not, or the pin is invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & spi\+\_\+inst\+\_\+t Spi port instance. \\
+\hline
+{\em pin} & Pin to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Pin is a valid M\+O\+SI pin. 
+
+false Pin is not a valid M\+O\+SI pin, or the pin is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_ac38425941754cd3a5318d8e68fbbf4cf}\label{namespacemy_s_p_i_ac38425941754cd3a5318d8e68fbbf4cf}} 
+\index{mySPI@{mySPI}!read16\_lsb\_blocking@{read16\_lsb\_blocking}}
+\index{read16\_lsb\_blocking@{read16\_lsb\_blocking}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{read16\_lsb\_blocking()}{read16\_lsb\_blocking()}}
+{\footnotesize\ttfamily int my\+S\+P\+I\+::read16\+\_\+lsb\+\_\+blocking (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{uint16\+\_\+t}]{repeated\+Data,  }\item[{uint16\+\_\+t $\ast$}]{dst,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Read 16 L\+SB first. Read a 16 bit word from S\+PI and reverse the data so it\textquotesingle{}s L\+SB first. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+{\em repeated\+Data} & Data to repeat when transfering. \\
+\hline
+{\em dst} & Buffer for recieved data. \\
+\hline
+{\em len} & Length of buffer in half words (bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns Number of half words read (bytes). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a74c6689ad203395c3a72d566b9751c43}\label{namespacemy_s_p_i_a74c6689ad203395c3a72d566b9751c43}} 
+\index{mySPI@{mySPI}!read\_lsb\_blocking@{read\_lsb\_blocking}}
+\index{read\_lsb\_blocking@{read\_lsb\_blocking}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{read\_lsb\_blocking()}{read\_lsb\_blocking()}}
+{\footnotesize\ttfamily int my\+S\+P\+I\+::read\+\_\+lsb\+\_\+blocking (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{uint8\+\_\+t}]{repeated\+Data,  }\item[{uint8\+\_\+t $\ast$}]{dst,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Read L\+SB first blocking. Reads data from S\+PI and reverses the bit order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+{\em repeated\+Data} & Data to send during transfer. \\
+\hline
+{\em dst} & Buffer for read data. \\
+\hline
+{\em len} & Length of buffer in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Bytes read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_af9f02e9a23e376e91c42a3f7ca0021ed}\label{namespacemy_s_p_i_af9f02e9a23e376e91c42a3f7ca0021ed}} 
+\index{mySPI@{mySPI}!write16\_lsb\_blocking@{write16\_lsb\_blocking}}
+\index{write16\_lsb\_blocking@{write16\_lsb\_blocking}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{write16\_lsb\_blocking()}{write16\_lsb\_blocking()}}
+{\footnotesize\ttfamily int my\+S\+P\+I\+::write16\+\_\+lsb\+\_\+blocking (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint16\+\_\+t $\ast$}]{src,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Write 16 lsb blocking. Write a 16bit word L\+SB first to S\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance \\
+\hline
+{\em src} & Data to write. \\
+\hline
+{\em len} & Length of buffer in half words (bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of half words transfered (bytes). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_ad6118e764622b04486bb2fd073cff5a5}\label{namespacemy_s_p_i_ad6118e764622b04486bb2fd073cff5a5}} 
+\index{mySPI@{mySPI}!write16\_read16\_lsb\_blocking@{write16\_read16\_lsb\_blocking}}
+\index{write16\_read16\_lsb\_blocking@{write16\_read16\_lsb\_blocking}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{write16\_read16\_lsb\_blocking()}{write16\_read16\_lsb\_blocking()}}
+{\footnotesize\ttfamily int my\+S\+P\+I\+::write16\+\_\+read16\+\_\+lsb\+\_\+blocking (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint16\+\_\+t $\ast$}]{src,  }\item[{uint16\+\_\+t $\ast$}]{dst,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Transfer 16 bit words L\+SB first. Transfer 16 bit words, reversing the data so it\textquotesingle{}s L\+SB first. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+{\em src} & Buffer to send. \\
+\hline
+{\em dst} & Buffer to recieve. \\
+\hline
+{\em len} & Length of buffer in half words(bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of half words transfered (bytes). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a83e14f857748736ecec6825593e72ac8}\label{namespacemy_s_p_i_a83e14f857748736ecec6825593e72ac8}} 
+\index{mySPI@{mySPI}!write\_lsb\_blocking@{write\_lsb\_blocking}}
+\index{write\_lsb\_blocking@{write\_lsb\_blocking}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{write\_lsb\_blocking()}{write\_lsb\_blocking()}}
+{\footnotesize\ttfamily int my\+S\+P\+I\+::write\+\_\+lsb\+\_\+blocking (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t $\ast$}]{src,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Write L\+SB first blocking. Reverses the bit order of the data, and sends via spi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+{\em src} & Data to send. \\
+\hline
+{\em len} & Length of data in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Bytes written. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_s_p_i_a952020ded7de1084f6ec1d59b98387c0}\label{namespacemy_s_p_i_a952020ded7de1084f6ec1d59b98387c0}} 
+\index{mySPI@{mySPI}!write\_read\_lsb\_blocking@{write\_read\_lsb\_blocking}}
+\index{write\_read\_lsb\_blocking@{write\_read\_lsb\_blocking}!mySPI@{mySPI}}
+\doxysubsubsection{\texorpdfstring{write\_read\_lsb\_blocking()}{write\_read\_lsb\_blocking()}}
+{\footnotesize\ttfamily int my\+S\+P\+I\+::write\+\_\+read\+\_\+lsb\+\_\+blocking (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t $\ast$}]{src,  }\item[{uint8\+\_\+t $\ast$}]{dst,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Read / write L\+SB first blocking. Transfers a buffer, and reverses the data so it\textquotesingle{}s sent lsb first. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+{\em src} & Buffer to send. \\
+\hline
+{\em dst} & Buffer to recieve. \\
+\hline
+{\em len} & Length of buffer in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Number of bytes transfered. 
+\end{DoxyReturn}

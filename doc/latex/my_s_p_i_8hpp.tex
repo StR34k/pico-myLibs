@@ -1,0 +1,82 @@
+\hypertarget{my_s_p_i_8hpp}{}\doxysection{my\+S\+P\+I/my\+S\+PI.hpp File Reference}
+\label{my_s_p_i_8hpp}\index{mySPI/mySPI.hpp@{mySPI/mySPI.hpp}}
+
+
+S\+PI Helper functions.  
+
+
+{\ttfamily \#include $<$hardware/spi.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../my\+Error\+Codes.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../my\+Helpers.\+hpp\char`\"{}}\newline
+Include dependency graph for my\+S\+P\+I.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_s_p_i_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemy_s_p_i}{my\+S\+PI}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_ac802815fd2fa397a8480e7d64d9e054f}{my\+S\+P\+I\+::is\+Clock\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Validate a clock pin for given spi port. Returns true if the supplied pin is a clock pin for the spi port, and false if not, or the pin provided is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a0a817d5aefcee34bc437dc9393e37dc7}{my\+S\+P\+I\+::is\+Miso\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Is a M\+I\+SO pin. Returns ture if pin is a valid M\+I\+SO pin for the provided spi port. Returns false if not, or the pin is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_af403fe475973b54fd6da7ccebd52cb69}{my\+S\+P\+I\+::is\+Mosi\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Is a M\+O\+SI pin. Returns true if pin is a M\+O\+SI pin for the provided spi port. Returns false if not, or the pin is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a8e2b563c37b382352bb153c2bd0066f3}{my\+S\+P\+I\+::is\+Chip\+Select\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Is a chip select pin. Returns true if pin is a valid chip select pin for the provided spi port. Returns false if not, or pin is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a541cd6563037fb4ee86027cd0e7ba97c}{my\+S\+P\+I\+::get\+Port\+Init}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get spi port initialized. Returns true if the specified S\+PI port is initialized. False if not. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_adf634a49249a31ce5e06f75600232c42}{my\+S\+P\+I\+::get\+Clock\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the clock pin for given S\+PI port. Returns the pin that was set as the clock pin. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if the pin wasn\textquotesingle{}t set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a8516d12ef7a4b8ec0147d8a7062cc10c}{my\+S\+P\+I\+::get\+Miso\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the M\+I\+SO pin for the given S\+PI port. Returns the pin number that was set as M\+I\+SO pin. Returns 255(M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if no pin set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a001bf65c5453561c3a8ba8de46b7686c}{my\+S\+P\+I\+::get\+Mosi\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the M\+O\+SI pin for the given S\+PI port. Returns the pin number that was set as M\+O\+SI. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_aee9f65b28319541291fc08419806e2fa}{my\+S\+P\+I\+::get\+Chip\+Select\+Pin}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Get the chip select pin for the given S\+PI port. Returns the pin number that was set as chip select. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_s_p_i_a8903b8658f822498b147fb77de1255a7}{my\+S\+P\+I\+::is\+Master}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Check if spi port is initialized as master. Returns true if spi is initialized as a master.\+a. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a661a7a5affe0a4c66f3543a7bdaca7d4}{my\+S\+P\+I\+::initialize\+Master}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint32\+\_\+t baud\+Rate)
+\begin{DoxyCompactList}\small\item\em Initialize S\+PI port in master mode. Initialzed a S\+PI port in master mode. If an invalid pin is passed, an error is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_a06697f2eb682fb20bfa6416a8d4a6874}{my\+S\+P\+I\+::initialize\+Slave}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t chip\+Select\+Pin, const uint32\+\_\+t baud\+Rate)
+\begin{DoxyCompactList}\small\item\em Initialize a S\+PI port in slave mode. Initialize a S\+PI port in slave mode. Returns positive for achieved baud rate. Otherwise if an invalid pin, or if the port is already initialized, an error code will be returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_aa364b31dfaeb6beb494ef516569c55f4}{my\+S\+P\+I\+::deinitialize}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port)
+\begin{DoxyCompactList}\small\item\em Deintialize S\+PI port. Deinitializes a given S\+PI port. Returns an error code if not initialized. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_a83e14f857748736ecec6825593e72ac8}{my\+S\+P\+I\+::write\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t $\ast$src, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Write L\+SB first blocking. Reverses the bit order of the data, and sends via spi. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_a74c6689ad203395c3a72d566b9751c43}{my\+S\+P\+I\+::read\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, uint8\+\_\+t repeated\+Data, uint8\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read L\+SB first blocking. Reads data from S\+PI and reverses the bit order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_a952020ded7de1084f6ec1d59b98387c0}{my\+S\+P\+I\+::write\+\_\+read\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t $\ast$src, uint8\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read / write L\+SB first blocking. Transfers a buffer, and reverses the data so it\textquotesingle{}s sent lsb first. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_af9f02e9a23e376e91c42a3f7ca0021ed}{my\+S\+P\+I\+::write16\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint16\+\_\+t $\ast$src, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Write 16 lsb blocking. Write a 16bit word L\+SB first to S\+PI. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_ac38425941754cd3a5318d8e68fbbf4cf}{my\+S\+P\+I\+::read16\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, uint16\+\_\+t repeated\+Data, uint16\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read 16 L\+SB first. Read a 16 bit word from S\+PI and reverse the data so it\textquotesingle{}s L\+SB first. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacemy_s_p_i_ad6118e764622b04486bb2fd073cff5a5}{my\+S\+P\+I\+::write16\+\_\+read16\+\_\+lsb\+\_\+blocking}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint16\+\_\+t $\ast$src, uint16\+\_\+t $\ast$dst, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Transfer 16 bit words L\+SB first. Transfer 16 bit words, reversing the data so it\textquotesingle{}s L\+SB first. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S\+PI Helper functions. 
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing(\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/06-\/29
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}

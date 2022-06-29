@@ -34,8 +34,10 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af96154907f93e9076b34629afd70a
 \begin{DoxyCompactList}\small\item\em Map a value from one range to another. 32 Bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}{map64}} (int64\+\_\+t x, int64\+\_\+t in\+\_\+min, int64\+\_\+t in\+\_\+max, int64\+\_\+t out\+\_\+min, int64\+\_\+t out\+\_\+max)
 \begin{DoxyCompactList}\small\item\em Map a value from one range to another. 64 Bit. \end{DoxyCompactList}\item 
-uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}{reverse\+Byte}} (const uint8\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a3940a47b8b5fc65aa17a62fe7a1c7d00}{reverse8}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aaf69943e1bd4b5bf362a45915d4fcd33}{reverse16}} (const uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse a 16 bit word. Sets M\+SB = to L\+SB, and so on until the word is reversed. Used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -194,23 +196,41 @@ Read a pulse on a pin 64 bit.
 \begin{DoxyReturn}{Returns}
 int64\+\_\+t Positive = time elapsed in microseconds, negative = error code. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}\label{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}} 
-\index{myHelpers@{myHelpers}!reverseByte@{reverseByte}}
-\index{reverseByte@{reverseByte}!myHelpers@{myHelpers}}
-\doxysubsubsection{\texorpdfstring{reverseByte()}{reverseByte()}}
-{\footnotesize\ttfamily uint8\+\_\+t my\+Helpers\+::reverse\+Byte (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacemy_helpers_aaf69943e1bd4b5bf362a45915d4fcd33}\label{namespacemy_helpers_aaf69943e1bd4b5bf362a45915d4fcd33}} 
+\index{myHelpers@{myHelpers}!reverse16@{reverse16}}
+\index{reverse16@{reverse16}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{reverse16()}{reverse16()}}
+{\footnotesize\ttfamily uint16\+\_\+t my\+Helpers\+::reverse16 (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
-Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. 
+Reverse a 16 bit word. Sets M\+SB = to L\+SB, and so on until the word is reversed. Used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em value} & \\
+{\em value} & Word to reverse. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-uint8\+\_\+t 
+uint16\+\_\+t Reversed word. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a3940a47b8b5fc65aa17a62fe7a1c7d00}\label{namespacemy_helpers_a3940a47b8b5fc65aa17a62fe7a1c7d00}} 
+\index{myHelpers@{myHelpers}!reverse8@{reverse8}}
+\index{reverse8@{reverse8}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{reverse8()}{reverse8()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+Helpers\+::reverse8 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Word to reverse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Reversed word. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}\label{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}} 
 \index{myHelpers@{myHelpers}!waitForChange32@{waitForChange32}}

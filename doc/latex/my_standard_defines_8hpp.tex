@@ -5,7 +5,8 @@
 Standard defines for pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -49,6 +50,10 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Number of channels per slice. Number of P\+WM channels per slice on the rp2040. There are 8 slices with 2 channels each. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a7c2e0364c8daad6803ff16a9bc8edee3}{M\+Y\+\_\+\+P\+W\+M\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+R\+EQ}}~125000000
 \begin{DoxyCompactList}\small\item\em Default P\+WM frequency. The defalt P\+WM frequency in hz. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a010c388af8af6a1b64c0cd19673a84f1}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+U\+M\+\_\+\+P\+O\+R\+TS}}~2
+\begin{DoxyCompactList}\small\item\em Number of spi ports. Number of spi ports on the rp2040. There are 2 ports. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_addc19cea4d6a0d674e4c6c738cb6ff13}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~4
+\begin{DoxyCompactList}\small\item\em Number of possible spi pins. Number of possible options for each type of spi pin. IE\+: S\+P\+I0 RX pin can be set to 1 of 4 pins. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}~0
 \begin{DoxyCompactList}\small\item\em No error value. Value to use to represent no error. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/1
@@ -338,6 +343,29 @@ Number of channels per slice. Number of P\+WM channels per slice on the rp2040. 
 
 
 Number of slices. Number of P\+WM slices on the rp2040. There are 8 slices, with 2 channels each. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_addc19cea4d6a0d674e4c6c738cb6ff13}\label{my_standard_defines_8hpp_addc19cea4d6a0d674e4c6c738cb6ff13}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_SPI\_NUM\_PINS@{MY\_SPI\_NUM\_PINS}}
+\index{MY\_SPI\_NUM\_PINS@{MY\_SPI\_NUM\_PINS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_NUM\_PINS}{MY\_SPI\_NUM\_PINS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS~4}
+
+
+
+Number of possible spi pins. Number of possible options for each type of spi pin. IE\+: S\+P\+I0 RX pin can be set to 1 of 4 pins. 
+
+\begin{DoxyNote}{Note}
+Some pins on S\+PI port 1 only have 3 options. 
+\end{DoxyNote}
+\mbox{\Hypertarget{my_standard_defines_8hpp_a010c388af8af6a1b64c0cd19673a84f1}\label{my_standard_defines_8hpp_a010c388af8af6a1b64c0cd19673a84f1}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_SPI\_NUM\_PORTS@{MY\_SPI\_NUM\_PORTS}}
+\index{MY\_SPI\_NUM\_PORTS@{MY\_SPI\_NUM\_PORTS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_SPI\_NUM\_PORTS}{MY\_SPI\_NUM\_PORTS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+U\+M\+\_\+\+P\+O\+R\+TS~2}
+
+
+
+Number of spi ports. Number of spi ports on the rp2040. There are 2 ports. 
 
 \mbox{\Hypertarget{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}\label{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_TIMEOUT@{MY\_TIMEOUT}}

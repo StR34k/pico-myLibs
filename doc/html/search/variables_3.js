@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['filter_5f16_475',['FILTER_16',['../classmy_b_mx280.html#a0aa50e080904003cd5575740146a86c5',1,'myBMx280']]],
-  ['filter_5f2_476',['FILTER_2',['../classmy_b_mx280.html#a2f11c98f38b4294980160496305bd202',1,'myBMx280']]],
-  ['filter_5f4_477',['FILTER_4',['../classmy_b_mx280.html#a86810edd5c7714abcef2b79c8a2bc864',1,'myBMx280']]],
-  ['filter_5f8_478',['FILTER_8',['../classmy_b_mx280.html#ab0b6524a00b30e1d560cc6c5110cffb7',1,'myBMx280']]],
-  ['filter_5foff_479',['FILTER_OFF',['../classmy_b_mx280.html#a56eeb6451826aa4d2278dbb5d876404c',1,'myBMx280']]],
-  ['forced_5fmode_480',['forced_mode',['../classmy_b_mx280.html#ac3cb2da4406c6dbe052ba0043c14c90c',1,'myBMx280']]]
+  ['filter_5f16_527',['FILTER_16',['../classmy_b_mx280.html#a0aa50e080904003cd5575740146a86c5',1,'myBMx280']]],
+  ['filter_5f2_528',['FILTER_2',['../classmy_b_mx280.html#a2f11c98f38b4294980160496305bd202',1,'myBMx280']]],
+  ['filter_5f4_529',['FILTER_4',['../classmy_b_mx280.html#a86810edd5c7714abcef2b79c8a2bc864',1,'myBMx280']]],
+  ['filter_5f8_530',['FILTER_8',['../classmy_b_mx280.html#ab0b6524a00b30e1d560cc6c5110cffb7',1,'myBMx280']]],
+  ['filter_5foff_531',['FILTER_OFF',['../classmy_b_mx280.html#a56eeb6451826aa4d2278dbb5d876404c',1,'myBMx280']]],
+  ['forced_5fmode_532',['forced_mode',['../classmy_b_mx280.html#ac3cb2da4406c6dbe052ba0043c14c90c',1,'myBMx280']]]
 ];
