@@ -14,7 +14,7 @@
  * @brief SPI Master namespace
  * 
  */
-namespace mySPIMaster {
+namespace myBBSPIMaster {
 /* Constants */
     /**
      * @brief SPI Mode 0
@@ -68,7 +68,7 @@ namespace mySPIMaster {
      * @return false If not initilized okay.
      */
     bool initialize(const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, 
-                        const bool msbFirst=true, uint64_t delayUS=1) {
+                        const bool msbFirst=true, uint64_t delayUS=0) {
     // Store pins and states for later.
         // __breakpoint();
         if (__validateMode__(mode) == false) {
