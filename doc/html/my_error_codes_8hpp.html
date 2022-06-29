@@ -76,14 +76,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_error_codes_8hpp__dep__incl.png" border="0" usemap="#my_error_codes_8hppdep" alt=""/></div>
 <map name="my_error_codes_8hppdep" id="my_error_codes_8hppdep">
-<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="371,5,514,32"/>
+<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="421,5,563,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
 <area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
-<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="546,80,667,107"/>
-<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="284,155,535,181"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="745,155,996,181"/>
-<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="55,155,259,181"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="559,155,721,181"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="481,80,602,107"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="328,155,491,181"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="515,155,765,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="789,155,1040,181"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="99,155,303,181"/>
 </map>
 </div>
 </div>
@@ -104,11 +104,47 @@ Macros</h2></td></tr>
 <tr class="memdesc:a30c7699357e500c950a9a32a429e59bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">invalid bit mask. An invalid bit mask was passed.  <a href="my_error_codes_8hpp.html#a30c7699357e500c950a9a32a429e59bf">More...</a><br /></td></tr>
 <tr class="separator:a30c7699357e500c950a9a32a429e59bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72dfe5bfae97efc2aae8d64482104a1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">MY_TIMEOUT</a>&#160;&#160;&#160;-4</td></tr>
-<tr class="memdesc:a72dfe5bfae97efc2aae8d64482104a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">timeout reached. A timeout has been reached.  <a href="my_error_codes_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">More...</a><br /></td></tr>
+<tr class="memdesc:a72dfe5bfae97efc2aae8d64482104a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout reached. A timeout has been reached.  <a href="my_error_codes_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">More...</a><br /></td></tr>
 <tr class="separator:a72dfe5bfae97efc2aae8d64482104a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2932a50fea6f22d821215e6d34403aff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a2932a50fea6f22d821215e6d34403aff">MY_INVALID_DIR</a>&#160;&#160;&#160;-5</td></tr>
-<tr class="memdesc:a2932a50fea6f22d821215e6d34403aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">invalid direction A pin is set to wrong direction for operation requested.  <a href="my_error_codes_8hpp.html#a2932a50fea6f22d821215e6d34403aff">More...</a><br /></td></tr>
+<tr class="memdesc:a2932a50fea6f22d821215e6d34403aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid direction A pin is set to wrong direction for operation requested.  <a href="my_error_codes_8hpp.html#a2932a50fea6f22d821215e6d34403aff">More...</a><br /></td></tr>
 <tr class="separator:a2932a50fea6f22d821215e6d34403aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e01fb1c6dbf4629c49bb2cba9a6c46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a11e01fb1c6dbf4629c49bb2cba9a6c46">MY_PWM_PIN_NOT_INIT</a>&#160;&#160;&#160;-100</td></tr>
+<tr class="memdesc:a11e01fb1c6dbf4629c49bb2cba9a6c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin not initialized. Initialize has not been called for the pin.  <a href="my_error_codes_8hpp.html#a11e01fb1c6dbf4629c49bb2cba9a6c46">More...</a><br /></td></tr>
+<tr class="separator:a11e01fb1c6dbf4629c49bb2cba9a6c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a141fde6fc1a9e2bb3db5a0e52cebe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a75a141fde6fc1a9e2bb3db5a0e52cebe">MY_PWM_PIN_ALREADY_INIT</a>&#160;&#160;&#160;-101</td></tr>
+<tr class="memdesc:a75a141fde6fc1a9e2bb3db5a0e52cebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin already initialized. The pin is already initialized as a PWM pin.  <a href="my_error_codes_8hpp.html#a75a141fde6fc1a9e2bb3db5a0e52cebe">More...</a><br /></td></tr>
+<tr class="separator:a75a141fde6fc1a9e2bb3db5a0e52cebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac71375e7477f37f39d332fac2227d70b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ac71375e7477f37f39d332fac2227d70b">MY_PWM_INVALID_SLICE</a>&#160;&#160;&#160;-102</td></tr>
+<tr class="memdesc:ac71375e7477f37f39d332fac2227d70b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid slice number. An invalid slice number was passed.  <a href="my_error_codes_8hpp.html#ac71375e7477f37f39d332fac2227d70b">More...</a><br /></td></tr>
+<tr class="separator:ac71375e7477f37f39d332fac2227d70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6771a32ffe6ef30564ea059d347a5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a1d6771a32ffe6ef30564ea059d347a5d">MY_PWM_SLICE_ALREADY_ENABLED</a>&#160;&#160;&#160;-103</td></tr>
+<tr class="memdesc:a1d6771a32ffe6ef30564ea059d347a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slice already enabled. The slice has already been enabled.  <a href="my_error_codes_8hpp.html#a1d6771a32ffe6ef30564ea059d347a5d">More...</a><br /></td></tr>
+<tr class="separator:a1d6771a32ffe6ef30564ea059d347a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db113318b599b3dd13335991ee91dca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a9db113318b599b3dd13335991ee91dca">MY_PWM_SLICE_ALREADY_DISABLED</a>&#160;&#160;&#160;-104</td></tr>
+<tr class="memdesc:a9db113318b599b3dd13335991ee91dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slice already disabled. The slice has already been disabled.  <a href="my_error_codes_8hpp.html#a9db113318b599b3dd13335991ee91dca">More...</a><br /></td></tr>
+<tr class="separator:a9db113318b599b3dd13335991ee91dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edf2d69a1b5b8ca5bc5b05534fecb03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a6edf2d69a1b5b8ca5bc5b05534fecb03">MY_PWM_PHASE_CORRECT_ENABLED</a>&#160;&#160;&#160;-105</td></tr>
+<tr class="memdesc:a6edf2d69a1b5b8ca5bc5b05534fecb03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase correct enabled. Phase correct has already been enabled.  <a href="my_error_codes_8hpp.html#a6edf2d69a1b5b8ca5bc5b05534fecb03">More...</a><br /></td></tr>
+<tr class="separator:a6edf2d69a1b5b8ca5bc5b05534fecb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d57812caa2870b0c9ccbde679dc44c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ad6d57812caa2870b0c9ccbde679dc44c">MY_PWM_PHASE_CORRECT_DISABLED</a>&#160;&#160;&#160;-106</td></tr>
+<tr class="memdesc:ad6d57812caa2870b0c9ccbde679dc44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase correct disabled. Phase correct has already been disabled.  <a href="my_error_codes_8hpp.html#ad6d57812caa2870b0c9ccbde679dc44c">More...</a><br /></td></tr>
+<tr class="separator:ad6d57812caa2870b0c9ccbde679dc44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8a6894a90d962f6200dcf23fb86b48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#ada8a6894a90d962f6200dcf23fb86b48">MY_PWM_INVALID_FREQ</a>&#160;&#160;&#160;-107</td></tr>
+<tr class="memdesc:ada8a6894a90d962f6200dcf23fb86b48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid frequency. An invalid frequency was passed.  <a href="my_error_codes_8hpp.html#ada8a6894a90d962f6200dcf23fb86b48">More...</a><br /></td></tr>
+<tr class="separator:ada8a6894a90d962f6200dcf23fb86b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accccb8d343b49374125b9dd8076abea4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#accccb8d343b49374125b9dd8076abea4">MY_PWM_INVALID_CHANNEL</a>&#160;&#160;&#160;-108</td></tr>
+<tr class="memdesc:accccb8d343b49374125b9dd8076abea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid channel. An invalid channel was passed.  <a href="my_error_codes_8hpp.html#accccb8d343b49374125b9dd8076abea4">More...</a><br /></td></tr>
+<tr class="separator:accccb8d343b49374125b9dd8076abea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1768a00d26cf5529d6d71efc7603d44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#af1768a00d26cf5529d6d71efc7603d44">MY_PWM_INVALID_DUTY</a>&#160;&#160;&#160;-109</td></tr>
+<tr class="memdesc:af1768a00d26cf5529d6d71efc7603d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid duty. An invalid duty value was passed (must be between 0-100 inclusive).  <a href="my_error_codes_8hpp.html#af1768a00d26cf5529d6d71efc7603d44">More...</a><br /></td></tr>
+<tr class="separator:af1768a00d26cf5529d6d71efc7603d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a653eb4fbdf5165dd91cb6865f1b6f656"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a653eb4fbdf5165dd91cb6865f1b6f656">MY_PWM_INVALID_DIVISOR_INT</a>&#160;&#160;&#160;-110</td></tr>
+<tr class="memdesc:a653eb4fbdf5165dd91cb6865f1b6f656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid divisor integer. The provided divisor integer is invalid (must be greater than 0).  <a href="my_error_codes_8hpp.html#a653eb4fbdf5165dd91cb6865f1b6f656">More...</a><br /></td></tr>
+<tr class="separator:a653eb4fbdf5165dd91cb6865f1b6f656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9d0443e3bfbb9c30f78687c74a98ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#afd9d0443e3bfbb9c30f78687c74a98ff">MY_PWM_INVALID_DIVISOR_FRAC</a>&#160;&#160;&#160;-111</td></tr>
+<tr class="memdesc:afd9d0443e3bfbb9c30f78687c74a98ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid divisor fraction. The provided divisor fraction is invalid (must be 0-15 inclusive).  <a href="my_error_codes_8hpp.html#afd9d0443e3bfbb9c30f78687c74a98ff">More...</a><br /></td></tr>
+<tr class="separator:afd9d0443e3bfbb9c30f78687c74a98ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82dcf6aea656d7115fda3375f0ae17a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a82dcf6aea656d7115fda3375f0ae17a4">MY_ERROR_ADC_INVALID_CHANNEL</a>&#160;&#160;&#160;-200</td></tr>
 <tr class="memdesc:a82dcf6aea656d7115fda3375f0ae17a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid ADC channel. An invalid ADC channel was passed.  <a href="my_error_codes_8hpp.html#a82dcf6aea656d7115fda3375f0ae17a4">More...</a><br /></td></tr>
 <tr class="separator:a82dcf6aea656d7115fda3375f0ae17a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,6 +208,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a7d6340ef277d5e7013b79f1627e76eb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a7d6340ef277d5e7013b79f1627e76eb9">MY_ERROR_MY595_CLEAR_NOT_DEFINED</a>&#160;&#160;&#160;-401</td></tr>
 <tr class="memdesc:a7d6340ef277d5e7013b79f1627e76eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear pin not defined. The clear pin was not defined when operation was requested.  <a href="my_error_codes_8hpp.html#a7d6340ef277d5e7013b79f1627e76eb9">More...</a><br /></td></tr>
 <tr class="separator:a7d6340ef277d5e7013b79f1627e76eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782036dcdbcad4d43077ddcc6552cb72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a782036dcdbcad4d43077ddcc6552cb72">MY_ERROR_MY595_OPERATION_NOT_AVAILABLE</a>&#160;&#160;&#160;-402</td></tr>
+<tr class="memdesc:a782036dcdbcad4d43077ddcc6552cb72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation not available. The bit write operation is not available in hardware SPI mode.  <a href="my_error_codes_8hpp.html#a782036dcdbcad4d43077ddcc6552cb72">More...</a><br /></td></tr>
+<tr class="separator:a782036dcdbcad4d43077ddcc6552cb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Define all error codes used in pico-myLibs. </p>
@@ -517,6 +556,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a782036dcdbcad4d43077ddcc6552cb72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782036dcdbcad4d43077ddcc6552cb72">&#9670;&nbsp;</a></span>MY_ERROR_MY595_OPERATION_NOT_AVAILABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MY595_OPERATION_NOT_AVAILABLE&#160;&#160;&#160;-402</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Operation not available. The bit write operation is not available in hardware SPI mode. </p>
+
+</div>
+</div>
 <a id="a6ab9569b2a283a5cd23b09c2c68b4b6b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ab9569b2a283a5cd23b09c2c68b4b6b">&#9670;&nbsp;</a></span>MY_GENERAL_ERROR</h2>
 
@@ -561,7 +616,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>invalid direction A pin is set to wrong direction for operation requested. </p>
+<p>Invalid direction A pin is set to wrong direction for operation requested. </p>
 
 </div>
 </div>
@@ -597,6 +652,198 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="accccb8d343b49374125b9dd8076abea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accccb8d343b49374125b9dd8076abea4">&#9670;&nbsp;</a></span>MY_PWM_INVALID_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_INVALID_CHANNEL&#160;&#160;&#160;-108</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid channel. An invalid channel was passed. </p>
+
+</div>
+</div>
+<a id="afd9d0443e3bfbb9c30f78687c74a98ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9d0443e3bfbb9c30f78687c74a98ff">&#9670;&nbsp;</a></span>MY_PWM_INVALID_DIVISOR_FRAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_INVALID_DIVISOR_FRAC&#160;&#160;&#160;-111</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid divisor fraction. The provided divisor fraction is invalid (must be 0-15 inclusive). </p>
+
+</div>
+</div>
+<a id="a653eb4fbdf5165dd91cb6865f1b6f656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a653eb4fbdf5165dd91cb6865f1b6f656">&#9670;&nbsp;</a></span>MY_PWM_INVALID_DIVISOR_INT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_INVALID_DIVISOR_INT&#160;&#160;&#160;-110</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid divisor integer. The provided divisor integer is invalid (must be greater than 0). </p>
+
+</div>
+</div>
+<a id="af1768a00d26cf5529d6d71efc7603d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1768a00d26cf5529d6d71efc7603d44">&#9670;&nbsp;</a></span>MY_PWM_INVALID_DUTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_INVALID_DUTY&#160;&#160;&#160;-109</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid duty. An invalid duty value was passed (must be between 0-100 inclusive). </p>
+
+</div>
+</div>
+<a id="ada8a6894a90d962f6200dcf23fb86b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8a6894a90d962f6200dcf23fb86b48">&#9670;&nbsp;</a></span>MY_PWM_INVALID_FREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_INVALID_FREQ&#160;&#160;&#160;-107</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid frequency. An invalid frequency was passed. </p>
+
+</div>
+</div>
+<a id="ac71375e7477f37f39d332fac2227d70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71375e7477f37f39d332fac2227d70b">&#9670;&nbsp;</a></span>MY_PWM_INVALID_SLICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_INVALID_SLICE&#160;&#160;&#160;-102</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid slice number. An invalid slice number was passed. </p>
+
+</div>
+</div>
+<a id="ad6d57812caa2870b0c9ccbde679dc44c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d57812caa2870b0c9ccbde679dc44c">&#9670;&nbsp;</a></span>MY_PWM_PHASE_CORRECT_DISABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_PHASE_CORRECT_DISABLED&#160;&#160;&#160;-106</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Phase correct disabled. Phase correct has already been disabled. </p>
+
+</div>
+</div>
+<a id="a6edf2d69a1b5b8ca5bc5b05534fecb03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edf2d69a1b5b8ca5bc5b05534fecb03">&#9670;&nbsp;</a></span>MY_PWM_PHASE_CORRECT_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_PHASE_CORRECT_ENABLED&#160;&#160;&#160;-105</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Phase correct enabled. Phase correct has already been enabled. </p>
+
+</div>
+</div>
+<a id="a75a141fde6fc1a9e2bb3db5a0e52cebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a141fde6fc1a9e2bb3db5a0e52cebe">&#9670;&nbsp;</a></span>MY_PWM_PIN_ALREADY_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_PIN_ALREADY_INIT&#160;&#160;&#160;-101</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin already initialized. The pin is already initialized as a PWM pin. </p>
+
+</div>
+</div>
+<a id="a11e01fb1c6dbf4629c49bb2cba9a6c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e01fb1c6dbf4629c49bb2cba9a6c46">&#9670;&nbsp;</a></span>MY_PWM_PIN_NOT_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_PIN_NOT_INIT&#160;&#160;&#160;-100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pin not initialized. Initialize has not been called for the pin. </p>
+
+</div>
+</div>
+<a id="a9db113318b599b3dd13335991ee91dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db113318b599b3dd13335991ee91dca">&#9670;&nbsp;</a></span>MY_PWM_SLICE_ALREADY_DISABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_SLICE_ALREADY_DISABLED&#160;&#160;&#160;-104</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Slice already disabled. The slice has already been disabled. </p>
+
+</div>
+</div>
+<a id="a1d6771a32ffe6ef30564ea059d347a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6771a32ffe6ef30564ea059d347a5d">&#9670;&nbsp;</a></span>MY_PWM_SLICE_ALREADY_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_SLICE_ALREADY_ENABLED&#160;&#160;&#160;-103</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Slice already enabled. The slice has already been enabled. </p>
+
+</div>
+</div>
 <a id="a72dfe5bfae97efc2aae8d64482104a1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72dfe5bfae97efc2aae8d64482104a1e">&#9670;&nbsp;</a></span>MY_TIMEOUT</h2>
 
@@ -609,7 +856,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>timeout reached. A timeout has been reached. </p>
+<p>Timeout reached. A timeout has been reached. </p>
 
 </div>
 </div>

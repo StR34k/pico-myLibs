@@ -17,7 +17,8 @@ Include dependency graph for my\+Helpers.\+hpp\+:\nopagebreak
 \includegraphics[width=350pt]{my_helpers_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -54,8 +55,12 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaeda
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{my\+Helpers\+::pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 64 bit. \end{DoxyCompactList}\item 
-int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}{my\+Helpers\+::map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af96154907f93e9076b34629afd70a862}{my\+Helpers\+::map32}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 32 Bit. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}{my\+Helpers\+::map64}} (int64\+\_\+t x, int64\+\_\+t in\+\_\+min, int64\+\_\+t in\+\_\+max, int64\+\_\+t out\+\_\+min, int64\+\_\+t out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 64 Bit. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}{my\+Helpers\+::reverse\+Byte}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

@@ -62,10 +62,1223 @@ $(function() {
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">myPWM Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>PWM helper functions. Namespace to hold PWM helper functions and track them. Some code has been taken from: <a href="https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html">https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html</a>.  
+<a href="namespacemy_p_w_m.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5cbf2dc3ef5527459b47dd18b83a1b2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a5cbf2dc3ef5527459b47dd18b83a1b2a">isSlice</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a5cbf2dc3ef5527459b47dd18b83a1b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify slice number. Verifies if a number is a valid slice number.  <a href="namespacemy_p_w_m.html#a5cbf2dc3ef5527459b47dd18b83a1b2a">More...</a><br /></td></tr>
+<tr class="separator:a5cbf2dc3ef5527459b47dd18b83a1b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a019a785a19250e399084dec8da2ab205"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a019a785a19250e399084dec8da2ab205">isChannel</a> (const uint8_t channel)</td></tr>
+<tr class="memdesc:a019a785a19250e399084dec8da2ab205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify channel number. Verifies if a given number is a valid channel number.  <a href="namespacemy_p_w_m.html#a019a785a19250e399084dec8da2ab205">More...</a><br /></td></tr>
+<tr class="separator:a019a785a19250e399084dec8da2ab205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e1d7af8b7318457e4dbb6df410987f1"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a1e1d7af8b7318457e4dbb6df410987f1">getPinInit</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a1e1d7af8b7318457e4dbb6df410987f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if the pin is initialized. Get if the pin is initialized, Returns 0 or 1 for initialized state, or if an invalid pin number was passed, it will return an error code.  <a href="namespacemy_p_w_m.html#a1e1d7af8b7318457e4dbb6df410987f1">More...</a><br /></td></tr>
+<tr class="separator:a1e1d7af8b7318457e4dbb6df410987f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ee6685c842b87e852cfe9093e27656"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a61ee6685c842b87e852cfe9093e27656">getEnabled</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a61ee6685c842b87e852cfe9093e27656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if the slice is enabled. Get if slice is enabled. Returns true if enabled, false if not enabled, or invalid slice passed.  <a href="namespacemy_p_w_m.html#a61ee6685c842b87e852cfe9093e27656">More...</a><br /></td></tr>
+<tr class="separator:a61ee6685c842b87e852cfe9093e27656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29776fb843c2505b8f7e3798c1aacf1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a29776fb843c2505b8f7e3798c1aacf1d">getPinEnabled</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a29776fb843c2505b8f7e3798c1aacf1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the if slice controlling given pin is enabled. Return true if the slice controlling the given pin is enabled, returns false if disabled, or if an invalid pin was passed.  <a href="namespacemy_p_w_m.html#a29776fb843c2505b8f7e3798c1aacf1d">More...</a><br /></td></tr>
+<tr class="separator:a29776fb843c2505b8f7e3798c1aacf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c0196c6e093e8fb9b55cc155308f64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#ad8c0196c6e093e8fb9b55cc155308f64">getPhaseCorrect</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:ad8c0196c6e093e8fb9b55cc155308f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get slice phase correct mode. Returns true if the slice is in phase correct mode, and false if not, or slice is invalid.  <a href="namespacemy_p_w_m.html#ad8c0196c6e093e8fb9b55cc155308f64">More...</a><br /></td></tr>
+<tr class="separator:ad8c0196c6e093e8fb9b55cc155308f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba1c1bf3b95d1b434ae8c1214ba12239"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aba1c1bf3b95d1b434ae8c1214ba12239">getPinPhaseCorrect</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:aba1c1bf3b95d1b434ae8c1214ba12239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the phase correct given a pin. Returns true if the slice controlling a given pin is in phase correct mode, returns false if not, or pin is invalid.  <a href="namespacemy_p_w_m.html#aba1c1bf3b95d1b434ae8c1214ba12239">More...</a><br /></td></tr>
+<tr class="separator:aba1c1bf3b95d1b434ae8c1214ba12239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a03785de36452b94e3e09c18e9c065"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aa0a03785de36452b94e3e09c18e9c065">getWrap</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:aa0a03785de36452b94e3e09c18e9c065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the slice wrap value. Gets the wrap value of a given slice. Returns positive (including zero) for the wrap value, otherwise if an invalid slice is given an error code is returned.  <a href="namespacemy_p_w_m.html#aa0a03785de36452b94e3e09c18e9c065">More...</a><br /></td></tr>
+<tr class="separator:aa0a03785de36452b94e3e09c18e9c065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d66fcd03dcefd63cc254d1266dd83a"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#af8d66fcd03dcefd63cc254d1266dd83a">getPinWrap</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:af8d66fcd03dcefd63cc254d1266dd83a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the wrap value of a slice given a pin. Gets the wrap value for the slice that drives a pin. Returns postive (including zero) for the wrap value. Otherwise if an invalid pin is passed an error code is returned.  <a href="namespacemy_p_w_m.html#af8d66fcd03dcefd63cc254d1266dd83a">More...</a><br /></td></tr>
+<tr class="separator:af8d66fcd03dcefd63cc254d1266dd83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2982f13fed57512e964294cceff1fe9d"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a2982f13fed57512e964294cceff1fe9d">getLevel</a> (const uint8_t slice, const uint8_t channel)</td></tr>
+<tr class="memdesc:a2982f13fed57512e964294cceff1fe9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the level of a channel. Get the current level given a slice and channel. Returns positive (including zero) for the level. If an invalid slice or channel is provided, an error code is returned.  <a href="namespacemy_p_w_m.html#a2982f13fed57512e964294cceff1fe9d">More...</a><br /></td></tr>
+<tr class="separator:a2982f13fed57512e964294cceff1fe9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89cea3aeb8b8a98f1f4655be8587744b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a89cea3aeb8b8a98f1f4655be8587744b">getPinLevel</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a89cea3aeb8b8a98f1f4655be8587744b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the level of a pin. Get the current level of the controlling slice and channel given a pin. Returns positive (including zero) for the level. Passing an invalid pin will return an error code.  <a href="namespacemy_p_w_m.html#a89cea3aeb8b8a98f1f4655be8587744b">More...</a><br /></td></tr>
+<tr class="separator:a89cea3aeb8b8a98f1f4655be8587744b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd6bc81c3f828b68d917d7445adb685"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a6cd6bc81c3f828b68d917d7445adb685">getClockDivisorInt</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a6cd6bc81c3f828b68d917d7445adb685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clock divisor integer. Get the integer portion of the clock divisor. Positive, including zero, is the 8 bit integer. If an invalid slice is passed, an error is raised.  <a href="namespacemy_p_w_m.html#a6cd6bc81c3f828b68d917d7445adb685">More...</a><br /></td></tr>
+<tr class="separator:a6cd6bc81c3f828b68d917d7445adb685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e95c38b5f03c419941983767c0670f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a05e95c38b5f03c419941983767c0670f">getPinClockDivisorInt</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a05e95c38b5f03c419941983767c0670f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clock divisor integer of the slice given a pin. Get the integer portion of the divisor for the slice that controls a given pin. Returns positive, excluding zero, for the 8 bit integer portion, otherwise if an invalid pin is passed an error code is returned.  <a href="namespacemy_p_w_m.html#a05e95c38b5f03c419941983767c0670f">More...</a><br /></td></tr>
+<tr class="separator:a05e95c38b5f03c419941983767c0670f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fdc9dfd685ea45903c8c05c01b8c7d9"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a8fdc9dfd685ea45903c8c05c01b8c7d9">getClockDivisorFrac</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a8fdc9dfd685ea45903c8c05c01b8c7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Clock Divisor Fraction portion. Return the clock divisor fration portion. Positive, including zero is the 4 bit fraction.  <a href="namespacemy_p_w_m.html#a8fdc9dfd685ea45903c8c05c01b8c7d9">More...</a><br /></td></tr>
+<tr class="separator:a8fdc9dfd685ea45903c8c05c01b8c7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926ffcf034f5601fcbbc713277f33363"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a926ffcf034f5601fcbbc713277f33363">getPinClockDivisorFrac</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a926ffcf034f5601fcbbc713277f33363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clock divisor for the slice controlling the given pin. Positive, including zero is the 4 bit fraction portion of the divisor. Otherwise if an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a926ffcf034f5601fcbbc713277f33363">More...</a><br /></td></tr>
+<tr class="separator:a926ffcf034f5601fcbbc713277f33363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4eedcdb2168875393b4c440b3cb9fb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a4c4eedcdb2168875393b4c440b3cb9fb">setClockDivisor</a> (const uint8_t slice, const uint8_t integer, const uint8_t fraction)</td></tr>
+<tr class="memdesc:a4c4eedcdb2168875393b4c440b3cb9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Clock Divisor. Sets the clock divisor given an integer and a fraction, wraps pwm_set_clkdiv_int_frac. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid slice, integer, or fraction are passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a4c4eedcdb2168875393b4c440b3cb9fb">More...</a><br /></td></tr>
+<tr class="separator:a4c4eedcdb2168875393b4c440b3cb9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa733acbeb8d4961792f220d30ef5760a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aa733acbeb8d4961792f220d30ef5760a">setPinClockDivisor</a> (const uint8_t pin, const uint8_t integer, const uint8_t fraction)</td></tr>
+<tr class="memdesc:aa733acbeb8d4961792f220d30ef5760a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the clock divisor for the slice driving the given pin. Set the clock divisor for the sice controlling the given pin. Returns 0 for set okay, otherwise if an invalid pin, integer, or fraction is passed, and error code is returned.  <a href="namespacemy_p_w_m.html#aa733acbeb8d4961792f220d30ef5760a">More...</a><br /></td></tr>
+<tr class="separator:aa733acbeb8d4961792f220d30ef5760a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad289e5bd721be6911654b872bb5568bb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#ad289e5bd721be6911654b872bb5568bb">initializePin</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:ad289e5bd721be6911654b872bb5568bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a pin as PWM. Initialize a pin as PWM, if the pin is initialized okay, it will return 0. If the pin passed is an invalid pin, or if the pin is already initialized, an error code is returned.  <a href="namespacemy_p_w_m.html#ad289e5bd721be6911654b872bb5568bb">More...</a><br /></td></tr>
+<tr class="separator:ad289e5bd721be6911654b872bb5568bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397a979005f7fd2545fdcdc3475ddc29"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a397a979005f7fd2545fdcdc3475ddc29">deinitializePin</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a397a979005f7fd2545fdcdc3475ddc29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitialize a pin. Deinitialize a pin. Sets gpio funciton to NULL. It will return 0 if deinitialized okay. If the pin passed is invalid, or if the pin is not initialized it will return an error code.  <a href="namespacemy_p_w_m.html#a397a979005f7fd2545fdcdc3475ddc29">More...</a><br /></td></tr>
+<tr class="separator:a397a979005f7fd2545fdcdc3475ddc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634ee0155e5171573ebfefb81ac685fe"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a634ee0155e5171573ebfefb81ac685fe">enable</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a634ee0155e5171573ebfefb81ac685fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable a slice. Enable a PWM slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if the slice is already enabled, it will return an error code.  <a href="namespacemy_p_w_m.html#a634ee0155e5171573ebfefb81ac685fe">More...</a><br /></td></tr>
+<tr class="separator:a634ee0155e5171573ebfefb81ac685fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb2ecda4ddea479777742a2c75f6b74"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a2eb2ecda4ddea479777742a2c75f6b74">enablePin</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a2eb2ecda4ddea479777742a2c75f6b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the slice controlling a given pin. Select and enable the controlling slice of the given pin. Returns 0 (NO_ERROR) if enabled okay, otherwise if already enabled, or an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a2eb2ecda4ddea479777742a2c75f6b74">More...</a><br /></td></tr>
+<tr class="separator:a2eb2ecda4ddea479777742a2c75f6b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472c87c9050460a9c9cc271a3e64b334"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a472c87c9050460a9c9cc271a3e64b334">disable</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a472c87c9050460a9c9cc271a3e64b334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a slice. Disable a PWM slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if the slice is already disabled, an error code will be returned.  <a href="namespacemy_p_w_m.html#a472c87c9050460a9c9cc271a3e64b334">More...</a><br /></td></tr>
+<tr class="separator:a472c87c9050460a9c9cc271a3e64b334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab5988ea04fbe10c02986d6618cd546f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aab5988ea04fbe10c02986d6618cd546f">disablePin</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:aab5988ea04fbe10c02986d6618cd546f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a slice given a pin. Disable the controlling slice of a given pin. Returns 0 if disabled okay, otherwise, if an invalid pin or the slice is alredy disabled an error code is returned.  <a href="namespacemy_p_w_m.html#aab5988ea04fbe10c02986d6618cd546f">More...</a><br /></td></tr>
+<tr class="separator:aab5988ea04fbe10c02986d6618cd546f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c86402762d3f4e5ad47f2c86fcc2c4d"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a8c86402762d3f4e5ad47f2c86fcc2c4d">enablePhaseCorrect</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a8c86402762d3f4e5ad47f2c86fcc2c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable phase correct given the slice. Enables phase correct on a given slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if phase correct is already enabled, an error code is returned.  <a href="namespacemy_p_w_m.html#a8c86402762d3f4e5ad47f2c86fcc2c4d">More...</a><br /></td></tr>
+<tr class="separator:a8c86402762d3f4e5ad47f2c86fcc2c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25a4b3812a55db3061c95091001df61"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#ad25a4b3812a55db3061c95091001df61">enablePinPhaseCorrect</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:ad25a4b3812a55db3061c95091001df61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable phase correct given a pin. Enables phase correct on the slice controlling a given pin. Returns 0 (NO_ERROR) if enabled okay, or if an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#ad25a4b3812a55db3061c95091001df61">More...</a><br /></td></tr>
+<tr class="separator:ad25a4b3812a55db3061c95091001df61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c60c8b1e6ddee3ab1b41788050255ed"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a6c60c8b1e6ddee3ab1b41788050255ed">disablePhaseCorrect</a> (const uint8_t slice)</td></tr>
+<tr class="memdesc:a6c60c8b1e6ddee3ab1b41788050255ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable phase correct. Disables phase correct for a given slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if phase correct is already disabled, it will return an error code.  <a href="namespacemy_p_w_m.html#a6c60c8b1e6ddee3ab1b41788050255ed">More...</a><br /></td></tr>
+<tr class="separator:a6c60c8b1e6ddee3ab1b41788050255ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6748cd5529560d23923333324e61d29c"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a6748cd5529560d23923333324e61d29c">disablePinPhaseCorrect</a> (const uint8_t pin)</td></tr>
+<tr class="memdesc:a6748cd5529560d23923333324e61d29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable phase correct given a pin. Selects the appropriate slice and disables phase correct on it. Returns 0 if disabled okay, otherwise if an invalid pin is passed, and error code is returned.  <a href="namespacemy_p_w_m.html#a6748cd5529560d23923333324e61d29c">More...</a><br /></td></tr>
+<tr class="separator:a6748cd5529560d23923333324e61d29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac159079748b1dc41b10e6c6187dc5833"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#ac159079748b1dc41b10e6c6187dc5833">setSliceWrap</a> (const uint8_t slice, const uint16_t wrap)</td></tr>
+<tr class="memdesc:ac159079748b1dc41b10e6c6187dc5833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Slice wrap value. Sets the wrap value of a given slice. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid slice is passed an error code is returned.  <a href="namespacemy_p_w_m.html#ac159079748b1dc41b10e6c6187dc5833">More...</a><br /></td></tr>
+<tr class="separator:ac159079748b1dc41b10e6c6187dc5833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3008ab4267f2d8737b19ca4310fb61ca"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a3008ab4267f2d8737b19ca4310fb61ca">setPinWrap</a> (const uint8_t pin, const uint16_t wrap)</td></tr>
+<tr class="memdesc:a3008ab4267f2d8737b19ca4310fb61ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slice wrap value, given a pin. Gets the appropriate slice, and sets its wrap value. Returns 0 (NO_ERROR) if wrap set okay, otherwise if an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a3008ab4267f2d8737b19ca4310fb61ca">More...</a><br /></td></tr>
+<tr class="separator:a3008ab4267f2d8737b19ca4310fb61ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba5743f22fbfa55aba12849833233e71"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aba5743f22fbfa55aba12849833233e71">setFrequency</a> (const uint8_t slice, const uint32_t freq)</td></tr>
+<tr class="memdesc:aba5743f22fbfa55aba12849833233e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequence of a slice. Calculates and set the wrap value of a slice given the slice, and a desired frequency in hz. Returns positive (including zero) is the wrap value set. Otherwise if an invalid slice, or invalid frequency is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#aba5743f22fbfa55aba12849833233e71">More...</a><br /></td></tr>
+<tr class="separator:aba5743f22fbfa55aba12849833233e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76761317f150a94f062360b8f996b2f8"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a76761317f150a94f062360b8f996b2f8">setPinFrequency</a> (const uint8_t pin, const uint32_t freq)</td></tr>
+<tr class="memdesc:a76761317f150a94f062360b8f996b2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequency of a slice given a pin. Calculates and set the wrap value for the slice that drives a given pin, and a desired frequency in hz. Returns positive (including zero) for the wrap value set. Otherwise if an invalid pin, or frequency is passed an error code is returned.  <a href="namespacemy_p_w_m.html#a76761317f150a94f062360b8f996b2f8">More...</a><br /></td></tr>
+<tr class="separator:a76761317f150a94f062360b8f996b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf97eba1ab27dfdc13941fd7448aebd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aacf97eba1ab27dfdc13941fd7448aebd">setLevel</a> (const uint8_t slice, const uint8_t channel, const uint16_t value)</td></tr>
+<tr class="memdesc:aacf97eba1ab27dfdc13941fd7448aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (NO_ERROR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned.  <a href="namespacemy_p_w_m.html#aacf97eba1ab27dfdc13941fd7448aebd">More...</a><br /></td></tr>
+<tr class="separator:aacf97eba1ab27dfdc13941fd7448aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf27ad4ff5dbac13d000744986b8e74"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a2bf27ad4ff5dbac13d000744986b8e74">setPinLevel</a> (const uint8_t pin, const uint16_t value)</td></tr>
+<tr class="memdesc:a2bf27ad4ff5dbac13d000744986b8e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level given a pin. Sets the level given a pin. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a2bf27ad4ff5dbac13d000744986b8e74">More...</a><br /></td></tr>
+<tr class="separator:a2bf27ad4ff5dbac13d000744986b8e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7611aeedea7d0f98016155a77606337"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#ac7611aeedea7d0f98016155a77606337">setDuty</a> (const uint8_t slice, const uint8_t channel, const uint8_t duty)</td></tr>
+<tr class="memdesc:ac7611aeedea7d0f98016155a77606337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned.  <a href="namespacemy_p_w_m.html#ac7611aeedea7d0f98016155a77606337">More...</a><br /></td></tr>
+<tr class="separator:ac7611aeedea7d0f98016155a77606337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a84bf39d8d6b4c02905322ccc5dd05de3">setPinDuty</a> (const uint8_t pin, const uint8_t duty)</td></tr>
+<tr class="memdesc:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned.  <a href="namespacemy_p_w_m.html#a84bf39d8d6b4c02905322ccc5dd05de3">More...</a><br /></td></tr>
+<tr class="separator:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PWM helper functions. Namespace to hold PWM helper functions and track them. Some code has been taken from: <a href="https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html">https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html</a>. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a397a979005f7fd2545fdcdc3475ddc29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397a979005f7fd2545fdcdc3475ddc29">&#9670;&nbsp;</a></span>deinitializePin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::deinitializePin </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deinitialize a pin. Deinitialize a pin. Sets gpio funciton to NULL. It will return 0 if deinitialized okay. If the pin passed is invalid, or if the pin is not initialized it will return an error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to Deinitialize </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for deinitialized okay, or negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a472c87c9050460a9c9cc271a3e64b334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a472c87c9050460a9c9cc271a3e64b334">&#9670;&nbsp;</a></span>disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::disable </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable a slice. Disable a PWM slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if the slice is already disabled, an error code will be returned. </p>
+<dl class="section note"><dt>Note</dt><dd>This will disable both channels on the slice. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for disabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a6c60c8b1e6ddee3ab1b41788050255ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c60c8b1e6ddee3ab1b41788050255ed">&#9670;&nbsp;</a></span>disablePhaseCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::disablePhaseCorrect </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable phase correct. Disables phase correct for a given slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if phase correct is already disabled, it will return an error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to disable phase correct for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for disabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="aab5988ea04fbe10c02986d6618cd546f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5988ea04fbe10c02986d6618cd546f">&#9670;&nbsp;</a></span>disablePin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::disablePin </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable a slice given a pin. Disable the controlling slice of a given pin. Returns 0 if disabled okay, otherwise, if an invalid pin or the slice is alredy disabled an error code is returned. </p>
+<dl class="section note"><dt>Note</dt><dd>This will disable the PWM on both channels of the slice. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for disabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a6748cd5529560d23923333324e61d29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6748cd5529560d23923333324e61d29c">&#9670;&nbsp;</a></span>disablePinPhaseCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::disablePinPhaseCorrect </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable phase correct given a pin. Selects the appropriate slice and disables phase correct on it. Returns 0 if disabled okay, otherwise if an invalid pin is passed, and error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to disable phase correct for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Return 0 (NO_ERROR) for disabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a634ee0155e5171573ebfefb81ac685fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634ee0155e5171573ebfefb81ac685fe">&#9670;&nbsp;</a></span>enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::enable </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable a slice. Enable a PWM slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if the slice is already enabled, it will return an error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to enable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Return 0 (NO_ERROR) for enabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a8c86402762d3f4e5ad47f2c86fcc2c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c86402762d3f4e5ad47f2c86fcc2c4d">&#9670;&nbsp;</a></span>enablePhaseCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::enablePhaseCorrect </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable phase correct given the slice. Enables phase correct on a given slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if phase correct is already enabled, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to enable phase correct for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 if phase correct enabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a2eb2ecda4ddea479777742a2c75f6b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb2ecda4ddea479777742a2c75f6b74">&#9670;&nbsp;</a></span>enablePin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::enablePin </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable the slice controlling a given pin. Select and enable the controlling slice of the given pin. Returns 0 (NO_ERROR) if enabled okay, otherwise if already enabled, or an invalid pin is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to enable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if enabled okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="ad25a4b3812a55db3061c95091001df61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25a4b3812a55db3061c95091001df61">&#9670;&nbsp;</a></span>enablePinPhaseCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::enablePinPhaseCorrect </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable phase correct given a pin. Enables phase correct on the slice controlling a given pin. Returns 0 (NO_ERROR) if enabled okay, or if an invalid pin is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to set phase correct on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if enabled okay, negaitive for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a8fdc9dfd685ea45903c8c05c01b8c7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fdc9dfd685ea45903c8c05c01b8c7d9">&#9670;&nbsp;</a></span>getClockDivisorFrac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::getClockDivisorFrac </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Clock Divisor Fraction portion. Return the clock divisor fration portion. Positive, including zero is the 4 bit fraction. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Fraction portion of clock divisor. </dd></dl>
+
+</div>
+</div>
+<a id="a6cd6bc81c3f828b68d917d7445adb685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd6bc81c3f828b68d917d7445adb685">&#9670;&nbsp;</a></span>getClockDivisorInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::getClockDivisorInt </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the clock divisor integer. Get the integer portion of the clock divisor. Positive, including zero, is the 8 bit integer. If an invalid slice is passed, an error is raised. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Integer portion of clock divisor. </dd></dl>
+
+</div>
+</div>
+<a id="a61ee6685c842b87e852cfe9093e27656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ee6685c842b87e852cfe9093e27656">&#9670;&nbsp;</a></span>getEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myPWM::getEnabled </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get if the slice is enabled. Get if slice is enabled. Returns true if enabled, false if not enabled, or invalid slice passed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the slice is enabled. </dd>
+<dd>
+false If the slice is disabled, or invalid. </dd></dl>
+
+</div>
+</div>
+<a id="a2982f13fed57512e964294cceff1fe9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2982f13fed57512e964294cceff1fe9d">&#9670;&nbsp;</a></span>getLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::getLevel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the level of a channel. Get the current level given a slice and channel. Returns positive (including zero) for the level. If an invalid slice or channel is provided, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to get the level of. </td></tr>
+    <tr><td class="paramname">channel</td><td>Channel of the slice. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns positive (zero included) for level, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="ad8c0196c6e093e8fb9b55cc155308f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c0196c6e093e8fb9b55cc155308f64">&#9670;&nbsp;</a></span>getPhaseCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myPWM::getPhaseCorrect </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get slice phase correct mode. Returns true if the slice is in phase correct mode, and false if not, or slice is invalid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Slice is in phase correct mode. </dd>
+<dd>
+false Slice is not in phase correct mode. </dd></dl>
+
+</div>
+</div>
+<a id="a926ffcf034f5601fcbbc713277f33363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a926ffcf034f5601fcbbc713277f33363">&#9670;&nbsp;</a></span>getPinClockDivisorFrac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::getPinClockDivisorFrac </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the clock divisor for the slice controlling the given pin. Positive, including zero is the 4 bit fraction portion of the divisor. Otherwise if an invalid pin is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to get the divisor for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive (including zero) is the 4 bit fraction portion, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a05e95c38b5f03c419941983767c0670f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e95c38b5f03c419941983767c0670f">&#9670;&nbsp;</a></span>getPinClockDivisorInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::getPinClockDivisorInt </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the clock divisor integer of the slice given a pin. Get the integer portion of the divisor for the slice that controls a given pin. Returns positive, excluding zero, for the 8 bit integer portion, otherwise if an invalid pin is passed an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to set the divisor of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive, excluding zero is the 8 bit integer, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a29776fb843c2505b8f7e3798c1aacf1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29776fb843c2505b8f7e3798c1aacf1d">&#9670;&nbsp;</a></span>getPinEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myPWM::getPinEnabled </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the if slice controlling given pin is enabled. Return true if the slice controlling the given pin is enabled, returns false if disabled, or if an invalid pin was passed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Slice is enabled. </dd>
+<dd>
+false Slice is disabled. </dd></dl>
+
+</div>
+</div>
+<a id="a1e1d7af8b7318457e4dbb6df410987f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e1d7af8b7318457e4dbb6df410987f1">&#9670;&nbsp;</a></span>getPinInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::getPinInit </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get if the pin is initialized. Get if the pin is initialized, Returns 0 or 1 for initialized state, or if an invalid pin number was passed, it will return an error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 for not initialized, 1 for initialized, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a89cea3aeb8b8a98f1f4655be8587744b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89cea3aeb8b8a98f1f4655be8587744b">&#9670;&nbsp;</a></span>getPinLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::getPinLevel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the level of a pin. Get the current level of the controlling slice and channel given a pin. Returns positive (including zero) for the level. Passing an invalid pin will return an error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to get the level of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Positive(including zero) level, negative error code. </dd></dl>
+
+</div>
+</div>
+<a id="aba1c1bf3b95d1b434ae8c1214ba12239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba1c1bf3b95d1b434ae8c1214ba12239">&#9670;&nbsp;</a></span>getPinPhaseCorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myPWM::getPinPhaseCorrect </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the phase correct given a pin. Returns true if the slice controlling a given pin is in phase correct mode, returns false if not, or pin is invalid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to get the phase correct of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Phase correct is enabled. </dd>
+<dd>
+false Phase correct is disabled, or pin is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="af8d66fcd03dcefd63cc254d1266dd83a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8d66fcd03dcefd63cc254d1266dd83a">&#9670;&nbsp;</a></span>getPinWrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::getPinWrap </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the wrap value of a slice given a pin. Gets the wrap value for the slice that drives a pin. Returns postive (including zero) for the wrap value. Otherwise if an invalid pin is passed an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to get the wrap value of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Positive (including zero) for wrap value, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="aa0a03785de36452b94e3e09c18e9c065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a03785de36452b94e3e09c18e9c065">&#9670;&nbsp;</a></span>getWrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::getWrap </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the slice wrap value. Gets the wrap value of a given slice. Returns positive (including zero) for the wrap value, otherwise if an invalid slice is given an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to get the value of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t returns positive(including zero) for wrap value, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="ad289e5bd721be6911654b872bb5568bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad289e5bd721be6911654b872bb5568bb">&#9670;&nbsp;</a></span>initializePin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::initializePin </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize a pin as PWM. Initialize a pin as PWM, if the pin is initialized okay, it will return 0. If the pin passed is an invalid pin, or if the pin is already initialized, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to initialize </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for initialized okay, or negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a019a785a19250e399084dec8da2ab205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a019a785a19250e399084dec8da2ab205">&#9670;&nbsp;</a></span>isChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myPWM::isChannel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify channel number. Verifies if a given number is a valid channel number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>Channel number to verify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Channel is valid. </dd>
+<dd>
+false Channel is not valid. </dd></dl>
+
+</div>
+</div>
+<a id="a5cbf2dc3ef5527459b47dd18b83a1b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbf2dc3ef5527459b47dd18b83a1b2a">&#9670;&nbsp;</a></span>isSlice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myPWM::isSlice </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify slice number. Verifies if a number is a valid slice number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice number to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Is a valid slice. </dd>
+<dd>
+false Is not a valid slice. </dd></dl>
+
+</div>
+</div>
+<a id="a4c4eedcdb2168875393b4c440b3cb9fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c4eedcdb2168875393b4c440b3cb9fb">&#9670;&nbsp;</a></span>setClockDivisor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::setClockDivisor </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>integer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>fraction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Clock Divisor. Sets the clock divisor given an integer and a fraction, wraps pwm_set_clkdiv_int_frac. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid slice, integer, or fraction are passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to set divisor for. </td></tr>
+    <tr><td class="paramname">integer</td><td>8 bit integer portion of divisor. Must be greater than 0. </td></tr>
+    <tr><td class="paramname">fraction</td><td>4 bit fraction portion of divisor Must be 0-15 inclusive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="ac7611aeedea7d0f98016155a77606337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7611aeedea7d0f98016155a77606337">&#9670;&nbsp;</a></span>setDuty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::setDuty </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>duty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to set level of. </td></tr>
+    <tr><td class="paramname">channel</td><td>Channel to set level of. </td></tr>
+    <tr><td class="paramname">duty</td><td>Duty cycle to set. Valid values 0-100 inclusive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="aba5743f22fbfa55aba12849833233e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba5743f22fbfa55aba12849833233e71">&#9670;&nbsp;</a></span>setFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::setFrequency </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>freq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the frequence of a slice. Calculates and set the wrap value of a slice given the slice, and a desired frequency in hz. Returns positive (including zero) is the wrap value set. Otherwise if an invalid slice, or invalid frequency is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to set frequency of. </td></tr>
+    <tr><td class="paramname">freq</td><td>Frequency requested in hz. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns positive (including zero) for the wrap value set, negaitve for error code. </dd></dl>
+
+</div>
+</div>
+<a id="aacf97eba1ab27dfdc13941fd7448aebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf97eba1ab27dfdc13941fd7448aebd">&#9670;&nbsp;</a></span>setLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::setLevel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (NO_ERROR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to set. </td></tr>
+    <tr><td class="paramname">channel</td><td>Channel to set. </td></tr>
+    <tr><td class="paramname">value</td><td>Value to set level to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="aa733acbeb8d4961792f220d30ef5760a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa733acbeb8d4961792f220d30ef5760a">&#9670;&nbsp;</a></span>setPinClockDivisor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::setPinClockDivisor </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>integer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>fraction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the clock divisor for the slice driving the given pin. Set the clock divisor for the sice controlling the given pin. Returns 0 for set okay, otherwise if an invalid pin, integer, or fraction is passed, and error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to set the divisor for. </td></tr>
+    <tr><td class="paramname">integer</td><td>8 bit integer portion of the divisor. Must be greater than 0. </td></tr>
+    <tr><td class="paramname">fraction</td><td>4 bit fraction portion of the divisor. Must be 0-15 inclusive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a84bf39d8d6b4c02905322ccc5dd05de3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84bf39d8d6b4c02905322ccc5dd05de3">&#9670;&nbsp;</a></span>setPinDuty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::setPinDuty </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>duty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to set the level of. </td></tr>
+    <tr><td class="paramname">duty</td><td>Duty cycle. Valid values 0-100 inclusive. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Return 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a76761317f150a94f062360b8f996b2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76761317f150a94f062360b8f996b2f8">&#9670;&nbsp;</a></span>setPinFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t myPWM::setPinFrequency </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>freq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the frequency of a slice given a pin. Calculates and set the wrap value for the slice that drives a given pin, and a desired frequency in hz. Returns positive (including zero) for the wrap value set. Otherwise if an invalid pin, or frequency is passed an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to set frequency of. </td></tr>
+    <tr><td class="paramname">freq</td><td>Frequency requested in hz. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns positive (including zero) for the wrap value set, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a2bf27ad4ff5dbac13d000744986b8e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf27ad4ff5dbac13d000744986b8e74">&#9670;&nbsp;</a></span>setPinLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::setPinLevel </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the level given a pin. Sets the level given a pin. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid pin is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t </dd></dl>
+
+</div>
+</div>
+<a id="a3008ab4267f2d8737b19ca4310fb61ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3008ab4267f2d8737b19ca4310fb61ca">&#9670;&nbsp;</a></span>setPinWrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::setPinWrap </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>wrap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the slice wrap value, given a pin. Gets the appropriate slice, and sets its wrap value. Returns 0 (NO_ERROR) if wrap set okay, otherwise if an invalid pin is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Pin to set wrap of. </td></tr>
+    <tr><td class="paramname">wrap</td><td>Wrap value to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="ac159079748b1dc41b10e6c6187dc5833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac159079748b1dc41b10e6c6187dc5833">&#9670;&nbsp;</a></span>setSliceWrap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myPWM::setSliceWrap </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>slice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramname"><em>wrap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Slice wrap value. Sets the wrap value of a given slice. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid slice is passed an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slice</td><td>Slice to set wrap of. </td></tr>
+    <tr><td class="paramname">wrap</td><td>Wrap value to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

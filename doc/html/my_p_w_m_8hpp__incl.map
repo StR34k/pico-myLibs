@@ -1,10 +1,10 @@
 <map id="myPWM/myPWM.hpp" name="myPWM/myPWM.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="115,5,278,32"/>
+<area shape="rect" id="node1" title="Namespace for PWM helper functions." alt="" coords="321,5,483,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,155,132,181"/>
-<area shape="rect" id="node3" title=" " alt="" coords="131,80,262,107"/>
-<area shape="rect" id="node4" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="290,80,423,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="157,155,290,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="315,155,409,181"/>
-<area shape="rect" id="node7" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="434,155,613,181"/>
-<area shape="rect" id="node8" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="637,155,780,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="543,80,674,107"/>
+<area shape="rect" id="node4" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="156,155,347,181"/>
+<area shape="rect" id="node5" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="647,155,802,181"/>
+<area shape="rect" id="node6" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="335,80,469,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="490,155,623,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="371,155,465,181"/>
 </map>

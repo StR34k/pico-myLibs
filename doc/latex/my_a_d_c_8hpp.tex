@@ -6,16 +6,17 @@ High level functions for the A\+DC.
 
 
 {\ttfamily \#include $<$hardware/adc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../my\+Error\+Codes.\+hpp\char`\"{}}\newline
-Include dependency graph for my\+A\+D\+C.\+hpp\+:\nopagebreak
+Include dependency graph for my\+A\+D\+C.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=306pt]{my_a_d_c_8hpp__incl}
+\includegraphics[width=350pt]{my_a_d_c_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,28 +30,6 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em High level functions for the A\+DC. Helper functions to track and set state of A\+DC pins. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a9053fa943d81edc75db9501fc1604b2b}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0}}~0
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_afd389a7e781bbbae4d9aae81953f1c0d}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1}}~1
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a1ee5a037cc1dffe4895a449ceef93ea2}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}}~2
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a3a39b396083dba32fe743db906e9906c}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3}}~3
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a83b5556a35c674f23d7e853dbe49bfa7}{M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+EL}}~4
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a20ee37de7d6f4889bfa7dd8d13edfad4}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+P\+IN}}~26
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_aec9c7149e1b9e0d8d2936d1c169ba624}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+P\+IN}}~27
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_ae38eade8c0033d4314d3a1f3d6c25869}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2\+\_\+\+P\+IN}}~28
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a696237a6f2c685f59c66cfd8be54ec6c}{M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3\+\_\+\+P\+IN}}~29
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a5141a7a2adc1cba13006a42131708b73}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+U\+S\+E\+R\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}~4
-\item 
-\#define \mbox{\hyperlink{my_a_d_c_8hpp_a3369223d68c96a5cce3cdfac062a81b3}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}~5
 \item 
 \#define \mbox{\hyperlink{my_a_d_c_8hpp_ad8409749f0526bbc4d6acac8c6abd034}{\+\_\+\+M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+M\+A\+SK}}~0b00000001
 \item 
@@ -88,25 +67,25 @@ bool \mbox{\hyperlink{namespacemy_a_d_c_a8149d0bbac7fe32f6f14852c0af850a3}{my\+A
 bool \mbox{\hyperlink{namespacemy_a_d_c_ab4e69194cfba84ed337e42199cb5d2ad}{my\+A\+D\+C\+::initialize}} ()
 \begin{DoxyCompactList}\small\item\em Call adc\+\_\+init. Calles adc\+\_\+init from the pico-\/sdk. This function is safe to call multiple times, as we only call adc\+\_\+init once. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a23b6fffa3d0999aa87c8c947f9be8bd8}{my\+A\+D\+C\+::init\+Channel}} (const uint8\+\_\+t channel)
-\begin{DoxyCompactList}\small\item\em Select the pin and call adc\+\_\+gpio\+\_\+init. Selects the pin given a channel, and call adc\+\_\+gpio\+\_\+init for the pin, this is safe to call multiple times as it tracks if it\textquotesingle{}s been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Select the pin and call adc\+\_\+gpio\+\_\+init. Selects the pin given a channel, and call adc\+\_\+gpio\+\_\+init for the pin, this is safe to call multiple times as it tracks if it\textquotesingle{}s been called. Returns an error code if the A\+DC hasn\textquotesingle{}t been initialized, or if the channel is an invalid value, or if the channel has already been initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a906ca96df5fd11d7c9f7a5b37e35875a}{my\+A\+D\+C\+::init\+Pin}} (const uint8\+\_\+t pin)
-\begin{DoxyCompactList}\small\item\em Call adc\+\_\+gpio\+\_\+init for a given pin. Calls adc\+\_\+gpio\+\_\+init for a given pin, this is safe to call multiple times as the state is tracked. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Call adc\+\_\+gpio\+\_\+init for a given pin. Calls adc\+\_\+gpio\+\_\+init for a given pin, this is safe to call multiple times as the state is tracked. It will return an error code if the A\+DC hasn\textquotesingle{}t been initialized, if the pin is an invalid A\+DC pin, or if the pin has already been initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a9657ed5dc89996688e4a4a231296d923}{my\+A\+D\+C\+::init\+Temperature}} ()
-\begin{DoxyCompactList}\small\item\em Initialize the temperature sensor. Calls adc\+\_\+set\+\_\+temp\+\_\+sensor\+\_\+enabled with true, and tracks if it\textquotesingle{}s been called, this function is therefore safe to call multiple times. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialize the temperature sensor. Calls adc\+\_\+set\+\_\+temp\+\_\+sensor\+\_\+enabled with true, and tracks if it\textquotesingle{}s been called, this function is therefore safe to call multiple times. It will return an error code if the A\+DC has not been initialized, or if the temperature channel has already been initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a2acb6329cb0845a868f4f1168c8c6f2a}{my\+A\+D\+C\+::deinit\+Temperature}} ()
-\begin{DoxyCompactList}\small\item\em De intialize the temperature sensor. Calls adc\+\_\+set\+\_\+temp\+\_\+sensor\+\_\+enabled with false, and tracks it. this function is therefore safe to call multiple times. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em De intialize the temperature sensor. Calls adc\+\_\+set\+\_\+temp\+\_\+sensor\+\_\+enabled with false, and tracks it. this function is therefore safe to call multiple times. Returns an error code if the temperature channel is not initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a4ba44744ea6e65481a0971037ec2bcbb}{my\+A\+D\+C\+::read\+Channel\+Raw}} (const uint8\+\_\+t channel)
-\begin{DoxyCompactList}\small\item\em Return the raw A\+DC reading for a channel. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Return the raw A\+DC reading for a channel. Selects the given channel and preforms a read, and returns the value. Returns an error code if the A\+DC has not been initialized, an invalid channel has been given, or if the given channel has not been initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a74933447e2b9ad0028968f6eeeb100e2}{my\+A\+D\+C\+::read\+Pin\+Raw}} (const uint8\+\_\+t pin)
-\begin{DoxyCompactList}\small\item\em Return the raw A\+DC for a given pin. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Return the raw A\+DC for a given pin. Selects the appropriate channel given a pin, preforms a read, and returns the value. Returns an error code if the A\+DC has not been initialized, the pin is an invalid A\+DC pin, or if the pin has not been initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_a_d_c_a671539306cf3cfa2fb6c51d198f9b7a8}{my\+A\+D\+C\+::read\+Temperature\+Raw}} ()
-\begin{DoxyCompactList}\small\item\em Read the raw temperature value. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Read the raw temperature value. Selects the internal temperature sensor, preforms the read, and returns the value. Returns an error code if the A\+DC has not been initialized, or if the internal temperature sensor channel has not been initialized. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacemy_a_d_c_a9d31547a4eaa72ebc16374fe26800c43}{my\+A\+D\+C\+::read\+Channel\+Voltage}} (const uint8\+\_\+t channel, const float v\+Ref=3.\+3f)
-\begin{DoxyCompactList}\small\item\em Calculate the voltage of a channel given V\+R\+EF. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Calculate the voltage of a channel given V\+R\+EF. Selects the given channel, preforms a read, converts it to a voltage given V\+R\+EF, and returns the value. Returns an error code if the A\+DC has not been intialized, if the channel is invalid, or the channel has not been initialized. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacemy_a_d_c_ae6b47e4bca38fc1b64e36ab0b871597b}{my\+A\+D\+C\+::read\+Pin\+Voltage}} (const uint8\+\_\+t pin, const float v\+Ref=3.\+3f)
-\begin{DoxyCompactList}\small\item\em Calculate the voltage of a pin, given V\+R\+EF. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Calculate the voltage of a pin, given V\+R\+EF Selects the appropriate channel given a pin, preforms a read, converts it to a voltage given V\+R\+EF, and returns the value. Returns an error code if the A\+DC has not been initialized, the pin is an invalid A\+DC pin, or if the pin has not been initialized. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{namespacemy_a_d_c_a6e98c17e5ae09e42007161d736c9a7a1}{my\+A\+D\+C\+::read\+Temperature}} (const bool return\+DegC=true)
-\begin{DoxyCompactList}\small\item\em Return temperature of sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Return temperature of sensor. Selects the internal temperature sensor channel, preforms a read, and converts it to either degress celcius or degrees farenheit. Returns an error code if the A\+DC has not been initialized, or if the internal temperature sensor channel has not been initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -177,70 +156,4 @@ Copyright (c) 2022
 \index{\_MY\_TEMP\_CHANNEL\_MASK@{\_MY\_TEMP\_CHANNEL\_MASK}!myADC.hpp@{myADC.hpp}}
 \doxysubsubsection{\texorpdfstring{\_MY\_TEMP\_CHANNEL\_MASK}{\_MY\_TEMP\_CHANNEL\_MASK}}
 {\footnotesize\ttfamily \#define \+\_\+\+M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+SK~0b00010000}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a9053fa943d81edc75db9501fc1604b2b}\label{my_a_d_c_8hpp_a9053fa943d81edc75db9501fc1604b2b}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_0@{MY\_CHANNEL\_0}}
-\index{MY\_CHANNEL\_0@{MY\_CHANNEL\_0}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_0}{MY\_CHANNEL\_0}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0~0}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a20ee37de7d6f4889bfa7dd8d13edfad4}\label{my_a_d_c_8hpp_a20ee37de7d6f4889bfa7dd8d13edfad4}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_0\_PIN@{MY\_CHANNEL\_0\_PIN}}
-\index{MY\_CHANNEL\_0\_PIN@{MY\_CHANNEL\_0\_PIN}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_0\_PIN}{MY\_CHANNEL\_0\_PIN}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+P\+IN~26}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_afd389a7e781bbbae4d9aae81953f1c0d}\label{my_a_d_c_8hpp_afd389a7e781bbbae4d9aae81953f1c0d}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_1@{MY\_CHANNEL\_1}}
-\index{MY\_CHANNEL\_1@{MY\_CHANNEL\_1}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_1}{MY\_CHANNEL\_1}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1~1}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_aec9c7149e1b9e0d8d2936d1c169ba624}\label{my_a_d_c_8hpp_aec9c7149e1b9e0d8d2936d1c169ba624}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_1\_PIN@{MY\_CHANNEL\_1\_PIN}}
-\index{MY\_CHANNEL\_1\_PIN@{MY\_CHANNEL\_1\_PIN}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_1\_PIN}{MY\_CHANNEL\_1\_PIN}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+P\+IN~27}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a1ee5a037cc1dffe4895a449ceef93ea2}\label{my_a_d_c_8hpp_a1ee5a037cc1dffe4895a449ceef93ea2}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_2@{MY\_CHANNEL\_2}}
-\index{MY\_CHANNEL\_2@{MY\_CHANNEL\_2}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_2}{MY\_CHANNEL\_2}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2~2}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_ae38eade8c0033d4314d3a1f3d6c25869}\label{my_a_d_c_8hpp_ae38eade8c0033d4314d3a1f3d6c25869}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_2\_PIN@{MY\_CHANNEL\_2\_PIN}}
-\index{MY\_CHANNEL\_2\_PIN@{MY\_CHANNEL\_2\_PIN}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_2\_PIN}{MY\_CHANNEL\_2\_PIN}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2\+\_\+\+P\+IN~28}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a3a39b396083dba32fe743db906e9906c}\label{my_a_d_c_8hpp_a3a39b396083dba32fe743db906e9906c}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_3@{MY\_CHANNEL\_3}}
-\index{MY\_CHANNEL\_3@{MY\_CHANNEL\_3}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_3}{MY\_CHANNEL\_3}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3~3}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a696237a6f2c685f59c66cfd8be54ec6c}\label{my_a_d_c_8hpp_a696237a6f2c685f59c66cfd8be54ec6c}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_CHANNEL\_3\_PIN@{MY\_CHANNEL\_3\_PIN}}
-\index{MY\_CHANNEL\_3\_PIN@{MY\_CHANNEL\_3\_PIN}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_CHANNEL\_3\_PIN}{MY\_CHANNEL\_3\_PIN}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3\+\_\+\+P\+IN~29}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a3369223d68c96a5cce3cdfac062a81b3}\label{my_a_d_c_8hpp_a3369223d68c96a5cce3cdfac062a81b3}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_NUM\_CHANNELS@{MY\_NUM\_CHANNELS}}
-\index{MY\_NUM\_CHANNELS@{MY\_NUM\_CHANNELS}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_NUM\_CHANNELS}{MY\_NUM\_CHANNELS}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+N\+U\+M\+\_\+\+C\+H\+A\+N\+N\+E\+LS~5}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a5141a7a2adc1cba13006a42131708b73}\label{my_a_d_c_8hpp_a5141a7a2adc1cba13006a42131708b73}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_NUM\_USER\_CHANNELS@{MY\_NUM\_USER\_CHANNELS}}
-\index{MY\_NUM\_USER\_CHANNELS@{MY\_NUM\_USER\_CHANNELS}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_NUM\_USER\_CHANNELS}{MY\_NUM\_USER\_CHANNELS}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+N\+U\+M\+\_\+\+U\+S\+E\+R\+\_\+\+C\+H\+A\+N\+N\+E\+LS~4}
-
-\mbox{\Hypertarget{my_a_d_c_8hpp_a83b5556a35c674f23d7e853dbe49bfa7}\label{my_a_d_c_8hpp_a83b5556a35c674f23d7e853dbe49bfa7}} 
-\index{myADC.hpp@{myADC.hpp}!MY\_TEMP\_CHANNEL@{MY\_TEMP\_CHANNEL}}
-\index{MY\_TEMP\_CHANNEL@{MY\_TEMP\_CHANNEL}!myADC.hpp@{myADC.hpp}}
-\doxysubsubsection{\texorpdfstring{MY\_TEMP\_CHANNEL}{MY\_TEMP\_CHANNEL}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+N\+EL~4}
 

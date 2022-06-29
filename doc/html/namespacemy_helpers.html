@@ -107,9 +107,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a90d7c32f82edecaad34f24de7435033f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">pulseIn64</a> (const uint8_t pin, const bool state, uint64_t timeout=0)</td></tr>
 <tr class="memdesc:a90d7c32f82edecaad34f24de7435033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 64 bit.  <a href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">More...</a><br /></td></tr>
 <tr class="separator:a90d7c32f82edecaad34f24de7435033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2">map</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
-<tr class="memdesc:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another.  <a href="namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2">More...</a><br /></td></tr>
-<tr class="separator:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96154907f93e9076b34629afd70a862"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">map32</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
+<tr class="memdesc:af96154907f93e9076b34629afd70a862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 32 Bit.  <a href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">More...</a><br /></td></tr>
+<tr class="separator:af96154907f93e9076b34629afd70a862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b232780b4b52e9b1bce28bedc847ad"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">map64</a> (int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max)</td></tr>
+<tr class="memdesc:a24b232780b4b52e9b1bce28bedc847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 64 Bit.  <a href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">More...</a><br /></td></tr>
+<tr class="separator:a24b232780b4b52e9b1bce28bedc847ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac871d86adb103356b59521f9bccb93f7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#ac871d86adb103356b59521f9bccb93f7">reverseByte</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:ac871d86adb103356b59521f9bccb93f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#ac871d86adb103356b59521f9bccb93f7">More...</a><br /></td></tr>
+<tr class="separator:ac871d86adb103356b59521f9bccb93f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions. Define some helper functions for use within pico-myLibs. </p>
@@ -186,14 +192,14 @@ false is not a valid pin </dd></dl>
 
 </div>
 </div>
-<a id="af5b0de78a1d1ba318aa9c6f52e6c85d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5b0de78a1d1ba318aa9c6f52e6c85d2">&#9670;&nbsp;</a></span>map()</h2>
+<a id="af96154907f93e9076b34629afd70a862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96154907f93e9076b34629afd70a862">&#9670;&nbsp;</a></span>map32()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t myHelpers::map </td>
+          <td class="memname">int32_t myHelpers::map32 </td>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -230,7 +236,66 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Map a value from one range to another. </p>
+<p>Map a value from one range to another. 32 Bit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value to map </td></tr>
+    <tr><td class="paramname">in_min</td><td>In range minimum </td></tr>
+    <tr><td class="paramname">in_max</td><td>In range maximum </td></tr>
+    <tr><td class="paramname">out_min</td><td>Out range minimum. </td></tr>
+    <tr><td class="paramname">out_max</td><td>Out range maximum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t The mapped value. </dd></dl>
+
+</div>
+</div>
+<a id="a24b232780b4b52e9b1bce28bedc847ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b232780b4b52e9b1bce28bedc847ad">&#9670;&nbsp;</a></span>map64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t myHelpers::map64 </td>
+          <td>(</td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>in_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>in_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>out_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>out_max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Map a value from one range to another. 64 Bit. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Value to map </td></tr>
@@ -367,6 +432,33 @@ false is not a valid pin </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int64_t Positive = time elapsed in microseconds, negative = error code. </dd></dl>
+
+</div>
+</div>
+<a id="ac871d86adb103356b59521f9bccb93f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac871d86adb103356b59521f9bccb93f7">&#9670;&nbsp;</a></span>reverseByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myHelpers::reverseByte </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
 
 </div>
 </div>

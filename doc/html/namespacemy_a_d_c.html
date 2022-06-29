@@ -106,34 +106,34 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab4e69194cfba84ed337e42199cb5d2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call adc_init. Calles adc_init from the pico-sdk. This function is safe to call multiple times, as we only call adc_init once.  <a href="namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad">More...</a><br /></td></tr>
 <tr class="separator:ab4e69194cfba84ed337e42199cb5d2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">initChannel</a> (const uint8_t channel)</td></tr>
-<tr class="memdesc:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the pin and call adc_gpio_init. Selects the pin given a channel, and call adc_gpio_init for the pin, this is safe to call multiple times as it tracks if it's been called.  <a href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">More...</a><br /></td></tr>
+<tr class="memdesc:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the pin and call adc_gpio_init. Selects the pin given a channel, and call adc_gpio_init for the pin, this is safe to call multiple times as it tracks if it's been called. Returns an error code if the ADC hasn't been initialized, or if the channel is an invalid value, or if the channel has already been initialized.  <a href="namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8">More...</a><br /></td></tr>
 <tr class="separator:a23b6fffa3d0999aa87c8c947f9be8bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">initPin</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call adc_gpio_init for a given pin. Calls adc_gpio_init for a given pin, this is safe to call multiple times as the state is tracked.  <a href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">More...</a><br /></td></tr>
+<tr class="memdesc:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call adc_gpio_init for a given pin. Calls adc_gpio_init for a given pin, this is safe to call multiple times as the state is tracked. It will return an error code if the ADC hasn't been initialized, if the pin is an invalid ADC pin, or if the pin has already been initialized.  <a href="namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a">More...</a><br /></td></tr>
 <tr class="separator:a906ca96df5fd11d7c9f7a5b37e35875a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9657ed5dc89996688e4a4a231296d923"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923">initTemperature</a> ()</td></tr>
-<tr class="memdesc:a9657ed5dc89996688e4a4a231296d923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the temperature sensor. Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is therefore safe to call multiple times.  <a href="namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923">More...</a><br /></td></tr>
+<tr class="memdesc:a9657ed5dc89996688e4a4a231296d923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the temperature sensor. Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is therefore safe to call multiple times. It will return an error code if the ADC has not been initialized, or if the temperature channel has already been initialized.  <a href="namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923">More...</a><br /></td></tr>
 <tr class="separator:a9657ed5dc89996688e4a4a231296d923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a2acb6329cb0845a868f4f1168c8c6f2a">deinitTemperature</a> ()</td></tr>
-<tr class="memdesc:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">De intialize the temperature sensor. Calls adc_set_temp_sensor_enabled with false, and tracks it. this function is therefore safe to call multiple times.  <a href="namespacemy_a_d_c.html#a2acb6329cb0845a868f4f1168c8c6f2a">More...</a><br /></td></tr>
+<tr class="memdesc:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">De intialize the temperature sensor. Calls adc_set_temp_sensor_enabled with false, and tracks it. this function is therefore safe to call multiple times. Returns an error code if the temperature channel is not initialized.  <a href="namespacemy_a_d_c.html#a2acb6329cb0845a868f4f1168c8c6f2a">More...</a><br /></td></tr>
 <tr class="separator:a2acb6329cb0845a868f4f1168c8c6f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ba44744ea6e65481a0971037ec2bcbb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">readChannelRaw</a> (const uint8_t channel)</td></tr>
-<tr class="memdesc:a4ba44744ea6e65481a0971037ec2bcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the raw ADC reading for a channel.  <a href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">More...</a><br /></td></tr>
+<tr class="memdesc:a4ba44744ea6e65481a0971037ec2bcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the raw ADC reading for a channel. Selects the given channel and preforms a read, and returns the value. Returns an error code if the ADC has not been initialized, an invalid channel has been given, or if the given channel has not been initialized.  <a href="namespacemy_a_d_c.html#a4ba44744ea6e65481a0971037ec2bcbb">More...</a><br /></td></tr>
 <tr class="separator:a4ba44744ea6e65481a0971037ec2bcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74933447e2b9ad0028968f6eeeb100e2"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">readPinRaw</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:a74933447e2b9ad0028968f6eeeb100e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the raw ADC for a given pin.  <a href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">More...</a><br /></td></tr>
+<tr class="memdesc:a74933447e2b9ad0028968f6eeeb100e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the raw ADC for a given pin. Selects the appropriate channel given a pin, preforms a read, and returns the value. Returns an error code if the ADC has not been initialized, the pin is an invalid ADC pin, or if the pin has not been initialized.  <a href="namespacemy_a_d_c.html#a74933447e2b9ad0028968f6eeeb100e2">More...</a><br /></td></tr>
 <tr class="separator:a74933447e2b9ad0028968f6eeeb100e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a671539306cf3cfa2fb6c51d198f9b7a8">readTemperatureRaw</a> ()</td></tr>
-<tr class="memdesc:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the raw temperature value.  <a href="namespacemy_a_d_c.html#a671539306cf3cfa2fb6c51d198f9b7a8">More...</a><br /></td></tr>
+<tr class="memdesc:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the raw temperature value. Selects the internal temperature sensor, preforms the read, and returns the value. Returns an error code if the ADC has not been initialized, or if the internal temperature sensor channel has not been initialized.  <a href="namespacemy_a_d_c.html#a671539306cf3cfa2fb6c51d198f9b7a8">More...</a><br /></td></tr>
 <tr class="separator:a671539306cf3cfa2fb6c51d198f9b7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d31547a4eaa72ebc16374fe26800c43"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a9d31547a4eaa72ebc16374fe26800c43">readChannelVoltage</a> (const uint8_t channel, const float vRef=3.3f)</td></tr>
-<tr class="memdesc:a9d31547a4eaa72ebc16374fe26800c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the voltage of a channel given VREF.  <a href="namespacemy_a_d_c.html#a9d31547a4eaa72ebc16374fe26800c43">More...</a><br /></td></tr>
+<tr class="memdesc:a9d31547a4eaa72ebc16374fe26800c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the voltage of a channel given VREF. Selects the given channel, preforms a read, converts it to a voltage given VREF, and returns the value. Returns an error code if the ADC has not been intialized, if the channel is invalid, or the channel has not been initialized.  <a href="namespacemy_a_d_c.html#a9d31547a4eaa72ebc16374fe26800c43">More...</a><br /></td></tr>
 <tr class="separator:a9d31547a4eaa72ebc16374fe26800c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#ae6b47e4bca38fc1b64e36ab0b871597b">readPinVoltage</a> (const uint8_t pin, const float vRef=3.3f)</td></tr>
-<tr class="memdesc:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the voltage of a pin, given VREF.  <a href="namespacemy_a_d_c.html#ae6b47e4bca38fc1b64e36ab0b871597b">More...</a><br /></td></tr>
+<tr class="memdesc:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the voltage of a pin, given VREF Selects the appropriate channel given a pin, preforms a read, converts it to a voltage given VREF, and returns the value. Returns an error code if the ADC has not been initialized, the pin is an invalid ADC pin, or if the pin has not been initialized.  <a href="namespacemy_a_d_c.html#ae6b47e4bca38fc1b64e36ab0b871597b">More...</a><br /></td></tr>
 <tr class="separator:ae6b47e4bca38fc1b64e36ab0b871597b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e98c17e5ae09e42007161d736c9a7a1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_a_d_c.html#a6e98c17e5ae09e42007161d736c9a7a1">readTemperature</a> (const bool returnDegC=true)</td></tr>
-<tr class="memdesc:a6e98c17e5ae09e42007161d736c9a7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return temperature of sensor.  <a href="namespacemy_a_d_c.html#a6e98c17e5ae09e42007161d736c9a7a1">More...</a><br /></td></tr>
+<tr class="memdesc:a6e98c17e5ae09e42007161d736c9a7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return temperature of sensor. Selects the internal temperature sensor channel, preforms a read, and converts it to either degress celcius or degrees farenheit. Returns an error code if the ADC has not been initialized, or if the internal temperature sensor channel has not been initialized.  <a href="namespacemy_a_d_c.html#a6e98c17e5ae09e42007161d736c9a7a1">More...</a><br /></td></tr>
 <tr class="separator:a6e98c17e5ae09e42007161d736c9a7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -218,7 +218,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>De intialize the temperature sensor. Calls adc_set_temp_sensor_enabled with false, and tracks it. this function is therefore safe to call multiple times. </p>
+<p>De intialize the temperature sensor. Calls adc_set_temp_sensor_enabled with false, and tracks it. this function is therefore safe to call multiple times. Returns an error code if the temperature channel is not initialized. </p>
 <dl class="section return"><dt>Returns</dt><dd>int16_t Return 0 (NO_ERROR) for deinit okay, and negative for error code (already de init.) </dd></dl>
 
 </div>
@@ -381,7 +381,7 @@ false Temperature sensor not initialized. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Select the pin and call adc_gpio_init. Selects the pin given a channel, and call adc_gpio_init for the pin, this is safe to call multiple times as it tracks if it's been called. </p>
+<p>Select the pin and call adc_gpio_init. Selects the pin given a channel, and call adc_gpio_init for the pin, this is safe to call multiple times as it tracks if it's been called. Returns an error code if the ADC hasn't been initialized, or if the channel is an invalid value, or if the channel has already been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td>Channel to initialize. </td></tr>
@@ -446,14 +446,14 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Call adc_gpio_init for a given pin. Calls adc_gpio_init for a given pin, this is safe to call multiple times as the state is tracked. </p>
+<p>Call adc_gpio_init for a given pin. Calls adc_gpio_init for a given pin, this is safe to call multiple times as the state is tracked. It will return an error code if the ADC hasn't been initialized, if the pin is an invalid ADC pin, or if the pin has already been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>Pin to initialize </td></tr>
+    <tr><td class="paramname">pin</td><td>Pin to initialize. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16_t Return 0 (NO_ERROR) for no error, negative for error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for no error, negative for error code. </dd></dl>
 
 </div>
 </div>
@@ -480,7 +480,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Initialize the temperature sensor. Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is therefore safe to call multiple times. </p>
+<p>Initialize the temperature sensor. Calls adc_set_temp_sensor_enabled with true, and tracks if it's been called, this function is therefore safe to call multiple times. It will return an error code if the ADC has not been initialized, or if the temperature channel has already been initialized. </p>
 <dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for init okay, and negative for error code. (already init.) </dd></dl>
 
 </div>
@@ -536,7 +536,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Return the raw ADC reading for a channel. </p>
+<p>Return the raw ADC reading for a channel. Selects the given channel and preforms a read, and returns the value. Returns an error code if the ADC has not been initialized, an invalid channel has been given, or if the given channel has not been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td>Channel to read </td></tr>
@@ -573,7 +573,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate the voltage of a channel given VREF. </p>
+<p>Calculate the voltage of a channel given VREF. Selects the given channel, preforms a read, converts it to a voltage given VREF, and returns the value. Returns an error code if the ADC has not been intialized, if the channel is invalid, or the channel has not been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td>Channel to read. </td></tr>
@@ -581,7 +581,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>float Voltage on channel. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>float: Positive (including zero) is Voltage on channel. Negative is error code. </dd></dl>
 
 </div>
 </div>
@@ -601,7 +601,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Return the raw ADC for a given pin. </p>
+<p>Return the raw ADC for a given pin. Selects the appropriate channel given a pin, preforms a read, and returns the value. Returns an error code if the ADC has not been initialized, the pin is an invalid ADC pin, or if the pin has not been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
@@ -638,7 +638,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate the voltage of a pin, given VREF. </p>
+<p>Calculate the voltage of a pin, given VREF Selects the appropriate channel given a pin, preforms a read, converts it to a voltage given VREF, and returns the value. Returns an error code if the ADC has not been initialized, the pin is an invalid ADC pin, or if the pin has not been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
@@ -646,7 +646,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>float Voltage on pin. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>float: Positive (including zero) is Voltage on pin. Negative is error code. </dd></dl>
 
 </div>
 </div>
@@ -666,14 +666,14 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Return temperature of sensor. </p>
+<p>Return temperature of sensor. Selects the internal temperature sensor channel, preforms a read, and converts it to either degress celcius or degrees farenheit. Returns an error code if the ADC has not been initialized, or if the internal temperature sensor channel has not been initialized. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">returnDegC</td><td>True, return DegC, False, retrun DegF. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>float Temperature. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>float Values greater than -199.99... is the temperature. Values of -200 or less are error codes. </dd></dl>
 
 </div>
 </div>
@@ -692,7 +692,7 @@ false If adc_init was not called, ie: adc_init already called. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Read the raw temperature value. </p>
+<p>Read the raw temperature value. Selects the internal temperature sensor, preforms the read, and returns the value. Returns an error code if the ADC has not been initialized, or if the internal temperature sensor channel has not been initialized. </p>
 <dl class="section return"><dt>Returns</dt><dd>int16_t Positive (including zero) adc reading, negative for error code. </dd></dl>
 
 </div>

@@ -76,14 +76,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_standard_defines_8hpp__dep__incl.png" border="0" usemap="#my_standard_defines_8hppdep" alt=""/></div>
 <map name="my_standard_defines_8hppdep" id="my_standard_defines_8hppdep">
-<area shape="rect" title="Standard defines for pico&#45;myLibs." alt="" coords="491,5,669,32"/>
+<area shape="rect" title="Standard defines for pico&#45;myLibs." alt="" coords="589,5,768,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
-<area shape="rect" href="my_bit_bang_s_p_i_8hpp.html" title=" " alt="" coords="254,80,493,107"/>
-<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="569,80,690,107"/>
-<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="273,155,524,181"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="735,155,985,181"/>
-<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="766,80,970,107"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="548,155,711,181"/>
+<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="304,80,456,107"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="222,155,426,181"/>
+<area shape="rect" href="my_bit_bang_s_p_i_8hpp.html" title=" " alt="" coords="481,80,719,107"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="795,80,917,107"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="593,155,756,181"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="780,155,1031,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1055,155,1305,181"/>
 </map>
 </div>
 </div>
@@ -100,12 +101,66 @@ Macros</h2></td></tr>
 <tr class="memitem:a57c0b773be8be16ef6615b3681275f09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a57c0b773be8be16ef6615b3681275f09">MY_MAX_PIN</a>&#160;&#160;&#160;29</td></tr>
 <tr class="memdesc:a57c0b773be8be16ef6615b3681275f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max valid pin number. The highest pin number on the rp2040.  <a href="my_standard_defines_8hpp.html#a57c0b773be8be16ef6615b3681275f09">More...</a><br /></td></tr>
 <tr class="separator:a57c0b773be8be16ef6615b3681275f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77320068cd79bb2f68db075d5c214d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#af77320068cd79bb2f68db075d5c214d6">MY_ADC_CHANNEL_0_PIN</a>&#160;&#160;&#160;26</td></tr>
+<tr class="memdesc:af77320068cd79bb2f68db075d5c214d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel 0 pin. The pin number for ADC channel 0.  <a href="my_standard_defines_8hpp.html#af77320068cd79bb2f68db075d5c214d6">More...</a><br /></td></tr>
+<tr class="separator:af77320068cd79bb2f68db075d5c214d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace577d623ec1c3f4d8676feea056f22e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#ace577d623ec1c3f4d8676feea056f22e">MY_ADC_CHANNEL_1_PIN</a>&#160;&#160;&#160;27</td></tr>
+<tr class="memdesc:ace577d623ec1c3f4d8676feea056f22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel 1 pin. The pin number for ADC channel 1.  <a href="my_standard_defines_8hpp.html#ace577d623ec1c3f4d8676feea056f22e">More...</a><br /></td></tr>
+<tr class="separator:ace577d623ec1c3f4d8676feea056f22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667141471f9f759b7b3380bc76e3f4b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a667141471f9f759b7b3380bc76e3f4b5">MY_ADC_CHANNEL_2_PIN</a>&#160;&#160;&#160;28</td></tr>
+<tr class="memdesc:a667141471f9f759b7b3380bc76e3f4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel 2 pin. The pin number for ADC channel 2.  <a href="my_standard_defines_8hpp.html#a667141471f9f759b7b3380bc76e3f4b5">More...</a><br /></td></tr>
+<tr class="separator:a667141471f9f759b7b3380bc76e3f4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d38ca0bb1588e9c384466ff5c0e503"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a57d38ca0bb1588e9c384466ff5c0e503">MY_ADC_CHANNEL_3_PIN</a>&#160;&#160;&#160;29</td></tr>
+<tr class="memdesc:a57d38ca0bb1588e9c384466ff5c0e503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Channel 3 pin. The pin number for ADC channel 3.  <a href="my_standard_defines_8hpp.html#a57d38ca0bb1588e9c384466ff5c0e503">More...</a><br /></td></tr>
+<tr class="separator:a57d38ca0bb1588e9c384466ff5c0e503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c745cff3c33fd026733383bdbde51c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a5c745cff3c33fd026733383bdbde51c9">MY_ADC_CHANNEL_0</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a5c745cff3c33fd026733383bdbde51c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Channel 0 The channel number for adc user channel 0.  <a href="my_standard_defines_8hpp.html#a5c745cff3c33fd026733383bdbde51c9">More...</a><br /></td></tr>
+<tr class="separator:a5c745cff3c33fd026733383bdbde51c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d982c461e30c99eed564905a1f03b39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a9d982c461e30c99eed564905a1f03b39">MY_ADC_CHANNEL_1</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a9d982c461e30c99eed564905a1f03b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Channel 1 The channel number for adc user channel 1.  <a href="my_standard_defines_8hpp.html#a9d982c461e30c99eed564905a1f03b39">More...</a><br /></td></tr>
+<tr class="separator:a9d982c461e30c99eed564905a1f03b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc97438af5581fca2dcd583100ed615f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#adc97438af5581fca2dcd583100ed615f">MY_ADC_CHANNEL_2</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:adc97438af5581fca2dcd583100ed615f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Channel 2 The channel number for adc user channel 2.  <a href="my_standard_defines_8hpp.html#adc97438af5581fca2dcd583100ed615f">More...</a><br /></td></tr>
+<tr class="separator:adc97438af5581fca2dcd583100ed615f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620d30c6a3d12743b396fe5468ff92ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a620d30c6a3d12743b396fe5468ff92ea">MY_ADC_CHANNEL_3</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a620d30c6a3d12743b396fe5468ff92ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Channel 3 The channel number for adc user channel 3.  <a href="my_standard_defines_8hpp.html#a620d30c6a3d12743b396fe5468ff92ea">More...</a><br /></td></tr>
+<tr class="separator:a620d30c6a3d12743b396fe5468ff92ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea71b722ebe1461e2c42aa23bba8d11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#adea71b722ebe1461e2c42aa23bba8d11">MY_ADC_TEMP_CHANNEL</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:adea71b722ebe1461e2c42aa23bba8d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature channel. The channel number for the internal temerature sensor.  <a href="my_standard_defines_8hpp.html#adea71b722ebe1461e2c42aa23bba8d11">More...</a><br /></td></tr>
+<tr class="separator:adea71b722ebe1461e2c42aa23bba8d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d4451c9625aab5aafb406ae3f96ece"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a27d4451c9625aab5aafb406ae3f96ece">MY_ADC_NUM_USER_CHANNELS</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:a27d4451c9625aab5aafb406ae3f96ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of user channels. The number for user channels (ie channels mapped to pins) on the rp2040.  <a href="my_standard_defines_8hpp.html#a27d4451c9625aab5aafb406ae3f96ece">More...</a><br /></td></tr>
+<tr class="separator:a27d4451c9625aab5aafb406ae3f96ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d67489d89deaaf2c2831d1fcab1bdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#ac2d67489d89deaaf2c2831d1fcab1bdf">MY_ADC_NUM_CHANNELS</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:ac2d67489d89deaaf2c2831d1fcab1bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ADC channels. The total number of ADC channels, including the internal temperature sensor for the rp2040.  <a href="my_standard_defines_8hpp.html#ac2d67489d89deaaf2c2831d1fcab1bdf">More...</a><br /></td></tr>
+<tr class="separator:ac2d67489d89deaaf2c2831d1fcab1bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0548fc588568158f43b35b915542f3d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a0548fc588568158f43b35b915542f3d7">MY_PWM_NUM_SLICE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:a0548fc588568158f43b35b915542f3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of slices. Number of PWM slices on the rp2040. There are 8 slices, with 2 channels each.  <a href="my_standard_defines_8hpp.html#a0548fc588568158f43b35b915542f3d7">More...</a><br /></td></tr>
+<tr class="separator:a0548fc588568158f43b35b915542f3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48de1a46427510f979d1cf48d34c2e89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a48de1a46427510f979d1cf48d34c2e89">MY_PWM_NUM_CHANNEL</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:a48de1a46427510f979d1cf48d34c2e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of channels per slice. Number of PWM channels per slice on the rp2040. There are 8 slices with 2 channels each.  <a href="my_standard_defines_8hpp.html#a48de1a46427510f979d1cf48d34c2e89">More...</a><br /></td></tr>
+<tr class="separator:a48de1a46427510f979d1cf48d34c2e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2e0364c8daad6803ff16a9bc8edee3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a7c2e0364c8daad6803ff16a9bc8edee3">MY_PWM_DEFAULT_FREQ</a>&#160;&#160;&#160;125000000</td></tr>
+<tr class="memdesc:a7c2e0364c8daad6803ff16a9bc8edee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default PWM frequency. The defalt PWM frequency in hz.  <a href="my_standard_defines_8hpp.html#a7c2e0364c8daad6803ff16a9bc8edee3">More...</a><br /></td></tr>
+<tr class="separator:a7c2e0364c8daad6803ff16a9bc8edee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error value. Value to use to represent no error.  <a href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">More...</a><br /></td></tr>
 <tr class="separator:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ab9569b2a283a5cd23b09c2c68b4b6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">MY_GENERAL_ERROR</a>&#160;&#160;&#160;-1</td></tr>
 <tr class="memdesc:a6ab9569b2a283a5cd23b09c2c68b4b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">General error value. General error for when no other error code applies.  <a href="my_standard_defines_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">More...</a><br /></td></tr>
 <tr class="separator:a6ab9569b2a283a5cd23b09c2c68b4b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2c7825740de47fb2c8572f6f81027c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a1a2c7825740de47fb2c8572f6f81027c">MY_INVALID_PIN</a>&#160;&#160;&#160;-2</td></tr>
+<tr class="memdesc:a1a2c7825740de47fb2c8572f6f81027c"><td class="mdescLeft">&#160;</td><td class="mdescRight">invalid pin number. An invalid pin number was passed.  <a href="my_standard_defines_8hpp.html#a1a2c7825740de47fb2c8572f6f81027c">More...</a><br /></td></tr>
+<tr class="separator:a1a2c7825740de47fb2c8572f6f81027c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c7699357e500c950a9a32a429e59bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a30c7699357e500c950a9a32a429e59bf">MY_INVALID_BIT_MASK</a>&#160;&#160;&#160;-3</td></tr>
+<tr class="memdesc:a30c7699357e500c950a9a32a429e59bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">invalid bit mask. An invalid bit mask was passed.  <a href="my_standard_defines_8hpp.html#a30c7699357e500c950a9a32a429e59bf">More...</a><br /></td></tr>
+<tr class="separator:a30c7699357e500c950a9a32a429e59bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dfe5bfae97efc2aae8d64482104a1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">MY_TIMEOUT</a>&#160;&#160;&#160;-4</td></tr>
+<tr class="memdesc:a72dfe5bfae97efc2aae8d64482104a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout reached. A timeout has been reached.  <a href="my_standard_defines_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">More...</a><br /></td></tr>
+<tr class="separator:a72dfe5bfae97efc2aae8d64482104a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2932a50fea6f22d821215e6d34403aff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a2932a50fea6f22d821215e6d34403aff">MY_INVALID_DIR</a>&#160;&#160;&#160;-5</td></tr>
+<tr class="memdesc:a2932a50fea6f22d821215e6d34403aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid direction A pin is set to wrong direction for operation requested.  <a href="my_standard_defines_8hpp.html#a2932a50fea6f22d821215e6d34403aff">More...</a><br /></td></tr>
+<tr class="separator:a2932a50fea6f22d821215e6d34403aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f1093563dc14c2923f33412a982e83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>&#160;&#160;&#160;1</td></tr>
 <tr class="memdesc:ad2f1093563dc14c2923f33412a982e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit order of MSB first.  <a href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">More...</a><br /></td></tr>
 <tr class="separator:ad2f1093563dc14c2923f33412a982e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,6 +231,182 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a5c745cff3c33fd026733383bdbde51c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c745cff3c33fd026733383bdbde51c9">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_0&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC Channel 0 The channel number for adc user channel 0. </p>
+
+</div>
+</div>
+<a id="af77320068cd79bb2f68db075d5c214d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77320068cd79bb2f68db075d5c214d6">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_0_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_0_PIN&#160;&#160;&#160;26</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Channel 0 pin. The pin number for ADC channel 0. </p>
+
+</div>
+</div>
+<a id="a9d982c461e30c99eed564905a1f03b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d982c461e30c99eed564905a1f03b39">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_1&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC Channel 1 The channel number for adc user channel 1. </p>
+
+</div>
+</div>
+<a id="ace577d623ec1c3f4d8676feea056f22e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace577d623ec1c3f4d8676feea056f22e">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_1_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_1_PIN&#160;&#160;&#160;27</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Channel 1 pin. The pin number for ADC channel 1. </p>
+
+</div>
+</div>
+<a id="adc97438af5581fca2dcd583100ed615f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc97438af5581fca2dcd583100ed615f">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_2&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC Channel 2 The channel number for adc user channel 2. </p>
+
+</div>
+</div>
+<a id="a667141471f9f759b7b3380bc76e3f4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667141471f9f759b7b3380bc76e3f4b5">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_2_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_2_PIN&#160;&#160;&#160;28</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Channel 2 pin. The pin number for ADC channel 2. </p>
+
+</div>
+</div>
+<a id="a620d30c6a3d12743b396fe5468ff92ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620d30c6a3d12743b396fe5468ff92ea">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_3&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC Channel 3 The channel number for adc user channel 3. </p>
+
+</div>
+</div>
+<a id="a57d38ca0bb1588e9c384466ff5c0e503"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d38ca0bb1588e9c384466ff5c0e503">&#9670;&nbsp;</a></span>MY_ADC_CHANNEL_3_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_CHANNEL_3_PIN&#160;&#160;&#160;29</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Channel 3 pin. The pin number for ADC channel 3. </p>
+
+</div>
+</div>
+<a id="ac2d67489d89deaaf2c2831d1fcab1bdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d67489d89deaaf2c2831d1fcab1bdf">&#9670;&nbsp;</a></span>MY_ADC_NUM_CHANNELS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_NUM_CHANNELS&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of ADC channels. The total number of ADC channels, including the internal temperature sensor for the rp2040. </p>
+
+</div>
+</div>
+<a id="a27d4451c9625aab5aafb406ae3f96ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d4451c9625aab5aafb406ae3f96ece">&#9670;&nbsp;</a></span>MY_ADC_NUM_USER_CHANNELS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_NUM_USER_CHANNELS&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of user channels. The number for user channels (ie channels mapped to pins) on the rp2040. </p>
+
+</div>
+</div>
+<a id="adea71b722ebe1461e2c42aa23bba8d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adea71b722ebe1461e2c42aa23bba8d11">&#9670;&nbsp;</a></span>MY_ADC_TEMP_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ADC_TEMP_CHANNEL&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Temperature channel. The channel number for the internal temerature sensor. </p>
+
+</div>
+</div>
 <a id="a6ab9569b2a283a5cd23b09c2c68b4b6b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ab9569b2a283a5cd23b09c2c68b4b6b">&#9670;&nbsp;</a></span>MY_GENERAL_ERROR</h2>
 
@@ -189,6 +420,54 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>General error value. General error for when no other error code applies. </p>
+
+</div>
+</div>
+<a id="a30c7699357e500c950a9a32a429e59bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c7699357e500c950a9a32a429e59bf">&#9670;&nbsp;</a></span>MY_INVALID_BIT_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_INVALID_BIT_MASK&#160;&#160;&#160;-3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>invalid bit mask. An invalid bit mask was passed. </p>
+
+</div>
+</div>
+<a id="a2932a50fea6f22d821215e6d34403aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2932a50fea6f22d821215e6d34403aff">&#9670;&nbsp;</a></span>MY_INVALID_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_INVALID_DIR&#160;&#160;&#160;-5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid direction A pin is set to wrong direction for operation requested. </p>
+
+</div>
+</div>
+<a id="a1a2c7825740de47fb2c8572f6f81027c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2c7825740de47fb2c8572f6f81027c">&#9670;&nbsp;</a></span>MY_INVALID_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_INVALID_PIN&#160;&#160;&#160;-2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>invalid pin number. An invalid pin number was passed. </p>
 
 </div>
 </div>
@@ -254,6 +533,70 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of gpio pins. Number of GPIO pins on the rp2040. </p>
+
+</div>
+</div>
+<a id="a7c2e0364c8daad6803ff16a9bc8edee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2e0364c8daad6803ff16a9bc8edee3">&#9670;&nbsp;</a></span>MY_PWM_DEFAULT_FREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_DEFAULT_FREQ&#160;&#160;&#160;125000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default PWM frequency. The defalt PWM frequency in hz. </p>
+
+</div>
+</div>
+<a id="a48de1a46427510f979d1cf48d34c2e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48de1a46427510f979d1cf48d34c2e89">&#9670;&nbsp;</a></span>MY_PWM_NUM_CHANNEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_NUM_CHANNEL&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of channels per slice. Number of PWM channels per slice on the rp2040. There are 8 slices with 2 channels each. </p>
+
+</div>
+</div>
+<a id="a0548fc588568158f43b35b915542f3d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0548fc588568158f43b35b915542f3d7">&#9670;&nbsp;</a></span>MY_PWM_NUM_SLICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_PWM_NUM_SLICE&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of slices. Number of PWM slices on the rp2040. There are 8 slices, with 2 channels each. </p>
+
+</div>
+</div>
+<a id="a72dfe5bfae97efc2aae8d64482104a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72dfe5bfae97efc2aae8d64482104a1e">&#9670;&nbsp;</a></span>MY_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_TIMEOUT&#160;&#160;&#160;-4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timeout reached. A timeout has been reached. </p>
 
 </div>
 </div>

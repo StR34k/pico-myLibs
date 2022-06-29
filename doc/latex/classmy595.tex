@@ -12,12 +12,18 @@ A Class to use a 595 shift register. Use start\+Write to start a write to the sh
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classmy595_ac3b9278cf36c8514c441753e4f621dad}{my595}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t miso, const uint8\+\_\+t mosi)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. Hardware spi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy595_ace3ab963f5a8610a6abd2aada236d374}{my595}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t enable)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. With enable, hardware spi mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy595_a9500280cb665243a3fee96dfec25fceb}{my595}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t enable, const uint8\+\_\+t \mbox{\hyperlink{classmy595_af2008fd88e7505334a97e5abe7bf56e0}{clear}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. With enable and clear. Hardware spi. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data)
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object. Bit banged mode. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data, const uint8\+\_\+t enable)
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin. Bit banged mode. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy595_a36a35a18fdf3044151d27dd57f1d0343}{my595}} (const uint8\+\_\+t latch, const uint8\+\_\+t clock, const uint8\+\_\+t data, const uint8\+\_\+t enable, const uint8\+\_\+t \mbox{\hyperlink{classmy595_af2008fd88e7505334a97e5abe7bf56e0}{clear}})
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable and clear pin. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable and clear pin. Bit banged mode. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_a5500cff53bb9c724db9ca64c6ba303ec}{initialize}} ()
 \begin{DoxyCompactList}\small\item\em intiialize()\+: Initalize the shfit register. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_aac7cd78f82f0d116baa512dffec05c9b}{initialize}} (const bool enable)
@@ -26,27 +32,29 @@ int16\+\_\+t \mbox{\hyperlink{classmy595_a0f019532fbe735bc7ad314294f8da8fd}{init
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmy595_a0f019532fbe735bc7ad314294f8da8fd}{initialize(uint8\+\_\+t)}}\+: Initialize the shift register. Initialize the shift register in P\+WM mode. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy595_aa03073404926ec209783cd8feb834510}{start\+Write}} ()
 \begin{DoxyCompactList}\small\item\em Start Write to the shift register. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classmy595_a0b886b7e7e9ac2a375f693508ce98d7b}{write\+Bit}} (const bool value)
+int16\+\_\+t \mbox{\hyperlink{classmy595_ac92dc26d6b00d73efd387929b7f1a3df}{write\+Bit}} (const bool value)
 \begin{DoxyCompactList}\small\item\em Clock in a single bit to the shift register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy595_af804c81577a2341ec91aad39647f7088}{write\+Byte}} (const uint8\+\_\+t value, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
 \begin{DoxyCompactList}\small\item\em Write a byte to the shift register. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy595_a575e17d7ede1ebbfe36859d3bea00f25}{stop\+Write}} ()
-\begin{DoxyCompactList}\small\item\em Stop the write and latch in data. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Stop the write. Stop the write and latch in data. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_af2008fd88e7505334a97e5abe7bf56e0}{clear}} ()
 \begin{DoxyCompactList}\small\item\em Pulse the clear pin to clear the shift register. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_ac75aa0572f671b59784f92e02dd74a00}{set\+Enable}} (const bool value)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmy595_ac75aa0572f671b59784f92e02dd74a00}{set\+Enable(bool)}}\+: Set the enable pin. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmy595_ac75aa0572f671b59784f92e02dd74a00}{set\+Enable(bool)}}\+: Set the enable pin. Sets the enable pin, in boolean mode. If enable has been initialized in P\+WM mode, it will write the appropriate P\+WM value to turn on / off the enable. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\+Enable}} (const uint8\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\+Enable(uint8\+\_\+t)}}\+: Set the enable pin pwm value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\+Enable(uint8\+\_\+t)}}\+: Set the enable pin pwm value. Sets the enable pin, in P\+WM mode. If enable has been initialized in P\+WM mode, it will write the given value, where 255 is always on, and 0 is always off if enable is not in pwm mode, it will turn on / off the enable pin based on the value given. if value $>$ 127, then the chip is enabled. Otherwise the chip will be disabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy595_a3cd30dc7b674c443473953c9c989e63d}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
-\begin{DoxyCompactList}\small\item\em No error\+: 0. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em No error. Value\+: 0. \end{DoxyCompactList}\item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy595_aa4834ba78a8f8139c06852ebd934d6b6}{E\+R\+R\+O\+R\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a507132ce31f0514a87d1a09532012c64}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
 \begin{DoxyCompactList}\small\item\em Enable pin not defined. Value\+: -\/400. \end{DoxyCompactList}\item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy595_a347e44e1395b941004a7b512f6c6cb65}{E\+R\+R\+O\+R\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
-\begin{DoxyCompactList}\small\item\em Clear pin not defined. Value\+: -\/401. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clear pin not defined. Value\+: -\/401. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy595_a9e1fe4c83adac141803e75c49ba7eb43}{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}} = \mbox{\hyperlink{my_error_codes_8hpp_a782036dcdbcad4d43077ddcc6552cb72}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}
+\begin{DoxyCompactList}\small\item\em Operation not available. Value\+: -\/402 Write bit operation is not available when in hardware spi mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -55,15 +63,84 @@ A Class to use a 595 shift register. Use start\+Write to start a write to the sh
 Datasheet\+: \href{https://www.ti.com/lit/ds/symlink/sn74hc595.pdf}{\texttt{ https\+://www.\+ti.\+com/lit/ds/symlink/sn74hc595.\+pdf}} 
 
 \doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy595_ac3b9278cf36c8514c441753e4f621dad}\label{classmy595_ac3b9278cf36c8514c441753e4f621dad}} 
+\index{my595@{my595}!my595@{my595}}
+\index{my595@{my595}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{miso,  }\item[{const uint8\+\_\+t}]{mosi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object. Hardware spi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & HW Spi port \\
+\hline
+{\em latch} & Latch pin number. \\
+\hline
+{\em clock} & clock pin number. \\
+\hline
+{\em data} & Data pin number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy595_ace3ab963f5a8610a6abd2aada236d374}\label{classmy595_ace3ab963f5a8610a6abd2aada236d374}} 
+\index{my595@{my595}!my595@{my595}}
+\index{my595@{my595}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{miso,  }\item[{const uint8\+\_\+t}]{mosi,  }\item[{const uint8\+\_\+t}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object. With enable, hardware spi mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & Hardware S\+PI port. \\
+\hline
+{\em latch} & Latch pin number. \\
+\hline
+{\em clock} & Clock pin number. \\
+\hline
+{\em data} & Data pin number. \\
+\hline
+{\em enable} & Enable pin number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy595_a9500280cb665243a3fee96dfec25fceb}\label{classmy595_a9500280cb665243a3fee96dfec25fceb}} 
+\index{my595@{my595}!my595@{my595}}
+\index{my595@{my595}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{miso,  }\item[{const uint8\+\_\+t}]{mosi,  }\item[{const uint8\+\_\+t}]{enable,  }\item[{const uint8\+\_\+t}]{clear }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object. With enable and clear. Hardware spi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & \\
+\hline
+{\em latch} & \\
+\hline
+{\em clock} & \\
+\hline
+{\em data} & \\
+\hline
+{\em enable} & \\
+\hline
+{\em clear} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}\label{classmy595_a6d5586f91ddedcde8fd70982c53ed0b1}} 
 \index{my595@{my595}!my595@{my595}}
 \index{my595@{my595}!my595@{my595}}
-\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
 {\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Construct a new \mbox{\hyperlink{classmy595}{my595}} object. 
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object. Bit banged mode. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -77,12 +154,12 @@ Construct a new \mbox{\hyperlink{classmy595}{my595}} object.
 \mbox{\Hypertarget{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}\label{classmy595_aa0b1c364a9e2a739779b00b05b4ee696}} 
 \index{my595@{my595}!my595@{my595}}
 \index{my595@{my595}!my595@{my595}}
-\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
 {\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{data,  }\item[{const uint8\+\_\+t}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin. 
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin. Bit banged mode. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -98,12 +175,12 @@ Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable pin.
 \mbox{\Hypertarget{classmy595_a36a35a18fdf3044151d27dd57f1d0343}\label{classmy595_a36a35a18fdf3044151d27dd57f1d0343}} 
 \index{my595@{my595}!my595@{my595}}
 \index{my595@{my595}!my595@{my595}}
-\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{my595()}{my595()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
 {\footnotesize\ttfamily my595\+::my595 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{latch,  }\item[{const uint8\+\_\+t}]{clock,  }\item[{const uint8\+\_\+t}]{data,  }\item[{const uint8\+\_\+t}]{enable,  }\item[{const uint8\+\_\+t}]{clear }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable and clear pin. 
+Construct a new \mbox{\hyperlink{classmy595}{my595}} object with enable and clear pin. Bit banged mode. 
 
 \begin{DoxyNote}{Note}
 enable pin can be set to M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN, or any other invalid pin number to disable. 
@@ -196,7 +273,7 @@ int16\+\_\+t returns 0 (M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR) for okay, and negat
 
 
 
-\mbox{\hyperlink{classmy595_ac75aa0572f671b59784f92e02dd74a00}{set\+Enable(bool)}}\+: Set the enable pin. 
+\mbox{\hyperlink{classmy595_ac75aa0572f671b59784f92e02dd74a00}{set\+Enable(bool)}}\+: Set the enable pin. Sets the enable pin, in boolean mode. If enable has been initialized in P\+WM mode, it will write the appropriate P\+WM value to turn on / off the enable. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -204,7 +281,7 @@ int16\+\_\+t returns 0 (M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR) for okay, and negat
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int16\+\_\+t returns 0 (M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+int16\+\_\+t returns 0 (M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. (E\+R\+R\+O\+R\+\_\+\+C\+L\+E\+AR) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classmy595_a14e48f6b42453b0bf506575bfae378ff}\label{classmy595_a14e48f6b42453b0bf506575bfae378ff}} 
 \index{my595@{my595}!setEnable@{setEnable}}
@@ -214,7 +291,7 @@ int16\+\_\+t returns 0 (M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative 
 
 
 
-\mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\+Enable(uint8\+\_\+t)}}\+: Set the enable pin pwm value. 
+\mbox{\hyperlink{classmy595_a14e48f6b42453b0bf506575bfae378ff}{set\+Enable(uint8\+\_\+t)}}\+: Set the enable pin pwm value. Sets the enable pin, in P\+WM mode. If enable has been initialized in P\+WM mode, it will write the given value, where 255 is always on, and 0 is always off if enable is not in pwm mode, it will turn on / off the enable pin based on the value given. if value $>$ 127, then the chip is enabled. Otherwise the chip will be disabled. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -242,13 +319,13 @@ Start Write to the shift register.
 
 
 
-Stop the write and latch in data. 
+Stop the write. Stop the write and latch in data. 
 
-\mbox{\Hypertarget{classmy595_a0b886b7e7e9ac2a375f693508ce98d7b}\label{classmy595_a0b886b7e7e9ac2a375f693508ce98d7b}} 
+\mbox{\Hypertarget{classmy595_ac92dc26d6b00d73efd387929b7f1a3df}\label{classmy595_ac92dc26d6b00d73efd387929b7f1a3df}} 
 \index{my595@{my595}!writeBit@{writeBit}}
 \index{writeBit@{writeBit}!my595@{my595}}
 \doxysubsubsection{\texorpdfstring{writeBit()}{writeBit()}}
-{\footnotesize\ttfamily void my595\+::write\+Bit (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int16\+\_\+t my595\+::write\+Bit (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -259,6 +336,12 @@ Clock in a single bit to the shift register.
 {\em value} & Value to clock in. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 for no error, negative is error code. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Will return an error if in hardware spi mode. 
+\end{DoxyNote}
 \mbox{\Hypertarget{classmy595_af804c81577a2341ec91aad39647f7088}\label{classmy595_af804c81577a2341ec91aad39647f7088}} 
 \index{my595@{my595}!writeByte@{writeByte}}
 \index{writeByte@{writeByte}!my595@{my595}}
@@ -299,6 +382,16 @@ Clear pin not defined. Value\+: -\/401.
 
 Enable pin not defined. Value\+: -\/400. 
 
+\mbox{\Hypertarget{classmy595_a9e1fe4c83adac141803e75c49ba7eb43}\label{classmy595_a9e1fe4c83adac141803e75c49ba7eb43}} 
+\index{my595@{my595}!ERROR\_OPERATION\_NOT\_AVAILABLE@{ERROR\_OPERATION\_NOT\_AVAILABLE}}
+\index{ERROR\_OPERATION\_NOT\_AVAILABLE@{ERROR\_OPERATION\_NOT\_AVAILABLE}!my595@{my595}}
+\doxysubsubsection{\texorpdfstring{ERROR\_OPERATION\_NOT\_AVAILABLE}{ERROR\_OPERATION\_NOT\_AVAILABLE}}
+{\footnotesize\ttfamily const int16\+\_\+t my595\+::\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE = \mbox{\hyperlink{my_error_codes_8hpp_a782036dcdbcad4d43077ddcc6552cb72}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Operation not available. Value\+: -\/402 Write bit operation is not available when in hardware spi mode. 
+
 \mbox{\Hypertarget{classmy595_a3cd30dc7b674c443473953c9c989e63d}\label{classmy595_a3cd30dc7b674c443473953c9c989e63d}} 
 \index{my595@{my595}!NO\_ERROR@{NO\_ERROR}}
 \index{NO\_ERROR@{NO\_ERROR}!my595@{my595}}
@@ -307,7 +400,7 @@ Enable pin not defined. Value\+: -\/400.
 
 
 
-No error\+: 0. 
+No error. Value\+: 0. 
 
 
 

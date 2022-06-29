@@ -96,7 +96,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="my_helpers_8hpp__dep__incl.png" border="0" usemap="#my_helpers_8hppdep" alt=""/></div>
 <map name="my_helpers_8hppdep" id="my_helpers_8hppdep">
 <area shape="rect" title="Helper functions." alt="" coords="257,5,378,32"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title=" " alt="" coords="5,80,168,107"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="5,80,168,107"/>
 <area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="192,80,443,107"/>
 <area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="467,80,717,107"/>
 </map>
@@ -145,9 +145,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a90d7c32f82edecaad34f24de7435033f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">myHelpers::pulseIn64</a> (const uint8_t pin, const bool state, uint64_t timeout=0)</td></tr>
 <tr class="memdesc:a90d7c32f82edecaad34f24de7435033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 64 bit.  <a href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">More...</a><br /></td></tr>
 <tr class="separator:a90d7c32f82edecaad34f24de7435033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2">myHelpers::map</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
-<tr class="memdesc:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another.  <a href="namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2">More...</a><br /></td></tr>
-<tr class="separator:af5b0de78a1d1ba318aa9c6f52e6c85d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96154907f93e9076b34629afd70a862"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">myHelpers::map32</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
+<tr class="memdesc:af96154907f93e9076b34629afd70a862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 32 Bit.  <a href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">More...</a><br /></td></tr>
+<tr class="separator:af96154907f93e9076b34629afd70a862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b232780b4b52e9b1bce28bedc847ad"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">myHelpers::map64</a> (int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max)</td></tr>
+<tr class="memdesc:a24b232780b4b52e9b1bce28bedc847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 64 Bit.  <a href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">More...</a><br /></td></tr>
+<tr class="separator:a24b232780b4b52e9b1bce28bedc847ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac871d86adb103356b59521f9bccb93f7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#ac871d86adb103356b59521f9bccb93f7">myHelpers::reverseByte</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:ac871d86adb103356b59521f9bccb93f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#ac871d86adb103356b59521f9bccb93f7">More...</a><br /></td></tr>
+<tr class="separator:ac871d86adb103356b59521f9bccb93f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions. </p>

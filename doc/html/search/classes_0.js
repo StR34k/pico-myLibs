@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bitbangedspi_236',['bitBangedSPI',['../classbit_banged_s_p_i.html',1,'']]]
+  ['bitbangedspi_288',['bitBangedSPI',['../classbit_banged_s_p_i.html',1,'']]]
 ];

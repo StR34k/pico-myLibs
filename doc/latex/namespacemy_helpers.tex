@@ -30,8 +30,12 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaeda
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 64 bit. \end{DoxyCompactList}\item 
-int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}{map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af96154907f93e9076b34629afd70a862}{map32}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 32 Bit. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}{map64}} (int64\+\_\+t x, int64\+\_\+t in\+\_\+min, int64\+\_\+t in\+\_\+max, int64\+\_\+t out\+\_\+min, int64\+\_\+t out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 64 Bit. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}{reverse\+Byte}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -76,15 +80,41 @@ true is a valid pin
 
 false is not a valid pin 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}\label{namespacemy_helpers_af5b0de78a1d1ba318aa9c6f52e6c85d2}} 
-\index{myHelpers@{myHelpers}!map@{map}}
-\index{map@{map}!myHelpers@{myHelpers}}
-\doxysubsubsection{\texorpdfstring{map()}{map()}}
-{\footnotesize\ttfamily int32\+\_\+t my\+Helpers\+::map (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x,  }\item[{int32\+\_\+t}]{in\+\_\+min,  }\item[{int32\+\_\+t}]{in\+\_\+max,  }\item[{int32\+\_\+t}]{out\+\_\+min,  }\item[{int32\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacemy_helpers_af96154907f93e9076b34629afd70a862}\label{namespacemy_helpers_af96154907f93e9076b34629afd70a862}} 
+\index{myHelpers@{myHelpers}!map32@{map32}}
+\index{map32@{map32}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{map32()}{map32()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+Helpers\+::map32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x,  }\item[{int32\+\_\+t}]{in\+\_\+min,  }\item[{int32\+\_\+t}]{in\+\_\+max,  }\item[{int32\+\_\+t}]{out\+\_\+min,  }\item[{int32\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
 
 
 
-Map a value from one range to another. 
+Map a value from one range to another. 32 Bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Value to map \\
+\hline
+{\em in\+\_\+min} & In range minimum \\
+\hline
+{\em in\+\_\+max} & In range maximum \\
+\hline
+{\em out\+\_\+min} & Out range minimum. \\
+\hline
+{\em out\+\_\+max} & Out range maximum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t The mapped value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}\label{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}} 
+\index{myHelpers@{myHelpers}!map64@{map64}}
+\index{map64@{map64}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{map64()}{map64()}}
+{\footnotesize\ttfamily int64\+\_\+t my\+Helpers\+::map64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{x,  }\item[{int64\+\_\+t}]{in\+\_\+min,  }\item[{int64\+\_\+t}]{in\+\_\+max,  }\item[{int64\+\_\+t}]{out\+\_\+min,  }\item[{int64\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Map a value from one range to another. 64 Bit. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -163,6 +193,24 @@ Read a pulse on a pin 64 bit.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int64\+\_\+t Positive = time elapsed in microseconds, negative = error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}\label{namespacemy_helpers_ac871d86adb103356b59521f9bccb93f7}} 
+\index{myHelpers@{myHelpers}!reverseByte@{reverseByte}}
+\index{reverseByte@{reverseByte}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{reverseByte()}{reverseByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+Helpers\+::reverse\+Byte (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Reverse a byte. Sets the msb = to lsb. and so on until the byte is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}\label{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}} 
 \index{myHelpers@{myHelpers}!waitForChange32@{waitForChange32}}

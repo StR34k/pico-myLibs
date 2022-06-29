@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_338',['update',['../classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7',1,'myBMx280']]]
+  ['transfer_424',['transfer',['../classbit_banged_s_p_i.html#a4935bfb9b5d23d7d4bbbce20844ae798',1,'bitBangedSPI::transfer()'],['../namespacemy_s_p_i_master.html#a0411d63389a2ee26dd9037ea15b8d49a',1,'mySPIMaster::transfer()']]]
 ];

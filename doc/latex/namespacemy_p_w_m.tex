@@ -1,2 +1,754 @@
 \hypertarget{namespacemy_p_w_m}{}\doxysection{my\+P\+WM Namespace Reference}
 \label{namespacemy_p_w_m}\index{myPWM@{myPWM}}
+
+
+P\+WM helper functions. Namespace to hold P\+WM helper functions and track them. Some code has been taken from\+: \href{https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html}{\texttt{ https\+://www.\+i-\/programmer.\+info/programming/hardware/14849-\/the-\/pico-\/in-\/c-\/basic-\/pwm.\+html}}.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_p_w_m_a5cbf2dc3ef5527459b47dd18b83a1b2a}{is\+Slice}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Verify slice number. Verifies if a number is a valid slice number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_p_w_m_a019a785a19250e399084dec8da2ab205}{is\+Channel}} (const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Verify channel number. Verifies if a given number is a valid channel number. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a1e1d7af8b7318457e4dbb6df410987f1}{get\+Pin\+Init}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get if the pin is initialized. Get if the pin is initialized, Returns 0 or 1 for initialized state, or if an invalid pin number was passed, it will return an error code. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_p_w_m_a61ee6685c842b87e852cfe9093e27656}{get\+Enabled}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Get if the slice is enabled. Get if slice is enabled. Returns true if enabled, false if not enabled, or invalid slice passed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_p_w_m_a29776fb843c2505b8f7e3798c1aacf1d}{get\+Pin\+Enabled}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get the if slice controlling given pin is enabled. Return true if the slice controlling the given pin is enabled, returns false if disabled, or if an invalid pin was passed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_p_w_m_ad8c0196c6e093e8fb9b55cc155308f64}{get\+Phase\+Correct}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Get slice phase correct mode. Returns true if the slice is in phase correct mode, and false if not, or slice is invalid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_p_w_m_aba1c1bf3b95d1b434ae8c1214ba12239}{get\+Pin\+Phase\+Correct}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get the phase correct given a pin. Returns true if the slice controlling a given pin is in phase correct mode, returns false if not, or pin is invalid. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aa0a03785de36452b94e3e09c18e9c065}{get\+Wrap}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Get the slice wrap value. Gets the wrap value of a given slice. Returns positive (including zero) for the wrap value, otherwise if an invalid slice is given an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_af8d66fcd03dcefd63cc254d1266dd83a}{get\+Pin\+Wrap}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get the wrap value of a slice given a pin. Gets the wrap value for the slice that drives a pin. Returns postive (including zero) for the wrap value. Otherwise if an invalid pin is passed an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a2982f13fed57512e964294cceff1fe9d}{get\+Level}} (const uint8\+\_\+t slice, const uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Get the level of a channel. Get the current level given a slice and channel. Returns positive (including zero) for the level. If an invalid slice or channel is provided, an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a89cea3aeb8b8a98f1f4655be8587744b}{get\+Pin\+Level}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get the level of a pin. Get the current level of the controlling slice and channel given a pin. Returns positive (including zero) for the level. Passing an invalid pin will return an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a6cd6bc81c3f828b68d917d7445adb685}{get\+Clock\+Divisor\+Int}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Get the clock divisor integer. Get the integer portion of the clock divisor. Positive, including zero, is the 8 bit integer. If an invalid slice is passed, an error is raised. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a05e95c38b5f03c419941983767c0670f}{get\+Pin\+Clock\+Divisor\+Int}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get the clock divisor integer of the slice given a pin. Get the integer portion of the divisor for the slice that controls a given pin. Returns positive, excluding zero, for the 8 bit integer portion, otherwise if an invalid pin is passed an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a8fdc9dfd685ea45903c8c05c01b8c7d9}{get\+Clock\+Divisor\+Frac}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Get the Clock Divisor Fraction portion. Return the clock divisor fration portion. Positive, including zero is the 4 bit fraction. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a926ffcf034f5601fcbbc713277f33363}{get\+Pin\+Clock\+Divisor\+Frac}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Get the clock divisor for the slice controlling the given pin. Positive, including zero is the 4 bit fraction portion of the divisor. Otherwise if an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a4c4eedcdb2168875393b4c440b3cb9fb}{set\+Clock\+Divisor}} (const uint8\+\_\+t slice, const uint8\+\_\+t integer, const uint8\+\_\+t fraction)
+\begin{DoxyCompactList}\small\item\em Set the Clock Divisor. Sets the clock divisor given an integer and a fraction, wraps pwm\+\_\+set\+\_\+clkdiv\+\_\+int\+\_\+frac. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid slice, integer, or fraction are passed, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aa733acbeb8d4961792f220d30ef5760a}{set\+Pin\+Clock\+Divisor}} (const uint8\+\_\+t pin, const uint8\+\_\+t integer, const uint8\+\_\+t fraction)
+\begin{DoxyCompactList}\small\item\em Set the clock divisor for the slice driving the given pin. Set the clock divisor for the sice controlling the given pin. Returns 0 for set okay, otherwise if an invalid pin, integer, or fraction is passed, and error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_ad289e5bd721be6911654b872bb5568bb}{initialize\+Pin}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Initialize a pin as P\+WM. Initialize a pin as P\+WM, if the pin is initialized okay, it will return 0. If the pin passed is an invalid pin, or if the pin is already initialized, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a397a979005f7fd2545fdcdc3475ddc29}{deinitialize\+Pin}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Deinitialize a pin. Deinitialize a pin. Sets gpio funciton to N\+U\+LL. It will return 0 if deinitialized okay. If the pin passed is invalid, or if the pin is not initialized it will return an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a634ee0155e5171573ebfefb81ac685fe}{enable}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Enable a slice. Enable a P\+WM slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if the slice is already enabled, it will return an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a2eb2ecda4ddea479777742a2c75f6b74}{enable\+Pin}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Enable the slice controlling a given pin. Select and enable the controlling slice of the given pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if enabled okay, otherwise if already enabled, or an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a472c87c9050460a9c9cc271a3e64b334}{disable}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Disable a slice. Disable a P\+WM slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if the slice is already disabled, an error code will be returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aab5988ea04fbe10c02986d6618cd546f}{disable\+Pin}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Disable a slice given a pin. Disable the controlling slice of a given pin. Returns 0 if disabled okay, otherwise, if an invalid pin or the slice is alredy disabled an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a8c86402762d3f4e5ad47f2c86fcc2c4d}{enable\+Phase\+Correct}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Enable phase correct given the slice. Enables phase correct on a given slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if phase correct is already enabled, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_ad25a4b3812a55db3061c95091001df61}{enable\+Pin\+Phase\+Correct}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Enable phase correct given a pin. Enables phase correct on the slice controlling a given pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if enabled okay, or if an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a6c60c8b1e6ddee3ab1b41788050255ed}{disable\+Phase\+Correct}} (const uint8\+\_\+t slice)
+\begin{DoxyCompactList}\small\item\em Disable phase correct. Disables phase correct for a given slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if phase correct is already disabled, it will return an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a6748cd5529560d23923333324e61d29c}{disable\+Pin\+Phase\+Correct}} (const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Disable phase correct given a pin. Selects the appropriate slice and disables phase correct on it. Returns 0 if disabled okay, otherwise if an invalid pin is passed, and error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_ac159079748b1dc41b10e6c6187dc5833}{set\+Slice\+Wrap}} (const uint8\+\_\+t slice, const uint16\+\_\+t wrap)
+\begin{DoxyCompactList}\small\item\em Set the Slice wrap value. Sets the wrap value of a given slice. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid slice is passed an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a3008ab4267f2d8737b19ca4310fb61ca}{set\+Pin\+Wrap}} (const uint8\+\_\+t pin, const uint16\+\_\+t wrap)
+\begin{DoxyCompactList}\small\item\em Set the slice wrap value, given a pin. Gets the appropriate slice, and sets its wrap value. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if wrap set okay, otherwise if an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aba5743f22fbfa55aba12849833233e71}{set\+Frequency}} (const uint8\+\_\+t slice, const uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Set the frequence of a slice. Calculates and set the wrap value of a slice given the slice, and a desired frequency in hz. Returns positive (including zero) is the wrap value set. Otherwise if an invalid slice, or invalid frequency is passed, an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a76761317f150a94f062360b8f996b2f8}{set\+Pin\+Frequency}} (const uint8\+\_\+t pin, const uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Set the frequency of a slice given a pin. Calculates and set the wrap value for the slice that drives a given pin, and a desired frequency in hz. Returns positive (including zero) for the wrap value set. Otherwise if an invalid pin, or frequency is passed an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aacf97eba1ab27dfdc13941fd7448aebd}{set\+Level}} (const uint8\+\_\+t slice, const uint8\+\_\+t channel, const uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a2bf27ad4ff5dbac13d000744986b8e74}{set\+Pin\+Level}} (const uint8\+\_\+t pin, const uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the level given a pin. Sets the level given a pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_ac7611aeedea7d0f98016155a77606337}{set\+Duty}} (const uint8\+\_\+t slice, const uint8\+\_\+t channel, const uint8\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a84bf39d8d6b4c02905322ccc5dd05de3}{set\+Pin\+Duty}} (const uint8\+\_\+t pin, const uint8\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+P\+WM helper functions. Namespace to hold P\+WM helper functions and track them. Some code has been taken from\+: \href{https://www.i-programmer.info/programming/hardware/14849-the-pico-in-c-basic-pwm.html}{\texttt{ https\+://www.\+i-\/programmer.\+info/programming/hardware/14849-\/the-\/pico-\/in-\/c-\/basic-\/pwm.\+html}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemy_p_w_m_a397a979005f7fd2545fdcdc3475ddc29}\label{namespacemy_p_w_m_a397a979005f7fd2545fdcdc3475ddc29}} 
+\index{myPWM@{myPWM}!deinitializePin@{deinitializePin}}
+\index{deinitializePin@{deinitializePin}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{deinitializePin()}{deinitializePin()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::deinitialize\+Pin (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Deinitialize a pin. Deinitialize a pin. Sets gpio funciton to N\+U\+LL. It will return 0 if deinitialized okay. If the pin passed is invalid, or if the pin is not initialized it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to Deinitialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for deinitialized okay, or negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a472c87c9050460a9c9cc271a3e64b334}\label{namespacemy_p_w_m_a472c87c9050460a9c9cc271a3e64b334}} 
+\index{myPWM@{myPWM}!disable@{disable}}
+\index{disable@{disable}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::disable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Disable a slice. Disable a P\+WM slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if the slice is already disabled, an error code will be returned. 
+
+\begin{DoxyNote}{Note}
+This will disable both channels on the slice. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to disable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for disabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a6c60c8b1e6ddee3ab1b41788050255ed}\label{namespacemy_p_w_m_a6c60c8b1e6ddee3ab1b41788050255ed}} 
+\index{myPWM@{myPWM}!disablePhaseCorrect@{disablePhaseCorrect}}
+\index{disablePhaseCorrect@{disablePhaseCorrect}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{disablePhaseCorrect()}{disablePhaseCorrect()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::disable\+Phase\+Correct (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Disable phase correct. Disables phase correct for a given slice. Returns 0 for disabled okay, otherwise if an invalid slice number, or if phase correct is already disabled, it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to disable phase correct for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for disabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_aab5988ea04fbe10c02986d6618cd546f}\label{namespacemy_p_w_m_aab5988ea04fbe10c02986d6618cd546f}} 
+\index{myPWM@{myPWM}!disablePin@{disablePin}}
+\index{disablePin@{disablePin}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{disablePin()}{disablePin()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::disable\+Pin (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Disable a slice given a pin. Disable the controlling slice of a given pin. Returns 0 if disabled okay, otherwise, if an invalid pin or the slice is alredy disabled an error code is returned. 
+
+\begin{DoxyNote}{Note}
+This will disable the P\+WM on both channels of the slice. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to disable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for disabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a6748cd5529560d23923333324e61d29c}\label{namespacemy_p_w_m_a6748cd5529560d23923333324e61d29c}} 
+\index{myPWM@{myPWM}!disablePinPhaseCorrect@{disablePinPhaseCorrect}}
+\index{disablePinPhaseCorrect@{disablePinPhaseCorrect}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{disablePinPhaseCorrect()}{disablePinPhaseCorrect()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::disable\+Pin\+Phase\+Correct (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Disable phase correct given a pin. Selects the appropriate slice and disables phase correct on it. Returns 0 if disabled okay, otherwise if an invalid pin is passed, and error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to disable phase correct for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) for disabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a634ee0155e5171573ebfefb81ac685fe}\label{namespacemy_p_w_m_a634ee0155e5171573ebfefb81ac685fe}} 
+\index{myPWM@{myPWM}!enable@{enable}}
+\index{enable@{enable}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::enable (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Enable a slice. Enable a P\+WM slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if the slice is already enabled, it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to enable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) for enabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a8c86402762d3f4e5ad47f2c86fcc2c4d}\label{namespacemy_p_w_m_a8c86402762d3f4e5ad47f2c86fcc2c4d}} 
+\index{myPWM@{myPWM}!enablePhaseCorrect@{enablePhaseCorrect}}
+\index{enablePhaseCorrect@{enablePhaseCorrect}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{enablePhaseCorrect()}{enablePhaseCorrect()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::enable\+Phase\+Correct (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Enable phase correct given the slice. Enables phase correct on a given slice. Returns 0 for enabled okay, otherwise if an invalid slice number, or if phase correct is already enabled, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to enable phase correct for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 if phase correct enabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a2eb2ecda4ddea479777742a2c75f6b74}\label{namespacemy_p_w_m_a2eb2ecda4ddea479777742a2c75f6b74}} 
+\index{myPWM@{myPWM}!enablePin@{enablePin}}
+\index{enablePin@{enablePin}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{enablePin()}{enablePin()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::enable\+Pin (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Enable the slice controlling a given pin. Select and enable the controlling slice of the given pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if enabled okay, otherwise if already enabled, or an invalid pin is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to enable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if enabled okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_ad25a4b3812a55db3061c95091001df61}\label{namespacemy_p_w_m_ad25a4b3812a55db3061c95091001df61}} 
+\index{myPWM@{myPWM}!enablePinPhaseCorrect@{enablePinPhaseCorrect}}
+\index{enablePinPhaseCorrect@{enablePinPhaseCorrect}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{enablePinPhaseCorrect()}{enablePinPhaseCorrect()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::enable\+Pin\+Phase\+Correct (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Enable phase correct given a pin. Enables phase correct on the slice controlling a given pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if enabled okay, or if an invalid pin is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set phase correct on. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if enabled okay, negaitive for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a8fdc9dfd685ea45903c8c05c01b8c7d9}\label{namespacemy_p_w_m_a8fdc9dfd685ea45903c8c05c01b8c7d9}} 
+\index{myPWM@{myPWM}!getClockDivisorFrac@{getClockDivisorFrac}}
+\index{getClockDivisorFrac@{getClockDivisorFrac}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getClockDivisorFrac()}{getClockDivisorFrac()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::get\+Clock\+Divisor\+Frac (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Get the Clock Divisor Fraction portion. Return the clock divisor fration portion. Positive, including zero is the 4 bit fraction. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Fraction portion of clock divisor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a6cd6bc81c3f828b68d917d7445adb685}\label{namespacemy_p_w_m_a6cd6bc81c3f828b68d917d7445adb685}} 
+\index{myPWM@{myPWM}!getClockDivisorInt@{getClockDivisorInt}}
+\index{getClockDivisorInt@{getClockDivisorInt}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getClockDivisorInt()}{getClockDivisorInt()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::get\+Clock\+Divisor\+Int (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Get the clock divisor integer. Get the integer portion of the clock divisor. Positive, including zero, is the 8 bit integer. If an invalid slice is passed, an error is raised. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Integer portion of clock divisor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a61ee6685c842b87e852cfe9093e27656}\label{namespacemy_p_w_m_a61ee6685c842b87e852cfe9093e27656}} 
+\index{myPWM@{myPWM}!getEnabled@{getEnabled}}
+\index{getEnabled@{getEnabled}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getEnabled()}{getEnabled()}}
+{\footnotesize\ttfamily bool my\+P\+W\+M\+::get\+Enabled (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Get if the slice is enabled. Get if slice is enabled. Returns true if enabled, false if not enabled, or invalid slice passed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the slice is enabled. 
+
+false If the slice is disabled, or invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a2982f13fed57512e964294cceff1fe9d}\label{namespacemy_p_w_m_a2982f13fed57512e964294cceff1fe9d}} 
+\index{myPWM@{myPWM}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::get\+Level (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice,  }\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Get the level of a channel. Get the current level given a slice and channel. Returns positive (including zero) for the level. If an invalid slice or channel is provided, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to get the level of. \\
+\hline
+{\em channel} & Channel of the slice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns positive (zero included) for level, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_ad8c0196c6e093e8fb9b55cc155308f64}\label{namespacemy_p_w_m_ad8c0196c6e093e8fb9b55cc155308f64}} 
+\index{myPWM@{myPWM}!getPhaseCorrect@{getPhaseCorrect}}
+\index{getPhaseCorrect@{getPhaseCorrect}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPhaseCorrect()}{getPhaseCorrect()}}
+{\footnotesize\ttfamily bool my\+P\+W\+M\+::get\+Phase\+Correct (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Get slice phase correct mode. Returns true if the slice is in phase correct mode, and false if not, or slice is invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Slice is in phase correct mode. 
+
+false Slice is not in phase correct mode. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a926ffcf034f5601fcbbc713277f33363}\label{namespacemy_p_w_m_a926ffcf034f5601fcbbc713277f33363}} 
+\index{myPWM@{myPWM}!getPinClockDivisorFrac@{getPinClockDivisorFrac}}
+\index{getPinClockDivisorFrac@{getPinClockDivisorFrac}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinClockDivisorFrac()}{getPinClockDivisorFrac()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::get\+Pin\+Clock\+Divisor\+Frac (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the clock divisor for the slice controlling the given pin. Positive, including zero is the 4 bit fraction portion of the divisor. Otherwise if an invalid pin is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to get the divisor for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (including zero) is the 4 bit fraction portion, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a05e95c38b5f03c419941983767c0670f}\label{namespacemy_p_w_m_a05e95c38b5f03c419941983767c0670f}} 
+\index{myPWM@{myPWM}!getPinClockDivisorInt@{getPinClockDivisorInt}}
+\index{getPinClockDivisorInt@{getPinClockDivisorInt}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinClockDivisorInt()}{getPinClockDivisorInt()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::get\+Pin\+Clock\+Divisor\+Int (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the clock divisor integer of the slice given a pin. Get the integer portion of the divisor for the slice that controls a given pin. Returns positive, excluding zero, for the 8 bit integer portion, otherwise if an invalid pin is passed an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set the divisor of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive, excluding zero is the 8 bit integer, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a29776fb843c2505b8f7e3798c1aacf1d}\label{namespacemy_p_w_m_a29776fb843c2505b8f7e3798c1aacf1d}} 
+\index{myPWM@{myPWM}!getPinEnabled@{getPinEnabled}}
+\index{getPinEnabled@{getPinEnabled}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinEnabled()}{getPinEnabled()}}
+{\footnotesize\ttfamily bool my\+P\+W\+M\+::get\+Pin\+Enabled (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the if slice controlling given pin is enabled. Return true if the slice controlling the given pin is enabled, returns false if disabled, or if an invalid pin was passed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Slice is enabled. 
+
+false Slice is disabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a1e1d7af8b7318457e4dbb6df410987f1}\label{namespacemy_p_w_m_a1e1d7af8b7318457e4dbb6df410987f1}} 
+\index{myPWM@{myPWM}!getPinInit@{getPinInit}}
+\index{getPinInit@{getPinInit}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinInit()}{getPinInit()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::get\+Pin\+Init (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get if the pin is initialized. Get if the pin is initialized, Returns 0 or 1 for initialized state, or if an invalid pin number was passed, it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 for not initialized, 1 for initialized, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a89cea3aeb8b8a98f1f4655be8587744b}\label{namespacemy_p_w_m_a89cea3aeb8b8a98f1f4655be8587744b}} 
+\index{myPWM@{myPWM}!getPinLevel@{getPinLevel}}
+\index{getPinLevel@{getPinLevel}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinLevel()}{getPinLevel()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::get\+Pin\+Level (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the level of a pin. Get the current level of the controlling slice and channel given a pin. Returns positive (including zero) for the level. Passing an invalid pin will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to get the level of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive(including zero) level, negative error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_aba1c1bf3b95d1b434ae8c1214ba12239}\label{namespacemy_p_w_m_aba1c1bf3b95d1b434ae8c1214ba12239}} 
+\index{myPWM@{myPWM}!getPinPhaseCorrect@{getPinPhaseCorrect}}
+\index{getPinPhaseCorrect@{getPinPhaseCorrect}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinPhaseCorrect()}{getPinPhaseCorrect()}}
+{\footnotesize\ttfamily bool my\+P\+W\+M\+::get\+Pin\+Phase\+Correct (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the phase correct given a pin. Returns true if the slice controlling a given pin is in phase correct mode, returns false if not, or pin is invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to get the phase correct of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Phase correct is enabled. 
+
+false Phase correct is disabled, or pin is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_af8d66fcd03dcefd63cc254d1266dd83a}\label{namespacemy_p_w_m_af8d66fcd03dcefd63cc254d1266dd83a}} 
+\index{myPWM@{myPWM}!getPinWrap@{getPinWrap}}
+\index{getPinWrap@{getPinWrap}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getPinWrap()}{getPinWrap()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::get\+Pin\+Wrap (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Get the wrap value of a slice given a pin. Gets the wrap value for the slice that drives a pin. Returns postive (including zero) for the wrap value. Otherwise if an invalid pin is passed an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to get the wrap value of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive (including zero) for wrap value, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_aa0a03785de36452b94e3e09c18e9c065}\label{namespacemy_p_w_m_aa0a03785de36452b94e3e09c18e9c065}} 
+\index{myPWM@{myPWM}!getWrap@{getWrap}}
+\index{getWrap@{getWrap}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{getWrap()}{getWrap()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::get\+Wrap (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Get the slice wrap value. Gets the wrap value of a given slice. Returns positive (including zero) for the wrap value, otherwise if an invalid slice is given an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to get the value of. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t returns positive(including zero) for wrap value, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_ad289e5bd721be6911654b872bb5568bb}\label{namespacemy_p_w_m_ad289e5bd721be6911654b872bb5568bb}} 
+\index{myPWM@{myPWM}!initializePin@{initializePin}}
+\index{initializePin@{initializePin}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{initializePin()}{initializePin()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::initialize\+Pin (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin }\end{DoxyParamCaption})}
+
+
+
+Initialize a pin as P\+WM. Initialize a pin as P\+WM, if the pin is initialized okay, it will return 0. If the pin passed is an invalid pin, or if the pin is already initialized, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to initialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for initialized okay, or negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a019a785a19250e399084dec8da2ab205}\label{namespacemy_p_w_m_a019a785a19250e399084dec8da2ab205}} 
+\index{myPWM@{myPWM}!isChannel@{isChannel}}
+\index{isChannel@{isChannel}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{isChannel()}{isChannel()}}
+{\footnotesize\ttfamily bool my\+P\+W\+M\+::is\+Channel (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Verify channel number. Verifies if a given number is a valid channel number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & Channel number to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Channel is valid. 
+
+false Channel is not valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a5cbf2dc3ef5527459b47dd18b83a1b2a}\label{namespacemy_p_w_m_a5cbf2dc3ef5527459b47dd18b83a1b2a}} 
+\index{myPWM@{myPWM}!isSlice@{isSlice}}
+\index{isSlice@{isSlice}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{isSlice()}{isSlice()}}
+{\footnotesize\ttfamily bool my\+P\+W\+M\+::is\+Slice (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice }\end{DoxyParamCaption})}
+
+
+
+Verify slice number. Verifies if a number is a valid slice number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice number to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Is a valid slice. 
+
+false Is not a valid slice. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a4c4eedcdb2168875393b4c440b3cb9fb}\label{namespacemy_p_w_m_a4c4eedcdb2168875393b4c440b3cb9fb}} 
+\index{myPWM@{myPWM}!setClockDivisor@{setClockDivisor}}
+\index{setClockDivisor@{setClockDivisor}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setClockDivisor()}{setClockDivisor()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::set\+Clock\+Divisor (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice,  }\item[{const uint8\+\_\+t}]{integer,  }\item[{const uint8\+\_\+t}]{fraction }\end{DoxyParamCaption})}
+
+
+
+Set the Clock Divisor. Sets the clock divisor given an integer and a fraction, wraps pwm\+\_\+set\+\_\+clkdiv\+\_\+int\+\_\+frac. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid slice, integer, or fraction are passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to set divisor for. \\
+\hline
+{\em integer} & 8 bit integer portion of divisor. Must be greater than 0. \\
+\hline
+{\em fraction} & 4 bit fraction portion of divisor Must be 0-\/15 inclusive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_ac7611aeedea7d0f98016155a77606337}\label{namespacemy_p_w_m_ac7611aeedea7d0f98016155a77606337}} 
+\index{myPWM@{myPWM}!setDuty@{setDuty}}
+\index{setDuty@{setDuty}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setDuty()}{setDuty()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::set\+Duty (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice,  }\item[{const uint8\+\_\+t}]{channel,  }\item[{const uint8\+\_\+t}]{duty }\end{DoxyParamCaption})}
+
+
+
+Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to set level of. \\
+\hline
+{\em channel} & Channel to set level of. \\
+\hline
+{\em duty} & Duty cycle to set. Valid values 0-\/100 inclusive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_aba5743f22fbfa55aba12849833233e71}\label{namespacemy_p_w_m_aba5743f22fbfa55aba12849833233e71}} 
+\index{myPWM@{myPWM}!setFrequency@{setFrequency}}
+\index{setFrequency@{setFrequency}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setFrequency()}{setFrequency()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::set\+Frequency (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice,  }\item[{const uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Set the frequence of a slice. Calculates and set the wrap value of a slice given the slice, and a desired frequency in hz. Returns positive (including zero) is the wrap value set. Otherwise if an invalid slice, or invalid frequency is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to set frequency of. \\
+\hline
+{\em freq} & Frequency requested in hz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns positive (including zero) for the wrap value set, negaitve for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_aacf97eba1ab27dfdc13941fd7448aebd}\label{namespacemy_p_w_m_aacf97eba1ab27dfdc13941fd7448aebd}} 
+\index{myPWM@{myPWM}!setLevel@{setLevel}}
+\index{setLevel@{setLevel}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setLevel()}{setLevel()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::set\+Level (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice,  }\item[{const uint8\+\_\+t}]{channel,  }\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to set. \\
+\hline
+{\em channel} & Channel to set. \\
+\hline
+{\em value} & Value to set level to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_aa733acbeb8d4961792f220d30ef5760a}\label{namespacemy_p_w_m_aa733acbeb8d4961792f220d30ef5760a}} 
+\index{myPWM@{myPWM}!setPinClockDivisor@{setPinClockDivisor}}
+\index{setPinClockDivisor@{setPinClockDivisor}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setPinClockDivisor()}{setPinClockDivisor()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::set\+Pin\+Clock\+Divisor (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint8\+\_\+t}]{integer,  }\item[{const uint8\+\_\+t}]{fraction }\end{DoxyParamCaption})}
+
+
+
+Set the clock divisor for the slice driving the given pin. Set the clock divisor for the sice controlling the given pin. Returns 0 for set okay, otherwise if an invalid pin, integer, or fraction is passed, and error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set the divisor for. \\
+\hline
+{\em integer} & 8 bit integer portion of the divisor. Must be greater than 0. \\
+\hline
+{\em fraction} & 4 bit fraction portion of the divisor. Must be 0-\/15 inclusive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a84bf39d8d6b4c02905322ccc5dd05de3}\label{namespacemy_p_w_m_a84bf39d8d6b4c02905322ccc5dd05de3}} 
+\index{myPWM@{myPWM}!setPinDuty@{setPinDuty}}
+\index{setPinDuty@{setPinDuty}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setPinDuty()}{setPinDuty()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::set\+Pin\+Duty (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint8\+\_\+t}]{duty }\end{DoxyParamCaption})}
+
+
+
+Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set the level of. \\
+\hline
+{\em duty} & Duty cycle. Valid values 0-\/100 inclusive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a76761317f150a94f062360b8f996b2f8}\label{namespacemy_p_w_m_a76761317f150a94f062360b8f996b2f8}} 
+\index{myPWM@{myPWM}!setPinFrequency@{setPinFrequency}}
+\index{setPinFrequency@{setPinFrequency}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setPinFrequency()}{setPinFrequency()}}
+{\footnotesize\ttfamily int32\+\_\+t my\+P\+W\+M\+::set\+Pin\+Frequency (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Set the frequency of a slice given a pin. Calculates and set the wrap value for the slice that drives a given pin, and a desired frequency in hz. Returns positive (including zero) for the wrap value set. Otherwise if an invalid pin, or frequency is passed an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set frequency of. \\
+\hline
+{\em freq} & Frequency requested in hz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns positive (including zero) for the wrap value set, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a2bf27ad4ff5dbac13d000744986b8e74}\label{namespacemy_p_w_m_a2bf27ad4ff5dbac13d000744986b8e74}} 
+\index{myPWM@{myPWM}!setPinLevel@{setPinLevel}}
+\index{setPinLevel@{setPinLevel}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setPinLevel()}{setPinLevel()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::set\+Pin\+Level (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the level given a pin. Sets the level given a pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid pin is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_a3008ab4267f2d8737b19ca4310fb61ca}\label{namespacemy_p_w_m_a3008ab4267f2d8737b19ca4310fb61ca}} 
+\index{myPWM@{myPWM}!setPinWrap@{setPinWrap}}
+\index{setPinWrap@{setPinWrap}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setPinWrap()}{setPinWrap()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::set\+Pin\+Wrap (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{pin,  }\item[{const uint16\+\_\+t}]{wrap }\end{DoxyParamCaption})}
+
+
+
+Set the slice wrap value, given a pin. Gets the appropriate slice, and sets its wrap value. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if wrap set okay, otherwise if an invalid pin is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Pin to set wrap of. \\
+\hline
+{\em wrap} & Wrap value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_p_w_m_ac159079748b1dc41b10e6c6187dc5833}\label{namespacemy_p_w_m_ac159079748b1dc41b10e6c6187dc5833}} 
+\index{myPWM@{myPWM}!setSliceWrap@{setSliceWrap}}
+\index{setSliceWrap@{setSliceWrap}!myPWM@{myPWM}}
+\doxysubsubsection{\texorpdfstring{setSliceWrap()}{setSliceWrap()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+P\+W\+M\+::set\+Slice\+Wrap (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{slice,  }\item[{const uint16\+\_\+t}]{wrap }\end{DoxyParamCaption})}
+
+
+
+Set the Slice wrap value. Sets the wrap value of a given slice. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid slice is passed an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slice} & Slice to set wrap of. \\
+\hline
+{\em wrap} & Wrap value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}

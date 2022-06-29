@@ -1,10 +1,11 @@
 <map id="myStandardDefines.hpp" name="myStandardDefines.hpp">
-<area shape="rect" id="node1" title="Standard defines for pico&#45;myLibs." alt="" coords="491,5,669,32"/>
+<area shape="rect" id="node1" title="Standard defines for pico&#45;myLibs." alt="" coords="589,5,768,32"/>
 <area shape="rect" id="node2" href="$my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
-<area shape="rect" id="node3" href="$my_bit_bang_s_p_i_8hpp.html" title=" " alt="" coords="254,80,493,107"/>
-<area shape="rect" id="node4" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="569,80,690,107"/>
-<area shape="rect" id="node6" href="$my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="273,155,524,181"/>
-<area shape="rect" id="node7" href="$my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="735,155,985,181"/>
-<area shape="rect" id="node8" href="$my_random_8hpp.html" title="Random helpers." alt="" coords="766,80,970,107"/>
-<area shape="rect" id="node5" href="$my_p_w_m_8hpp.html" title=" " alt="" coords="548,155,711,181"/>
+<area shape="rect" id="node3" href="$my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="304,80,456,107"/>
+<area shape="rect" id="node4" href="$my_random_8hpp.html" title="Random helpers." alt="" coords="222,155,426,181"/>
+<area shape="rect" id="node5" href="$my_bit_bang_s_p_i_8hpp.html" title=" " alt="" coords="481,80,719,107"/>
+<area shape="rect" id="node6" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="795,80,917,107"/>
+<area shape="rect" id="node7" href="$my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="593,155,756,181"/>
+<area shape="rect" id="node8" href="$my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="780,155,1031,181"/>
+<area shape="rect" id="node9" href="$my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1055,155,1305,181"/>
 </map>

@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "_bcdefghilmnoprstuvw",
   1: "bm",
   2: "m",
-  3: "bcms",
-  4: "bcdgimprstuvw",
+  3: "bcm",
+  4: "bcdegimprstuvw",
   5: "_cefhlmnopst",
   6: "n",
   7: "_lm"

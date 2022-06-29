@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['map_296',['map',['../namespacemy_helpers.html#af5b0de78a1d1ba318aa9c6f52e6c85d2',1,'myHelpers']]],
-  ['my165_297',['my165',['../classmy165.html#a0d0db4bf21a0b5d3ab62c8d4375fd75f',1,'my165::my165(const uint8_t clkPin, const uint8_t dataPin, const uint8_t loadPin)'],['../classmy165.html#ad6095886860745c2862323e8e429d8c1',1,'my165::my165(const uint8_t clkPin, const uint8_t dataPin, const uint8_t loadPin, const uint8_t enablePin)']]],
-  ['my23lc1024_298',['my23LC1024',['../classmy23_l_c1024.html#a44143b46c2890c8a5ce2ce688197128e',1,'my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin)'],['../classmy23_l_c1024.html#a0331994d9c59336295e8dd7678f89c41',1,'my23LC1024::my23LC1024(spi_inst_t *spiPort, const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin)'],['../classmy23_l_c1024.html#ae197a48cb053b380864bb8723a0a4919',1,'my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin)'],['../classmy23_l_c1024.html#a1862c4507c744c93f0406a2e29766327',1,'my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin)'],['../classmy23_l_c1024.html#a2ea3b225c3128eb41ba366d1aea011da',1,'my23LC1024::my23LC1024(const uint8_t csPin, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t holdPin, const uint8_t sio2Pin)']]],
-  ['my595_299',['my595',['../classmy595.html#a6d5586f91ddedcde8fd70982c53ed0b1',1,'my595::my595(const uint8_t latch, const uint8_t clock, const uint8_t data)'],['../classmy595.html#aa0b1c364a9e2a739779b00b05b4ee696',1,'my595::my595(const uint8_t latch, const uint8_t clock, const uint8_t data, const uint8_t enable)'],['../classmy595.html#a36a35a18fdf3044151d27dd57f1d0343',1,'my595::my595(const uint8_t latch, const uint8_t clock, const uint8_t data, const uint8_t enable, const uint8_t clear)']]],
-  ['mybmx280_300',['myBMx280',['../classmy_b_mx280.html#a11a6f44a23c7d13c571ab0371b566034',1,'myBMx280']]]
+  ['initchannel_358',['initChannel',['../namespacemy_a_d_c.html#a23b6fffa3d0999aa87c8c947f9be8bd8',1,'myADC']]],
+  ['initialize_359',['initialize',['../classmy23_l_c1024.html#a41e0e49edf36079e62b0404032984cd0',1,'my23LC1024::initialize()'],['../classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405',1,'myBMx280::initialize()'],['../classmy165.html#acafba6cf0bce8ff499a69fc9f3f2409f',1,'my165::initialize()'],['../classmy595.html#a5500cff53bb9c724db9ca64c6ba303ec',1,'my595::initialize()'],['../classmy595.html#aac7cd78f82f0d116baa512dffec05c9b',1,'my595::initialize(const bool enable)'],['../classmy595.html#a0f019532fbe735bc7ad314294f8da8fd',1,'my595::initialize(const uint8_t enable)'],['../namespacemy_a_d_c.html#ab4e69194cfba84ed337e42199cb5d2ad',1,'myADC::initialize()'],['../namespacemy_s_p_i_master.html#ae2375849a026b0d5273923b46c322e1a',1,'mySPIMaster::initialize()']]],
+  ['initializepin_360',['initializePin',['../namespacemy_p_w_m.html#ad289e5bd721be6911654b872bb5568bb',1,'myPWM']]],
+  ['initpin_361',['initPin',['../namespacemy_a_d_c.html#a906ca96df5fd11d7c9f7a5b37e35875a',1,'myADC']]],
+  ['inittemperature_362',['initTemperature',['../namespacemy_a_d_c.html#a9657ed5dc89996688e4a4a231296d923',1,'myADC']]],
+  ['isbusy_363',['isBusy',['../classmy23_l_c1024.html#adda0c49cfd3ece3444ba68f492cd8a15',1,'my23LC1024']]],
+  ['ischannel_364',['isChannel',['../namespacemy_p_w_m.html#a019a785a19250e399084dec8da2ab205',1,'myPWM']]],
+  ['isheld_365',['isHeld',['../classmy23_l_c1024.html#a8d790ae6aa35d1e4735b85d32e59d468',1,'my23LC1024']]],
+  ['isidle_366',['isIdle',['../classmy23_l_c1024.html#a2d3d2b32da91e8224e7f2d6ed300b4cf',1,'my23LC1024']]],
+  ['ispin_367',['isPin',['../namespacemy_helpers.html#a14451ade4ade2ad79e5a2bfd83ad8cac',1,'myHelpers']]],
+  ['isreading_368',['isReading',['../classmy23_l_c1024.html#a18fd8e4540397297d3655e27f21cba81',1,'my23LC1024']]],
+  ['isslice_369',['isSlice',['../namespacemy_p_w_m.html#a5cbf2dc3ef5527459b47dd18b83a1b2a',1,'myPWM']]],
+  ['iswriting_370',['isWriting',['../classmy23_l_c1024.html#aa6f757a11be2fd7d4604dfbfcba938f8',1,'my23LC1024']]]
 ];
