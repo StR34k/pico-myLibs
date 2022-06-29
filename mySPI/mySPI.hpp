@@ -14,10 +14,13 @@
 #include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
 #include "../myHelpers.hpp"
-
+/**
+ * @brief SPI helper functions.
+ * 
+ */
 namespace mySPI {
 /*
- * #####################################Constants: ##############################
+ * ##################################### Constants: ##############################
  */
 // Pin mappings:
     /** @private */
