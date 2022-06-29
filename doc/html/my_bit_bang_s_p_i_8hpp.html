@@ -74,6 +74,9 @@ $(function() {
 <div class="title">myBitBangSPI.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Bit banged SPI.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;hardware/gpio.h&gt;</code><br />
 <code>#include &lt;pico/time.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="my_standard_defines_8hpp_source.html">../myStandardDefines.hpp</a>&quot;</code><br />
@@ -82,7 +85,7 @@ Include dependency graph for myBitBangSPI.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_bit_bang_s_p_i_8hpp__incl.png" border="0" usemap="#my_bit_bang_s_p_i_2my_bit_bang_s_p_i_8hpp" alt=""/></div>
 <map name="my_bit_bang_s_p_i_2my_bit_bang_s_p_i_8hpp" id="my_bit_bang_s_p_i_2my_bit_bang_s_p_i_8hpp">
-<area shape="rect" title=" " alt="" coords="84,5,323,32"/>
+<area shape="rect" title="Bit banged SPI." alt="" coords="84,5,323,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,132,107"/>
 <area shape="rect" title=" " alt="" coords="156,80,251,107"/>
 <area shape="rect" href="my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="275,80,465,107"/>
@@ -93,49 +96,55 @@ Include dependency graph for myBitBangSPI.hpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacemy_s_p_i_master"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html">mySPIMaster</a></td></tr>
-<tr class="memdesc:namespacemy_s_p_i_master"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Master namespace. <br /></td></tr>
+<tr class="memitem:namespacemy_b_b_s_p_i_master"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html">myBBSPIMaster</a></td></tr>
+<tr class="memdesc:namespacemy_b_b_s_p_i_master"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit banged SPI master namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae2375849a026b0d5273923b46c322e1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#ae2375849a026b0d5273923b46c322e1a">mySPIMaster::initialize</a> (const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, const bool msbFirst=true, uint64_t delayUS=1)</td></tr>
-<tr class="memdesc:ae2375849a026b0d5273923b46c322e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI master.  <a href="namespacemy_s_p_i_master.html#ae2375849a026b0d5273923b46c322e1a">More...</a><br /></td></tr>
-<tr class="separator:ae2375849a026b0d5273923b46c322e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0411d63389a2ee26dd9037ea15b8d49a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a0411d63389a2ee26dd9037ea15b8d49a">mySPIMaster::transfer</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:a0411d63389a2ee26dd9037ea15b8d49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">transfer a byte  <a href="namespacemy_s_p_i_master.html#a0411d63389a2ee26dd9037ea15b8d49a">More...</a><br /></td></tr>
-<tr class="separator:a0411d63389a2ee26dd9037ea15b8d49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d10488d21edf413a02e6759316df715"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a2d10488d21edf413a02e6759316df715">myBBSPIMaster::initialize</a> (const uint8_t sck, const uint8_t miso, const uint8_t mosi, const uint8_t mode=MODE_0, const bool msbFirst=true, uint64_t delayUS=0)</td></tr>
+<tr class="memdesc:a2d10488d21edf413a02e6759316df715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI master.  <a href="namespacemy_b_b_s_p_i_master.html#a2d10488d21edf413a02e6759316df715">More...</a><br /></td></tr>
+<tr class="separator:a2d10488d21edf413a02e6759316df715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71977339c4c5b62ddd02347d608beffb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a71977339c4c5b62ddd02347d608beffb">myBBSPIMaster::transfer</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a71977339c4c5b62ddd02347d608beffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">transfer a byte  <a href="namespacemy_b_b_s_p_i_master.html#a71977339c4c5b62ddd02347d608beffb">More...</a><br /></td></tr>
+<tr class="separator:a71977339c4c5b62ddd02347d608beffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6aaf0bc207e89698cb0e062b3e74b3b4"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a6aaf0bc207e89698cb0e062b3e74b3b4">mySPIMaster::MODE_0</a> = 0x00</td></tr>
-<tr class="memdesc:a6aaf0bc207e89698cb0e062b3e74b3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 0.  <a href="namespacemy_s_p_i_master.html#a6aaf0bc207e89698cb0e062b3e74b3b4">More...</a><br /></td></tr>
-<tr class="separator:a6aaf0bc207e89698cb0e062b3e74b3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327f7e0b906a68584a6946af1013a06c"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a327f7e0b906a68584a6946af1013a06c">mySPIMaster::MODE_1</a> = 0x01</td></tr>
-<tr class="memdesc:a327f7e0b906a68584a6946af1013a06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 1.  <a href="namespacemy_s_p_i_master.html#a327f7e0b906a68584a6946af1013a06c">More...</a><br /></td></tr>
-<tr class="separator:a327f7e0b906a68584a6946af1013a06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac495820c7a7d168e2fd87671f238d275"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#ac495820c7a7d168e2fd87671f238d275">mySPIMaster::MODE_2</a> = 0x02</td></tr>
-<tr class="memdesc:ac495820c7a7d168e2fd87671f238d275"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 2.  <a href="namespacemy_s_p_i_master.html#ac495820c7a7d168e2fd87671f238d275">More...</a><br /></td></tr>
-<tr class="separator:ac495820c7a7d168e2fd87671f238d275"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ee14c1d7a398dde1e302e1463305f43"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a6ee14c1d7a398dde1e302e1463305f43">mySPIMaster::MODE_3</a> = 0x03</td></tr>
-<tr class="memdesc:a6ee14c1d7a398dde1e302e1463305f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 3.  <a href="namespacemy_s_p_i_master.html#a6ee14c1d7a398dde1e302e1463305f43">More...</a><br /></td></tr>
-<tr class="separator:a6ee14c1d7a398dde1e302e1463305f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a178fcdc2f572bcb8816c27efb8325f8a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a178fcdc2f572bcb8816c27efb8325f8a">mySPIMaster::_sck</a></td></tr>
-<tr class="separator:a178fcdc2f572bcb8816c27efb8325f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf7bc453640f4966f2e62c90b7af7f67"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#aaf7bc453640f4966f2e62c90b7af7f67">mySPIMaster::_miso</a></td></tr>
-<tr class="separator:aaf7bc453640f4966f2e62c90b7af7f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a0559b124ef806380f8b64ddaf5be2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a82a0559b124ef806380f8b64ddaf5be2">mySPIMaster::_mosi</a></td></tr>
-<tr class="separator:a82a0559b124ef806380f8b64ddaf5be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5befbda155e9f67c2abb73130854a75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#ad5befbda155e9f67c2abb73130854a75">mySPIMaster::_cpol</a></td></tr>
-<tr class="separator:ad5befbda155e9f67c2abb73130854a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41f5f93de781b51c1d257f82d3b37a03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a41f5f93de781b51c1d257f82d3b37a03">mySPIMaster::_cpha</a></td></tr>
-<tr class="separator:a41f5f93de781b51c1d257f82d3b37a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c41627d65ac0ae8354990afc8ef6a64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a4c41627d65ac0ae8354990afc8ef6a64">mySPIMaster::_msbFirst</a></td></tr>
-<tr class="separator:a4c41627d65ac0ae8354990afc8ef6a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7890af7bb6848cfa0c575ce1b33d6be6"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_s_p_i_master.html#a7890af7bb6848cfa0c575ce1b33d6be6">mySPIMaster::_delayUS</a></td></tr>
-<tr class="separator:a7890af7bb6848cfa0c575ce1b33d6be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a3d20a44c65443baba63078d120eba6"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a0a3d20a44c65443baba63078d120eba6">myBBSPIMaster::MODE_0</a> = 0x00</td></tr>
+<tr class="memdesc:a0a3d20a44c65443baba63078d120eba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 0.  <a href="namespacemy_b_b_s_p_i_master.html#a0a3d20a44c65443baba63078d120eba6">More...</a><br /></td></tr>
+<tr class="separator:a0a3d20a44c65443baba63078d120eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93765bc01c7439803145b754642b9020"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a93765bc01c7439803145b754642b9020">myBBSPIMaster::MODE_1</a> = 0x01</td></tr>
+<tr class="memdesc:a93765bc01c7439803145b754642b9020"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 1.  <a href="namespacemy_b_b_s_p_i_master.html#a93765bc01c7439803145b754642b9020">More...</a><br /></td></tr>
+<tr class="separator:a93765bc01c7439803145b754642b9020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac549376b8e48aa6bdcefb06a7dcf364d"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#ac549376b8e48aa6bdcefb06a7dcf364d">myBBSPIMaster::MODE_2</a> = 0x02</td></tr>
+<tr class="memdesc:ac549376b8e48aa6bdcefb06a7dcf364d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 2.  <a href="namespacemy_b_b_s_p_i_master.html#ac549376b8e48aa6bdcefb06a7dcf364d">More...</a><br /></td></tr>
+<tr class="separator:ac549376b8e48aa6bdcefb06a7dcf364d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93365fba1ada5ddb6bbc73f8842f62ce"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a93365fba1ada5ddb6bbc73f8842f62ce">myBBSPIMaster::MODE_3</a> = 0x03</td></tr>
+<tr class="memdesc:a93365fba1ada5ddb6bbc73f8842f62ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI Mode 3.  <a href="namespacemy_b_b_s_p_i_master.html#a93365fba1ada5ddb6bbc73f8842f62ce">More...</a><br /></td></tr>
+<tr class="separator:a93365fba1ada5ddb6bbc73f8842f62ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8b7376728970fcbddafdf1f9f22dbd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#acd8b7376728970fcbddafdf1f9f22dbd">myBBSPIMaster::_sck</a></td></tr>
+<tr class="separator:acd8b7376728970fcbddafdf1f9f22dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e1cb6f35f160f6db8c027d42b66b75"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a53e1cb6f35f160f6db8c027d42b66b75">myBBSPIMaster::_miso</a></td></tr>
+<tr class="separator:a53e1cb6f35f160f6db8c027d42b66b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05b13e2cf51d1538b50d7c3940496c4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#aa05b13e2cf51d1538b50d7c3940496c4">myBBSPIMaster::_mosi</a></td></tr>
+<tr class="separator:aa05b13e2cf51d1538b50d7c3940496c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58828f9effdeaeabcb28a2ad0fdf124d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a58828f9effdeaeabcb28a2ad0fdf124d">myBBSPIMaster::_cpol</a></td></tr>
+<tr class="separator:a58828f9effdeaeabcb28a2ad0fdf124d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463323803a569379044fca7800eef7ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a463323803a569379044fca7800eef7ba">myBBSPIMaster::_cpha</a></td></tr>
+<tr class="separator:a463323803a569379044fca7800eef7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc519fcf82ea5699d9b46f44175dfd9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#abc519fcf82ea5699d9b46f44175dfd9f">myBBSPIMaster::_msbFirst</a></td></tr>
+<tr class="separator:abc519fcf82ea5699d9b46f44175dfd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca800034e5e9e06d5f1c867d37343d8"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_b_b_s_p_i_master.html#a4ca800034e5e9e06d5f1c867d37343d8">myBBSPIMaster::_delayUS</a></td></tr>
+<tr class="separator:a4ca800034e5e9e06d5f1c867d37343d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Bit banged SPI. </p>
+<dl class="section author"><dt>Author</dt><dd>Peter Nearing (<a href="#" onclick="location.href='mai'+'lto:'+'pne'+'ar'+'ing'+'@p'+'rot'+'on'+'mai'+'l.'+'com'; return false;">pnear<span style="display: none;">.nosp@m.</span>ing@<span style="display: none;">.nosp@m.</span>proto<span style="display: none;">.nosp@m.</span>nmai<span style="display: none;">.nosp@m.</span>l.com</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-06-29 SPI info and code from <a href="http://www.gammon.com.au/spi">http://www.gammon.com.au/spi</a> </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

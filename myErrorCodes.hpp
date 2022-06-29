@@ -21,14 +21,14 @@
          * @brief No error value.
          * Value to use for no error.
          */
-        #define MY_NO_ERROR 0
+        #define MY_NO_ERROR                                      0
     #endif
     #ifndef MY_GENERAL_ERROR
         /**
          * @brief General error value.
          * Value to use if no other error applies.
          */
-        #define MY_GENERAL_ERROR -1
+        #define MY_GENERAL_ERROR                                -1
     #endif
     #ifndef MY_INVALID_PIN
         /**

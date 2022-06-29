@@ -1,0 +1,180 @@
+\hypertarget{namespacemy_b_b_s_p_i_master}{}\doxysection{my\+B\+B\+S\+P\+I\+Master Namespace Reference}
+\label{namespacemy_b_b_s_p_i_master}\index{myBBSPIMaster@{myBBSPIMaster}}
+
+
+Bit banged S\+PI master namespace.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a2d10488d21edf413a02e6759316df715}{initialize}} (const uint8\+\_\+t sck, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t mode=\mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a0a3d20a44c65443baba63078d120eba6}{M\+O\+D\+E\+\_\+0}}, const bool msb\+First=true, uint64\+\_\+t delay\+US=0)
+\begin{DoxyCompactList}\small\item\em Initialize S\+PI master. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a71977339c4c5b62ddd02347d608beffb}{transfer}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em transfer a byte \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a0a3d20a44c65443baba63078d120eba6}{M\+O\+D\+E\+\_\+0}} = 0x00
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 0. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a93765bc01c7439803145b754642b9020}{M\+O\+D\+E\+\_\+1}} = 0x01
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 1. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_ac549376b8e48aa6bdcefb06a7dcf364d}{M\+O\+D\+E\+\_\+2}} = 0x02
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 2. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a93365fba1ada5ddb6bbc73f8842f62ce}{M\+O\+D\+E\+\_\+3}} = 0x03
+\begin{DoxyCompactList}\small\item\em S\+PI Mode 3. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_acd8b7376728970fcbddafdf1f9f22dbd}{\+\_\+sck}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a53e1cb6f35f160f6db8c027d42b66b75}{\+\_\+miso}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_aa05b13e2cf51d1538b50d7c3940496c4}{\+\_\+mosi}}
+\item 
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a58828f9effdeaeabcb28a2ad0fdf124d}{\+\_\+cpol}}
+\item 
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a463323803a569379044fca7800eef7ba}{\+\_\+cpha}}
+\item 
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_abc519fcf82ea5699d9b46f44175dfd9f}{\+\_\+msb\+First}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a4ca800034e5e9e06d5f1c867d37343d8}{\+\_\+delay\+US}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bit banged S\+PI master namespace. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a2d10488d21edf413a02e6759316df715}\label{namespacemy_b_b_s_p_i_master_a2d10488d21edf413a02e6759316df715}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!initialize@{initialize}}
+\index{initialize@{initialize}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool my\+B\+B\+S\+P\+I\+Master\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{sck,  }\item[{const uint8\+\_\+t}]{miso,  }\item[{const uint8\+\_\+t}]{mosi,  }\item[{const uint8\+\_\+t}]{mode = {\ttfamily \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a0a3d20a44c65443baba63078d120eba6}{M\+O\+D\+E\+\_\+0}}},  }\item[{const bool}]{msb\+First = {\ttfamily true},  }\item[{uint64\+\_\+t}]{delay\+US = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Initialize S\+PI master. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sck} & Clock pin \\
+\hline
+{\em miso} & Miso pin \\
+\hline
+{\em mosi} & Mosi pin \\
+\hline
+{\em mode} & S\+PI Mode \\
+\hline
+{\em msb\+First} & Bit order (true=msb\+\_\+first) \\
+\hline
+{\em delay\+US} & Clock delay in microseconds, default 1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If initialized okay 
+
+false If not initilized okay. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a71977339c4c5b62ddd02347d608beffb}\label{namespacemy_b_b_s_p_i_master_a71977339c4c5b62ddd02347d608beffb}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!transfer@{transfer}}
+\index{transfer@{transfer}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{transfer()}{transfer()}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::transfer (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+transfer a byte 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Value recieved. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a463323803a569379044fca7800eef7ba}\label{namespacemy_b_b_s_p_i_master_a463323803a569379044fca7800eef7ba}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_cpha@{\_cpha}}
+\index{\_cpha@{\_cpha}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_cpha}{\_cpha}}
+{\footnotesize\ttfamily bool my\+B\+B\+S\+P\+I\+Master\+::\+\_\+cpha}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a58828f9effdeaeabcb28a2ad0fdf124d}\label{namespacemy_b_b_s_p_i_master_a58828f9effdeaeabcb28a2ad0fdf124d}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_cpol@{\_cpol}}
+\index{\_cpol@{\_cpol}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_cpol}{\_cpol}}
+{\footnotesize\ttfamily bool my\+B\+B\+S\+P\+I\+Master\+::\+\_\+cpol}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a4ca800034e5e9e06d5f1c867d37343d8}\label{namespacemy_b_b_s_p_i_master_a4ca800034e5e9e06d5f1c867d37343d8}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_delayUS@{\_delayUS}}
+\index{\_delayUS@{\_delayUS}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_delayUS}{\_delayUS}}
+{\footnotesize\ttfamily uint64\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+\_\+delay\+US}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a53e1cb6f35f160f6db8c027d42b66b75}\label{namespacemy_b_b_s_p_i_master_a53e1cb6f35f160f6db8c027d42b66b75}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_miso@{\_miso}}
+\index{\_miso@{\_miso}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_miso}{\_miso}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+\_\+miso}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_aa05b13e2cf51d1538b50d7c3940496c4}\label{namespacemy_b_b_s_p_i_master_aa05b13e2cf51d1538b50d7c3940496c4}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_mosi@{\_mosi}}
+\index{\_mosi@{\_mosi}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_mosi}{\_mosi}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+\_\+mosi}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_abc519fcf82ea5699d9b46f44175dfd9f}\label{namespacemy_b_b_s_p_i_master_abc519fcf82ea5699d9b46f44175dfd9f}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_msbFirst@{\_msbFirst}}
+\index{\_msbFirst@{\_msbFirst}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_msbFirst}{\_msbFirst}}
+{\footnotesize\ttfamily bool my\+B\+B\+S\+P\+I\+Master\+::\+\_\+msb\+First}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_acd8b7376728970fcbddafdf1f9f22dbd}\label{namespacemy_b_b_s_p_i_master_acd8b7376728970fcbddafdf1f9f22dbd}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!\_sck@{\_sck}}
+\index{\_sck@{\_sck}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{\_sck}{\_sck}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+\_\+sck}
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a0a3d20a44c65443baba63078d120eba6}\label{namespacemy_b_b_s_p_i_master_a0a3d20a44c65443baba63078d120eba6}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!MODE\_0@{MODE\_0}}
+\index{MODE\_0@{MODE\_0}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_0}{MODE\_0}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+0 = 0x00}
+
+
+
+S\+PI Mode 0. 
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a93765bc01c7439803145b754642b9020}\label{namespacemy_b_b_s_p_i_master_a93765bc01c7439803145b754642b9020}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!MODE\_1@{MODE\_1}}
+\index{MODE\_1@{MODE\_1}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_1}{MODE\_1}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+1 = 0x01}
+
+
+
+S\+PI Mode 1. 
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_ac549376b8e48aa6bdcefb06a7dcf364d}\label{namespacemy_b_b_s_p_i_master_ac549376b8e48aa6bdcefb06a7dcf364d}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!MODE\_2@{MODE\_2}}
+\index{MODE\_2@{MODE\_2}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_2}{MODE\_2}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+2 = 0x02}
+
+
+
+S\+PI Mode 2. 
+
+\mbox{\Hypertarget{namespacemy_b_b_s_p_i_master_a93365fba1ada5ddb6bbc73f8842f62ce}\label{namespacemy_b_b_s_p_i_master_a93365fba1ada5ddb6bbc73f8842f62ce}} 
+\index{myBBSPIMaster@{myBBSPIMaster}!MODE\_3@{MODE\_3}}
+\index{MODE\_3@{MODE\_3}!myBBSPIMaster@{myBBSPIMaster}}
+\doxysubsubsection{\texorpdfstring{MODE\_3}{MODE\_3}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+3 = 0x03}
+
+
+
+S\+PI Mode 3. 
+

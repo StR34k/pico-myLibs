@@ -1,9 +1,15 @@
 \hypertarget{my_bit_bang_s_p_i_8hpp}{}\doxysection{my\+Bit\+Bang\+S\+P\+I/my\+Bit\+Bang\+S\+PI.hpp File Reference}
 \label{my_bit_bang_s_p_i_8hpp}\index{myBitBangSPI/myBitBangSPI.hpp@{myBitBangSPI/myBitBangSPI.hpp}}
+
+
+Bit banged S\+PI.  
+
+
 {\ttfamily \#include $<$hardware/gpio.\+h$>$}\newline
 {\ttfamily \#include $<$pico/time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
-Include dependency graph for my\+Bit\+Bang\+S\+P\+I.\+hpp\+:\nopagebreak
+Include dependency graph for my\+Bit\+Bang\+S\+P\+I.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,37 +19,54 @@ Include dependency graph for my\+Bit\+Bang\+S\+P\+I.\+hpp\+:\nopagebreak
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespacemy_s_p_i_master}{my\+S\+P\+I\+Master}}
-\begin{DoxyCompactList}\small\item\em S\+PI Master namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+ \mbox{\hyperlink{namespacemy_b_b_s_p_i_master}{my\+B\+B\+S\+P\+I\+Master}}
+\begin{DoxyCompactList}\small\item\em Bit banged S\+PI master namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespacemy_s_p_i_master_ae2375849a026b0d5273923b46c322e1a}{my\+S\+P\+I\+Master\+::initialize}} (const uint8\+\_\+t sck, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t mode=M\+O\+D\+E\+\_\+0, const bool msb\+First=true, uint64\+\_\+t delay\+US=1)
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a2d10488d21edf413a02e6759316df715}{my\+B\+B\+S\+P\+I\+Master\+::initialize}} (const uint8\+\_\+t sck, const uint8\+\_\+t miso, const uint8\+\_\+t mosi, const uint8\+\_\+t mode=M\+O\+D\+E\+\_\+0, const bool msb\+First=true, uint64\+\_\+t delay\+US=0)
 \begin{DoxyCompactList}\small\item\em Initialize S\+PI master. \end{DoxyCompactList}\item 
-uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a0411d63389a2ee26dd9037ea15b8d49a}{my\+S\+P\+I\+Master\+::transfer}} (const uint8\+\_\+t value)
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a71977339c4c5b62ddd02347d608beffb}{my\+B\+B\+S\+P\+I\+Master\+::transfer}} (const uint8\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em transfer a byte \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a6aaf0bc207e89698cb0e062b3e74b3b4}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+0}} = 0x00
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a0a3d20a44c65443baba63078d120eba6}{my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+0}} = 0x00
 \begin{DoxyCompactList}\small\item\em S\+PI Mode 0. \end{DoxyCompactList}\item 
-const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a327f7e0b906a68584a6946af1013a06c}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+1}} = 0x01
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a93765bc01c7439803145b754642b9020}{my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+1}} = 0x01
 \begin{DoxyCompactList}\small\item\em S\+PI Mode 1. \end{DoxyCompactList}\item 
-const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_ac495820c7a7d168e2fd87671f238d275}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+2}} = 0x02
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_ac549376b8e48aa6bdcefb06a7dcf364d}{my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+2}} = 0x02
 \begin{DoxyCompactList}\small\item\em S\+PI Mode 2. \end{DoxyCompactList}\item 
-const uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a6ee14c1d7a398dde1e302e1463305f43}{my\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+3}} = 0x03
+const uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a93365fba1ada5ddb6bbc73f8842f62ce}{my\+B\+B\+S\+P\+I\+Master\+::\+M\+O\+D\+E\+\_\+3}} = 0x03
 \begin{DoxyCompactList}\small\item\em S\+PI Mode 3. \end{DoxyCompactList}\item 
-uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a178fcdc2f572bcb8816c27efb8325f8a}{my\+S\+P\+I\+Master\+::\+\_\+sck}}
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_acd8b7376728970fcbddafdf1f9f22dbd}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+sck}}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_aaf7bc453640f4966f2e62c90b7af7f67}{my\+S\+P\+I\+Master\+::\+\_\+miso}}
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a53e1cb6f35f160f6db8c027d42b66b75}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+miso}}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a82a0559b124ef806380f8b64ddaf5be2}{my\+S\+P\+I\+Master\+::\+\_\+mosi}}
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_aa05b13e2cf51d1538b50d7c3940496c4}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+mosi}}
 \item 
-bool \mbox{\hyperlink{namespacemy_s_p_i_master_ad5befbda155e9f67c2abb73130854a75}{my\+S\+P\+I\+Master\+::\+\_\+cpol}}
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a58828f9effdeaeabcb28a2ad0fdf124d}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+cpol}}
 \item 
-bool \mbox{\hyperlink{namespacemy_s_p_i_master_a41f5f93de781b51c1d257f82d3b37a03}{my\+S\+P\+I\+Master\+::\+\_\+cpha}}
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a463323803a569379044fca7800eef7ba}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+cpha}}
 \item 
-bool \mbox{\hyperlink{namespacemy_s_p_i_master_a4c41627d65ac0ae8354990afc8ef6a64}{my\+S\+P\+I\+Master\+::\+\_\+msb\+First}}
+bool \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_abc519fcf82ea5699d9b46f44175dfd9f}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+msb\+First}}
 \item 
-uint64\+\_\+t \mbox{\hyperlink{namespacemy_s_p_i_master_a7890af7bb6848cfa0c575ce1b33d6be6}{my\+S\+P\+I\+Master\+::\+\_\+delay\+US}}
+uint64\+\_\+t \mbox{\hyperlink{namespacemy_b_b_s_p_i_master_a4ca800034e5e9e06d5f1c867d37343d8}{my\+B\+B\+S\+P\+I\+Master\+::\+\_\+delay\+US}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bit banged S\+PI. 
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/06-\/29 S\+PI info and code from \href{http://www.gammon.com.au/spi}{\texttt{ http\+://www.\+gammon.\+com.\+au/spi}} 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}

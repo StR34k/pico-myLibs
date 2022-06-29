@@ -1,8 +1,13 @@
-/*
- * My bit banged SPI.
- *      SPI info and code from http://www.gammon.com.au/spi
+/**
+ * @file myBitBangSPI.hpp
+ * @author Peter Nearing (pnearing@protonmail.com)
+ * @brief Bit banged SPI.
+ * @version 0.1
+ * @date 2022-06-29
+ * SPI info and code from http://www.gammon.com.au/spi
+ * @copyright Copyright (c) 2022
+ * 
  */
-
 #ifndef MY_BIT_BANG_SPI_H
 #define MY_BIT_BANG_SPI_H
 
@@ -11,7 +16,7 @@
 
 #include "../myStandardDefines.hpp"
 /**
- * @brief SPI Master namespace
+ * @brief Bit banged SPI master namespace
  * 
  */
 namespace myBBSPIMaster {
