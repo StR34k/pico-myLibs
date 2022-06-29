@@ -71,13 +71,13 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aba5743f22fbfa55aba12849833233e7
 int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a76761317f150a94f062360b8f996b2f8}{set\+Pin\+Frequency}} (const uint8\+\_\+t pin, const uint32\+\_\+t freq)
 \begin{DoxyCompactList}\small\item\em Set the frequency of a slice given a pin. Calculates and set the wrap value for the slice that drives a given pin, and a desired frequency in hz. Returns positive (including zero) for the wrap value set. Otherwise if an invalid pin, or frequency is passed an error code is returned. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_aacf97eba1ab27dfdc13941fd7448aebd}{set\+Level}} (const uint8\+\_\+t slice, const uint8\+\_\+t channel, const uint16\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set the level given slice and channel. Sets the level given a slice and channel. Returns positive for level set, otherwise if an invalid slice, channel, or level are given, an error code is returned. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a2bf27ad4ff5dbac13d000744986b8e74}{set\+Pin\+Level}} (const uint8\+\_\+t pin, const uint16\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Set the level given a pin. Sets the level given a pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set the level given a pin. Sets the level given a pin. Returns positive for level set, otherwise if an invalid pin is passed, an error code is returned. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_ac7611aeedea7d0f98016155a77606337}{set\+Duty}} (const uint8\+\_\+t slice, const uint8\+\_\+t channel, const uint8\+\_\+t duty)
-\begin{DoxyCompactList}\small\item\em Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns positive (including zero) returns the level, otherwise if an invalid slice, channel or duty are passed an error code is returned. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_p_w_m_a84bf39d8d6b4c02905322ccc5dd05de3}{set\+Pin\+Duty}} (const uint8\+\_\+t pin, const uint8\+\_\+t duty)
-\begin{DoxyCompactList}\small\item\em Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns positive (including zero) is the level set, otherwise if an invalid duty or pin are passed, and error code is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -574,7 +574,7 @@ int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error
 
 
 
-Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned. 
+Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns positive (including zero) returns the level, otherwise if an invalid slice, channel or duty are passed an error code is returned. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -586,7 +586,7 @@ Calculate and set level given duty cycle. Calculate and set the level of a given
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int32\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+int32\+\_\+t Returns Positive (including 0) level set, negative for error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_p_w_m_aba5743f22fbfa55aba12849833233e71}\label{namespacemy_p_w_m_aba5743f22fbfa55aba12849833233e71}} 
 \index{myPWM@{myPWM}!setFrequency@{setFrequency}}
@@ -616,7 +616,7 @@ int32\+\_\+t Returns positive (including zero) for the wrap value set, negaitve 
 
 
 
-Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned. 
+Set the level given slice and channel. Sets the level given a slice and channel. Returns positive for level set, otherwise if an invalid slice, channel, or level are given, an error code is returned. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -624,11 +624,11 @@ Set the level given slice and channel. Sets the level given a slice and channel.
 \hline
 {\em channel} & Channel to set. \\
 \hline
-{\em value} & Value to set level to. \\
+{\em value} & Value to set level to. must be less than or equal to wrap for the slice. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+int16\+\_\+t Positive, including zero for level set, negative for error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_p_w_m_aa733acbeb8d4961792f220d30ef5760a}\label{namespacemy_p_w_m_aa733acbeb8d4961792f220d30ef5760a}} 
 \index{myPWM@{myPWM}!setPinClockDivisor@{setPinClockDivisor}}
@@ -660,7 +660,7 @@ int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error
 
 
 
-Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned. 
+Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns positive (including zero) is the level set, otherwise if an invalid duty or pin are passed, and error code is returned. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -670,7 +670,7 @@ Set the level of a pin given a duty cycle. Calculate and set the level given a d
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int32\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+int32\+\_\+t Return positive (including zero) for the level set, negative for error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_p_w_m_a76761317f150a94f062360b8f996b2f8}\label{namespacemy_p_w_m_a76761317f150a94f062360b8f996b2f8}} 
 \index{myPWM@{myPWM}!setPinFrequency@{setPinFrequency}}
@@ -700,17 +700,17 @@ int32\+\_\+t Returns positive (including zero) for the wrap value set, negative 
 
 
 
-Set the level given a pin. Sets the level given a pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid pin is passed, an error code is returned. 
+Set the level given a pin. Sets the level given a pin. Returns positive for level set, otherwise if an invalid pin is passed, an error code is returned. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em pin} & \\
+{\em pin} & Pin to set level of. \\
 \hline
-{\em value} & \\
+{\em value} & Value to set level to. Must be less than or equal to wrap for the slice. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int16\+\_\+t 
+int16\+\_\+t Positive, including zero, level set, negative for error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_p_w_m_a3008ab4267f2d8737b19ca4310fb61ca}\label{namespacemy_p_w_m_a3008ab4267f2d8737b19ca4310fb61ca}} 
 \index{myPWM@{myPWM}!setPinWrap@{setPinWrap}}

@@ -168,16 +168,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a76761317f150a94f062360b8f996b2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequency of a slice given a pin. Calculates and set the wrap value for the slice that drives a given pin, and a desired frequency in hz. Returns positive (including zero) for the wrap value set. Otherwise if an invalid pin, or frequency is passed an error code is returned.  <a href="namespacemy_p_w_m.html#a76761317f150a94f062360b8f996b2f8">More...</a><br /></td></tr>
 <tr class="separator:a76761317f150a94f062360b8f996b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacf97eba1ab27dfdc13941fd7448aebd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#aacf97eba1ab27dfdc13941fd7448aebd">setLevel</a> (const uint8_t slice, const uint8_t channel, const uint16_t value)</td></tr>
-<tr class="memdesc:aacf97eba1ab27dfdc13941fd7448aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (NO_ERROR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned.  <a href="namespacemy_p_w_m.html#aacf97eba1ab27dfdc13941fd7448aebd">More...</a><br /></td></tr>
+<tr class="memdesc:aacf97eba1ab27dfdc13941fd7448aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level given slice and channel. Sets the level given a slice and channel. Returns positive for level set, otherwise if an invalid slice, channel, or level are given, an error code is returned.  <a href="namespacemy_p_w_m.html#aacf97eba1ab27dfdc13941fd7448aebd">More...</a><br /></td></tr>
 <tr class="separator:aacf97eba1ab27dfdc13941fd7448aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bf27ad4ff5dbac13d000744986b8e74"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a2bf27ad4ff5dbac13d000744986b8e74">setPinLevel</a> (const uint8_t pin, const uint16_t value)</td></tr>
-<tr class="memdesc:a2bf27ad4ff5dbac13d000744986b8e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level given a pin. Sets the level given a pin. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a2bf27ad4ff5dbac13d000744986b8e74">More...</a><br /></td></tr>
+<tr class="memdesc:a2bf27ad4ff5dbac13d000744986b8e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level given a pin. Sets the level given a pin. Returns positive for level set, otherwise if an invalid pin is passed, an error code is returned.  <a href="namespacemy_p_w_m.html#a2bf27ad4ff5dbac13d000744986b8e74">More...</a><br /></td></tr>
 <tr class="separator:a2bf27ad4ff5dbac13d000744986b8e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7611aeedea7d0f98016155a77606337"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#ac7611aeedea7d0f98016155a77606337">setDuty</a> (const uint8_t slice, const uint8_t channel, const uint8_t duty)</td></tr>
-<tr class="memdesc:ac7611aeedea7d0f98016155a77606337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned.  <a href="namespacemy_p_w_m.html#ac7611aeedea7d0f98016155a77606337">More...</a><br /></td></tr>
+<tr class="memdesc:ac7611aeedea7d0f98016155a77606337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns positive (including zero) returns the level, otherwise if an invalid slice, channel or duty are passed an error code is returned.  <a href="namespacemy_p_w_m.html#ac7611aeedea7d0f98016155a77606337">More...</a><br /></td></tr>
 <tr class="separator:ac7611aeedea7d0f98016155a77606337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_p_w_m.html#a84bf39d8d6b4c02905322ccc5dd05de3">setPinDuty</a> (const uint8_t pin, const uint8_t duty)</td></tr>
-<tr class="memdesc:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned.  <a href="namespacemy_p_w_m.html#a84bf39d8d6b4c02905322ccc5dd05de3">More...</a><br /></td></tr>
+<tr class="memdesc:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns positive (including zero) is the level set, otherwise if an invalid duty or pin are passed, and error code is returned.  <a href="namespacemy_p_w_m.html#a84bf39d8d6b4c02905322ccc5dd05de3">More...</a><br /></td></tr>
 <tr class="separator:a84bf39d8d6b4c02905322ccc5dd05de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -948,7 +948,7 @@ false Is not a valid slice. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid slice, channel or duty are passed an error code is returned. </p>
+<p>Calculate and set level given duty cycle. Calculate and set the level of a given slice and channel. Returns positive (including zero) returns the level, otherwise if an invalid slice, channel or duty are passed an error code is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">slice</td><td>Slice to set level of. </td></tr>
@@ -957,7 +957,7 @@ false Is not a valid slice. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns Positive (including 0) level set, negative for error code. </dd></dl>
 
 </div>
 </div>
@@ -1031,16 +1031,16 @@ false Is not a valid slice. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Set the level given slice and channel. Sets the level given a slice and channel. Returns 0 (NO_ERROR) for set okay, otherwise if an invalid slice or channel are given, an error code is returned. </p>
+<p>Set the level given slice and channel. Sets the level given a slice and channel. Returns positive for level set, otherwise if an invalid slice, channel, or level are given, an error code is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">slice</td><td>Slice to set. </td></tr>
     <tr><td class="paramname">channel</td><td>Channel to set. </td></tr>
-    <tr><td class="paramname">value</td><td>Value to set level to. </td></tr>
+    <tr><td class="paramname">value</td><td>Value to set level to. must be less than or equal to wrap for the slice. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negative for error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive, including zero for level set, negative for error code. </dd></dl>
 
 </div>
 </div>
@@ -1115,7 +1115,7 @@ false Is not a valid slice. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns 0 (NO_ERROR) if the level was set okay, otherwise if an invalid duty or pin are passed, and error code is returned. </p>
+<p>Set the level of a pin given a duty cycle. Calculate and set the level given a duty cycle. Returns positive (including zero) is the level set, otherwise if an invalid duty or pin are passed, and error code is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to set the level of. </td></tr>
@@ -1123,7 +1123,7 @@ false Is not a valid slice. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t Return 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Return positive (including zero) for the level set, negative for error code. </dd></dl>
 
 </div>
 </div>
@@ -1191,15 +1191,15 @@ false Is not a valid slice. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Set the level given a pin. Sets the level given a pin. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid pin is passed, an error code is returned. </p>
+<p>Set the level given a pin. Sets the level given a pin. Returns positive for level set, otherwise if an invalid pin is passed, an error code is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td></td></tr>
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">pin</td><td>Pin to set level of. </td></tr>
+    <tr><td class="paramname">value</td><td>Value to set level to. Must be less than or equal to wrap for the slice. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16_t </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive, including zero, level set, negative for error code. </dd></dl>
 
 </div>
 </div>

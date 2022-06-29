@@ -5,8 +5,7 @@
 Define all error codes used in pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -52,6 +51,8 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Invalid divisor integer. The provided divisor integer is invalid (must be greater than 0). \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_afd9d0443e3bfbb9c30f78687c74a98ff}{M\+Y\+\_\+\+P\+W\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+I\+V\+I\+S\+O\+R\+\_\+\+F\+R\+AC}}~-\/111
 \begin{DoxyCompactList}\small\item\em Invalid divisor fraction. The provided divisor fraction is invalid (must be 0-\/15 inclusive). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_adc3b4358d7073c69d68408cdd89a99ee}{M\+Y\+\_\+\+P\+W\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+V\+EL}}~-\/112
+\begin{DoxyCompactList}\small\item\em Invalid level. The provided level is greater than wrap value. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a82dcf6aea656d7115fda3375f0ae17a4}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+A\+N\+N\+EL}}~-\/200
 \begin{DoxyCompactList}\small\item\em Invalid A\+DC channel. An invalid A\+DC channel was passed. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_ac886b8bb68eac8a1ec75c6fe4b859828}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}~-\/201
@@ -437,6 +438,16 @@ Invalid duty. An invalid duty value was passed (must be between 0-\/100 inclusiv
 
 
 Invalid frequency. An invalid frequency was passed. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_adc3b4358d7073c69d68408cdd89a99ee}\label{my_error_codes_8hpp_adc3b4358d7073c69d68408cdd89a99ee}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_PWM\_INVALID\_LEVEL@{MY\_PWM\_INVALID\_LEVEL}}
+\index{MY\_PWM\_INVALID\_LEVEL@{MY\_PWM\_INVALID\_LEVEL}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_PWM\_INVALID\_LEVEL}{MY\_PWM\_INVALID\_LEVEL}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+P\+W\+M\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+V\+EL~-\/112}
+
+
+
+Invalid level. The provided level is greater than wrap value. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_ac71375e7477f37f39d332fac2227d70b}\label{my_error_codes_8hpp_ac71375e7477f37f39d332fac2227d70b}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_PWM\_INVALID\_SLICE@{MY\_PWM\_INVALID\_SLICE}}
