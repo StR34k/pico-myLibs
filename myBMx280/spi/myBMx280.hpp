@@ -12,6 +12,7 @@
 #define MY_BMx280_H
 
 #include <hardware/spi.h>
+#include "../../mySPI/mySPI.hpp"
 /**
  * @brief Class to handle BME280 sensor in spi mode.
  * 
@@ -631,12 +632,10 @@ bool myBMx280::setMode(const uint8_t value) {
 }
 
 bool myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const uint8_t humCtrl) {
-    spi_init(_spiObj, 1000*20000); // Init at 20 Mhz
-    gpio_set_function(_csPin, GPIO_FUNC_SIO);  // CS pin is GPIO
-    gpio_set_function(_sckPin, GPIO_FUNC_SPI); // SCK pin is SPI
-    gpio_set_function(_misoPin, GPIO_FUNC_SPI);// MISO pin is SPI
-    gpio_set_function(_mosiPin, GPIO_FUNC_SPI);// MOSI pin is SPI
+// Init SPI:
+	mySPI::initializeMaster(_spiObj, _sckPin, _misoPin, _mosiPin, 1000*20000);
 // Setup CS Pin as OUTPUT HIGH.
+    gpio_set_function(_csPin, GPIO_FUNC_SIO);  // CS pin is GPIO
     gpio_set_dir(_csPin, GPIO_OUT);
     gpio_put(_csPin, true);
 // Read Chip ID and set have humidity:
@@ -664,7 +663,7 @@ bool myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const ui
 	} else {
 		forced_mode = false;
 	}
-// Write configureation:
+// Write configuration:
 	__writeRegister__(REG_CONFIG_ADDR, config);
 	if (have_humidity == true) {
 		__writeRegister__(REG_CTRL_HUM_ADDR, humCtrl);
@@ -802,7 +801,7 @@ float myBMx280::__calculatePressure__(const int32_t rawPressure) {
 	var1 = (((_dig_p3 * (((var1>>2) * (var1>>2)) >> 13)) >>3) 
 					+ ((((int32_t)_dig_p2 * var1)>>1))) >>18;
 	var1 = ((((32768+var1))*((int32_t)_dig_p1))>>15);
-	if (var1 == 0) { return 0.0; } // Avoid div by 0.
+	if (var1 == 0) { return 0.0f; } // Avoid div by 0.
 	pres = (((uint32_t)(((int32_t)1048576)-rawPressure) - (var2 >> 12))) * 3125;
 	if (pres < 0x80000000) {
 		pres = (pres<<1) / ((uint32_t)var1);

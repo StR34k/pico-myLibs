@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/streak/pico/testI2C/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/testI2C/build/CMakeFiles /home/streak/pico/pico-myLibs/myBMx280/CMakeFiles/progress.marks
-	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myBMx280/all
+	cd /home/streak/pico/testI2C/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/testI2C/build/CMakeFiles /home/streak/pico/pico-myLibs/myI2C/CMakeFiles/progress.marks
+	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myI2C/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/testI2C/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myBMx280/clean
+	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myI2C/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myBMx280/preinstall
+	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myI2C/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myBMx280/preinstall
+	cd /home/streak/pico/testI2C/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myI2C/preinstall
 .PHONY : preinstall/fast
 
 # clear depends

@@ -275,5 +275,26 @@
      */
     #define MY_ERROR_MY595_OPERATION_NOT_AVAILABLE          -402
 
-
+/******************** myI2C error codes: (450-499) *******************/
+    
+    /**
+     * @brief Invalid SDA pin.
+     * The SDA pin provided is invalid.
+     */
+    #define MY_ERROR_MYI2C_INVALID_SDA_PIN                  -450
+    /**
+     * @brief Invalid SCL pin.
+     * The SCL pin provided is invalid.
+     */
+    #define MY_ERROR_MYI2C_INVALID_SCL_PIN                  -451
+    /**
+     * @brief I2C port alreay initialized.
+     * The I2C port was already initialized when initialize was called.
+     */
+    #define MY_ERROR_MYI2C_INITIALIZED                      -452
+    /**
+     * @brief I2C port not initialized.
+     * The I2C port was already deinitialized when deinitialize was called.
+     */
+    #define MY_ERROR_MYI2C_NOT_INITIALIZED                  -453
 #endif

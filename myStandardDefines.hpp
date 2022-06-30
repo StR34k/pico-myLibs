@@ -39,7 +39,7 @@
      */
     #define MY_MAX_PIN 29
 /*
- * ################################ADC Pin Defines:##################################
+ * ################################ ADC Pin Defines:##################################
  */
     /**
      * @brief Channel 0 pin.
@@ -132,8 +132,23 @@
      * @note Some pins on SPI port 1 only have 3 options.
      */
     #define MY_SPI_NUM_PINS 4
+/*
+ * ################################ I2C Defines: ###################################
+ */
+
+    /**
+     * @brief Number of I2C ports on the rp2040
+     * Number of I2C ports on the rp2040, there are 2.
+     */
+    #define MY_I2C_NUM_PORTS 2
+    /**
+     * @brief Number of possible I2C pins.
+     * Number of possible options for each type of I2C pin. IE: I2C0 SDA can be set to 1 of 8 pins.
+     * @note I2C port 1 only has 5 possible options.
+     */
+    #define MY_I2C_NUM_PINS 8
 /* 
- *############################## Error Defines: ####################################
+ * ############################## Error Defines: ####################################
  * Note see myErrorCodes.hpp for a full list of codes for all error codes.
  */
     #ifndef MY_NO_ERROR

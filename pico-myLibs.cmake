@@ -6,3 +6,5 @@ add_subdirectory("/home/streak/pico/pico-myLibs/myBitBangSPI/" "/home/streak/pic
 add_subdirectory("/home/streak/pico/pico-myLibs/myBMx280/" "/home/streak/pico/pico-myLibs/myBMx280/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myRandom/" "/home/streak/pico/pico-myLibs/myRandom/")
 add_subdirectory("/home/streak/pico/pico-myLibs/mySNx4HC165/" "/home/streak/pico/pico-myLibs/mySNx4HC165/")
+add_subdirectory("/home/streak/pico/pico-myLibs/mySPI/" "/home/streak/pico/pico-myLibs/mySPI/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myI2C/" "/home/streak/pico/pico-myLibs/myI2C/")
