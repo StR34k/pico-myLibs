@@ -13,6 +13,9 @@
 
 #include <hardware/spi.h>
 #include "../../mySPI/mySPI.hpp"
+#include "../../myStandardDefines.hpp"
+#include "../../myErrorCodes.hpp"
+#include "../../myHelpers.hpp"
 /**
  * @brief Class to handle BME280 sensor in spi mode.
  * 
@@ -773,11 +776,11 @@ void myBMx280::__readHumidityCalibration__() {
 	_dig_h1 = __readUint8__(REG_HUM_DIG_H1_ADDR);
 	_dig_h2 = __readInt16__(REG_HUM_DIG_H2_ADDR);
 	_dig_h3 = __readUint8__(REG_HUM_DIG_H3_ADDR);
-	_dig_h6 = __readInt8__(REG_HUM_DIG_H6_ADDR);
 	uint8_t buffer[3];
 	__readRegisters__(REG_HUM_DIG_H4_ADDR, buffer, 3);
 	_dig_h4 = ((int16_t)buffer[0] <<4) | (0x000F & (int16_t)buffer[1]);
 	_dig_h5 = ((int16_t)buffer[2] <<4) | (((int16_t)buffer[1] >> 4) & 0x000F);
+	_dig_h6 = __readInt8__(REG_HUM_DIG_H6_ADDR);
 }
 
 int32_t myBMx280::__calculateTFine__(const int32_t rawTemperature) {

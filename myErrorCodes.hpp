@@ -13,9 +13,9 @@
  *
  */
 
-#ifndef MY_ERROR_CODES
-    #define MY_ERROR_CODES
-/************* General Error codes: 0-99 *****************/
+#ifndef MY_ERROR_CODES_H
+    #define MY_ERROR_CODES_H
+/************* General Error codes: 0-99 NOTE: error codes -1->-4 are used in <pico/error.h>*****************/
     #ifndef MY_NO_ERROR
         /**
          * @brief No error value.
@@ -28,35 +28,35 @@
          * @brief General error value.
          * Value to use if no other error applies.
          */
-        #define MY_GENERAL_ERROR                                -1
+        #define MY_GENERAL_ERROR                                -4
     #endif
     #ifndef MY_INVALID_PIN
         /**
          * @brief invalid pin number.
          * An invalid pin number was passed.
          */
-        #define MY_INVALID_PIN                                  -2
+        #define MY_INVALID_PIN                                  -5
     #endif
     #ifndef MY_INVALID_BIT_MASK
         /**
          * @brief invalid bit mask.
          * An invalid bit mask was passed.
          */
-        #define MY_INVALID_BIT_MASK                             -3
+        #define MY_INVALID_BIT_MASK                             -6
     #endif
     #ifndef MY_TIMEOUT
         /**
          * @brief Timeout reached.
          * A timeout has been reached.
          */
-        #define MY_TIMEOUT                                      -4
+        #define MY_TIMEOUT                                      -7
     #endif
     #ifndef MY_INVALID_DIR
         /**
          * @brief Invalid direction
          * A pin is set to wrong direction for operation requested.
          */
-        #define MY_INVALID_DIR                                  -5
+        #define MY_INVALID_DIR                                  -8
     #endif
 /************* myPWM error codes (100-149) ******************/
     /**
@@ -297,4 +297,46 @@
      * The I2C port was already deinitialized when deinitialize was called.
      */
     #define MY_ERROR_MYI2C_NOT_INITIALIZED                  -453
+/******************** myBMx280 Error codes: (500-549) ***********************/
+    /**
+     * @brief Invalid I2C address.
+     * The I2C address provided is invalid.
+     */
+    #define MY_ERROR_MYBMx280_INVALID_ADDRESS               -500
+    /**
+     * @brief No response.
+     * The I2C address didn't respond.
+     */
+    #define MY_ERROR_MYBMx280_NO_RESPONSE                   -501
+    /**
+     * @brief Invalid response.
+     * The chip provided an invalid response.
+     */
+    #define MY_ERROR_MYBMx280_INVALID_RESPONSE              -502
+    /**
+     * @brief No humidity.
+     * The chip doesn't have humidity.
+     */
+    #define MY_ERROR_MYBMx280_NO_HUMIDITY                   -503
+    /**
+     * @brief Invalid standby time.
+     * An invalid standby time was provided.
+     */
+    #define MY_ERROR_MYBMx280_INVALID_STANDBY               -504
+    /**
+     * @brief Invaid filter.
+     * An invalid filter value was provided.
+     */
+    #define MY_ERROR_MYBMx280_INVALID_FILTER                -505
+    /**
+     * @brief Invalid over sample rate.
+     * An invalid Over Sample Rate was provided.
+     */
+    #define MY_ERROR_MYBMx280_INVALID_OSR                   -506
+    /**
+     * @brief Invalid mode.
+     * An invalid mode was passed.
+     */
+    #define MY_ERROR_MYBMx280_INVALID_MODE                  -507
+
 #endif

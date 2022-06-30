@@ -33,7 +33,7 @@ namespace myPWM {
      */
     static const int16_t NO_ERROR = MY_NO_ERROR;
     /**
-     * @brief Invalid pin. Value -2.
+     * @brief Invalid pin. Value -5.
      * An invalid pin was passed
      */
     static const int16_t ERROR_INVALID_PIN = MY_INVALID_PIN;

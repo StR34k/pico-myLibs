@@ -88,7 +88,7 @@ namespace myHelpers {
      * @brief busy wait until LOW signal, or timeout. a timeout of 0 (the default)
      *                      means that it will block until LOW. If the pin is already LOW, it
      *                      will return immediatly with a value of 0. If timeout is reached it
-     *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
+     *                      returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
      * 
      * @param pin Pin to read
@@ -129,7 +129,7 @@ namespace myHelpers {
      * @brief busy wait until HIGH signal, or timeout. a timeout of 0 (the default)
      *                      means that it will block until HIGH. If the pin is already HIGH, it
      *                      will return immediatly with a value of 0. If timeout is reached it
-     *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
+     *                      returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
      * 
      * @param pin Pin to read.
@@ -171,7 +171,7 @@ namespace myHelpers {
      *                      Busy wait until LOW signal or timeout. A timeout of 0 (the default)
      *                      means that it will block until LOW. If the pin is already LOW, it
      *                      will return immediatly with a value of 0. If timeout is reached it
-     *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
+     *                      returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
      * 
      * @param pin pin to read
@@ -213,7 +213,7 @@ namespace myHelpers {
      *                      A timeout of 0 (the default)
      *                      means that it will block until HIGH. If the pin is already HIGH, it
      *                      will return immediatly with a value of 0. If timeout is reached it
-     *                      returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5
+     *                      returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
      * 
      * @param pin Pin to readk.
@@ -253,7 +253,7 @@ namespace myHelpers {
     /**
      * @brief busy wait until pin change, or timeout. a timeout of 0 (the default)
      *                      means that it will block until change. If timeout is reached it
-     *                      returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5
+     *                      returns -7 (MY_TIMEOUT). If GPIO is set as output it will return -8
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
      * 
      * @param pin Pin to read.
@@ -294,7 +294,7 @@ namespace myHelpers {
     /**
      * @brief busy wait until pin change, or timeout. a timeout of 0 (the default)
      *                      means that it will block until change. If timeout is reached it
-     *                      returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5
+     *                      returns -7 (MY_TIMEOUT). If GPIO is set as output it will return -8
      *                      (MY_INVALID_DIR). Assumes gpio_init has already been called.
      * 
      * @param pin Pin to read.
