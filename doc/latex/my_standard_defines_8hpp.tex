@@ -54,6 +54,10 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Number of spi ports. Number of spi ports on the rp2040. There are 2 ports. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_addc19cea4d6a0d674e4c6c738cb6ff13}{M\+Y\+\_\+\+S\+P\+I\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~4
 \begin{DoxyCompactList}\small\item\em Number of possible spi pins. Number of possible options for each type of spi pin. IE\+: S\+P\+I0 RX pin can be set to 1 of 4 pins. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ae054386debe2a25d19255a9a08dc6fc4}{M\+Y\+\_\+\+I2\+C\+\_\+\+N\+U\+M\+\_\+\+P\+O\+R\+TS}}~2
+\begin{DoxyCompactList}\small\item\em Number of I2C ports on the rp2040 Number of I2C ports on the rp2040, there are 2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a5a5a28ddd94d8e5821a8f5673ba6b4c6}{M\+Y\+\_\+\+I2\+C\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~8
+\begin{DoxyCompactList}\small\item\em Number of possible I2C pins. Number of possible options for each type of I2C pin. IE\+: I2\+C0 S\+DA can be set to 1 of 8 pins. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}~0
 \begin{DoxyCompactList}\small\item\em No error value. Value to use to represent no error. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/1
@@ -243,6 +247,29 @@ Temperature channel. The channel number for the internal temerature sensor.
 
 
 General error value. General error for when no other error code applies. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a5a5a28ddd94d8e5821a8f5673ba6b4c6}\label{my_standard_defines_8hpp_a5a5a28ddd94d8e5821a8f5673ba6b4c6}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_I2C\_NUM\_PINS@{MY\_I2C\_NUM\_PINS}}
+\index{MY\_I2C\_NUM\_PINS@{MY\_I2C\_NUM\_PINS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_I2C\_NUM\_PINS}{MY\_I2C\_NUM\_PINS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I2\+C\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS~8}
+
+
+
+Number of possible I2C pins. Number of possible options for each type of I2C pin. IE\+: I2\+C0 S\+DA can be set to 1 of 8 pins. 
+
+\begin{DoxyNote}{Note}
+I2C port 1 only has 5 possible options. 
+\end{DoxyNote}
+\mbox{\Hypertarget{my_standard_defines_8hpp_ae054386debe2a25d19255a9a08dc6fc4}\label{my_standard_defines_8hpp_ae054386debe2a25d19255a9a08dc6fc4}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_I2C\_NUM\_PORTS@{MY\_I2C\_NUM\_PORTS}}
+\index{MY\_I2C\_NUM\_PORTS@{MY\_I2C\_NUM\_PORTS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_I2C\_NUM\_PORTS}{MY\_I2C\_NUM\_PORTS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I2\+C\+\_\+\+N\+U\+M\+\_\+\+P\+O\+R\+TS~2}
+
+
+
+Number of I2C ports on the rp2040 Number of I2C ports on the rp2040, there are 2. 
 
 \mbox{\Hypertarget{my_standard_defines_8hpp_a30c7699357e500c950a9a32a429e59bf}\label{my_standard_defines_8hpp_a30c7699357e500c950a9a32a429e59bf}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_INVALID\_BIT\_MASK@{MY\_INVALID\_BIT\_MASK}}

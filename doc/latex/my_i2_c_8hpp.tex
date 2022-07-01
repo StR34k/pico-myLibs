@@ -1,0 +1,68 @@
+\hypertarget{my_i2_c_8hpp}{}\doxysection{my\+I2\+C/my\+I2C.hpp File Reference}
+\label{my_i2_c_8hpp}\index{myI2C/myI2C.hpp@{myI2C/myI2C.hpp}}
+
+
+I2C helper functions.  
+
+
+{\ttfamily \#include $<$hardware/gpio.\+h$>$}\newline
+{\ttfamily \#include $<$hardware/i2c.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../my\+Error\+Codes.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../my\+Helpers.\+hpp\char`\"{}}\newline
+Include dependency graph for my\+I2\+C.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_i2_c_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemy_i2_c}{my\+I2C}}
+\begin{DoxyCompactList}\small\item\em I2C helper functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacemy_i2_c_ab1b637de438e923e4d9a500ca233b3bd}{my\+I2\+C\+::is\+Sda\+Pin}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Validate S\+DA pin. Returns true if pin provided is a valid S\+DA pin for the provided i2c port, otherwise if an invalid pin is passed, or its not a S\+DA pin, it will return false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_i2_c_a71f5d61e076e62f0e1836d087860df34}{my\+I2\+C\+::is\+Scl\+Pin}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Validate S\+CL pin. Returns true if pin provided is a valid S\+CL pin for the I2C port. Otherwise if the pin is not a S\+CL pin, or not a valid pin, it will return false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_i2_c_ac3003e9ca84f351ce6578d050600ae01}{my\+I2\+C\+::get\+Initialized}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port)
+\begin{DoxyCompactList}\small\item\em Get if the I2C port has been initialized. Returns true if I2C port provided is initialized, false if not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_i2_c_a7a7d882992d80bec38fdbcad8a34e826}{my\+I2\+C\+::get\+Master}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port)
+\begin{DoxyCompactList}\small\item\em Get if master. Return true if I2C port is initialized as a master. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_i2_c_ac004df05ad57ac2df6cf6247bd8d511d}{my\+I2\+C\+::get\+Sda\+Pin}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port)
+\begin{DoxyCompactList}\small\item\em Get the S\+DA pin. Returns the S\+DA pin set for the given I2C port. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_i2_c_a4de684166e629ea456aac9372aa3e970}{my\+I2\+C\+::get\+Scl\+Pin}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port)
+\begin{DoxyCompactList}\small\item\em Get the S\+CL pin. Returns the S\+CL pin set for the given I2C port. Returns 255 (M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN) if not set. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_i2_c_af21a1bb09b002ebcfd076678659dea8d}{my\+I2\+C\+::initialize\+Master}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t sda\+Pin, const uint8\+\_\+t scl\+Pin, const uint32\+\_\+t baud)
+\begin{DoxyCompactList}\small\item\em Initialize I2C in master mode. Intialize I2C in master mode, returns the achieved baud rate in Hz, if successful, otherwise if an invalid pin is passed, or port is already initialized an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_i2_c_af253ade73eac31be6d53c28456d58926}{my\+I2\+C\+::initialize\+Slave}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t sda\+Pin, const uint8\+\_\+t scl\+Pin, const uint8\+\_\+t baud, const uint8\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Initialize I2C in slave mode. Initialize I2C in slave mode, returns the achieved baud rate in Hz if successful. Otherwise if an invalid pin is passed, or port is alreay initialized an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{namespacemy_i2_c_aa649394e29e6a0e164ae7d7ae6b0b03b}{my\+I2\+C\+::deinitialize}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port)
+\begin{DoxyCompactList}\small\item\em Deinitialize an I2C port. Deinitializes an I2C port, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if deinitialized okay, otherwise if it\textquotesingle{}s already deinitialized, an error code will be returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespacemy_i2_c_acf5fa1e2602297110b8fba6fe104f1dd}{my\+I2\+C\+::\+\_\+pins}} \mbox{[}\mbox{\hyperlink{my_standard_defines_8hpp_ae054386debe2a25d19255a9a08dc6fc4}{M\+Y\+\_\+\+I2\+C\+\_\+\+N\+U\+M\+\_\+\+P\+O\+R\+TS}}\mbox{]}\mbox{[}2\mbox{]} = \{ \{\mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}, \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}\}, \{\mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}, \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}\} \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I2C helper functions. 
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/06-\/29
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}

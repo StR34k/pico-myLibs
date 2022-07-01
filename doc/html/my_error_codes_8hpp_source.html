@@ -67,32 +67,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="my_error_codes_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef MY_ERROR_CODES</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #define MY_ERROR_CODES</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/************* General Error codes: 0-99 *****************/</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef MY_ERROR_CODES_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #define MY_ERROR_CODES_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/************* General Error codes: 0-99 NOTE: error codes -1-&gt;-4 are used in &lt;pico/error.h&gt;*****************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifndef MY_NO_ERROR</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">   24</a></span>&#160;<span class="preprocessor">        #define MY_NO_ERROR                                      0</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">    #ifndef MY_GENERAL_ERROR</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">   31</a></span>&#160;<span class="preprocessor">        #define MY_GENERAL_ERROR                                -1</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">   31</a></span>&#160;<span class="preprocessor">        #define MY_GENERAL_ERROR                                -4</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_PIN</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1a2c7825740de47fb2c8572f6f81027c">   38</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_PIN                                  -2</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1a2c7825740de47fb2c8572f6f81027c">   38</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_PIN                                  -5</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_BIT_MASK</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a30c7699357e500c950a9a32a429e59bf">   45</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_BIT_MASK                             -3</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a30c7699357e500c950a9a32a429e59bf">   45</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_BIT_MASK                             -6</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    #ifndef MY_TIMEOUT</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">   52</a></span>&#160;<span class="preprocessor">        #define MY_TIMEOUT                                      -4</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">   52</a></span>&#160;<span class="preprocessor">        #define MY_TIMEOUT                                      -7</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_DIR</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a2932a50fea6f22d821215e6d34403aff">   59</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_DIR                                  -5</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a2932a50fea6f22d821215e6d34403aff">   59</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_DIR                                  -8</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/************* myPWM error codes (100-149) ******************/</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a11e01fb1c6dbf4629c49bb2cba9a6c46">   66</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PIN_NOT_INIT                             -100</span></div>
@@ -182,8 +182,33 @@ $(function() {
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
 <div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a782036dcdbcad4d43077ddcc6552cb72">  276</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_OPERATION_NOT_AVAILABLE          -402</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">/******************** myI2C error codes: (450-499) *******************/</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    </div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1bbf417895edcb9ae46b0f9a5ca6fd96">  284</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INVALID_SDA_PIN                  -450</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a52d85e2c2622ce3c9a96bdcb2a292f47">  289</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INVALID_SCL_PIN                  -451</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7a3a240f91934bfe848e1b698b45243a">  294</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INITIALIZED                      -452</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a449a5326c6c16744831175b982a84f22">  299</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_NOT_INITIALIZED                  -453</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">/******************** myBMx280 Error codes: (500-549) ***********************/</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">  305</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_ADDRESS               -500</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa0ed10176b27701107ab69ddfe67de52">  310</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_NO_RESPONSE                   -501</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7339cb72317d208de68e403672341025">  315</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_RESPONSE              -502</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a0ed16f2dad2d86386995987823917a4e">  320</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_NO_HUMIDITY                   -503</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7a9460e064bccd4c8debe788ea7ac75b">  325</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_STANDBY               -504</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a0f3b28a75e3af0a52cfb1caabf513719">  330</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_FILTER                -505</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#abb585545ee82ef1ed1560f5c3a47f1f3">  335</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_OSR                   -506</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">  340</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_MODE                  -507</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

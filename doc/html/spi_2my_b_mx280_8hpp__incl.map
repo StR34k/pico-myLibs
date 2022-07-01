@@ -1,0 +1,11 @@
+<map id="myBMx280/spi/myBMx280.hpp" name="myBMx280/spi/myBMx280.hpp">
+<area shape="rect" id="node1" title="Class to handle BMx280 devices in SPI mode." alt="" coords="221,5,447,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="163,155,281,181"/>
+<area shape="rect" id="node3" href="$my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="254,80,414,107"/>
+<area shape="rect" id="node4" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="5,229,196,256"/>
+<area shape="rect" id="node5" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="649,229,803,256"/>
+<area shape="rect" id="node6" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="371,155,505,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="220,229,347,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="371,229,505,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="529,229,624,256"/>
+</map>

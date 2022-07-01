@@ -297,6 +297,11 @@
      * The I2C port was already deinitialized when deinitialize was called.
      */
     #define MY_ERROR_MYI2C_NOT_INITIALIZED                  -453
+    /**
+     * @brief The I2C address is not responding.
+     * The device at the I2C address is not responding.
+     */
+    #define MY_ERROR_MYI2C_ADDRESS_NOT_RESPONDING           -454
 /******************** myBMx280 Error codes: (500-549) ***********************/
     /**
      * @brief Invalid I2C address.

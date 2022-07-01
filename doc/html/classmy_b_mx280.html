@@ -75,10 +75,85 @@ $(function() {
 <p>Class to handle BME280 sensor in spi mode.  
  <a href="classmy_b_mx280.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="my_b_mx280_8hpp_source.html">myBMx280.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="i2c_2my_b_mx280_8hpp_source.html">myBMx280.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab0f6b27932190b05d926fc63994daed5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ab0f6b27932190b05d926fc63994daed5">myBMx280</a> (i2c_inst_t *i2cPort, const uint8_t sdaPin, const uint8_t sclPin, const uint8_t address)</td></tr>
+<tr class="memdesc:ab0f6b27932190b05d926fc63994daed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new my BMx280 object in I2C mode. Create an new bmx280 object in I2C Mode.  <a href="classmy_b_mx280.html#ab0f6b27932190b05d926fc63994daed5">More...</a><br /></td></tr>
+<tr class="separator:ab0f6b27932190b05d926fc63994daed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234df64896c1cc82bb51a79f00bc44f5"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a234df64896c1cc82bb51a79f00bc44f5">getID</a> ()</td></tr>
+<tr class="memdesc:a234df64896c1cc82bb51a79f00bc44f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the chip id byte. Returns the Chip ID or error code on timeout or no response.  <a href="classmy_b_mx280.html#a234df64896c1cc82bb51a79f00bc44f5">More...</a><br /></td></tr>
+<tr class="separator:a234df64896c1cc82bb51a79f00bc44f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42db5a5807c2f440aa49e85df4f033f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#af42db5a5807c2f440aa49e85df4f033f">getStatus</a> ()</td></tr>
+<tr class="memdesc:af42db5a5807c2f440aa49e85df4f033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Status byte Returns the status byte, unless an error during comms happens, at which point it returns an error code.  <a href="classmy_b_mx280.html#af42db5a5807c2f440aa49e85df4f033f">More...</a><br /></td></tr>
+<tr class="separator:af42db5a5807c2f440aa49e85df4f033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddde06e95b11dbd7d1a1aa185d24725"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a4ddde06e95b11dbd7d1a1aa185d24725">getConfig</a> ()</td></tr>
+<tr class="memdesc:a4ddde06e95b11dbd7d1a1aa185d24725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Config Byte. Returns the config byte, unless an error during comms happens, at which point it returns an error code.  <a href="classmy_b_mx280.html#a4ddde06e95b11dbd7d1a1aa185d24725">More...</a><br /></td></tr>
+<tr class="separator:a4ddde06e95b11dbd7d1a1aa185d24725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb902b12aab3c05c822f55977d8c995"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#abeb902b12aab3c05c822f55977d8c995">setConfig</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:abeb902b12aab3c05c822f55977d8c995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Config byte. Sets the config byte, returns 0 (NO_ERROR) if successful, otherwise if an error during comms occurs, an error code is returned.  <a href="classmy_b_mx280.html#abeb902b12aab3c05c822f55977d8c995">More...</a><br /></td></tr>
+<tr class="separator:abeb902b12aab3c05c822f55977d8c995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f47ddd9bc9aed4e4e8dae8cba6161b3"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a5f47ddd9bc9aed4e4e8dae8cba6161b3">getMeasCtrl</a> ()</td></tr>
+<tr class="memdesc:a5f47ddd9bc9aed4e4e8dae8cba6161b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Meas Ctrl Byte Gets the Meas Ctrl byte, returns positive for the byte, otherwise if an error occurs during comms, returns an error code.  <a href="classmy_b_mx280.html#a5f47ddd9bc9aed4e4e8dae8cba6161b3">More...</a><br /></td></tr>
+<tr class="separator:a5f47ddd9bc9aed4e4e8dae8cba6161b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702aaf40e107d8c45b7d291662d81b26"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a702aaf40e107d8c45b7d291662d81b26">setMeasCtrl</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a702aaf40e107d8c45b7d291662d81b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Meas Ctrl byte Sets the Meas Ctrl byte, returns 0 (NO_ERROR) if set okay, otherwise if an error during comms occurs, an error code is returned.  <a href="classmy_b_mx280.html#a702aaf40e107d8c45b7d291662d81b26">More...</a><br /></td></tr>
+<tr class="separator:a702aaf40e107d8c45b7d291662d81b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aac4a5d1473a66c289fd6bcab90e7ee"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a7aac4a5d1473a66c289fd6bcab90e7ee">getHumCtrl</a> ()</td></tr>
+<tr class="memdesc:a7aac4a5d1473a66c289fd6bcab90e7ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Hum Ctrl byte Gets the Humidity Control byte. Positive values (including zero) are the control byte, otherwise if an error during comms occurs, an error code is returned.  <a href="classmy_b_mx280.html#a7aac4a5d1473a66c289fd6bcab90e7ee">More...</a><br /></td></tr>
+<tr class="separator:a7aac4a5d1473a66c289fd6bcab90e7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab1d6a3c6e3f0f323af36907dbe520e8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aab1d6a3c6e3f0f323af36907dbe520e8">setHumCtrl</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:aab1d6a3c6e3f0f323af36907dbe520e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Hum Ctrl byte Sets the Humidity Control byte. Returns 0 (NO_ERROR) if set okay, returns an error code if there is no humidity, or an error during comms occurs.  <a href="classmy_b_mx280.html#aab1d6a3c6e3f0f323af36907dbe520e8">More...</a><br /></td></tr>
+<tr class="separator:aab1d6a3c6e3f0f323af36907dbe520e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc8fbd1144ef0ec495421c21e25fbcfa"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#abc8fbd1144ef0ec495421c21e25fbcfa">getStandbyTime</a> ()</td></tr>
+<tr class="memdesc:abc8fbd1144ef0ec495421c21e25fbcfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Standby Time Get the inactive duration in normal mode. (standby time). Returns positive, including zero for the standby times, otherwise if an error during comms occurs, an error code is returned.  <a href="classmy_b_mx280.html#abc8fbd1144ef0ec495421c21e25fbcfa">More...</a><br /></td></tr>
+<tr class="separator:abc8fbd1144ef0ec495421c21e25fbcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fbedddd013c54565bd10ab6b9edcff"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a05fbedddd013c54565bd10ab6b9edcff">setStandbyTime</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a05fbedddd013c54565bd10ab6b9edcff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Standby Time Set the inactive duration in normal mode. (standby time) Returns 0 (NO_ERROR) for set okay, otherwise if an invalid mode is supplied or an error in comms occurs an error code is returned.  <a href="classmy_b_mx280.html#a05fbedddd013c54565bd10ab6b9edcff">More...</a><br /></td></tr>
+<tr class="separator:a05fbedddd013c54565bd10ab6b9edcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b9821be0b0035051804dba7c9d33bc"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a83b9821be0b0035051804dba7c9d33bc">getFilter</a> ()</td></tr>
+<tr class="memdesc:a83b9821be0b0035051804dba7c9d33bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Filter Get the IIR filter setting. Returns positive for the filter value, and if an error occurs during comms returns an error code.  <a href="classmy_b_mx280.html#a83b9821be0b0035051804dba7c9d33bc">More...</a><br /></td></tr>
+<tr class="separator:a83b9821be0b0035051804dba7c9d33bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eee20e932bc97e3c6a595af82988d20"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a6eee20e932bc97e3c6a595af82988d20">setFilter</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a6eee20e932bc97e3c6a595af82988d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Filter Set the IIR filter setting, returns 0 (NO_ERROR) for set okay, otherwise if a comms error occurs, or an invlaid filter is provided, an error code is returned.  <a href="classmy_b_mx280.html#a6eee20e932bc97e3c6a595af82988d20">More...</a><br /></td></tr>
+<tr class="separator:a6eee20e932bc97e3c6a595af82988d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4870a8b89307db9c7c03cdc5f304ef4"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ac4870a8b89307db9c7c03cdc5f304ef4">getTemperatureOSR</a> ()</td></tr>
+<tr class="memdesc:ac4870a8b89307db9c7c03cdc5f304ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Temperature OSR Get temperature oversampling rate. Returns positive (including zero) for the oversample rate, otherwise if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#ac4870a8b89307db9c7c03cdc5f304ef4">More...</a><br /></td></tr>
+<tr class="separator:ac4870a8b89307db9c7c03cdc5f304ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48dfb2fd86931caaea845736ff85ebaf"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a48dfb2fd86931caaea845736ff85ebaf">setTemperatureOSR</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a48dfb2fd86931caaea845736ff85ebaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Temperature OSR Set the temperature oversampling rate.Returns 0(NO_ERROR) if set okay, otherwise, if an invalid OSR, or a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#a48dfb2fd86931caaea845736ff85ebaf">More...</a><br /></td></tr>
+<tr class="separator:a48dfb2fd86931caaea845736ff85ebaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38131c72afebec4eb60284315b369894"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a38131c72afebec4eb60284315b369894">getPressureOSR</a> ()</td></tr>
+<tr class="memdesc:a38131c72afebec4eb60284315b369894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Pressure OSR Get the pressure oversampling rate. Returns postivie (including zero) for the OSR value, otherwise if an comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#a38131c72afebec4eb60284315b369894">More...</a><br /></td></tr>
+<tr class="separator:a38131c72afebec4eb60284315b369894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af504dbb90906d5ad1f45bdc94a960d61"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#af504dbb90906d5ad1f45bdc94a960d61">setPressureOSR</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:af504dbb90906d5ad1f45bdc94a960d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Pressure OSR Set the pressure oversampling rate. Returns 0 (NO_ERROR) if set okay, otherwise if a comms error, or an invalid rate is supplied, an error code is returned.  <a href="classmy_b_mx280.html#af504dbb90906d5ad1f45bdc94a960d61">More...</a><br /></td></tr>
+<tr class="separator:af504dbb90906d5ad1f45bdc94a960d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff41a6ed4b5146ba137fe8126884631f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aff41a6ed4b5146ba137fe8126884631f">getHumidityOSR</a> ()</td></tr>
+<tr class="memdesc:aff41a6ed4b5146ba137fe8126884631f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Humidity OSR Get the humidity oversampling rate. Returns postive (including zero) for OSR value, otherwise if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#aff41a6ed4b5146ba137fe8126884631f">More...</a><br /></td></tr>
+<tr class="separator:aff41a6ed4b5146ba137fe8126884631f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53b175ece12e57492f629e403a000bc"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae53b175ece12e57492f629e403a000bc">setHumidityOSR</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:ae53b175ece12e57492f629e403a000bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Humidity OSR Set the humidity oversampling rate. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#ae53b175ece12e57492f629e403a000bc">More...</a><br /></td></tr>
+<tr class="separator:ae53b175ece12e57492f629e403a000bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e9a7dbdfe835fef3c30e528444db2b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ab4e9a7dbdfe835fef3c30e528444db2b">getMode</a> ()</td></tr>
+<tr class="memdesc:ab4e9a7dbdfe835fef3c30e528444db2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Mode. Return the operating mode of the chip, Positive values (including zero) is the mode, otherwise if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#ab4e9a7dbdfe835fef3c30e528444db2b">More...</a><br /></td></tr>
+<tr class="separator:ab4e9a7dbdfe835fef3c30e528444db2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5859586567063d2b4094921ea8b83f5f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a5859586567063d2b4094921ea8b83f5f">setMode</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:a5859586567063d2b4094921ea8b83f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Mode. Set the operating mode of the chip. Returns 0 (NO_ERROR) if set oaky, otherwise if the mode is invalid, or a comms error occured an error code is returned.  <a href="classmy_b_mx280.html#a5859586567063d2b4094921ea8b83f5f">More...</a><br /></td></tr>
+<tr class="separator:a5859586567063d2b4094921ea8b83f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a91456a2f01ac0b170e9c4b69b14907"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a8a91456a2f01ac0b170e9c4b69b14907">reset</a> ()</td></tr>
+<tr class="memdesc:a8a91456a2f01ac0b170e9c4b69b14907"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset the chip. Resets the chip to default values. Retuns 0 (NO_ERROR) if reset okay, otherwise, if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#a8a91456a2f01ac0b170e9c4b69b14907">More...</a><br /></td></tr>
+<tr class="separator:a8a91456a2f01ac0b170e9c4b69b14907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774d1dfb092e114b347f9535609d0405"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405">initialize</a> (const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS)</td></tr>
+<tr class="memdesc:a774d1dfb092e114b347f9535609d0405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip. Initialize the BMx280 chip. Returns the achieved baud rate (target is 3.2MHz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned.  <a href="classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405">More...</a><br /></td></tr>
+<tr class="separator:a774d1dfb092e114b347f9535609d0405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f803bcb617e56d846b840f551ae7af7"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7">update</a> ()</td></tr>
+<tr class="memdesc:a3f803bcb617e56d846b840f551ae7af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns 0 (NO_ERROR) if updated okay, otherwise if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7">More...</a><br /></td></tr>
+<tr class="separator:a3f803bcb617e56d846b840f551ae7af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b01b7186c042ff75a2feb7d6887b15d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a2b01b7186c042ff75a2feb7d6887b15d">verifyAddress</a> (const uint8_t address)</td></tr>
+<tr class="memdesc:a2b01b7186c042ff75a2feb7d6887b15d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify bmx280 address. Returns true if the provided address is a valid BMx280 I2C address.  <a href="classmy_b_mx280.html#a2b01b7186c042ff75a2feb7d6887b15d">More...</a><br /></td></tr>
+<tr class="separator:a2b01b7186c042ff75a2feb7d6887b15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a6f44a23c7d13c571ab0371b566034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a11a6f44a23c7d13c571ab0371b566034">myBMx280</a> (spi_inst_t *spiObj, const uint8_t csPin, const uint8_t clkPin, const uint8_t misoPin, const uint8_t mosiPin)</td></tr>
 <tr class="memdesc:a11a6f44a23c7d13c571ab0371b566034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new my BMx280 object. HW SPI.  <a href="classmy_b_mx280.html#a11a6f44a23c7d13c571ab0371b566034">More...</a><br /></td></tr>
 <tr class="separator:a11a6f44a23c7d13c571ab0371b566034"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,111 +247,201 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a03ade9503e345f635840c542ea9b4df6"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a03ade9503e345f635840c542ea9b4df6">CHIPMODEL_BMP280</a> = 0x58</td></tr>
-<tr class="memdesc:a03ade9503e345f635840c542ea9b4df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip model bmp280. No humidity.  <a href="classmy_b_mx280.html#a03ade9503e345f635840c542ea9b4df6">More...</a><br /></td></tr>
-<tr class="separator:a03ade9503e345f635840c542ea9b4df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fc85018ed00938fca8c7e2f48e6f3f1"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a7fc85018ed00938fca8c7e2f48e6f3f1">CHIPMODEL_BME280</a> = 0x60</td></tr>
-<tr class="memdesc:a7fc85018ed00938fca8c7e2f48e6f3f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode BME 280. Has humidity.  <a href="classmy_b_mx280.html#a7fc85018ed00938fca8c7e2f48e6f3f1">More...</a><br /></td></tr>
-<tr class="separator:a7fc85018ed00938fca8c7e2f48e6f3f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0054c4f259771ed3f55e640a86015603"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a0054c4f259771ed3f55e640a86015603">OSR_OFF</a> = 0X00</td></tr>
-<tr class="memdesc:a0054c4f259771ed3f55e640a86015603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over sampling off.  <a href="classmy_b_mx280.html#a0054c4f259771ed3f55e640a86015603">More...</a><br /></td></tr>
-<tr class="separator:a0054c4f259771ed3f55e640a86015603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a837eb94f86543bfd6d7250b603a4b1bb"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a837eb94f86543bfd6d7250b603a4b1bb">OSR_X1</a> = 0X01</td></tr>
-<tr class="memdesc:a837eb94f86543bfd6d7250b603a4b1bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x1.  <a href="classmy_b_mx280.html#a837eb94f86543bfd6d7250b603a4b1bb">More...</a><br /></td></tr>
-<tr class="separator:a837eb94f86543bfd6d7250b603a4b1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17fd3cc3a320c474f899b05efdb15fa1"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a17fd3cc3a320c474f899b05efdb15fa1">OSR_X2</a> = 0X02</td></tr>
-<tr class="memdesc:a17fd3cc3a320c474f899b05efdb15fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x2.  <a href="classmy_b_mx280.html#a17fd3cc3a320c474f899b05efdb15fa1">More...</a><br /></td></tr>
-<tr class="separator:a17fd3cc3a320c474f899b05efdb15fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfd6c59d9e13bb1b6284e1cb7afd628a"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#acfd6c59d9e13bb1b6284e1cb7afd628a">OSR_X4</a> = 0X03</td></tr>
-<tr class="memdesc:acfd6c59d9e13bb1b6284e1cb7afd628a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x4.  <a href="classmy_b_mx280.html#acfd6c59d9e13bb1b6284e1cb7afd628a">More...</a><br /></td></tr>
-<tr class="separator:acfd6c59d9e13bb1b6284e1cb7afd628a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1394192053125f397319c5ff272a8193"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a1394192053125f397319c5ff272a8193">OSR_X8</a> = 0X04</td></tr>
-<tr class="memdesc:a1394192053125f397319c5ff272a8193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x8.  <a href="classmy_b_mx280.html#a1394192053125f397319c5ff272a8193">More...</a><br /></td></tr>
-<tr class="separator:a1394192053125f397319c5ff272a8193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6651f6e8af79fc6b7348c44d1e66fcc"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae6651f6e8af79fc6b7348c44d1e66fcc">OSR_X16</a> = 0X05</td></tr>
-<tr class="memdesc:ae6651f6e8af79fc6b7348c44d1e66fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x16.  <a href="classmy_b_mx280.html#ae6651f6e8af79fc6b7348c44d1e66fcc">More...</a><br /></td></tr>
-<tr class="separator:ae6651f6e8af79fc6b7348c44d1e66fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69e9a865d0b89867c5c6e7d3a87cca3f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a69e9a865d0b89867c5c6e7d3a87cca3f">MODE_SLEEP</a> = 0X00</td></tr>
-<tr class="memdesc:a69e9a865d0b89867c5c6e7d3a87cca3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode Sleep.  <a href="classmy_b_mx280.html#a69e9a865d0b89867c5c6e7d3a87cca3f">More...</a><br /></td></tr>
-<tr class="separator:a69e9a865d0b89867c5c6e7d3a87cca3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a224352010506cad82524e9627294ac8c"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a224352010506cad82524e9627294ac8c">MODE_FORCED</a> = 0X01</td></tr>
-<tr class="memdesc:a224352010506cad82524e9627294ac8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode forced. This is the default mode.  <a href="classmy_b_mx280.html#a224352010506cad82524e9627294ac8c">More...</a><br /></td></tr>
-<tr class="separator:a224352010506cad82524e9627294ac8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64420c3b133828e93f8a2f55bb5fe591"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a64420c3b133828e93f8a2f55bb5fe591">MODE_NORMAL</a> = 0X03</td></tr>
-<tr class="memdesc:a64420c3b133828e93f8a2f55bb5fe591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode normal.  <a href="classmy_b_mx280.html#a64420c3b133828e93f8a2f55bb5fe591">More...</a><br /></td></tr>
-<tr class="separator:a64420c3b133828e93f8a2f55bb5fe591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a6acdaf21c7248ee7a5d236404a29cf"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a8a6acdaf21c7248ee7a5d236404a29cf">STANDBY_TIME_500US</a> = 0x00</td></tr>
-<tr class="memdesc:a8a6acdaf21c7248ee7a5d236404a29cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 500 microseconds.  <a href="classmy_b_mx280.html#a8a6acdaf21c7248ee7a5d236404a29cf">More...</a><br /></td></tr>
-<tr class="separator:a8a6acdaf21c7248ee7a5d236404a29cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5b81163edbe58bbf58371d8e172b46e"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae5b81163edbe58bbf58371d8e172b46e">STANDBY_TIME_62500US</a> = 0x01</td></tr>
-<tr class="memdesc:ae5b81163edbe58bbf58371d8e172b46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 6.25 milliseconds.  <a href="classmy_b_mx280.html#ae5b81163edbe58bbf58371d8e172b46e">More...</a><br /></td></tr>
-<tr class="separator:ae5b81163edbe58bbf58371d8e172b46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c09d27bfd365cddf6a6388c25b5cde8"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a2c09d27bfd365cddf6a6388c25b5cde8">STANDBY_TIME_125MS</a> = 0x02</td></tr>
-<tr class="memdesc:a2c09d27bfd365cddf6a6388c25b5cde8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 125 milliseconds.  <a href="classmy_b_mx280.html#a2c09d27bfd365cddf6a6388c25b5cde8">More...</a><br /></td></tr>
-<tr class="separator:a2c09d27bfd365cddf6a6388c25b5cde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa85875cad79cc29e126497336e3de017"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aa85875cad79cc29e126497336e3de017">STANDBY_TIME_250MS</a> = 0x03</td></tr>
-<tr class="memdesc:aa85875cad79cc29e126497336e3de017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 250 milliseconds.  <a href="classmy_b_mx280.html#aa85875cad79cc29e126497336e3de017">More...</a><br /></td></tr>
-<tr class="separator:aa85875cad79cc29e126497336e3de017"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95be261831d42ede70f8d2c03647e7e5"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a95be261831d42ede70f8d2c03647e7e5">STANDBY_TIME_50MS</a> = 0x04</td></tr>
-<tr class="memdesc:a95be261831d42ede70f8d2c03647e7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 50 milliseconds.  <a href="classmy_b_mx280.html#a95be261831d42ede70f8d2c03647e7e5">More...</a><br /></td></tr>
-<tr class="separator:a95be261831d42ede70f8d2c03647e7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a363f20c8705a33f356009ae2d94321db"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a363f20c8705a33f356009ae2d94321db">STANDBY_TIME_1000MS</a> = 0x05</td></tr>
-<tr class="memdesc:a363f20c8705a33f356009ae2d94321db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 1000 milliseconds (1 second)  <a href="classmy_b_mx280.html#a363f20c8705a33f356009ae2d94321db">More...</a><br /></td></tr>
-<tr class="separator:a363f20c8705a33f356009ae2d94321db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93b11893a6330129f5dbde1606d4fce0"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a93b11893a6330129f5dbde1606d4fce0">STANDBY_TIME_10MS</a> = 0x06</td></tr>
-<tr class="memdesc:a93b11893a6330129f5dbde1606d4fce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 10 milliseconds.  <a href="classmy_b_mx280.html#a93b11893a6330129f5dbde1606d4fce0">More...</a><br /></td></tr>
-<tr class="separator:a93b11893a6330129f5dbde1606d4fce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a339bcda5ce37c8478827e56c8ddda09a"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a339bcda5ce37c8478827e56c8ddda09a">STANDBY_TIME_20MS</a> = 0x07</td></tr>
-<tr class="memdesc:a339bcda5ce37c8478827e56c8ddda09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 20 milliseconds.  <a href="classmy_b_mx280.html#a339bcda5ce37c8478827e56c8ddda09a">More...</a><br /></td></tr>
-<tr class="separator:a339bcda5ce37c8478827e56c8ddda09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a187fe4ecc31022adb2b5f1eeb8fb4729"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a187fe4ecc31022adb2b5f1eeb8fb4729">STANDBY_TIME_2000MS</a> = 0x06</td></tr>
-<tr class="memdesc:a187fe4ecc31022adb2b5f1eeb8fb4729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 2000 milliseconds (2 seconds.)  <a href="classmy_b_mx280.html#a187fe4ecc31022adb2b5f1eeb8fb4729">More...</a><br /></td></tr>
-<tr class="separator:a187fe4ecc31022adb2b5f1eeb8fb4729"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ff7ca27faa9b8cba30fca17381ace74"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a4ff7ca27faa9b8cba30fca17381ace74">STANDBY_TIME_4000MS</a> = 0x07</td></tr>
-<tr class="memdesc:a4ff7ca27faa9b8cba30fca17381ace74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 4000 milliseconds (4 seconds)  <a href="classmy_b_mx280.html#a4ff7ca27faa9b8cba30fca17381ace74">More...</a><br /></td></tr>
-<tr class="separator:a4ff7ca27faa9b8cba30fca17381ace74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56eeb6451826aa4d2278dbb5d876404c"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a56eeb6451826aa4d2278dbb5d876404c">FILTER_OFF</a> = 0x00</td></tr>
-<tr class="memdesc:a56eeb6451826aa4d2278dbb5d876404c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter Off.  <a href="classmy_b_mx280.html#a56eeb6451826aa4d2278dbb5d876404c">More...</a><br /></td></tr>
-<tr class="separator:a56eeb6451826aa4d2278dbb5d876404c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f11c98f38b4294980160496305bd202"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a2f11c98f38b4294980160496305bd202">FILTER_2</a> = 0x01</td></tr>
-<tr class="memdesc:a2f11c98f38b4294980160496305bd202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 2 samples.  <a href="classmy_b_mx280.html#a2f11c98f38b4294980160496305bd202">More...</a><br /></td></tr>
-<tr class="separator:a2f11c98f38b4294980160496305bd202"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86810edd5c7714abcef2b79c8a2bc864"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a86810edd5c7714abcef2b79c8a2bc864">FILTER_4</a> = 0x02</td></tr>
-<tr class="memdesc:a86810edd5c7714abcef2b79c8a2bc864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 4 samples.  <a href="classmy_b_mx280.html#a86810edd5c7714abcef2b79c8a2bc864">More...</a><br /></td></tr>
-<tr class="separator:a86810edd5c7714abcef2b79c8a2bc864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0b6524a00b30e1d560cc6c5110cffb7"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ab0b6524a00b30e1d560cc6c5110cffb7">FILTER_8</a> = 0x03</td></tr>
-<tr class="memdesc:ab0b6524a00b30e1d560cc6c5110cffb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 8 samples.  <a href="classmy_b_mx280.html#ab0b6524a00b30e1d560cc6c5110cffb7">More...</a><br /></td></tr>
-<tr class="separator:ab0b6524a00b30e1d560cc6c5110cffb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0aa50e080904003cd5575740146a86c5"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a0aa50e080904003cd5575740146a86c5">FILTER_16</a> = 0x04</td></tr>
-<tr class="memdesc:a0aa50e080904003cd5575740146a86c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 16 samples.  <a href="classmy_b_mx280.html#a0aa50e080904003cd5575740146a86c5">More...</a><br /></td></tr>
-<tr class="separator:a0aa50e080904003cd5575740146a86c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641888a3f044b98dfd55adffb8c80c85"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a641888a3f044b98dfd55adffb8c80c85">CONFIG_STANDBY_MASK</a> = 0b11100000</td></tr>
-<tr class="memdesc:a641888a3f044b98dfd55adffb8c80c85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time mask of the config byte.  <a href="classmy_b_mx280.html#a641888a3f044b98dfd55adffb8c80c85">More...</a><br /></td></tr>
-<tr class="separator:a641888a3f044b98dfd55adffb8c80c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f22c4f42ef7a5e75b42d44491e1b16"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a57f22c4f42ef7a5e75b42d44491e1b16">CONFIG_FILTER_MASK</a> = 0b00011100</td></tr>
-<tr class="memdesc:a57f22c4f42ef7a5e75b42d44491e1b16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter mask of the config byte.  <a href="classmy_b_mx280.html#a57f22c4f42ef7a5e75b42d44491e1b16">More...</a><br /></td></tr>
-<tr class="separator:a57f22c4f42ef7a5e75b42d44491e1b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3563047e2d21a7f7bd040d73625ef3c"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aa3563047e2d21a7f7bd040d73625ef3c">CONFIG_3WIRE_MASK</a> = 0b00000001</td></tr>
-<tr class="memdesc:aa3563047e2d21a7f7bd040d73625ef3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">3 wire communications mode of the config byte.  <a href="classmy_b_mx280.html#aa3563047e2d21a7f7bd040d73625ef3c">More...</a><br /></td></tr>
-<tr class="separator:aa3563047e2d21a7f7bd040d73625ef3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e2ff856f84235aa509cec4ec0f37d1c"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a5e2ff856f84235aa509cec4ec0f37d1c">MEAS_TEMP_OSR_MASK</a> = 0b11100000</td></tr>
-<tr class="memdesc:a5e2ff856f84235aa509cec4ec0f37d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature OSR mask of the measCtrl byte.  <a href="classmy_b_mx280.html#a5e2ff856f84235aa509cec4ec0f37d1c">More...</a><br /></td></tr>
-<tr class="separator:a5e2ff856f84235aa509cec4ec0f37d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63af92960dd5568af66970b8a9317b96"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a63af92960dd5568af66970b8a9317b96">MEAS_PRES_OSR_MASK</a> = 0b00011100</td></tr>
-<tr class="memdesc:a63af92960dd5568af66970b8a9317b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pressure OSR mask of the measCtrl byte.  <a href="classmy_b_mx280.html#a63af92960dd5568af66970b8a9317b96">More...</a><br /></td></tr>
-<tr class="separator:a63af92960dd5568af66970b8a9317b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee9089b4ccd1c0a96f20b6a313ed3da4"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aee9089b4ccd1c0a96f20b6a313ed3da4">MEAS_MODE_MASK</a> = 0b00000011</td></tr>
-<tr class="memdesc:aee9089b4ccd1c0a96f20b6a313ed3da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measure mode mask of the measCtrl byte.  <a href="classmy_b_mx280.html#aee9089b4ccd1c0a96f20b6a313ed3da4">More...</a><br /></td></tr>
-<tr class="separator:aee9089b4ccd1c0a96f20b6a313ed3da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab981e0e9de452465328702986ded1460"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ab981e0e9de452465328702986ded1460">HUM_OSR_MASK</a> = 0b00000111</td></tr>
-<tr class="memdesc:ab981e0e9de452465328702986ded1460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Humidity OSR mask of the humCtrl byte.  <a href="classmy_b_mx280.html#ab981e0e9de452465328702986ded1460">More...</a><br /></td></tr>
-<tr class="separator:ab981e0e9de452465328702986ded1460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dfbee99fda0cebb2257d6972418dded"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a4dfbee99fda0cebb2257d6972418dded">NO_ERROR</a> = <a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></td></tr>
+<tr class="memdesc:a4dfbee99fda0cebb2257d6972418dded"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error. Value 0. No error occured.  <a href="classmy_b_mx280.html#a4dfbee99fda0cebb2257d6972418dded">More...</a><br /></td></tr>
+<tr class="separator:a4dfbee99fda0cebb2257d6972418dded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bcf5a8d3edb2d5a3286991576bd1a84"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a4bcf5a8d3edb2d5a3286991576bd1a84">ERROR_TIMEOUT</a> = <a class="el" href="my_standard_defines_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">MY_TIMEOUT</a></td></tr>
+<tr class="memdesc:a4bcf5a8d3edb2d5a3286991576bd1a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout error. Value -7. A timeout occured.  <a href="classmy_b_mx280.html#a4bcf5a8d3edb2d5a3286991576bd1a84">More...</a><br /></td></tr>
+<tr class="separator:a4bcf5a8d3edb2d5a3286991576bd1a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518140619aa786a9a1521d735bacfbe3"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a518140619aa786a9a1521d735bacfbe3">ERROR_INVALID_SDA_PIN</a> = <a class="el" href="my_error_codes_8hpp.html#a1bbf417895edcb9ae46b0f9a5ca6fd96">MY_ERROR_MYI2C_INVALID_SDA_PIN</a></td></tr>
+<tr class="memdesc:a518140619aa786a9a1521d735bacfbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid SDA pin. Value -450. Invalid SDA pin was provided.  <a href="classmy_b_mx280.html#a518140619aa786a9a1521d735bacfbe3">More...</a><br /></td></tr>
+<tr class="separator:a518140619aa786a9a1521d735bacfbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba131a827e19899defb28cba86e34a1c"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aba131a827e19899defb28cba86e34a1c">ERROR_INVALID_SCL_PIN</a> = <a class="el" href="my_error_codes_8hpp.html#a52d85e2c2622ce3c9a96bdcb2a292f47">MY_ERROR_MYI2C_INVALID_SCL_PIN</a></td></tr>
+<tr class="memdesc:aba131a827e19899defb28cba86e34a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid SCL pin. Value -451. Invalid SCL pin was provided.  <a href="classmy_b_mx280.html#aba131a827e19899defb28cba86e34a1c">More...</a><br /></td></tr>
+<tr class="separator:aba131a827e19899defb28cba86e34a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd83586d61320dd6a31461cb1dedd9c"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aebd83586d61320dd6a31461cb1dedd9c">ERROR_INITIALIZED</a> = <a class="el" href="my_error_codes_8hpp.html#a7a3a240f91934bfe848e1b698b45243a">MY_ERROR_MYI2C_INITIALIZED</a></td></tr>
+<tr class="memdesc:aebd83586d61320dd6a31461cb1dedd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Already initialized. Value -452. The chip is already initialized.  <a href="classmy_b_mx280.html#aebd83586d61320dd6a31461cb1dedd9c">More...</a><br /></td></tr>
+<tr class="separator:aebd83586d61320dd6a31461cb1dedd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae61963aa1939bc665365daa65878dc63"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae61963aa1939bc665365daa65878dc63">ERROR_INVALID_ADDRESS</a> = <a class="el" href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">MY_ERROR_MYBMx280_INVALID_ADDRESS</a></td></tr>
+<tr class="memdesc:ae61963aa1939bc665365daa65878dc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid I2C address. Value -500. The provided I2C address is not a valid address.  <a href="classmy_b_mx280.html#ae61963aa1939bc665365daa65878dc63">More...</a><br /></td></tr>
+<tr class="separator:ae61963aa1939bc665365daa65878dc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb00942ae29d43eabc590010cb8538fb"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#afb00942ae29d43eabc590010cb8538fb">ERROR_NO_RESPONSE</a> = <a class="el" href="my_error_codes_8hpp.html#aa0ed10176b27701107ab69ddfe67de52">MY_ERROR_MYBMx280_NO_RESPONSE</a></td></tr>
+<tr class="memdesc:afb00942ae29d43eabc590010cb8538fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">No response. Value -501. The I2C address didn't respond.  <a href="classmy_b_mx280.html#afb00942ae29d43eabc590010cb8538fb">More...</a><br /></td></tr>
+<tr class="separator:afb00942ae29d43eabc590010cb8538fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378fe001c8fa0bc0208de0e2335bdb87"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a378fe001c8fa0bc0208de0e2335bdb87">ERROR_INVALD_RESPONSE</a> = <a class="el" href="my_error_codes_8hpp.html#a7339cb72317d208de68e403672341025">MY_ERROR_MYBMx280_INVALID_RESPONSE</a></td></tr>
+<tr class="memdesc:a378fe001c8fa0bc0208de0e2335bdb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid response. Value -502. The chip provided an invalid respone.  <a href="classmy_b_mx280.html#a378fe001c8fa0bc0208de0e2335bdb87">More...</a><br /></td></tr>
+<tr class="separator:a378fe001c8fa0bc0208de0e2335bdb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131efd827386c96cd5429ba3ff38b87f"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a131efd827386c96cd5429ba3ff38b87f">ERROR_NO_HUMIDITY</a> = <a class="el" href="my_error_codes_8hpp.html#a0ed16f2dad2d86386995987823917a4e">MY_ERROR_MYBMx280_NO_HUMIDITY</a></td></tr>
+<tr class="memdesc:a131efd827386c96cd5429ba3ff38b87f"><td class="mdescLeft">&#160;</td><td class="mdescRight">No humidity. Value -503. The chip doesn't have humidity.  <a href="classmy_b_mx280.html#a131efd827386c96cd5429ba3ff38b87f">More...</a><br /></td></tr>
+<tr class="separator:a131efd827386c96cd5429ba3ff38b87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef14c3a61d53c9dc24d66f7c85be669"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a2ef14c3a61d53c9dc24d66f7c85be669">ERROR_INVALID_STANDBY</a> = <a class="el" href="my_error_codes_8hpp.html#a7a9460e064bccd4c8debe788ea7ac75b">MY_ERROR_MYBMx280_INVALID_STANDBY</a></td></tr>
+<tr class="memdesc:a2ef14c3a61d53c9dc24d66f7c85be669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid standby time. Value -504. An invalid standby time was provided.  <a href="classmy_b_mx280.html#a2ef14c3a61d53c9dc24d66f7c85be669">More...</a><br /></td></tr>
+<tr class="separator:a2ef14c3a61d53c9dc24d66f7c85be669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13411d27017210019e5de7ac0d17c518"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a13411d27017210019e5de7ac0d17c518">ERROR_INVALID_FILTER</a> = <a class="el" href="my_error_codes_8hpp.html#a0f3b28a75e3af0a52cfb1caabf513719">MY_ERROR_MYBMx280_INVALID_FILTER</a></td></tr>
+<tr class="memdesc:a13411d27017210019e5de7ac0d17c518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid filter. Value -505. An invalid filter value was passed.  <a href="classmy_b_mx280.html#a13411d27017210019e5de7ac0d17c518">More...</a><br /></td></tr>
+<tr class="separator:a13411d27017210019e5de7ac0d17c518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0663547e07fd8532961e2a0c58a918"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#afa0663547e07fd8532961e2a0c58a918">ERROR_INVALID_OSR</a> = <a class="el" href="my_error_codes_8hpp.html#abb585545ee82ef1ed1560f5c3a47f1f3">MY_ERROR_MYBMx280_INVALID_OSR</a></td></tr>
+<tr class="memdesc:afa0663547e07fd8532961e2a0c58a918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Over Sample Rate. Value -506. An invalid over sample rate value was provided.  <a href="classmy_b_mx280.html#afa0663547e07fd8532961e2a0c58a918">More...</a><br /></td></tr>
+<tr class="separator:afa0663547e07fd8532961e2a0c58a918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f28c2010085aed970ea4b279a5abe4"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a51f28c2010085aed970ea4b279a5abe4">ERROR_INVALID_MODE</a> = <a class="el" href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">MY_ERROR_MYBMx280_INVALID_MODE</a></td></tr>
+<tr class="memdesc:a51f28c2010085aed970ea4b279a5abe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid mode. Value -507. An invalid mode value was provided.  <a href="classmy_b_mx280.html#a51f28c2010085aed970ea4b279a5abe4">More...</a><br /></td></tr>
+<tr class="separator:a51f28c2010085aed970ea4b279a5abe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99bb6d2b095144a722dddbba4837d701"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a99bb6d2b095144a722dddbba4837d701">CHIPMODEL_BMP280</a> = 0x58</td></tr>
+<tr class="memdesc:a99bb6d2b095144a722dddbba4837d701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip model bmp280. No humidity.  <a href="classmy_b_mx280.html#a99bb6d2b095144a722dddbba4837d701">More...</a><br /></td></tr>
+<tr class="separator:a99bb6d2b095144a722dddbba4837d701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35383898f7320a7f6c34801826cdbf57"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a35383898f7320a7f6c34801826cdbf57">CHIPMODEL_BME280</a> = 0x60</td></tr>
+<tr class="memdesc:a35383898f7320a7f6c34801826cdbf57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode BME 280. Has humidity.  <a href="classmy_b_mx280.html#a35383898f7320a7f6c34801826cdbf57">More...</a><br /></td></tr>
+<tr class="separator:a35383898f7320a7f6c34801826cdbf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc4cfd3fe981d0aa1dc92f2e1419a34"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a1bc4cfd3fe981d0aa1dc92f2e1419a34">OSR_OFF</a> = 0X00</td></tr>
+<tr class="memdesc:a1bc4cfd3fe981d0aa1dc92f2e1419a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over sampling off.  <a href="classmy_b_mx280.html#a1bc4cfd3fe981d0aa1dc92f2e1419a34">More...</a><br /></td></tr>
+<tr class="separator:a1bc4cfd3fe981d0aa1dc92f2e1419a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268b3751104337f333647a79652d9462"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a268b3751104337f333647a79652d9462">OSR_X1</a> = 0X01</td></tr>
+<tr class="memdesc:a268b3751104337f333647a79652d9462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x1.  <a href="classmy_b_mx280.html#a268b3751104337f333647a79652d9462">More...</a><br /></td></tr>
+<tr class="separator:a268b3751104337f333647a79652d9462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e7bf96cd3b75a2bc7be7620c1f461b0"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a9e7bf96cd3b75a2bc7be7620c1f461b0">OSR_X2</a> = 0X02</td></tr>
+<tr class="memdesc:a9e7bf96cd3b75a2bc7be7620c1f461b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x2.  <a href="classmy_b_mx280.html#a9e7bf96cd3b75a2bc7be7620c1f461b0">More...</a><br /></td></tr>
+<tr class="separator:a9e7bf96cd3b75a2bc7be7620c1f461b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49dc648af8f575eb977cf434923e70c3"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a49dc648af8f575eb977cf434923e70c3">OSR_X4</a> = 0X03</td></tr>
+<tr class="memdesc:a49dc648af8f575eb977cf434923e70c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x4.  <a href="classmy_b_mx280.html#a49dc648af8f575eb977cf434923e70c3">More...</a><br /></td></tr>
+<tr class="separator:a49dc648af8f575eb977cf434923e70c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763453b503a3b235f9c5dcf0cbd0319f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a763453b503a3b235f9c5dcf0cbd0319f">OSR_X8</a> = 0X04</td></tr>
+<tr class="memdesc:a763453b503a3b235f9c5dcf0cbd0319f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x8.  <a href="classmy_b_mx280.html#a763453b503a3b235f9c5dcf0cbd0319f">More...</a><br /></td></tr>
+<tr class="separator:a763453b503a3b235f9c5dcf0cbd0319f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb32fe99475cce6ab62d22dae56d1c0d"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#acb32fe99475cce6ab62d22dae56d1c0d">OSR_X16</a> = 0X05</td></tr>
+<tr class="memdesc:acb32fe99475cce6ab62d22dae56d1c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oversampling x16.  <a href="classmy_b_mx280.html#acb32fe99475cce6ab62d22dae56d1c0d">More...</a><br /></td></tr>
+<tr class="separator:acb32fe99475cce6ab62d22dae56d1c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787f933fdef28f9e6730908344842ca3"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a787f933fdef28f9e6730908344842ca3">MODE_SLEEP</a> = 0X00</td></tr>
+<tr class="memdesc:a787f933fdef28f9e6730908344842ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode Sleep.  <a href="classmy_b_mx280.html#a787f933fdef28f9e6730908344842ca3">More...</a><br /></td></tr>
+<tr class="separator:a787f933fdef28f9e6730908344842ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c59031e2edf388c60aaea5866a6119"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a49c59031e2edf388c60aaea5866a6119">MODE_FORCED</a> = 0X01</td></tr>
+<tr class="memdesc:a49c59031e2edf388c60aaea5866a6119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode forced. This is the default mode.  <a href="classmy_b_mx280.html#a49c59031e2edf388c60aaea5866a6119">More...</a><br /></td></tr>
+<tr class="separator:a49c59031e2edf388c60aaea5866a6119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49159f29102f1007166688414ba25075"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a49159f29102f1007166688414ba25075">MODE_NORMAL</a> = 0X03</td></tr>
+<tr class="memdesc:a49159f29102f1007166688414ba25075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chip mode normal.  <a href="classmy_b_mx280.html#a49159f29102f1007166688414ba25075">More...</a><br /></td></tr>
+<tr class="separator:a49159f29102f1007166688414ba25075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434a330f1775f85505c9f00cea9935c4"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a434a330f1775f85505c9f00cea9935c4">STANDBY_TIME_500US</a> = 0x00</td></tr>
+<tr class="memdesc:a434a330f1775f85505c9f00cea9935c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 500 microseconds.  <a href="classmy_b_mx280.html#a434a330f1775f85505c9f00cea9935c4">More...</a><br /></td></tr>
+<tr class="separator:a434a330f1775f85505c9f00cea9935c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27cdac64475d6af0cda8dfdebdac05b"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aa27cdac64475d6af0cda8dfdebdac05b">STANDBY_TIME_62500US</a> = 0x01</td></tr>
+<tr class="memdesc:aa27cdac64475d6af0cda8dfdebdac05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 6.25 milliseconds.  <a href="classmy_b_mx280.html#aa27cdac64475d6af0cda8dfdebdac05b">More...</a><br /></td></tr>
+<tr class="separator:aa27cdac64475d6af0cda8dfdebdac05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052da55c8cfc8c17b3b12ba378ae974f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a052da55c8cfc8c17b3b12ba378ae974f">STANDBY_TIME_125MS</a> = 0x02</td></tr>
+<tr class="memdesc:a052da55c8cfc8c17b3b12ba378ae974f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 125 milliseconds.  <a href="classmy_b_mx280.html#a052da55c8cfc8c17b3b12ba378ae974f">More...</a><br /></td></tr>
+<tr class="separator:a052da55c8cfc8c17b3b12ba378ae974f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8284550a69217269e9f05b20fc69fe16"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a8284550a69217269e9f05b20fc69fe16">STANDBY_TIME_250MS</a> = 0x03</td></tr>
+<tr class="memdesc:a8284550a69217269e9f05b20fc69fe16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 250 milliseconds.  <a href="classmy_b_mx280.html#a8284550a69217269e9f05b20fc69fe16">More...</a><br /></td></tr>
+<tr class="separator:a8284550a69217269e9f05b20fc69fe16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae486393050b1fbcb38fe3d40888400dd"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae486393050b1fbcb38fe3d40888400dd">STANDBY_TIME_50MS</a> = 0x04</td></tr>
+<tr class="memdesc:ae486393050b1fbcb38fe3d40888400dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 50 milliseconds.  <a href="classmy_b_mx280.html#ae486393050b1fbcb38fe3d40888400dd">More...</a><br /></td></tr>
+<tr class="separator:ae486393050b1fbcb38fe3d40888400dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4dfcce5ddc1b9c09d520d3ca7c7383"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#abe4dfcce5ddc1b9c09d520d3ca7c7383">STANDBY_TIME_1000MS</a> = 0x05</td></tr>
+<tr class="memdesc:abe4dfcce5ddc1b9c09d520d3ca7c7383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 1000 milliseconds (1 second)  <a href="classmy_b_mx280.html#abe4dfcce5ddc1b9c09d520d3ca7c7383">More...</a><br /></td></tr>
+<tr class="separator:abe4dfcce5ddc1b9c09d520d3ca7c7383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6463819440b8c43adcc4883fa16315"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#adf6463819440b8c43adcc4883fa16315">STANDBY_TIME_10MS</a> = 0x06</td></tr>
+<tr class="memdesc:adf6463819440b8c43adcc4883fa16315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 10 milliseconds.  <a href="classmy_b_mx280.html#adf6463819440b8c43adcc4883fa16315">More...</a><br /></td></tr>
+<tr class="separator:adf6463819440b8c43adcc4883fa16315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf5a6cef8795352c35bec8f8fab18b86"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#adf5a6cef8795352c35bec8f8fab18b86">STANDBY_TIME_20MS</a> = 0x07</td></tr>
+<tr class="memdesc:adf5a6cef8795352c35bec8f8fab18b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 20 milliseconds.  <a href="classmy_b_mx280.html#adf5a6cef8795352c35bec8f8fab18b86">More...</a><br /></td></tr>
+<tr class="separator:adf5a6cef8795352c35bec8f8fab18b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41a6e4716b56808602bf6630c564e38"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae41a6e4716b56808602bf6630c564e38">STANDBY_TIME_2000MS</a> = 0x06</td></tr>
+<tr class="memdesc:ae41a6e4716b56808602bf6630c564e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 2000 milliseconds (2 seconds.)  <a href="classmy_b_mx280.html#ae41a6e4716b56808602bf6630c564e38">More...</a><br /></td></tr>
+<tr class="separator:ae41a6e4716b56808602bf6630c564e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1f87ee465b5cf077291177cc3081a4a"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ad1f87ee465b5cf077291177cc3081a4a">STANDBY_TIME_4000MS</a> = 0x07</td></tr>
+<tr class="memdesc:ad1f87ee465b5cf077291177cc3081a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time of 4000 milliseconds (4 seconds)  <a href="classmy_b_mx280.html#ad1f87ee465b5cf077291177cc3081a4a">More...</a><br /></td></tr>
+<tr class="separator:ad1f87ee465b5cf077291177cc3081a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b1fe7248ffc4e8c27cf923607bca948"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a1b1fe7248ffc4e8c27cf923607bca948">FILTER_OFF</a> = 0x00</td></tr>
+<tr class="memdesc:a1b1fe7248ffc4e8c27cf923607bca948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter Off.  <a href="classmy_b_mx280.html#a1b1fe7248ffc4e8c27cf923607bca948">More...</a><br /></td></tr>
+<tr class="separator:a1b1fe7248ffc4e8c27cf923607bca948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a47ff2515afdefc352f50ea7681bdae"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a9a47ff2515afdefc352f50ea7681bdae">FILTER_2</a> = 0x01</td></tr>
+<tr class="memdesc:a9a47ff2515afdefc352f50ea7681bdae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 2 samples.  <a href="classmy_b_mx280.html#a9a47ff2515afdefc352f50ea7681bdae">More...</a><br /></td></tr>
+<tr class="separator:a9a47ff2515afdefc352f50ea7681bdae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3189e8bd15e7ca1ac456933275dcd24"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#ae3189e8bd15e7ca1ac456933275dcd24">FILTER_4</a> = 0x02</td></tr>
+<tr class="memdesc:ae3189e8bd15e7ca1ac456933275dcd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 4 samples.  <a href="classmy_b_mx280.html#ae3189e8bd15e7ca1ac456933275dcd24">More...</a><br /></td></tr>
+<tr class="separator:ae3189e8bd15e7ca1ac456933275dcd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb1c727a401057774a71b87897c4f7d"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#adbb1c727a401057774a71b87897c4f7d">FILTER_8</a> = 0x03</td></tr>
+<tr class="memdesc:adbb1c727a401057774a71b87897c4f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 8 samples.  <a href="classmy_b_mx280.html#adbb1c727a401057774a71b87897c4f7d">More...</a><br /></td></tr>
+<tr class="separator:adbb1c727a401057774a71b87897c4f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c52c52a3ba4cd4e53762cb6c8f66da3"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a6c52c52a3ba4cd4e53762cb6c8f66da3">FILTER_16</a> = 0x04</td></tr>
+<tr class="memdesc:a6c52c52a3ba4cd4e53762cb6c8f66da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter at 16 samples.  <a href="classmy_b_mx280.html#a6c52c52a3ba4cd4e53762cb6c8f66da3">More...</a><br /></td></tr>
+<tr class="separator:a6c52c52a3ba4cd4e53762cb6c8f66da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae03879309432d7e75437747ad74523"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a1ae03879309432d7e75437747ad74523">CONFIG_STANDBY_MASK</a> = 0b11100000</td></tr>
+<tr class="memdesc:a1ae03879309432d7e75437747ad74523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standby time mask of the config byte.  <a href="classmy_b_mx280.html#a1ae03879309432d7e75437747ad74523">More...</a><br /></td></tr>
+<tr class="separator:a1ae03879309432d7e75437747ad74523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca5432a36d91dd463a32dc8b062987d"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a4ca5432a36d91dd463a32dc8b062987d">CONFIG_FILTER_MASK</a> = 0b00011100</td></tr>
+<tr class="memdesc:a4ca5432a36d91dd463a32dc8b062987d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter mask of the config byte.  <a href="classmy_b_mx280.html#a4ca5432a36d91dd463a32dc8b062987d">More...</a><br /></td></tr>
+<tr class="separator:a4ca5432a36d91dd463a32dc8b062987d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1811d765b64ff491e770af5e7b890f"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a6c1811d765b64ff491e770af5e7b890f">CONFIG_3WIRE_MASK</a> = 0b00000001</td></tr>
+<tr class="memdesc:a6c1811d765b64ff491e770af5e7b890f"><td class="mdescLeft">&#160;</td><td class="mdescRight">3 wire communications mode of the config byte.  <a href="classmy_b_mx280.html#a6c1811d765b64ff491e770af5e7b890f">More...</a><br /></td></tr>
+<tr class="separator:a6c1811d765b64ff491e770af5e7b890f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa62edb95c6d1934e42546ede22ac7bbe"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aa62edb95c6d1934e42546ede22ac7bbe">MEAS_TEMP_OSR_MASK</a> = 0b11100000</td></tr>
+<tr class="memdesc:aa62edb95c6d1934e42546ede22ac7bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature OSR mask of the measCtrl byte.  <a href="classmy_b_mx280.html#aa62edb95c6d1934e42546ede22ac7bbe">More...</a><br /></td></tr>
+<tr class="separator:aa62edb95c6d1934e42546ede22ac7bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c9d94fb145fd9844dee4a6cd4c10a9d"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a4c9d94fb145fd9844dee4a6cd4c10a9d">MEAS_PRES_OSR_MASK</a> = 0b00011100</td></tr>
+<tr class="memdesc:a4c9d94fb145fd9844dee4a6cd4c10a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pressure OSR mask of the measCtrl byte.  <a href="classmy_b_mx280.html#a4c9d94fb145fd9844dee4a6cd4c10a9d">More...</a><br /></td></tr>
+<tr class="separator:a4c9d94fb145fd9844dee4a6cd4c10a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e22fa9fea60767bce31014064d5e954"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a1e22fa9fea60767bce31014064d5e954">MEAS_MODE_MASK</a> = 0b00000011</td></tr>
+<tr class="memdesc:a1e22fa9fea60767bce31014064d5e954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measure mode mask of the measCtrl byte.  <a href="classmy_b_mx280.html#a1e22fa9fea60767bce31014064d5e954">More...</a><br /></td></tr>
+<tr class="separator:a1e22fa9fea60767bce31014064d5e954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabb45f6e88bef3047d67b2fc9305b567"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#aabb45f6e88bef3047d67b2fc9305b567">HUM_OSR_MASK</a> = 0b00000111</td></tr>
+<tr class="memdesc:aabb45f6e88bef3047d67b2fc9305b567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Humidity OSR mask of the humCtrl byte.  <a href="classmy_b_mx280.html#aabb45f6e88bef3047d67b2fc9305b567">More...</a><br /></td></tr>
+<tr class="separator:aabb45f6e88bef3047d67b2fc9305b567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to handle BME280 sensor in spi mode. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab0f6b27932190b05d926fc63994daed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f6b27932190b05d926fc63994daed5">&#9670;&nbsp;</a></span>myBMx280() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">myBMx280::myBMx280 </td>
+          <td>(</td>
+          <td class="paramtype">i2c_inst_t *&#160;</td>
+          <td class="paramname"><em>i2cPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>sdaPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>sclPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new my BMx280 object in I2C mode. Create an new bmx280 object in I2C Mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2cPort</td><td>I2C port instance. </td></tr>
+    <tr><td class="paramname">sdaPin</td><td>SDA pin. </td></tr>
+    <tr><td class="paramname">sclPin</td><td>SCL pin. </td></tr>
+    <tr><td class="paramname">address</td><td>Address of the BMx280. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a11a6f44a23c7d13c571ab0371b566034"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11a6f44a23c7d13c571ab0371b566034">&#9670;&nbsp;</a></span>myBMx280()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a6f44a23c7d13c571ab0371b566034">&#9670;&nbsp;</a></span>myBMx280() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +500,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4ddde06e95b11dbd7d1a1aa185d24725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ddde06e95b11dbd7d1a1aa185d24725">&#9670;&nbsp;</a></span>getConfig()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddde06e95b11dbd7d1a1aa185d24725">&#9670;&nbsp;</a></span>getConfig() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,8 +519,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4ddde06e95b11dbd7d1a1aa185d24725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddde06e95b11dbd7d1a1aa185d24725">&#9670;&nbsp;</a></span>getConfig() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Config Byte. Returns the config byte, unless an error during comms happens, at which point it returns an error code. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive is the config byte, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a83b9821be0b0035051804dba7c9d33bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83b9821be0b0035051804dba7c9d33bc">&#9670;&nbsp;</a></span>getFilter()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b9821be0b0035051804dba7c9d33bc">&#9670;&nbsp;</a></span>getFilter() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,8 +559,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a83b9821be0b0035051804dba7c9d33bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b9821be0b0035051804dba7c9d33bc">&#9670;&nbsp;</a></span>getFilter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getFilter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Filter Get the IIR filter setting. Returns positive for the filter value, and if an error occurs during comms returns an error code. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive, returns the filter, one of the FILTER_ values, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a7aac4a5d1473a66c289fd6bcab90e7ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aac4a5d1473a66c289fd6bcab90e7ee">&#9670;&nbsp;</a></span>getHumCtrl()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aac4a5d1473a66c289fd6bcab90e7ee">&#9670;&nbsp;</a></span>getHumCtrl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,8 +599,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7aac4a5d1473a66c289fd6bcab90e7ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aac4a5d1473a66c289fd6bcab90e7ee">&#9670;&nbsp;</a></span>getHumCtrl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getHumCtrl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Hum Ctrl byte Gets the Humidity Control byte. Positive values (including zero) are the control byte, otherwise if an error during comms occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive is the Hum Ctrl byte, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="aff41a6ed4b5146ba137fe8126884631f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff41a6ed4b5146ba137fe8126884631f">&#9670;&nbsp;</a></span>getHumidityOSR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aff41a6ed4b5146ba137fe8126884631f">&#9670;&nbsp;</a></span>getHumidityOSR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,8 +639,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aff41a6ed4b5146ba137fe8126884631f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff41a6ed4b5146ba137fe8126884631f">&#9670;&nbsp;</a></span>getHumidityOSR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getHumidityOSR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Humidity OSR Get the humidity oversampling rate. Returns postive (including zero) for OSR value, otherwise if a comms error occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive is the oversampling rate, one of the OSR_ values, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a234df64896c1cc82bb51a79f00bc44f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a234df64896c1cc82bb51a79f00bc44f5">&#9670;&nbsp;</a></span>getID()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a234df64896c1cc82bb51a79f00bc44f5">&#9670;&nbsp;</a></span>getID() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -434,8 +679,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a234df64896c1cc82bb51a79f00bc44f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a234df64896c1cc82bb51a79f00bc44f5">&#9670;&nbsp;</a></span>getID() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the chip id byte. Returns the Chip ID or error code on timeout or no response. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Positive is the chip id, one of MODEL_BME280 or MODEL_BMP280, or negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a5f47ddd9bc9aed4e4e8dae8cba6161b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f47ddd9bc9aed4e4e8dae8cba6161b3">&#9670;&nbsp;</a></span>getMeasCtrl()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f47ddd9bc9aed4e4e8dae8cba6161b3">&#9670;&nbsp;</a></span>getMeasCtrl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,8 +719,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5f47ddd9bc9aed4e4e8dae8cba6161b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f47ddd9bc9aed4e4e8dae8cba6161b3">&#9670;&nbsp;</a></span>getMeasCtrl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getMeasCtrl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Meas Ctrl Byte Gets the Meas Ctrl byte, returns positive for the byte, otherwise if an error occurs during comms, returns an error code. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive: Meas ctrl byte, Negative: error code. </dd></dl>
+
+</div>
+</div>
 <a id="ab4e9a7dbdfe835fef3c30e528444db2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4e9a7dbdfe835fef3c30e528444db2b">&#9670;&nbsp;</a></span>getMode()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e9a7dbdfe835fef3c30e528444db2b">&#9670;&nbsp;</a></span>getMode() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -474,8 +759,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab4e9a7dbdfe835fef3c30e528444db2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e9a7dbdfe835fef3c30e528444db2b">&#9670;&nbsp;</a></span>getMode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Mode. Return the operating mode of the chip, Positive values (including zero) is the mode, otherwise if a comms error occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive is the mode one of the MODE_ values. Negative is an error code. </dd></dl>
+
+</div>
+</div>
 <a id="a38131c72afebec4eb60284315b369894"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38131c72afebec4eb60284315b369894">&#9670;&nbsp;</a></span>getPressureOSR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a38131c72afebec4eb60284315b369894">&#9670;&nbsp;</a></span>getPressureOSR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,8 +799,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a38131c72afebec4eb60284315b369894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38131c72afebec4eb60284315b369894">&#9670;&nbsp;</a></span>getPressureOSR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getPressureOSR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Pressure OSR Get the pressure oversampling rate. Returns postivie (including zero) for the OSR value, otherwise if an comms error occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Postive: oversampling rate, one of OSR_ values, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="abc8fbd1144ef0ec495421c21e25fbcfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc8fbd1144ef0ec495421c21e25fbcfa">&#9670;&nbsp;</a></span>getStandbyTime()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8fbd1144ef0ec495421c21e25fbcfa">&#9670;&nbsp;</a></span>getStandbyTime() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,8 +839,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abc8fbd1144ef0ec495421c21e25fbcfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc8fbd1144ef0ec495421c21e25fbcfa">&#9670;&nbsp;</a></span>getStandbyTime() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getStandbyTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Standby Time Get the inactive duration in normal mode. (standby time). Returns positive, including zero for the standby times, otherwise if an error during comms occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t returns one of the STANDBY_TIME_ values. </dd></dl>
+
+</div>
+</div>
 <a id="af42db5a5807c2f440aa49e85df4f033f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af42db5a5807c2f440aa49e85df4f033f">&#9670;&nbsp;</a></span>getStatus()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af42db5a5807c2f440aa49e85df4f033f">&#9670;&nbsp;</a></span>getStatus() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -534,8 +879,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af42db5a5807c2f440aa49e85df4f033f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42db5a5807c2f440aa49e85df4f033f">&#9670;&nbsp;</a></span>getStatus() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Status byte Returns the status byte, unless an error during comms happens, at which point it returns an error code. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Positive is the status byte, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="ac4870a8b89307db9c7c03cdc5f304ef4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4870a8b89307db9c7c03cdc5f304ef4">&#9670;&nbsp;</a></span>getTemperatureOSR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4870a8b89307db9c7c03cdc5f304ef4">&#9670;&nbsp;</a></span>getTemperatureOSR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,8 +919,28 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac4870a8b89307db9c7c03cdc5f304ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4870a8b89307db9c7c03cdc5f304ef4">&#9670;&nbsp;</a></span>getTemperatureOSR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t myBMx280::getTemperatureOSR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Temperature OSR Get temperature oversampling rate. Returns positive (including zero) for the oversample rate, otherwise if a comms error occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns positive,is one of the OSR_ values. Negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a774d1dfb092e114b347f9535609d0405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a774d1dfb092e114b347f9535609d0405">&#9670;&nbsp;</a></span>initialize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a774d1dfb092e114b347f9535609d0405">&#9670;&nbsp;</a></span>initialize() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -601,8 +986,53 @@ false if not initialized okay. </dd></dl>
 
 </div>
 </div>
+<a id="a774d1dfb092e114b347f9535609d0405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774d1dfb092e114b347f9535609d0405">&#9670;&nbsp;</a></span>initialize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>config</em> = <code>DEFAULT_CONFIG</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>measCtrl</em> = <code>DEFAULT_MEAS_SETTINGS</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>humCtrl</em> = <code>DEFAULT_HUM_SETTINGS</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the chip. Initialize the BMx280 chip. Returns the achieved baud rate (target is 3.2MHz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. </td></tr>
+    <tr><td class="paramname">measCtrl</td><td>The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED. </td></tr>
+    <tr><td class="paramname">humCtrl</td><td>the humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Positive is the achieved baud rate, negaitive for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a8a91456a2f01ac0b170e9c4b69b14907"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a91456a2f01ac0b170e9c4b69b14907">&#9670;&nbsp;</a></span>reset()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a91456a2f01ac0b170e9c4b69b14907">&#9670;&nbsp;</a></span>reset() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -620,8 +1050,28 @@ false if not initialized okay. </dd></dl>
 
 </div>
 </div>
+<a id="a8a91456a2f01ac0b170e9c4b69b14907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a91456a2f01ac0b170e9c4b69b14907">&#9670;&nbsp;</a></span>reset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myBMx280::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>reset the chip. Resets the chip to default values. Retuns 0 (NO_ERROR) if reset okay, otherwise, if a comms error occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) on reset okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="abeb902b12aab3c05c822f55977d8c995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abeb902b12aab3c05c822f55977d8c995">&#9670;&nbsp;</a></span>setConfig()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb902b12aab3c05c822f55977d8c995">&#9670;&nbsp;</a></span>setConfig() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -647,8 +1097,36 @@ false if not initialized okay. </dd></dl>
 
 </div>
 </div>
+<a id="abeb902b12aab3c05c822f55977d8c995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb902b12aab3c05c822f55977d8c995">&#9670;&nbsp;</a></span>setConfig() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myBMx280::setConfig </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Config byte. Sets the config byte, returns 0 (NO_ERROR) if successful, otherwise if an error during comms occurs, an error code is returned. </p>
+<dl class="section note"><dt>Note</dt><dd>When setting the config byte, the comms mode is ignored in I2C mode. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Config byte </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a6eee20e932bc97e3c6a595af82988d20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eee20e932bc97e3c6a595af82988d20">&#9670;&nbsp;</a></span>setFilter()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eee20e932bc97e3c6a595af82988d20">&#9670;&nbsp;</a></span>setFilter() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,8 +1154,35 @@ false if the filter was not set. </dd></dl>
 
 </div>
 </div>
+<a id="a6eee20e932bc97e3c6a595af82988d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eee20e932bc97e3c6a595af82988d20">&#9670;&nbsp;</a></span>setFilter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::setFilter </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Filter Set the IIR filter setting, returns 0 (NO_ERROR) for set okay, otherwise if a comms error occurs, or an invlaid filter is provided, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>one of the FILTER_ values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negaitve for error code. </dd></dl>
+
+</div>
+</div>
 <a id="aab1d6a3c6e3f0f323af36907dbe520e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab1d6a3c6e3f0f323af36907dbe520e8">&#9670;&nbsp;</a></span>setHumCtrl()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1d6a3c6e3f0f323af36907dbe520e8">&#9670;&nbsp;</a></span>setHumCtrl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -702,8 +1207,35 @@ false if the filter was not set. </dd></dl>
 
 </div>
 </div>
+<a id="aab1d6a3c6e3f0f323af36907dbe520e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1d6a3c6e3f0f323af36907dbe520e8">&#9670;&nbsp;</a></span>setHumCtrl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myBMx280::setHumCtrl </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Hum Ctrl byte Sets the Humidity Control byte. Returns 0 (NO_ERROR) if set okay, returns an error code if there is no humidity, or an error during comms occurs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>humCtrl value to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="ae53b175ece12e57492f629e403a000bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae53b175ece12e57492f629e403a000bc">&#9670;&nbsp;</a></span>setHumidityOSR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53b175ece12e57492f629e403a000bc">&#9670;&nbsp;</a></span>setHumidityOSR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -731,8 +1263,35 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="ae53b175ece12e57492f629e403a000bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53b175ece12e57492f629e403a000bc">&#9670;&nbsp;</a></span>setHumidityOSR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::setHumidityOSR </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Humidity OSR Set the humidity oversampling rate. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or if a comms error occurs, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The oversampling rate, one of the OSR_ values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a702aaf40e107d8c45b7d291662d81b26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a702aaf40e107d8c45b7d291662d81b26">&#9670;&nbsp;</a></span>setMeasCtrl()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a702aaf40e107d8c45b7d291662d81b26">&#9670;&nbsp;</a></span>setMeasCtrl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -757,8 +1316,35 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="a702aaf40e107d8c45b7d291662d81b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702aaf40e107d8c45b7d291662d81b26">&#9670;&nbsp;</a></span>setMeasCtrl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myBMx280::setMeasCtrl </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Meas Ctrl byte Sets the Meas Ctrl byte, returns 0 (NO_ERROR) if set okay, otherwise if an error during comms occurs, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>measCtrl value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) for set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a5859586567063d2b4094921ea8b83f5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5859586567063d2b4094921ea8b83f5f">&#9670;&nbsp;</a></span>setMode()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5859586567063d2b4094921ea8b83f5f">&#9670;&nbsp;</a></span>setMode() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -786,8 +1372,35 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="a5859586567063d2b4094921ea8b83f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5859586567063d2b4094921ea8b83f5f">&#9670;&nbsp;</a></span>setMode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::setMode </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Mode. Set the operating mode of the chip. Returns 0 (NO_ERROR) if set oaky, otherwise if the mode is invalid, or a comms error occured an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The operating mode, one of the MODE_ values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="af504dbb90906d5ad1f45bdc94a960d61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af504dbb90906d5ad1f45bdc94a960d61">&#9670;&nbsp;</a></span>setPressureOSR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af504dbb90906d5ad1f45bdc94a960d61">&#9670;&nbsp;</a></span>setPressureOSR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -815,8 +1428,35 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="af504dbb90906d5ad1f45bdc94a960d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af504dbb90906d5ad1f45bdc94a960d61">&#9670;&nbsp;</a></span>setPressureOSR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::setPressureOSR </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Pressure OSR Set the pressure oversampling rate. Returns 0 (NO_ERROR) if set okay, otherwise if a comms error, or an invalid rate is supplied, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The oversampling rate, one of the OSR_ values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a05fbedddd013c54565bd10ab6b9edcff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05fbedddd013c54565bd10ab6b9edcff">&#9670;&nbsp;</a></span>setStandbyTime()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fbedddd013c54565bd10ab6b9edcff">&#9670;&nbsp;</a></span>setStandbyTime() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -844,8 +1484,35 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="a05fbedddd013c54565bd10ab6b9edcff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fbedddd013c54565bd10ab6b9edcff">&#9670;&nbsp;</a></span>setStandbyTime() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::setStandbyTime </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Standby Time Set the inactive duration in normal mode. (standby time) Returns 0 (NO_ERROR) for set okay, otherwise if an invalid mode is supplied or an error in comms occurs an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Standby time value, one of the STANDBY_TIME_ values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 (NO_ERROR) if set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a48dfb2fd86931caaea845736ff85ebaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48dfb2fd86931caaea845736ff85ebaf">&#9670;&nbsp;</a></span>setTemperatureOSR()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a48dfb2fd86931caaea845736ff85ebaf">&#9670;&nbsp;</a></span>setTemperatureOSR() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -873,8 +1540,35 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="a48dfb2fd86931caaea845736ff85ebaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48dfb2fd86931caaea845736ff85ebaf">&#9670;&nbsp;</a></span>setTemperatureOSR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::setTemperatureOSR </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Temperature OSR Set the temperature oversampling rate.Returns 0(NO_ERROR) if set okay, otherwise, if an invalid OSR, or a comms error occurs, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>one of the OSR_ values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 for set okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <a id="a3f803bcb617e56d846b840f551ae7af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f803bcb617e56d846b840f551ae7af7">&#9670;&nbsp;</a></span>update()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f803bcb617e56d846b840f551ae7af7">&#9670;&nbsp;</a></span>update() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -892,9 +1586,58 @@ false if not set. </dd></dl>
 
 </div>
 </div>
+<a id="a3f803bcb617e56d846b840f551ae7af7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f803bcb617e56d846b840f551ae7af7">&#9670;&nbsp;</a></span>update() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void myBMx280::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns 0 (NO_ERROR) if updated okay, otherwise if a comms error occurs, an error code is returned. </p>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0(NO_ERROR) if update okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a2b01b7186c042ff75a2feb7d6887b15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b01b7186c042ff75a2feb7d6887b15d">&#9670;&nbsp;</a></span>verifyAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::verifyAddress </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verify bmx280 address. Returns true if the provided address is a valid BMx280 I2C address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>Address to verify </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Address is valid. </dd>
+<dd>
+false Address is invalid. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7fc85018ed00938fca8c7e2f48e6f3f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fc85018ed00938fca8c7e2f48e6f3f1">&#9670;&nbsp;</a></span>CHIPMODEL_BME280</h2>
+<a id="a35383898f7320a7f6c34801826cdbf57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35383898f7320a7f6c34801826cdbf57">&#9670;&nbsp;</a></span>CHIPMODEL_BME280</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -903,7 +1646,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::CHIPMODEL_BME280 = 0x60</td>
+          <td class="memname">static const uint8_t myBMx280::CHIPMODEL_BME280 = 0x60</td>
         </tr>
       </table>
   </td>
@@ -917,8 +1660,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a03ade9503e345f635840c542ea9b4df6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03ade9503e345f635840c542ea9b4df6">&#9670;&nbsp;</a></span>CHIPMODEL_BMP280</h2>
+<a id="a99bb6d2b095144a722dddbba4837d701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99bb6d2b095144a722dddbba4837d701">&#9670;&nbsp;</a></span>CHIPMODEL_BMP280</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -927,7 +1670,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::CHIPMODEL_BMP280 = 0x58</td>
+          <td class="memname">static const uint8_t myBMx280::CHIPMODEL_BMP280 = 0x58</td>
         </tr>
       </table>
   </td>
@@ -941,8 +1684,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="aa3563047e2d21a7f7bd040d73625ef3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3563047e2d21a7f7bd040d73625ef3c">&#9670;&nbsp;</a></span>CONFIG_3WIRE_MASK</h2>
+<a id="a6c1811d765b64ff491e770af5e7b890f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1811d765b64ff491e770af5e7b890f">&#9670;&nbsp;</a></span>CONFIG_3WIRE_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -951,7 +1694,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::CONFIG_3WIRE_MASK = 0b00000001</td>
+          <td class="memname">static const uint8_t myBMx280::CONFIG_3WIRE_MASK = 0b00000001</td>
         </tr>
       </table>
   </td>
@@ -966,8 +1709,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a57f22c4f42ef7a5e75b42d44491e1b16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57f22c4f42ef7a5e75b42d44491e1b16">&#9670;&nbsp;</a></span>CONFIG_FILTER_MASK</h2>
+<a id="a4ca5432a36d91dd463a32dc8b062987d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca5432a36d91dd463a32dc8b062987d">&#9670;&nbsp;</a></span>CONFIG_FILTER_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -976,7 +1719,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::CONFIG_FILTER_MASK = 0b00011100</td>
+          <td class="memname">static const uint8_t myBMx280::CONFIG_FILTER_MASK = 0b00011100</td>
         </tr>
       </table>
   </td>
@@ -990,8 +1733,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a641888a3f044b98dfd55adffb8c80c85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a641888a3f044b98dfd55adffb8c80c85">&#9670;&nbsp;</a></span>CONFIG_STANDBY_MASK</h2>
+<a id="a1ae03879309432d7e75437747ad74523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae03879309432d7e75437747ad74523">&#9670;&nbsp;</a></span>CONFIG_STANDBY_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1000,7 +1743,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::CONFIG_STANDBY_MASK = 0b11100000</td>
+          <td class="memname">static const uint8_t myBMx280::CONFIG_STANDBY_MASK = 0b11100000</td>
         </tr>
       </table>
   </td>
@@ -1014,8 +1757,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a0aa50e080904003cd5575740146a86c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0aa50e080904003cd5575740146a86c5">&#9670;&nbsp;</a></span>FILTER_16</h2>
+<a id="aebd83586d61320dd6a31461cb1dedd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd83586d61320dd6a31461cb1dedd9c">&#9670;&nbsp;</a></span>ERROR_INITIALIZED</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1024,7 +1767,295 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::FILTER_16 = 0x04</td>
+          <td class="memname">const int16_t myBMx280::ERROR_INITIALIZED = <a class="el" href="my_error_codes_8hpp.html#a7a3a240f91934bfe848e1b698b45243a">MY_ERROR_MYI2C_INITIALIZED</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Already initialized. Value -452. The chip is already initialized. </p>
+
+</div>
+</div>
+<a id="a378fe001c8fa0bc0208de0e2335bdb87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378fe001c8fa0bc0208de0e2335bdb87">&#9670;&nbsp;</a></span>ERROR_INVALD_RESPONSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALD_RESPONSE = <a class="el" href="my_error_codes_8hpp.html#a7339cb72317d208de68e403672341025">MY_ERROR_MYBMx280_INVALID_RESPONSE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid response. Value -502. The chip provided an invalid respone. </p>
+
+</div>
+</div>
+<a id="ae61963aa1939bc665365daa65878dc63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61963aa1939bc665365daa65878dc63">&#9670;&nbsp;</a></span>ERROR_INVALID_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_ADDRESS = <a class="el" href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">MY_ERROR_MYBMx280_INVALID_ADDRESS</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid I2C address. Value -500. The provided I2C address is not a valid address. </p>
+
+</div>
+</div>
+<a id="a13411d27017210019e5de7ac0d17c518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13411d27017210019e5de7ac0d17c518">&#9670;&nbsp;</a></span>ERROR_INVALID_FILTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_FILTER = <a class="el" href="my_error_codes_8hpp.html#a0f3b28a75e3af0a52cfb1caabf513719">MY_ERROR_MYBMx280_INVALID_FILTER</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid filter. Value -505. An invalid filter value was passed. </p>
+
+</div>
+</div>
+<a id="a51f28c2010085aed970ea4b279a5abe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f28c2010085aed970ea4b279a5abe4">&#9670;&nbsp;</a></span>ERROR_INVALID_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_MODE = <a class="el" href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">MY_ERROR_MYBMx280_INVALID_MODE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid mode. Value -507. An invalid mode value was provided. </p>
+
+</div>
+</div>
+<a id="afa0663547e07fd8532961e2a0c58a918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa0663547e07fd8532961e2a0c58a918">&#9670;&nbsp;</a></span>ERROR_INVALID_OSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_OSR = <a class="el" href="my_error_codes_8hpp.html#abb585545ee82ef1ed1560f5c3a47f1f3">MY_ERROR_MYBMx280_INVALID_OSR</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid Over Sample Rate. Value -506. An invalid over sample rate value was provided. </p>
+
+</div>
+</div>
+<a id="aba131a827e19899defb28cba86e34a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba131a827e19899defb28cba86e34a1c">&#9670;&nbsp;</a></span>ERROR_INVALID_SCL_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_SCL_PIN = <a class="el" href="my_error_codes_8hpp.html#a52d85e2c2622ce3c9a96bdcb2a292f47">MY_ERROR_MYI2C_INVALID_SCL_PIN</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid SCL pin. Value -451. Invalid SCL pin was provided. </p>
+
+</div>
+</div>
+<a id="a518140619aa786a9a1521d735bacfbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a518140619aa786a9a1521d735bacfbe3">&#9670;&nbsp;</a></span>ERROR_INVALID_SDA_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_SDA_PIN = <a class="el" href="my_error_codes_8hpp.html#a1bbf417895edcb9ae46b0f9a5ca6fd96">MY_ERROR_MYI2C_INVALID_SDA_PIN</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid SDA pin. Value -450. Invalid SDA pin was provided. </p>
+
+</div>
+</div>
+<a id="a2ef14c3a61d53c9dc24d66f7c85be669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef14c3a61d53c9dc24d66f7c85be669">&#9670;&nbsp;</a></span>ERROR_INVALID_STANDBY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_INVALID_STANDBY = <a class="el" href="my_error_codes_8hpp.html#a7a9460e064bccd4c8debe788ea7ac75b">MY_ERROR_MYBMx280_INVALID_STANDBY</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalid standby time. Value -504. An invalid standby time was provided. </p>
+
+</div>
+</div>
+<a id="a131efd827386c96cd5429ba3ff38b87f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a131efd827386c96cd5429ba3ff38b87f">&#9670;&nbsp;</a></span>ERROR_NO_HUMIDITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_NO_HUMIDITY = <a class="el" href="my_error_codes_8hpp.html#a0ed16f2dad2d86386995987823917a4e">MY_ERROR_MYBMx280_NO_HUMIDITY</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No humidity. Value -503. The chip doesn't have humidity. </p>
+
+</div>
+</div>
+<a id="afb00942ae29d43eabc590010cb8538fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb00942ae29d43eabc590010cb8538fb">&#9670;&nbsp;</a></span>ERROR_NO_RESPONSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_NO_RESPONSE = <a class="el" href="my_error_codes_8hpp.html#aa0ed10176b27701107ab69ddfe67de52">MY_ERROR_MYBMx280_NO_RESPONSE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No response. Value -501. The I2C address didn't respond. </p>
+
+</div>
+</div>
+<a id="a4bcf5a8d3edb2d5a3286991576bd1a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bcf5a8d3edb2d5a3286991576bd1a84">&#9670;&nbsp;</a></span>ERROR_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myBMx280::ERROR_TIMEOUT = <a class="el" href="my_standard_defines_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">MY_TIMEOUT</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Timeout error. Value -7. A timeout occured. </p>
+
+</div>
+</div>
+<a id="a6c52c52a3ba4cd4e53762cb6c8f66da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c52c52a3ba4cd4e53762cb6c8f66da3">&#9670;&nbsp;</a></span>FILTER_16</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const uint8_t myBMx280::FILTER_16 = 0x04</td>
         </tr>
       </table>
   </td>
@@ -1038,8 +2069,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a2f11c98f38b4294980160496305bd202"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f11c98f38b4294980160496305bd202">&#9670;&nbsp;</a></span>FILTER_2</h2>
+<a id="a9a47ff2515afdefc352f50ea7681bdae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a47ff2515afdefc352f50ea7681bdae">&#9670;&nbsp;</a></span>FILTER_2</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1048,7 +2079,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::FILTER_2 = 0x01</td>
+          <td class="memname">static const uint8_t myBMx280::FILTER_2 = 0x01</td>
         </tr>
       </table>
   </td>
@@ -1062,8 +2093,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a86810edd5c7714abcef2b79c8a2bc864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86810edd5c7714abcef2b79c8a2bc864">&#9670;&nbsp;</a></span>FILTER_4</h2>
+<a id="ae3189e8bd15e7ca1ac456933275dcd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3189e8bd15e7ca1ac456933275dcd24">&#9670;&nbsp;</a></span>FILTER_4</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1072,7 +2103,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::FILTER_4 = 0x02</td>
+          <td class="memname">static const uint8_t myBMx280::FILTER_4 = 0x02</td>
         </tr>
       </table>
   </td>
@@ -1086,8 +2117,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="ab0b6524a00b30e1d560cc6c5110cffb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0b6524a00b30e1d560cc6c5110cffb7">&#9670;&nbsp;</a></span>FILTER_8</h2>
+<a id="adbb1c727a401057774a71b87897c4f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbb1c727a401057774a71b87897c4f7d">&#9670;&nbsp;</a></span>FILTER_8</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1096,7 +2127,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::FILTER_8 = 0x03</td>
+          <td class="memname">static const uint8_t myBMx280::FILTER_8 = 0x03</td>
         </tr>
       </table>
   </td>
@@ -1110,8 +2141,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a56eeb6451826aa4d2278dbb5d876404c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56eeb6451826aa4d2278dbb5d876404c">&#9670;&nbsp;</a></span>FILTER_OFF</h2>
+<a id="a1b1fe7248ffc4e8c27cf923607bca948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b1fe7248ffc4e8c27cf923607bca948">&#9670;&nbsp;</a></span>FILTER_OFF</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1120,7 +2151,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::FILTER_OFF = 0x00</td>
+          <td class="memname">static const uint8_t myBMx280::FILTER_OFF = 0x00</td>
         </tr>
       </table>
   </td>
@@ -1166,8 +2197,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="ab981e0e9de452465328702986ded1460"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab981e0e9de452465328702986ded1460">&#9670;&nbsp;</a></span>HUM_OSR_MASK</h2>
+<a id="aabb45f6e88bef3047d67b2fc9305b567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb45f6e88bef3047d67b2fc9305b567">&#9670;&nbsp;</a></span>HUM_OSR_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1176,7 +2207,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::HUM_OSR_MASK = 0b00000111</td>
+          <td class="memname">static const uint8_t myBMx280::HUM_OSR_MASK = 0b00000111</td>
         </tr>
       </table>
   </td>
@@ -1206,8 +2237,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="aee9089b4ccd1c0a96f20b6a313ed3da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee9089b4ccd1c0a96f20b6a313ed3da4">&#9670;&nbsp;</a></span>MEAS_MODE_MASK</h2>
+<a id="a1e22fa9fea60767bce31014064d5e954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e22fa9fea60767bce31014064d5e954">&#9670;&nbsp;</a></span>MEAS_MODE_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1216,7 +2247,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::MEAS_MODE_MASK = 0b00000011</td>
+          <td class="memname">static const uint8_t myBMx280::MEAS_MODE_MASK = 0b00000011</td>
         </tr>
       </table>
   </td>
@@ -1230,8 +2261,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a63af92960dd5568af66970b8a9317b96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63af92960dd5568af66970b8a9317b96">&#9670;&nbsp;</a></span>MEAS_PRES_OSR_MASK</h2>
+<a id="a4c9d94fb145fd9844dee4a6cd4c10a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c9d94fb145fd9844dee4a6cd4c10a9d">&#9670;&nbsp;</a></span>MEAS_PRES_OSR_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1240,7 +2271,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::MEAS_PRES_OSR_MASK = 0b00011100</td>
+          <td class="memname">static const uint8_t myBMx280::MEAS_PRES_OSR_MASK = 0b00011100</td>
         </tr>
       </table>
   </td>
@@ -1254,8 +2285,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a5e2ff856f84235aa509cec4ec0f37d1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e2ff856f84235aa509cec4ec0f37d1c">&#9670;&nbsp;</a></span>MEAS_TEMP_OSR_MASK</h2>
+<a id="aa62edb95c6d1934e42546ede22ac7bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa62edb95c6d1934e42546ede22ac7bbe">&#9670;&nbsp;</a></span>MEAS_TEMP_OSR_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1264,7 +2295,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::MEAS_TEMP_OSR_MASK = 0b11100000</td>
+          <td class="memname">static const uint8_t myBMx280::MEAS_TEMP_OSR_MASK = 0b11100000</td>
         </tr>
       </table>
   </td>
@@ -1278,8 +2309,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a224352010506cad82524e9627294ac8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a224352010506cad82524e9627294ac8c">&#9670;&nbsp;</a></span>MODE_FORCED</h2>
+<a id="a49c59031e2edf388c60aaea5866a6119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c59031e2edf388c60aaea5866a6119">&#9670;&nbsp;</a></span>MODE_FORCED</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1288,7 +2319,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::MODE_FORCED = 0X01</td>
+          <td class="memname">static const uint8_t myBMx280::MODE_FORCED = 0X01</td>
         </tr>
       </table>
   </td>
@@ -1302,8 +2333,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a64420c3b133828e93f8a2f55bb5fe591"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64420c3b133828e93f8a2f55bb5fe591">&#9670;&nbsp;</a></span>MODE_NORMAL</h2>
+<a id="a49159f29102f1007166688414ba25075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49159f29102f1007166688414ba25075">&#9670;&nbsp;</a></span>MODE_NORMAL</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1312,7 +2343,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::MODE_NORMAL = 0X03</td>
+          <td class="memname">static const uint8_t myBMx280::MODE_NORMAL = 0X03</td>
         </tr>
       </table>
   </td>
@@ -1326,8 +2357,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a69e9a865d0b89867c5c6e7d3a87cca3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69e9a865d0b89867c5c6e7d3a87cca3f">&#9670;&nbsp;</a></span>MODE_SLEEP</h2>
+<a id="a787f933fdef28f9e6730908344842ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787f933fdef28f9e6730908344842ca3">&#9670;&nbsp;</a></span>MODE_SLEEP</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1336,7 +2367,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::MODE_SLEEP = 0X00</td>
+          <td class="memname">static const uint8_t myBMx280::MODE_SLEEP = 0X00</td>
         </tr>
       </table>
   </td>
@@ -1350,8 +2381,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a0054c4f259771ed3f55e640a86015603"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0054c4f259771ed3f55e640a86015603">&#9670;&nbsp;</a></span>OSR_OFF</h2>
+<a id="a4dfbee99fda0cebb2257d6972418dded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dfbee99fda0cebb2257d6972418dded">&#9670;&nbsp;</a></span>NO_ERROR</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1360,7 +2391,31 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::OSR_OFF = 0X00</td>
+          <td class="memname">const int16_t myBMx280::NO_ERROR = <a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No error. Value 0. No error occured. </p>
+
+</div>
+</div>
+<a id="a1bc4cfd3fe981d0aa1dc92f2e1419a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc4cfd3fe981d0aa1dc92f2e1419a34">&#9670;&nbsp;</a></span>OSR_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const uint8_t myBMx280::OSR_OFF = 0X00</td>
         </tr>
       </table>
   </td>
@@ -1375,8 +2430,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a837eb94f86543bfd6d7250b603a4b1bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a837eb94f86543bfd6d7250b603a4b1bb">&#9670;&nbsp;</a></span>OSR_X1</h2>
+<a id="a268b3751104337f333647a79652d9462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268b3751104337f333647a79652d9462">&#9670;&nbsp;</a></span>OSR_X1</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1385,7 +2440,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::OSR_X1 = 0X01</td>
+          <td class="memname">static const uint8_t myBMx280::OSR_X1 = 0X01</td>
         </tr>
       </table>
   </td>
@@ -1399,8 +2454,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="ae6651f6e8af79fc6b7348c44d1e66fcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6651f6e8af79fc6b7348c44d1e66fcc">&#9670;&nbsp;</a></span>OSR_X16</h2>
+<a id="acb32fe99475cce6ab62d22dae56d1c0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb32fe99475cce6ab62d22dae56d1c0d">&#9670;&nbsp;</a></span>OSR_X16</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1409,7 +2464,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::OSR_X16 = 0X05</td>
+          <td class="memname">static const uint8_t myBMx280::OSR_X16 = 0X05</td>
         </tr>
       </table>
   </td>
@@ -1423,8 +2478,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a17fd3cc3a320c474f899b05efdb15fa1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17fd3cc3a320c474f899b05efdb15fa1">&#9670;&nbsp;</a></span>OSR_X2</h2>
+<a id="a9e7bf96cd3b75a2bc7be7620c1f461b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e7bf96cd3b75a2bc7be7620c1f461b0">&#9670;&nbsp;</a></span>OSR_X2</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1433,7 +2488,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::OSR_X2 = 0X02</td>
+          <td class="memname">static const uint8_t myBMx280::OSR_X2 = 0X02</td>
         </tr>
       </table>
   </td>
@@ -1447,8 +2502,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="acfd6c59d9e13bb1b6284e1cb7afd628a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfd6c59d9e13bb1b6284e1cb7afd628a">&#9670;&nbsp;</a></span>OSR_X4</h2>
+<a id="a49dc648af8f575eb977cf434923e70c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49dc648af8f575eb977cf434923e70c3">&#9670;&nbsp;</a></span>OSR_X4</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1457,7 +2512,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::OSR_X4 = 0X03</td>
+          <td class="memname">static const uint8_t myBMx280::OSR_X4 = 0X03</td>
         </tr>
       </table>
   </td>
@@ -1471,8 +2526,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a1394192053125f397319c5ff272a8193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1394192053125f397319c5ff272a8193">&#9670;&nbsp;</a></span>OSR_X8</h2>
+<a id="a763453b503a3b235f9c5dcf0cbd0319f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763453b503a3b235f9c5dcf0cbd0319f">&#9670;&nbsp;</a></span>OSR_X8</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1481,7 +2536,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::OSR_X8 = 0X04</td>
+          <td class="memname">static const uint8_t myBMx280::OSR_X8 = 0X04</td>
         </tr>
       </table>
   </td>
@@ -1511,8 +2566,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a363f20c8705a33f356009ae2d94321db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a363f20c8705a33f356009ae2d94321db">&#9670;&nbsp;</a></span>STANDBY_TIME_1000MS</h2>
+<a id="abe4dfcce5ddc1b9c09d520d3ca7c7383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe4dfcce5ddc1b9c09d520d3ca7c7383">&#9670;&nbsp;</a></span>STANDBY_TIME_1000MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1521,7 +2576,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_1000MS = 0x05</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_1000MS = 0x05</td>
         </tr>
       </table>
   </td>
@@ -1535,8 +2590,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a93b11893a6330129f5dbde1606d4fce0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93b11893a6330129f5dbde1606d4fce0">&#9670;&nbsp;</a></span>STANDBY_TIME_10MS</h2>
+<a id="adf6463819440b8c43adcc4883fa16315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf6463819440b8c43adcc4883fa16315">&#9670;&nbsp;</a></span>STANDBY_TIME_10MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1545,7 +2600,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_10MS = 0x06</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_10MS = 0x06</td>
         </tr>
       </table>
   </td>
@@ -1560,8 +2615,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a2c09d27bfd365cddf6a6388c25b5cde8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c09d27bfd365cddf6a6388c25b5cde8">&#9670;&nbsp;</a></span>STANDBY_TIME_125MS</h2>
+<a id="a052da55c8cfc8c17b3b12ba378ae974f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052da55c8cfc8c17b3b12ba378ae974f">&#9670;&nbsp;</a></span>STANDBY_TIME_125MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1570,7 +2625,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_125MS = 0x02</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_125MS = 0x02</td>
         </tr>
       </table>
   </td>
@@ -1584,8 +2639,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a187fe4ecc31022adb2b5f1eeb8fb4729"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a187fe4ecc31022adb2b5f1eeb8fb4729">&#9670;&nbsp;</a></span>STANDBY_TIME_2000MS</h2>
+<a id="ae41a6e4716b56808602bf6630c564e38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae41a6e4716b56808602bf6630c564e38">&#9670;&nbsp;</a></span>STANDBY_TIME_2000MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1594,7 +2649,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_2000MS = 0x06</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_2000MS = 0x06</td>
         </tr>
       </table>
   </td>
@@ -1609,8 +2664,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a339bcda5ce37c8478827e56c8ddda09a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a339bcda5ce37c8478827e56c8ddda09a">&#9670;&nbsp;</a></span>STANDBY_TIME_20MS</h2>
+<a id="adf5a6cef8795352c35bec8f8fab18b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5a6cef8795352c35bec8f8fab18b86">&#9670;&nbsp;</a></span>STANDBY_TIME_20MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1619,7 +2674,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_20MS = 0x07</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_20MS = 0x07</td>
         </tr>
       </table>
   </td>
@@ -1634,8 +2689,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="aa85875cad79cc29e126497336e3de017"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa85875cad79cc29e126497336e3de017">&#9670;&nbsp;</a></span>STANDBY_TIME_250MS</h2>
+<a id="a8284550a69217269e9f05b20fc69fe16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8284550a69217269e9f05b20fc69fe16">&#9670;&nbsp;</a></span>STANDBY_TIME_250MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1644,7 +2699,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_250MS = 0x03</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_250MS = 0x03</td>
         </tr>
       </table>
   </td>
@@ -1658,8 +2713,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a4ff7ca27faa9b8cba30fca17381ace74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ff7ca27faa9b8cba30fca17381ace74">&#9670;&nbsp;</a></span>STANDBY_TIME_4000MS</h2>
+<a id="ad1f87ee465b5cf077291177cc3081a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f87ee465b5cf077291177cc3081a4a">&#9670;&nbsp;</a></span>STANDBY_TIME_4000MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1668,7 +2723,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_4000MS = 0x07</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_4000MS = 0x07</td>
         </tr>
       </table>
   </td>
@@ -1683,8 +2738,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a8a6acdaf21c7248ee7a5d236404a29cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a6acdaf21c7248ee7a5d236404a29cf">&#9670;&nbsp;</a></span>STANDBY_TIME_500US</h2>
+<a id="a434a330f1775f85505c9f00cea9935c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434a330f1775f85505c9f00cea9935c4">&#9670;&nbsp;</a></span>STANDBY_TIME_500US</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1693,7 +2748,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_500US = 0x00</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_500US = 0x00</td>
         </tr>
       </table>
   </td>
@@ -1707,8 +2762,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="a95be261831d42ede70f8d2c03647e7e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95be261831d42ede70f8d2c03647e7e5">&#9670;&nbsp;</a></span>STANDBY_TIME_50MS</h2>
+<a id="ae486393050b1fbcb38fe3d40888400dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae486393050b1fbcb38fe3d40888400dd">&#9670;&nbsp;</a></span>STANDBY_TIME_50MS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1717,7 +2772,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_50MS = 0x04</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_50MS = 0x04</td>
         </tr>
       </table>
   </td>
@@ -1731,8 +2786,8 @@ false if not set. </dd></dl>
 
 </div>
 </div>
-<a id="ae5b81163edbe58bbf58371d8e172b46e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5b81163edbe58bbf58371d8e172b46e">&#9670;&nbsp;</a></span>STANDBY_TIME_62500US</h2>
+<a id="aa27cdac64475d6af0cda8dfdebdac05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27cdac64475d6af0cda8dfdebdac05b">&#9670;&nbsp;</a></span>STANDBY_TIME_62500US</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1741,7 +2796,7 @@ false if not set. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const uint8_t myBMx280::STANDBY_TIME_62500US = 0x01</td>
+          <td class="memname">static const uint8_t myBMx280::STANDBY_TIME_62500US = 0x01</td>
         </tr>
       </table>
   </td>
@@ -1772,7 +2827,7 @@ false if not set. </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>myBMx280/spi/<a class="el" href="my_b_mx280_8hpp_source.html">myBMx280.hpp</a></li>
+<li>myBMx280/i2c/<a class="el" href="i2c_2my_b_mx280_8hpp_source.html">myBMx280.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

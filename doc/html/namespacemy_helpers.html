@@ -84,22 +84,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:af614438c04f2644a1d7da251526d2148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a pin number given a valid bit mask.  <a href="namespacemy_helpers.html#af614438c04f2644a1d7da251526d2148">More...</a><br /></td></tr>
 <tr class="separator:af614438c04f2644a1d7da251526d2148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38a808b90655c2168a57e48826abeab5"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a38a808b90655c2168a57e48826abeab5">waitForLow32</a> (const uint8_t pin, const uint32_t timeout=0)</td></tr>
-<tr class="memdesc:a38a808b90655c2168a57e48826abeab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until LOW signal, or timeout. a timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a38a808b90655c2168a57e48826abeab5">More...</a><br /></td></tr>
+<tr class="memdesc:a38a808b90655c2168a57e48826abeab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until LOW signal, or timeout. a timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a38a808b90655c2168a57e48826abeab5">More...</a><br /></td></tr>
 <tr class="separator:a38a808b90655c2168a57e48826abeab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a18293ace9520f747d10be28debd1af"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a0a18293ace9520f747d10be28debd1af">waitForHigh32</a> (const uint8_t pin, const uint32_t timeout=0)</td></tr>
-<tr class="memdesc:a0a18293ace9520f747d10be28debd1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a0a18293ace9520f747d10be28debd1af">More...</a><br /></td></tr>
+<tr class="memdesc:a0a18293ace9520f747d10be28debd1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a0a18293ace9520f747d10be28debd1af">More...</a><br /></td></tr>
 <tr class="separator:a0a18293ace9520f747d10be28debd1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f4493da21359cff8f937ac1b9cc93d7"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a6f4493da21359cff8f937ac1b9cc93d7">waitForLow64</a> (const uint8_t pin, const uint64_t timeout=0)</td></tr>
-<tr class="memdesc:a6f4493da21359cff8f937ac1b9cc93d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a6f4493da21359cff8f937ac1b9cc93d7">More...</a><br /></td></tr>
+<tr class="memdesc:a6f4493da21359cff8f937ac1b9cc93d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a6f4493da21359cff8f937ac1b9cc93d7">More...</a><br /></td></tr>
 <tr class="separator:a6f4493da21359cff8f937ac1b9cc93d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaf1792ba912a18d81d699d03b227637"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">waitForHigh64</a> (const uint8_t pin, const uint64_t timeout=0)</td></tr>
-<tr class="memdesc:abaf1792ba912a18d81d699d03b227637"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. A timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">More...</a><br /></td></tr>
+<tr class="memdesc:abaf1792ba912a18d81d699d03b227637"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until HIGH signal, or timeout. A timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#abaf1792ba912a18d81d699d03b227637">More...</a><br /></td></tr>
 <tr class="separator:abaf1792ba912a18d81d699d03b227637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5c257b6614735aa6aff6053bf55540b"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">waitForChange32</a> (const uint8_t pin, const uint32_t timeout)</td></tr>
-<tr class="memdesc:af5c257b6614735aa6aff6053bf55540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">More...</a><br /></td></tr>
+<tr class="memdesc:af5c257b6614735aa6aff6053bf55540b"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as output it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#af5c257b6614735aa6aff6053bf55540b">More...</a><br /></td></tr>
 <tr class="separator:af5c257b6614735aa6aff6053bf55540b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dda3e87f687845f9f5b5b77ee704492"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a9dda3e87f687845f9f5b5b77ee704492">waitForChange32</a> (const uint8_t pin, const uint64_t timeout)</td></tr>
-<tr class="memdesc:a9dda3e87f687845f9f5b5b77ee704492"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a9dda3e87f687845f9f5b5b77ee704492">More...</a><br /></td></tr>
+<tr class="memdesc:a9dda3e87f687845f9f5b5b77ee704492"><td class="mdescLeft">&#160;</td><td class="mdescRight">busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as output it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called.  <a href="namespacemy_helpers.html#a9dda3e87f687845f9f5b5b77ee704492">More...</a><br /></td></tr>
 <tr class="separator:a9dda3e87f687845f9f5b5b77ee704492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ed812889291962e16cc8826eaedaa25"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a8ed812889291962e16cc8826eaedaa25">pulseIn32</a> (const uint8_t pin, const bool state, uint32_t timeout=0)</td></tr>
 <tr class="memdesc:a8ed812889291962e16cc8826eaedaa25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 32 bit.  <a href="namespacemy_helpers.html#a8ed812889291962e16cc8826eaedaa25">More...</a><br /></td></tr>
@@ -518,7 +518,7 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<p>busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as output it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
@@ -556,7 +556,7 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as output it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<p>busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as output it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
@@ -594,7 +594,7 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<p>busy wait until HIGH signal, or timeout. a timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to read. </td></tr>
@@ -632,7 +632,7 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>busy wait until HIGH signal, or timeout. A timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<p>busy wait until HIGH signal, or timeout. A timeout of 0 (the default) means that it will block until HIGH. If the pin is already HIGH, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to readk. </td></tr>
@@ -670,7 +670,7 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>busy wait until LOW signal, or timeout. a timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<p>busy wait until LOW signal, or timeout. a timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>Pin to read </td></tr>
@@ -708,7 +708,7 @@ false is not a valid pin </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -4 (MY_TIMEOUT). If GPIO is set as out put it will return -5 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
+<p>busy wait until LOW signal, or timeout. Busy wait until LOW signal or timeout. A timeout of 0 (the default) means that it will block until LOW. If the pin is already LOW, it will return immediatly with a value of 0. If timeout is reached it returns -7 (MY_TIMEOUT). If GPIO is set as out put it will return -8 (MY_INVALID_DIR). Assumes gpio_init has already been called. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>pin to read </td></tr>

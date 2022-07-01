@@ -15,17 +15,17 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788
 int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af614438c04f2644a1d7da251526d2148}{bit\+Mask\+To\+Pin}} (const uint32\+\_\+t bit\+Mask)
 \begin{DoxyCompactList}\small\item\em Return a pin number given a valid bit mask. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a38a808b90655c2168a57e48826abeab5}{wait\+For\+Low32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout=0)
-\begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. a timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. a timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a0a18293ace9520f747d10be28debd1af}{wait\+For\+High32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout=0)
-\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6f4493da21359cff8f937ac1b9cc93d7}{wait\+For\+Low64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
-\begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_abaf1792ba912a18d81d699d03b227637}{wait\+For\+High64}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout=0)
-\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. A timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em busy wait until H\+I\+GH signal, or timeout. A timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}{wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint32\+\_\+t timeout)
-\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a9dda3e87f687845f9f5b5b77ee704492}{wait\+For\+Change32}} (const uint8\+\_\+t pin, const uint64\+\_\+t timeout)
-\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. \end{DoxyCompactList}\item 
 int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}{pulse\+In32}} (const uint8\+\_\+t pin, const bool state, uint32\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
@@ -240,7 +240,7 @@ uint8\+\_\+t Reversed word.
 
 
 
-busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -260,7 +260,7 @@ int32\+\_\+t Positive = time elapsed in microseconds, negative = error code.
 
 
 
-busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+busy wait until pin change, or timeout. a timeout of 0 (the default) means that it will block until change. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as output it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -280,7 +280,7 @@ int64\+\_\+t Positive = time elapsed in microseconds, negaive = error code.
 
 
 
-busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+busy wait until H\+I\+GH signal, or timeout. a timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -300,7 +300,7 @@ Positive = elapsed time in microseconds, negaitve = error code.
 
 
 
-busy wait until H\+I\+GH signal, or timeout. A timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+busy wait until H\+I\+GH signal, or timeout. A timeout of 0 (the default) means that it will block until H\+I\+GH. If the pin is already H\+I\+GH, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -320,7 +320,7 @@ int64\+\_\+t Positive time elapsed, negaitve error code.
 
 
 
-busy wait until L\+OW signal, or timeout. a timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+busy wait until L\+OW signal, or timeout. a timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -340,7 +340,7 @@ Postive = time elapsed in microseconds, negative error code.
 
 
 
-busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/4 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/5 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
+busy wait until L\+OW signal, or timeout. Busy wait until L\+OW signal or timeout. A timeout of 0 (the default) means that it will block until L\+OW. If the pin is already L\+OW, it will return immediatly with a value of 0. If timeout is reached it returns -\/7 (M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT). If G\+P\+IO is set as out put it will return -\/8 (M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR). Assumes gpio\+\_\+init has already been called. 
 
 
 \begin{DoxyParams}{Parameters}

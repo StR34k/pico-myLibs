@@ -12,6 +12,56 @@ Class to handle B\+M\+E280 sensor in spi mode.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classmy_b_mx280_ab0f6b27932190b05d926fc63994daed5}{my\+B\+Mx280}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t sda\+Pin, const uint8\+\_\+t scl\+Pin, const uint8\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Construct a new my B\+Mx280 object in I2C mode. Create an new bmx280 object in I2C Mode. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}{get\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Get the chip id byte. Returns the Chip ID or error code on timeout or no response. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Get the Status byte Returns the status byte, unless an error during comms happens, at which point it returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}{get\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Get the Config Byte. Returns the config byte, unless an error during comms happens, at which point it returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}{set\+Config}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Config byte. Sets the config byte, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if successful, otherwise if an error during comms occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}{get\+Meas\+Ctrl}} ()
+\begin{DoxyCompactList}\small\item\em Get the Meas Ctrl Byte Gets the Meas Ctrl byte, returns positive for the byte, otherwise if an error occurs during comms, returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}{set\+Meas\+Ctrl}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Meas Ctrl byte Sets the Meas Ctrl byte, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an error during comms occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}{get\+Hum\+Ctrl}} ()
+\begin{DoxyCompactList}\small\item\em Get the Hum Ctrl byte Gets the Humidity Control byte. Positive values (including zero) are the control byte, otherwise if an error during comms occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}{set\+Hum\+Ctrl}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Hum Ctrl byte Sets the Humidity Control byte. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, returns an error code if there is no humidity, or an error during comms occurs. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}{get\+Standby\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the Standby Time Get the inactive duration in normal mode. (standby time). Returns positive, including zero for the standby times, otherwise if an error during comms occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}{set\+Standby\+Time}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Standby Time Set the inactive duration in normal mode. (standby time) Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if an invalid mode is supplied or an error in comms occurs an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}{get\+Filter}} ()
+\begin{DoxyCompactList}\small\item\em Get the Filter Get the I\+IR filter setting. Returns positive for the filter value, and if an error occurs during comms returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}{set\+Filter}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Filter Set the I\+IR filter setting, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if a comms error occurs, or an invlaid filter is provided, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}{get\+Temperature\+O\+SR}} ()
+\begin{DoxyCompactList}\small\item\em Get the Temperature O\+SR Get temperature oversampling rate. Returns positive (including zero) for the oversample rate, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}{set\+Temperature\+O\+SR}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Temperature O\+SR Set the temperature oversampling rate.\+Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise, if an invalid O\+SR, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a38131c72afebec4eb60284315b369894}{get\+Pressure\+O\+SR}} ()
+\begin{DoxyCompactList}\small\item\em Get the Pressure O\+SR Get the pressure oversampling rate. Returns postivie (including zero) for the O\+SR value, otherwise if an comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}{set\+Pressure\+O\+SR}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Pressure O\+SR Set the pressure oversampling rate. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error, or an invalid rate is supplied, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}{get\+Humidity\+O\+SR}} ()
+\begin{DoxyCompactList}\small\item\em Get the Humidity O\+SR Get the humidity oversampling rate. Returns postive (including zero) for O\+SR value, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}{set\+Humidity\+O\+SR}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Humidity O\+SR Set the humidity oversampling rate. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}{get\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the Mode. Return the operating mode of the chip, Positive values (including zero) is the mode, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}{set\+Mode}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Mode. Set the operating mode of the chip. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set oaky, otherwise if the mode is invalid, or a comms error occured an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}{reset}} ()
+\begin{DoxyCompactList}\small\item\em reset the chip. Resets the chip to default values. Retuns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if reset okay, otherwise, if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}{initialize}} (const uint8\+\_\+t config=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG, const uint8\+\_\+t meas\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const uint8\+\_\+t hum\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS)
+\begin{DoxyCompactList}\small\item\em Initialize the chip. Initialize the B\+Mx280 chip. Returns the achieved baud rate (target is 3.\+2\+M\+Hz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if updated okay, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy_b_mx280_a2b01b7186c042ff75a2feb7d6887b15d}{verify\+Address}} (const uint8\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Verify bmx280 address. Returns true if the provided address is a valid B\+Mx280 I2C address. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy_b_mx280_a11a6f44a23c7d13c571ab0371b566034}{my\+B\+Mx280}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Obj, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t clk\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin)
 \begin{DoxyCompactList}\small\item\em Construct a new my B\+Mx280 object. HW S\+PI. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}{get\+ID}} ()
@@ -76,71 +126,97 @@ float \mbox{\hyperlink{classmy_b_mx280_aab26b0fc79283e8626e27575ca9c5d58}{humidi
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a03ade9503e345f635840c542ea9b4df6}{C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+P280}} = 0x58
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4dfbee99fda0cebb2257d6972418dded}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\begin{DoxyCompactList}\small\item\em No error. Value 0. No error occured. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4bcf5a8d3edb2d5a3286991576bd1a84}{E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}} = \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\begin{DoxyCompactList}\small\item\em Timeout error. Value -\/7. A timeout occured. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a518140619aa786a9a1521d735bacfbe3}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid S\+DA pin. Value -\/450. Invalid S\+DA pin was provided. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aba131a827e19899defb28cba86e34a1c}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid S\+CL pin. Value -\/451. Invalid S\+CL pin was provided. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aebd83586d61320dd6a31461cb1dedd9c}{E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\begin{DoxyCompactList}\small\item\em Already initialized. Value -\/452. The chip is already initialized. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae61963aa1939bc665365daa65878dc63}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} = \mbox{\hyperlink{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\begin{DoxyCompactList}\small\item\em Invalid I2C address. Value -\/500. The provided I2C address is not a valid address. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_afb00942ae29d43eabc590010cb8538fb}{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}} = \mbox{\hyperlink{my_error_codes_8hpp_aa0ed10176b27701107ab69ddfe67de52}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}
+\begin{DoxyCompactList}\small\item\em No response. Value -\/501. The I2C address didn\textquotesingle{}t respond. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a378fe001c8fa0bc0208de0e2335bdb87}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE}} = \mbox{\hyperlink{my_error_codes_8hpp_a7339cb72317d208de68e403672341025}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}
+\begin{DoxyCompactList}\small\item\em Invalid response. Value -\/502. The chip provided an invalid respone. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a131efd827386c96cd5429ba3ff38b87f}{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+H\+U\+M\+I\+D\+I\+TY}} = \mbox{\hyperlink{my_error_codes_8hpp_a0ed16f2dad2d86386995987823917a4e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+H\+U\+M\+I\+D\+I\+TY}}
+\begin{DoxyCompactList}\small\item\em No humidity. Value -\/503. The chip doesn\textquotesingle{}t have humidity. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a2ef14c3a61d53c9dc24d66f7c85be669}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+N\+D\+BY}} = \mbox{\hyperlink{my_error_codes_8hpp_a7a9460e064bccd4c8debe788ea7ac75b}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+N\+D\+BY}}
+\begin{DoxyCompactList}\small\item\em Invalid standby time. Value -\/504. An invalid standby time was provided. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a13411d27017210019e5de7ac0d17c518}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+L\+T\+ER}} = \mbox{\hyperlink{my_error_codes_8hpp_a0f3b28a75e3af0a52cfb1caabf513719}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+L\+T\+ER}}
+\begin{DoxyCompactList}\small\item\em Invalid filter. Value -\/505. An invalid filter value was passed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_afa0663547e07fd8532961e2a0c58a918}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR}} = \mbox{\hyperlink{my_error_codes_8hpp_abb585545ee82ef1ed1560f5c3a47f1f3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR}}
+\begin{DoxyCompactList}\small\item\em Invalid Over Sample Rate. Value -\/506. An invalid over sample rate value was provided. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a51f28c2010085aed970ea4b279a5abe4}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE}} = \mbox{\hyperlink{my_error_codes_8hpp_a825d309de2b76d1525911ba1a05c08d7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE}}
+\begin{DoxyCompactList}\small\item\em Invalid mode. Value -\/507. An invalid mode value was provided. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a99bb6d2b095144a722dddbba4837d701}{C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+P280}} = 0x58
 \begin{DoxyCompactList}\small\item\em Chip model bmp280. No humidity. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a7fc85018ed00938fca8c7e2f48e6f3f1}{C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+E280}} = 0x60
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a35383898f7320a7f6c34801826cdbf57}{C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+E280}} = 0x60
 \begin{DoxyCompactList}\small\item\em Chip mode B\+ME 280. Has humidity. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a0054c4f259771ed3f55e640a86015603}{O\+S\+R\+\_\+\+O\+FF}} = 0\+X00
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1bc4cfd3fe981d0aa1dc92f2e1419a34}{O\+S\+R\+\_\+\+O\+FF}} = 0\+X00
 \begin{DoxyCompactList}\small\item\em Over sampling off. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a837eb94f86543bfd6d7250b603a4b1bb}{O\+S\+R\+\_\+\+X1}} = 0\+X01
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a268b3751104337f333647a79652d9462}{O\+S\+R\+\_\+\+X1}} = 0\+X01
 \begin{DoxyCompactList}\small\item\em Oversampling x1. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a17fd3cc3a320c474f899b05efdb15fa1}{O\+S\+R\+\_\+\+X2}} = 0\+X02
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a9e7bf96cd3b75a2bc7be7620c1f461b0}{O\+S\+R\+\_\+\+X2}} = 0\+X02
 \begin{DoxyCompactList}\small\item\em Oversampling x2. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_acfd6c59d9e13bb1b6284e1cb7afd628a}{O\+S\+R\+\_\+\+X4}} = 0\+X03
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a49dc648af8f575eb977cf434923e70c3}{O\+S\+R\+\_\+\+X4}} = 0\+X03
 \begin{DoxyCompactList}\small\item\em Oversampling x4. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1394192053125f397319c5ff272a8193}{O\+S\+R\+\_\+\+X8}} = 0\+X04
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a763453b503a3b235f9c5dcf0cbd0319f}{O\+S\+R\+\_\+\+X8}} = 0\+X04
 \begin{DoxyCompactList}\small\item\em Oversampling x8. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae6651f6e8af79fc6b7348c44d1e66fcc}{O\+S\+R\+\_\+\+X16}} = 0\+X05
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_acb32fe99475cce6ab62d22dae56d1c0d}{O\+S\+R\+\_\+\+X16}} = 0\+X05
 \begin{DoxyCompactList}\small\item\em Oversampling x16. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a69e9a865d0b89867c5c6e7d3a87cca3f}{M\+O\+D\+E\+\_\+\+S\+L\+E\+EP}} = 0\+X00
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a787f933fdef28f9e6730908344842ca3}{M\+O\+D\+E\+\_\+\+S\+L\+E\+EP}} = 0\+X00
 \begin{DoxyCompactList}\small\item\em Chip mode Sleep. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a224352010506cad82524e9627294ac8c}{M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED}} = 0\+X01
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a49c59031e2edf388c60aaea5866a6119}{M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED}} = 0\+X01
 \begin{DoxyCompactList}\small\item\em Chip mode forced. This is the default mode. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a64420c3b133828e93f8a2f55bb5fe591}{M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL}} = 0\+X03
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a49159f29102f1007166688414ba25075}{M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL}} = 0\+X03
 \begin{DoxyCompactList}\small\item\em Chip mode normal. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8a6acdaf21c7248ee7a5d236404a29cf}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+500\+US}} = 0x00
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a434a330f1775f85505c9f00cea9935c4}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+500\+US}} = 0x00
 \begin{DoxyCompactList}\small\item\em Standby time of 500 microseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae5b81163edbe58bbf58371d8e172b46e}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+62500\+US}} = 0x01
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa27cdac64475d6af0cda8dfdebdac05b}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+62500\+US}} = 0x01
 \begin{DoxyCompactList}\small\item\em Standby time of 6.\+25 milliseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a2c09d27bfd365cddf6a6388c25b5cde8}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+125\+MS}} = 0x02
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a052da55c8cfc8c17b3b12ba378ae974f}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+125\+MS}} = 0x02
 \begin{DoxyCompactList}\small\item\em Standby time of 125 milliseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa85875cad79cc29e126497336e3de017}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+250\+MS}} = 0x03
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8284550a69217269e9f05b20fc69fe16}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+250\+MS}} = 0x03
 \begin{DoxyCompactList}\small\item\em Standby time of 250 milliseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a95be261831d42ede70f8d2c03647e7e5}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+50\+MS}} = 0x04
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae486393050b1fbcb38fe3d40888400dd}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+50\+MS}} = 0x04
 \begin{DoxyCompactList}\small\item\em Standby time of 50 milliseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a363f20c8705a33f356009ae2d94321db}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+1000\+MS}} = 0x05
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_abe4dfcce5ddc1b9c09d520d3ca7c7383}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+1000\+MS}} = 0x05
 \begin{DoxyCompactList}\small\item\em Standby time of 1000 milliseconds (1 second) \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a93b11893a6330129f5dbde1606d4fce0}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+10\+MS}} = 0x06
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_adf6463819440b8c43adcc4883fa16315}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+10\+MS}} = 0x06
 \begin{DoxyCompactList}\small\item\em Standby time of 10 milliseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a339bcda5ce37c8478827e56c8ddda09a}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+20\+MS}} = 0x07
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_adf5a6cef8795352c35bec8f8fab18b86}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+20\+MS}} = 0x07
 \begin{DoxyCompactList}\small\item\em Standby time of 20 milliseconds. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a187fe4ecc31022adb2b5f1eeb8fb4729}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+2000\+MS}} = 0x06
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae41a6e4716b56808602bf6630c564e38}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+2000\+MS}} = 0x06
 \begin{DoxyCompactList}\small\item\em Standby time of 2000 milliseconds (2 seconds.) \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4ff7ca27faa9b8cba30fca17381ace74}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+4000\+MS}} = 0x07
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ad1f87ee465b5cf077291177cc3081a4a}{S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+4000\+MS}} = 0x07
 \begin{DoxyCompactList}\small\item\em Standby time of 4000 milliseconds (4 seconds) \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a56eeb6451826aa4d2278dbb5d876404c}{F\+I\+L\+T\+E\+R\+\_\+\+O\+FF}} = 0x00
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1b1fe7248ffc4e8c27cf923607bca948}{F\+I\+L\+T\+E\+R\+\_\+\+O\+FF}} = 0x00
 \begin{DoxyCompactList}\small\item\em Filter Off. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a2f11c98f38b4294980160496305bd202}{F\+I\+L\+T\+E\+R\+\_\+2}} = 0x01
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a9a47ff2515afdefc352f50ea7681bdae}{F\+I\+L\+T\+E\+R\+\_\+2}} = 0x01
 \begin{DoxyCompactList}\small\item\em Filter at 2 samples. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a86810edd5c7714abcef2b79c8a2bc864}{F\+I\+L\+T\+E\+R\+\_\+4}} = 0x02
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ae3189e8bd15e7ca1ac456933275dcd24}{F\+I\+L\+T\+E\+R\+\_\+4}} = 0x02
 \begin{DoxyCompactList}\small\item\em Filter at 4 samples. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab0b6524a00b30e1d560cc6c5110cffb7}{F\+I\+L\+T\+E\+R\+\_\+8}} = 0x03
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_adbb1c727a401057774a71b87897c4f7d}{F\+I\+L\+T\+E\+R\+\_\+8}} = 0x03
 \begin{DoxyCompactList}\small\item\em Filter at 8 samples. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a0aa50e080904003cd5575740146a86c5}{F\+I\+L\+T\+E\+R\+\_\+16}} = 0x04
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a6c52c52a3ba4cd4e53762cb6c8f66da3}{F\+I\+L\+T\+E\+R\+\_\+16}} = 0x04
 \begin{DoxyCompactList}\small\item\em Filter at 16 samples. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a641888a3f044b98dfd55adffb8c80c85}{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+M\+A\+SK}} = 0b11100000
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1ae03879309432d7e75437747ad74523}{C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+M\+A\+SK}} = 0b11100000
 \begin{DoxyCompactList}\small\item\em Standby time mask of the config byte. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a57f22c4f42ef7a5e75b42d44491e1b16}{C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+M\+A\+SK}} = 0b00011100
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4ca5432a36d91dd463a32dc8b062987d}{C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+M\+A\+SK}} = 0b00011100
 \begin{DoxyCompactList}\small\item\em Filter mask of the config byte. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa3563047e2d21a7f7bd040d73625ef3c}{C\+O\+N\+F\+I\+G\+\_\+3\+W\+I\+R\+E\+\_\+\+M\+A\+SK}} = 0b00000001
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a6c1811d765b64ff491e770af5e7b890f}{C\+O\+N\+F\+I\+G\+\_\+3\+W\+I\+R\+E\+\_\+\+M\+A\+SK}} = 0b00000001
 \begin{DoxyCompactList}\small\item\em 3 wire communications mode of the config byte. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5e2ff856f84235aa509cec4ec0f37d1c}{M\+E\+A\+S\+\_\+\+T\+E\+M\+P\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b11100000
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aa62edb95c6d1934e42546ede22ac7bbe}{M\+E\+A\+S\+\_\+\+T\+E\+M\+P\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b11100000
 \begin{DoxyCompactList}\small\item\em Temperature O\+SR mask of the meas\+Ctrl byte. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a63af92960dd5568af66970b8a9317b96}{M\+E\+A\+S\+\_\+\+P\+R\+E\+S\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b00011100
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a4c9d94fb145fd9844dee4a6cd4c10a9d}{M\+E\+A\+S\+\_\+\+P\+R\+E\+S\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b00011100
 \begin{DoxyCompactList}\small\item\em Pressure O\+SR mask of the meas\+Ctrl byte. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aee9089b4ccd1c0a96f20b6a313ed3da4}{M\+E\+A\+S\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}} = 0b00000011
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1e22fa9fea60767bce31014064d5e954}{M\+E\+A\+S\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}} = 0b00000011
 \begin{DoxyCompactList}\small\item\em Measure mode mask of the meas\+Ctrl byte. \end{DoxyCompactList}\item 
-static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_ab981e0e9de452465328702986ded1460}{H\+U\+M\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b00000111
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_b_mx280_aabb45f6e88bef3047d67b2fc9305b567}{H\+U\+M\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK}} = 0b00000111
 \begin{DoxyCompactList}\small\item\em Humidity O\+SR mask of the hum\+Ctrl byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -150,10 +226,31 @@ Class to handle B\+M\+E280 sensor in spi mode.
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_b_mx280_ab0f6b27932190b05d926fc63994daed5}\label{classmy_b_mx280_ab0f6b27932190b05d926fc63994daed5}} 
+\index{myBMx280@{myBMx280}!myBMx280@{myBMx280}}
+\index{myBMx280@{myBMx280}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{myBMx280()}{myBMx280()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily my\+B\+Mx280\+::my\+B\+Mx280 (\begin{DoxyParamCaption}\item[{i2c\+\_\+inst\+\_\+t $\ast$}]{i2c\+Port,  }\item[{const uint8\+\_\+t}]{sda\+Pin,  }\item[{const uint8\+\_\+t}]{scl\+Pin,  }\item[{const uint8\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Construct a new my B\+Mx280 object in I2C mode. Create an new bmx280 object in I2C Mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+Port} & I2C port instance. \\
+\hline
+{\em sda\+Pin} & S\+DA pin. \\
+\hline
+{\em scl\+Pin} & S\+CL pin. \\
+\hline
+{\em address} & Address of the B\+Mx280. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classmy_b_mx280_a11a6f44a23c7d13c571ab0371b566034}\label{classmy_b_mx280_a11a6f44a23c7d13c571ab0371b566034}} 
 \index{myBMx280@{myBMx280}!myBMx280@{myBMx280}}
 \index{myBMx280@{myBMx280}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{myBMx280()}{myBMx280()}}
+\doxysubsubsection{\texorpdfstring{myBMx280()}{myBMx280()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily my\+B\+Mx280\+::my\+B\+Mx280 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Obj,  }\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{clk\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin }\end{DoxyParamCaption})}
 
 
@@ -179,7 +276,7 @@ Construct a new my B\+Mx280 object. HW S\+PI.
 \mbox{\Hypertarget{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}\label{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}} 
 \index{myBMx280@{myBMx280}!getConfig@{getConfig}}
 \index{getConfig@{getConfig}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -189,10 +286,23 @@ Get the Config Byte.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Config byte. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}\label{classmy_b_mx280_a4ddde06e95b11dbd7d1a1aa185d24725}} 
+\index{myBMx280@{myBMx280}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Config Byte. Returns the config byte, unless an error during comms happens, at which point it returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive is the config byte, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}\label{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}} 
 \index{myBMx280@{myBMx280}!getFilter@{getFilter}}
 \index{getFilter@{getFilter}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getFilter()}{getFilter()}}
+\doxysubsubsection{\texorpdfstring{getFilter()}{getFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -202,10 +312,23 @@ Get the Filter Get the I\+IR filter setting.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t returns the filter, one of the F\+I\+L\+T\+E\+R\+\_\+ values. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}\label{classmy_b_mx280_a83b9821be0b0035051804dba7c9d33bc}} 
+\index{myBMx280@{myBMx280}!getFilter@{getFilter}}
+\index{getFilter@{getFilter}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getFilter()}{getFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Filter Get the I\+IR filter setting. Returns positive for the filter value, and if an error occurs during comms returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive, returns the filter, one of the F\+I\+L\+T\+E\+R\+\_\+ values, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}\label{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}} 
 \index{myBMx280@{myBMx280}!getHumCtrl@{getHumCtrl}}
 \index{getHumCtrl@{getHumCtrl}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getHumCtrl()}{getHumCtrl()}}
+\doxysubsubsection{\texorpdfstring{getHumCtrl()}{getHumCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Hum\+Ctrl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -215,10 +338,23 @@ Get the Hum Ctrl byte.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t hum\+Ctrl byte 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}\label{classmy_b_mx280_a7aac4a5d1473a66c289fd6bcab90e7ee}} 
+\index{myBMx280@{myBMx280}!getHumCtrl@{getHumCtrl}}
+\index{getHumCtrl@{getHumCtrl}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getHumCtrl()}{getHumCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Hum\+Ctrl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Hum Ctrl byte Gets the Humidity Control byte. Positive values (including zero) are the control byte, otherwise if an error during comms occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive is the Hum Ctrl byte, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}\label{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}} 
 \index{myBMx280@{myBMx280}!getHumidityOSR@{getHumidityOSR}}
 \index{getHumidityOSR@{getHumidityOSR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getHumidityOSR()}{getHumidityOSR()}}
+\doxysubsubsection{\texorpdfstring{getHumidityOSR()}{getHumidityOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Humidity\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -228,10 +364,23 @@ Get the Humidity O\+SR Get the humidity oversampling rate.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t oversampling rate, one of the O\+S\+R\+\_\+ values. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}\label{classmy_b_mx280_aff41a6ed4b5146ba137fe8126884631f}} 
+\index{myBMx280@{myBMx280}!getHumidityOSR@{getHumidityOSR}}
+\index{getHumidityOSR@{getHumidityOSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getHumidityOSR()}{getHumidityOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Humidity\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Humidity O\+SR Get the humidity oversampling rate. Returns postive (including zero) for O\+SR value, otherwise if a comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive is the oversampling rate, one of the O\+S\+R\+\_\+ values, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}\label{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}} 
 \index{myBMx280@{myBMx280}!getID@{getID}}
 \index{getID@{getID}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -241,10 +390,23 @@ Get the chip id byte.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Chip id one of M\+O\+D\+E\+L\+\_\+\+B\+M\+E280 or M\+O\+D\+E\+L\+\_\+\+B\+M\+P280 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}\label{classmy_b_mx280_a234df64896c1cc82bb51a79f00bc44f5}} 
+\index{myBMx280@{myBMx280}!getID@{getID}}
+\index{getID@{getID}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the chip id byte. Returns the Chip ID or error code on timeout or no response. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Positive is the chip id, one of M\+O\+D\+E\+L\+\_\+\+B\+M\+E280 or M\+O\+D\+E\+L\+\_\+\+B\+M\+P280, or negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}\label{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}} 
 \index{myBMx280@{myBMx280}!getMeasCtrl@{getMeasCtrl}}
 \index{getMeasCtrl@{getMeasCtrl}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getMeasCtrl()}{getMeasCtrl()}}
+\doxysubsubsection{\texorpdfstring{getMeasCtrl()}{getMeasCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Meas\+Ctrl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -254,10 +416,23 @@ Get the Meas Ctrl Byte.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Meas ctrl byte 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}\label{classmy_b_mx280_a5f47ddd9bc9aed4e4e8dae8cba6161b3}} 
+\index{myBMx280@{myBMx280}!getMeasCtrl@{getMeasCtrl}}
+\index{getMeasCtrl@{getMeasCtrl}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getMeasCtrl()}{getMeasCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Meas\+Ctrl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Meas Ctrl Byte Gets the Meas Ctrl byte, returns positive for the byte, otherwise if an error occurs during comms, returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive\+: Meas ctrl byte, Negative\+: error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}\label{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}} 
 \index{myBMx280@{myBMx280}!getMode@{getMode}}
 \index{getMode@{getMode}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -267,10 +442,23 @@ Get the Mode. return the operating mode of the chip.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t the mode one of the M\+O\+D\+E\+\_\+ values. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}\label{classmy_b_mx280_ab4e9a7dbdfe835fef3c30e528444db2b}} 
+\index{myBMx280@{myBMx280}!getMode@{getMode}}
+\index{getMode@{getMode}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Mode. Return the operating mode of the chip, Positive values (including zero) is the mode, otherwise if a comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive is the mode one of the M\+O\+D\+E\+\_\+ values. Negative is an error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a38131c72afebec4eb60284315b369894}\label{classmy_b_mx280_a38131c72afebec4eb60284315b369894}} 
 \index{myBMx280@{myBMx280}!getPressureOSR@{getPressureOSR}}
 \index{getPressureOSR@{getPressureOSR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getPressureOSR()}{getPressureOSR()}}
+\doxysubsubsection{\texorpdfstring{getPressureOSR()}{getPressureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Pressure\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -280,10 +468,23 @@ Get the Pressure O\+SR Get the pressure oversampling rate.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t oversampling rate, one of O\+S\+R\+\_\+ values. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a38131c72afebec4eb60284315b369894}\label{classmy_b_mx280_a38131c72afebec4eb60284315b369894}} 
+\index{myBMx280@{myBMx280}!getPressureOSR@{getPressureOSR}}
+\index{getPressureOSR@{getPressureOSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getPressureOSR()}{getPressureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Pressure\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Pressure O\+SR Get the pressure oversampling rate. Returns postivie (including zero) for the O\+SR value, otherwise if an comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Postive\+: oversampling rate, one of O\+S\+R\+\_\+ values, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}\label{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}} 
 \index{myBMx280@{myBMx280}!getStandbyTime@{getStandbyTime}}
 \index{getStandbyTime@{getStandbyTime}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getStandbyTime()}{getStandbyTime()}}
+\doxysubsubsection{\texorpdfstring{getStandbyTime()}{getStandbyTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Standby\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -293,10 +494,23 @@ Get the Standby Time Get the inactive duration in normal mode. (standby time)
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t returns one of the S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+ values. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}\label{classmy_b_mx280_abc8fbd1144ef0ec495421c21e25fbcfa}} 
+\index{myBMx280@{myBMx280}!getStandbyTime@{getStandbyTime}}
+\index{getStandbyTime@{getStandbyTime}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getStandbyTime()}{getStandbyTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Standby\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Standby Time Get the inactive duration in normal mode. (standby time). Returns positive, including zero for the standby times, otherwise if an error during comms occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t returns one of the S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+ values. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}\label{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}} 
 \index{myBMx280@{myBMx280}!getStatus@{getStatus}}
 \index{getStatus@{getStatus}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -306,10 +520,23 @@ Get the Status byte.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Status byte. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}\label{classmy_b_mx280_af42db5a5807c2f440aa49e85df4f033f}} 
+\index{myBMx280@{myBMx280}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Status byte Returns the status byte, unless an error during comms happens, at which point it returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive is the status byte, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}\label{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}} 
 \index{myBMx280@{myBMx280}!getTemperatureOSR@{getTemperatureOSR}}
 \index{getTemperatureOSR@{getTemperatureOSR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{getTemperatureOSR()}{getTemperatureOSR()}}
+\doxysubsubsection{\texorpdfstring{getTemperatureOSR()}{getTemperatureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Temperature\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -319,10 +546,23 @@ Get the Temperature O\+SR Get temperature oversampling rate.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t returns one of the O\+S\+R\+\_\+ values. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}\label{classmy_b_mx280_ac4870a8b89307db9c7c03cdc5f304ef4}} 
+\index{myBMx280@{myBMx280}!getTemperatureOSR@{getTemperatureOSR}}
+\index{getTemperatureOSR@{getTemperatureOSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{getTemperatureOSR()}{getTemperatureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t my\+B\+Mx280\+::get\+Temperature\+O\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Temperature O\+SR Get temperature oversampling rate. Returns positive (including zero) for the oversample rate, otherwise if a comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns positive,is one of the O\+S\+R\+\_\+ values. Negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}\label{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}} 
 \index{myBMx280@{myBMx280}!initialize@{initialize}}
 \index{initialize@{initialize}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS} }\end{DoxyParamCaption})}
 
 
@@ -343,20 +583,55 @@ true if initialized okay.
 
 false if not initialized okay. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}\label{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}} 
+\index{myBMx280@{myBMx280}!initialize@{initialize}}
+\index{initialize@{initialize}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS} }\end{DoxyParamCaption})}
+
+
+
+Initialize the chip. Initialize the B\+Mx280 chip. Returns the achieved baud rate (target is 3.\+2\+M\+Hz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. \\
+\hline
+{\em meas\+Ctrl} & The meas\+Ctrl byte to write to the chip, defaults to temperature =O\+S\+R\+\_\+\+X1, pressure=O\+S\+R\+\_\+\+X1, mode = M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED. \\
+\hline
+{\em hum\+Ctrl} & the hum\+Ctrl byte to write to the chip if available, defaults to humidty = O\+S\+R\+\_\+\+X1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive is the achieved baud rate, negaitive for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}\label{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}} 
 \index{myBMx280@{myBMx280}!reset@{reset}}
 \index{reset@{reset}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 reset the chip. 
 
+\mbox{\Hypertarget{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}\label{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}} 
+\index{myBMx280@{myBMx280}!reset@{reset}}
+\index{reset@{reset}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void my\+B\+Mx280\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reset the chip. Resets the chip to default values. Retuns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if reset okay, otherwise, if a comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) on reset okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}\label{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}} 
 \index{myBMx280@{myBMx280}!setConfig@{setConfig}}
 \index{setConfig@{setConfig}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setConfig()}{setConfig()}}
+\doxysubsubsection{\texorpdfstring{setConfig()}{setConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -371,10 +646,31 @@ When setting the config byte, the comms mode is overridden.
 {\em value} & Config byte \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}\label{classmy_b_mx280_abeb902b12aab3c05c822f55977d8c995}} 
+\index{myBMx280@{myBMx280}!setConfig@{setConfig}}
+\index{setConfig@{setConfig}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setConfig()}{setConfig()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Config (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Config byte. Sets the config byte, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if successful, otherwise if an error during comms occurs, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+When setting the config byte, the comms mode is ignored in I2C mode. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Config byte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}\label{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}} 
 \index{myBMx280@{myBMx280}!setFilter@{setFilter}}
 \index{setFilter@{setFilter}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}}
+\doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Filter (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -391,10 +687,28 @@ true If the filter was set.
 
 false if the filter was not set. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}\label{classmy_b_mx280_a6eee20e932bc97e3c6a595af82988d20}} 
+\index{myBMx280@{myBMx280}!setFilter@{setFilter}}
+\index{setFilter@{setFilter}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Filter (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Filter Set the I\+IR filter setting, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if a comms error occurs, or an invlaid filter is provided, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & one of the F\+I\+L\+T\+E\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negaitve for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}\label{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}} 
 \index{myBMx280@{myBMx280}!setHumCtrl@{setHumCtrl}}
 \index{setHumCtrl@{setHumCtrl}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setHumCtrl()}{setHumCtrl()}}
+\doxysubsubsection{\texorpdfstring{setHumCtrl()}{setHumCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Hum\+Ctrl (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -406,10 +720,28 @@ Set the Hum Ctrl byte.
 {\em value} & hum\+Ctrl value to set \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}\label{classmy_b_mx280_aab1d6a3c6e3f0f323af36907dbe520e8}} 
+\index{myBMx280@{myBMx280}!setHumCtrl@{setHumCtrl}}
+\index{setHumCtrl@{setHumCtrl}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setHumCtrl()}{setHumCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Hum\+Ctrl (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Hum Ctrl byte Sets the Humidity Control byte. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, returns an error code if there is no humidity, or an error during comms occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & hum\+Ctrl value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}\label{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}} 
 \index{myBMx280@{myBMx280}!setHumidityOSR@{setHumidityOSR}}
 \index{setHumidityOSR@{setHumidityOSR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setHumidityOSR()}{setHumidityOSR()}}
+\doxysubsubsection{\texorpdfstring{setHumidityOSR()}{setHumidityOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Humidity\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -426,10 +758,28 @@ true if set.
 
 false if not set. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}\label{classmy_b_mx280_ae53b175ece12e57492f629e403a000bc}} 
+\index{myBMx280@{myBMx280}!setHumidityOSR@{setHumidityOSR}}
+\index{setHumidityOSR@{setHumidityOSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setHumidityOSR()}{setHumidityOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Humidity\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Humidity O\+SR Set the humidity oversampling rate. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or if a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The oversampling rate, one of the O\+S\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}\label{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}} 
 \index{myBMx280@{myBMx280}!setMeasCtrl@{setMeasCtrl}}
 \index{setMeasCtrl@{setMeasCtrl}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setMeasCtrl()}{setMeasCtrl()}}
+\doxysubsubsection{\texorpdfstring{setMeasCtrl()}{setMeasCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Meas\+Ctrl (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -441,10 +791,28 @@ Set the Meas Ctrl byte.
 {\em value} & meas\+Ctrl value. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}\label{classmy_b_mx280_a702aaf40e107d8c45b7d291662d81b26}} 
+\index{myBMx280@{myBMx280}!setMeasCtrl@{setMeasCtrl}}
+\index{setMeasCtrl@{setMeasCtrl}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setMeasCtrl()}{setMeasCtrl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void my\+B\+Mx280\+::set\+Meas\+Ctrl (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Meas Ctrl byte Sets the Meas Ctrl byte, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an error during comms occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & meas\+Ctrl value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}\label{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}} 
 \index{myBMx280@{myBMx280}!setMode@{setMode}}
 \index{setMode@{setMode}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Mode (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -461,10 +829,28 @@ true if set.
 
 false if not set. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}\label{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}} 
+\index{myBMx280@{myBMx280}!setMode@{setMode}}
+\index{setMode@{setMode}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Mode (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Mode. Set the operating mode of the chip. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set oaky, otherwise if the mode is invalid, or a comms error occured an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The operating mode, one of the M\+O\+D\+E\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}\label{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}} 
 \index{myBMx280@{myBMx280}!setPressureOSR@{setPressureOSR}}
 \index{setPressureOSR@{setPressureOSR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setPressureOSR()}{setPressureOSR()}}
+\doxysubsubsection{\texorpdfstring{setPressureOSR()}{setPressureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Pressure\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -481,10 +867,28 @@ true if set.
 
 false if not set. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}\label{classmy_b_mx280_af504dbb90906d5ad1f45bdc94a960d61}} 
+\index{myBMx280@{myBMx280}!setPressureOSR@{setPressureOSR}}
+\index{setPressureOSR@{setPressureOSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setPressureOSR()}{setPressureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Pressure\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Pressure O\+SR Set the pressure oversampling rate. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error, or an invalid rate is supplied, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The oversampling rate, one of the O\+S\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}\label{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}} 
 \index{myBMx280@{myBMx280}!setStandbyTime@{setStandbyTime}}
 \index{setStandbyTime@{setStandbyTime}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setStandbyTime()}{setStandbyTime()}}
+\doxysubsubsection{\texorpdfstring{setStandbyTime()}{setStandbyTime()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Standby\+Time (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -501,10 +905,28 @@ true If set
 
 false if not set. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}\label{classmy_b_mx280_a05fbedddd013c54565bd10ab6b9edcff}} 
+\index{myBMx280@{myBMx280}!setStandbyTime@{setStandbyTime}}
+\index{setStandbyTime@{setStandbyTime}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setStandbyTime()}{setStandbyTime()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Standby\+Time (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Standby Time Set the inactive duration in normal mode. (standby time) Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if an invalid mode is supplied or an error in comms occurs an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Standby time value, one of the S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}\label{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}} 
 \index{myBMx280@{myBMx280}!setTemperatureOSR@{setTemperatureOSR}}
 \index{setTemperatureOSR@{setTemperatureOSR}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{setTemperatureOSR()}{setTemperatureOSR()}}
+\doxysubsubsection{\texorpdfstring{setTemperatureOSR()}{setTemperatureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Temperature\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
@@ -521,44 +943,95 @@ true if set.
 
 false if not set. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}\label{classmy_b_mx280_a48dfb2fd86931caaea845736ff85ebaf}} 
+\index{myBMx280@{myBMx280}!setTemperatureOSR@{setTemperatureOSR}}
+\index{setTemperatureOSR@{setTemperatureOSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{setTemperatureOSR()}{setTemperatureOSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::set\+Temperature\+O\+SR (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Temperature O\+SR Set the temperature oversampling rate.\+Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise, if an invalid O\+SR, or a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & one of the O\+S\+R\+\_\+ values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 for set okay, negative for error code. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}\label{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}} 
 \index{myBMx280@{myBMx280}!update@{update}}
 \index{update@{update}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{update()}{update()}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void my\+B\+Mx280\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. 
 
+\mbox{\Hypertarget{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}\label{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}} 
+\index{myBMx280@{myBMx280}!update@{update}}
+\index{update@{update}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void my\+B\+Mx280\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if updated okay, otherwise if a comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) if update okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a2b01b7186c042ff75a2feb7d6887b15d}\label{classmy_b_mx280_a2b01b7186c042ff75a2feb7d6887b15d}} 
+\index{myBMx280@{myBMx280}!verifyAddress@{verifyAddress}}
+\index{verifyAddress@{verifyAddress}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{verifyAddress()}{verifyAddress()}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::verify\+Address (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Verify bmx280 address. Returns true if the provided address is a valid B\+Mx280 I2C address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to verify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Address is valid. 
+
+false Address is invalid. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classmy_b_mx280_a7fc85018ed00938fca8c7e2f48e6f3f1}\label{classmy_b_mx280_a7fc85018ed00938fca8c7e2f48e6f3f1}} 
+\mbox{\Hypertarget{classmy_b_mx280_a35383898f7320a7f6c34801826cdbf57}\label{classmy_b_mx280_a35383898f7320a7f6c34801826cdbf57}} 
 \index{myBMx280@{myBMx280}!CHIPMODEL\_BME280@{CHIPMODEL\_BME280}}
 \index{CHIPMODEL\_BME280@{CHIPMODEL\_BME280}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CHIPMODEL\_BME280}{CHIPMODEL\_BME280}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+E280 = 0x60\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+E280 = 0x60\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Chip mode B\+ME 280. Has humidity. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a03ade9503e345f635840c542ea9b4df6}\label{classmy_b_mx280_a03ade9503e345f635840c542ea9b4df6}} 
+\mbox{\Hypertarget{classmy_b_mx280_a99bb6d2b095144a722dddbba4837d701}\label{classmy_b_mx280_a99bb6d2b095144a722dddbba4837d701}} 
 \index{myBMx280@{myBMx280}!CHIPMODEL\_BMP280@{CHIPMODEL\_BMP280}}
 \index{CHIPMODEL\_BMP280@{CHIPMODEL\_BMP280}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CHIPMODEL\_BMP280}{CHIPMODEL\_BMP280}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+P280 = 0x58\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+C\+H\+I\+P\+M\+O\+D\+E\+L\+\_\+\+B\+M\+P280 = 0x58\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Chip model bmp280. No humidity. 
 
-\mbox{\Hypertarget{classmy_b_mx280_aa3563047e2d21a7f7bd040d73625ef3c}\label{classmy_b_mx280_aa3563047e2d21a7f7bd040d73625ef3c}} 
+\mbox{\Hypertarget{classmy_b_mx280_a6c1811d765b64ff491e770af5e7b890f}\label{classmy_b_mx280_a6c1811d765b64ff491e770af5e7b890f}} 
 \index{myBMx280@{myBMx280}!CONFIG\_3WIRE\_MASK@{CONFIG\_3WIRE\_MASK}}
 \index{CONFIG\_3WIRE\_MASK@{CONFIG\_3WIRE\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CONFIG\_3WIRE\_MASK}{CONFIG\_3WIRE\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+3\+W\+I\+R\+E\+\_\+\+M\+A\+SK = 0b00000001\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+3\+W\+I\+R\+E\+\_\+\+M\+A\+SK = 0b00000001\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -567,71 +1040,191 @@ Chip model bmp280. No humidity.
 \begin{DoxyNote}{Note}
 This library will fail in 3 wire mode. 
 \end{DoxyNote}
-\mbox{\Hypertarget{classmy_b_mx280_a57f22c4f42ef7a5e75b42d44491e1b16}\label{classmy_b_mx280_a57f22c4f42ef7a5e75b42d44491e1b16}} 
+\mbox{\Hypertarget{classmy_b_mx280_a4ca5432a36d91dd463a32dc8b062987d}\label{classmy_b_mx280_a4ca5432a36d91dd463a32dc8b062987d}} 
 \index{myBMx280@{myBMx280}!CONFIG\_FILTER\_MASK@{CONFIG\_FILTER\_MASK}}
 \index{CONFIG\_FILTER\_MASK@{CONFIG\_FILTER\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CONFIG\_FILTER\_MASK}{CONFIG\_FILTER\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+M\+A\+SK = 0b00011100\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+M\+A\+SK = 0b00011100\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Filter mask of the config byte. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a641888a3f044b98dfd55adffb8c80c85}\label{classmy_b_mx280_a641888a3f044b98dfd55adffb8c80c85}} 
+\mbox{\Hypertarget{classmy_b_mx280_a1ae03879309432d7e75437747ad74523}\label{classmy_b_mx280_a1ae03879309432d7e75437747ad74523}} 
 \index{myBMx280@{myBMx280}!CONFIG\_STANDBY\_MASK@{CONFIG\_STANDBY\_MASK}}
 \index{CONFIG\_STANDBY\_MASK@{CONFIG\_STANDBY\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{CONFIG\_STANDBY\_MASK}{CONFIG\_STANDBY\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+M\+A\+SK = 0b11100000\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+C\+O\+N\+F\+I\+G\+\_\+\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+M\+A\+SK = 0b11100000\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Standby time mask of the config byte. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a0aa50e080904003cd5575740146a86c5}\label{classmy_b_mx280_a0aa50e080904003cd5575740146a86c5}} 
+\mbox{\Hypertarget{classmy_b_mx280_aebd83586d61320dd6a31461cb1dedd9c}\label{classmy_b_mx280_aebd83586d61320dd6a31461cb1dedd9c}} 
+\index{myBMx280@{myBMx280}!ERROR\_INITIALIZED@{ERROR\_INITIALIZED}}
+\index{ERROR\_INITIALIZED@{ERROR\_INITIALIZED}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INITIALIZED}{ERROR\_INITIALIZED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Already initialized. Value -\/452. The chip is already initialized. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a378fe001c8fa0bc0208de0e2335bdb87}\label{classmy_b_mx280_a378fe001c8fa0bc0208de0e2335bdb87}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALD\_RESPONSE@{ERROR\_INVALD\_RESPONSE}}
+\index{ERROR\_INVALD\_RESPONSE@{ERROR\_INVALD\_RESPONSE}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALD\_RESPONSE}{ERROR\_INVALD\_RESPONSE}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE = \mbox{\hyperlink{my_error_codes_8hpp_a7339cb72317d208de68e403672341025}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid response. Value -\/502. The chip provided an invalid respone. 
+
+\mbox{\Hypertarget{classmy_b_mx280_ae61963aa1939bc665365daa65878dc63}\label{classmy_b_mx280_ae61963aa1939bc665365daa65878dc63}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_ADDRESS@{ERROR\_INVALID\_ADDRESS}}
+\index{ERROR\_INVALID\_ADDRESS@{ERROR\_INVALID\_ADDRESS}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_ADDRESS}{ERROR\_INVALID\_ADDRESS}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS = \mbox{\hyperlink{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid I2C address. Value -\/500. The provided I2C address is not a valid address. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a13411d27017210019e5de7ac0d17c518}\label{classmy_b_mx280_a13411d27017210019e5de7ac0d17c518}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_FILTER@{ERROR\_INVALID\_FILTER}}
+\index{ERROR\_INVALID\_FILTER@{ERROR\_INVALID\_FILTER}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_FILTER}{ERROR\_INVALID\_FILTER}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+L\+T\+ER = \mbox{\hyperlink{my_error_codes_8hpp_a0f3b28a75e3af0a52cfb1caabf513719}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+L\+T\+ER}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid filter. Value -\/505. An invalid filter value was passed. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a51f28c2010085aed970ea4b279a5abe4}\label{classmy_b_mx280_a51f28c2010085aed970ea4b279a5abe4}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_MODE@{ERROR\_INVALID\_MODE}}
+\index{ERROR\_INVALID\_MODE@{ERROR\_INVALID\_MODE}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_MODE}{ERROR\_INVALID\_MODE}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE = \mbox{\hyperlink{my_error_codes_8hpp_a825d309de2b76d1525911ba1a05c08d7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid mode. Value -\/507. An invalid mode value was provided. 
+
+\mbox{\Hypertarget{classmy_b_mx280_afa0663547e07fd8532961e2a0c58a918}\label{classmy_b_mx280_afa0663547e07fd8532961e2a0c58a918}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_OSR@{ERROR\_INVALID\_OSR}}
+\index{ERROR\_INVALID\_OSR@{ERROR\_INVALID\_OSR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_OSR}{ERROR\_INVALID\_OSR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR = \mbox{\hyperlink{my_error_codes_8hpp_abb585545ee82ef1ed1560f5c3a47f1f3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid Over Sample Rate. Value -\/506. An invalid over sample rate value was provided. 
+
+\mbox{\Hypertarget{classmy_b_mx280_aba131a827e19899defb28cba86e34a1c}\label{classmy_b_mx280_aba131a827e19899defb28cba86e34a1c}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_SCL\_PIN@{ERROR\_INVALID\_SCL\_PIN}}
+\index{ERROR\_INVALID\_SCL\_PIN@{ERROR\_INVALID\_SCL\_PIN}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SCL\_PIN}{ERROR\_INVALID\_SCL\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid S\+CL pin. Value -\/451. Invalid S\+CL pin was provided. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a518140619aa786a9a1521d735bacfbe3}\label{classmy_b_mx280_a518140619aa786a9a1521d735bacfbe3}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_SDA\_PIN@{ERROR\_INVALID\_SDA\_PIN}}
+\index{ERROR\_INVALID\_SDA\_PIN@{ERROR\_INVALID\_SDA\_PIN}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SDA\_PIN}{ERROR\_INVALID\_SDA\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid S\+DA pin. Value -\/450. Invalid S\+DA pin was provided. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a2ef14c3a61d53c9dc24d66f7c85be669}\label{classmy_b_mx280_a2ef14c3a61d53c9dc24d66f7c85be669}} 
+\index{myBMx280@{myBMx280}!ERROR\_INVALID\_STANDBY@{ERROR\_INVALID\_STANDBY}}
+\index{ERROR\_INVALID\_STANDBY@{ERROR\_INVALID\_STANDBY}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_STANDBY}{ERROR\_INVALID\_STANDBY}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+N\+D\+BY = \mbox{\hyperlink{my_error_codes_8hpp_a7a9460e064bccd4c8debe788ea7ac75b}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+N\+D\+BY}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid standby time. Value -\/504. An invalid standby time was provided. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a131efd827386c96cd5429ba3ff38b87f}\label{classmy_b_mx280_a131efd827386c96cd5429ba3ff38b87f}} 
+\index{myBMx280@{myBMx280}!ERROR\_NO\_HUMIDITY@{ERROR\_NO\_HUMIDITY}}
+\index{ERROR\_NO\_HUMIDITY@{ERROR\_NO\_HUMIDITY}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NO\_HUMIDITY}{ERROR\_NO\_HUMIDITY}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+H\+U\+M\+I\+D\+I\+TY = \mbox{\hyperlink{my_error_codes_8hpp_a0ed16f2dad2d86386995987823917a4e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+H\+U\+M\+I\+D\+I\+TY}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No humidity. Value -\/503. The chip doesn\textquotesingle{}t have humidity. 
+
+\mbox{\Hypertarget{classmy_b_mx280_afb00942ae29d43eabc590010cb8538fb}\label{classmy_b_mx280_afb00942ae29d43eabc590010cb8538fb}} 
+\index{myBMx280@{myBMx280}!ERROR\_NO\_RESPONSE@{ERROR\_NO\_RESPONSE}}
+\index{ERROR\_NO\_RESPONSE@{ERROR\_NO\_RESPONSE}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NO\_RESPONSE}{ERROR\_NO\_RESPONSE}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE = \mbox{\hyperlink{my_error_codes_8hpp_aa0ed10176b27701107ab69ddfe67de52}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No response. Value -\/501. The I2C address didn\textquotesingle{}t respond. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a4bcf5a8d3edb2d5a3286991576bd1a84}\label{classmy_b_mx280_a4bcf5a8d3edb2d5a3286991576bd1a84}} 
+\index{myBMx280@{myBMx280}!ERROR\_TIMEOUT@{ERROR\_TIMEOUT}}
+\index{ERROR\_TIMEOUT@{ERROR\_TIMEOUT}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{ERROR\_TIMEOUT}{ERROR\_TIMEOUT}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT = \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Timeout error. Value -\/7. A timeout occured. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a6c52c52a3ba4cd4e53762cb6c8f66da3}\label{classmy_b_mx280_a6c52c52a3ba4cd4e53762cb6c8f66da3}} 
 \index{myBMx280@{myBMx280}!FILTER\_16@{FILTER\_16}}
 \index{FILTER\_16@{FILTER\_16}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_16}{FILTER\_16}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+16 = 0x04\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+16 = 0x04\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Filter at 16 samples. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a2f11c98f38b4294980160496305bd202}\label{classmy_b_mx280_a2f11c98f38b4294980160496305bd202}} 
+\mbox{\Hypertarget{classmy_b_mx280_a9a47ff2515afdefc352f50ea7681bdae}\label{classmy_b_mx280_a9a47ff2515afdefc352f50ea7681bdae}} 
 \index{myBMx280@{myBMx280}!FILTER\_2@{FILTER\_2}}
 \index{FILTER\_2@{FILTER\_2}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_2}{FILTER\_2}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+2 = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+2 = 0x01\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Filter at 2 samples. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a86810edd5c7714abcef2b79c8a2bc864}\label{classmy_b_mx280_a86810edd5c7714abcef2b79c8a2bc864}} 
+\mbox{\Hypertarget{classmy_b_mx280_ae3189e8bd15e7ca1ac456933275dcd24}\label{classmy_b_mx280_ae3189e8bd15e7ca1ac456933275dcd24}} 
 \index{myBMx280@{myBMx280}!FILTER\_4@{FILTER\_4}}
 \index{FILTER\_4@{FILTER\_4}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_4}{FILTER\_4}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+4 = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+4 = 0x02\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Filter at 4 samples. 
 
-\mbox{\Hypertarget{classmy_b_mx280_ab0b6524a00b30e1d560cc6c5110cffb7}\label{classmy_b_mx280_ab0b6524a00b30e1d560cc6c5110cffb7}} 
+\mbox{\Hypertarget{classmy_b_mx280_adbb1c727a401057774a71b87897c4f7d}\label{classmy_b_mx280_adbb1c727a401057774a71b87897c4f7d}} 
 \index{myBMx280@{myBMx280}!FILTER\_8@{FILTER\_8}}
 \index{FILTER\_8@{FILTER\_8}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_8}{FILTER\_8}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+8 = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+8 = 0x03\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Filter at 8 samples. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a56eeb6451826aa4d2278dbb5d876404c}\label{classmy_b_mx280_a56eeb6451826aa4d2278dbb5d876404c}} 
+\mbox{\Hypertarget{classmy_b_mx280_a1b1fe7248ffc4e8c27cf923607bca948}\label{classmy_b_mx280_a1b1fe7248ffc4e8c27cf923607bca948}} 
 \index{myBMx280@{myBMx280}!FILTER\_OFF@{FILTER\_OFF}}
 \index{FILTER\_OFF@{FILTER\_OFF}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{FILTER\_OFF}{FILTER\_OFF}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+\+O\+FF = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+F\+I\+L\+T\+E\+R\+\_\+\+O\+FF = 0x00\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -657,11 +1250,11 @@ True if sensor is in forced mode.
 
 True if the sensor has humidity. 
 
-\mbox{\Hypertarget{classmy_b_mx280_ab981e0e9de452465328702986ded1460}\label{classmy_b_mx280_ab981e0e9de452465328702986ded1460}} 
+\mbox{\Hypertarget{classmy_b_mx280_aabb45f6e88bef3047d67b2fc9305b567}\label{classmy_b_mx280_aabb45f6e88bef3047d67b2fc9305b567}} 
 \index{myBMx280@{myBMx280}!HUM\_OSR\_MASK@{HUM\_OSR\_MASK}}
 \index{HUM\_OSR\_MASK@{HUM\_OSR\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{HUM\_OSR\_MASK}{HUM\_OSR\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+H\+U\+M\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b00000111\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+H\+U\+M\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b00000111\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -677,71 +1270,81 @@ Humidity O\+SR mask of the hum\+Ctrl byte.
 
 Humidity in RH\%. 
 
-\mbox{\Hypertarget{classmy_b_mx280_aee9089b4ccd1c0a96f20b6a313ed3da4}\label{classmy_b_mx280_aee9089b4ccd1c0a96f20b6a313ed3da4}} 
+\mbox{\Hypertarget{classmy_b_mx280_a1e22fa9fea60767bce31014064d5e954}\label{classmy_b_mx280_a1e22fa9fea60767bce31014064d5e954}} 
 \index{myBMx280@{myBMx280}!MEAS\_MODE\_MASK@{MEAS\_MODE\_MASK}}
 \index{MEAS\_MODE\_MASK@{MEAS\_MODE\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MEAS\_MODE\_MASK}{MEAS\_MODE\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK = 0b00000011\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK = 0b00000011\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Measure mode mask of the meas\+Ctrl byte. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a63af92960dd5568af66970b8a9317b96}\label{classmy_b_mx280_a63af92960dd5568af66970b8a9317b96}} 
+\mbox{\Hypertarget{classmy_b_mx280_a4c9d94fb145fd9844dee4a6cd4c10a9d}\label{classmy_b_mx280_a4c9d94fb145fd9844dee4a6cd4c10a9d}} 
 \index{myBMx280@{myBMx280}!MEAS\_PRES\_OSR\_MASK@{MEAS\_PRES\_OSR\_MASK}}
 \index{MEAS\_PRES\_OSR\_MASK@{MEAS\_PRES\_OSR\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MEAS\_PRES\_OSR\_MASK}{MEAS\_PRES\_OSR\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+P\+R\+E\+S\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b00011100\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+P\+R\+E\+S\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b00011100\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Pressure O\+SR mask of the meas\+Ctrl byte. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a5e2ff856f84235aa509cec4ec0f37d1c}\label{classmy_b_mx280_a5e2ff856f84235aa509cec4ec0f37d1c}} 
+\mbox{\Hypertarget{classmy_b_mx280_aa62edb95c6d1934e42546ede22ac7bbe}\label{classmy_b_mx280_aa62edb95c6d1934e42546ede22ac7bbe}} 
 \index{myBMx280@{myBMx280}!MEAS\_TEMP\_OSR\_MASK@{MEAS\_TEMP\_OSR\_MASK}}
 \index{MEAS\_TEMP\_OSR\_MASK@{MEAS\_TEMP\_OSR\_MASK}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MEAS\_TEMP\_OSR\_MASK}{MEAS\_TEMP\_OSR\_MASK}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+T\+E\+M\+P\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b11100000\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+M\+E\+A\+S\+\_\+\+T\+E\+M\+P\+\_\+\+O\+S\+R\+\_\+\+M\+A\+SK = 0b11100000\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Temperature O\+SR mask of the meas\+Ctrl byte. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a224352010506cad82524e9627294ac8c}\label{classmy_b_mx280_a224352010506cad82524e9627294ac8c}} 
+\mbox{\Hypertarget{classmy_b_mx280_a49c59031e2edf388c60aaea5866a6119}\label{classmy_b_mx280_a49c59031e2edf388c60aaea5866a6119}} 
 \index{myBMx280@{myBMx280}!MODE\_FORCED@{MODE\_FORCED}}
 \index{MODE\_FORCED@{MODE\_FORCED}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MODE\_FORCED}{MODE\_FORCED}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Chip mode forced. This is the default mode. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a64420c3b133828e93f8a2f55bb5fe591}\label{classmy_b_mx280_a64420c3b133828e93f8a2f55bb5fe591}} 
+\mbox{\Hypertarget{classmy_b_mx280_a49159f29102f1007166688414ba25075}\label{classmy_b_mx280_a49159f29102f1007166688414ba25075}} 
 \index{myBMx280@{myBMx280}!MODE\_NORMAL@{MODE\_NORMAL}}
 \index{MODE\_NORMAL@{MODE\_NORMAL}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MODE\_NORMAL}{MODE\_NORMAL}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Chip mode normal. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a69e9a865d0b89867c5c6e7d3a87cca3f}\label{classmy_b_mx280_a69e9a865d0b89867c5c6e7d3a87cca3f}} 
+\mbox{\Hypertarget{classmy_b_mx280_a787f933fdef28f9e6730908344842ca3}\label{classmy_b_mx280_a787f933fdef28f9e6730908344842ca3}} 
 \index{myBMx280@{myBMx280}!MODE\_SLEEP@{MODE\_SLEEP}}
 \index{MODE\_SLEEP@{MODE\_SLEEP}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{MODE\_SLEEP}{MODE\_SLEEP}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+S\+L\+E\+EP = 0\+X00\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+M\+O\+D\+E\+\_\+\+S\+L\+E\+EP = 0\+X00\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Chip mode Sleep. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a0054c4f259771ed3f55e640a86015603}\label{classmy_b_mx280_a0054c4f259771ed3f55e640a86015603}} 
+\mbox{\Hypertarget{classmy_b_mx280_a4dfbee99fda0cebb2257d6972418dded}\label{classmy_b_mx280_a4dfbee99fda0cebb2257d6972418dded}} 
+\index{myBMx280@{myBMx280}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+B\+Mx280\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No error. Value 0. No error occured. 
+
+\mbox{\Hypertarget{classmy_b_mx280_a1bc4cfd3fe981d0aa1dc92f2e1419a34}\label{classmy_b_mx280_a1bc4cfd3fe981d0aa1dc92f2e1419a34}} 
 \index{myBMx280@{myBMx280}!OSR\_OFF@{OSR\_OFF}}
 \index{OSR\_OFF@{OSR\_OFF}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_OFF}{OSR\_OFF}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+O\+FF = 0\+X00\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+O\+FF = 0\+X00\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -750,51 +1353,51 @@ Over sampling off.
 \begin{DoxyNote}{Note}
 turns off reading. 
 \end{DoxyNote}
-\mbox{\Hypertarget{classmy_b_mx280_a837eb94f86543bfd6d7250b603a4b1bb}\label{classmy_b_mx280_a837eb94f86543bfd6d7250b603a4b1bb}} 
+\mbox{\Hypertarget{classmy_b_mx280_a268b3751104337f333647a79652d9462}\label{classmy_b_mx280_a268b3751104337f333647a79652d9462}} 
 \index{myBMx280@{myBMx280}!OSR\_X1@{OSR\_X1}}
 \index{OSR\_X1@{OSR\_X1}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X1}{OSR\_X1}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X1 = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X1 = 0\+X01\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Oversampling x1. 
 
-\mbox{\Hypertarget{classmy_b_mx280_ae6651f6e8af79fc6b7348c44d1e66fcc}\label{classmy_b_mx280_ae6651f6e8af79fc6b7348c44d1e66fcc}} 
+\mbox{\Hypertarget{classmy_b_mx280_acb32fe99475cce6ab62d22dae56d1c0d}\label{classmy_b_mx280_acb32fe99475cce6ab62d22dae56d1c0d}} 
 \index{myBMx280@{myBMx280}!OSR\_X16@{OSR\_X16}}
 \index{OSR\_X16@{OSR\_X16}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X16}{OSR\_X16}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X16 = 0\+X05\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X16 = 0\+X05\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Oversampling x16. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a17fd3cc3a320c474f899b05efdb15fa1}\label{classmy_b_mx280_a17fd3cc3a320c474f899b05efdb15fa1}} 
+\mbox{\Hypertarget{classmy_b_mx280_a9e7bf96cd3b75a2bc7be7620c1f461b0}\label{classmy_b_mx280_a9e7bf96cd3b75a2bc7be7620c1f461b0}} 
 \index{myBMx280@{myBMx280}!OSR\_X2@{OSR\_X2}}
 \index{OSR\_X2@{OSR\_X2}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X2}{OSR\_X2}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X2 = 0\+X02\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X2 = 0\+X02\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Oversampling x2. 
 
-\mbox{\Hypertarget{classmy_b_mx280_acfd6c59d9e13bb1b6284e1cb7afd628a}\label{classmy_b_mx280_acfd6c59d9e13bb1b6284e1cb7afd628a}} 
+\mbox{\Hypertarget{classmy_b_mx280_a49dc648af8f575eb977cf434923e70c3}\label{classmy_b_mx280_a49dc648af8f575eb977cf434923e70c3}} 
 \index{myBMx280@{myBMx280}!OSR\_X4@{OSR\_X4}}
 \index{OSR\_X4@{OSR\_X4}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X4}{OSR\_X4}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X4 = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X4 = 0\+X03\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Oversampling x4. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a1394192053125f397319c5ff272a8193}\label{classmy_b_mx280_a1394192053125f397319c5ff272a8193}} 
+\mbox{\Hypertarget{classmy_b_mx280_a763453b503a3b235f9c5dcf0cbd0319f}\label{classmy_b_mx280_a763453b503a3b235f9c5dcf0cbd0319f}} 
 \index{myBMx280@{myBMx280}!OSR\_X8@{OSR\_X8}}
 \index{OSR\_X8@{OSR\_X8}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{OSR\_X8}{OSR\_X8}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X8 = 0\+X04\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+O\+S\+R\+\_\+\+X8 = 0\+X04\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -810,21 +1413,21 @@ Oversampling x8.
 
 Pressure in Pa. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a363f20c8705a33f356009ae2d94321db}\label{classmy_b_mx280_a363f20c8705a33f356009ae2d94321db}} 
+\mbox{\Hypertarget{classmy_b_mx280_abe4dfcce5ddc1b9c09d520d3ca7c7383}\label{classmy_b_mx280_abe4dfcce5ddc1b9c09d520d3ca7c7383}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_1000MS@{STANDBY\_TIME\_1000MS}}
 \index{STANDBY\_TIME\_1000MS@{STANDBY\_TIME\_1000MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_1000MS}{STANDBY\_TIME\_1000MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+1000\+MS = 0x05\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+1000\+MS = 0x05\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Standby time of 1000 milliseconds (1 second) 
 
-\mbox{\Hypertarget{classmy_b_mx280_a93b11893a6330129f5dbde1606d4fce0}\label{classmy_b_mx280_a93b11893a6330129f5dbde1606d4fce0}} 
+\mbox{\Hypertarget{classmy_b_mx280_adf6463819440b8c43adcc4883fa16315}\label{classmy_b_mx280_adf6463819440b8c43adcc4883fa16315}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_10MS@{STANDBY\_TIME\_10MS}}
 \index{STANDBY\_TIME\_10MS@{STANDBY\_TIME\_10MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_10MS}{STANDBY\_TIME\_10MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+10\+MS = 0x06\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+10\+MS = 0x06\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -833,21 +1436,21 @@ Standby time of 10 milliseconds.
 \begin{DoxyNote}{Note}
 B\+M\+E280 only. 
 \end{DoxyNote}
-\mbox{\Hypertarget{classmy_b_mx280_a2c09d27bfd365cddf6a6388c25b5cde8}\label{classmy_b_mx280_a2c09d27bfd365cddf6a6388c25b5cde8}} 
+\mbox{\Hypertarget{classmy_b_mx280_a052da55c8cfc8c17b3b12ba378ae974f}\label{classmy_b_mx280_a052da55c8cfc8c17b3b12ba378ae974f}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_125MS@{STANDBY\_TIME\_125MS}}
 \index{STANDBY\_TIME\_125MS@{STANDBY\_TIME\_125MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_125MS}{STANDBY\_TIME\_125MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+125\+MS = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+125\+MS = 0x02\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Standby time of 125 milliseconds. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a187fe4ecc31022adb2b5f1eeb8fb4729}\label{classmy_b_mx280_a187fe4ecc31022adb2b5f1eeb8fb4729}} 
+\mbox{\Hypertarget{classmy_b_mx280_ae41a6e4716b56808602bf6630c564e38}\label{classmy_b_mx280_ae41a6e4716b56808602bf6630c564e38}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_2000MS@{STANDBY\_TIME\_2000MS}}
 \index{STANDBY\_TIME\_2000MS@{STANDBY\_TIME\_2000MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_2000MS}{STANDBY\_TIME\_2000MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+2000\+MS = 0x06\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+2000\+MS = 0x06\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -856,11 +1459,11 @@ Standby time of 2000 milliseconds (2 seconds.)
 \begin{DoxyNote}{Note}
 B\+M\+P280 only. 
 \end{DoxyNote}
-\mbox{\Hypertarget{classmy_b_mx280_a339bcda5ce37c8478827e56c8ddda09a}\label{classmy_b_mx280_a339bcda5ce37c8478827e56c8ddda09a}} 
+\mbox{\Hypertarget{classmy_b_mx280_adf5a6cef8795352c35bec8f8fab18b86}\label{classmy_b_mx280_adf5a6cef8795352c35bec8f8fab18b86}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_20MS@{STANDBY\_TIME\_20MS}}
 \index{STANDBY\_TIME\_20MS@{STANDBY\_TIME\_20MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_20MS}{STANDBY\_TIME\_20MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+20\+MS = 0x07\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+20\+MS = 0x07\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -869,21 +1472,21 @@ Standby time of 20 milliseconds.
 \begin{DoxyNote}{Note}
 B\+M\+E280 only. 
 \end{DoxyNote}
-\mbox{\Hypertarget{classmy_b_mx280_aa85875cad79cc29e126497336e3de017}\label{classmy_b_mx280_aa85875cad79cc29e126497336e3de017}} 
+\mbox{\Hypertarget{classmy_b_mx280_a8284550a69217269e9f05b20fc69fe16}\label{classmy_b_mx280_a8284550a69217269e9f05b20fc69fe16}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_250MS@{STANDBY\_TIME\_250MS}}
 \index{STANDBY\_TIME\_250MS@{STANDBY\_TIME\_250MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_250MS}{STANDBY\_TIME\_250MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+250\+MS = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+250\+MS = 0x03\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Standby time of 250 milliseconds. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a4ff7ca27faa9b8cba30fca17381ace74}\label{classmy_b_mx280_a4ff7ca27faa9b8cba30fca17381ace74}} 
+\mbox{\Hypertarget{classmy_b_mx280_ad1f87ee465b5cf077291177cc3081a4a}\label{classmy_b_mx280_ad1f87ee465b5cf077291177cc3081a4a}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_4000MS@{STANDBY\_TIME\_4000MS}}
 \index{STANDBY\_TIME\_4000MS@{STANDBY\_TIME\_4000MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_4000MS}{STANDBY\_TIME\_4000MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+4000\+MS = 0x07\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+4000\+MS = 0x07\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -892,31 +1495,31 @@ Standby time of 4000 milliseconds (4 seconds)
 \begin{DoxyNote}{Note}
 B\+M\+P280 only. 
 \end{DoxyNote}
-\mbox{\Hypertarget{classmy_b_mx280_a8a6acdaf21c7248ee7a5d236404a29cf}\label{classmy_b_mx280_a8a6acdaf21c7248ee7a5d236404a29cf}} 
+\mbox{\Hypertarget{classmy_b_mx280_a434a330f1775f85505c9f00cea9935c4}\label{classmy_b_mx280_a434a330f1775f85505c9f00cea9935c4}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_500US@{STANDBY\_TIME\_500US}}
 \index{STANDBY\_TIME\_500US@{STANDBY\_TIME\_500US}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_500US}{STANDBY\_TIME\_500US}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+500\+US = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+500\+US = 0x00\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Standby time of 500 microseconds. 
 
-\mbox{\Hypertarget{classmy_b_mx280_a95be261831d42ede70f8d2c03647e7e5}\label{classmy_b_mx280_a95be261831d42ede70f8d2c03647e7e5}} 
+\mbox{\Hypertarget{classmy_b_mx280_ae486393050b1fbcb38fe3d40888400dd}\label{classmy_b_mx280_ae486393050b1fbcb38fe3d40888400dd}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_50MS@{STANDBY\_TIME\_50MS}}
 \index{STANDBY\_TIME\_50MS@{STANDBY\_TIME\_50MS}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_50MS}{STANDBY\_TIME\_50MS}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+50\+MS = 0x04\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+50\+MS = 0x04\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Standby time of 50 milliseconds. 
 
-\mbox{\Hypertarget{classmy_b_mx280_ae5b81163edbe58bbf58371d8e172b46e}\label{classmy_b_mx280_ae5b81163edbe58bbf58371d8e172b46e}} 
+\mbox{\Hypertarget{classmy_b_mx280_aa27cdac64475d6af0cda8dfdebdac05b}\label{classmy_b_mx280_aa27cdac64475d6af0cda8dfdebdac05b}} 
 \index{myBMx280@{myBMx280}!STANDBY\_TIME\_62500US@{STANDBY\_TIME\_62500US}}
 \index{STANDBY\_TIME\_62500US@{STANDBY\_TIME\_62500US}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{STANDBY\_TIME\_62500US}{STANDBY\_TIME\_62500US}}
-{\footnotesize\ttfamily const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+62500\+US = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static const uint8\+\_\+t my\+B\+Mx280\+::\+S\+T\+A\+N\+D\+B\+Y\+\_\+\+T\+I\+M\+E\+\_\+62500\+US = 0x01\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -936,4 +1539,4 @@ Temperature in DegC.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-my\+B\+Mx280/spi/\mbox{\hyperlink{my_b_mx280_8hpp}{my\+B\+Mx280.\+hpp}}\end{DoxyCompactItemize}
+my\+B\+Mx280/i2c/\mbox{\hyperlink{i2c_2my_b_mx280_8hpp}{my\+B\+Mx280.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="myI2C/myI2C.hpp" name="myI2C/myI2C.hpp">
+<area shape="rect" id="node1" title="I2C helper functions." alt="" coords="333,5,471,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="544,80,663,107"/>
+<area shape="rect" id="node4" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="156,155,347,181"/>
+<area shape="rect" id="node5" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="647,155,802,181"/>
+<area shape="rect" id="node6" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="335,80,469,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="490,155,623,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="371,155,465,181"/>
+</map>

@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['chipmodel_5fbme280_488',['CHIPMODEL_BME280',['../classmy_b_mx280.html#a7fc85018ed00938fca8c7e2f48e6f3f1',1,'myBMx280']]],
-  ['chipmodel_5fbmp280_489',['CHIPMODEL_BMP280',['../classmy_b_mx280.html#a03ade9503e345f635840c542ea9b4df6',1,'myBMx280']]],
-  ['comm_5fmode_5fsdi_490',['COMM_MODE_SDI',['../classmy23_l_c1024.html#abb43f0f96bcc35610c275914c4dfe2ca',1,'my23LC1024']]],
-  ['comm_5fmode_5fspi_491',['COMM_MODE_SPI',['../classmy23_l_c1024.html#a765d708ebd602029835b8db31151b3ad',1,'my23LC1024']]],
-  ['comm_5fmode_5fsqi_492',['COMM_MODE_SQI',['../classmy23_l_c1024.html#af5cd8fde921c82a6d095f73964b7f3db',1,'my23LC1024']]],
-  ['config_5f3wire_5fmask_493',['CONFIG_3WIRE_MASK',['../classmy_b_mx280.html#aa3563047e2d21a7f7bd040d73625ef3c',1,'myBMx280']]],
-  ['config_5ffilter_5fmask_494',['CONFIG_FILTER_MASK',['../classmy_b_mx280.html#a57f22c4f42ef7a5e75b42d44491e1b16',1,'myBMx280']]],
-  ['config_5fstandby_5fmask_495',['CONFIG_STANDBY_MASK',['../classmy_b_mx280.html#a641888a3f044b98dfd55adffb8c80c85',1,'myBMx280']]]
+  ['chipmodel_5fbme280_535',['CHIPMODEL_BME280',['../classmy_b_mx280.html#a35383898f7320a7f6c34801826cdbf57',1,'myBMx280']]],
+  ['chipmodel_5fbmp280_536',['CHIPMODEL_BMP280',['../classmy_b_mx280.html#a99bb6d2b095144a722dddbba4837d701',1,'myBMx280']]],
+  ['comm_5fmode_5fsdi_537',['COMM_MODE_SDI',['../classmy23_l_c1024.html#abb43f0f96bcc35610c275914c4dfe2ca',1,'my23LC1024']]],
+  ['comm_5fmode_5fspi_538',['COMM_MODE_SPI',['../classmy23_l_c1024.html#a765d708ebd602029835b8db31151b3ad',1,'my23LC1024']]],
+  ['comm_5fmode_5fsqi_539',['COMM_MODE_SQI',['../classmy23_l_c1024.html#af5cd8fde921c82a6d095f73964b7f3db',1,'my23LC1024']]],
+  ['config_5f3wire_5fmask_540',['CONFIG_3WIRE_MASK',['../classmy_b_mx280.html#a6c1811d765b64ff491e770af5e7b890f',1,'myBMx280']]],
+  ['config_5ffilter_5fmask_541',['CONFIG_FILTER_MASK',['../classmy_b_mx280.html#a4ca5432a36d91dd463a32dc8b062987d',1,'myBMx280']]],
+  ['config_5fstandby_5fmask_542',['CONFIG_STANDBY_MASK',['../classmy_b_mx280.html#a1ae03879309432d7e75437747ad74523',1,'myBMx280']]]
 ];

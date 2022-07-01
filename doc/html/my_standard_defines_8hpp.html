@@ -76,16 +76,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_standard_defines_8hpp__dep__incl.png" border="0" usemap="#my_standard_defines_8hppdep" alt=""/></div>
 <map name="my_standard_defines_8hppdep" id="my_standard_defines_8hppdep">
-<area shape="rect" title="Standard defines for pico&#45;myLibs." alt="" coords="668,5,847,32"/>
+<area shape="rect" title="Standard defines for pico&#45;myLibs." alt="" coords="744,5,923,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
-<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
-<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="247,155,451,181"/>
+<area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="304,80,456,107"/>
+<area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="214,155,418,181"/>
 <area shape="rect" href="my_bit_bang_s_p_i_8hpp.html" title="Bit banged SPI." alt="" coords="481,80,719,107"/>
-<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="846,80,967,107"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="485,155,648,181"/>
-<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="672,155,923,181"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="947,155,1197,181"/>
-<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="1221,155,1357,181"/>
+<area shape="rect" href="i2c_2my_b_mx280_8hpp.html" title="Class to handle BMx280 chips in i2c mode." alt="" coords="542,155,767,181"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="1009,80,1130,107"/>
+<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="791,155,927,181"/>
+<area shape="rect" href="spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="746,229,971,256"/>
+<area shape="rect" href="my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="951,155,1089,181"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="1164,155,1327,181"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1351,155,1601,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1625,155,1876,181"/>
 </map>
 </div>
 </div>
@@ -150,6 +153,12 @@ Macros</h2></td></tr>
 <tr class="memitem:addc19cea4d6a0d674e4c6c738cb6ff13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#addc19cea4d6a0d674e4c6c738cb6ff13">MY_SPI_NUM_PINS</a>&#160;&#160;&#160;4</td></tr>
 <tr class="memdesc:addc19cea4d6a0d674e4c6c738cb6ff13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of possible spi pins. Number of possible options for each type of spi pin. IE: SPI0 RX pin can be set to 1 of 4 pins.  <a href="my_standard_defines_8hpp.html#addc19cea4d6a0d674e4c6c738cb6ff13">More...</a><br /></td></tr>
 <tr class="separator:addc19cea4d6a0d674e4c6c738cb6ff13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae054386debe2a25d19255a9a08dc6fc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#ae054386debe2a25d19255a9a08dc6fc4">MY_I2C_NUM_PORTS</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ae054386debe2a25d19255a9a08dc6fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of I2C ports on the rp2040 Number of I2C ports on the rp2040, there are 2.  <a href="my_standard_defines_8hpp.html#ae054386debe2a25d19255a9a08dc6fc4">More...</a><br /></td></tr>
+<tr class="separator:ae054386debe2a25d19255a9a08dc6fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5a28ddd94d8e5821a8f5673ba6b4c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#a5a5a28ddd94d8e5821a8f5673ba6b4c6">MY_I2C_NUM_PINS</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:a5a5a28ddd94d8e5821a8f5673ba6b4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of possible I2C pins. Number of possible options for each type of I2C pin. IE: I2C0 SDA can be set to 1 of 8 pins.  <a href="my_standard_defines_8hpp.html#a5a5a28ddd94d8e5821a8f5673ba6b4c6">More...</a><br /></td></tr>
+<tr class="separator:a5a5a28ddd94d8e5821a8f5673ba6b4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="mdescLeft">&#160;</td><td class="mdescRight">No error value. Value to use to represent no error.  <a href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">More...</a><br /></td></tr>
 <tr class="separator:aa0aa05b5f194b52a2bbe65e4b8acc206"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -427,6 +436,39 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>General error value. General error for when no other error code applies. </p>
+
+</div>
+</div>
+<a id="a5a5a28ddd94d8e5821a8f5673ba6b4c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5a28ddd94d8e5821a8f5673ba6b4c6">&#9670;&nbsp;</a></span>MY_I2C_NUM_PINS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_I2C_NUM_PINS&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of possible I2C pins. Number of possible options for each type of I2C pin. IE: I2C0 SDA can be set to 1 of 8 pins. </p>
+<dl class="section note"><dt>Note</dt><dd>I2C port 1 only has 5 possible options. </dd></dl>
+
+</div>
+</div>
+<a id="ae054386debe2a25d19255a9a08dc6fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae054386debe2a25d19255a9a08dc6fc4">&#9670;&nbsp;</a></span>MY_I2C_NUM_PORTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_I2C_NUM_PORTS&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of I2C ports on the rp2040 Number of I2C ports on the rp2040, there are 2. </p>
 
 </div>
 </div>

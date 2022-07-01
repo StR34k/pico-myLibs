@@ -5,7 +5,8 @@
 Define all error codes used in pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,15 +18,15 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}~0
 \begin{DoxyCompactList}\small\item\em No error value. Value to use for no error. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_error_codes_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/1
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/4
 \begin{DoxyCompactList}\small\item\em General error value. Value to use if no other error applies. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_error_codes_8hpp_a1a2c7825740de47fb2c8572f6f81027c}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}~-\/2
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a1a2c7825740de47fb2c8572f6f81027c}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}~-\/5
 \begin{DoxyCompactList}\small\item\em invalid pin number. An invalid pin number was passed. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_error_codes_8hpp_a30c7699357e500c950a9a32a429e59bf}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK}}~-\/3
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a30c7699357e500c950a9a32a429e59bf}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK}}~-\/6
 \begin{DoxyCompactList}\small\item\em invalid bit mask. An invalid bit mask was passed. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_error_codes_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}~-\/4
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}~-\/7
 \begin{DoxyCompactList}\small\item\em Timeout reached. A timeout has been reached. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_error_codes_8hpp_a2932a50fea6f22d821215e6d34403aff}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR}}~-\/5
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a2932a50fea6f22d821215e6d34403aff}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR}}~-\/8
 \begin{DoxyCompactList}\small\item\em Invalid direction A pin is set to wrong direction for operation requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a11e01fb1c6dbf4629c49bb2cba9a6c46}{M\+Y\+\_\+\+P\+W\+M\+\_\+\+P\+I\+N\+\_\+\+N\+O\+T\+\_\+\+I\+N\+IT}}~-\/100
 \begin{DoxyCompactList}\small\item\em Pin not initialized. Initialize has not been called for the pin. \end{DoxyCompactList}\item 
@@ -108,7 +109,31 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a7d6340ef277d5e7013b79f1627e76eb9}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+C\+L\+E\+A\+R\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}~-\/401
 \begin{DoxyCompactList}\small\item\em Clear pin not defined. The clear pin was not defined when operation was requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a782036dcdbcad4d43077ddcc6552cb72}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y595\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}~-\/402
-\begin{DoxyCompactList}\small\item\em Operation not available. The bit write operation is not available in hardware S\+PI mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Operation not available. The bit write operation is not available in hardware S\+PI mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}~-\/450
+\begin{DoxyCompactList}\small\item\em Invalid S\+DA pin. The S\+DA pin provided is invalid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}~-\/451
+\begin{DoxyCompactList}\small\item\em Invalid S\+CL pin. The S\+CL pin provided is invalid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~-\/452
+\begin{DoxyCompactList}\small\item\em I2C port alreay initialized. The I2C port was already initialized when initialize was called. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a449a5326c6c16744831175b982a84f22}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~-\/453
+\begin{DoxyCompactList}\small\item\em I2C port not initialized. The I2C port was already deinitialized when deinitialize was called. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}~-\/500
+\begin{DoxyCompactList}\small\item\em Invalid I2C address. The I2C address provided is invalid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_aa0ed10176b27701107ab69ddfe67de52}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}~-\/501
+\begin{DoxyCompactList}\small\item\em No response. The I2C address didn\textquotesingle{}t respond. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a7339cb72317d208de68e403672341025}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}~-\/502
+\begin{DoxyCompactList}\small\item\em Invalid response. The chip provided an invalid response. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a0ed16f2dad2d86386995987823917a4e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+H\+U\+M\+I\+D\+I\+TY}}~-\/503
+\begin{DoxyCompactList}\small\item\em No humidity. The chip doesn\textquotesingle{}t have humidity. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a7a9460e064bccd4c8debe788ea7ac75b}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+N\+D\+BY}}~-\/504
+\begin{DoxyCompactList}\small\item\em Invalid standby time. An invalid standby time was provided. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a0f3b28a75e3af0a52cfb1caabf513719}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+L\+T\+ER}}~-\/505
+\begin{DoxyCompactList}\small\item\em Invaid filter. An invalid filter value was provided. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_abb585545ee82ef1ed1560f5c3a47f1f3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR}}~-\/506
+\begin{DoxyCompactList}\small\item\em Invalid over sample rate. An invalid Over Sample Rate was provided. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a825d309de2b76d1525911ba1a05c08d7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE}}~-\/507
+\begin{DoxyCompactList}\small\item\em Invalid mode. An invalid mode was passed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -351,11 +376,131 @@ Enable pin not defined. The enable pin was not defined when operation was reques
 
 Operation not available. The bit write operation is not available in hardware S\+PI mode. 
 
+\mbox{\Hypertarget{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}\label{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS@{MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS}}
+\index{MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS@{MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS}{MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS~-\/500}
+
+
+
+Invalid I2C address. The I2C address provided is invalid. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a0f3b28a75e3af0a52cfb1caabf513719}\label{my_error_codes_8hpp_a0f3b28a75e3af0a52cfb1caabf513719}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_FILTER@{MY\_ERROR\_MYBMx280\_INVALID\_FILTER}}
+\index{MY\_ERROR\_MYBMx280\_INVALID\_FILTER@{MY\_ERROR\_MYBMx280\_INVALID\_FILTER}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_INVALID\_FILTER}{MY\_ERROR\_MYBMx280\_INVALID\_FILTER}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+L\+T\+ER~-\/505}
+
+
+
+Invaid filter. An invalid filter value was provided. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a825d309de2b76d1525911ba1a05c08d7}\label{my_error_codes_8hpp_a825d309de2b76d1525911ba1a05c08d7}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_MODE@{MY\_ERROR\_MYBMx280\_INVALID\_MODE}}
+\index{MY\_ERROR\_MYBMx280\_INVALID\_MODE@{MY\_ERROR\_MYBMx280\_INVALID\_MODE}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_INVALID\_MODE}{MY\_ERROR\_MYBMx280\_INVALID\_MODE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE~-\/507}
+
+
+
+Invalid mode. An invalid mode was passed. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_abb585545ee82ef1ed1560f5c3a47f1f3}\label{my_error_codes_8hpp_abb585545ee82ef1ed1560f5c3a47f1f3}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_OSR@{MY\_ERROR\_MYBMx280\_INVALID\_OSR}}
+\index{MY\_ERROR\_MYBMx280\_INVALID\_OSR@{MY\_ERROR\_MYBMx280\_INVALID\_OSR}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_INVALID\_OSR}{MY\_ERROR\_MYBMx280\_INVALID\_OSR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR~-\/506}
+
+
+
+Invalid over sample rate. An invalid Over Sample Rate was provided. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a7339cb72317d208de68e403672341025}\label{my_error_codes_8hpp_a7339cb72317d208de68e403672341025}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_RESPONSE@{MY\_ERROR\_MYBMx280\_INVALID\_RESPONSE}}
+\index{MY\_ERROR\_MYBMx280\_INVALID\_RESPONSE@{MY\_ERROR\_MYBMx280\_INVALID\_RESPONSE}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_INVALID\_RESPONSE}{MY\_ERROR\_MYBMx280\_INVALID\_RESPONSE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+E\+S\+P\+O\+N\+SE~-\/502}
+
+
+
+Invalid response. The chip provided an invalid response. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a7a9460e064bccd4c8debe788ea7ac75b}\label{my_error_codes_8hpp_a7a9460e064bccd4c8debe788ea7ac75b}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_STANDBY@{MY\_ERROR\_MYBMx280\_INVALID\_STANDBY}}
+\index{MY\_ERROR\_MYBMx280\_INVALID\_STANDBY@{MY\_ERROR\_MYBMx280\_INVALID\_STANDBY}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_INVALID\_STANDBY}{MY\_ERROR\_MYBMx280\_INVALID\_STANDBY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+A\+N\+D\+BY~-\/504}
+
+
+
+Invalid standby time. An invalid standby time was provided. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a0ed16f2dad2d86386995987823917a4e}\label{my_error_codes_8hpp_a0ed16f2dad2d86386995987823917a4e}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_NO\_HUMIDITY@{MY\_ERROR\_MYBMx280\_NO\_HUMIDITY}}
+\index{MY\_ERROR\_MYBMx280\_NO\_HUMIDITY@{MY\_ERROR\_MYBMx280\_NO\_HUMIDITY}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_NO\_HUMIDITY}{MY\_ERROR\_MYBMx280\_NO\_HUMIDITY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+H\+U\+M\+I\+D\+I\+TY~-\/503}
+
+
+
+No humidity. The chip doesn\textquotesingle{}t have humidity. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_aa0ed10176b27701107ab69ddfe67de52}\label{my_error_codes_8hpp_aa0ed10176b27701107ab69ddfe67de52}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_NO\_RESPONSE@{MY\_ERROR\_MYBMx280\_NO\_RESPONSE}}
+\index{MY\_ERROR\_MYBMx280\_NO\_RESPONSE@{MY\_ERROR\_MYBMx280\_NO\_RESPONSE}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYBMx280\_NO\_RESPONSE}{MY\_ERROR\_MYBMx280\_NO\_RESPONSE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE~-\/501}
+
+
+
+No response. The I2C address didn\textquotesingle{}t respond. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}\label{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYI2C\_INITIALIZED@{MY\_ERROR\_MYI2C\_INITIALIZED}}
+\index{MY\_ERROR\_MYI2C\_INITIALIZED@{MY\_ERROR\_MYI2C\_INITIALIZED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYI2C\_INITIALIZED}{MY\_ERROR\_MYI2C\_INITIALIZED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~-\/452}
+
+
+
+I2C port alreay initialized. The I2C port was already initialized when initialize was called. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}\label{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYI2C\_INVALID\_SCL\_PIN@{MY\_ERROR\_MYI2C\_INVALID\_SCL\_PIN}}
+\index{MY\_ERROR\_MYI2C\_INVALID\_SCL\_PIN@{MY\_ERROR\_MYI2C\_INVALID\_SCL\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYI2C\_INVALID\_SCL\_PIN}{MY\_ERROR\_MYI2C\_INVALID\_SCL\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN~-\/451}
+
+
+
+Invalid S\+CL pin. The S\+CL pin provided is invalid. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}\label{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYI2C\_INVALID\_SDA\_PIN@{MY\_ERROR\_MYI2C\_INVALID\_SDA\_PIN}}
+\index{MY\_ERROR\_MYI2C\_INVALID\_SDA\_PIN@{MY\_ERROR\_MYI2C\_INVALID\_SDA\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYI2C\_INVALID\_SDA\_PIN}{MY\_ERROR\_MYI2C\_INVALID\_SDA\_PIN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN~-\/450}
+
+
+
+Invalid S\+DA pin. The S\+DA pin provided is invalid. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a449a5326c6c16744831175b982a84f22}\label{my_error_codes_8hpp_a449a5326c6c16744831175b982a84f22}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYI2C\_NOT\_INITIALIZED@{MY\_ERROR\_MYI2C\_NOT\_INITIALIZED}}
+\index{MY\_ERROR\_MYI2C\_NOT\_INITIALIZED@{MY\_ERROR\_MYI2C\_NOT\_INITIALIZED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYI2C\_NOT\_INITIALIZED}{MY\_ERROR\_MYI2C\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~-\/453}
+
+
+
+I2C port not initialized. The I2C port was already deinitialized when deinitialize was called. 
+
 \mbox{\Hypertarget{my_error_codes_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}\label{my_error_codes_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_GENERAL\_ERROR@{MY\_GENERAL\_ERROR}}
 \index{MY\_GENERAL\_ERROR@{MY\_GENERAL\_ERROR}!myErrorCodes.hpp@{myErrorCodes.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_GENERAL\_ERROR}{MY\_GENERAL\_ERROR}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR~-\/1}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR~-\/4}
 
 
 
@@ -365,7 +510,7 @@ General error value. Value to use if no other error applies.
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_INVALID\_BIT\_MASK@{MY\_INVALID\_BIT\_MASK}}
 \index{MY\_INVALID\_BIT\_MASK@{MY\_INVALID\_BIT\_MASK}!myErrorCodes.hpp@{myErrorCodes.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_INVALID\_BIT\_MASK}{MY\_INVALID\_BIT\_MASK}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK~-\/3}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK~-\/6}
 
 
 
@@ -375,7 +520,7 @@ invalid bit mask. An invalid bit mask was passed.
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_INVALID\_DIR@{MY\_INVALID\_DIR}}
 \index{MY\_INVALID\_DIR@{MY\_INVALID\_DIR}!myErrorCodes.hpp@{myErrorCodes.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_INVALID\_DIR}{MY\_INVALID\_DIR}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR~-\/5}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR~-\/8}
 
 
 
@@ -385,7 +530,7 @@ Invalid direction A pin is set to wrong direction for operation requested.
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_INVALID\_PIN@{MY\_INVALID\_PIN}}
 \index{MY\_INVALID\_PIN@{MY\_INVALID\_PIN}!myErrorCodes.hpp@{myErrorCodes.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_INVALID\_PIN}{MY\_INVALID\_PIN}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN~-\/2}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN~-\/5}
 
 
 
@@ -595,7 +740,7 @@ Port already deinitialized. The spi port is already deinialized.
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_TIMEOUT@{MY\_TIMEOUT}}
 \index{MY\_TIMEOUT@{MY\_TIMEOUT}!myErrorCodes.hpp@{myErrorCodes.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_TIMEOUT}{MY\_TIMEOUT}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT~-\/4}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT~-\/7}
 
 
 
