@@ -88,6 +88,10 @@ int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_abb71443fb7360c5c18549584ed9e1dd4}
 \begin{DoxyCompactList}\small\item\em Get the Square Wave frequency. Returns the square wave frequency. Positive values, including zero is the rate (one of the R\+A\+T\+E\+\_\+$\ast$ values), otherwise if a comms error occurs an error code is returned. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_add8d8324bd4c592b5f10cf2c86090be6}{set\+Square\+Wave\+Rate}} (const uint8\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Set the Square Wave frequency. Set the square wave frequency. Valid values are 0-\/3, rates are defined as R\+A\+T\+E\+\_\+$\ast$. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a4d4f24b69b56aef4ab806e9759edede5}{read\+Sram}} (const uint8\+\_\+t index, uint8\+\_\+t $\ast$buffer, const uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read sram. Reads the sram, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, otherwise if the read would cross a boundary or if a comms error occurs, an error code is returned. If the read would cross a boundary, no data is read. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_af3396014570be0a6c496fd7cd8d78319}{write\+Sram}} (const uint8\+\_\+t index, uint8\+\_\+t $\ast$buffer, const uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Write to the sram. Write to the sram. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if written successfully. If a boundary would be crossed, an error code is returned, and no data is written, if a comms error occurs, an error code will also be returned. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aceede7c3875391b59e088c7cc6628686}{initialize}} (const bool init\+I2C=true)
 \begin{DoxyCompactList}\small\item\em Initialize the chip. Initialize communications with the chip. Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
@@ -126,6 +130,8 @@ static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a0285eeb58b3f50bf54d0
 \begin{DoxyCompactList}\small\item\em Invalid rate. Value -\/557. Invalid rate was passed. Valid values (R\+A\+T\+E\+\_\+$\ast$) (0-\/3). \end{DoxyCompactList}\item 
 static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a8e1147555695d1e5b482b52d3e498193}{E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+S\+\_\+\+F\+A\+I\+L\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}
 \begin{DoxyCompactList}\small\item\em Comms check failed. Value -\/558. The comms check during initialization failed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a47640a94bcbfc9f1a1865218549c4bff}{E\+R\+R\+O\+R\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a9d655471c0c8911e96187245acd137f0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED}}
+\begin{DoxyCompactList}\small\item\em Boundary crossed. Value -\/559. The read / write operation would cross a boundary. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a9aa6a48c47c663b00f942f277ed94e4a}{R\+A\+T\+E\+\_\+1\+HZ}} = 0x00
 \begin{DoxyCompactList}\small\item\em Rate 1 Hz. Set square wave output to 1 Hz. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a7eda929a5e6cac97fb418699d9a8af7f}{R\+A\+T\+E\+\_\+4\+K\+HZ}} = 0x01
@@ -133,7 +139,9 @@ static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a7eda929a5e6cac97fb41
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ab74f0a412a6d93a15f5f8563153dd33d}{R\+A\+T\+E\+\_\+8\+K\+HZ}} = 0x02
 \begin{DoxyCompactList}\small\item\em Rate 8.\+192 K\+Hz. Set square wave output to 8.\+192 K\+Hz. \end{DoxyCompactList}\item 
 static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aa6a643aab4a3f61440dbcb399320edb0}{R\+A\+T\+E\+\_\+32\+K\+HZ}} = 0x03
-\begin{DoxyCompactList}\small\item\em Rate 32.\+768 K\+Hz. Set square wave output to 32.\+768 K\+Hz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rate 32.\+768 K\+Hz. Set square wave output to 32.\+768 K\+Hz. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aae9ce9bdb41a21c303079aa3fc7a75b6}{S\+R\+A\+M\+\_\+\+L\+E\+N\+G\+TH}} = 56
+\begin{DoxyCompactList}\small\item\em Length of sram. Length of sram in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -449,6 +457,31 @@ Validate a datetime\+\_\+t Validate a datetime\+\_\+t value. Returns 0 (N\+O\+\_
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a4d4f24b69b56aef4ab806e9759edede5}\label{classmy_d_s1307_a4d4f24b69b56aef4ab806e9759edede5}} 
+\index{myDS1307@{myDS1307}!readSram@{readSram}}
+\index{readSram@{readSram}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{readSram()}{readSram()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::read\+Sram (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{index,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{const uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Read sram. Reads the sram, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, otherwise if the read would cross a boundary or if a comms error occurs, an error code is returned. If the read would cross a boundary, no data is read. 
+
+\begin{DoxyNote}{Note}
+Index\textquotesingle{}s are zero based, so valid values are 0-\/55. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of sram. Valid values (0-\/55). \\
+\hline
+{\em buffer} & Buffer to read into. \\
+\hline
+{\em length} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, negative for error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classmy_d_s1307_a89455ed7eee77e6556f91dd488a7b608}\label{classmy_d_s1307_a89455ed7eee77e6556f91dd488a7b608}} 
 \index{myDS1307@{myDS1307}!setAmPm@{setAmPm}}
@@ -805,9 +838,44 @@ It\textquotesingle{}s not recommended to use this, use set\+Full\+Date instead a
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_af3396014570be0a6c496fd7cd8d78319}\label{classmy_d_s1307_af3396014570be0a6c496fd7cd8d78319}} 
+\index{myDS1307@{myDS1307}!writeSram@{writeSram}}
+\index{writeSram@{writeSram}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{writeSram()}{writeSram()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::write\+Sram (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{index,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{const uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Write to the sram. Write to the sram. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if written successfully. If a boundary would be crossed, an error code is returned, and no data is written, if a comms error occurs, an error code will also be returned. 
+
+\begin{DoxyNote}{Note}
+Index\textquotesingle{}s are zero based, so valid values are 0-\/55. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of sram. Valid values (0-\/55); \\
+\hline
+{\em buffer} & Data to write to sram. \\
+\hline
+{\em length} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Retuns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negative for error code. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy_d_s1307_a47640a94bcbfc9f1a1865218549c4bff}\label{classmy_d_s1307_a47640a94bcbfc9f1a1865218549c4bff}} 
+\index{myDS1307@{myDS1307}!ERROR\_BOUNDARY\_CROSSED@{ERROR\_BOUNDARY\_CROSSED}}
+\index{ERROR\_BOUNDARY\_CROSSED@{ERROR\_BOUNDARY\_CROSSED}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_BOUNDARY\_CROSSED}{ERROR\_BOUNDARY\_CROSSED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a9d655471c0c8911e96187245acd137f0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Boundary crossed. Value -\/559. The read / write operation would cross a boundary. 
+
 \mbox{\Hypertarget{classmy_d_s1307_a8e1147555695d1e5b482b52d3e498193}\label{classmy_d_s1307_a8e1147555695d1e5b482b52d3e498193}} 
 \index{myDS1307@{myDS1307}!ERROR\_COMMS\_FAILED@{ERROR\_COMMS\_FAILED}}
 \index{ERROR\_COMMS\_FAILED@{ERROR\_COMMS\_FAILED}!myDS1307@{myDS1307}}
@@ -997,6 +1065,16 @@ Rate 4.\+096 K\+Hz. Set square wave output to 4.\+096 K\+Hz.
 
 
 Rate 8.\+192 K\+Hz. Set square wave output to 8.\+192 K\+Hz. 
+
+\mbox{\Hypertarget{classmy_d_s1307_aae9ce9bdb41a21c303079aa3fc7a75b6}\label{classmy_d_s1307_aae9ce9bdb41a21c303079aa3fc7a75b6}} 
+\index{myDS1307@{myDS1307}!SRAM\_LENGTH@{SRAM\_LENGTH}}
+\index{SRAM\_LENGTH@{SRAM\_LENGTH}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{SRAM\_LENGTH}{SRAM\_LENGTH}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+D\+S1307\+::\+S\+R\+A\+M\+\_\+\+L\+E\+N\+G\+TH = 56\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Length of sram. Length of sram in bytes. 
 
 
 

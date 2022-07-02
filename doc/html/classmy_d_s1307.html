@@ -192,6 +192,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:add8d8324bd4c592b5f10cf2c86090be6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#add8d8324bd4c592b5f10cf2c86090be6">setSquareWaveRate</a> (const uint8_t value)</td></tr>
 <tr class="memdesc:add8d8324bd4c592b5f10cf2c86090be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Square Wave frequency. Set the square wave frequency. Valid values are 0-3, rates are defined as RATE_*. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs an error code is returned.  <a href="classmy_d_s1307.html#add8d8324bd4c592b5f10cf2c86090be6">More...</a><br /></td></tr>
 <tr class="separator:add8d8324bd4c592b5f10cf2c86090be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4f24b69b56aef4ab806e9759edede5"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5">readSram</a> (const uint8_t index, uint8_t *buffer, const uint8_t length)</td></tr>
+<tr class="memdesc:a4d4f24b69b56aef4ab806e9759edede5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read sram. Reads the sram, returns 0 (NO_ERROR) if read okay, otherwise if the read would cross a boundary or if a comms error occurs, an error code is returned. If the read would cross a boundary, no data is read.  <a href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5">More...</a><br /></td></tr>
+<tr class="separator:a4d4f24b69b56aef4ab806e9759edede5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3396014570be0a6c496fd7cd8d78319"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">writeSram</a> (const uint8_t index, uint8_t *buffer, const uint8_t length)</td></tr>
+<tr class="memdesc:af3396014570be0a6c496fd7cd8d78319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the sram. Write to the sram. Returns 0 (NO_ERROR) if written successfully. If a boundary would be crossed, an error code is returned, and no data is written, if a comms error occurs, an error code will also be returned.  <a href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">More...</a><br /></td></tr>
+<tr class="separator:af3396014570be0a6c496fd7cd8d78319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceede7c3875391b59e088c7cc6628686"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">initialize</a> (const bool initI2C=true)</td></tr>
 <tr class="memdesc:aceede7c3875391b59e088c7cc6628686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip. Initialize communications with the chip. Returns 0(NO_ERROR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">More...</a><br /></td></tr>
 <tr class="separator:aceede7c3875391b59e088c7cc6628686"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,6 +252,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a8e1147555695d1e5b482b52d3e498193"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a8e1147555695d1e5b482b52d3e498193">ERROR_COMMS_FAILED</a> = <a class="el" href="my_error_codes_8hpp.html#a98291fb30d3b6b7ffbd46238f444d613">MY_ERROR_MYDS1307_COMMS_CHECK_FAILED</a></td></tr>
 <tr class="memdesc:a8e1147555695d1e5b482b52d3e498193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comms check failed. Value -558. The comms check during initialization failed.  <a href="classmy_d_s1307.html#a8e1147555695d1e5b482b52d3e498193">More...</a><br /></td></tr>
 <tr class="separator:a8e1147555695d1e5b482b52d3e498193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47640a94bcbfc9f1a1865218549c4bff"><td class="memItemLeft" align="right" valign="top">static const int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">ERROR_BOUNDARY_CROSSED</a> = <a class="el" href="my_error_codes_8hpp.html#a9d655471c0c8911e96187245acd137f0">MY_ERROR_MYDS1307_BOUNDARY_CROSSED</a></td></tr>
+<tr class="memdesc:a47640a94bcbfc9f1a1865218549c4bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boundary crossed. Value -559. The read / write operation would cross a boundary.  <a href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">More...</a><br /></td></tr>
+<tr class="separator:a47640a94bcbfc9f1a1865218549c4bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aa6a48c47c663b00f942f277ed94e4a"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a9aa6a48c47c663b00f942f277ed94e4a">RATE_1HZ</a> = 0x00</td></tr>
 <tr class="memdesc:a9aa6a48c47c663b00f942f277ed94e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rate 1 Hz. Set square wave output to 1 Hz.  <a href="classmy_d_s1307.html#a9aa6a48c47c663b00f942f277ed94e4a">More...</a><br /></td></tr>
 <tr class="separator:a9aa6a48c47c663b00f942f277ed94e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,6 +267,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:aa6a643aab4a3f61440dbcb399320edb0"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aa6a643aab4a3f61440dbcb399320edb0">RATE_32KHZ</a> = 0x03</td></tr>
 <tr class="memdesc:aa6a643aab4a3f61440dbcb399320edb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rate 32.768 KHz. Set square wave output to 32.768 KHz.  <a href="classmy_d_s1307.html#aa6a643aab4a3f61440dbcb399320edb0">More...</a><br /></td></tr>
 <tr class="separator:aa6a643aab4a3f61440dbcb399320edb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9ce9bdb41a21c303079aa3fc7a75b6"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aae9ce9bdb41a21c303079aa3fc7a75b6">SRAM_LENGTH</a> = 56</td></tr>
+<tr class="memdesc:aae9ce9bdb41a21c303079aa3fc7a75b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of sram. Length of sram in bytes.  <a href="classmy_d_s1307.html#aae9ce9bdb41a21c303079aa3fc7a75b6">More...</a><br /></td></tr>
+<tr class="separator:aae9ce9bdb41a21c303079aa3fc7a75b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to use a DS1307 real time clock. Class to use a DS1307 Real time clock. Leap year and day of week algorithms taken from: <a href="https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/">https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/</a> . Datasheet: <a href="https://datasheets.maximintegrated.com/en/ds/DS1307.pdf">https://datasheets.maximintegrated.com/en/ds/DS1307.pdf</a>. </p>
@@ -785,6 +797,52 @@ false Year is not a leap year. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a4d4f24b69b56aef4ab806e9759edede5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4f24b69b56aef4ab806e9759edede5">&#9670;&nbsp;</a></span>readSram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myDS1307::readSram </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read sram. Reads the sram, returns 0 (NO_ERROR) if read okay, otherwise if the read would cross a boundary or if a comms error occurs, an error code is returned. If the read would cross a boundary, no data is read. </p>
+<dl class="section note"><dt>Note</dt><dd>Index's are zero based, so valid values are 0-55. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of sram. Valid values (0-55). </td></tr>
+    <tr><td class="paramname">buffer</td><td>Buffer to read into. </td></tr>
+    <tr><td class="paramname">length</td><td>Number of bytes to read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (NO_ERROR) if read okay, negative for error code. </dd></dl>
 
 </div>
 </div>
@@ -1351,7 +1409,77 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
+<a id="af3396014570be0a6c496fd7cd8d78319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3396014570be0a6c496fd7cd8d78319">&#9670;&nbsp;</a></span>writeSram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myDS1307::writeSram </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write to the sram. Write to the sram. Returns 0 (NO_ERROR) if written successfully. If a boundary would be crossed, an error code is returned, and no data is written, if a comms error occurs, an error code will also be returned. </p>
+<dl class="section note"><dt>Note</dt><dd>Index's are zero based, so valid values are 0-55. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Index of sram. Valid values (0-55); </td></tr>
+    <tr><td class="paramname">buffer</td><td>Data to write to sram. </td></tr>
+    <tr><td class="paramname">length</td><td>Number of bytes to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Retuns 0 (NO_ERROR) for okay, negative for error code. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a47640a94bcbfc9f1a1865218549c4bff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47640a94bcbfc9f1a1865218549c4bff">&#9670;&nbsp;</a></span>ERROR_BOUNDARY_CROSSED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int16_t myDS1307::ERROR_BOUNDARY_CROSSED = <a class="el" href="my_error_codes_8hpp.html#a9d655471c0c8911e96187245acd137f0">MY_ERROR_MYDS1307_BOUNDARY_CROSSED</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Boundary crossed. Value -559. The read / write operation would cross a boundary. </p>
+
+</div>
+</div>
 <a id="a8e1147555695d1e5b482b52d3e498193"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e1147555695d1e5b482b52d3e498193">&#9670;&nbsp;</a></span>ERROR_COMMS_FAILED</h2>
 
@@ -1773,6 +1901,30 @@ false Year is not a leap year. </dd></dl>
 </div><div class="memdoc">
 
 <p>Rate 8.192 KHz. Set square wave output to 8.192 KHz. </p>
+
+</div>
+</div>
+<a id="aae9ce9bdb41a21c303079aa3fc7a75b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9ce9bdb41a21c303079aa3fc7a75b6">&#9670;&nbsp;</a></span>SRAM_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t myDS1307::SRAM_LENGTH = 56</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Length of sram. Length of sram in bytes. </p>
 
 </div>
 </div>

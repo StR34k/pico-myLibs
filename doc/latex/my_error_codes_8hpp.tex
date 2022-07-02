@@ -5,8 +5,7 @@
 Define all error codes used in pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -153,7 +152,9 @@ This graph shows which files directly or indirectly include this file\+:
 \#define \mbox{\hyperlink{my_error_codes_8hpp_acaa15a4bf4fae8da2e90730049de0ef0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE}}~-\/557
 \begin{DoxyCompactList}\small\item\em Invalid rate. Invalid rate value was passed. Valid values (R\+A\+T\+E\+\_\+$\ast$) (0-\/3). \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~-\/558
-\begin{DoxyCompactList}\small\item\em Comms check failed. The comms check during initialization failed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Comms check failed. The comms check during initialization failed. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a9d655471c0c8911e96187245acd137f0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED}}~-\/559
+\begin{DoxyCompactList}\small\item\em Boundary crossed. The read / write action would cross a boundary. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -475,6 +476,16 @@ No humidity. The chip doesn\textquotesingle{}t have humidity.
 
 
 No response. The I2C address didn\textquotesingle{}t respond. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a9d655471c0c8911e96187245acd137f0}\label{my_error_codes_8hpp_a9d655471c0c8911e96187245acd137f0}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_BOUNDARY\_CROSSED@{MY\_ERROR\_MYDS1307\_BOUNDARY\_CROSSED}}
+\index{MY\_ERROR\_MYDS1307\_BOUNDARY\_CROSSED@{MY\_ERROR\_MYDS1307\_BOUNDARY\_CROSSED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_BOUNDARY\_CROSSED}{MY\_ERROR\_MYDS1307\_BOUNDARY\_CROSSED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED~-\/559}
+
+
+
+Boundary crossed. The read / write action would cross a boundary. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}\label{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED@{MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED}}
