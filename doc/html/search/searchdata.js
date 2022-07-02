@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "m",
   3: "cm",
   4: "bcdegimprstuvw",
-  5: "_cefhlmnopst",
+  5: "_cefhlmnoprst",
   6: "_lm"
 };
 

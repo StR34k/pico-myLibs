@@ -118,6 +118,8 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em I2C port alreay initialized. The I2C port was already initialized when initialize was called. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a449a5326c6c16744831175b982a84f22}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}~-\/453
 \begin{DoxyCompactList}\small\item\em I2C port not initialized. The I2C port was already deinitialized when deinitialize was called. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}}~-\/454
+\begin{DoxyCompactList}\small\item\em The I2C address is not responding. The device at the I2C address is not responding. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}~-\/500
 \begin{DoxyCompactList}\small\item\em Invalid I2C address. The I2C address provided is invalid. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_aa0ed10176b27701107ab69ddfe67de52}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+SE}}~-\/501
@@ -133,7 +135,25 @@ This graph shows which files directly or indirectly include this file\+:
 \#define \mbox{\hyperlink{my_error_codes_8hpp_abb585545ee82ef1ed1560f5c3a47f1f3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+O\+SR}}~-\/506
 \begin{DoxyCompactList}\small\item\em Invalid over sample rate. An invalid Over Sample Rate was provided. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a825d309de2b76d1525911ba1a05c08d7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+B\+Mx280\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+DE}}~-\/507
-\begin{DoxyCompactList}\small\item\em Invalid mode. An invalid mode was passed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Invalid mode. An invalid mode was passed. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a41098ce914489ceedd42ebd0e3a59cc1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+C\+O\+N\+DS}}~-\/550
+\begin{DoxyCompactList}\small\item\em Invalid seconds. Invalid seconds was passed. Valid values (0-\/59). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_afc02b32a71973abdf7e2f24d20414482}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+N\+U\+T\+ES}}~-\/551
+\begin{DoxyCompactList}\small\item\em Invalid minutes. Invalid minutes value was passed. Valid values (0-\/59). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a7c86f942105825525ac778f7292eb213}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+O\+U\+RS}}~-\/552
+\begin{DoxyCompactList}\small\item\em Invalid hours. Invalid hours value was passed. Valid values (0-\/23 in 24h mode, 1-\/12 in 12h mode) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a1e49bd046b48c5b32cb59c1069d793b8}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+AY}}~-\/553
+\begin{DoxyCompactList}\small\item\em Invalid day of the week. Invalid day value was passed. Valid values (1-\/7). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a257408f5cee968af8d4fdd002049e80a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+A\+TE}}~-\/554
+\begin{DoxyCompactList}\small\item\em Invalid date. Invalid date value was passed. Valid values (1-\/31). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a5a14737b6900b1dda8720108613f2e91}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+N\+TH}}~-\/555
+\begin{DoxyCompactList}\small\item\em Invalid month. Invalid month value was passed. Valid values (1-\/12). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a3157240dbe198ab028061a25fea74a1f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+Y\+E\+AR}}~-\/556
+\begin{DoxyCompactList}\small\item\em Invalid year. Invalid year value was passed. Valid values (2000-\/2099) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_acaa15a4bf4fae8da2e90730049de0ef0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE}}~-\/557
+\begin{DoxyCompactList}\small\item\em Invalid rate. Invalid rate value was passed. Valid values (R\+A\+T\+E\+\_\+$\ast$) (0-\/3). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~-\/558
+\begin{DoxyCompactList}\small\item\em Comms check failed. The comms check during initialization failed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -455,6 +475,106 @@ No humidity. The chip doesn\textquotesingle{}t have humidity.
 
 
 No response. The I2C address didn\textquotesingle{}t respond. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}\label{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED@{MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED}}
+\index{MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED@{MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED}{MY\_ERROR\_MYDS1307\_COMMS\_CHECK\_FAILED}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED~-\/558}
+
+
+
+Comms check failed. The comms check during initialization failed. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a257408f5cee968af8d4fdd002049e80a}\label{my_error_codes_8hpp_a257408f5cee968af8d4fdd002049e80a}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_DATE@{MY\_ERROR\_MYDS1307\_INVALID\_DATE}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_DATE@{MY\_ERROR\_MYDS1307\_INVALID\_DATE}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_DATE}{MY\_ERROR\_MYDS1307\_INVALID\_DATE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+A\+TE~-\/554}
+
+
+
+Invalid date. Invalid date value was passed. Valid values (1-\/31). 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a1e49bd046b48c5b32cb59c1069d793b8}\label{my_error_codes_8hpp_a1e49bd046b48c5b32cb59c1069d793b8}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_DAY@{MY\_ERROR\_MYDS1307\_INVALID\_DAY}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_DAY@{MY\_ERROR\_MYDS1307\_INVALID\_DAY}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_DAY}{MY\_ERROR\_MYDS1307\_INVALID\_DAY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+AY~-\/553}
+
+
+
+Invalid day of the week. Invalid day value was passed. Valid values (1-\/7). 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a7c86f942105825525ac778f7292eb213}\label{my_error_codes_8hpp_a7c86f942105825525ac778f7292eb213}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_HOURS@{MY\_ERROR\_MYDS1307\_INVALID\_HOURS}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_HOURS@{MY\_ERROR\_MYDS1307\_INVALID\_HOURS}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_HOURS}{MY\_ERROR\_MYDS1307\_INVALID\_HOURS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+O\+U\+RS~-\/552}
+
+
+
+Invalid hours. Invalid hours value was passed. Valid values (0-\/23 in 24h mode, 1-\/12 in 12h mode) 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_afc02b32a71973abdf7e2f24d20414482}\label{my_error_codes_8hpp_afc02b32a71973abdf7e2f24d20414482}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_MINUTES@{MY\_ERROR\_MYDS1307\_INVALID\_MINUTES}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_MINUTES@{MY\_ERROR\_MYDS1307\_INVALID\_MINUTES}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_MINUTES}{MY\_ERROR\_MYDS1307\_INVALID\_MINUTES}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+N\+U\+T\+ES~-\/551}
+
+
+
+Invalid minutes. Invalid minutes value was passed. Valid values (0-\/59). 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a5a14737b6900b1dda8720108613f2e91}\label{my_error_codes_8hpp_a5a14737b6900b1dda8720108613f2e91}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_MONTH@{MY\_ERROR\_MYDS1307\_INVALID\_MONTH}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_MONTH@{MY\_ERROR\_MYDS1307\_INVALID\_MONTH}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_MONTH}{MY\_ERROR\_MYDS1307\_INVALID\_MONTH}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+N\+TH~-\/555}
+
+
+
+Invalid month. Invalid month value was passed. Valid values (1-\/12). 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_acaa15a4bf4fae8da2e90730049de0ef0}\label{my_error_codes_8hpp_acaa15a4bf4fae8da2e90730049de0ef0}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_RATE@{MY\_ERROR\_MYDS1307\_INVALID\_RATE}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_RATE@{MY\_ERROR\_MYDS1307\_INVALID\_RATE}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_RATE}{MY\_ERROR\_MYDS1307\_INVALID\_RATE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE~-\/557}
+
+
+
+Invalid rate. Invalid rate value was passed. Valid values (R\+A\+T\+E\+\_\+$\ast$) (0-\/3). 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a41098ce914489ceedd42ebd0e3a59cc1}\label{my_error_codes_8hpp_a41098ce914489ceedd42ebd0e3a59cc1}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_SECONDS@{MY\_ERROR\_MYDS1307\_INVALID\_SECONDS}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_SECONDS@{MY\_ERROR\_MYDS1307\_INVALID\_SECONDS}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_SECONDS}{MY\_ERROR\_MYDS1307\_INVALID\_SECONDS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+C\+O\+N\+DS~-\/550}
+
+
+
+Invalid seconds. Invalid seconds was passed. Valid values (0-\/59). 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a3157240dbe198ab028061a25fea74a1f}\label{my_error_codes_8hpp_a3157240dbe198ab028061a25fea74a1f}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYDS1307\_INVALID\_YEAR@{MY\_ERROR\_MYDS1307\_INVALID\_YEAR}}
+\index{MY\_ERROR\_MYDS1307\_INVALID\_YEAR@{MY\_ERROR\_MYDS1307\_INVALID\_YEAR}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYDS1307\_INVALID\_YEAR}{MY\_ERROR\_MYDS1307\_INVALID\_YEAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+Y\+E\+AR~-\/556}
+
+
+
+Invalid year. Invalid year value was passed. Valid values (2000-\/2099) 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}\label{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYI2C\_ADDRESS\_NOT\_RESPONDING@{MY\_ERROR\_MYI2C\_ADDRESS\_NOT\_RESPONDING}}
+\index{MY\_ERROR\_MYI2C\_ADDRESS\_NOT\_RESPONDING@{MY\_ERROR\_MYI2C\_ADDRESS\_NOT\_RESPONDING}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYI2C\_ADDRESS\_NOT\_RESPONDING}{MY\_ERROR\_MYI2C\_ADDRESS\_NOT\_RESPONDING}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG~-\/454}
+
+
+
+The I2C address is not responding. The device at the I2C address is not responding. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}\label{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYI2C\_INITIALIZED@{MY\_ERROR\_MYI2C\_INITIALIZED}}

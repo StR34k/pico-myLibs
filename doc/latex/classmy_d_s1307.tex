@@ -1,0 +1,1005 @@
+\hypertarget{classmy_d_s1307}{}\doxysection{my\+D\+S1307 Class Reference}
+\label{classmy_d_s1307}\index{myDS1307@{myDS1307}}
+
+
+Class to use a D\+S1307 real time clock. Class to use a D\+S1307 Real time clock. Leap year and day of week algorithms taken from\+: \href{https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/}{\texttt{ https\+://artofmemory.\+com/blog/how-\/to-\/calculate-\/the-\/day-\/of-\/the-\/week/}} . Datasheet\+: \href{https://datasheets.maximintegrated.com/en/ds/DS1307.pdf}{\texttt{ https\+://datasheets.\+maximintegrated.\+com/en/ds/\+D\+S1307.\+pdf}}.  
+
+
+
+
+{\ttfamily \#include $<$my\+D\+S1307.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_d_s1307_aee28f7e09dfae90e32ac7356c42c00e5}{my\+D\+S1307}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t sda\+Pin, const uint8\+\_\+t scl\+Pin)
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a5723336a672619356dc95746778a2a5a}{get\+Day\+Of\+Week}} (const uint16\+\_\+t year, const uint8\+\_\+t month, const uint8\+\_\+t day)
+\begin{DoxyCompactList}\small\item\em Get the Day Of Week. Returns the day of the week given a date. Returns 1=Sunday..., otherwise if an invalid date is given, an error code is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy_d_s1307_acce49982f8ea405492fc4a8c426ccb75}{is\+Leap\+Year}} (const uint16\+\_\+t year)
+\begin{DoxyCompactList}\small\item\em Check if leap year. Checks a given year if it\textquotesingle{}s a leap year. Returns true if it\textquotesingle{}s a leapyear. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ab3622f5b07744ee18a62955cb63a2f39}{is\+Valid\+Date}} (const uint16\+\_\+t year, const uint8\+\_\+t month, const uint8\+\_\+t day)
+\begin{DoxyCompactList}\small\item\em Check if a date is valid. Checks a given date to see if it\textquotesingle{}s valid, will return an error code with the offending value if it\textquotesingle{}s invalid. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a93905de4359a29d2a37e12c247db9c76}{is\+Valid\+Date\+Time}} (const datetime\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a datetime\+\_\+t Validate a datetime\+\_\+t value. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, otherwise an error code is returned containing the error code for the value that failed. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a18fc0b52b8a0b52af33c60c248457ed5}{get\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Get clock enabled. Read and return the clock inhibit bit. Returns 0 for clock enabled, 1 for clock inhibited, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a7dc6e56766c251da5e5140880c9c61cc}{set\+Enabled}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Set clock enabled. Set the clock inhibit bit. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a5fd782c211fe8a13436c8717f4a00ba2}{get\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Get the hour mode. Get the 12H / 24H mode and return it. Returns 1 for 12H mode, 0 for 24H mode, or if a comms error occured, it returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ac9a15b32aa82ec0d782d6d0736be3d61}{set\+Mode}} (const bool is12h)
+\begin{DoxyCompactList}\small\item\em Set the hour mode. Set the 12H / 24H operating mode. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if a comms error occurs, an error code is returned. This will recalculate the hours to retain the proper time. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a50631682732a9fb57710ff623abbcb71}{get\+Seconds}} ()
+\begin{DoxyCompactList}\small\item\em Get the Seconds. Read and return the seconds. If a comms error occurs then a error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a162b5129d2826670c3c4656dac1c221e}{set\+Seconds}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Seconds. Set the seconds value, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aa5206aa7ab257b39653f41bb756a1846}{get\+Minutes}} ()
+\begin{DoxyCompactList}\small\item\em Get the Minutes. Read and return the minutes. If a comms error occurs, then an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aca0e7bbf07863b8fa918c50067275960}{set\+Minutes}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Minutes. Set the minutes. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs, or an invalid value is passed an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a5b0ea25d8fbf232e7d224810e1e8193e}{get\+Hour12H}} ()
+\begin{DoxyCompactList}\small\item\em Get the hours in 12 hour format. Return the hours in 12 hour format. If a communications error occurs, then an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a6eacd356da66068be613b537cd96f186}{set\+Hour12H}} (const uint8\+\_\+t hour, const bool is\+PM)
+\begin{DoxyCompactList}\small\item\em Set the Hour, 12h format. Set the hour in 12 hour format. returns 0 if set okay, otherwise if an invalid hour is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a5892d854ed812dd002e9a4f0b92e2dfb}{get\+Hour24H}} ()
+\begin{DoxyCompactList}\small\item\em Get the hours in 24 hour format. Returns the hours in 24 hour format. If a comm error occurs, then an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a19482130b7e233dfe2f3603958ae0b2b}{set\+Hour24H}} (const uint8\+\_\+t hour)
+\begin{DoxyCompactList}\small\item\em Set the hours in 24 hour format. Set the hour in 24 hour format. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, other wise if an invalid parameter is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ae5e413958627d449e1a5c5bcaa7017e4}{set\+Full\+Time12h}} (const uint8\+\_\+t hour, const bool is\+PM, const uint8\+\_\+t minute, const uint8\+\_\+t second)
+\begin{DoxyCompactList}\small\item\em Set the full time. 12h format. Sets the full time in 12h format. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a1b7e4e464f743770d201f5f7554085bd}{set\+Full\+Time24h}} (const uint8\+\_\+t hour, const uint8\+\_\+t minute, const uint8\+\_\+t second)
+\begin{DoxyCompactList}\small\item\em Set the time, 24 hour format. Sets the full time. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value, or a comms error occurs, it will return an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aceb983b925e2798e418d414ba1dc87eb}{get\+Am\+Pm}} ()
+\begin{DoxyCompactList}\small\item\em Get if it\textquotesingle{}s A\+M/\+PM. Gets am/pm and returns it, 0 for AM, 1 for PM, if a comms error occurs, then an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a89455ed7eee77e6556f91dd488a7b608}{set\+Am\+Pm}} (const bool is\+PM)
+\begin{DoxyCompactList}\small\item\em Set the A\+M/\+PM bit. Sets am / pm bit if in 12h mode, only sets it if not set. If in 24h mode, will increase or decrease the hour depending on the current time, and requested am/pm mode. Returns 0 if set okay, otherwise if a comms error occurs, it will return an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a010375b740629d138b8d914c1456d667}{get\+Day}} ()
+\begin{DoxyCompactList}\small\item\em Get the day of week. Read and return the day of week. This is user programable. So when we set it we set Sunday equal to 1. Until it\textquotesingle{}s set, we can\textquotesingle{}t confirm what it is, since the datasheet doesn\textquotesingle{}t list a default value. If a comms error occurs during read, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_accb181edeff24b293442b5fc3c6799b8}{set\+Day}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the day of week. Sets the day of week, since this is user programmable, we set 1 to equal sunday for the purposes of this library. It isn\textquotesingle{}t recommended to use this, as it\textquotesingle{}s included for completeness. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a43fc1ced7d175e8efaeabf70501b3223}{get\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Get the date (day of month) Read and return the day of month. Positve values are the date, while if an error occurs during comms, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a453fa9beb50b6cc910f10a173271f254}{set\+Date}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the day of month (date). Sets the day of month. Invalid values here will cause invalid operation. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, or if an invalid value is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a98b269447bc46d4ba28e64fddce32c74}{get\+Month}} ()
+\begin{DoxyCompactList}\small\item\em Get the month. Read and return the month. Positive values are the month number, with 01 being January. if an error occurs during comms, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aa2a80a51a49b0edc9cae21e3b9142338}{set\+Month}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Month. Sets the month value. It\textquotesingle{}s not recommended to use this, as it\textquotesingle{}s included for completeness. An invalid value here in respect to day of month, will cause invalid operation. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a88c39e6dac59cac1c684005bfb1add44}{get\+Year}} ()
+\begin{DoxyCompactList}\small\item\em Get the year. Read and return the year. Positive values are the year, if an error occurs during comms, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_afc8640f05747c7c74cbc06585caac22c}{set\+Year}} (const uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Year. Set the year value. It\textquotesingle{}s not recommended to use this, as it\textquotesingle{}s included for completeness. An invalid value here in respect to month and date, will cause invalid operation. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a76d3e89da45cd2430336a39a02e3df22}{set\+Full\+Date}} (const uint16\+\_\+t year, const uint8\+\_\+t month, const uint8\+\_\+t day)
+\begin{DoxyCompactList}\small\item\em Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set the day of week as well. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid date is passed, or a comms error occurs, it will return an error code. \end{DoxyCompactList}\item 
+datetime\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a7bf4319024a7017d8efbdd582db759e6}{get\+Date\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the current date / time. Reads and returns the current date / time as a pico datetime\+\_\+t struct. If a comms error occurs then all the values will be set to -\/1, except for the year, which will be set to the error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ac9bd994edcffa07d087048752ded5ce8}{set\+Date\+Time}} (const datetime\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the date and time. Sets the date and time from a datetime\+\_\+t value. Returns 0 if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aca34a34d02530e4fea87512aa33b5620}{get\+Square\+Wave\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Get if the square wave enabled. Gets if the square wave out put is enabled. Returns 0 if disabled, returns 1 if enabled, otherwise if a comms error occurs, an error code will be returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ab3c457bc995a00f71bfc849a64faaa47}{set\+Square\+Wave\+Enabled}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Set square wave enabled. Enables / disables the square wave pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs, an error code will be returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aef81522bcc8adabc7e26901f3fa3edd8}{get\+Square\+Wave\+Idle}} ()
+\begin{DoxyCompactList}\small\item\em Get the Square Wave idle state. Returns the square wave pin state when square wave is disabled. Return value of 0 is idle low, a value of 1 is idle high. If a comms error occurs an error code will be returned,. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_af964abdc925e23d83d853d3c5a460583}{set\+Square\+Wave\+Idle}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Set the Square Wave Idle state. Sets the square wave pin state when square wave is disabled. A value of false means that the pin will idle low, a value of true means the pin will idle high. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs, an error code will be returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_abb71443fb7360c5c18549584ed9e1dd4}{get\+Square\+Wave\+Rate}} ()
+\begin{DoxyCompactList}\small\item\em Get the Square Wave frequency. Returns the square wave frequency. Positive values, including zero is the rate (one of the R\+A\+T\+E\+\_\+$\ast$ values), otherwise if a comms error occurs an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_add8d8324bd4c592b5f10cf2c86090be6}{set\+Square\+Wave\+Rate}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Square Wave frequency. Set the square wave frequency. Valid values are 0-\/3, rates are defined as R\+A\+T\+E\+\_\+$\ast$. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aceede7c3875391b59e088c7cc6628686}{initialize}} (const bool init\+I2C=true)
+\begin{DoxyCompactList}\small\item\em Initialize the chip. Initialize communications with the chip. Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a49bae62e2af08ec7342238e13c851920}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\begin{DoxyCompactList}\small\item\em No error. Value 0. No error occured. \end{DoxyCompactList}\item 
+const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_adcf699eebba4e9381f7d0ee1d1849fc5}{E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}} = \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\begin{DoxyCompactList}\small\item\em Timeout. Value -\/7. The device timedout during read / write operation. \end{DoxyCompactList}\item 
+const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a091628e67e1c46666f3a0b598d630e73}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid S\+DA pin. Value -\/450. Invalid S\+DA pin provided. \end{DoxyCompactList}\item 
+const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aecec117a4ef3e4f1fdc29047c3693d3f}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid S\+CL pin. Value -\/451. Invalid S\+CL pin provided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ac1f14eab4a099ab9eac7633e58c3844d}{E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\begin{DoxyCompactList}\small\item\em I2C already initialized. Value -\/452. The I2C port was already initialized when initialize was called. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a961345eda13a14cf382fce5c20c653f1}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}} = \mbox{\hyperlink{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em I2C address not responding. Value -\/453. The chip is not responding. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a1030405e991f74ee6f2c851123851b76}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+C\+O\+N\+DS}} = \mbox{\hyperlink{my_error_codes_8hpp_a41098ce914489ceedd42ebd0e3a59cc1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+C\+O\+N\+DS}}
+\begin{DoxyCompactList}\small\item\em Invalid seconds. Value -\/550. Invalid seconds value was passed. Valid values (0-\/59). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a4fe223e87777511a4ecf8ede340a131c}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+N\+U\+T\+ES}} = \mbox{\hyperlink{my_error_codes_8hpp_afc02b32a71973abdf7e2f24d20414482}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+N\+U\+T\+ES}}
+\begin{DoxyCompactList}\small\item\em Invalid minutes. Value -\/551. Invalid minutes value was passed. Valid values (0-\/59). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a63760132f239f15c666904f213dec59e}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+O\+U\+RS}} = \mbox{\hyperlink{my_error_codes_8hpp_a7c86f942105825525ac778f7292eb213}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+O\+U\+RS}}
+\begin{DoxyCompactList}\small\item\em Invalid hours. Value -\/552. Invalid hours value was passed. Valid values (0-\/23 in 24h mode, 1-\/12 in 12h mode). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a5149fc97dcce904a3e09b4f623c64d71}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+AY}} = \mbox{\hyperlink{my_error_codes_8hpp_a1e49bd046b48c5b32cb59c1069d793b8}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+AY}}
+\begin{DoxyCompactList}\small\item\em Invalid day of the week. Value -\/553. Invalid day value was passed. Valid values (1-\/7). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aaf4de534364a56d8ccd112921aa8a2c2}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+A\+TE}} = \mbox{\hyperlink{my_error_codes_8hpp_a257408f5cee968af8d4fdd002049e80a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+A\+TE}}
+\begin{DoxyCompactList}\small\item\em Invalid date. Value -\/554. Invalid date value was passed. Valid values (1-\/31). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ac433e0ee0a78df0a1afc38ffb4544530}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+N\+TH}} = \mbox{\hyperlink{my_error_codes_8hpp_a5a14737b6900b1dda8720108613f2e91}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+N\+TH}}
+\begin{DoxyCompactList}\small\item\em Invalid month. Value -\/555. Invalid month value was passed. Valid values (1-\/12). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ae5d27caf482cf9e42ee6671f2c50093a}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+Y\+E\+AR}} = \mbox{\hyperlink{my_error_codes_8hpp_a3157240dbe198ab028061a25fea74a1f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+Y\+E\+AR}}
+\begin{DoxyCompactList}\small\item\em Invalid year. Value -\/556. Invalid year value was passed. Valid values (2000-\/2099). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a0285eeb58b3f50bf54d0c66871f9caf8}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE}} = \mbox{\hyperlink{my_error_codes_8hpp_acaa15a4bf4fae8da2e90730049de0ef0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE}}
+\begin{DoxyCompactList}\small\item\em Invalid rate. Value -\/557. Invalid rate was passed. Valid values (R\+A\+T\+E\+\_\+$\ast$) (0-\/3). \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a8e1147555695d1e5b482b52d3e498193}{E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+S\+\_\+\+F\+A\+I\+L\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}
+\begin{DoxyCompactList}\small\item\em Comms check failed. Value -\/558. The comms check during initialization failed. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a9aa6a48c47c663b00f942f277ed94e4a}{R\+A\+T\+E\+\_\+1\+HZ}} = 0x00
+\begin{DoxyCompactList}\small\item\em Rate 1 Hz. Set square wave output to 1 Hz. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_a7eda929a5e6cac97fb418699d9a8af7f}{R\+A\+T\+E\+\_\+4\+K\+HZ}} = 0x01
+\begin{DoxyCompactList}\small\item\em Rate 4.\+096 K\+Hz. Set square wave output to 4.\+096 K\+Hz. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_ab74f0a412a6d93a15f5f8563153dd33d}{R\+A\+T\+E\+\_\+8\+K\+HZ}} = 0x02
+\begin{DoxyCompactList}\small\item\em Rate 8.\+192 K\+Hz. Set square wave output to 8.\+192 K\+Hz. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_d_s1307_aa6a643aab4a3f61440dbcb399320edb0}{R\+A\+T\+E\+\_\+32\+K\+HZ}} = 0x03
+\begin{DoxyCompactList}\small\item\em Rate 32.\+768 K\+Hz. Set square wave output to 32.\+768 K\+Hz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to use a D\+S1307 real time clock. Class to use a D\+S1307 Real time clock. Leap year and day of week algorithms taken from\+: \href{https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/}{\texttt{ https\+://artofmemory.\+com/blog/how-\/to-\/calculate-\/the-\/day-\/of-\/the-\/week/}} . Datasheet\+: \href{https://datasheets.maximintegrated.com/en/ds/DS1307.pdf}{\texttt{ https\+://datasheets.\+maximintegrated.\+com/en/ds/\+D\+S1307.\+pdf}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_d_s1307_aee28f7e09dfae90e32ac7356c42c00e5}\label{classmy_d_s1307_aee28f7e09dfae90e32ac7356c42c00e5}} 
+\index{myDS1307@{myDS1307}!myDS1307@{myDS1307}}
+\index{myDS1307@{myDS1307}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{myDS1307()}{myDS1307()}}
+{\footnotesize\ttfamily my\+D\+S1307\+::my\+D\+S1307 (\begin{DoxyParamCaption}\item[{i2c\+\_\+inst\+\_\+t $\ast$}]{i2c\+Port,  }\item[{const uint8\+\_\+t}]{sda\+Pin,  }\item[{const uint8\+\_\+t}]{scl\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy_d_s1307_aceb983b925e2798e418d414ba1dc87eb}\label{classmy_d_s1307_aceb983b925e2798e418d414ba1dc87eb}} 
+\index{myDS1307@{myDS1307}!getAmPm@{getAmPm}}
+\index{getAmPm@{getAmPm}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getAmPm()}{getAmPm()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Am\+Pm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get if it\textquotesingle{}s A\+M/\+PM. Gets am/pm and returns it, 0 for AM, 1 for PM, if a comms error occurs, then an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t 0=AM, 1=PM, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a43fc1ced7d175e8efaeabf70501b3223}\label{classmy_d_s1307_a43fc1ced7d175e8efaeabf70501b3223}} 
+\index{myDS1307@{myDS1307}!getDate@{getDate}}
+\index{getDate@{getDate}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the date (day of month) Read and return the day of month. Positve values are the date, while if an error occurs during comms, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (1-\/31) day of month, negative is error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a7bf4319024a7017d8efbdd582db759e6}\label{classmy_d_s1307_a7bf4319024a7017d8efbdd582db759e6}} 
+\index{myDS1307@{myDS1307}!getDateTime@{getDateTime}}
+\index{getDateTime@{getDateTime}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getDateTime()}{getDateTime()}}
+{\footnotesize\ttfamily datetime\+\_\+t my\+D\+S1307\+::get\+Date\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current date / time. Reads and returns the current date / time as a pico datetime\+\_\+t struct. If a comms error occurs then all the values will be set to -\/1, except for the year, which will be set to the error code. 
+
+\begin{DoxyNote}{Note}
+Centuries are not tracked, so I\textquotesingle{}m assuimg 00=2000. Sorry for introducing a year 2099 bug. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+datetime\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a010375b740629d138b8d914c1456d667}\label{classmy_d_s1307_a010375b740629d138b8d914c1456d667}} 
+\index{myDS1307@{myDS1307}!getDay@{getDay}}
+\index{getDay@{getDay}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getDay()}{getDay()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the day of week. Read and return the day of week. This is user programable. So when we set it we set Sunday equal to 1. Until it\textquotesingle{}s set, we can\textquotesingle{}t confirm what it is, since the datasheet doesn\textquotesingle{}t list a default value. If a comms error occurs during read, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive(1-\/7) is the day, negative is error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a5723336a672619356dc95746778a2a5a}\label{classmy_d_s1307_a5723336a672619356dc95746778a2a5a}} 
+\index{myDS1307@{myDS1307}!getDayOfWeek@{getDayOfWeek}}
+\index{getDayOfWeek@{getDayOfWeek}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getDayOfWeek()}{getDayOfWeek()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Day\+Of\+Week (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{year,  }\item[{const uint8\+\_\+t}]{month,  }\item[{const uint8\+\_\+t}]{day }\end{DoxyParamCaption})}
+
+
+
+Get the Day Of Week. Returns the day of the week given a date. Returns 1=Sunday..., otherwise if an invalid date is given, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year of the date. Valid values (1700-\/2399). \\
+\hline
+{\em month} & Month of the date. Valid values (1-\/12). \\
+\hline
+{\em day} & Day of month. Valid values (1-\/\mbox{[}28-\/31\mbox{]}) based on month and year. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns positive for day of week, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a18fc0b52b8a0b52af33c60c248457ed5}\label{classmy_d_s1307_a18fc0b52b8a0b52af33c60c248457ed5}} 
+\index{myDS1307@{myDS1307}!getEnabled@{getEnabled}}
+\index{getEnabled@{getEnabled}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getEnabled()}{getEnabled()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get clock enabled. Read and return the clock inhibit bit. Returns 0 for clock enabled, 1 for clock inhibited, otherwise if a comms error occurs, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 for clock enabled, 1 for clock disabled, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a5b0ea25d8fbf232e7d224810e1e8193e}\label{classmy_d_s1307_a5b0ea25d8fbf232e7d224810e1e8193e}} 
+\index{myDS1307@{myDS1307}!getHour12H@{getHour12H}}
+\index{getHour12H@{getHour12H}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getHour12H()}{getHour12H()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Hour12H (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the hours in 12 hour format. Return the hours in 12 hour format. If a communications error occurs, then an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (1-\/12) is the hour. Negative is error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a5892d854ed812dd002e9a4f0b92e2dfb}\label{classmy_d_s1307_a5892d854ed812dd002e9a4f0b92e2dfb}} 
+\index{myDS1307@{myDS1307}!getHour24H@{getHour24H}}
+\index{getHour24H@{getHour24H}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getHour24H()}{getHour24H()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Hour24H (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the hours in 24 hour format. Returns the hours in 24 hour format. If a comm error occurs, then an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (0-\/23) is the hour. Negative is error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_aa5206aa7ab257b39653f41bb756a1846}\label{classmy_d_s1307_aa5206aa7ab257b39653f41bb756a1846}} 
+\index{myDS1307@{myDS1307}!getMinutes@{getMinutes}}
+\index{getMinutes@{getMinutes}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getMinutes()}{getMinutes()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Minutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Minutes. Read and return the minutes. If a comms error occurs, then an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (00-\/59) is the minutes, negative is an error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a5fd782c211fe8a13436c8717f4a00ba2}\label{classmy_d_s1307_a5fd782c211fe8a13436c8717f4a00ba2}} 
+\index{myDS1307@{myDS1307}!getMode@{getMode}}
+\index{getMode@{getMode}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the hour mode. Get the 12H / 24H mode and return it. Returns 1 for 12H mode, 0 for 24H mode, or if a comms error occured, it returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 1 for 12H mode, 0 for 24H mode, or negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a98b269447bc46d4ba28e64fddce32c74}\label{classmy_d_s1307_a98b269447bc46d4ba28e64fddce32c74}} 
+\index{myDS1307@{myDS1307}!getMonth@{getMonth}}
+\index{getMonth@{getMonth}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getMonth()}{getMonth()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the month. Read and return the month. Positive values are the month number, with 01 being January. if an error occurs during comms, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (1-\/12) month, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a50631682732a9fb57710ff623abbcb71}\label{classmy_d_s1307_a50631682732a9fb57710ff623abbcb71}} 
+\index{myDS1307@{myDS1307}!getSeconds@{getSeconds}}
+\index{getSeconds@{getSeconds}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getSeconds()}{getSeconds()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Seconds. Read and return the seconds. If a comms error occurs then a error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (00-\/59) is the seconds, negative is an error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_aca34a34d02530e4fea87512aa33b5620}\label{classmy_d_s1307_aca34a34d02530e4fea87512aa33b5620}} 
+\index{myDS1307@{myDS1307}!getSquareWaveEnabled@{getSquareWaveEnabled}}
+\index{getSquareWaveEnabled@{getSquareWaveEnabled}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getSquareWaveEnabled()}{getSquareWaveEnabled()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Square\+Wave\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get if the square wave enabled. Gets if the square wave out put is enabled. Returns 0 if disabled, returns 1 if enabled, otherwise if a comms error occurs, an error code will be returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 = disabled, 1 = enabled, negative is error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_aef81522bcc8adabc7e26901f3fa3edd8}\label{classmy_d_s1307_aef81522bcc8adabc7e26901f3fa3edd8}} 
+\index{myDS1307@{myDS1307}!getSquareWaveIdle@{getSquareWaveIdle}}
+\index{getSquareWaveIdle@{getSquareWaveIdle}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getSquareWaveIdle()}{getSquareWaveIdle()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Square\+Wave\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Square Wave idle state. Returns the square wave pin state when square wave is disabled. Return value of 0 is idle low, a value of 1 is idle high. If a comms error occurs an error code will be returned,. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 = Idle low, 1 = Idle high, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_abb71443fb7360c5c18549584ed9e1dd4}\label{classmy_d_s1307_abb71443fb7360c5c18549584ed9e1dd4}} 
+\index{myDS1307@{myDS1307}!getSquareWaveRate@{getSquareWaveRate}}
+\index{getSquareWaveRate@{getSquareWaveRate}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getSquareWaveRate()}{getSquareWaveRate()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Square\+Wave\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Square Wave frequency. Returns the square wave frequency. Positive values, including zero is the rate (one of the R\+A\+T\+E\+\_\+$\ast$ values), otherwise if a comms error occurs an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive (including 0) is the rate, negative for an error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a88c39e6dac59cac1c684005bfb1add44}\label{classmy_d_s1307_a88c39e6dac59cac1c684005bfb1add44}} 
+\index{myDS1307@{myDS1307}!getYear@{getYear}}
+\index{getYear@{getYear}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the year. Read and return the year. Positive values are the year, if an error occurs during comms, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+Centuries are not tracked, so I\textquotesingle{}m assuimg 00=2000. Sorry for introducing a year 2099 bug. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positve is the year, negative is an error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_aceede7c3875391b59e088c7cc6628686}\label{classmy_d_s1307_aceede7c3875391b59e088c7cc6628686}} 
+\index{myDS1307@{myDS1307}!initialize@{initialize}}
+\index{initialize@{initialize}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::initialize (\begin{DoxyParamCaption}\item[{const bool}]{init\+I2C = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Initialize the chip. Initialize communications with the chip. Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+I2c} & True = init the i2c bus, False = Don\textquotesingle{}t init i2c bus, assumes already init. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_acce49982f8ea405492fc4a8c426ccb75}\label{classmy_d_s1307_acce49982f8ea405492fc4a8c426ccb75}} 
+\index{myDS1307@{myDS1307}!isLeapYear@{isLeapYear}}
+\index{isLeapYear@{isLeapYear}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{isLeapYear()}{isLeapYear()}}
+{\footnotesize\ttfamily bool my\+D\+S1307\+::is\+Leap\+Year (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if leap year. Checks a given year if it\textquotesingle{}s a leap year. Returns true if it\textquotesingle{}s a leapyear. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year to check. Expects full year format. EX\+: 2021, instead of 21. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Year is a leap year. 
+
+false Year is not a leap year. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_ab3622f5b07744ee18a62955cb63a2f39}\label{classmy_d_s1307_ab3622f5b07744ee18a62955cb63a2f39}} 
+\index{myDS1307@{myDS1307}!isValidDate@{isValidDate}}
+\index{isValidDate@{isValidDate}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{isValidDate()}{isValidDate()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::is\+Valid\+Date (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{year,  }\item[{const uint8\+\_\+t}]{month,  }\item[{const uint8\+\_\+t}]{day }\end{DoxyParamCaption})}
+
+
+
+Check if a date is valid. Checks a given date to see if it\textquotesingle{}s valid, will return an error code with the offending value if it\textquotesingle{}s invalid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year. Year is expected to be in full format IE\+: 2021 instead of 21. Valid values (2000-\/2099). \\
+\hline
+{\em month} & Month. Valid values (1-\/12). \\
+\hline
+{\em day} & Day of month. Valid values (1-\/\mbox{[}28-\/31\mbox{]}), based on month. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if valid, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a93905de4359a29d2a37e12c247db9c76}\label{classmy_d_s1307_a93905de4359a29d2a37e12c247db9c76}} 
+\index{myDS1307@{myDS1307}!isValidDateTime@{isValidDateTime}}
+\index{isValidDateTime@{isValidDateTime}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{isValidDateTime()}{isValidDateTime()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::is\+Valid\+Date\+Time (\begin{DoxyParamCaption}\item[{const datetime\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a datetime\+\_\+t Validate a datetime\+\_\+t value. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, otherwise an error code is returned containing the error code for the value that failed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The datetime\+\_\+t value to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a89455ed7eee77e6556f91dd488a7b608}\label{classmy_d_s1307_a89455ed7eee77e6556f91dd488a7b608}} 
+\index{myDS1307@{myDS1307}!setAmPm@{setAmPm}}
+\index{setAmPm@{setAmPm}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setAmPm()}{setAmPm()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Am\+Pm (\begin{DoxyParamCaption}\item[{const bool}]{is\+PM }\end{DoxyParamCaption})}
+
+
+
+Set the A\+M/\+PM bit. Sets am / pm bit if in 12h mode, only sets it if not set. If in 24h mode, will increase or decrease the hour depending on the current time, and requested am/pm mode. Returns 0 if set okay, otherwise if a comms error occurs, it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+PM} & False = AM, True = PM \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a453fa9beb50b6cc910f10a173271f254}\label{classmy_d_s1307_a453fa9beb50b6cc910f10a173271f254}} 
+\index{myDS1307@{myDS1307}!setDate@{setDate}}
+\index{setDate@{setDate}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setDate()}{setDate()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Date (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the day of month (date). Sets the day of month. Invalid values here will cause invalid operation. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, or if an invalid value is passed, or a comms error occurs, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+It isn\textquotesingle{}t recommended to use this, it\textquotesingle{}s included for completeness, use \mbox{\hyperlink{classmy_d_s1307_a76d3e89da45cd2430336a39a02e3df22}{set\+Full\+Date()}} instead, as it calculates valid day of month values and checks for them, while this doesn\textquotesingle{}t check the month. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set day of month to. Valid values (1-\/31). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_ac9bd994edcffa07d087048752ded5ce8}\label{classmy_d_s1307_ac9bd994edcffa07d087048752ded5ce8}} 
+\index{myDS1307@{myDS1307}!setDateTime@{setDateTime}}
+\index{setDateTime@{setDateTime}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setDateTime()}{setDateTime()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Date\+Time (\begin{DoxyParamCaption}\item[{const datetime\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the date and time. Sets the date and time from a datetime\+\_\+t value. Returns 0 if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+This ignores the day of week portion of the datetime\+\_\+t value, and instead calculates the valid value to set. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set date/time to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Retuns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_accb181edeff24b293442b5fc3c6799b8}\label{classmy_d_s1307_accb181edeff24b293442b5fc3c6799b8}} 
+\index{myDS1307@{myDS1307}!setDay@{setDay}}
+\index{setDay@{setDay}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setDay()}{setDay()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Day (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the day of week. Sets the day of week, since this is user programmable, we set 1 to equal sunday for the purposes of this library. It isn\textquotesingle{}t recommended to use this, as it\textquotesingle{}s included for completeness. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+It isn\textquotesingle{}t recommended to use this method, use \mbox{\hyperlink{classmy_d_s1307_a76d3e89da45cd2430336a39a02e3df22}{set\+Full\+Date()}} instead as it calculates the appropriate day of the week and sets it. An invalid value here will cause invalid operation. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set day of the week to. Valid values (1-\/7). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a7dc6e56766c251da5e5140880c9c61cc}\label{classmy_d_s1307_a7dc6e56766c251da5e5140880c9c61cc}} 
+\index{myDS1307@{myDS1307}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Enabled (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set clock enabled. Set the clock inhibit bit. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & True = clock enabled, False = clock disabled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a76d3e89da45cd2430336a39a02e3df22}\label{classmy_d_s1307_a76d3e89da45cd2430336a39a02e3df22}} 
+\index{myDS1307@{myDS1307}!setFullDate@{setFullDate}}
+\index{setFullDate@{setFullDate}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setFullDate()}{setFullDate()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Full\+Date (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{year,  }\item[{const uint8\+\_\+t}]{month,  }\item[{const uint8\+\_\+t}]{day }\end{DoxyParamCaption})}
+
+
+
+Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set the day of week as well. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid date is passed, or a comms error occurs, it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year to set. Valid values (2000-\/2099). \\
+\hline
+{\em month} & Month to set. Valid values (1-\/12). \\
+\hline
+{\em day} & Day of month to set. Valid values (1-\/\mbox{[}28-\/31\mbox{]}) depending on year and month. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_ae5e413958627d449e1a5c5bcaa7017e4}\label{classmy_d_s1307_ae5e413958627d449e1a5c5bcaa7017e4}} 
+\index{myDS1307@{myDS1307}!setFullTime12h@{setFullTime12h}}
+\index{setFullTime12h@{setFullTime12h}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setFullTime12h()}{setFullTime12h()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Full\+Time12h (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{hour,  }\item[{const bool}]{is\+PM,  }\item[{const uint8\+\_\+t}]{minute,  }\item[{const uint8\+\_\+t}]{second }\end{DoxyParamCaption})}
+
+
+
+Set the full time. 12h format. Sets the full time in 12h format. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & Hour to set. Valid values (1-\/12). \\
+\hline
+{\em is\+PM} & False = AM, True = PM. \\
+\hline
+{\em minute} & Minute to set. Valid values (0-\/59). \\
+\hline
+{\em second} & Seconds to set. Valid values (0-\/59). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a1b7e4e464f743770d201f5f7554085bd}\label{classmy_d_s1307_a1b7e4e464f743770d201f5f7554085bd}} 
+\index{myDS1307@{myDS1307}!setFullTime24h@{setFullTime24h}}
+\index{setFullTime24h@{setFullTime24h}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setFullTime24h()}{setFullTime24h()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Full\+Time24h (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{hour,  }\item[{const uint8\+\_\+t}]{minute,  }\item[{const uint8\+\_\+t}]{second }\end{DoxyParamCaption})}
+
+
+
+Set the time, 24 hour format. Sets the full time. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value, or a comms error occurs, it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & Hour to set. Valid values (0-\/23). \\
+\hline
+{\em minute} & Minute to set. Valid values (0-\/59). \\
+\hline
+{\em second} & Second to set. Valid values (0-\/59). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a6eacd356da66068be613b537cd96f186}\label{classmy_d_s1307_a6eacd356da66068be613b537cd96f186}} 
+\index{myDS1307@{myDS1307}!setHour12H@{setHour12H}}
+\index{setHour12H@{setHour12H}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setHour12H()}{setHour12H()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Hour12H (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{hour,  }\item[{const bool}]{is\+PM }\end{DoxyParamCaption})}
+
+
+
+Set the Hour, 12h format. Set the hour in 12 hour format. returns 0 if set okay, otherwise if an invalid hour is passed, or a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & Hour to set. Valid values\+: 1-\/12. \\
+\hline
+{\em is\+PM} & False = AM, True = PM. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative is an error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a19482130b7e233dfe2f3603958ae0b2b}\label{classmy_d_s1307_a19482130b7e233dfe2f3603958ae0b2b}} 
+\index{myDS1307@{myDS1307}!setHour24H@{setHour24H}}
+\index{setHour24H@{setHour24H}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setHour24H()}{setHour24H()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Hour24H (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{hour }\end{DoxyParamCaption})}
+
+
+
+Set the hours in 24 hour format. Set the hour in 24 hour format. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, other wise if an invalid parameter is passed, or a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & Value to set hour to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, or negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_aca0e7bbf07863b8fa918c50067275960}\label{classmy_d_s1307_aca0e7bbf07863b8fa918c50067275960}} 
+\index{myDS1307@{myDS1307}!setMinutes@{setMinutes}}
+\index{setMinutes@{setMinutes}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setMinutes()}{setMinutes()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Minutes (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Minutes. Set the minutes. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs, or an invalid value is passed an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set minutes to. Valid values\+: 0-\/59. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) is set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_ac9a15b32aa82ec0d782d6d0736be3d61}\label{classmy_d_s1307_ac9a15b32aa82ec0d782d6d0736be3d61}} 
+\index{myDS1307@{myDS1307}!setMode@{setMode}}
+\index{setMode@{setMode}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Mode (\begin{DoxyParamCaption}\item[{const bool}]{is12h }\end{DoxyParamCaption})}
+
+
+
+Set the hour mode. Set the 12H / 24H operating mode. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, otherwise if a comms error occurs, an error code is returned. This will recalculate the hours to retain the proper time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is12h} & bool True = 12h mode, False = 24h mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 for set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_aa2a80a51a49b0edc9cae21e3b9142338}\label{classmy_d_s1307_aa2a80a51a49b0edc9cae21e3b9142338}} 
+\index{myDS1307@{myDS1307}!setMonth@{setMonth}}
+\index{setMonth@{setMonth}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setMonth()}{setMonth()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Month (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Month. Sets the month value. It\textquotesingle{}s not recommended to use this, as it\textquotesingle{}s included for completeness. An invalid value here in respect to day of month, will cause invalid operation. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value or a comms error occurs, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+It isn\textquotesingle{}t recommended to use this. Use \mbox{\hyperlink{classmy_d_s1307_a76d3e89da45cd2430336a39a02e3df22}{set\+Full\+Date()}} instead, as this doesn\textquotesingle{}t check the day of month to verify valid values. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set month to. Valid values (1-\/12). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_a162b5129d2826670c3c4656dac1c221e}\label{classmy_d_s1307_a162b5129d2826670c3c4656dac1c221e}} 
+\index{myDS1307@{myDS1307}!setSeconds@{setSeconds}}
+\index{setSeconds@{setSeconds}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setSeconds()}{setSeconds()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Seconds (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Seconds. Set the seconds value, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set seconds to. Valid values\+: 0-\/59. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_ab3c457bc995a00f71bfc849a64faaa47}\label{classmy_d_s1307_ab3c457bc995a00f71bfc849a64faaa47}} 
+\index{myDS1307@{myDS1307}!setSquareWaveEnabled@{setSquareWaveEnabled}}
+\index{setSquareWaveEnabled@{setSquareWaveEnabled}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setSquareWaveEnabled()}{setSquareWaveEnabled()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Square\+Wave\+Enabled (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set square wave enabled. Enables / disables the square wave pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs, an error code will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & True = enabled, False = disabled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_af964abdc925e23d83d853d3c5a460583}\label{classmy_d_s1307_af964abdc925e23d83d853d3c5a460583}} 
+\index{myDS1307@{myDS1307}!setSquareWaveIdle@{setSquareWaveIdle}}
+\index{setSquareWaveIdle@{setSquareWaveIdle}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setSquareWaveIdle()}{setSquareWaveIdle()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Square\+Wave\+Idle (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Square Wave Idle state. Sets the square wave pin state when square wave is disabled. A value of false means that the pin will idle low, a value of true means the pin will idle high. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if a comms error occurs, an error code will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & False = Idle L\+OW, True = Idle H\+I\+GH. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_add8d8324bd4c592b5f10cf2c86090be6}\label{classmy_d_s1307_add8d8324bd4c592b5f10cf2c86090be6}} 
+\index{myDS1307@{myDS1307}!setSquareWaveRate@{setSquareWaveRate}}
+\index{setSquareWaveRate@{setSquareWaveRate}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setSquareWaveRate()}{setSquareWaveRate()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Square\+Wave\+Rate (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Square Wave frequency. Set the square wave frequency. Valid values are 0-\/3, rates are defined as R\+A\+T\+E\+\_\+$\ast$. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, or a comms error occurs an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Frequency to set. Valid values (0-\/3)(IE\+: R\+A\+T\+E\+\_\+$\ast$ values) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_d_s1307_afc8640f05747c7c74cbc06585caac22c}\label{classmy_d_s1307_afc8640f05747c7c74cbc06585caac22c}} 
+\index{myDS1307@{myDS1307}!setYear@{setYear}}
+\index{setYear@{setYear}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{setYear()}{setYear()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+D\+S1307\+::set\+Year (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Year. Set the year value. It\textquotesingle{}s not recommended to use this, as it\textquotesingle{}s included for completeness. An invalid value here in respect to month and date, will cause invalid operation. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed or a comms error occurs, an error code is returned. 
+
+\begin{DoxyNote}{Note}
+It\textquotesingle{}s not recommended to use this, use set\+Full\+Date instead as it calculates valid values, and checks for them while this does not. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set year to. Valid values (2000-\/2099). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy_d_s1307_a8e1147555695d1e5b482b52d3e498193}\label{classmy_d_s1307_a8e1147555695d1e5b482b52d3e498193}} 
+\index{myDS1307@{myDS1307}!ERROR\_COMMS\_FAILED@{ERROR\_COMMS\_FAILED}}
+\index{ERROR\_COMMS\_FAILED@{ERROR\_COMMS\_FAILED}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_COMMS\_FAILED}{ERROR\_COMMS\_FAILED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+C\+O\+M\+M\+S\+\_\+\+F\+A\+I\+L\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Comms check failed. Value -\/558. The comms check during initialization failed. 
+
+\mbox{\Hypertarget{classmy_d_s1307_ac1f14eab4a099ab9eac7633e58c3844d}\label{classmy_d_s1307_ac1f14eab4a099ab9eac7633e58c3844d}} 
+\index{myDS1307@{myDS1307}!ERROR\_INITIALIZED@{ERROR\_INITIALIZED}}
+\index{ERROR\_INITIALIZED@{ERROR\_INITIALIZED}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INITIALIZED}{ERROR\_INITIALIZED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2C already initialized. Value -\/452. The I2C port was already initialized when initialize was called. 
+
+\mbox{\Hypertarget{classmy_d_s1307_aaf4de534364a56d8ccd112921aa8a2c2}\label{classmy_d_s1307_aaf4de534364a56d8ccd112921aa8a2c2}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_DATE@{ERROR\_INVALID\_DATE}}
+\index{ERROR\_INVALID\_DATE@{ERROR\_INVALID\_DATE}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_DATE}{ERROR\_INVALID\_DATE}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+A\+TE = \mbox{\hyperlink{my_error_codes_8hpp_a257408f5cee968af8d4fdd002049e80a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+A\+TE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid date. Value -\/554. Invalid date value was passed. Valid values (1-\/31). 
+
+\mbox{\Hypertarget{classmy_d_s1307_a5149fc97dcce904a3e09b4f623c64d71}\label{classmy_d_s1307_a5149fc97dcce904a3e09b4f623c64d71}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_DAY@{ERROR\_INVALID\_DAY}}
+\index{ERROR\_INVALID\_DAY@{ERROR\_INVALID\_DAY}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_DAY}{ERROR\_INVALID\_DAY}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+AY = \mbox{\hyperlink{my_error_codes_8hpp_a1e49bd046b48c5b32cb59c1069d793b8}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+AY}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid day of the week. Value -\/553. Invalid day value was passed. Valid values (1-\/7). 
+
+\mbox{\Hypertarget{classmy_d_s1307_a63760132f239f15c666904f213dec59e}\label{classmy_d_s1307_a63760132f239f15c666904f213dec59e}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_HOURS@{ERROR\_INVALID\_HOURS}}
+\index{ERROR\_INVALID\_HOURS@{ERROR\_INVALID\_HOURS}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_HOURS}{ERROR\_INVALID\_HOURS}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+O\+U\+RS = \mbox{\hyperlink{my_error_codes_8hpp_a7c86f942105825525ac778f7292eb213}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+O\+U\+RS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid hours. Value -\/552. Invalid hours value was passed. Valid values (0-\/23 in 24h mode, 1-\/12 in 12h mode). 
+
+\mbox{\Hypertarget{classmy_d_s1307_a4fe223e87777511a4ecf8ede340a131c}\label{classmy_d_s1307_a4fe223e87777511a4ecf8ede340a131c}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_MINUTES@{ERROR\_INVALID\_MINUTES}}
+\index{ERROR\_INVALID\_MINUTES@{ERROR\_INVALID\_MINUTES}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_MINUTES}{ERROR\_INVALID\_MINUTES}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+N\+U\+T\+ES = \mbox{\hyperlink{my_error_codes_8hpp_afc02b32a71973abdf7e2f24d20414482}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+I\+N\+U\+T\+ES}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid minutes. Value -\/551. Invalid minutes value was passed. Valid values (0-\/59). 
+
+\mbox{\Hypertarget{classmy_d_s1307_ac433e0ee0a78df0a1afc38ffb4544530}\label{classmy_d_s1307_ac433e0ee0a78df0a1afc38ffb4544530}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_MONTH@{ERROR\_INVALID\_MONTH}}
+\index{ERROR\_INVALID\_MONTH@{ERROR\_INVALID\_MONTH}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_MONTH}{ERROR\_INVALID\_MONTH}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+N\+TH = \mbox{\hyperlink{my_error_codes_8hpp_a5a14737b6900b1dda8720108613f2e91}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+O\+N\+TH}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid month. Value -\/555. Invalid month value was passed. Valid values (1-\/12). 
+
+\mbox{\Hypertarget{classmy_d_s1307_a0285eeb58b3f50bf54d0c66871f9caf8}\label{classmy_d_s1307_a0285eeb58b3f50bf54d0c66871f9caf8}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_RATE@{ERROR\_INVALID\_RATE}}
+\index{ERROR\_INVALID\_RATE@{ERROR\_INVALID\_RATE}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_RATE}{ERROR\_INVALID\_RATE}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE = \mbox{\hyperlink{my_error_codes_8hpp_acaa15a4bf4fae8da2e90730049de0ef0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+TE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid rate. Value -\/557. Invalid rate was passed. Valid values (R\+A\+T\+E\+\_\+$\ast$) (0-\/3). 
+
+\mbox{\Hypertarget{classmy_d_s1307_aecec117a4ef3e4f1fdc29047c3693d3f}\label{classmy_d_s1307_aecec117a4ef3e4f1fdc29047c3693d3f}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_SCL\_PIN@{ERROR\_INVALID\_SCL\_PIN}}
+\index{ERROR\_INVALID\_SCL\_PIN@{ERROR\_INVALID\_SCL\_PIN}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SCL\_PIN}{ERROR\_INVALID\_SCL\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}}
+
+
+
+Invalid S\+CL pin. Value -\/451. Invalid S\+CL pin provided. 
+
+\mbox{\Hypertarget{classmy_d_s1307_a091628e67e1c46666f3a0b598d630e73}\label{classmy_d_s1307_a091628e67e1c46666f3a0b598d630e73}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_SDA\_PIN@{ERROR\_INVALID\_SDA\_PIN}}
+\index{ERROR\_INVALID\_SDA\_PIN@{ERROR\_INVALID\_SDA\_PIN}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SDA\_PIN}{ERROR\_INVALID\_SDA\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}}
+
+
+
+Invalid S\+DA pin. Value -\/450. Invalid S\+DA pin provided. 
+
+\mbox{\Hypertarget{classmy_d_s1307_a1030405e991f74ee6f2c851123851b76}\label{classmy_d_s1307_a1030405e991f74ee6f2c851123851b76}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_SECONDS@{ERROR\_INVALID\_SECONDS}}
+\index{ERROR\_INVALID\_SECONDS@{ERROR\_INVALID\_SECONDS}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SECONDS}{ERROR\_INVALID\_SECONDS}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+C\+O\+N\+DS = \mbox{\hyperlink{my_error_codes_8hpp_a41098ce914489ceedd42ebd0e3a59cc1}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+E\+C\+O\+N\+DS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid seconds. Value -\/550. Invalid seconds value was passed. Valid values (0-\/59). 
+
+\mbox{\Hypertarget{classmy_d_s1307_ae5d27caf482cf9e42ee6671f2c50093a}\label{classmy_d_s1307_ae5d27caf482cf9e42ee6671f2c50093a}} 
+\index{myDS1307@{myDS1307}!ERROR\_INVALID\_YEAR@{ERROR\_INVALID\_YEAR}}
+\index{ERROR\_INVALID\_YEAR@{ERROR\_INVALID\_YEAR}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_YEAR}{ERROR\_INVALID\_YEAR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+Y\+E\+AR = \mbox{\hyperlink{my_error_codes_8hpp_a3157240dbe198ab028061a25fea74a1f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+Y\+E\+AR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid year. Value -\/556. Invalid year value was passed. Valid values (2000-\/2099). 
+
+\mbox{\Hypertarget{classmy_d_s1307_a961345eda13a14cf382fce5c20c653f1}\label{classmy_d_s1307_a961345eda13a14cf382fce5c20c653f1}} 
+\index{myDS1307@{myDS1307}!ERROR\_NOT\_RESPONDING@{ERROR\_NOT\_RESPONDING}}
+\index{ERROR\_NOT\_RESPONDING@{ERROR\_NOT\_RESPONDING}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_RESPONDING}{ERROR\_NOT\_RESPONDING}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG = \mbox{\hyperlink{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2C address not responding. Value -\/453. The chip is not responding. 
+
+\mbox{\Hypertarget{classmy_d_s1307_adcf699eebba4e9381f7d0ee1d1849fc5}\label{classmy_d_s1307_adcf699eebba4e9381f7d0ee1d1849fc5}} 
+\index{myDS1307@{myDS1307}!ERROR\_TIMEOUT@{ERROR\_TIMEOUT}}
+\index{ERROR\_TIMEOUT@{ERROR\_TIMEOUT}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{ERROR\_TIMEOUT}{ERROR\_TIMEOUT}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT = \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}}
+
+
+
+Timeout. Value -\/7. The device timedout during read / write operation. 
+
+\mbox{\Hypertarget{classmy_d_s1307_a49bae62e2af08ec7342238e13c851920}\label{classmy_d_s1307_a49bae62e2af08ec7342238e13c851920}} 
+\index{myDS1307@{myDS1307}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+D\+S1307\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}}
+
+
+
+No error. Value 0. No error occured. 
+
+\mbox{\Hypertarget{classmy_d_s1307_a9aa6a48c47c663b00f942f277ed94e4a}\label{classmy_d_s1307_a9aa6a48c47c663b00f942f277ed94e4a}} 
+\index{myDS1307@{myDS1307}!RATE\_1HZ@{RATE\_1HZ}}
+\index{RATE\_1HZ@{RATE\_1HZ}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{RATE\_1HZ}{RATE\_1HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+D\+S1307\+::\+R\+A\+T\+E\+\_\+1\+HZ = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rate 1 Hz. Set square wave output to 1 Hz. 
+
+\mbox{\Hypertarget{classmy_d_s1307_aa6a643aab4a3f61440dbcb399320edb0}\label{classmy_d_s1307_aa6a643aab4a3f61440dbcb399320edb0}} 
+\index{myDS1307@{myDS1307}!RATE\_32KHZ@{RATE\_32KHZ}}
+\index{RATE\_32KHZ@{RATE\_32KHZ}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{RATE\_32KHZ}{RATE\_32KHZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+D\+S1307\+::\+R\+A\+T\+E\+\_\+32\+K\+HZ = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rate 32.\+768 K\+Hz. Set square wave output to 32.\+768 K\+Hz. 
+
+\mbox{\Hypertarget{classmy_d_s1307_a7eda929a5e6cac97fb418699d9a8af7f}\label{classmy_d_s1307_a7eda929a5e6cac97fb418699d9a8af7f}} 
+\index{myDS1307@{myDS1307}!RATE\_4KHZ@{RATE\_4KHZ}}
+\index{RATE\_4KHZ@{RATE\_4KHZ}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{RATE\_4KHZ}{RATE\_4KHZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+D\+S1307\+::\+R\+A\+T\+E\+\_\+4\+K\+HZ = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rate 4.\+096 K\+Hz. Set square wave output to 4.\+096 K\+Hz. 
+
+\mbox{\Hypertarget{classmy_d_s1307_ab74f0a412a6d93a15f5f8563153dd33d}\label{classmy_d_s1307_ab74f0a412a6d93a15f5f8563153dd33d}} 
+\index{myDS1307@{myDS1307}!RATE\_8KHZ@{RATE\_8KHZ}}
+\index{RATE\_8KHZ@{RATE\_8KHZ}!myDS1307@{myDS1307}}
+\doxysubsubsection{\texorpdfstring{RATE\_8KHZ}{RATE\_8KHZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+D\+S1307\+::\+R\+A\+T\+E\+\_\+8\+K\+HZ = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rate 8.\+192 K\+Hz. Set square wave output to 8.\+192 K\+Hz. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+D\+S1307/\mbox{\hyperlink{my_d_s1307_8hpp}{my\+D\+S1307.\+hpp}}\end{DoxyCompactItemize}

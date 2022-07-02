@@ -76,17 +76,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_error_codes_8hpp__dep__incl.png" border="0" usemap="#my_error_codes_8hppdep" alt=""/></div>
 <map name="my_error_codes_8hppdep" id="my_error_codes_8hppdep">
-<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="771,5,914,32"/>
+<area shape="rect" title="Define all error codes used in pico&#45;myLibs." alt="" coords="913,5,1055,32"/>
 <area shape="rect" href="my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
 <area shape="rect" href="my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
 <area shape="rect" href="i2c_2my_b_mx280_8hpp.html" title="Class to handle BMx280 chips in i2c mode." alt="" coords="479,155,705,181"/>
-<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="929,80,1050,107"/>
-<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="728,155,864,181"/>
-<area shape="rect" href="spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="683,229,909,256"/>
-<area shape="rect" href="my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="888,155,1027,181"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="1101,155,1264,181"/>
-<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1288,155,1539,181"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1563,155,1813,181"/>
+<area shape="rect" href="my_helpers_8hpp.html" title="Helper functions." alt="" coords="1029,80,1150,107"/>
+<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="916,155,1052,181"/>
+<area shape="rect" href="spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="871,229,1097,256"/>
+<area shape="rect" href="my_d_s1307_8hpp.html" title="Class to use a DS1307 Real time clock." alt="" coords="1698,229,1894,256"/>
+<area shape="rect" href="my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="1727,155,1865,181"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="729,155,892,181"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1177,155,1428,181"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1452,155,1703,181"/>
 <area shape="rect" href="my_random_8hpp.html" title="Random helpers." alt="" coords="201,155,405,181"/>
 </map>
 </div>
@@ -248,6 +249,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a449a5326c6c16744831175b982a84f22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a449a5326c6c16744831175b982a84f22">MY_ERROR_MYI2C_NOT_INITIALIZED</a>&#160;&#160;&#160;-453</td></tr>
 <tr class="memdesc:a449a5326c6c16744831175b982a84f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C port not initialized. The I2C port was already deinitialized when deinitialize was called.  <a href="my_error_codes_8hpp.html#a449a5326c6c16744831175b982a84f22">More...</a><br /></td></tr>
 <tr class="separator:a449a5326c6c16744831175b982a84f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28677480dd2628a04419417ef62c7e80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a28677480dd2628a04419417ef62c7e80">MY_ERROR_MYI2C_ADDRESS_NOT_RESPONDING</a>&#160;&#160;&#160;-454</td></tr>
+<tr class="memdesc:a28677480dd2628a04419417ef62c7e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">The I2C address is not responding. The device at the I2C address is not responding.  <a href="my_error_codes_8hpp.html#a28677480dd2628a04419417ef62c7e80">More...</a><br /></td></tr>
+<tr class="separator:a28677480dd2628a04419417ef62c7e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e971bd8921e843a02dbf5036f1c79db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">MY_ERROR_MYBMx280_INVALID_ADDRESS</a>&#160;&#160;&#160;-500</td></tr>
 <tr class="memdesc:a1e971bd8921e843a02dbf5036f1c79db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid I2C address. The I2C address provided is invalid.  <a href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">More...</a><br /></td></tr>
 <tr class="separator:a1e971bd8921e843a02dbf5036f1c79db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,6 +276,33 @@ Macros</h2></td></tr>
 <tr class="memitem:a825d309de2b76d1525911ba1a05c08d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">MY_ERROR_MYBMx280_INVALID_MODE</a>&#160;&#160;&#160;-507</td></tr>
 <tr class="memdesc:a825d309de2b76d1525911ba1a05c08d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid mode. An invalid mode was passed.  <a href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">More...</a><br /></td></tr>
 <tr class="separator:a825d309de2b76d1525911ba1a05c08d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41098ce914489ceedd42ebd0e3a59cc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a41098ce914489ceedd42ebd0e3a59cc1">MY_ERROR_MYDS1307_INVALID_SECONDS</a>&#160;&#160;&#160;-550</td></tr>
+<tr class="memdesc:a41098ce914489ceedd42ebd0e3a59cc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid seconds. Invalid seconds was passed. Valid values (0-59).  <a href="my_error_codes_8hpp.html#a41098ce914489ceedd42ebd0e3a59cc1">More...</a><br /></td></tr>
+<tr class="separator:a41098ce914489ceedd42ebd0e3a59cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc02b32a71973abdf7e2f24d20414482"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#afc02b32a71973abdf7e2f24d20414482">MY_ERROR_MYDS1307_INVALID_MINUTES</a>&#160;&#160;&#160;-551</td></tr>
+<tr class="memdesc:afc02b32a71973abdf7e2f24d20414482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid minutes. Invalid minutes value was passed. Valid values (0-59).  <a href="my_error_codes_8hpp.html#afc02b32a71973abdf7e2f24d20414482">More...</a><br /></td></tr>
+<tr class="separator:afc02b32a71973abdf7e2f24d20414482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c86f942105825525ac778f7292eb213"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a7c86f942105825525ac778f7292eb213">MY_ERROR_MYDS1307_INVALID_HOURS</a>&#160;&#160;&#160;-552</td></tr>
+<tr class="memdesc:a7c86f942105825525ac778f7292eb213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid hours. Invalid hours value was passed. Valid values (0-23 in 24h mode, 1-12 in 12h mode)  <a href="my_error_codes_8hpp.html#a7c86f942105825525ac778f7292eb213">More...</a><br /></td></tr>
+<tr class="separator:a7c86f942105825525ac778f7292eb213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e49bd046b48c5b32cb59c1069d793b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a1e49bd046b48c5b32cb59c1069d793b8">MY_ERROR_MYDS1307_INVALID_DAY</a>&#160;&#160;&#160;-553</td></tr>
+<tr class="memdesc:a1e49bd046b48c5b32cb59c1069d793b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid day of the week. Invalid day value was passed. Valid values (1-7).  <a href="my_error_codes_8hpp.html#a1e49bd046b48c5b32cb59c1069d793b8">More...</a><br /></td></tr>
+<tr class="separator:a1e49bd046b48c5b32cb59c1069d793b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257408f5cee968af8d4fdd002049e80a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a257408f5cee968af8d4fdd002049e80a">MY_ERROR_MYDS1307_INVALID_DATE</a>&#160;&#160;&#160;-554</td></tr>
+<tr class="memdesc:a257408f5cee968af8d4fdd002049e80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid date. Invalid date value was passed. Valid values (1-31).  <a href="my_error_codes_8hpp.html#a257408f5cee968af8d4fdd002049e80a">More...</a><br /></td></tr>
+<tr class="separator:a257408f5cee968af8d4fdd002049e80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a14737b6900b1dda8720108613f2e91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a5a14737b6900b1dda8720108613f2e91">MY_ERROR_MYDS1307_INVALID_MONTH</a>&#160;&#160;&#160;-555</td></tr>
+<tr class="memdesc:a5a14737b6900b1dda8720108613f2e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid month. Invalid month value was passed. Valid values (1-12).  <a href="my_error_codes_8hpp.html#a5a14737b6900b1dda8720108613f2e91">More...</a><br /></td></tr>
+<tr class="separator:a5a14737b6900b1dda8720108613f2e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3157240dbe198ab028061a25fea74a1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a3157240dbe198ab028061a25fea74a1f">MY_ERROR_MYDS1307_INVALID_YEAR</a>&#160;&#160;&#160;-556</td></tr>
+<tr class="memdesc:a3157240dbe198ab028061a25fea74a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid year. Invalid year value was passed. Valid values (2000-2099)  <a href="my_error_codes_8hpp.html#a3157240dbe198ab028061a25fea74a1f">More...</a><br /></td></tr>
+<tr class="separator:a3157240dbe198ab028061a25fea74a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa15a4bf4fae8da2e90730049de0ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#acaa15a4bf4fae8da2e90730049de0ef0">MY_ERROR_MYDS1307_INVALID_RATE</a>&#160;&#160;&#160;-557</td></tr>
+<tr class="memdesc:acaa15a4bf4fae8da2e90730049de0ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid rate. Invalid rate value was passed. Valid values (RATE_*) (0-3).  <a href="my_error_codes_8hpp.html#acaa15a4bf4fae8da2e90730049de0ef0">More...</a><br /></td></tr>
+<tr class="separator:acaa15a4bf4fae8da2e90730049de0ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98291fb30d3b6b7ffbd46238f444d613"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="my_error_codes_8hpp.html#a98291fb30d3b6b7ffbd46238f444d613">MY_ERROR_MYDS1307_COMMS_CHECK_FAILED</a>&#160;&#160;&#160;-558</td></tr>
+<tr class="memdesc:a98291fb30d3b6b7ffbd46238f444d613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comms check failed. The comms check during initialization failed.  <a href="my_error_codes_8hpp.html#a98291fb30d3b6b7ffbd46238f444d613">More...</a><br /></td></tr>
+<tr class="separator:a98291fb30d3b6b7ffbd46238f444d613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Define all error codes used in pico-myLibs. </p>
@@ -758,6 +789,166 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>No response. The I2C address didn't respond. </p>
+
+</div>
+</div>
+<a id="a98291fb30d3b6b7ffbd46238f444d613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98291fb30d3b6b7ffbd46238f444d613">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_COMMS_CHECK_FAILED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_COMMS_CHECK_FAILED&#160;&#160;&#160;-558</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Comms check failed. The comms check during initialization failed. </p>
+
+</div>
+</div>
+<a id="a257408f5cee968af8d4fdd002049e80a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257408f5cee968af8d4fdd002049e80a">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_DATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_DATE&#160;&#160;&#160;-554</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid date. Invalid date value was passed. Valid values (1-31). </p>
+
+</div>
+</div>
+<a id="a1e49bd046b48c5b32cb59c1069d793b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e49bd046b48c5b32cb59c1069d793b8">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_DAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_DAY&#160;&#160;&#160;-553</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid day of the week. Invalid day value was passed. Valid values (1-7). </p>
+
+</div>
+</div>
+<a id="a7c86f942105825525ac778f7292eb213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c86f942105825525ac778f7292eb213">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_HOURS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_HOURS&#160;&#160;&#160;-552</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid hours. Invalid hours value was passed. Valid values (0-23 in 24h mode, 1-12 in 12h mode) </p>
+
+</div>
+</div>
+<a id="afc02b32a71973abdf7e2f24d20414482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc02b32a71973abdf7e2f24d20414482">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_MINUTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_MINUTES&#160;&#160;&#160;-551</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid minutes. Invalid minutes value was passed. Valid values (0-59). </p>
+
+</div>
+</div>
+<a id="a5a14737b6900b1dda8720108613f2e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a14737b6900b1dda8720108613f2e91">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_MONTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_MONTH&#160;&#160;&#160;-555</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid month. Invalid month value was passed. Valid values (1-12). </p>
+
+</div>
+</div>
+<a id="acaa15a4bf4fae8da2e90730049de0ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa15a4bf4fae8da2e90730049de0ef0">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_RATE&#160;&#160;&#160;-557</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid rate. Invalid rate value was passed. Valid values (RATE_*) (0-3). </p>
+
+</div>
+</div>
+<a id="a41098ce914489ceedd42ebd0e3a59cc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41098ce914489ceedd42ebd0e3a59cc1">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_SECONDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_SECONDS&#160;&#160;&#160;-550</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid seconds. Invalid seconds was passed. Valid values (0-59). </p>
+
+</div>
+</div>
+<a id="a3157240dbe198ab028061a25fea74a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3157240dbe198ab028061a25fea74a1f">&#9670;&nbsp;</a></span>MY_ERROR_MYDS1307_INVALID_YEAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYDS1307_INVALID_YEAR&#160;&#160;&#160;-556</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid year. Invalid year value was passed. Valid values (2000-2099) </p>
+
+</div>
+</div>
+<a id="a28677480dd2628a04419417ef62c7e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28677480dd2628a04419417ef62c7e80">&#9670;&nbsp;</a></span>MY_ERROR_MYI2C_ADDRESS_NOT_RESPONDING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MY_ERROR_MYI2C_ADDRESS_NOT_RESPONDING&#160;&#160;&#160;-454</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The I2C address is not responding. The device at the I2C address is not responding. </p>
 
 </div>
 </div>
