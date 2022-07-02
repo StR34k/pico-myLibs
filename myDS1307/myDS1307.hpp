@@ -1045,6 +1045,7 @@ int16_t myDS1307::setSquareWaveRate(const uint8_t value) {
     controlData &= ~MASK_CONTROL_RS;
     controlData |= value;
     returnValue = __writeRegisters__(REG_CONTROL, &controlData, 1);
+    return returnValue;
 }
 
 int16_t myDS1307::readSram(const uint8_t index, uint8_t *buffer, const uint8_t length) {

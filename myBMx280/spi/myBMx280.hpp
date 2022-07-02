@@ -377,11 +377,13 @@ class myBMx280 {
 		 * 
 		 * @param config The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode.
 		 * @param measCtrl The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED.
-		 * @param humCtrl the humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1
+		 * @param humCtrl The humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1
+		 * @param initSPI If true, the default it will try and initialize the spi bus, otherwise it will assum it's already setup.
 		 * @return true if initialized okay.
 		 * @return false if not initialized okay.
 		 */
-		bool 	initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS);
+		bool 	initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS,
+							const uint8_t humCtrl=DEFAULT_HUM_SETTINGS, const bool initSPI=true);
 		/**
 		 * @brief Update the temperature, humidity and pressure values.
 		 * Read and update the pressure temperature and humidity values. Will force a reading if in forced mode.
@@ -634,9 +636,12 @@ bool myBMx280::setMode(const uint8_t value) {
 	return true;
 }
 
-bool myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const uint8_t humCtrl) {
+bool myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const uint8_t humCtrl,
+								const bool initSPI) {
 // Init SPI:
-	mySPI::initializeMaster(_spiObj, _sckPin, _misoPin, _mosiPin, 1000*20000);
+	if (initSPI == true) {
+		mySPI::initializeMaster(_spiObj, _sckPin, _misoPin, _mosiPin, 1000*20000);
+	}
 // Setup CS Pin as OUTPUT HIGH.
     gpio_set_function(_csPin, GPIO_FUNC_SIO);  // CS pin is GPIO
     gpio_set_dir(_csPin, GPIO_OUT);

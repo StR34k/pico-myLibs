@@ -158,7 +158,7 @@ namespace myRandom {
             returnValue = myADC::readTemperatureRaw();  // Read the temperature
             if (returnValue < 0) { return returnValue; } // If it generated an error pass it on.
             randomSeed <<=8;    // Shift seed to make room.
-            ramdomSeed |= (uint8_t)returnValue; // Store the lower 8 bits of the reading.
+            randomSeed |= (uint8_t)returnValue; // Store the lower 8 bits of the reading.
             sleep_us(1); // Delay to give time for reading to change.
         }
         srand(randomSeed);
