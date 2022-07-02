@@ -710,172 +710,173 @@ $(function() {
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;    controlData &amp;= ~MASK_CONTROL_RS;</div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;    controlData |= value;</div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;    returnValue = __writeRegisters__(REG_CONTROL, &amp;controlData, 1);</div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;}</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160; </div>
-<div class="line"><a name="l01050"></a><span class="lineno"><a class="line" href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5"> 1050</a></span>&#160;int16_t <a class="code" href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5">myDS1307::readSram</a>(<span class="keyword">const</span> uint8_t index, uint8_t *buffer, <span class="keyword">const</span> uint8_t length) {</div>
-<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;    int16_t returnValue;</div>
-<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;    uint8_t reg;</div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;    <span class="keywordflow">if</span> ((index + (length - 1)) &gt; 55) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">ERROR_BOUNDARY_CROSSED</a>; }</div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;    reg = REG_SRAM_START + index;</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;    returnValue = __readRegisters__(reg, buffer, length);</div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;}</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160; </div>
-<div class="line"><a name="l01059"></a><span class="lineno"><a class="line" href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319"> 1059</a></span>&#160;int16_t <a class="code" href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">myDS1307::writeSram</a>(<span class="keyword">const</span> uint8_t index, uint8_t *buffer, <span class="keyword">const</span> uint8_t length) {</div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    int16_t returnValue;</div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    uint8_t reg;</div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    <span class="keywordflow">if</span> ((index + (length - 1)) &gt; 55) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">ERROR_BOUNDARY_CROSSED</a>; }</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    reg = REG_SRAM_START + index;</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    returnValue = __writeRegisters__(reg, buffer, length);</div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;}</div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
-<div class="line"><a name="l01068"></a><span class="lineno"><a class="line" href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686"> 1068</a></span>&#160;int16_t <a class="code" href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">myDS1307::initialize</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> initI2C) {</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;    int32_t returnValue;</div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    <span class="comment">// Initialize i2c at 50 KHz, since we&#39;re running at 3.3v which is underspec, we give it more</span></div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;    <span class="comment">// time to respond. Otherwise occasionally the chip will not respond, and we throw an error.</span></div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="keywordflow">if</span> (initI2C == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;        returnValue = <a class="code" href="namespacemy_i2_c.html#af21a1bb09b002ebcfd076678659dea8d">myI2C::initializeMaster</a>(_i2cPort, _sdaPin, _sclPin, 50*1000);</div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> (int16_t)returnValue; }</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    }</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="comment">// Verify comms by getting the day byte and checking it&#39;s value.</span></div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;    <span class="comment">// since this value should never be zero.</span></div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    uint8_t day;</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    returnValue = __readRegisters__(REG_DAY, &amp;day, 1);</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> (int16_t)returnValue; }</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    <span class="keywordflow">if</span> (day &lt; 1 or day &gt; 7) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a8e1147555695d1e5b482b52d3e498193">ERROR_COMMS_FAILED</a>; }</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a49bae62e2af08ec7342238e13c851920">NO_ERROR</a>;</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;}</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160; </div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;<span class="comment">/* ############### Private Functions: ################# */</span></div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160; </div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;int16_t myDS1307::__readRegisters__(<span class="keyword">const</span> uint8_t reg, uint8_t *buffer, <span class="keywordtype">size_t</span> length) {</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    int16_t returnValue;</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    returnValue = i2c_write_timeout_us(_i2cPort, I2C_ADDRESS, &amp;reg, 1, <span class="keyword">true</span>, I2C_TIMEOUT_US);</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) {</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_GENERIC) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">ERROR_NOT_RESPONDING</a>; }</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_TIMEOUT) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">ERROR_TIMEOUT</a>; }</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;    }</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    returnValue = i2c_read_timeout_us(_i2cPort, I2C_ADDRESS, buffer, length, <span class="keyword">false</span>, I2C_TIMEOUT_US);</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) {</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_GENERIC) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">ERROR_NOT_RESPONDING</a>; }</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_TIMEOUT) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">ERROR_TIMEOUT</a>; }</div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;    }</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a49bae62e2af08ec7342238e13c851920">NO_ERROR</a>;</div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;}</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160; </div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;int16_t myDS1307::__writeRegisters__(<span class="keyword">const</span> uint8_t reg, uint8_t *buffer, <span class="keywordtype">size_t</span> length) {</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;    int16_t returnValue;</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;<span class="comment">// Create buffer to send:</span></div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;    uint8_t dataBuffer[length+1];</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    dataBuffer[0] = reg;</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    <span class="keywordflow">for</span> (uint8_t i=0; i&lt;length; i++) {</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;        dataBuffer[i+1] = buffer[i];</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    }</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;<span class="comment">// Send buffer:</span></div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    returnValue = i2c_write_timeout_us(_i2cPort, I2C_ADDRESS, dataBuffer, length+1, <span class="keyword">false</span>, I2C_TIMEOUT_US);</div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) {</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_GENERIC) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">ERROR_NOT_RESPONDING</a>; }</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_TIMEOUT) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">ERROR_TIMEOUT</a>; }</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;    }</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a49bae62e2af08ec7342238e13c851920">NO_ERROR</a>;</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;}</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160; </div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;uint8_t myDS1307::__bcd_to_dec__(<span class="keyword">const</span> uint8_t value) {</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <span class="keywordflow">return</span> ((((value &amp; 0xF0) &gt;&gt; 4) * 10) + (value &amp; 0x0F));</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;}</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160; </div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;uint8_t myDS1307::__dec_to_bcd__(<span class="keyword">const</span> uint8_t value) {</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;    <span class="keywordflow">return</span> (((value / 10) &lt;&lt; 4) | (value - ((value / 10) * 10)));</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;}</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160; </div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;<span class="keywordtype">bool</span> <span class="keyword">inline</span> myDS1307::__is12h__(<span class="keyword">const</span> uint8_t rawHours) {</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;    <span class="keywordflow">return</span> bool(rawHours &amp; MASK_IS_12H);</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;}</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160; </div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;<span class="keywordtype">bool</span> <span class="keyword">inline</span> myDS1307::__isPM__(<span class="keyword">const</span> uint8_t rawHours) {</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    <span class="keywordflow">if</span> (__is12h__(rawHours) == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;        <span class="keywordflow">return</span> bool(rawHours &amp; MASK_IS_PM);</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;    }</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;    <span class="keywordflow">if</span> (__bcd_to_dec__(rawHours &amp; MASK_24H_HOURS_BCD) &gt; 11) {</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    }</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;}</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;uint8_t myDS1307::__hours12h__(<span class="keyword">const</span> uint8_t rawHours) {</div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    <span class="comment">// uint8_t hours;</span></div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="keywordflow">if</span> (__is12h__(rawHours) == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;        <span class="keywordflow">return</span> __bcd_to_dec__(rawHours &amp; MASK_12H_HOURS_BCD);</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;        uint8_t hours24 = __bcd_to_dec__(rawHours &amp; MASK_24H_HOURS_BCD);</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        uint8_t hours12;</div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        <span class="keywordtype">bool</span> isPM;</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        __24h_to_12h__(hours24, &amp;hours12, &amp;isPM);</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;        <span class="keywordflow">return</span> hours12;</div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    }</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;}</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160; </div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;uint8_t myDS1307::__hours24h__(<span class="keyword">const</span> uint8_t rawHours) {</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    <span class="comment">// uint8_t hours;</span></div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keywordflow">if</span> (__is12h__(rawHours) == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;        uint8_t hours12 = __bcd_to_dec__(rawHours &amp; MASK_12H_HOURS_BCD);</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        <span class="keywordtype">bool</span> isPM =__isPM__(rawHours);</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        uint8_t hours24;</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;        __12h_to_24h__(hours12, isPM, &amp;hours24);</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        <span class="keywordflow">return</span> hours24;</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;        <span class="keywordflow">return</span> __bcd_to_dec__(rawHours &amp; MASK_24H_HOURS_BCD);</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    }</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;}</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160; </div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;<span class="keywordtype">void</span> myDS1307::__12h_to_24h__(<span class="keyword">const</span> uint8_t hours12, <span class="keyword">const</span> <span class="keywordtype">bool</span> isPM, uint8_t *hours24) {</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    <span class="keywordflow">if</span> (isPM == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;        <span class="keywordflow">if</span> (hours12 &lt; 12) {</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;            *hours24 = hours12 + 12;</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;            *hours24 = hours12;</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;        }</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;        <span class="keywordflow">if</span> (hours12 == 12) {</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;            *hours24 = 0;</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;            *hours24 = hours12;</div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;        }</div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    }</div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;}</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160; </div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;<span class="keywordtype">void</span> myDS1307::__24h_to_12h__(<span class="keyword">const</span> uint8_t hours24, uint8_t *hours12, <span class="keywordtype">bool</span> *isPM) {</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;    <span class="keywordflow">if</span> ( hours24 == 0) {</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;        *hours12 = 12;</div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;        *isPM = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;        <span class="keywordflow">if</span> (hours24 &gt; 12) {</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;            *hours12 = hours24 - 12;</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;            *isPM = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hours24 == 12) {</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;            *hours12 = hours24;</div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;            *isPM = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;            *hours12 = hours24;</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;            *isPM = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;        }</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    }</div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;}</div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160; </div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;uint8_t myDS1307::__updateSeconds__(<span class="keyword">const</span> uint8_t origSeconds, <span class="keyword">const</span> uint8_t newSeconds) {</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;    uint8_t returnValue = origSeconds &amp; ~MASK_SECONDS_BCD;</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    returnValue |= newSeconds &amp; MASK_SECONDS_BCD;</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;}</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160; </div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;uint8_t myDS1307::__updateHours__(<span class="keyword">const</span> uint8_t origHours, <span class="keyword">const</span> uint8_t newHours){</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;    uint8_t returnValue = origHours &amp; ~MASK_24H_HOURS_BCD;</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;    returnValue |= newHours &amp; MASK_24H_HOURS_BCD;</div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;}</div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;}</div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160; </div>
+<div class="line"><a name="l01051"></a><span class="lineno"><a class="line" href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5"> 1051</a></span>&#160;int16_t <a class="code" href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5">myDS1307::readSram</a>(<span class="keyword">const</span> uint8_t index, uint8_t *buffer, <span class="keyword">const</span> uint8_t length) {</div>
+<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;    int16_t returnValue;</div>
+<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;    uint8_t reg;</div>
+<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;    <span class="keywordflow">if</span> ((index + (length - 1)) &gt; 55) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">ERROR_BOUNDARY_CROSSED</a>; }</div>
+<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;    reg = REG_SRAM_START + index;</div>
+<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;    returnValue = __readRegisters__(reg, buffer, length);</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;}</div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160; </div>
+<div class="line"><a name="l01060"></a><span class="lineno"><a class="line" href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319"> 1060</a></span>&#160;int16_t <a class="code" href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">myDS1307::writeSram</a>(<span class="keyword">const</span> uint8_t index, uint8_t *buffer, <span class="keyword">const</span> uint8_t length) {</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;    int16_t returnValue;</div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    uint8_t reg;</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;    <span class="keywordflow">if</span> ((index + (length - 1)) &gt; 55) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">ERROR_BOUNDARY_CROSSED</a>; }</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    reg = REG_SRAM_START + index;</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    returnValue = __writeRegisters__(reg, buffer, length);</div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;}</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160; </div>
+<div class="line"><a name="l01069"></a><span class="lineno"><a class="line" href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686"> 1069</a></span>&#160;int16_t <a class="code" href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">myDS1307::initialize</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> initI2C) {</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    int32_t returnValue;</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;    <span class="comment">// Initialize i2c at 50 KHz, since we&#39;re running at 3.3v which is underspec, we give it more</span></div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="comment">// time to respond. Otherwise occasionally the chip will not respond, and we throw an error.</span></div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keywordflow">if</span> (initI2C == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        returnValue = <a class="code" href="namespacemy_i2_c.html#af21a1bb09b002ebcfd076678659dea8d">myI2C::initializeMaster</a>(_i2cPort, _sdaPin, _sclPin, 50*1000);</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;        <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> (int16_t)returnValue; }</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    }</div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;    <span class="comment">// Verify comms by getting the day byte and checking it&#39;s value.</span></div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    <span class="comment">// since this value should never be zero.</span></div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    uint8_t day;</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;    returnValue = __readRegisters__(REG_DAY, &amp;day, 1);</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> (int16_t)returnValue; }</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    <span class="keywordflow">if</span> (day &lt; 1 or day &gt; 7) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a8e1147555695d1e5b482b52d3e498193">ERROR_COMMS_FAILED</a>; }</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a49bae62e2af08ec7342238e13c851920">NO_ERROR</a>;</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;}</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160; </div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;<span class="comment">/* ############### Private Functions: ################# */</span></div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160; </div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;int16_t myDS1307::__readRegisters__(<span class="keyword">const</span> uint8_t reg, uint8_t *buffer, <span class="keywordtype">size_t</span> length) {</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    int16_t returnValue;</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    returnValue = i2c_write_timeout_us(_i2cPort, I2C_ADDRESS, &amp;reg, 1, <span class="keyword">true</span>, I2C_TIMEOUT_US);</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) {</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_GENERIC) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">ERROR_NOT_RESPONDING</a>; }</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_TIMEOUT) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">ERROR_TIMEOUT</a>; }</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    }</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    returnValue = i2c_read_timeout_us(_i2cPort, I2C_ADDRESS, buffer, length, <span class="keyword">false</span>, I2C_TIMEOUT_US);</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) {</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_GENERIC) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">ERROR_NOT_RESPONDING</a>; }</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_TIMEOUT) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">ERROR_TIMEOUT</a>; }</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;    }</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a49bae62e2af08ec7342238e13c851920">NO_ERROR</a>;</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;}</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160; </div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;int16_t myDS1307::__writeRegisters__(<span class="keyword">const</span> uint8_t reg, uint8_t *buffer, <span class="keywordtype">size_t</span> length) {</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;    int16_t returnValue;</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;<span class="comment">// Create buffer to send:</span></div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    uint8_t dataBuffer[length+1];</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    dataBuffer[0] = reg;</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    <span class="keywordflow">for</span> (uint8_t i=0; i&lt;length; i++) {</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;        dataBuffer[i+1] = buffer[i];</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    }</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;<span class="comment">// Send buffer:</span></div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    returnValue = i2c_write_timeout_us(_i2cPort, I2C_ADDRESS, dataBuffer, length+1, <span class="keyword">false</span>, I2C_TIMEOUT_US);</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    <span class="keywordflow">if</span> (returnValue &lt; 0) {</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_GENERIC) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">ERROR_NOT_RESPONDING</a>; }</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;        <span class="keywordflow">if</span> (returnValue == PICO_ERROR_TIMEOUT) { <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">ERROR_TIMEOUT</a>; }</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    }</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmy_d_s1307.html#a49bae62e2af08ec7342238e13c851920">NO_ERROR</a>;</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;}</div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160; </div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;uint8_t myDS1307::__bcd_to_dec__(<span class="keyword">const</span> uint8_t value) {</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    <span class="keywordflow">return</span> ((((value &amp; 0xF0) &gt;&gt; 4) * 10) + (value &amp; 0x0F));</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;}</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160; </div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;uint8_t myDS1307::__dec_to_bcd__(<span class="keyword">const</span> uint8_t value) {</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    <span class="keywordflow">return</span> (((value / 10) &lt;&lt; 4) | (value - ((value / 10) * 10)));</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;}</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160; </div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;<span class="keywordtype">bool</span> <span class="keyword">inline</span> myDS1307::__is12h__(<span class="keyword">const</span> uint8_t rawHours) {</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;    <span class="keywordflow">return</span> bool(rawHours &amp; MASK_IS_12H);</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;}</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160; </div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;<span class="keywordtype">bool</span> <span class="keyword">inline</span> myDS1307::__isPM__(<span class="keyword">const</span> uint8_t rawHours) {</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    <span class="keywordflow">if</span> (__is12h__(rawHours) == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;        <span class="keywordflow">return</span> bool(rawHours &amp; MASK_IS_PM);</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;    }</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;    <span class="keywordflow">if</span> (__bcd_to_dec__(rawHours &amp; MASK_24H_HOURS_BCD) &gt; 11) {</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    }</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;}</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160; </div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;uint8_t myDS1307::__hours12h__(<span class="keyword">const</span> uint8_t rawHours) {</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="comment">// uint8_t hours;</span></div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    <span class="keywordflow">if</span> (__is12h__(rawHours) == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <span class="keywordflow">return</span> __bcd_to_dec__(rawHours &amp; MASK_12H_HOURS_BCD);</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        uint8_t hours24 = __bcd_to_dec__(rawHours &amp; MASK_24H_HOURS_BCD);</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        uint8_t hours12;</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        <span class="keywordtype">bool</span> isPM;</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;        __24h_to_12h__(hours24, &amp;hours12, &amp;isPM);</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;        <span class="keywordflow">return</span> hours12;</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    }</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;}</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160; </div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;uint8_t myDS1307::__hours24h__(<span class="keyword">const</span> uint8_t rawHours) {</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="comment">// uint8_t hours;</span></div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    <span class="keywordflow">if</span> (__is12h__(rawHours) == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        uint8_t hours12 = __bcd_to_dec__(rawHours &amp; MASK_12H_HOURS_BCD);</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        <span class="keywordtype">bool</span> isPM =__isPM__(rawHours);</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;        uint8_t hours24;</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        __12h_to_24h__(hours12, isPM, &amp;hours24);</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;        <span class="keywordflow">return</span> hours24;</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;        <span class="keywordflow">return</span> __bcd_to_dec__(rawHours &amp; MASK_24H_HOURS_BCD);</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    }</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;}</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160; </div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;<span class="keywordtype">void</span> myDS1307::__12h_to_24h__(<span class="keyword">const</span> uint8_t hours12, <span class="keyword">const</span> <span class="keywordtype">bool</span> isPM, uint8_t *hours24) {</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <span class="keywordflow">if</span> (isPM == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;        <span class="keywordflow">if</span> (hours12 &lt; 12) {</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;            *hours24 = hours12 + 12;</div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;            *hours24 = hours12;</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;        }</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;        <span class="keywordflow">if</span> (hours12 == 12) {</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;            *hours24 = 0;</div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;            *hours24 = hours12;</div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;        }</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;    }</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;}</div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160; </div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;<span class="keywordtype">void</span> myDS1307::__24h_to_12h__(<span class="keyword">const</span> uint8_t hours24, uint8_t *hours12, <span class="keywordtype">bool</span> *isPM) {</div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;    <span class="keywordflow">if</span> ( hours24 == 0) {</div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;        *hours12 = 12;</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;        *isPM = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;        <span class="keywordflow">if</span> (hours24 &gt; 12) {</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;            *hours12 = hours24 - 12;</div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;            *isPM = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hours24 == 12) {</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;            *hours12 = hours24;</div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;            *isPM = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;            *hours12 = hours24;</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;            *isPM = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;        }</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    }</div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;}</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160; </div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;uint8_t myDS1307::__updateSeconds__(<span class="keyword">const</span> uint8_t origSeconds, <span class="keyword">const</span> uint8_t newSeconds) {</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;    uint8_t returnValue = origSeconds &amp; ~MASK_SECONDS_BCD;</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;    returnValue |= newSeconds &amp; MASK_SECONDS_BCD;</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;}</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160; </div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;uint8_t myDS1307::__updateHours__(<span class="keyword">const</span> uint8_t origHours, <span class="keyword">const</span> uint8_t newHours){</div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;    uint8_t returnValue = origHours &amp; ~MASK_24H_HOURS_BCD;</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;    returnValue |= newHours &amp; MASK_24H_HOURS_BCD;</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;    <span class="keywordflow">return</span> returnValue;</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;}</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmy_d_s1307_html_a091628e67e1c46666f3a0b598d630e73"><div class="ttname"><a href="classmy_d_s1307.html#a091628e67e1c46666f3a0b598d630e73">myDS1307::ERROR_INVALID_SDA_PIN</a></div><div class="ttdeci">const int16_t ERROR_INVALID_SDA_PIN</div><div class="ttdoc">Invalid SDA pin. Value -450. Invalid SDA pin provided.</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:49</div></div>
 <div class="ttc" id="amy_error_codes_8hpp_html_afc02b32a71973abdf7e2f24d20414482"><div class="ttname"><a href="my_error_codes_8hpp.html#afc02b32a71973abdf7e2f24d20414482">MY_ERROR_MYDS1307_INVALID_MINUTES</a></div><div class="ttdeci">#define MY_ERROR_MYDS1307_INVALID_MINUTES</div><div class="ttdoc">Invalid minutes. Invalid minutes value was passed. Valid values (0-59).</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:358</div></div>
@@ -883,7 +884,7 @@ $(function() {
 <div class="ttc" id="aclassmy_d_s1307_html_aae9ce9bdb41a21c303079aa3fc7a75b6"><div class="ttname"><a href="classmy_d_s1307.html#aae9ce9bdb41a21c303079aa3fc7a75b6">myDS1307::SRAM_LENGTH</a></div><div class="ttdeci">static const uint8_t SRAM_LENGTH</div><div class="ttdoc">Length of sram. Length of sram in bytes.</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:141</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_a5149fc97dcce904a3e09b4f623c64d71"><div class="ttname"><a href="classmy_d_s1307.html#a5149fc97dcce904a3e09b4f623c64d71">myDS1307::ERROR_INVALID_DAY</a></div><div class="ttdeci">static const int16_t ERROR_INVALID_DAY</div><div class="ttdoc">Invalid day of the week. Value -553. Invalid day value was passed. Valid values (1-7).</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:84</div></div>
 <div class="ttc" id="amy_error_codes_8hpp_html_a98291fb30d3b6b7ffbd46238f444d613"><div class="ttname"><a href="my_error_codes_8hpp.html#a98291fb30d3b6b7ffbd46238f444d613">MY_ERROR_MYDS1307_COMMS_CHECK_FAILED</a></div><div class="ttdeci">#define MY_ERROR_MYDS1307_COMMS_CHECK_FAILED</div><div class="ttdoc">Comms check failed. The comms check during initialization failed.</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:393</div></div>
-<div class="ttc" id="aclassmy_d_s1307_html_a4d4f24b69b56aef4ab806e9759edede5"><div class="ttname"><a href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5">myDS1307::readSram</a></div><div class="ttdeci">int16_t readSram(const uint8_t index, uint8_t *buffer, const uint8_t length)</div><div class="ttdoc">Read sram. Reads the sram, returns 0 (NO_ERROR) if read okay, otherwise if the read would cross a bou...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:1050</div></div>
+<div class="ttc" id="aclassmy_d_s1307_html_a4d4f24b69b56aef4ab806e9759edede5"><div class="ttname"><a href="classmy_d_s1307.html#a4d4f24b69b56aef4ab806e9759edede5">myDS1307::readSram</a></div><div class="ttdeci">int16_t readSram(const uint8_t index, uint8_t *buffer, const uint8_t length)</div><div class="ttdoc">Read sram. Reads the sram, returns 0 (NO_ERROR) if read okay, otherwise if the read would cross a bou...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:1051</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_aa5206aa7ab257b39653f41bb756a1846"><div class="ttname"><a href="classmy_d_s1307.html#aa5206aa7ab257b39653f41bb756a1846">myDS1307::getMinutes</a></div><div class="ttdeci">int16_t getMinutes()</div><div class="ttdoc">Get the Minutes. Read and return the minutes. If a comms error occurs, then an error code is returned...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:702</div></div>
 <div class="ttc" id="amy_error_codes_8hpp_html_a72dfe5bfae97efc2aae8d64482104a1e"><div class="ttname"><a href="my_error_codes_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">MY_TIMEOUT</a></div><div class="ttdeci">#define MY_TIMEOUT</div><div class="ttdoc">Timeout reached. A timeout has been reached.</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:52</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_ac9a15b32aa82ec0d782d6d0736be3d61"><div class="ttname"><a href="classmy_d_s1307.html#ac9a15b32aa82ec0d782d6d0736be3d61">myDS1307::setMode</a></div><div class="ttdeci">int16_t setMode(const bool is12h)</div><div class="ttdoc">Set the hour mode. Set the 12H / 24H operating mode. Returns 0 (NO_ERROR) for set okay,...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:646</div></div>
@@ -903,7 +904,7 @@ $(function() {
 <div class="ttc" id="amy_error_codes_8hpp_html_a7a3a240f91934bfe848e1b698b45243a"><div class="ttname"><a href="my_error_codes_8hpp.html#a7a3a240f91934bfe848e1b698b45243a">MY_ERROR_MYI2C_INITIALIZED</a></div><div class="ttdeci">#define MY_ERROR_MYI2C_INITIALIZED</div><div class="ttdoc">I2C port alreay initialized. The I2C port was already initialized when initialize was called.</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:294</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_afc8640f05747c7c74cbc06585caac22c"><div class="ttname"><a href="classmy_d_s1307.html#afc8640f05747c7c74cbc06585caac22c">myDS1307::setYear</a></div><div class="ttdeci">int16_t setYear(const uint16_t value)</div><div class="ttdoc">Set the Year. Set the year value. It's not recommended to use this, as it's included for completeness...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:914</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_adcf699eebba4e9381f7d0ee1d1849fc5"><div class="ttname"><a href="classmy_d_s1307.html#adcf699eebba4e9381f7d0ee1d1849fc5">myDS1307::ERROR_TIMEOUT</a></div><div class="ttdeci">const int16_t ERROR_TIMEOUT</div><div class="ttdoc">Timeout. Value -7. The device timedout during read / write operation.</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:44</div></div>
-<div class="ttc" id="aclassmy_d_s1307_html_aceede7c3875391b59e088c7cc6628686"><div class="ttname"><a href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">myDS1307::initialize</a></div><div class="ttdeci">int16_t initialize(const bool initI2C=true)</div><div class="ttdoc">Initialize the chip. Initialize communications with the chip. Returns 0(NO_ERROR) for okay,...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:1068</div></div>
+<div class="ttc" id="aclassmy_d_s1307_html_aceede7c3875391b59e088c7cc6628686"><div class="ttname"><a href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">myDS1307::initialize</a></div><div class="ttdeci">int16_t initialize(const bool initI2C=true)</div><div class="ttdoc">Initialize the chip. Initialize communications with the chip. Returns 0(NO_ERROR) for okay,...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:1069</div></div>
 <div class="ttc" id="amy_error_codes_8hpp_html_aa0aa05b5f194b52a2bbe65e4b8acc206"><div class="ttname"><a href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">MY_NO_ERROR</a></div><div class="ttdeci">#define MY_NO_ERROR</div><div class="ttdoc">No error value. Value to use for no error.</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:24</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_a7eda929a5e6cac97fb418699d9a8af7f"><div class="ttname"><a href="classmy_d_s1307.html#a7eda929a5e6cac97fb418699d9a8af7f">myDS1307::RATE_4KHZ</a></div><div class="ttdeci">static const uint8_t RATE_4KHZ</div><div class="ttdoc">Rate 4.096 KHz. Set square wave output to 4.096 KHz.</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:125</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_a89455ed7eee77e6556f91dd488a7b608"><div class="ttname"><a href="classmy_d_s1307.html#a89455ed7eee77e6556f91dd488a7b608">myDS1307::setAmPm</a></div><div class="ttdeci">int16_t setAmPm(const bool isPM)</div><div class="ttdoc">Set the AM/PM bit. Sets am / pm bit if in 12h mode, only sets it if not set. If in 24h mode,...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:833</div></div>
@@ -954,7 +955,7 @@ $(function() {
 <div class="ttc" id="amy_error_codes_8hpp_html_a3157240dbe198ab028061a25fea74a1f"><div class="ttname"><a href="my_error_codes_8hpp.html#a3157240dbe198ab028061a25fea74a1f">MY_ERROR_MYDS1307_INVALID_YEAR</a></div><div class="ttdeci">#define MY_ERROR_MYDS1307_INVALID_YEAR</div><div class="ttdoc">Invalid year. Invalid year value was passed. Valid values (2000-2099)</div><div class="ttdef"><b>Definition:</b> myErrorCodes.hpp:383</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_ab3622f5b07744ee18a62955cb63a2f39"><div class="ttname"><a href="classmy_d_s1307.html#ab3622f5b07744ee18a62955cb63a2f39">myDS1307::isValidDate</a></div><div class="ttdeci">int16_t isValidDate(const uint16_t year, const uint8_t month, const uint8_t day)</div><div class="ttdoc">Check if a date is valid. Checks a given date to see if it's valid, will return an error code with th...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:593</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_aaf4de534364a56d8ccd112921aa8a2c2"><div class="ttname"><a href="classmy_d_s1307.html#aaf4de534364a56d8ccd112921aa8a2c2">myDS1307::ERROR_INVALID_DATE</a></div><div class="ttdeci">static const int16_t ERROR_INVALID_DATE</div><div class="ttdoc">Invalid date. Value -554. Invalid date value was passed. Valid values (1-31).</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:89</div></div>
-<div class="ttc" id="aclassmy_d_s1307_html_af3396014570be0a6c496fd7cd8d78319"><div class="ttname"><a href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">myDS1307::writeSram</a></div><div class="ttdeci">int16_t writeSram(const uint8_t index, uint8_t *buffer, const uint8_t length)</div><div class="ttdoc">Write to the sram. Write to the sram. Returns 0 (NO_ERROR) if written successfully....</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:1059</div></div>
+<div class="ttc" id="aclassmy_d_s1307_html_af3396014570be0a6c496fd7cd8d78319"><div class="ttname"><a href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">myDS1307::writeSram</a></div><div class="ttdeci">int16_t writeSram(const uint8_t index, uint8_t *buffer, const uint8_t length)</div><div class="ttdoc">Write to the sram. Write to the sram. Returns 0 (NO_ERROR) if written successfully....</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:1060</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_a9aa6a48c47c663b00f942f277ed94e4a"><div class="ttname"><a href="classmy_d_s1307.html#a9aa6a48c47c663b00f942f277ed94e4a">myDS1307::RATE_1HZ</a></div><div class="ttdeci">static const uint8_t RATE_1HZ</div><div class="ttdoc">Rate 1 Hz. Set square wave output to 1 Hz.</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:120</div></div>
 <div class="ttc" id="aclassmy_d_s1307_html_a88c39e6dac59cac1c684005bfb1add44"><div class="ttname"><a href="classmy_d_s1307.html#a88c39e6dac59cac1c684005bfb1add44">myDS1307::getYear</a></div><div class="ttdeci">int16_t getYear()</div><div class="ttdoc">Get the year. Read and return the year. Positive values are the year, if an error occurs during comms...</div><div class="ttdef"><b>Definition:</b> myDS1307.hpp:903</div></div>
 <!-- start footer part -->

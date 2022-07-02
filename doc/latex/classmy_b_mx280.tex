@@ -56,8 +56,8 @@ int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}
 \begin{DoxyCompactList}\small\item\em Set the Mode. Set the operating mode of the chip. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set oaky, otherwise if the mode is invalid, or a comms error occured an error code is returned. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}{reset}} ()
 \begin{DoxyCompactList}\small\item\em reset the chip. Resets the chip to default values. Retuns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if reset okay, otherwise, if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
-int32\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}{initialize}} (const uint8\+\_\+t config=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG, const uint8\+\_\+t meas\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const uint8\+\_\+t hum\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS)
-\begin{DoxyCompactList}\small\item\em Initialize the chip. Initialize the B\+Mx280 chip. Returns the achieved baud rate (target is 3.\+2\+M\+Hz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a1eb6cb2dde5bc8858c6b0ce271626c3c}{initialize}} (const uint8\+\_\+t config=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG, const uint8\+\_\+t meas\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const uint8\+\_\+t hum\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const bool init\+I2C=true)
+\begin{DoxyCompactList}\small\item\em Initialize the chip. Initialize the B\+Mx280 chip. Returns the achieved baud rate (target is 3.\+2\+M\+Hz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. If init\+I2C is set to false, don\textquotesingle{}t initialize the i2c bus, and assume it\textquotesingle{}s alread initialized. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}{update}} ()
 \begin{DoxyCompactList}\small\item\em Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if updated okay, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmy_b_mx280_a2b01b7186c042ff75a2feb7d6887b15d}{verify\+Address}} (const uint8\+\_\+t address)
@@ -106,7 +106,7 @@ bool \mbox{\hyperlink{classmy_b_mx280_a5859586567063d2b4094921ea8b83f5f}{set\+Mo
 \begin{DoxyCompactList}\small\item\em Set the Mode. Set the operating mode of the chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}{reset}} ()
 \begin{DoxyCompactList}\small\item\em reset the chip. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}{initialize}} (const uint8\+\_\+t config=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG, const uint8\+\_\+t meas\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const uint8\+\_\+t hum\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS)
+bool \mbox{\hyperlink{classmy_b_mx280_a09b43c1be010cfd27f4c02a5f61c655f}{initialize}} (const uint8\+\_\+t config=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+IG, const uint8\+\_\+t meas\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+E\+A\+S\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const uint8\+\_\+t hum\+Ctrl=D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+U\+M\+\_\+\+S\+E\+T\+T\+I\+N\+GS, const bool init\+S\+PI=true)
 \begin{DoxyCompactList}\small\item\em Initialize the chip. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classmy_b_mx280_a3f803bcb617e56d846b840f551ae7af7}{update}} ()
 \begin{DoxyCompactList}\small\item\em Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -559,11 +559,35 @@ Get the Temperature O\+SR Get temperature oversampling rate. Returns positive (i
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns positive,is one of the O\+S\+R\+\_\+ values. Negative for error code. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}\label{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}} 
+\mbox{\Hypertarget{classmy_b_mx280_a1eb6cb2dde5bc8858c6b0ce271626c3c}\label{classmy_b_mx280_a1eb6cb2dde5bc8858c6b0ce271626c3c}} 
 \index{myBMx280@{myBMx280}!initialize@{initialize}}
 \index{initialize@{initialize}!myBMx280@{myBMx280}}
 \doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS},  }\item[{const bool}]{init\+I2C = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Initialize the chip. Initialize the B\+Mx280 chip. Returns the achieved baud rate (target is 3.\+2\+M\+Hz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. If init\+I2C is set to false, don\textquotesingle{}t initialize the i2c bus, and assume it\textquotesingle{}s alread initialized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. \\
+\hline
+{\em meas\+Ctrl} & The meas\+Ctrl byte to write to the chip, defaults to temperature =O\+S\+R\+\_\+\+X1, pressure=O\+S\+R\+\_\+\+X1, mode = M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED. \\
+\hline
+{\em hum\+Ctrl} & The hum\+Ctrl byte to write to the chip if available, defaults to humidty = O\+S\+R\+\_\+\+X1 \\
+\hline
+{\em init\+I2C} & Initialize the i2c bus. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Positive is the achieved baud rate, negaitive for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_b_mx280_a09b43c1be010cfd27f4c02a5f61c655f}\label{classmy_b_mx280_a09b43c1be010cfd27f4c02a5f61c655f}} 
+\index{myBMx280@{myBMx280}!initialize@{initialize}}
+\index{initialize@{initialize}!myBMx280@{myBMx280}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS},  }\item[{const bool}]{init\+S\+PI = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
 
@@ -575,35 +599,15 @@ Initialize the chip.
 \hline
 {\em meas\+Ctrl} & The meas\+Ctrl byte to write to the chip, defaults to temperature =O\+S\+R\+\_\+\+X1, pressure=O\+S\+R\+\_\+\+X1, mode = M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED. \\
 \hline
-{\em hum\+Ctrl} & the hum\+Ctrl byte to write to the chip if available, defaults to humidty = O\+S\+R\+\_\+\+X1 \\
+{\em hum\+Ctrl} & The hum\+Ctrl byte to write to the chip if available, defaults to humidty = O\+S\+R\+\_\+\+X1 \\
+\hline
+{\em init\+S\+PI} & If true, the default it will try and initialize the spi bus, otherwise it will assum it\textquotesingle{}s already setup. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if initialized okay. 
 
 false if not initialized okay. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}\label{classmy_b_mx280_a774d1dfb092e114b347f9535609d0405}} 
-\index{myBMx280@{myBMx280}!initialize@{initialize}}
-\index{initialize@{initialize}!myBMx280@{myBMx280}}
-\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily bool my\+B\+Mx280\+::initialize (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{config = {\ttfamily DEFAULT\+\_\+CONFIG},  }\item[{const uint8\+\_\+t}]{meas\+Ctrl = {\ttfamily DEFAULT\+\_\+MEAS\+\_\+SETTINGS},  }\item[{const uint8\+\_\+t}]{hum\+Ctrl = {\ttfamily DEFAULT\+\_\+HUM\+\_\+SETTINGS} }\end{DoxyParamCaption})}
-
-
-
-Initialize the chip. Initialize the B\+Mx280 chip. Returns the achieved baud rate (target is 3.\+2\+M\+Hz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em config} & The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. \\
-\hline
-{\em meas\+Ctrl} & The meas\+Ctrl byte to write to the chip, defaults to temperature =O\+S\+R\+\_\+\+X1, pressure=O\+S\+R\+\_\+\+X1, mode = M\+O\+D\+E\+\_\+\+F\+O\+R\+C\+ED. \\
-\hline
-{\em hum\+Ctrl} & the hum\+Ctrl byte to write to the chip if available, defaults to humidty = O\+S\+R\+\_\+\+X1 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int32\+\_\+t Positive is the achieved baud rate, negaitive for error code. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}\label{classmy_b_mx280_a8a91456a2f01ac0b170e9c4b69b14907}} 
 \index{myBMx280@{myBMx280}!reset@{reset}}

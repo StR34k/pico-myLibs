@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            returnValue = <a class="code" href="namespacemy_a_d_c.html#a671539306cf3cfa2fb6c51d198f9b7a8">myADC::readTemperatureRaw</a>();  <span class="comment">// Read the temperature</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">if</span> (returnValue &lt; 0) { <span class="keywordflow">return</span> returnValue; } <span class="comment">// If it generated an error pass it on.</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            randomSeed &lt;&lt;=8;    <span class="comment">// Shift seed to make room.</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            ramdomSeed |= (uint8_t)returnValue; <span class="comment">// Store the lower 8 bits of the reading.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            randomSeed |= (uint8_t)returnValue; <span class="comment">// Store the lower 8 bits of the reading.</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            sleep_us(1); <span class="comment">// Delay to give time for reading to change.</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        srand(randomSeed);</div>

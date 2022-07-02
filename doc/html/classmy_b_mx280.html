@@ -145,9 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a91456a2f01ac0b170e9c4b69b14907"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a8a91456a2f01ac0b170e9c4b69b14907">reset</a> ()</td></tr>
 <tr class="memdesc:a8a91456a2f01ac0b170e9c4b69b14907"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset the chip. Resets the chip to default values. Retuns 0 (NO_ERROR) if reset okay, otherwise, if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#a8a91456a2f01ac0b170e9c4b69b14907">More...</a><br /></td></tr>
 <tr class="separator:a8a91456a2f01ac0b170e9c4b69b14907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a774d1dfb092e114b347f9535609d0405"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405">initialize</a> (const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS)</td></tr>
-<tr class="memdesc:a774d1dfb092e114b347f9535609d0405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip. Initialize the BMx280 chip. Returns the achieved baud rate (target is 3.2MHz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned.  <a href="classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405">More...</a><br /></td></tr>
-<tr class="separator:a774d1dfb092e114b347f9535609d0405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb6cb2dde5bc8858c6b0ce271626c3c"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a1eb6cb2dde5bc8858c6b0ce271626c3c">initialize</a> (const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS, const bool initI2C=true)</td></tr>
+<tr class="memdesc:a1eb6cb2dde5bc8858c6b0ce271626c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip. Initialize the BMx280 chip. Returns the achieved baud rate (target is 3.2MHz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. If initI2C is set to false, don't initialize the i2c bus, and assume it's alread initialized.  <a href="classmy_b_mx280.html#a1eb6cb2dde5bc8858c6b0ce271626c3c">More...</a><br /></td></tr>
+<tr class="separator:a1eb6cb2dde5bc8858c6b0ce271626c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f803bcb617e56d846b840f551ae7af7"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7">update</a> ()</td></tr>
 <tr class="memdesc:a3f803bcb617e56d846b840f551ae7af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns 0 (NO_ERROR) if updated okay, otherwise if a comms error occurs, an error code is returned.  <a href="classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7">More...</a><br /></td></tr>
 <tr class="separator:a3f803bcb617e56d846b840f551ae7af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,9 +220,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a91456a2f01ac0b170e9c4b69b14907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a8a91456a2f01ac0b170e9c4b69b14907">reset</a> ()</td></tr>
 <tr class="memdesc:a8a91456a2f01ac0b170e9c4b69b14907"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset the chip.  <a href="classmy_b_mx280.html#a8a91456a2f01ac0b170e9c4b69b14907">More...</a><br /></td></tr>
 <tr class="separator:a8a91456a2f01ac0b170e9c4b69b14907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a774d1dfb092e114b347f9535609d0405"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405">initialize</a> (const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS)</td></tr>
-<tr class="memdesc:a774d1dfb092e114b347f9535609d0405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip.  <a href="classmy_b_mx280.html#a774d1dfb092e114b347f9535609d0405">More...</a><br /></td></tr>
-<tr class="separator:a774d1dfb092e114b347f9535609d0405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b43c1be010cfd27f4c02a5f61c655f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a09b43c1be010cfd27f4c02a5f61c655f">initialize</a> (const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS, const bool initSPI=true)</td></tr>
+<tr class="memdesc:a09b43c1be010cfd27f4c02a5f61c655f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip.  <a href="classmy_b_mx280.html#a09b43c1be010cfd27f4c02a5f61c655f">More...</a><br /></td></tr>
+<tr class="separator:a09b43c1be010cfd27f4c02a5f61c655f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f803bcb617e56d846b840f551ae7af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7">update</a> ()</td></tr>
 <tr class="memdesc:a3f803bcb617e56d846b840f551ae7af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the temperature, humidity and pressure values. Read and update the pressure temperature and humidity values. Will force a reading if in forced mode.  <a href="classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7">More...</a><br /></td></tr>
 <tr class="separator:a3f803bcb617e56d846b840f551ae7af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -939,8 +939,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a774d1dfb092e114b347f9535609d0405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a774d1dfb092e114b347f9535609d0405">&#9670;&nbsp;</a></span>initialize() <span class="overload">[1/2]</span></h2>
+<a id="a1eb6cb2dde5bc8858c6b0ce271626c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eb6cb2dde5bc8858c6b0ce271626c3c">&#9670;&nbsp;</a></span>initialize() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -961,7 +961,65 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>humCtrl</em> = <code>DEFAULT_HUM_SETTINGS</code>&#160;</td>
+          <td class="paramname"><em>humCtrl</em> = <code>DEFAULT_HUM_SETTINGS</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>initI2C</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the chip. Initialize the BMx280 chip. Returns the achieved baud rate (target is 3.2MHz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. If initI2C is set to false, don't initialize the i2c bus, and assume it's alread initialized. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. </td></tr>
+    <tr><td class="paramname">measCtrl</td><td>The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED. </td></tr>
+    <tr><td class="paramname">humCtrl</td><td>The humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1 </td></tr>
+    <tr><td class="paramname">initI2C</td><td>Initialize the i2c bus. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Positive is the achieved baud rate, negaitive for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a09b43c1be010cfd27f4c02a5f61c655f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b43c1be010cfd27f4c02a5f61c655f">&#9670;&nbsp;</a></span>initialize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myBMx280::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>config</em> = <code>DEFAULT_CONFIG</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>measCtrl</em> = <code>DEFAULT_MEAS_SETTINGS</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>humCtrl</em> = <code>DEFAULT_HUM_SETTINGS</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>initSPI</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -976,58 +1034,14 @@ Static Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">config</td><td>The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. </td></tr>
     <tr><td class="paramname">measCtrl</td><td>The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED. </td></tr>
-    <tr><td class="paramname">humCtrl</td><td>the humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1 </td></tr>
+    <tr><td class="paramname">humCtrl</td><td>The humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1 </td></tr>
+    <tr><td class="paramname">initSPI</td><td>If true, the default it will try and initialize the spi bus, otherwise it will assum it's already setup. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if initialized okay. </dd>
 <dd>
 false if not initialized okay. </dd></dl>
-
-</div>
-</div>
-<a id="a774d1dfb092e114b347f9535609d0405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a774d1dfb092e114b347f9535609d0405">&#9670;&nbsp;</a></span>initialize() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool myBMx280::initialize </td>
-          <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>config</em> = <code>DEFAULT_CONFIG</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>measCtrl</em> = <code>DEFAULT_MEAS_SETTINGS</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>humCtrl</em> = <code>DEFAULT_HUM_SETTINGS</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialize the chip. Initialize the BMx280 chip. Returns the achieved baud rate (target is 3.2MHz), otherwise if and invalid address, the chip responds with invalid values, or invalid pins are provided, and error code is returned. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">config</td><td>The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode. </td></tr>
-    <tr><td class="paramname">measCtrl</td><td>The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED. </td></tr>
-    <tr><td class="paramname">humCtrl</td><td>the humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t Positive is the achieved baud rate, negaitive for error code. </dd></dl>
 
 </div>
 </div>
