@@ -468,13 +468,16 @@ class myBMx280 {
 		 * @brief Initialize the chip.
 		 * Initialize the BMx280 chip.  Returns the achieved baud rate (target is 3.2MHz), otherwise if
          * and invalid address, the chip responds with invalid values, or invalid pins are provided, and
-         * error code is returned.
+         * error code is returned. If initI2C is set to false, don't initialize the i2c bus, and assume
+		 * it's alread initialized.
 		 * @param config The config byte to write to the chip, defaults to standby time of 500us, filter off, comms in 4 wire mode.
 		 * @param measCtrl The measCtrl byte to write to the chip, defaults to temperature =OSR_X1, pressure=OSR_X1, mode = MODE_FORCED.
-		 * @param humCtrl the humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1
+		 * @param humCtrl The humCtrl byte to write to the chip if available, defaults to humidty = OSR_X1
+		 * @param initI2C Initialize the i2c bus.
 		 * @return int32_t Positive is the achieved baud rate, negaitive for error code.
 		 */
-		int32_t	initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS, const uint8_t humCtrl=DEFAULT_HUM_SETTINGS);
+		int32_t	initialize(const uint8_t config=DEFAULT_CONFIG, const uint8_t measCtrl=DEFAULT_MEAS_SETTINGS,
+								const uint8_t humCtrl=DEFAULT_HUM_SETTINGS, const bool initI2C=true);
 		/**
 		 * @brief Update the temperature, humidity and pressure values.
 		 * Read and update the pressure temperature and humidity values. Will force a reading if in forced mode. Returns
@@ -794,15 +797,18 @@ myBMx280::myBMx280(i2c_inst_t *i2cPort, const uint8_t sdaPin, const uint8_t sclP
 	}
 
 	
-    int32_t myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const uint8_t humCtrl){
+    int32_t myBMx280::initialize(const uint8_t config, const uint8_t measCtrl, const uint8_t humCtrl,
+										const bool initI2C){
         int32_t baudRate;
         int16_t returnValue;
         uint8_t chipID;
     // Init I2C:
         if (verifyAddress(_address) == false) { return ERROR_INVALID_ADDRESS; }
-        baudRate = myI2C::initializeMaster(_i2cPort, _sdaPin, _sclPin, 3200*1000);
-		printf("Got baud: %i\n", baudRate);
-        if (baudRate < 0) { return baudRate; } // Error occured, return the error.
+		if (initI2C == true) {
+			baudRate = myI2C::initializeMaster(_i2cPort, _sdaPin, _sclPin, 3200*1000);
+			// printf("Got baud: %i\n", baudRate);
+			if (baudRate < 0) { return baudRate; } // Error occured, return the error.
+		}
     // Check chip ID and set have humidity:
         returnValue = getID();
         if (returnValue < 0) { return returnValue; } // Error occured, return the error.
