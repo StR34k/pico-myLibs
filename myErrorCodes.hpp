@@ -344,4 +344,51 @@
      */
     #define MY_ERROR_MYBMx280_INVALID_MODE                  -507
 
+/******************** myds1307 Error codes: (550-599) ***********************/
+
+    /**
+     * @brief Invalid seconds.
+     * Invalid seconds was passed. Valid values (0-59).
+     */
+    #define MY_ERROR_MYDS1307_INVALID_SECONDS               -550
+    /**
+     * @brief Invalid minutes.
+     * Invalid minutes value was passed. Valid values (0-59).
+     */
+    #define MY_ERROR_MYDS1307_INVALID_MINUTES               -551
+    /**
+     * @brief Invalid hours.
+     * Invalid hours value was passed. Valid values (0-23 in 24h mode, 1-12 in 12h mode)
+     */
+    #define MY_ERROR_MYDS1307_INVALID_HOURS                 -552
+    /**
+     * @brief Invalid day of the week.
+     * Invalid day value was passed. Valid values (1-7).
+     */
+    #define MY_ERROR_MYDS1307_INVALID_DAY                   -553
+    /**
+     * @brief Invalid date.
+     * Invalid date value was passed. Valid values (1-31).
+     */
+    #define MY_ERROR_MYDS1307_INVALID_DATE                  -554
+    /**
+     * @brief Invalid month.
+     * Invalid month value was passed. Valid values (1-12).
+     */
+    #define MY_ERROR_MYDS1307_INVALID_MONTH                 -555
+    /**
+     * @brief Invalid year.
+     * Invalid year value was passed. Valid values (2000-2099)
+     */
+    #define MY_ERROR_MYDS1307_INVALID_YEAR                  -556
+    /**
+     * @brief Invalid rate.
+     * Invalid rate value was passed. Valid values (RATE_*) (0-3).
+     */
+    #define MY_ERROR_MYDS1307_INVALID_RATE                  -557
+    /**
+     * @brief Comms check failed.
+     * The comms check during initialization failed.
+     */
+    #define MY_ERROR_MYDS1307_COMMS_CHECK_FAILED            -558
 #endif
