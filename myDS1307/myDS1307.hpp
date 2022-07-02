@@ -107,6 +107,11 @@ class myDS1307 {
          * The comms check during initialization failed.
          */
         static const int16_t ERROR_COMMS_FAILED = MY_ERROR_MYDS1307_COMMS_CHECK_FAILED;
+        /**
+         * @brief Boundary crossed. Value -559.
+         * The read / write operation would cross a boundary.
+         */
+        static const int16_t ERROR_BOUNDARY_CROSSED = MY_ERROR_MYDS1307_BOUNDARY_CROSSED;
     // Rate Select values:
         /**
          * @brief Rate 1 Hz.
@@ -128,6 +133,12 @@ class myDS1307 {
          * Set square wave output to 32.768 KHz.
          */
         static const uint8_t RATE_32KHZ = 0x03;
+    // Sram constants:
+        /**
+         * @brief Length of sram.
+         * Length of sram in bytes.
+         */
+        static const uint8_t SRAM_LENGTH = 56;
 /* ############### Constructor ############### */
     myDS1307(i2c_inst_t *i2cPort, const uint8_t sdaPin, const uint8_t sclPin): _sdaPin (sdaPin), 
                     _sclPin (sclPin) {
@@ -449,6 +460,30 @@ class myDS1307 {
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
     int16_t setSquareWaveRate(const uint8_t value);
+    /**
+     * @brief Read sram.
+     * Reads the sram, returns 0 (NO_ERROR) if read okay, otherwise if the read would
+     * cross a boundary or if a comms error occurs, an error code is returned. If the
+     * read would cross a boundary, no data is read.
+     * @note Index's are zero based, so valid values are 0-55.
+     * @param index Index of sram. Valid values (0-55).
+     * @param buffer Buffer to read into.
+     * @param length Number of bytes to read.
+     * @return int16_t Returns 0 (NO_ERROR) if read okay, negative for error code.
+     */
+    int16_t readSram(const uint8_t index, uint8_t *buffer, const uint8_t length);
+    /**
+     * @brief Write to the sram.
+     * Write to the sram. Returns 0 (NO_ERROR) if written successfully. If a boundary
+     * would be crossed, an error code is returned, and no data is written, if a comms
+     * error occurs, an error code will also be returned.
+     * @note Index's are zero based, so valid values are 0-55.
+     * @param index Index of sram. Valid values (0-55);
+     * @param buffer Data to write to sram.
+     * @param length Number of bytes to write.
+     * @return int16_t Retuns 0 (NO_ERROR) for okay, negative for error code.
+     */
+    int16_t writeSram(const uint8_t index, uint8_t *buffer, const uint8_t length);
     /**
      * @brief Initialize the chip.
      * Initialize communications with the chip. Returns 0(NO_ERROR) for okay, otherwise if
@@ -1010,6 +1045,24 @@ int16_t myDS1307::setSquareWaveRate(const uint8_t value) {
     controlData &= ~MASK_CONTROL_RS;
     controlData |= value;
     returnValue = __writeRegisters__(REG_CONTROL, &controlData, 1);
+}
+
+int16_t myDS1307::readSram(const uint8_t index, uint8_t *buffer, const uint8_t length) {
+    int16_t returnValue;
+    uint8_t reg;
+    if ((index + (length - 1)) > 55) { return ERROR_BOUNDARY_CROSSED; }
+    reg = REG_SRAM_START + index;
+    returnValue = __readRegisters__(reg, buffer, length);
+    return returnValue;
+}
+
+int16_t myDS1307::writeSram(const uint8_t index, uint8_t *buffer, const uint8_t length) {
+    int16_t returnValue;
+    uint8_t reg;
+    if ((index + (length - 1)) > 55) { return ERROR_BOUNDARY_CROSSED; }
+    reg = REG_SRAM_START + index;
+    returnValue = __writeRegisters__(reg, buffer, length);
+    return returnValue;
 }
 
 int16_t myDS1307::initialize(const bool initI2C) {

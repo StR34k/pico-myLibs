@@ -391,4 +391,9 @@
      * The comms check during initialization failed.
      */
     #define MY_ERROR_MYDS1307_COMMS_CHECK_FAILED            -558
+    /**
+     * @brief Boundary crossed.
+     * The read / write action would cross a boundary.
+     */
+    #define MY_ERROR_MYDS1307_BOUNDARY_CROSSED              -559
 #endif
