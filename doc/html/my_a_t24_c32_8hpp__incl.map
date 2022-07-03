@@ -1,0 +1,12 @@
+<map id="myAT24C32/myAT24C32.hpp" name="myAT24C32/myAT24C32.hpp">
+<area shape="rect" id="node1" title="Class to use an AT24C32 32K EEPROM." alt="" coords="509,5,719,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="497,229,624,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="649,155,768,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="844,80,939,107"/>
+<area shape="rect" id="node5" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="5,229,196,256"/>
+<area shape="rect" id="node6" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="649,229,803,256"/>
+<area shape="rect" id="node7" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="335,155,469,181"/>
+<area shape="rect" id="node10" href="$my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="539,80,689,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="221,229,354,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="379,229,473,256"/>
+</map>

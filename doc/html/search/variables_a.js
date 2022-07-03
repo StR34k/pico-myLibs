@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['rate_5f1hz_720',['RATE_1HZ',['../classmy_d_s1307.html#a9aa6a48c47c663b00f942f277ed94e4a',1,'myDS1307']]],
-  ['rate_5f32khz_721',['RATE_32KHZ',['../classmy_d_s1307.html#aa6a643aab4a3f61440dbcb399320edb0',1,'myDS1307']]],
-  ['rate_5f4khz_722',['RATE_4KHZ',['../classmy_d_s1307.html#a7eda929a5e6cac97fb418699d9a8af7f',1,'myDS1307']]],
-  ['rate_5f8khz_723',['RATE_8KHZ',['../classmy_d_s1307.html#ab74f0a412a6d93a15f5f8563153dd33d',1,'myDS1307']]]
+  ['rate_5f1hz_737',['RATE_1HZ',['../classmy_d_s1307.html#a9aa6a48c47c663b00f942f277ed94e4a',1,'myDS1307']]],
+  ['rate_5f32khz_738',['RATE_32KHZ',['../classmy_d_s1307.html#aa6a643aab4a3f61440dbcb399320edb0',1,'myDS1307']]],
+  ['rate_5f4khz_739',['RATE_4KHZ',['../classmy_d_s1307.html#a7eda929a5e6cac97fb418699d9a8af7f',1,'myDS1307']]],
+  ['rate_5f8khz_740',['RATE_8KHZ',['../classmy_d_s1307.html#ab74f0a412a6d93a15f5f8563153dd33d',1,'myDS1307']]]
 ];

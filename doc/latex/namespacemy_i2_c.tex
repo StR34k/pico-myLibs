@@ -8,6 +8,8 @@ I2C helper functions.
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \mbox{\hyperlink{namespacemy_i2_c_aedf667589c61dd8a7856aba4309c7929}{is\+Valid\+Address}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate an I2C address. Validates an I2C address, returns true if an address is valid, false if not valid, or is a reserved address. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_i2_c_ab1b637de438e923e4d9a500ca233b3bd}{is\+Sda\+Pin}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t pin)
 \begin{DoxyCompactList}\small\item\em Validate S\+DA pin. Returns true if pin provided is a valid S\+DA pin for the provided i2c port, otherwise if an invalid pin is passed, or its not a S\+DA pin, it will return false. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{namespacemy_i2_c_a71f5d61e076e62f0e1836d087860df34}{is\+Scl\+Pin}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t pin)
@@ -226,6 +228,26 @@ Validate S\+DA pin. Returns true if pin provided is a valid S\+DA pin for the pr
 true Pin is valid S\+DA pin. 
 
 false Pin is not valid S\+DA pin, or not a valid pin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_i2_c_aedf667589c61dd8a7856aba4309c7929}\label{namespacemy_i2_c_aedf667589c61dd8a7856aba4309c7929}} 
+\index{myI2C@{myI2C}!isValidAddress@{isValidAddress}}
+\index{isValidAddress@{isValidAddress}!myI2C@{myI2C}}
+\doxysubsubsection{\texorpdfstring{isValidAddress()}{isValidAddress()}}
+{\footnotesize\ttfamily bool my\+I2\+C\+::is\+Valid\+Address (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate an I2C address. Validates an I2C address, returns true if an address is valid, false if not valid, or is a reserved address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & I2C address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Address is valid. 
+
+false Address is not valid or is reserved. 
 \end{DoxyReturn}
 
 

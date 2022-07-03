@@ -5,7 +5,8 @@
 Standard defines for pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -59,15 +60,15 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactList}\small\item\em Number of possible I2C pins. Number of possible options for each type of I2C pin. IE\+: I2\+C0 S\+DA can be set to 1 of 8 pins. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}~0
 \begin{DoxyCompactList}\small\item\em No error value. Value to use to represent no error. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/1
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/4
 \begin{DoxyCompactList}\small\item\em General error value. General error for when no other error code applies. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_standard_defines_8hpp_a1a2c7825740de47fb2c8572f6f81027c}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}~-\/2
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a1a2c7825740de47fb2c8572f6f81027c}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN}}~-\/5
 \begin{DoxyCompactList}\small\item\em invalid pin number. An invalid pin number was passed. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_standard_defines_8hpp_a30c7699357e500c950a9a32a429e59bf}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK}}~-\/3
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a30c7699357e500c950a9a32a429e59bf}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK}}~-\/6
 \begin{DoxyCompactList}\small\item\em invalid bit mask. An invalid bit mask was passed. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}~-\/4
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}~-\/7
 \begin{DoxyCompactList}\small\item\em Timeout reached. A timeout has been reached. \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{my_standard_defines_8hpp_a2932a50fea6f22d821215e6d34403aff}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR}}~-\/5
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a2932a50fea6f22d821215e6d34403aff}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR}}~-\/8
 \begin{DoxyCompactList}\small\item\em Invalid direction A pin is set to wrong direction for operation requested. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}}~1
 \begin{DoxyCompactList}\small\item\em bit order of M\+SB first. \end{DoxyCompactList}\item 
@@ -241,7 +242,7 @@ Temperature channel. The channel number for the internal temerature sensor.
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_GENERAL\_ERROR@{MY\_GENERAL\_ERROR}}
 \index{MY\_GENERAL\_ERROR@{MY\_GENERAL\_ERROR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_GENERAL\_ERROR}{MY\_GENERAL\_ERROR}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR~-\/1}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR~-\/4}
 
 
 
@@ -274,7 +275,7 @@ Number of I2C ports on the rp2040 Number of I2C ports on the rp2040, there are 2
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_INVALID\_BIT\_MASK@{MY\_INVALID\_BIT\_MASK}}
 \index{MY\_INVALID\_BIT\_MASK@{MY\_INVALID\_BIT\_MASK}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_INVALID\_BIT\_MASK}{MY\_INVALID\_BIT\_MASK}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK~-\/3}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+I\+T\+\_\+\+M\+A\+SK~-\/6}
 
 
 
@@ -284,7 +285,7 @@ invalid bit mask. An invalid bit mask was passed.
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_INVALID\_DIR@{MY\_INVALID\_DIR}}
 \index{MY\_INVALID\_DIR@{MY\_INVALID\_DIR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_INVALID\_DIR}{MY\_INVALID\_DIR}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR~-\/5}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR~-\/8}
 
 
 
@@ -294,7 +295,7 @@ Invalid direction A pin is set to wrong direction for operation requested.
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_INVALID\_PIN@{MY\_INVALID\_PIN}}
 \index{MY\_INVALID\_PIN@{MY\_INVALID\_PIN}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_INVALID\_PIN}{MY\_INVALID\_PIN}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN~-\/2}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+IN~-\/5}
 
 
 
@@ -397,7 +398,7 @@ Number of spi ports. Number of spi ports on the rp2040. There are 2 ports.
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_TIMEOUT@{MY\_TIMEOUT}}
 \index{MY\_TIMEOUT@{MY\_TIMEOUT}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_TIMEOUT}{MY\_TIMEOUT}}
-{\footnotesize\ttfamily \#define M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT~-\/4}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT~-\/7}
 
 
 

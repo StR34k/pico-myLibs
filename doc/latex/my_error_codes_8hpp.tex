@@ -5,7 +5,8 @@
 Define all error codes used in pico-\/my\+Libs.  
 
 
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -154,7 +155,11 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a98291fb30d3b6b7ffbd46238f444d613}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+C\+O\+M\+M\+S\+\_\+\+C\+H\+E\+C\+K\+\_\+\+F\+A\+I\+L\+ED}}~-\/558
 \begin{DoxyCompactList}\small\item\em Comms check failed. The comms check during initialization failed. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_error_codes_8hpp_a9d655471c0c8911e96187245acd137f0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+D\+S1307\+\_\+\+B\+O\+U\+N\+D\+A\+R\+Y\+\_\+\+C\+R\+O\+S\+S\+ED}}~-\/559
-\begin{DoxyCompactList}\small\item\em Boundary crossed. The read / write action would cross a boundary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Boundary crossed. The read / write action would cross a boundary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a27e71fe8976c697eb9076ce240b219b7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}~-\/600
+\begin{DoxyCompactList}\small\item\em Invalid address. The address passed is invalid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_error_codes_8hpp_a630b31d0efc341e18998a2046bbe8ed3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+TH}}~-\/601
+\begin{DoxyCompactList}\small\item\em Invalid length. The length provided is too long. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -396,6 +401,26 @@ Enable pin not defined. The enable pin was not defined when operation was reques
 
 
 Operation not available. The bit write operation is not available in hardware S\+PI mode. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a27e71fe8976c697eb9076ce240b219b7}\label{my_error_codes_8hpp_a27e71fe8976c697eb9076ce240b219b7}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYAT24C32\_INVALID\_ADDRESS@{MY\_ERROR\_MYAT24C32\_INVALID\_ADDRESS}}
+\index{MY\_ERROR\_MYAT24C32\_INVALID\_ADDRESS@{MY\_ERROR\_MYAT24C32\_INVALID\_ADDRESS}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYAT24C32\_INVALID\_ADDRESS}{MY\_ERROR\_MYAT24C32\_INVALID\_ADDRESS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS~-\/600}
+
+
+
+Invalid address. The address passed is invalid. 
+
+\mbox{\Hypertarget{my_error_codes_8hpp_a630b31d0efc341e18998a2046bbe8ed3}\label{my_error_codes_8hpp_a630b31d0efc341e18998a2046bbe8ed3}} 
+\index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYAT24C32\_INVALID\_LENGTH@{MY\_ERROR\_MYAT24C32\_INVALID\_LENGTH}}
+\index{MY\_ERROR\_MYAT24C32\_INVALID\_LENGTH@{MY\_ERROR\_MYAT24C32\_INVALID\_LENGTH}!myErrorCodes.hpp@{myErrorCodes.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_ERROR\_MYAT24C32\_INVALID\_LENGTH}{MY\_ERROR\_MYAT24C32\_INVALID\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+TH~-\/601}
+
+
+
+Invalid length. The length provided is too long. 
 
 \mbox{\Hypertarget{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}\label{my_error_codes_8hpp_a1e971bd8921e843a02dbf5036f1c79db}} 
 \index{myErrorCodes.hpp@{myErrorCodes.hpp}!MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS@{MY\_ERROR\_MYBMx280\_INVALID\_ADDRESS}}

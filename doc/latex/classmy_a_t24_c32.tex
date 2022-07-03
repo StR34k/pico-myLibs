@@ -1,0 +1,286 @@
+\hypertarget{classmy_a_t24_c32}{}\doxysection{my\+A\+T24\+C32 Class Reference}
+\label{classmy_a_t24_c32}\index{myAT24C32@{myAT24C32}}
+
+
+{\ttfamily \#include $<$my\+A\+T24\+C32.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_a_t24_c32_aa61b20ee483cd1b13a7c48a91d9ba995}{my\+A\+T24\+C32}} (i2c\+\_\+inst\+\_\+t $\ast$i2c\+Port, const uint8\+\_\+t sda\+Pin, const uint8\+\_\+t scl\+Pin, const uint8\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Construct a new my A\+T24\+C32 object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy_a_t24_c32_a5d65609d5d8285fee58737758aad526e}{is\+Valid\+Address}} (const uint16\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Validate an address. Validates an address, returns true if address is valid, false if not. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_a44cfa4c13f6d74d59f77b4c8a00750de}{read}} (const uint16\+\_\+t address, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read from the E\+E\+R\+P\+OM Read from the E\+E\+P\+R\+OM, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, otherwise if a comms error occurs, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_aeeead3baa000d05bcf5ce61d665d4821}{write}} (const uint16\+\_\+t address, uint8\+\_\+t $\ast$buffer, const size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Write to the E\+E\+P\+R\+OM Preforms a write to the E\+E\+P\+R\+OM. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if written okay, otherwise if an invalid address or length are provided, an error code is returned. This blocks until the write is complete. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_adb222878731c205002b237b58405fd15}{initialize}} (const bool init\+I2C=true)
+\begin{DoxyCompactList}\small\item\em Initialize the E\+E\+P\+R\+OM. Initializes the eeprom, and preforms a read to verify comms. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, otherwise it will return an error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_a9f21d850d619ab27f43e9826a7bd49b2}{E\+E\+P\+R\+O\+M\+\_\+\+L\+E\+N\+G\+TH}} = 4096
+\begin{DoxyCompactList}\small\item\em Length of E\+E\+P\+R\+OM in bytes. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_a99a734a966d4e4539449437fdd7d77c7}{P\+A\+G\+E\+\_\+\+L\+E\+N\+G\+TH}} = 32
+\begin{DoxyCompactList}\small\item\em Length of E\+E\+P\+R\+OM Page in bytes. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_ab74e240e427b5a5207679bda23c9c956}{N\+U\+M\+\_\+\+P\+A\+G\+ES}} = 128
+\begin{DoxyCompactList}\small\item\em Number of 32 byte pages. \end{DoxyCompactList}\item 
+static const uint16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_ad6e0ea6669139954f66d653fbcd6f1c0}{M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS}} = 0x0\+F\+FF
+\begin{DoxyCompactList}\small\item\em Max address. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_ab2de031b7b108fec43e1c5b036c08464}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\begin{DoxyCompactList}\small\item\em No error. Value 0. No error occured. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_a4d3bf062ac6ebcb892bcefd3a8fb1a4c}{E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}} = \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\begin{DoxyCompactList}\small\item\em Timeout reached. Value -\/7. The E\+E\+P\+R\+OM timed out. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_a42d2667e0db70d1e2016f8f91b435f87}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid S\+DA pin. Value -\/450. Invalid S\+DA pin was passed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_ae4b7e6181f01f9dcf8b2e204fc31f51a}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid S\+CL pin. Value -\/451. Invalid S\+CL pin was passed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_af2859be4eac1ea8b6fc7f929c1559f40}{E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\begin{DoxyCompactList}\small\item\em I2C bus already initialized. Value -\/452. The I2C bus is already initialized. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_aed5b6196af9b0eb92ed50ac773469e2c}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}} = \mbox{\hyperlink{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em I2C Address not responding. Value -\/454. The supplied I2C address is not responding. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_a1c1844905e35fa8f20118c35f595fbba}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} = \mbox{\hyperlink{my_error_codes_8hpp_a27e71fe8976c697eb9076ce240b219b7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\begin{DoxyCompactList}\small\item\em Invalid address. Value -\/600. The address supplied is invalid. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_a_t24_c32_ab91722843956fbb787abec4bf40dba34}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+TH}} = \mbox{\hyperlink{my_error_codes_8hpp_a630b31d0efc341e18998a2046bbe8ed3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+TH}}
+\begin{DoxyCompactList}\small\item\em Invalid length. Value -\/601. The length provided is too long. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_a_t24_c32_aa61b20ee483cd1b13a7c48a91d9ba995}\label{classmy_a_t24_c32_aa61b20ee483cd1b13a7c48a91d9ba995}} 
+\index{myAT24C32@{myAT24C32}!myAT24C32@{myAT24C32}}
+\index{myAT24C32@{myAT24C32}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{myAT24C32()}{myAT24C32()}}
+{\footnotesize\ttfamily my\+A\+T24\+C32\+::my\+A\+T24\+C32 (\begin{DoxyParamCaption}\item[{i2c\+\_\+inst\+\_\+t $\ast$}]{i2c\+Port,  }\item[{const uint8\+\_\+t}]{sda\+Pin,  }\item[{const uint8\+\_\+t}]{scl\+Pin,  }\item[{const uint8\+\_\+t}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new my A\+T24\+C32 object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & HW spi port instance to use. \\
+\hline
+{\em sda\+Pin} & S\+DA Pin. \\
+\hline
+{\em scl\+Pin} & S\+CL Pin. \\
+\hline
+{\em address} & I2C address of the E\+E\+P\+R\+OM. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy_a_t24_c32_adb222878731c205002b237b58405fd15}\label{classmy_a_t24_c32_adb222878731c205002b237b58405fd15}} 
+\index{myAT24C32@{myAT24C32}!initialize@{initialize}}
+\index{initialize@{initialize}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+A\+T24\+C32\+::initialize (\begin{DoxyParamCaption}\item[{const bool}]{init\+I2C = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Initialize the E\+E\+P\+R\+OM. Initializes the eeprom, and preforms a read to verify comms. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, otherwise it will return an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+I2C} & True = Initialize I2C bus (default). False = Don\textquotesingle{}t initialize I2C bus, Assumes i2c bus already setup. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for init okay. Negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_a_t24_c32_a5d65609d5d8285fee58737758aad526e}\label{classmy_a_t24_c32_a5d65609d5d8285fee58737758aad526e}} 
+\index{myAT24C32@{myAT24C32}!isValidAddress@{isValidAddress}}
+\index{isValidAddress@{isValidAddress}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{isValidAddress()}{isValidAddress()}}
+{\footnotesize\ttfamily bool my\+A\+T24\+C32\+::is\+Valid\+Address (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Validate an address. Validates an address, returns true if address is valid, false if not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Address is valid. 
+
+false Address is not valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_a_t24_c32_a44cfa4c13f6d74d59f77b4c8a00750de}\label{classmy_a_t24_c32_a44cfa4c13f6d74d59f77b4c8a00750de}} 
+\index{myAT24C32@{myAT24C32}!read@{read}}
+\index{read@{read}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+A\+T24\+C32\+::read (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Read from the E\+E\+R\+P\+OM Read from the E\+E\+P\+R\+OM, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, otherwise if a comms error occurs, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to start read from. \\
+\hline
+{\em buffer} & Buffer to read into. \\
+\hline
+{\em length} & Number of bytes to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_a_t24_c32_aeeead3baa000d05bcf5ce61d665d4821}\label{classmy_a_t24_c32_aeeead3baa000d05bcf5ce61d665d4821}} 
+\index{myAT24C32@{myAT24C32}!write@{write}}
+\index{write@{write}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+A\+T24\+C32\+::write (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{address,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{const size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Write to the E\+E\+P\+R\+OM Preforms a write to the E\+E\+P\+R\+OM. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if written okay, otherwise if an invalid address or length are provided, an error code is returned. This blocks until the write is complete. 
+
+\begin{DoxyNote}{Note}
+The E\+E\+P\+R\+OM writes in 32 byte pages only, the data is therefore split up into 32 byte chunks and written. The address counter does not roll over to the first address of the first page on write, so the length of the write can only be to the end of the E\+E\+P\+R\+OM. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to start write at. \\
+\hline
+{\em buffer} & Data buffer to write. \\
+\hline
+{\em length} & Number of bytes to write. Valid values are determined by the space between the address and the end of the E\+E\+P\+R\+OM. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if written okay, negative for error code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy_a_t24_c32_a9f21d850d619ab27f43e9826a7bd49b2}\label{classmy_a_t24_c32_a9f21d850d619ab27f43e9826a7bd49b2}} 
+\index{myAT24C32@{myAT24C32}!EEPROM\_LENGTH@{EEPROM\_LENGTH}}
+\index{EEPROM\_LENGTH@{EEPROM\_LENGTH}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_LENGTH}{EEPROM\_LENGTH}}
+{\footnotesize\ttfamily const uint16\+\_\+t my\+A\+T24\+C32\+::\+E\+E\+P\+R\+O\+M\+\_\+\+L\+E\+N\+G\+TH = 4096\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Length of E\+E\+P\+R\+OM in bytes. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_af2859be4eac1ea8b6fc7f929c1559f40}\label{classmy_a_t24_c32_af2859be4eac1ea8b6fc7f929c1559f40}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_INITIALIZED@{ERROR\_INITIALIZED}}
+\index{ERROR\_INITIALIZED@{ERROR\_INITIALIZED}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INITIALIZED}{ERROR\_INITIALIZED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a7a3a240f91934bfe848e1b698b45243a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2C bus already initialized. Value -\/452. The I2C bus is already initialized. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_a1c1844905e35fa8f20118c35f595fbba}\label{classmy_a_t24_c32_a1c1844905e35fa8f20118c35f595fbba}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_INVALID\_ADDRESS@{ERROR\_INVALID\_ADDRESS}}
+\index{ERROR\_INVALID\_ADDRESS@{ERROR\_INVALID\_ADDRESS}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_ADDRESS}{ERROR\_INVALID\_ADDRESS}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS = \mbox{\hyperlink{my_error_codes_8hpp_a27e71fe8976c697eb9076ce240b219b7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid address. Value -\/600. The address supplied is invalid. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_ab91722843956fbb787abec4bf40dba34}\label{classmy_a_t24_c32_ab91722843956fbb787abec4bf40dba34}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_INVALID\_LENGTH@{ERROR\_INVALID\_LENGTH}}
+\index{ERROR\_INVALID\_LENGTH@{ERROR\_INVALID\_LENGTH}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_LENGTH}{ERROR\_INVALID\_LENGTH}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+TH = \mbox{\hyperlink{my_error_codes_8hpp_a630b31d0efc341e18998a2046bbe8ed3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+A\+T24\+C32\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+E\+N\+G\+TH}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid length. Value -\/601. The length provided is too long. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_ae4b7e6181f01f9dcf8b2e204fc31f51a}\label{classmy_a_t24_c32_ae4b7e6181f01f9dcf8b2e204fc31f51a}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_INVALID\_SCL\_PIN@{ERROR\_INVALID\_SCL\_PIN}}
+\index{ERROR\_INVALID\_SCL\_PIN@{ERROR\_INVALID\_SCL\_PIN}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SCL\_PIN}{ERROR\_INVALID\_SCL\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a52d85e2c2622ce3c9a96bdcb2a292f47}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+C\+L\+\_\+\+P\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid S\+CL pin. Value -\/451. Invalid S\+CL pin was passed. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_a42d2667e0db70d1e2016f8f91b435f87}\label{classmy_a_t24_c32_a42d2667e0db70d1e2016f8f91b435f87}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_INVALID\_SDA\_PIN@{ERROR\_INVALID\_SDA\_PIN}}
+\index{ERROR\_INVALID\_SDA\_PIN@{ERROR\_INVALID\_SDA\_PIN}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_SDA\_PIN}{ERROR\_INVALID\_SDA\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a1bbf417895edcb9ae46b0f9a5ca6fd96}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+D\+A\+\_\+\+P\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid S\+DA pin. Value -\/450. Invalid S\+DA pin was passed. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_aed5b6196af9b0eb92ed50ac773469e2c}\label{classmy_a_t24_c32_aed5b6196af9b0eb92ed50ac773469e2c}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_NOT\_RESPONDING@{ERROR\_NOT\_RESPONDING}}
+\index{ERROR\_NOT\_RESPONDING@{ERROR\_NOT\_RESPONDING}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_RESPONDING}{ERROR\_NOT\_RESPONDING}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG = \mbox{\hyperlink{my_error_codes_8hpp_a28677480dd2628a04419417ef62c7e80}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+\+N\+O\+T\+\_\+\+R\+E\+S\+P\+O\+N\+D\+I\+NG}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+I2C Address not responding. Value -\/454. The supplied I2C address is not responding. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_a4d3bf062ac6ebcb892bcefd3a8fb1a4c}\label{classmy_a_t24_c32_a4d3bf062ac6ebcb892bcefd3a8fb1a4c}} 
+\index{myAT24C32@{myAT24C32}!ERROR\_TIMEOUT@{ERROR\_TIMEOUT}}
+\index{ERROR\_TIMEOUT@{ERROR\_TIMEOUT}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{ERROR\_TIMEOUT}{ERROR\_TIMEOUT}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT = \mbox{\hyperlink{my_standard_defines_8hpp_a72dfe5bfae97efc2aae8d64482104a1e}{M\+Y\+\_\+\+T\+I\+M\+E\+O\+UT}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Timeout reached. Value -\/7. The E\+E\+P\+R\+OM timed out. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_ad6e0ea6669139954f66d653fbcd6f1c0}\label{classmy_a_t24_c32_ad6e0ea6669139954f66d653fbcd6f1c0}} 
+\index{myAT24C32@{myAT24C32}!MAX\_ADDRESS@{MAX\_ADDRESS}}
+\index{MAX\_ADDRESS@{MAX\_ADDRESS}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{MAX\_ADDRESS}{MAX\_ADDRESS}}
+{\footnotesize\ttfamily const uint16\+\_\+t my\+A\+T24\+C32\+::\+M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS = 0x0\+F\+FF\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Max address. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_ab2de031b7b108fec43e1c5b036c08464}\label{classmy_a_t24_c32_ab2de031b7b108fec43e1c5b036c08464}} 
+\index{myAT24C32@{myAT24C32}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+A\+T24\+C32\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No error. Value 0. No error occured. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_ab74e240e427b5a5207679bda23c9c956}\label{classmy_a_t24_c32_ab74e240e427b5a5207679bda23c9c956}} 
+\index{myAT24C32@{myAT24C32}!NUM\_PAGES@{NUM\_PAGES}}
+\index{NUM\_PAGES@{NUM\_PAGES}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{NUM\_PAGES}{NUM\_PAGES}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+A\+T24\+C32\+::\+N\+U\+M\+\_\+\+P\+A\+G\+ES = 128\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Number of 32 byte pages. 
+
+\mbox{\Hypertarget{classmy_a_t24_c32_a99a734a966d4e4539449437fdd7d77c7}\label{classmy_a_t24_c32_a99a734a966d4e4539449437fdd7d77c7}} 
+\index{myAT24C32@{myAT24C32}!PAGE\_LENGTH@{PAGE\_LENGTH}}
+\index{PAGE\_LENGTH@{PAGE\_LENGTH}!myAT24C32@{myAT24C32}}
+\doxysubsubsection{\texorpdfstring{PAGE\_LENGTH}{PAGE\_LENGTH}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+A\+T24\+C32\+::\+P\+A\+G\+E\+\_\+\+L\+E\+N\+G\+TH = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Length of E\+E\+P\+R\+OM Page in bytes. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+A\+T24\+C32/\mbox{\hyperlink{my_a_t24_c32_8hpp}{my\+A\+T24\+C32.\+hpp}}\end{DoxyCompactItemize}

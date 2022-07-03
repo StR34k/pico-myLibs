@@ -75,6 +75,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aedf667589c61dd8a7856aba4309c7929"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_i2_c.html#aedf667589c61dd8a7856aba4309c7929">isValidAddress</a> (const uint8_t value)</td></tr>
+<tr class="memdesc:aedf667589c61dd8a7856aba4309c7929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate an I2C address. Validates an I2C address, returns true if an address is valid, false if not valid, or is a reserved address.  <a href="namespacemy_i2_c.html#aedf667589c61dd8a7856aba4309c7929">More...</a><br /></td></tr>
+<tr class="separator:aedf667589c61dd8a7856aba4309c7929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1b637de438e923e4d9a500ca233b3bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_i2_c.html#ab1b637de438e923e4d9a500ca233b3bd">isSdaPin</a> (i2c_inst_t *i2cPort, const uint8_t pin)</td></tr>
 <tr class="memdesc:ab1b637de438e923e4d9a500ca233b3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate SDA pin. Returns true if pin provided is a valid SDA pin for the provided i2c port, otherwise if an invalid pin is passed, or its not a SDA pin, it will return false.  <a href="namespacemy_i2_c.html#ab1b637de438e923e4d9a500ca233b3bd">More...</a><br /></td></tr>
 <tr class="separator:ab1b637de438e923e4d9a500ca233b3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -438,6 +441,35 @@ false Pin is not a valid SCL pin, or not a valid pin. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true Pin is valid SDA pin. </dd>
 <dd>
 false Pin is not valid SDA pin, or not a valid pin. </dd></dl>
+
+</div>
+</div>
+<a id="aedf667589c61dd8a7856aba4309c7929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf667589c61dd8a7856aba4309c7929">&#9670;&nbsp;</a></span>isValidAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myI2C::isValidAddress </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate an I2C address. Validates an I2C address, returns true if an address is valid, false if not valid, or is a reserved address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>I2C address to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Address is valid. </dd>
+<dd>
+false Address is not valid or is reserved. </dd></dl>
 
 </div>
 </div>

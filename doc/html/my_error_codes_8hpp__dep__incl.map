@@ -1,15 +1,16 @@
 <map id="myErrorCodes.hpp" name="myErrorCodes.hpp">
-<area shape="rect" id="node1" title="Define all error codes used in pico&#45;myLibs." alt="" coords="913,5,1055,32"/>
+<area shape="rect" id="node1" title="Define all error codes used in pico&#45;myLibs." alt="" coords="891,5,1034,32"/>
 <area shape="rect" id="node2" href="$my23_l_c1024_8hpp.html" title="Class to use a 23LC1024 spi sram chip." alt="" coords="5,80,229,107"/>
 <area shape="rect" id="node3" href="$my_a_d_c_8hpp.html" title="High level functions for the ADC." alt="" coords="253,80,405,107"/>
-<area shape="rect" id="node5" href="$i2c_2my_b_mx280_8hpp.html" title="Class to handle BMx280 chips in i2c mode." alt="" coords="479,155,705,181"/>
-<area shape="rect" id="node6" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="1029,80,1150,107"/>
-<area shape="rect" id="node7" href="$my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="916,155,1052,181"/>
-<area shape="rect" id="node8" href="$spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="871,229,1097,256"/>
-<area shape="rect" id="node9" href="$my_d_s1307_8hpp.html" title="Class to use a DS1307 Real time clock." alt="" coords="1698,229,1894,256"/>
-<area shape="rect" id="node10" href="$my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="1727,155,1865,181"/>
-<area shape="rect" id="node11" href="$my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="729,155,892,181"/>
-<area shape="rect" id="node12" href="$my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1177,155,1428,181"/>
-<area shape="rect" id="node13" href="$my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1452,155,1703,181"/>
+<area shape="rect" id="node5" href="$my_a_t24_c32_8hpp.html" title="Class to use an AT24C32 32K EEPROM." alt="" coords="391,229,601,256"/>
+<area shape="rect" id="node6" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="959,80,1081,107"/>
+<area shape="rect" id="node7" href="$my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="480,155,619,181"/>
+<area shape="rect" id="node8" href="$my_d_s1307_8hpp.html" title="Class to use a DS1307 Real time clock." alt="" coords="626,229,822,256"/>
+<area shape="rect" id="node9" href="$i2c_2my_b_mx280_8hpp.html" title="Class to handle BMx280 chips in i2c mode." alt="" coords="693,155,918,181"/>
+<area shape="rect" id="node10" href="$my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="1093,155,1229,181"/>
+<area shape="rect" id="node11" href="$spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="1049,229,1274,256"/>
+<area shape="rect" id="node12" href="$my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="1253,155,1416,181"/>
+<area shape="rect" id="node13" href="$my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1440,155,1691,181"/>
+<area shape="rect" id="node14" href="$my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1715,155,1965,181"/>
 <area shape="rect" id="node4" href="$my_random_8hpp.html" title="Random helpers." alt="" coords="201,155,405,181"/>
 </map>
