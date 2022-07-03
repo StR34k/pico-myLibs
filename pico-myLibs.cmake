@@ -9,4 +9,4 @@ add_subdirectory("/home/streak/pico/pico-myLibs/mySNx4HC165/" "/home/streak/pico
 add_subdirectory("/home/streak/pico/pico-myLibs/mySPI/" "/home/streak/pico/pico-myLibs/mySPI/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myI2C/" "/home/streak/pico/pico-myLibs/myI2C/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myDS1307/" "/home/streak/pico/pico-myLibs/myDS1307/")
-
+add_subdirectory("/home/streak/pico/pico-myLibs/myAT24C32/" "/home/streak/pico/pico-myLibs/myAT24C32/")

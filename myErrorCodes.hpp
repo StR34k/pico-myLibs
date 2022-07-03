@@ -396,4 +396,16 @@
      * The read / write action would cross a boundary.
      */
     #define MY_ERROR_MYDS1307_BOUNDARY_CROSSED              -559
+/******************** myAT24C32 Error codes: (600-649) ***********************/
+
+    /**
+     * @brief Invalid address.
+     * The address passed is invalid.
+     */
+    #define MY_ERROR_MYAT24C32_INVALID_ADDRESS              -600
+    /**
+     * @brief Invalid length.
+     * The length provided is too long.
+     */
+    #define MY_ERROR_MYAT24C32_INVALID_LENGTH               -601
 #endif

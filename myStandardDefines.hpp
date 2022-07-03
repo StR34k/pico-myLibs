@@ -163,35 +163,35 @@
          * @brief General error value.
          * General error for when no other error code applies.
          */
-        #define MY_GENERAL_ERROR -1
+        #define MY_GENERAL_ERROR                                -4
     #endif
     #ifndef MY_INVALID_PIN
         /**
          * @brief invalid pin number.
          * An invalid pin number was passed.
          */
-        #define MY_INVALID_PIN                                  -2
+        #define MY_INVALID_PIN                                  -5
     #endif
     #ifndef MY_INVALID_BIT_MASK
         /**
          * @brief invalid bit mask.
          * An invalid bit mask was passed.
          */
-        #define MY_INVALID_BIT_MASK                             -3
+        #define MY_INVALID_BIT_MASK                             -6
     #endif
     #ifndef MY_TIMEOUT
         /**
          * @brief Timeout reached.
          * A timeout has been reached.
          */
-        #define MY_TIMEOUT                                      -4
+        #define MY_TIMEOUT                                      -7
     #endif
     #ifndef MY_INVALID_DIR
         /**
          * @brief Invalid direction
          * A pin is set to wrong direction for operation requested.
          */
-        #define MY_INVALID_DIR                                  -5
+        #define MY_INVALID_DIR                                  -8
     #endif
 
 /* 

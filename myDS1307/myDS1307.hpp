@@ -15,7 +15,7 @@
 #include <hardware/gpio.h>
 #include <hardware/i2c.h>
 #include <pico/types.h>
-
+#include <pico/error.h>
 #include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
 #include "../myHelpers.hpp"

@@ -78,6 +78,21 @@ namespace myI2C {
 /*
  * #################### Validation Functions: #############################
  */
+
+    /**
+     * @brief Validate an I2C address.
+     * Validates an I2C address, returns true if an address is valid, false if not valid, or is a 
+     * reserved address.
+     * @param value I2C address to check.
+     * @return true Address is valid.
+     * @return false Address is not valid or is reserved.
+     */
+    bool isValidAddress(const uint8_t value) {
+        if ((value & 0x80) > 0) { return false; } // Bit 7 set, invalid.
+        if (value < 0x08) { return false; } // reserved addresses.
+        if (value > 0x78) { return false; } // reserved addresses.
+        return true;
+    }   
     /**
      * @brief Validate SDA pin.
      * Returns true if pin provided is a valid SDA pin for the provided i2c port, otherwise
