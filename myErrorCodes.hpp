@@ -15,7 +15,7 @@
 
 #ifndef MY_ERROR_CODES_H
     #define MY_ERROR_CODES_H
-/************* General Error codes: 0-99 NOTE: error codes -1->-4 are used in <pico/error.h>*****************/
+/************* General Error codes: 4-49 NOTE: error codes -1->-4 are used in <pico/error.h>*****************/
     #ifndef MY_NO_ERROR
         /**
          * @brief No error value.
@@ -58,6 +58,45 @@
          */
         #define MY_INVALID_DIR                                  -8
     #endif
+/************** myHelpers error codes (50-99) **********************/
+
+    /**
+     * @brief Invalid second.
+     * A second value is invalid.
+     */
+    #define MY_HELPERS_INVALID_SECOND                       -50
+    /**
+     * @brief Invalid minute.
+     * A minute valud is invalid.
+     */
+    #define MY_HELPERS_INVALID_MINUTE                       -51
+    /**
+     * @brief Invalid hour.
+     * A hour value is invalid.
+     */
+    #define MY_HELPERS_INVALID_HOUR                         -52
+    /**
+     * @brief Invalid DOTW.
+     * Invalid Day of the week value.
+     */
+    #define MY_HELPERS_INVALID_DOTW                         -53
+    /**
+     * @brief Invalid date.
+     * Invalid day of the month value.
+     */
+    #define MY_HELPERS_INVALID_DATE                         -54
+    /**
+     * @brief Invalid month.
+     * A month value is invalid.
+     */
+    #define MY_HELPERS_INVALID_MONTH                        -55
+    /**
+     * @brief Invalid year.
+     * A year value is invalid.
+     */
+    #define MY_HELPERS_INVALID_YEAR                         -56
+
+    
 /************* myPWM error codes (100-149) ******************/
     /**
      * @brief Pin not initialized.

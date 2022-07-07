@@ -23,8 +23,7 @@
 
 /**
  * @brief Class to use a DS1307 real time clock.
- * Class to use a DS1307 Real time clock. Leap year and day of week algorithms taken from:
- * https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/ . Datasheet:
+ * Class to use a DS1307 Real time clock. Datasheet:
  * https://datasheets.maximintegrated.com/en/ds/DS1307.pdf
  */
 class myDS1307 {
@@ -155,7 +154,7 @@ class myDS1307 {
      * @param day Day of month. Valid values (1-[28-31]) based on month and year.
      * @return int16_t Returns positive for day of week, negative for error code.
      */
-    int16_t getDayOfWeek(const uint16_t year, const uint8_t month, const uint8_t day);
+    // int16_t getDayOfWeek(const uint16_t year, const uint8_t month, const uint8_t day);
     /**
      * @brief Check if leap year.
      * Checks a given year if it's a leap year. Returns true if it's a leapyear.
@@ -173,7 +172,7 @@ class myDS1307 {
      * @param day Day of month. Valid values (1-[28-31]), based on month.
      * @return int16_t Returns 0 (NO_ERROR) if valid, negative for error code.
      */
-    int16_t isValidDate(const uint16_t year, const uint8_t month, const uint8_t day);
+    int16_t isValidDate(const int16_t year, const int8_t month, const int8_t day);
     /**
      * @brief Validate a datetime_t
      * Validate a datetime_t value.  Returns 0 (NO_ERROR) for okay, otherwise an error code is
@@ -226,7 +225,7 @@ class myDS1307 {
      * @param value Value to set seconds to. Valid values: 0-59.
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setSeconds(const uint8_t value);
+    int16_t setSeconds(const int8_t value);
     /**
      * @brief Get the Minutes.
      * Read and return the minutes. If a comms error occurs, then an error code is returned.
@@ -240,7 +239,7 @@ class myDS1307 {
      * @param value Value to set minutes to. Valid values: 0-59.
      * @return int16_t Returns 0 (NO_ERROR) is set okay, negative for error code.
      */
-    int16_t setMinutes(const uint8_t value);
+    int16_t setMinutes(const int8_t value);
     /**
      * @brief Get the hours in 12 hour format.
      * Return the hours in 12 hour format. If a communications error occurs, then an error
@@ -256,7 +255,7 @@ class myDS1307 {
      * @param isPM False = AM, True = PM.
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative is an error code.
      */
-    int16_t setHour12H(const uint8_t hour, const bool isPM);
+    int16_t setHour12H(const int8_t hour, const bool isPM);
     /**
      * @brief Get the hours in 24 hour format.
      * Returns the hours in 24 hour format. If a comm error occurs, then an error code is returned.
@@ -270,7 +269,7 @@ class myDS1307 {
      * @param hour Value to set hour to.
      * @return int16_t Returns 0 (NO_ERROR) if set okay, or negative for error code.
      */
-    int16_t setHour24H(const uint8_t hour);
+    int16_t setHour24H(const int8_t hour);
     /**
      * @brief Set the full time. 12h format.
      * Sets the full time in 12h format. Returns 0 (NO_ERROR) if set okay, otherwise if
@@ -281,7 +280,7 @@ class myDS1307 {
      * @param second Seconds to set. Valid values (0-59).
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setFullTime12h(const uint8_t hour, const bool isPM, const uint8_t minute, const uint8_t second);
+    int16_t setFullTime12h(const int8_t hour, const bool isPM, const int8_t minute, const int8_t second);
     /**
      * @brief Set the time, 24 hour format.
      * Sets the full time. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value,
@@ -291,7 +290,7 @@ class myDS1307 {
      * @param second Second to set. Valid values (0-59).
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setFullTime24h(const uint8_t hour, const uint8_t minute, const uint8_t second);
+    int16_t setFullTime24h(const int8_t hour, const int8_t minute, const int8_t second);
     /**
      * @brief Get if it's AM/PM.
      * Gets am/pm and returns it, 0 for AM, 1 for PM, if a comms error occurs, then an error code is
@@ -327,7 +326,7 @@ class myDS1307 {
      * @param value Value to set day of the week to. Valid values (1-7).
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setDay(const uint8_t value);
+    int16_t setDay(const int8_t value);
     /**
      * @brief Get the date (day of month)
      * Read and return the day of month. Positve values are the date, while if an error
@@ -344,7 +343,7 @@ class myDS1307 {
      * @param value Value to set day of month to. Valid values (1-31).
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setDate(const uint8_t value);
+    int16_t setDate(const int8_t value);
     /**
      * @brief Get the month.
      * Read and return the month. Positive values are the month number, with 01 being January.
@@ -363,12 +362,12 @@ class myDS1307 {
      * @param value Value to set month to. Valid values (1-12).
      * @return int16_t Returns 0 if set okay, negative for error code.
      */
-    int16_t setMonth(const uint8_t value);
+    int16_t setMonth(const int8_t value);
     /**
      * @brief Get the year.
      * Read and return the year. Positive values are the year, if an error occurs during
      * comms, an error code is returned.
-     * @note Centuries are not tracked, so I'm assuimg 00=2000. Sorry for introducing a year 2099 bug.
+     * @note If centuries are not tracked, then years are interpreted to be 2000-2099.
      * @return int16_t Positve is the year, negative is an error code.
      */
     int16_t getYear();
@@ -380,26 +379,28 @@ class myDS1307 {
      * an error code is returned.
      * @note It's not recommended to use this, use setFullDate instead as it calculates valid values,
      * and checks for them while this does not.
-     * @param value Value to set year to. Valid values (2000-2099).
+     * @param value Value to set year to. Valid values (0-99) if centuries are not tracked, (0-12799) if centuries are tracked, values between 00-99 are assumed to be 2000-2099.
      * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setYear(const uint16_t value);
+    int16_t setYear(const int16_t value);
     /**
      * @brief Set the date.
      * Sets the full date, with error checking for invalid dates. This will calculate and
      * set the day of week as well. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid
      * date is passed, or a comms error occurs, it will return an error code.
-     * @param year Year to set. Valid values (2000-2099).
+     * @param year Year to set. Valid values if centuries are not tracked ([0-99] or [2000-2099]).
+     * If centuries are tracked (0-12799), and values between (0-99) are assumed to be 2000-2099.
      * @param month Month to set. Valid values (1-12).
      * @param day Day of month to set. Valid values (1-[28-31]) depending on year and month.
      * @return int16_t Returns 0(NO_ERROR) if set okay, negative for error code.
      */
-    int16_t setFullDate(const uint16_t year, const uint8_t month, const uint8_t day);
+    int16_t setFullDate(const int16_t year, const int8_t month, const int8_t day);
     /**
      * @brief Get the current date / time.
      * Reads and returns the current date / time as a pico datetime_t struct. If a comms error occurs
      * then all the values will be set to -1, except for the year, which will be set to the error code.
-     * @note Centuries are not tracked, so I'm assuimg 00=2000. Sorry for introducing a year 2099 bug.
+     * @note If centuries are tracked, values between 0-99 are assumed to be 2000-2099, otherwise it's
+     * assumed again that we are in the year 2000-2099 range.
      * @return datetime_t 
      */
     datetime_t getDateTime();
@@ -486,20 +487,19 @@ class myDS1307 {
     int16_t writeSram(const uint8_t index, uint8_t *buffer, const uint8_t length);
     /**
      * @brief Initialize the chip.
-     * Initialize communications with the chip. Returns 0(NO_ERROR) for okay, otherwise if
+     * Initialize communications with the chip. If the I2C bus is initialized elsewhere,
+     * pass initI2C a false value. To track centuries, pass trackCenturies as true, otherwise
+     * the century is assumed to be 2000. Returns 0(NO_ERROR) for okay, otherwise if
      * an invalid pin is passed during construction, or a comms error occurs, an error code
      * is returned.
      * @param initI2c True = init the i2c bus, False = Don't init i2c bus, assumes already init.
+     * @param trackCenturies True = track centuries. False = Do not track centuries.
      * @return int16_t Returns 0 (NO_ERROR) if initialized okay, negative for error code.
      */
-    int16_t initialize(const bool initI2C=true);
+    int16_t initialize(const bool initI2C=true, const bool trackCenturies=true);
 
     private:
 /* ############# Private Constants: ############# */
-    // Date Constants:
-        const uint8_t DAYS_PER_MONTH[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        const uint8_t MONTH_CODES[12] = {0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5};
-        const uint8_t CENTURY_CODES[7] = {4, 2, 0, 6, 4, 2, 0};
     // I2C Constants:
         const uint8_t I2C_ADDRESS       = 0X68;
         const uint32_t I2C_TIMEOUT_US   = 20000; // 20 MILLISECONDS.
@@ -512,6 +512,10 @@ class myDS1307 {
         const uint8_t REG_MONTH         = 0x05;
         const uint8_t REG_YEAR          = 0x06;
         const uint8_t REG_CONTROL       = 0x07;
+        const uint8_t REG_MARKER_1      = 0x08;
+        const uint8_t REG_LAST_YEAR     = 0x09;
+        const uint8_t REG_CENTURIES     = 0x0A;
+        const uint8_t REG_MARKER_2      = 0x0B;
         const uint8_t REG_SRAM_START    = 0x08;
         const uint8_t REG_SRAM_STOP     = 0x3F;
     // Register Masks:
@@ -528,7 +532,11 @@ class myDS1307 {
         const uint8_t MASK_YEARS_BCD        = 0xFF;
         const uint8_t MASK_CONTROL_OUT      = 0x80;
         const uint8_t MASK_CONTROL_SQWE     = 0x10;
-        const uint8_t MASK_CONTROL_RS       = 0X03;        
+        const uint8_t MASK_CONTROL_RS       = 0X03;
+    // Century values:
+        const uint8_t MARKER_1_VALUE        = 0xAA;
+        const uint8_t MARKER_2_VALUE        = 0x55;
+        
     // Pins:
         const uint8_t _sdaPin;
         const uint8_t _sclPin;
@@ -538,6 +546,7 @@ class myDS1307 {
     // State variables:
         bool        _is12h = false; // False 24h True 12h
         bool        _isPM = false;
+        bool        _trackCenturies = true;
 /* ################ Private Functions: ################ */
     int16_t     __readRegisters__(const uint8_t reg, uint8_t *buffer, size_t length);
     int16_t     __writeRegisters__(const uint8_t reg, uint8_t *buffer, size_t length);
@@ -547,68 +556,37 @@ class myDS1307 {
     bool inline __isPM__(const uint8_t rawHour);
     uint8_t     __hours12h__(const uint8_t rawHours);
     uint8_t     __hours24h__(const uint8_t rawHours);
-    void        __12h_to_24h__(const uint8_t hours12, const bool isPM, uint8_t *hours24);
-    void        __24h_to_12h__(const uint8_t hours24, uint8_t *hours12, bool *isPM);
     uint8_t     __updateSeconds__(const uint8_t origSeconds, const uint8_t newSeconds);
     uint8_t     __updateHours__(const uint8_t origHours, const uint8_t newHours);
+    int16_t     __initCenturies__(); // Init centuries in nvram
+    int16_t     __isCenturyInit__();// Check to see if init.
+    int16_t     __getCentury__(); // Return the century.
+    int16_t     __setCentury__(int8_t value);
+    int16_t     __incCentury__(); // Increment the century.
+    int16_t     __updateCenturies__(const int8_t thisYear); // Update century if years changed.
 };
 
 /* ############### Public Functions: ################# */
-int16_t myDS1307::getDayOfWeek(const uint16_t year, const uint8_t month, const uint8_t day) {
-    int16_t returnValue;
-// Validate Date for the range this works for.
-    if (year < 1700 or year > 2399) { return ERROR_INVALID_YEAR; }
-    if (month < 1 or month > 12) { return ERROR_INVALID_MONTH; }
-    uint8_t maxDate = DAYS_PER_MONTH[month-1];
-    if (isLeapYear(year) == true) { maxDate += 1; }
-    if (day < 1 or day > maxDate) { return ERROR_INVALID_DATE; }
-// Calculate century code:
-    uint8_t centuryCode = CENTURY_CODES[((year / 100) - 17)];
-// Calculate year code:
-    uint8_t yearCode = year - ((year / 100) * 100);
-    yearCode = (yearCode + (yearCode/4)) % 7;
-// Get month code:
-    uint8_t monthCode = MONTH_CODES[month-1];
-// Leap year Code:
-    uint8_t leapYearCode = isLeapYear(year);
-// Calculate day of week.
-    return (int16_t)((yearCode + monthCode + centuryCode + day - leapYearCode) % 7) + 1;
-}
 
-bool inline myDS1307::isLeapYear(const uint16_t year) {
-    if ( (year % 4) == 0) {
-        if ((year % 100) == 0) {
-            if ((year % 400) == 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return true;
-        }
+int16_t myDS1307::isValidDate(const int16_t year, const int8_t month, const int8_t day) {
+    if (_trackCenturies == true) {
+        if (myHelpers::isValidYear(year) == false) { return ERROR_INVALID_YEAR; }
+    } else {
+        if ((year < 0 or year > 99) and (year < 2000 or year > 2099)) { return ERROR_INVALID_YEAR; }
     }
-    return false;
-}
-
-int16_t myDS1307::isValidDate(const uint16_t year, const uint8_t month, const uint8_t day) {
-    if (year < 2000 or year > 2099) { return ERROR_INVALID_YEAR; }
-    if (month < 1 or month > 12) { return ERROR_INVALID_MONTH; }
-    uint8_t maxDate = DAYS_PER_MONTH[month-1];
-    if (isLeapYear(year) == true) { maxDate += 1; }
-    if (day < 1 or day > maxDate) { return ERROR_INVALID_DAY; }
+    if (myHelpers::isValidMonth(month) ==  false) { return ERROR_INVALID_MONTH; }
+    if (myHelpers::isValidDayOfMonth(year, month, day) == false) { return ERROR_INVALID_DAY; }
     return NO_ERROR;
 }
 
 int16_t myDS1307::isValidDateTime(const datetime_t value) {
     int16_t returnValue;
     if (value.year < 2000 or value.year > 2099) { return ERROR_INVALID_YEAR; }
-    if (value.month < 1 or value.month > 12) { return ERROR_INVALID_MONTH; }
-    uint8_t maxDate = DAYS_PER_MONTH[value.month-1];
-    if (isLeapYear(value.year) == true and value.month == 2) { maxDate += 1; }
-    if (value.day < 1 or value.day > maxDate) { return ERROR_INVALID_DATE; }
-    if (value.hour < 0 or value.hour > 23) { return ERROR_INVALID_HOURS; }
-    if (value.min < 0 or value.min > 59) { return ERROR_INVALID_MINUTES; }
-    if (value.sec < 0 or value.sec > 59) { return ERROR_INVALID_SECONDS; }
+    if (myHelpers::isValidMonth(value.month) == false) { return ERROR_INVALID_MONTH; }
+    if (myHelpers::isValidDayOfMonth(value.year, value.month, value.day) == false) { return ERROR_INVALID_DATE; }
+    if (myHelpers::isValidHour(value.hour, false) == false) { return ERROR_INVALID_HOURS; }
+    if (myHelpers::isValidMinute(value.min) == false) { return ERROR_INVALID_MINUTES; }
+    if (myHelpers::isValidSecond(value.sec) == false) { return ERROR_INVALID_SECONDS; }
     return NO_ERROR;
 }
 
@@ -656,7 +634,7 @@ int16_t myDS1307::setMode(const bool is12h) {
         uint8_t hours12 = __bcd_to_dec__(rawHours & MASK_12H_HOURS_BCD);
         bool isPM = __isPM__(rawHours);
         uint8_t hours24;
-        __12h_to_24h__(hours12, isPM, &hours24);
+        myHelpers::convert12hTo24h(hours12, isPM, &hours24);
         newHours = __dec_to_bcd__(hours24);
         rawHours = __updateHours__(rawHours, newHours);
     // Clear the is12h flag.
@@ -667,7 +645,7 @@ int16_t myDS1307::setMode(const bool is12h) {
         uint8_t hours24 = __bcd_to_dec__(rawHours & MASK_24H_HOURS_BCD);
         uint8_t hours12;
         bool isPM;
-        __24h_to_12h__(hours24, &hours12, &isPM);
+        myHelpers::convert24hTo12h(hours24, &hours12, &isPM);
         newHours = __dec_to_bcd__(hours12);
         if (isPM == true) { newHours |= MASK_IS_PM; }
         rawHours = __updateHours__(rawHours, newHours);
@@ -686,15 +664,13 @@ int16_t myDS1307::getSeconds() {
     return (int16_t) __bcd_to_dec__(rawSeconds & MASK_SECONDS_BCD);
 }
 
-int16_t myDS1307::setSeconds(const uint8_t value) {
+int16_t myDS1307::setSeconds(const int8_t value) {
     int16_t returnValue;
     uint8_t rawSeconds;
-    if (value > 59) { return ERROR_INVALID_SECONDS; }
+    if (myHelpers::isValidSecond(value) == false) { return ERROR_INVALID_SECONDS; }
     returnValue = __readRegisters__(REG_SECONDS, &rawSeconds, 1);
     if (returnValue < 0) { return returnValue; }
     rawSeconds = __updateSeconds__(rawSeconds, __dec_to_bcd__(value));
-    // rawSeconds &= ~MASK_SECONDS_BCD;
-    // rawSeconds |= (__dec_to_bcd__(value) & MASK_SECONDS_BCD);
     returnValue = __writeRegisters__(REG_SECONDS, &rawSeconds, 1);
     return returnValue;
 }
@@ -707,10 +683,10 @@ int16_t myDS1307::getMinutes() {
     return (int16_t) __bcd_to_dec__(rawMinutes & MASK_MINUTES_BCD);
 }
 
-int16_t myDS1307::setMinutes(const uint8_t value) {
+int16_t myDS1307::setMinutes(const int8_t value) {
     int16_t returnValue;
     uint8_t rawMinutes;
-    if (value > 59) { return ERROR_INVALID_MINUTES; }
+    if (myHelpers::isValidMinute(value) == false) { return ERROR_INVALID_MINUTES; }
     rawMinutes = __dec_to_bcd__(value);
     returnValue = __writeRegisters__(REG_MINUTES, &rawMinutes, 1);
     return returnValue;
@@ -724,11 +700,11 @@ int16_t myDS1307::getHour12H() {
     return (int16_t) __hours12h__(rawHours);
 }
 
-int16_t myDS1307::setHour12H(const uint8_t hour, const bool isPM) {
+int16_t myDS1307::setHour12H(const int8_t hour, const bool isPM) {
     uint16_t returnValue;
     uint8_t rawHours;
     uint8_t newHours;
-    if (hour < 1 or hour > 12) { return ERROR_INVALID_HOURS; }
+    if (myHelpers::isValidHour(hour, true) == false) { return ERROR_INVALID_HOURS; }
     returnValue = __readRegisters__(REG_HOURS, &rawHours, 1);
     if (returnValue < 0) { return returnValue; }
     if (__is12h__(rawHours) == true) {
@@ -737,7 +713,7 @@ int16_t myDS1307::setHour12H(const uint8_t hour, const bool isPM) {
         rawHours = __updateHours__(rawHours, newHours);
     } else {
         uint8_t hours24;
-        __12h_to_24h__(hour, isPM, &hours24);
+        myHelpers::convert12hTo24h(hour, isPM, &hours24);
         newHours |= __dec_to_bcd__(hours24);
         rawHours = __updateHours__(rawHours, newHours);
     }
@@ -753,16 +729,17 @@ int16_t myDS1307::getHour24H() {
     return (int16_t) __hours24h__(rawHours);
 }
 
-int16_t myDS1307::setHour24H(const uint8_t hour) {
+int16_t myDS1307::setHour24H(const int8_t hour) {
     int16_t returnValue;
     uint8_t rawHours;
     uint8_t newHours;
+    if (myHelpers::isValidHour(hour, false) == false) { return ERROR_INVALID_HOURS; }
     returnValue = __readRegisters__(REG_HOURS, &rawHours, 1);
     if (returnValue < 0) { return returnValue; }
     if (__is12h__(rawHours) == true) {
         uint8_t hours12;
         bool isPM;
-        __24h_to_12h__(hour, &hours12, &isPM);
+        myHelpers::convert24hTo12h(hour, &hours12, &isPM);
         if (isPM == true) { newHours |= MASK_IS_PM;}
         newHours |= __dec_to_bcd__(hours12);
         rawHours = __updateHours__(rawHours, newHours);
@@ -773,14 +750,14 @@ int16_t myDS1307::setHour24H(const uint8_t hour) {
     return returnValue;
 }
 
-int16_t myDS1307::setFullTime12h(const uint8_t hour, const bool isPM, const uint8_t minute,
-                                        const uint8_t second) {
+int16_t myDS1307::setFullTime12h(const int8_t hour, const bool isPM, const int8_t minute,
+                                        const int8_t second) {
     int16_t returnValue;
     uint8_t dataBuffer[3];
     uint8_t newHours;
-    if (hour < 1 or hour > 12) { return ERROR_INVALID_HOURS; }
-    if (minute > 59) { return ERROR_INVALID_MINUTES; }
-    if (second > 59) { return ERROR_INVALID_SECONDS; }
+    if (myHelpers::isValidHour(hour, true) == false) { return ERROR_INVALID_HOURS; }
+    if (myHelpers::isValidMinute(minute) == false) { return ERROR_INVALID_MINUTES; }
+    if (myHelpers::isValidSecond(second) == false) { return ERROR_INVALID_SECONDS; }
     returnValue = __readRegisters__(REG_SECONDS, dataBuffer, 3);
     dataBuffer[0] = __updateSeconds__(dataBuffer[0], __dec_to_bcd__(second));
     dataBuffer[1] = __dec_to_bcd__(minute);
@@ -789,7 +766,7 @@ int16_t myDS1307::setFullTime12h(const uint8_t hour, const bool isPM, const uint
         newHours |= __dec_to_bcd__(hour);
     } else {
         uint8_t hours24;
-        __12h_to_24h__(hour, isPM, &hours24);
+        myHelpers::convert12hTo24h(hour, isPM, &hours24);
         newHours = __dec_to_bcd__(hours24);
     }
     dataBuffer[2] = __updateHours__(dataBuffer[2], newHours);
@@ -797,20 +774,20 @@ int16_t myDS1307::setFullTime12h(const uint8_t hour, const bool isPM, const uint
     return returnValue;
 }
 
-int16_t myDS1307::setFullTime24h(const uint8_t hour, const uint8_t minute, const uint8_t second) {
+int16_t myDS1307::setFullTime24h(const int8_t hour, const int8_t minute, const int8_t second) {
     int16_t returnValue;
     uint8_t dataBuffer[3];
     uint8_t newHours;
-    if (hour > 23) { return ERROR_INVALID_HOURS; }
-    if (minute > 59) { return ERROR_INVALID_MINUTES; }
-    if (second > 59) { return ERROR_INVALID_SECONDS; }
+    if (myHelpers::isValidHour(hour, false) == false) { return ERROR_INVALID_HOURS; }
+    if (myHelpers::isValidMinute(minute) == false) { return ERROR_INVALID_MINUTES; }
+    if (myHelpers::isValidSecond(second) == false) { return ERROR_INVALID_SECONDS; }
     returnValue = __readRegisters__(REG_SECONDS, dataBuffer, 3);
     dataBuffer[0] = __updateSeconds__(dataBuffer[0], __dec_to_bcd__(second));
     dataBuffer[1] = __dec_to_bcd__(minute);
     if (__is12h__(dataBuffer[2]) == true) {
         uint8_t hours12;
         bool isPM;
-        __24h_to_12h__(hour, &hours12, &isPM);
+        myHelpers::convert24hTo12h(hour, &hours12, &isPM);
         if (isPM == true) { newHours |= MASK_IS_PM; }
         newHours |= __dec_to_bcd__(hours12);
     } else {
@@ -858,10 +835,10 @@ int16_t myDS1307::getDay() {
     return (int16_t)day;
 }
 
-int16_t myDS1307::setDay(const uint8_t value){
+int16_t myDS1307::setDay(const int8_t value){
     int16_t returnValue;
     uint8_t val = value;
-    if (value < 1 or value > 7) { return ERROR_INVALID_DAY; }
+    if (myHelpers::isValidDayOfWeek(value) == false) { return ERROR_INVALID_DAY; }
     returnValue = __writeRegisters__(REG_DAY, &val, 1);
     return returnValue;
 }
@@ -874,10 +851,10 @@ int16_t myDS1307::getDate() {
     return (int16_t)__bcd_to_dec__(rawDate & MASK_DATE_BCD);
 }
 
-int16_t myDS1307::setDate(const uint8_t value) {
+int16_t myDS1307::setDate(const int8_t value) {
     int16_t returnValue;
     uint8_t newDate;
-    if (value < 1 or value > 31) { return ERROR_INVALID_DATE; }
+    if (value < MY_MIN_DATE or value > MY_MAX_DATE) { return ERROR_INVALID_DATE; }
     newDate = __dec_to_bcd__(value);
     returnValue = __writeRegisters__(REG_DATE, &newDate, 1);
     return returnValue;
@@ -891,10 +868,10 @@ int16_t myDS1307::getMonth() {
     return (int16_t)__bcd_to_dec__(rawMonth & MASK_MONTHS_BCD);
 }
 
-int16_t myDS1307::setMonth(const uint8_t value){
+int16_t myDS1307::setMonth(const int8_t value){
     int16_t returnValue;
     uint8_t newMonth;
-    if (value < 1 or value > 12) { return ERROR_INVALID_MONTH; }
+    if (myHelpers::isValidMonth(value) == false) { return ERROR_INVALID_MONTH; }
     newMonth = __dec_to_bcd__(value);
     returnValue = __writeRegisters__(REG_MONTH, &newMonth, 1);
     return returnValue;
@@ -903,34 +880,79 @@ int16_t myDS1307::setMonth(const uint8_t value){
 int16_t myDS1307::getYear() {
     int16_t returnValue;
     uint8_t rawYear;
-    int16_t year;
+    int8_t year;
+    int16_t century;
+    int16_t fullYear;
     returnValue = __readRegisters__(REG_YEAR, &rawYear, 1);
     if (returnValue < 0) { return returnValue; }
-    year = __bcd_to_dec__(year & MASK_YEARS_BCD);
-    year += 2000; // Here is the bug.
-    return year;
+    year = (int8_t)__bcd_to_dec__(year & MASK_YEARS_BCD);
+    if (_trackCenturies == true) {
+        century = __getCentury__();
+        if (century < 0) { return century; } // Error returned.
+        fullYear = year + century * MY_YEARS_PER_CENTURY;
+    } else {
+        fullYear = year + MY_DEFAULT_CENTURY * MY_YEARS_PER_CENTURY;
+    }
+    return fullYear;
 }
 
-int16_t myDS1307::setYear(const uint16_t value) {
+int16_t myDS1307::setYear(const int16_t value) {
     int16_t returnValue;
+    
     uint8_t newYear;
-    if (value < 2000 or value > 2099) { return ERROR_INVALID_YEAR; }
-    newYear = __dec_to_bcd__((value-2000));
+    int8_t century;
+    if (_trackCenturies == true) {
+        if (value < 0 or value > MY_MAX_YEAR) { return ERROR_INVALID_YEAR; }
+        if (value >= 0 and value <= 99) {
+            century = MY_DEFAULT_CENTURY;
+            newYear = __dec_to_bcd__(value);
+        } else {
+            century = value / MY_YEARS_PER_CENTURY;
+            newYear = __dec_to_bcd__( (value - (century * MY_DEFAULT_CENTURY)));
+        }
+        returnValue = __setCentury__(century);
+        if (returnValue < 0) { return returnValue; }
+    } else {
+        if ((value < 0 or value > 99) and (value < 2000 or value > 2099)) { return ERROR_INVALID_YEAR; }
+        if (value >= 2000 and value <= 2099) {
+            newYear = __dec_to_bcd__((value-2000));
+        } else {
+            newYear = __dec_to_bcd__(value);
+        }
+    }
     returnValue = __writeRegisters__(REG_YEAR, &newYear, 1);
     return returnValue;
 }
 
-int16_t myDS1307::setFullDate(const uint16_t year, const uint8_t month, const uint8_t day) {
+int16_t myDS1307::setFullDate(const int16_t year, const int8_t month, const int8_t day) {
     int16_t returnValue;
     uint8_t dataBuffer[4];
     uint8_t dow;
+    int8_t century;
     returnValue = isValidDate(year, month, day);
     if (returnValue < 0) { return returnValue; }
-    dow = getDayOfWeek(year, month, day);
+    dow = myHelpers::getDayOfWeek(year, month, day);
     dataBuffer[0] = dow;
     dataBuffer[1] = __dec_to_bcd__(day);
     dataBuffer[2] = __dec_to_bcd__(month);
-    dataBuffer[3] = __dec_to_bcd__(year-2000);
+    if (_trackCenturies == true) {
+        if (year >= 0 and year <= 99) {
+            century = MY_DEFAULT_CENTURY;
+            dataBuffer[3] = __dec_to_bcd__(year);
+        } else {
+            century = year / MY_YEARS_PER_CENTURY;
+            dataBuffer[3] = __dec_to_bcd__( (year - century * MY_YEARS_PER_CENTURY) );
+        }
+        returnValue = __setCentury__(century);
+        if (returnValue < 0) { return returnValue; }
+    } else {
+        if (year >= 2000 and year <= 2099) {
+            dataBuffer[3] = __dec_to_bcd__(year-2000);
+        } else {
+            dataBuffer[3] = __dec_to_bcd__(year);
+        }
+
+    }
     returnValue = __writeRegisters__(REG_DAY, dataBuffer, 4);
     return returnValue;
 }
@@ -939,6 +961,20 @@ datetime_t myDS1307::getDateTime() {
     int16_t returnValue;
     uint8_t dataBuffer[7];
     datetime_t dateTime;
+    int16_t century;
+    if (_trackCenturies == true) {
+        century = __getCentury__();
+        if (century < 0) {
+            dateTime.year = century;
+            dateTime.month = -1;
+            dateTime.day = -1;
+            dateTime.dotw = -1;
+            dateTime.hour = -1;
+            dateTime.min = -1;
+            dateTime.sec = -1;
+            return dateTime;
+        }
+    }
     returnValue = __readRegisters__(REG_SECONDS, dataBuffer, 7);
     if (returnValue < 0) {
         dateTime.year = returnValue;
@@ -957,14 +993,20 @@ datetime_t myDS1307::getDateTime() {
     dateTime.dotw = (dataBuffer[3] - 1); // 0 is sunday in datetime_t.
     dateTime.day = __bcd_to_dec__(dataBuffer[4] & MASK_DATE_BCD);
     dateTime.month = __bcd_to_dec__(dataBuffer[5] & MASK_MONTHS_BCD);
-    dateTime.year = __bcd_to_dec__(dataBuffer[6] & MASK_YEARS_BCD);
-    dateTime.year += 2000; // Here's the bug again.
+    if (_trackCenturies == true) {
+        dateTime.year = __bcd_to_dec__(dataBuffer[6] & MASK_YEARS_BCD);
+        dateTime.year += century * MY_YEARS_PER_CENTURY;
+    } else {
+        dateTime.year = __bcd_to_dec__(dataBuffer[6] & MASK_YEARS_BCD);
+        dateTime.year += 2000; // Here's the bug again.
+    }
     return dateTime;
 }
 
 int16_t myDS1307::setDateTime(const datetime_t value) {
     int16_t returnValue;
     uint8_t dataBuffer[7];
+    int16_t century;
     returnValue = isValidDateTime(value);
     if (returnValue < 0 ) { return returnValue; }
     returnValue = __readRegisters__(REG_SECONDS, dataBuffer, 7);
@@ -975,17 +1017,33 @@ int16_t myDS1307::setDateTime(const datetime_t value) {
         uint8_t newHours;
         uint8_t hours12;
         bool isPM;
-        __24h_to_12h__(value.hour, &hours12, &isPM);
+        myHelpers::convert24hTo12h(value.hour, &hours12, &isPM);
         if (isPM == true) { newHours |= MASK_IS_PM; }
         newHours |= __dec_to_bcd__(hours12);
         dataBuffer[2] = __updateHours__(dataBuffer[2], newHours);
     } else {
         dataBuffer[2] = __updateHours__(dataBuffer[2], __dec_to_bcd__(value.hour));
     }
-    dataBuffer[3] = getDayOfWeek(value.year, value.month, value.day);
+    dataBuffer[3] = myHelpers::getDayOfWeek(value.year, value.month, value.day);
     dataBuffer[4] = __dec_to_bcd__(value.day);
     dataBuffer[5] = __dec_to_bcd__(value.month);
-    dataBuffer[6] = __dec_to_bcd__((value.year-2000));
+    if (_trackCenturies == true) {
+        if (value.year >= 0 and value.year <= 99) {
+            century = MY_DEFAULT_CENTURY;
+            dataBuffer[6] = __dec_to_bcd__(value.year);
+        } else {
+            century = value.year / MY_YEARS_PER_CENTURY;
+            dataBuffer[6] = __dec_to_bcd__((value.year - century * MY_YEARS_PER_CENTURY));
+        }
+        returnValue = __setCentury__(century);
+        if (returnValue < 0) { return returnValue; }
+    } else {
+        if (value.year >= 0 and value.year <= 99) {
+            dataBuffer[6] = __dec_to_bcd__(value.year);
+        } else {
+            dataBuffer[6] = __dec_to_bcd__((value.year-2000));
+        }
+    }
     returnValue = __writeRegisters__(REG_SECONDS, dataBuffer, 7);
     return returnValue;
 }
@@ -1066,7 +1124,9 @@ int16_t myDS1307::writeSram(const uint8_t index, uint8_t *buffer, const uint8_t 
     return returnValue;
 }
 
-int16_t myDS1307::initialize(const bool initI2C) {
+int16_t myDS1307::initialize(const bool initI2C, const bool trackCenturies) {
+    // Stre trackCenturies:
+    _trackCenturies = trackCenturies;
     int32_t returnValue;
     // Initialize i2c at 50 KHz, since we're running at 3.3v which is underspec, we give it more
     // time to respond. Otherwise occasionally the chip will not respond, and we throw an error.
@@ -1080,6 +1140,7 @@ int16_t myDS1307::initialize(const bool initI2C) {
     returnValue = __readRegisters__(REG_DAY, &day, 1);
     if (returnValue < 0) { return (int16_t)returnValue; }
     if (day < 1 or day > 7) { return ERROR_COMMS_FAILED; }
+    if (_trackCenturies == true) { __initCenturies__(); }
     return NO_ERROR;
 }
 
@@ -1145,10 +1206,10 @@ uint8_t myDS1307::__hours12h__(const uint8_t rawHours) {
     if (__is12h__(rawHours) == true) {
         return __bcd_to_dec__(rawHours & MASK_12H_HOURS_BCD);
     } else {
-        uint8_t hours24 = __bcd_to_dec__(rawHours & MASK_24H_HOURS_BCD);
+         uint8_t hours24 = __bcd_to_dec__(rawHours & MASK_24H_HOURS_BCD);
         uint8_t hours12;
         bool isPM;
-        __24h_to_12h__(hours24, &hours12, &isPM);
+        myHelpers::convert24hTo12h(hours24, &hours12, &isPM);
         return hours12;
     }
 }
@@ -1159,44 +1220,10 @@ uint8_t myDS1307::__hours24h__(const uint8_t rawHours) {
         uint8_t hours12 = __bcd_to_dec__(rawHours & MASK_12H_HOURS_BCD);
         bool isPM =__isPM__(rawHours);
         uint8_t hours24;
-        __12h_to_24h__(hours12, isPM, &hours24);
+        myHelpers::convert12hTo24h(hours12, isPM, &hours24);
         return hours24;
     } else {
         return __bcd_to_dec__(rawHours & MASK_24H_HOURS_BCD);
-    }
-}
-
-void myDS1307::__12h_to_24h__(const uint8_t hours12, const bool isPM, uint8_t *hours24) {
-    if (isPM == true) {
-        if (hours12 < 12) {
-            *hours24 = hours12 + 12;
-        } else {
-            *hours24 = hours12;
-        }
-    } else {
-        if (hours12 == 12) {
-            *hours24 = 0;
-        } else {
-            *hours24 = hours12;
-        }
-    }
-}
-
-void myDS1307::__24h_to_12h__(const uint8_t hours24, uint8_t *hours12, bool *isPM) {
-    if ( hours24 == 0) {
-        *hours12 = 12;
-        *isPM = false;
-    } else {
-        if (hours24 > 12) {
-            *hours12 = hours24 - 12;
-            *isPM = true;
-        } else if (hours24 == 12) {
-            *hours12 = hours24;
-            *isPM = true;
-        } else {
-            *hours12 = hours24;
-            *isPM = false;
-        }
     }
 }
 
@@ -1210,5 +1237,94 @@ uint8_t myDS1307::__updateHours__(const uint8_t origHours, const uint8_t newHour
     uint8_t returnValue = origHours & ~MASK_24H_HOURS_BCD;
     returnValue |= newHours & MASK_24H_HOURS_BCD;
     return returnValue;
+}
+
+int16_t myDS1307::__initCenturies__() {
+    int16_t returnValue;
+    uint8_t rawYear;
+    int8_t year;
+    uint8_t dataBuffer[4];
+    returnValue = __readRegisters__(REG_MARKER_1, dataBuffer, 4);
+    if (returnValue < 0) { return returnValue; }
+    returnValue = __readRegisters__(REG_YEAR, &rawYear, 1);
+    if (returnValue < 0) { return returnValue; }
+    year = __bcd_to_dec__(rawYear);
+// Check to see if already init.
+    if (dataBuffer[0] != MARKER_1_VALUE or dataBuffer[3] != MARKER_2_VALUE or dataBuffer[1] >= 100) {
+        dataBuffer[0] = MARKER_1_VALUE;
+        dataBuffer[1] = year;
+        dataBuffer[2] = MY_DEFAULT_CENTURY;
+        dataBuffer[3] = MARKER_2_VALUE;
+    }
+    return NO_ERROR;
+}
+
+int16_t myDS1307::__isCenturyInit__() {
+    int16_t returnValue;
+    uint8_t dataBuffer[4];
+    int8_t lastYear;
+    int8_t century;
+    returnValue = __readRegisters__(REG_MARKER_1, dataBuffer, 4);
+    if (returnValue < 0) { return returnValue; }
+    if (dataBuffer[0] != MARKER_1_VALUE) { return false; }
+    if (dataBuffer[3] != MARKER_2_VALUE) { return false; }
+    lastYear = (int8_t)dataBuffer[1];
+    century = (int8_t)dataBuffer[2];
+    if (lastYear < 0 or lastYear > 99) { return false; }
+    if (century < 0) { return false; }
+    return true;
+}
+
+int16_t myDS1307::__getCentury__() {
+    int16_t returnValue;
+    uint8_t rawCentury;
+    returnValue = __readRegisters__(REG_CENTURIES, &rawCentury, 1);
+    if (returnValue < 0) { return returnValue; }
+    return (int16_t)rawCentury;
+}
+
+int16_t myDS1307::__setCentury__(int8_t value) {
+    int16_t returnValue;
+    uint8_t rawCentury;
+    rawCentury = (uint8_t)value;
+    returnValue = __writeRegisters__(REG_CENTURIES, &rawCentury, 1);
+    return returnValue;
+}
+
+int16_t myDS1307::__incCentury__() {
+    int16_t returnValue;
+    uint8_t rawCentury;
+    int8_t century;
+    returnValue = __readRegisters__(REG_CENTURIES, &rawCentury, 1);
+    if (returnValue < 0) { return returnValue; }
+    century = (int8_t)century;
+    if (century == 127) {
+        century = 0;
+    } else {
+        century += 1;
+    }
+    rawCentury = (uint8_t)century;
+    returnValue = __writeRegisters__(REG_CENTURIES, &rawCentury, 1);
+    return returnValue;
+}
+
+int16_t myDS1307::__updateCenturies__(const int8_t thisYear) {
+    int16_t returnValue;
+    uint8_t rawLastYear;
+    int8_t lastYear;
+    bool isInit;
+    returnValue = __isCenturyInit__();
+    if (returnValue < 0) { return returnValue; }
+    isInit = (bool)returnValue;
+    if (isInit == true) {
+        returnValue = __readRegisters__(REG_LAST_YEAR, &rawLastYear, 1);
+        if (returnValue < 0) { return returnValue; }
+        lastYear = (int8_t)rawLastYear;
+        if (lastYear == 99 and thisYear == 0) {
+            returnValue = __incCentury__();
+            if (returnValue < 0) { return returnValue; }
+        }
+    }
+    return NO_ERROR;
 }
 #endif

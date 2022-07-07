@@ -209,6 +209,170 @@
          */
         #define LSB_FIRST 0
     #endif
+/*
+ * ############################# Date / Time defines: ###########################
+ */
+
+    /**
+     * @brief Number of days in a common year.
+     */
+    #define MY_DAYS_PER_YEAR 365
+    /**
+     * @brief Number of days in a leap year.
+     */
+    #define MY_DAYS_PER_LEAP_YEAR 366
+    /**
+     * @brief Minimum second value.
+     */
+    #define MY_MIN_SECOND 0
+    /**
+     * @brief Maximum second value.
+     */
+    #define MY_MAX_SECOND 59
+    /**
+     * @brief Minimim minute value.
+     */
+    #define MY_MIN_MINUTE 0
+    /**
+     * @brief Maximum minute value.
+     */
+    #define MY_MAX_MINUTE 59
+    /**
+     * @brief Minimum hour in 12h format.
+     */
+    #define MY_MIN_HOUR_12H 1
+    /**
+     * @brief Maximum hour in 12h format.
+     */
+    #define MY_MAX_HOUR_12H 12
+    /**
+     * @brief AM value. (false)
+     */
+    #define MY_IS_AM 0
+    /**
+     * @brief PM value. (true)
+     */
+    #define MY_IS_PM 1
+    /**
+     * @brief Minimum hour value in 24h format.
+     */
+    #define MY_MIN_HOUR_24H 0
+    /**
+     * @brief Maximum hour value in 24h format.
+     */
+    #define MY_MAX_HOUR_24H 23
+    /**
+     * @brief Minimum day of the week value.
+     */
+    #define MY_MIN_DOTW 1
+    /**
+     * @brief Maximum day of the week value.
+     */
+    #define MY_MAX_DOTW 7
+    /**
+     * @brief Minimum day of the month value.
+     */
+    #define MY_MIN_DATE 1
+    /**
+     * @brief Maximum day of the month value.
+     */
+    #define MY_MAX_DATE 31
+    /**
+     * @brief Minimum month value.
+     */
+    #define MY_MIN_MONTH 1
+    /**
+     * @brief Maximum month value.
+     */
+    #define MY_MAX_MONTH 12
+    /**
+     * @brief Months per year.
+     */
+    #define MY_MONTHS_PER_YEAR 12
+    /**
+     * @brief Minimum year value with Centuries, IE: 2020.
+     */
+    #define MY_MIN_YEAR 100
+    /**
+     * @brief Maximum year value with centuries, IE: 2202. NOTE: Centuries and year can be tracked
+     * using 2 int8_t variables, one for centuries, and one for years. Valid Centuries would be 0-127,
+     * and valid years are 0-99 giving us a max year of 127*100+99 = 12799. You can also track this value
+     * with a single int16_t allowing negative values.
+     */
+    #define MY_MAX_YEAR 12799
+    /**
+     * @brief Is 24 hour format (false).
+     */
+    #define MY_IS_24H 0
+    /**
+     * @brief Is 12 hour format (true).
+     */
+    #define MY_IS_12H 1
+    /**
+     * @brief Years per century.
+     */
+    #define MY_YEARS_PER_CENTURY 100
+    /**
+     * @brief Min century value.
+     */
+    #define MY_MIN_CENTURY 0
+    /**
+     * @brief Max century value.
+     */
+    #define MY_MAX_CENTURY 127
+    /**
+     * @brief Default century if year in range of 00-99.
+     */
+    #define MY_DEFAULT_CENTURY 20
+    /**
+     * @brief Month of January.
+     */
+    #define MY_MONTH_JAN 1
+    /**
+     * @brief Month of Febuary.
+     */
+    #define MY_MONTH_FEB 2
+    /**
+     * @brief Month of March.
+     */
+    #define MY_MONTH_MAR 3
+    /**
+     * @brief Month of April.
+     */
+    #define MY_MONTH_APR 4
+    /**
+     * @brief Month of May.
+     */
+    #define MY_MONTH_MAY 5
+    /**
+     * @brief Month of June.
+     */
+    #define MY_MONTH_JUN 6
+    /**
+     * @brief Month of July.
+     */
+    #define MY_MONTH_JUL 7
+    /**
+     * @brief Month of August.
+     */
+    #define MY_MONTH_AUG 8
+    /**
+     * @brief Month of September. 
+     */
+    #define MY_MONTH_SEP 9
+    /**
+     * @brief Month of October.
+     */
+    #define MY_MONTH_OCT 10
+    /**
+     * @brief Month of November.
+     */
+    #define MY_MONTH_NOV 11
+    /**
+     * @brief Month of December.
+     */
+    #define MY_MONTH_DEC 12
+
 /* 
  * ################################### Macros: #################################
  */

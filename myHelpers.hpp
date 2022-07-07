@@ -494,6 +494,280 @@ namespace myHelpers {
         }
         return returnValue;
     }
+/******************** Date time functions: **********************/
+
+    /**
+     * @brief Validate a year value with centuries, IE: 2020.
+     * Returns true if year is in the range 0-25599. Since years without a century are assumed to 
+     * be year 2000-2099, they are treated as valid years.
+     * @param value Year to validate.
+     * @return true Year is a valid year.
+     * @return false Year is an invalid year.
+     */
+    bool isValidYear(const int16_t value) {
+        if (value < 0 or value > MY_MAX_YEAR) { return false; }
+        return true;
+    }
+    /**
+     * @brief Convert a year without centuries to a year with centuries.
+     * Years in the range 0-99 are assumed to be years 2000-2099. If a year
+     * with centuries is passed, then it's returned untouched. If an invalid
+     * year is passed, an error code is returned.
+     * @param year Year to convert.
+     * @return int16_t Postive converted year, negative for error code.
+     */
+    int16_t convertYear(int16_t year) {
+        if (year < 0 or year > MY_MAX_YEAR) { return MY_HELPERS_INVALID_YEAR; }
+        if (year >= MY_MIN_YEAR) { return year; }
+        return year + MY_DEFAULT_CENTURY * MY_YEARS_PER_CENTURY;
+    }
+    /**
+     * @brief Check leap year. 
+     * Check a year to see if it's a leap year. This works for both years with and without centuries,
+     * since years without centuries are assumed to be years 2000-2099. If an invalid year is passed,
+     * it will return False.
+     * @param year Year to check.
+     * @return true Year is a leap year.
+     * @return false Year is not a leap year. Or is an invalid year.
+     */
+    bool inline isLeapYear(const int16_t year) {
+        if (isValidYear(year) == false) { return false; }
+        int16_t y = convertYear(year);
+        if ( (y % 4) == 0) {
+            if ((y % 100) == 0) {
+                if ((y % 400) == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * @brief Get the number of days in a year.
+     * Returns the number of days in a given year, if it's a common year it returns 365, if it's
+     * a leap year, it returns 366. This works for years with and without centuries as years without
+     * centuries are assumed to be 2000-2099. If an invalid year is passed, an error code is returned.
+     * @param year Year to get number of days.
+     * @return int16_t Postivie is the number of days in the year. Negative for error code.
+     */
+    int16_t getDaysInYear(int16_t year) {
+        if (isValidYear(year) == false) { return MY_HELPERS_INVALID_YEAR; }
+        int16_t y = convertYear(year);
+        if (isLeapYear(y) == true) { return MY_DAYS_PER_LEAP_YEAR; }
+        return MY_DAYS_PER_YEAR;
+    }
+    /**
+     * @brief Validate a month value.
+     * Returns true if value is in range (1-12).
+     * @param value Month to check.
+     * @return true Month is valid.
+     * @return false Month is invalid.
+     */
+    bool isValidMonth(const int8_t value) {
+        if (value < MY_MIN_MONTH or value > MY_MAX_MONTH) { return false; }
+        return true;
+    }
+    /**
+     * @brief Get the number of days in a month.
+     * Returns the number of days in a month given the year and month. This works for years with and
+     * without centuries.
+     * @param year Year.
+     * @param month Month.
+     * @return uint8_t Number of days in the month.
+     */
+    int8_t getDaysInMonth(const int16_t year, const int8_t month) {
+        if (isValidYear(year) == false) { return MY_HELPERS_INVALID_YEAR; }
+        if (isValidMonth(month) == false) { return MY_HELPERS_INVALID_MONTH; }
+        const uint8_t DAYS_PER_MONTH[MY_MONTHS_PER_YEAR] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (isLeapYear(year) == true and month == MY_MONTH_FEB) {
+            return (DAYS_PER_MONTH[month-1] + 1);
+        } 
+        return DAYS_PER_MONTH[month-1];
+    }
+    /**
+     * @brief Validate a day of month.
+     * Returns true if a day of the month is in the range (1-[28-31]) depending on year and month provided.
+     * If an invalid month or year value is passed, it will return false. This works for both years with
+     * and without centuries. as it assumes that values 0-99 are Century 2000.
+     * @param year Year day lands in.
+     * @param month Month day lands in.
+     * @param value Day value to check.
+     * @return true Day of month is valid.
+     * @return false Day of month is invalid.
+     */
+    bool isValidDayOfMonth(const int16_t year, const int8_t month, const int8_t value) {
+        if (isValidYear(year) == false) { return false; }
+        if (isValidMonth(month) == false) { return false; }
+        if (value < MY_MIN_DATE or value > getDaysInMonth(year, month)) { return false; }
+        return true;
+    }
+    /**
+     * @brief Validate a day of the week value.
+     * Returns true if value in range (1-7), where 1=Sunday.
+     * @param value Day of the week to validate.
+     * @return true Day of the week is valid.
+     * @return false Day of the week is invalid.
+     */
+    bool isValidDayOfWeek(int8_t value) {
+        if (value < MY_MIN_DOTW or value > MY_MAX_DOTW) { return false; }
+        return true;
+    }
+    /**
+     * @brief Get the day of the week.
+     * Returns the day of the week, where 1=Sunday. Years between 00-99 are assumed to be
+     * years 2000-2099.
+     * @param year Year day lands in.
+     * @param month Month day lands in.
+     * @param day Day of month.
+     * @return int8_t Returns (1-7) where 1=Sunday.
+     */
+    int8_t getDayOfWeek(const int16_t year, const int8_t month, const int8_t day) {
+        static const uint8_t T[12] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
+        if (isValidYear(year) == false) { return MY_HELPERS_INVALID_YEAR; }
+        if (isValidMonth(month) == false) { return MY_HELPERS_INVALID_MONTH; }
+        if (isValidDayOfMonth(year, month, day) == false) { return MY_HELPERS_INVALID_DATE; }
+        int16_t y = convertYear(year);
+        if (month < 3) { y -= 1; }
+        return ((y + y/4 - y/100 + y/400 + T[month-1] + day) % 7)+1;
+    }
+    /**
+     * @brief Validate a date.
+     * Returns true if a date given is valid. If a date with no centuries is provided (00-99), then
+     * it's assumed to be years 2000-2099.
+     * @param year Year of date.
+     * @param month Month of date.
+     * @param day Day of date.
+     * @return true Date is valid.
+     * @return false Date is invalid.
+     */
+    bool isValidDate(const int8_t year, const int8_t month, const int8_t day) {
+        if (isValidYear(year) == false) { return false; }
+        if (isValidMonth(month) == false) { return false; }
+        if (isValidDayOfMonth(year, month, day) == false) { return false; }
+        return true;
+    }
+    /**
+     * @brief Validate an hour value.
+     * Returns true if value is in range (0-23) in 24h format, or (1-12) in 12h format.
+     * @param value Hour to validate.
+     * @param is12h False = 24h format, True = 12h format.
+     * @return true Hour is valid.
+     * @return false Hour is invalid.
+     */
+    bool isValidHour(const int8_t value, const bool is12h) {
+        if (is12h == MY_IS_12H) {
+            if (value < MY_MIN_HOUR_12H or value > MY_MAX_HOUR_12H) { return false; }
+        } else {
+            if (value < MY_MIN_HOUR_24H or value > MY_MAX_HOUR_24H) { return false; }
+        }
+        return true;
+    }
+    /**
+     * @brief Validate a minute value.
+     * Returns true if minute is in range 0-59.
+     * @param value Minute to validate.
+     * @return true Minute is valid.
+     * @return false Minute is invalid.
+     */
+    bool isValidMinute(const int8_t value) {
+        if (value < MY_MIN_MINUTE or value > MY_MAX_MINUTE) { return false; }
+        return true;
+    }
+    /**
+     * @brief Validate a second value.
+     * Returns true if second is in range 0-59.
+     * @param value Second to validate.
+     * @return true Second is valid.
+     * @return false Second is not valid.
+     */
+    bool isValidSecond(const int8_t value) {
+        if (value < MY_MIN_SECOND or value > MY_MAX_SECOND) { return false; }
+        return true;
+    }
+    /**
+     * @brief Validate a time.
+     * Returns true if a time is valid.
+     * @param hour Hour of time.
+     * @param minute Minute of time.
+     * @param second Second of time.
+     * @param is12h Is 12hr format, False=24h, True=12h.
+     * @return true Time is valid.
+     * @return false Time is invalid.
+     */
+    bool isValidTime(const int8_t hour, const int8_t minute, const int8_t second, const bool is12h=false) {
+        if (is12h == MY_IS_12H) {
+            if (hour < MY_MIN_HOUR_12H or hour > MY_MAX_HOUR_12H) { return false; }
+        } else {
+            if (hour < MY_MIN_HOUR_24H or hour > MY_MAX_HOUR_24H) { return false; }
+        }
+        if (minute < MY_MIN_MINUTE or minute > MY_MAX_MINUTE) { return false; }
+        if (second < MY_MIN_SECOND or second > MY_MAX_SECOND) { return false; }
+        return true;
+    }
+    /**
+     * @brief Convert from 12h format to 24h format.
+     * Converts from 12h format to 24h format. Returns 0 for convert okay, otherwise if 
+     * an invlid hour is passed, an error code is returned.
+     * @param hours12 Hours in 12h format.
+     * @param isPM False = AM, True = PM
+     * @param hours24 Returned hours in 24h format.
+     * @return int16_t Retuns 0 for convert okay, negative for error code.
+     */
+    int16_t convert12hTo24h(const uint8_t hours12, const bool isPM, uint8_t *hours24) {
+        if (isValidHour(hours12, true) == false) { return MY_HELPERS_INVALID_HOUR; }
+        if (isPM == true) {
+            if (hours12 < 12) {
+                *hours24 = hours12 + 12;
+            } else {
+                *hours24 = hours12;
+            }
+        } else {
+            if (hours12 == 12) {
+                *hours24 = 0;
+            } else {
+                *hours24 = hours12;
+            }
+        }
+        return MY_NO_ERROR;
+    }
+    /**
+     * @brief Convert from 24h format to 12h format.
+     * Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an
+     * invalid hour is passed, an error code is returned.
+     * @param hours24 Time in 24h format.
+     * @param hours12 Returned hours in 12h format.
+     * @param isPM False = AM, True = PM.
+     * @return int16_t Returns 0 (MY_NO_ERROR) if convert okay, negative for error code.
+     */
+    int16_t convert24hTo12h(const uint8_t hours24, uint8_t *hours12, bool *isPM) {
+        if (isValidHour(hours24, false) == false) { return MY_HELPERS_INVALID_HOUR; }
+        if ( hours24 == 0) {
+            *hours12 = 12;
+            *isPM = false;
+        } else {
+            if (hours24 > 12) {
+                *hours12 = hours24 - 12;
+                *isPM = true;
+            } else if (hours24 == 12) {
+                *hours12 = hours24;
+                *isPM = true;
+            } else {
+                *hours12 = hours24;
+                *isPM = false;
+            }
+        }
+    }
+
+
+
+
+
+
+
 };
 
 #endif
