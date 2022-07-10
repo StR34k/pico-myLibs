@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['update_625',['update',['../classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7',1,'myBMx280::update()'],['../classmy_b_mx280.html#a3f803bcb617e56d846b840f551ae7af7',1,'myBMx280::update()']]]
+  ['transfer_744',['transfer',['../namespacemy_b_b_s_p_i_master.html#a71977339c4c5b62ddd02347d608beffb',1,'myBBSPIMaster']]]
 ];

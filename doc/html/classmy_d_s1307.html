@@ -72,7 +72,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class to use a DS1307 real time clock. Class to use a DS1307 Real time clock. Leap year and day of week algorithms taken from: <a href="https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/">https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/</a> . Datasheet: <a href="https://datasheets.maximintegrated.com/en/ds/DS1307.pdf">https://datasheets.maximintegrated.com/en/ds/DS1307.pdf</a>.  
+<p>Class to use a DS1307 real time clock. Class to use a DS1307 Real time clock. Datasheet: <a href="https://datasheets.maximintegrated.com/en/ds/DS1307.pdf">https://datasheets.maximintegrated.com/en/ds/DS1307.pdf</a>.  
  <a href="classmy_d_s1307.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="my_d_s1307_8hpp_source.html">myDS1307.hpp</a>&gt;</code></p>
@@ -81,15 +81,12 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aee28f7e09dfae90e32ac7356c42c00e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aee28f7e09dfae90e32ac7356c42c00e5">myDS1307</a> (i2c_inst_t *i2cPort, const uint8_t sdaPin, const uint8_t sclPin)</td></tr>
 <tr class="separator:aee28f7e09dfae90e32ac7356c42c00e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5723336a672619356dc95746778a2a5a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a5723336a672619356dc95746778a2a5a">getDayOfWeek</a> (const uint16_t year, const uint8_t month, const uint8_t day)</td></tr>
-<tr class="memdesc:a5723336a672619356dc95746778a2a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Day Of Week. Returns the day of the week given a date. Returns 1=Sunday..., otherwise if an invalid date is given, an error code is returned.  <a href="classmy_d_s1307.html#a5723336a672619356dc95746778a2a5a">More...</a><br /></td></tr>
-<tr class="separator:a5723336a672619356dc95746778a2a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acce49982f8ea405492fc4a8c426ccb75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#acce49982f8ea405492fc4a8c426ccb75">isLeapYear</a> (const uint16_t year)</td></tr>
-<tr class="memdesc:acce49982f8ea405492fc4a8c426ccb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if leap year. Checks a given year if it's a leap year. Returns true if it's a leapyear.  <a href="classmy_d_s1307.html#acce49982f8ea405492fc4a8c426ccb75">More...</a><br /></td></tr>
+<tr class="memdesc:acce49982f8ea405492fc4a8c426ccb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Day Of Week. Returns the day of the week given a date. Returns 1=Sunday..., otherwise if an invalid date is given, an error code is returned.  <a href="classmy_d_s1307.html#acce49982f8ea405492fc4a8c426ccb75">More...</a><br /></td></tr>
 <tr class="separator:acce49982f8ea405492fc4a8c426ccb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3622f5b07744ee18a62955cb63a2f39"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#ab3622f5b07744ee18a62955cb63a2f39">isValidDate</a> (const uint16_t year, const uint8_t month, const uint8_t day)</td></tr>
-<tr class="memdesc:ab3622f5b07744ee18a62955cb63a2f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a date is valid. Checks a given date to see if it's valid, will return an error code with the offending value if it's invalid.  <a href="classmy_d_s1307.html#ab3622f5b07744ee18a62955cb63a2f39">More...</a><br /></td></tr>
-<tr class="separator:ab3622f5b07744ee18a62955cb63a2f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529e982bf79785a970d57156a98f0c2f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a529e982bf79785a970d57156a98f0c2f">isValidDate</a> (const int16_t year, const int8_t month, const int8_t day)</td></tr>
+<tr class="memdesc:a529e982bf79785a970d57156a98f0c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a date is valid. Checks a given date to see if it's valid, will return an error code with the offending value if it's invalid.  <a href="classmy_d_s1307.html#a529e982bf79785a970d57156a98f0c2f">More...</a><br /></td></tr>
+<tr class="separator:a529e982bf79785a970d57156a98f0c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93905de4359a29d2a37e12c247db9c76"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a93905de4359a29d2a37e12c247db9c76">isValidDateTime</a> (const datetime_t value)</td></tr>
 <tr class="memdesc:a93905de4359a29d2a37e12c247db9c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a datetime_t Validate a datetime_t value. Returns 0 (NO_ERROR) for okay, otherwise an error code is returned containing the error code for the value that failed.  <a href="classmy_d_s1307.html#a93905de4359a29d2a37e12c247db9c76">More...</a><br /></td></tr>
 <tr class="separator:a93905de4359a29d2a37e12c247db9c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,33 +105,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a50631682732a9fb57710ff623abbcb71"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a50631682732a9fb57710ff623abbcb71">getSeconds</a> ()</td></tr>
 <tr class="memdesc:a50631682732a9fb57710ff623abbcb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Seconds. Read and return the seconds. If a comms error occurs then a error code is returned.  <a href="classmy_d_s1307.html#a50631682732a9fb57710ff623abbcb71">More...</a><br /></td></tr>
 <tr class="separator:a50631682732a9fb57710ff623abbcb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a162b5129d2826670c3c4656dac1c221e"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a162b5129d2826670c3c4656dac1c221e">setSeconds</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:a162b5129d2826670c3c4656dac1c221e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Seconds. Set the seconds value, returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a162b5129d2826670c3c4656dac1c221e">More...</a><br /></td></tr>
-<tr class="separator:a162b5129d2826670c3c4656dac1c221e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6118b7076bd2f692269f1ad9bd30c2"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a8b6118b7076bd2f692269f1ad9bd30c2">setSeconds</a> (const int8_t value)</td></tr>
+<tr class="memdesc:a8b6118b7076bd2f692269f1ad9bd30c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Seconds. Set the seconds value, returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a8b6118b7076bd2f692269f1ad9bd30c2">More...</a><br /></td></tr>
+<tr class="separator:a8b6118b7076bd2f692269f1ad9bd30c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5206aa7ab257b39653f41bb756a1846"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aa5206aa7ab257b39653f41bb756a1846">getMinutes</a> ()</td></tr>
 <tr class="memdesc:aa5206aa7ab257b39653f41bb756a1846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Minutes. Read and return the minutes. If a comms error occurs, then an error code is returned.  <a href="classmy_d_s1307.html#aa5206aa7ab257b39653f41bb756a1846">More...</a><br /></td></tr>
 <tr class="separator:aa5206aa7ab257b39653f41bb756a1846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca0e7bbf07863b8fa918c50067275960"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aca0e7bbf07863b8fa918c50067275960">setMinutes</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:aca0e7bbf07863b8fa918c50067275960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Minutes. Set the minutes. Returns 0 (NO_ERROR) if set okay, otherwise if a comms error occurs, or an invalid value is passed an error code is returned.  <a href="classmy_d_s1307.html#aca0e7bbf07863b8fa918c50067275960">More...</a><br /></td></tr>
-<tr class="separator:aca0e7bbf07863b8fa918c50067275960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd36b8dd60982ab3e53f55f2cc70072"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aecd36b8dd60982ab3e53f55f2cc70072">setMinutes</a> (const int8_t value)</td></tr>
+<tr class="memdesc:aecd36b8dd60982ab3e53f55f2cc70072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Minutes. Set the minutes. Returns 0 (NO_ERROR) if set okay, otherwise if a comms error occurs, or an invalid value is passed an error code is returned.  <a href="classmy_d_s1307.html#aecd36b8dd60982ab3e53f55f2cc70072">More...</a><br /></td></tr>
+<tr class="separator:aecd36b8dd60982ab3e53f55f2cc70072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b0ea25d8fbf232e7d224810e1e8193e"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a5b0ea25d8fbf232e7d224810e1e8193e">getHour12H</a> ()</td></tr>
 <tr class="memdesc:a5b0ea25d8fbf232e7d224810e1e8193e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hours in 12 hour format. Return the hours in 12 hour format. If a communications error occurs, then an error code is returned.  <a href="classmy_d_s1307.html#a5b0ea25d8fbf232e7d224810e1e8193e">More...</a><br /></td></tr>
 <tr class="separator:a5b0ea25d8fbf232e7d224810e1e8193e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eacd356da66068be613b537cd96f186"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a6eacd356da66068be613b537cd96f186">setHour12H</a> (const uint8_t hour, const bool isPM)</td></tr>
-<tr class="memdesc:a6eacd356da66068be613b537cd96f186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Hour, 12h format. Set the hour in 12 hour format. returns 0 if set okay, otherwise if an invalid hour is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a6eacd356da66068be613b537cd96f186">More...</a><br /></td></tr>
-<tr class="separator:a6eacd356da66068be613b537cd96f186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd1b8bd52cbb1f1292606cdead9dd05"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a6dd1b8bd52cbb1f1292606cdead9dd05">setHour12H</a> (const int8_t hour, const bool isPM)</td></tr>
+<tr class="memdesc:a6dd1b8bd52cbb1f1292606cdead9dd05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Hour, 12h format. Set the hour in 12 hour format. returns 0 if set okay, otherwise if an invalid hour is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a6dd1b8bd52cbb1f1292606cdead9dd05">More...</a><br /></td></tr>
+<tr class="separator:a6dd1b8bd52cbb1f1292606cdead9dd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5892d854ed812dd002e9a4f0b92e2dfb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a5892d854ed812dd002e9a4f0b92e2dfb">getHour24H</a> ()</td></tr>
 <tr class="memdesc:a5892d854ed812dd002e9a4f0b92e2dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hours in 24 hour format. Returns the hours in 24 hour format. If a comm error occurs, then an error code is returned.  <a href="classmy_d_s1307.html#a5892d854ed812dd002e9a4f0b92e2dfb">More...</a><br /></td></tr>
 <tr class="separator:a5892d854ed812dd002e9a4f0b92e2dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19482130b7e233dfe2f3603958ae0b2b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a19482130b7e233dfe2f3603958ae0b2b">setHour24H</a> (const uint8_t hour)</td></tr>
-<tr class="memdesc:a19482130b7e233dfe2f3603958ae0b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the hours in 24 hour format. Set the hour in 24 hour format. Returns 0 (NO_ERROR) if set okay, other wise if an invalid parameter is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a19482130b7e233dfe2f3603958ae0b2b">More...</a><br /></td></tr>
-<tr class="separator:a19482130b7e233dfe2f3603958ae0b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5e413958627d449e1a5c5bcaa7017e4"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#ae5e413958627d449e1a5c5bcaa7017e4">setFullTime12h</a> (const uint8_t hour, const bool isPM, const uint8_t minute, const uint8_t second)</td></tr>
-<tr class="memdesc:ae5e413958627d449e1a5c5bcaa7017e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the full time. 12h format. Sets the full time in 12h format. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#ae5e413958627d449e1a5c5bcaa7017e4">More...</a><br /></td></tr>
-<tr class="separator:ae5e413958627d449e1a5c5bcaa7017e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b7e4e464f743770d201f5f7554085bd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a1b7e4e464f743770d201f5f7554085bd">setFullTime24h</a> (const uint8_t hour, const uint8_t minute, const uint8_t second)</td></tr>
-<tr class="memdesc:a1b7e4e464f743770d201f5f7554085bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time, 24 hour format. Sets the full time. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value, or a comms error occurs, it will return an error code.  <a href="classmy_d_s1307.html#a1b7e4e464f743770d201f5f7554085bd">More...</a><br /></td></tr>
-<tr class="separator:a1b7e4e464f743770d201f5f7554085bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cff8280cdee576b52e1c56db9dfb962"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a0cff8280cdee576b52e1c56db9dfb962">setHour24H</a> (const int8_t hour)</td></tr>
+<tr class="memdesc:a0cff8280cdee576b52e1c56db9dfb962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the hours in 24 hour format. Set the hour in 24 hour format. Returns 0 (NO_ERROR) if set okay, other wise if an invalid parameter is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a0cff8280cdee576b52e1c56db9dfb962">More...</a><br /></td></tr>
+<tr class="separator:a0cff8280cdee576b52e1c56db9dfb962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ccd06f1a2b96d977dfd15256792204"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a12ccd06f1a2b96d977dfd15256792204">setFullTime12h</a> (const int8_t hour, const bool isPM, const int8_t minute, const int8_t second)</td></tr>
+<tr class="memdesc:a12ccd06f1a2b96d977dfd15256792204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the full time. 12h format. Sets the full time in 12h format. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a12ccd06f1a2b96d977dfd15256792204">More...</a><br /></td></tr>
+<tr class="separator:a12ccd06f1a2b96d977dfd15256792204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add3e436f0512d8f1238d0ee69282a41d"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#add3e436f0512d8f1238d0ee69282a41d">setFullTime24h</a> (const int8_t hour, const int8_t minute, const int8_t second)</td></tr>
+<tr class="memdesc:add3e436f0512d8f1238d0ee69282a41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time, 24 hour format. Sets the full time. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value, or a comms error occurs, it will return an error code.  <a href="classmy_d_s1307.html#add3e436f0512d8f1238d0ee69282a41d">More...</a><br /></td></tr>
+<tr class="separator:add3e436f0512d8f1238d0ee69282a41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceb983b925e2798e418d414ba1dc87eb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aceb983b925e2798e418d414ba1dc87eb">getAmPm</a> ()</td></tr>
 <tr class="memdesc:aceb983b925e2798e418d414ba1dc87eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if it's AM/PM. Gets am/pm and returns it, 0 for AM, 1 for PM, if a comms error occurs, then an error code is returned.  <a href="classmy_d_s1307.html#aceb983b925e2798e418d414ba1dc87eb">More...</a><br /></td></tr>
 <tr class="separator:aceb983b925e2798e418d414ba1dc87eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,30 +141,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a010375b740629d138b8d914c1456d667"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a010375b740629d138b8d914c1456d667">getDay</a> ()</td></tr>
 <tr class="memdesc:a010375b740629d138b8d914c1456d667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of week. Read and return the day of week. This is user programable. So when we set it we set Sunday equal to 1. Until it's set, we can't confirm what it is, since the datasheet doesn't list a default value. If a comms error occurs during read, an error code is returned.  <a href="classmy_d_s1307.html#a010375b740629d138b8d914c1456d667">More...</a><br /></td></tr>
 <tr class="separator:a010375b740629d138b8d914c1456d667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accb181edeff24b293442b5fc3c6799b8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#accb181edeff24b293442b5fc3c6799b8">setDay</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:accb181edeff24b293442b5fc3c6799b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the day of week. Sets the day of week, since this is user programmable, we set 1 to equal sunday for the purposes of this library. It isn't recommended to use this, as it's included for completeness. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#accb181edeff24b293442b5fc3c6799b8">More...</a><br /></td></tr>
-<tr class="separator:accb181edeff24b293442b5fc3c6799b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac12354b7c9f662c067f913c2a9a7d8ac"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#ac12354b7c9f662c067f913c2a9a7d8ac">setDay</a> (const int8_t value)</td></tr>
+<tr class="memdesc:ac12354b7c9f662c067f913c2a9a7d8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the day of week. Sets the day of week, since this is user programmable, we set 1 to equal sunday for the purposes of this library. It isn't recommended to use this, as it's included for completeness. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#ac12354b7c9f662c067f913c2a9a7d8ac">More...</a><br /></td></tr>
+<tr class="separator:ac12354b7c9f662c067f913c2a9a7d8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43fc1ced7d175e8efaeabf70501b3223"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a43fc1ced7d175e8efaeabf70501b3223">getDate</a> ()</td></tr>
 <tr class="memdesc:a43fc1ced7d175e8efaeabf70501b3223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the date (day of month) Read and return the day of month. Positve values are the date, while if an error occurs during comms, an error code is returned.  <a href="classmy_d_s1307.html#a43fc1ced7d175e8efaeabf70501b3223">More...</a><br /></td></tr>
 <tr class="separator:a43fc1ced7d175e8efaeabf70501b3223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a453fa9beb50b6cc910f10a173271f254"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a453fa9beb50b6cc910f10a173271f254">setDate</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:a453fa9beb50b6cc910f10a173271f254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the day of month (date). Sets the day of month. Invalid values here will cause invalid operation. Returns 0 (NO_ERROR) for set okay, or if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a453fa9beb50b6cc910f10a173271f254">More...</a><br /></td></tr>
-<tr class="separator:a453fa9beb50b6cc910f10a173271f254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20387262c211e421faf04f0a9cd55e30"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a20387262c211e421faf04f0a9cd55e30">setDate</a> (const int8_t value)</td></tr>
+<tr class="memdesc:a20387262c211e421faf04f0a9cd55e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the day of month (date). Sets the day of month. Invalid values here will cause invalid operation. Returns 0 (NO_ERROR) for set okay, or if an invalid value is passed, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a20387262c211e421faf04f0a9cd55e30">More...</a><br /></td></tr>
+<tr class="separator:a20387262c211e421faf04f0a9cd55e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98b269447bc46d4ba28e64fddce32c74"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a98b269447bc46d4ba28e64fddce32c74">getMonth</a> ()</td></tr>
 <tr class="memdesc:a98b269447bc46d4ba28e64fddce32c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the month. Read and return the month. Positive values are the month number, with 01 being January. if an error occurs during comms, an error code is returned.  <a href="classmy_d_s1307.html#a98b269447bc46d4ba28e64fddce32c74">More...</a><br /></td></tr>
 <tr class="separator:a98b269447bc46d4ba28e64fddce32c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2a80a51a49b0edc9cae21e3b9142338"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aa2a80a51a49b0edc9cae21e3b9142338">setMonth</a> (const uint8_t value)</td></tr>
-<tr class="memdesc:aa2a80a51a49b0edc9cae21e3b9142338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Month. Sets the month value. It's not recommended to use this, as it's included for completeness. An invalid value here in respect to day of month, will cause invalid operation. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#aa2a80a51a49b0edc9cae21e3b9142338">More...</a><br /></td></tr>
-<tr class="separator:aa2a80a51a49b0edc9cae21e3b9142338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b03336a1efa540ebfb94a1d9a3435cd"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a6b03336a1efa540ebfb94a1d9a3435cd">setMonth</a> (const int8_t value)</td></tr>
+<tr class="memdesc:a6b03336a1efa540ebfb94a1d9a3435cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Month. Sets the month value. It's not recommended to use this, as it's included for completeness. An invalid value here in respect to day of month, will cause invalid operation. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a6b03336a1efa540ebfb94a1d9a3435cd">More...</a><br /></td></tr>
+<tr class="separator:a6b03336a1efa540ebfb94a1d9a3435cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88c39e6dac59cac1c684005bfb1add44"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a88c39e6dac59cac1c684005bfb1add44">getYear</a> ()</td></tr>
 <tr class="memdesc:a88c39e6dac59cac1c684005bfb1add44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the year. Read and return the year. Positive values are the year, if an error occurs during comms, an error code is returned.  <a href="classmy_d_s1307.html#a88c39e6dac59cac1c684005bfb1add44">More...</a><br /></td></tr>
 <tr class="separator:a88c39e6dac59cac1c684005bfb1add44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc8640f05747c7c74cbc06585caac22c"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#afc8640f05747c7c74cbc06585caac22c">setYear</a> (const uint16_t value)</td></tr>
-<tr class="memdesc:afc8640f05747c7c74cbc06585caac22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Year. Set the year value. It's not recommended to use this, as it's included for completeness. An invalid value here in respect to month and date, will cause invalid operation. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#afc8640f05747c7c74cbc06585caac22c">More...</a><br /></td></tr>
-<tr class="separator:afc8640f05747c7c74cbc06585caac22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76d3e89da45cd2430336a39a02e3df22"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a76d3e89da45cd2430336a39a02e3df22">setFullDate</a> (const uint16_t year, const uint8_t month, const uint8_t day)</td></tr>
-<tr class="memdesc:a76d3e89da45cd2430336a39a02e3df22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set the day of week as well. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid date is passed, or a comms error occurs, it will return an error code.  <a href="classmy_d_s1307.html#a76d3e89da45cd2430336a39a02e3df22">More...</a><br /></td></tr>
-<tr class="separator:a76d3e89da45cd2430336a39a02e3df22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeae5d3b398722a30ea1960f612274ac"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aaeae5d3b398722a30ea1960f612274ac">setYear</a> (const int16_t value)</td></tr>
+<tr class="memdesc:aaeae5d3b398722a30ea1960f612274ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Year. Set the year value. It's not recommended to use this, as it's included for completeness. An invalid value here in respect to month and date, will cause invalid operation. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#aaeae5d3b398722a30ea1960f612274ac">More...</a><br /></td></tr>
+<tr class="separator:aaeae5d3b398722a30ea1960f612274ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334935e54bbc6506994a5ba927eec206"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a334935e54bbc6506994a5ba927eec206">setFullDate</a> (const int16_t year, const int8_t month, const int8_t day)</td></tr>
+<tr class="memdesc:a334935e54bbc6506994a5ba927eec206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set the day of week as well. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid date is passed, or a comms error occurs, it will return an error code.  <a href="classmy_d_s1307.html#a334935e54bbc6506994a5ba927eec206">More...</a><br /></td></tr>
+<tr class="separator:a334935e54bbc6506994a5ba927eec206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bf4319024a7017d8efbdd582db759e6"><td class="memItemLeft" align="right" valign="top">datetime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a7bf4319024a7017d8efbdd582db759e6">getDateTime</a> ()</td></tr>
 <tr class="memdesc:a7bf4319024a7017d8efbdd582db759e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current date / time. Reads and returns the current date / time as a pico datetime_t struct. If a comms error occurs then all the values will be set to -1, except for the year, which will be set to the error code.  <a href="classmy_d_s1307.html#a7bf4319024a7017d8efbdd582db759e6">More...</a><br /></td></tr>
 <tr class="separator:a7bf4319024a7017d8efbdd582db759e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,9 +195,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3396014570be0a6c496fd7cd8d78319"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">writeSram</a> (const uint8_t index, uint8_t *buffer, const uint8_t length)</td></tr>
 <tr class="memdesc:af3396014570be0a6c496fd7cd8d78319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write to the sram. Write to the sram. Returns 0 (NO_ERROR) if written successfully. If a boundary would be crossed, an error code is returned, and no data is written, if a comms error occurs, an error code will also be returned.  <a href="classmy_d_s1307.html#af3396014570be0a6c496fd7cd8d78319">More...</a><br /></td></tr>
 <tr class="separator:af3396014570be0a6c496fd7cd8d78319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceede7c3875391b59e088c7cc6628686"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">initialize</a> (const bool initI2C=true)</td></tr>
-<tr class="memdesc:aceede7c3875391b59e088c7cc6628686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip. Initialize communications with the chip. Returns 0(NO_ERROR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#aceede7c3875391b59e088c7cc6628686">More...</a><br /></td></tr>
-<tr class="separator:aceede7c3875391b59e088c7cc6628686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11a1ce3b05d9101a5d6305b6da68c034"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmy_d_s1307.html#a11a1ce3b05d9101a5d6305b6da68c034">initialize</a> (const bool initI2C=true, const bool trackCenturies=true)</td></tr>
+<tr class="memdesc:a11a1ce3b05d9101a5d6305b6da68c034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the chip. Initialize communications with the chip. If the I2C bus is initialized elsewhere, pass initI2C a false value. To track centuries, pass trackCenturies as true, otherwise the century is assumed to be 2000. Returns 0(NO_ERROR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned.  <a href="classmy_d_s1307.html#a11a1ce3b05d9101a5d6305b6da68c034">More...</a><br /></td></tr>
+<tr class="separator:a11a1ce3b05d9101a5d6305b6da68c034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -272,7 +269,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:aae9ce9bdb41a21c303079aa3fc7a75b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class to use a DS1307 real time clock. Class to use a DS1307 Real time clock. Leap year and day of week algorithms taken from: <a href="https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/">https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/</a> . Datasheet: <a href="https://datasheets.maximintegrated.com/en/ds/DS1307.pdf">https://datasheets.maximintegrated.com/en/ds/DS1307.pdf</a>. </p>
+<div class="textblock"><p>Class to use a DS1307 real time clock. Class to use a DS1307 Real time clock. Datasheet: <a href="https://datasheets.maximintegrated.com/en/ds/DS1307.pdf">https://datasheets.maximintegrated.com/en/ds/DS1307.pdf</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aee28f7e09dfae90e32ac7356c42c00e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee28f7e09dfae90e32ac7356c42c00e5">&#9670;&nbsp;</a></span>myDS1307()</h2>
@@ -373,7 +370,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current date / time. Reads and returns the current date / time as a pico datetime_t struct. If a comms error occurs then all the values will be set to -1, except for the year, which will be set to the error code. </p>
-<dl class="section note"><dt>Note</dt><dd>Centuries are not tracked, so I'm assuimg 00=2000. Sorry for introducing a year 2099 bug. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If centuries are tracked, values between 0-99 are assumed to be 2000-2099, otherwise it's assumed again that we are in the year 2000-2099 range. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>datetime_t </dd></dl>
 
 </div>
@@ -395,51 +392,6 @@ Static Public Attributes</h2></td></tr>
 
 <p>Get the day of week. Read and return the day of week. This is user programable. So when we set it we set Sunday equal to 1. Until it's set, we can't confirm what it is, since the datasheet doesn't list a default value. If a comms error occurs during read, an error code is returned. </p>
 <dl class="section return"><dt>Returns</dt><dd>int16_t Positive(1-7) is the day, negative is error code. </dd></dl>
-
-</div>
-</div>
-<a id="a5723336a672619356dc95746778a2a5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5723336a672619356dc95746778a2a5a">&#9670;&nbsp;</a></span>getDayOfWeek()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int16_t myDS1307::getDayOfWeek </td>
-          <td>(</td>
-          <td class="paramtype">const uint16_t&#160;</td>
-          <td class="paramname"><em>year</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>month</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
-          <td class="paramname"><em>day</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the Day Of Week. Returns the day of the week given a date. Returns 1=Sunday..., otherwise if an invalid date is given, an error code is returned. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">year</td><td>Year of the date. Valid values (1700-2399). </td></tr>
-    <tr><td class="paramname">month</td><td>Month of the date. Valid values (1-12). </td></tr>
-    <tr><td class="paramname">day</td><td>Day of month. Valid values (1-[28-31]) based on month and year. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int16_t Returns positive for day of week, negative for error code. </dd></dl>
 
 </div>
 </div>
@@ -659,13 +611,13 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the year. Read and return the year. Positive values are the year, if an error occurs during comms, an error code is returned. </p>
-<dl class="section note"><dt>Note</dt><dd>Centuries are not tracked, so I'm assuimg 00=2000. Sorry for introducing a year 2099 bug. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If centuries are not tracked, then years are interpreted to be 2000-2099. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>int16_t Positve is the year, negative is an error code. </dd></dl>
 
 </div>
 </div>
-<a id="aceede7c3875391b59e088c7cc6628686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceede7c3875391b59e088c7cc6628686">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a11a1ce3b05d9101a5d6305b6da68c034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a1ce3b05d9101a5d6305b6da68c034">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -674,16 +626,27 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">int16_t myDS1307::initialize </td>
           <td>(</td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>initI2C</em> = <code>true</code></td><td>)</td>
+          <td class="paramname"><em>initI2C</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>trackCenturies</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize the chip. Initialize communications with the chip. Returns 0(NO_ERROR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned. </p>
+<p>Initialize the chip. Initialize communications with the chip. If the I2C bus is initialized elsewhere, pass initI2C a false value. To track centuries, pass trackCenturies as true, otherwise the century is assumed to be 2000. Returns 0(NO_ERROR) for okay, otherwise if an invalid pin is passed during construction, or a comms error occurs, an error code is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">initI2c</td><td>True = init the i2c bus, False = Don't init i2c bus, assumes already init. </td></tr>
+    <tr><td class="paramname">trackCenturies</td><td>True = track centuries. False = Do not track centuries. </td></tr>
   </table>
   </dd>
 </dl>
@@ -715,8 +678,17 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if leap year. Checks a given year if it's a leap year. Returns true if it's a leapyear. </p>
+<p>Get the Day Of Week. Returns the day of the week given a date. Returns 1=Sunday..., otherwise if an invalid date is given, an error code is returned. </p>
 <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year of the date. Valid values (1700-2399). </td></tr>
+    <tr><td class="paramname">month</td><td>Month of the date. Valid values (1-12). </td></tr>
+    <tr><td class="paramname">day</td><td>Day of month. Valid values (1-[28-31]) based on month and year. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns positive for day of week, negative for error code.</dd></dl>
+<p>Check if leap year. Checks a given year if it's a leap year. Returns true if it's a leapyear. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">year</td><td>Year to check. Expects full year format. EX: 2021, instead of 21. </td></tr>
   </table>
@@ -728,8 +700,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="ab3622f5b07744ee18a62955cb63a2f39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3622f5b07744ee18a62955cb63a2f39">&#9670;&nbsp;</a></span>isValidDate()</h2>
+<a id="a529e982bf79785a970d57156a98f0c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529e982bf79785a970d57156a98f0c2f">&#9670;&nbsp;</a></span>isValidDate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -737,19 +709,19 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::isValidDate </td>
           <td>(</td>
-          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramtype">const int16_t&#160;</td>
           <td class="paramname"><em>year</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>month</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>day</em>&#160;</td>
         </tr>
         <tr>
@@ -873,8 +845,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="a453fa9beb50b6cc910f10a173271f254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a453fa9beb50b6cc910f10a173271f254">&#9670;&nbsp;</a></span>setDate()</h2>
+<a id="a20387262c211e421faf04f0a9cd55e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20387262c211e421faf04f0a9cd55e30">&#9670;&nbsp;</a></span>setDate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -882,7 +854,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setDate </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -890,7 +862,7 @@ false Year is not a leap year. </dd></dl>
 </div><div class="memdoc">
 
 <p>Set the day of month (date). Sets the day of month. Invalid values here will cause invalid operation. Returns 0 (NO_ERROR) for set okay, or if an invalid value is passed, or a comms error occurs, an error code is returned. </p>
-<dl class="section note"><dt>Note</dt><dd>It isn't recommended to use this, it's included for completeness, use <a class="el" href="classmy_d_s1307.html#a76d3e89da45cd2430336a39a02e3df22" title="Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set ...">setFullDate()</a> instead, as it calculates valid day of month values and checks for them, while this doesn't check the month. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It isn't recommended to use this, it's included for completeness, use <a class="el" href="classmy_d_s1307.html#a334935e54bbc6506994a5ba927eec206" title="Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set ...">setFullDate()</a> instead, as it calculates valid day of month values and checks for them, while this doesn't check the month. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Value to set day of month to. Valid values (1-31). </td></tr>
@@ -929,8 +901,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="accb181edeff24b293442b5fc3c6799b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accb181edeff24b293442b5fc3c6799b8">&#9670;&nbsp;</a></span>setDay()</h2>
+<a id="ac12354b7c9f662c067f913c2a9a7d8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12354b7c9f662c067f913c2a9a7d8ac">&#9670;&nbsp;</a></span>setDay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -938,7 +910,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setDay </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -946,7 +918,7 @@ false Year is not a leap year. </dd></dl>
 </div><div class="memdoc">
 
 <p>Set the day of week. Sets the day of week, since this is user programmable, we set 1 to equal sunday for the purposes of this library. It isn't recommended to use this, as it's included for completeness. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value is passed, or a comms error occurs, an error code is returned. </p>
-<dl class="section note"><dt>Note</dt><dd>It isn't recommended to use this method, use <a class="el" href="classmy_d_s1307.html#a76d3e89da45cd2430336a39a02e3df22" title="Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set ...">setFullDate()</a> instead as it calculates the appropriate day of the week and sets it. An invalid value here will cause invalid operation. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It isn't recommended to use this method, use <a class="el" href="classmy_d_s1307.html#a334935e54bbc6506994a5ba927eec206" title="Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set ...">setFullDate()</a> instead as it calculates the appropriate day of the week and sets it. An invalid value here will cause invalid operation. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Value to set day of the week to. Valid values (1-7). </td></tr>
@@ -984,8 +956,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="a76d3e89da45cd2430336a39a02e3df22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76d3e89da45cd2430336a39a02e3df22">&#9670;&nbsp;</a></span>setFullDate()</h2>
+<a id="a334935e54bbc6506994a5ba927eec206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334935e54bbc6506994a5ba927eec206">&#9670;&nbsp;</a></span>setFullDate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -993,19 +965,19 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setFullDate </td>
           <td>(</td>
-          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramtype">const int16_t&#160;</td>
           <td class="paramname"><em>year</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>month</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>day</em>&#160;</td>
         </tr>
         <tr>
@@ -1019,7 +991,7 @@ false Year is not a leap year. </dd></dl>
 <p>Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set the day of week as well. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid date is passed, or a comms error occurs, it will return an error code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">year</td><td>Year to set. Valid values (2000-2099). </td></tr>
+    <tr><td class="paramname">year</td><td>Year to set. Valid values if centuries are not tracked ([0-99] or [2000-2099]). If centuries are tracked (0-12799), and values between (0-99) are assumed to be 2000-2099. </td></tr>
     <tr><td class="paramname">month</td><td>Month to set. Valid values (1-12). </td></tr>
     <tr><td class="paramname">day</td><td>Day of month to set. Valid values (1-[28-31]) depending on year and month. </td></tr>
   </table>
@@ -1029,8 +1001,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="ae5e413958627d449e1a5c5bcaa7017e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5e413958627d449e1a5c5bcaa7017e4">&#9670;&nbsp;</a></span>setFullTime12h()</h2>
+<a id="a12ccd06f1a2b96d977dfd15256792204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ccd06f1a2b96d977dfd15256792204">&#9670;&nbsp;</a></span>setFullTime12h()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1038,7 +1010,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setFullTime12h </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>hour</em>, </td>
         </tr>
         <tr>
@@ -1050,13 +1022,13 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>minute</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>second</em>&#160;</td>
         </tr>
         <tr>
@@ -1081,8 +1053,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="a1b7e4e464f743770d201f5f7554085bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b7e4e464f743770d201f5f7554085bd">&#9670;&nbsp;</a></span>setFullTime24h()</h2>
+<a id="add3e436f0512d8f1238d0ee69282a41d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add3e436f0512d8f1238d0ee69282a41d">&#9670;&nbsp;</a></span>setFullTime24h()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1090,19 +1062,19 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setFullTime24h </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>hour</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>minute</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>second</em>&#160;</td>
         </tr>
         <tr>
@@ -1126,8 +1098,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="a6eacd356da66068be613b537cd96f186"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eacd356da66068be613b537cd96f186">&#9670;&nbsp;</a></span>setHour12H()</h2>
+<a id="a6dd1b8bd52cbb1f1292606cdead9dd05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd1b8bd52cbb1f1292606cdead9dd05">&#9670;&nbsp;</a></span>setHour12H()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1135,7 +1107,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setHour12H </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>hour</em>, </td>
         </tr>
         <tr>
@@ -1164,8 +1136,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="a19482130b7e233dfe2f3603958ae0b2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19482130b7e233dfe2f3603958ae0b2b">&#9670;&nbsp;</a></span>setHour24H()</h2>
+<a id="a0cff8280cdee576b52e1c56db9dfb962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cff8280cdee576b52e1c56db9dfb962">&#9670;&nbsp;</a></span>setHour24H()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1173,7 +1145,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setHour24H </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>hour</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1191,8 +1163,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="aca0e7bbf07863b8fa918c50067275960"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca0e7bbf07863b8fa918c50067275960">&#9670;&nbsp;</a></span>setMinutes()</h2>
+<a id="aecd36b8dd60982ab3e53f55f2cc70072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd36b8dd60982ab3e53f55f2cc70072">&#9670;&nbsp;</a></span>setMinutes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1200,7 +1172,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setMinutes </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1245,8 +1217,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="aa2a80a51a49b0edc9cae21e3b9142338"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2a80a51a49b0edc9cae21e3b9142338">&#9670;&nbsp;</a></span>setMonth()</h2>
+<a id="a6b03336a1efa540ebfb94a1d9a3435cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b03336a1efa540ebfb94a1d9a3435cd">&#9670;&nbsp;</a></span>setMonth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1254,7 +1226,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setMonth </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1262,7 +1234,7 @@ false Year is not a leap year. </dd></dl>
 </div><div class="memdoc">
 
 <p>Set the Month. Sets the month value. It's not recommended to use this, as it's included for completeness. An invalid value here in respect to day of month, will cause invalid operation. Returns 0 (NO_ERROR) if set okay, otherwise if an invalid value or a comms error occurs, an error code is returned. </p>
-<dl class="section note"><dt>Note</dt><dd>It isn't recommended to use this. Use <a class="el" href="classmy_d_s1307.html#a76d3e89da45cd2430336a39a02e3df22" title="Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set ...">setFullDate()</a> instead, as this doesn't check the day of month to verify valid values. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It isn't recommended to use this. Use <a class="el" href="classmy_d_s1307.html#a334935e54bbc6506994a5ba927eec206" title="Set the date. Sets the full date, with error checking for invalid dates. This will calculate and set ...">setFullDate()</a> instead, as this doesn't check the day of month to verify valid values. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>Value to set month to. Valid values (1-12). </td></tr>
@@ -1273,8 +1245,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="a162b5129d2826670c3c4656dac1c221e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a162b5129d2826670c3c4656dac1c221e">&#9670;&nbsp;</a></span>setSeconds()</h2>
+<a id="a8b6118b7076bd2f692269f1ad9bd30c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6118b7076bd2f692269f1ad9bd30c2">&#9670;&nbsp;</a></span>setSeconds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1282,7 +1254,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setSeconds </td>
           <td>(</td>
-          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramtype">const int8_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1381,8 +1353,8 @@ false Year is not a leap year. </dd></dl>
 
 </div>
 </div>
-<a id="afc8640f05747c7c74cbc06585caac22c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc8640f05747c7c74cbc06585caac22c">&#9670;&nbsp;</a></span>setYear()</h2>
+<a id="aaeae5d3b398722a30ea1960f612274ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeae5d3b398722a30ea1960f612274ac">&#9670;&nbsp;</a></span>setYear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1390,7 +1362,7 @@ false Year is not a leap year. </dd></dl>
         <tr>
           <td class="memname">int16_t myDS1307::setYear </td>
           <td>(</td>
-          <td class="paramtype">const uint16_t&#160;</td>
+          <td class="paramtype">const int16_t&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1401,7 +1373,7 @@ false Year is not a leap year. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>It's not recommended to use this, use setFullDate instead as it calculates valid values, and checks for them while this does not. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Value to set year to. Valid values (2000-2099). </td></tr>
+    <tr><td class="paramname">value</td><td>Value to set year to. Valid values (0-99) if centuries are not tracked, (0-12799) if centuries are tracked, values between 00-99 are assumed to be 2000-2099. </td></tr>
   </table>
   </dd>
 </dl>

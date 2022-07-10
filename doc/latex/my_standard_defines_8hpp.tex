@@ -22,6 +22,10 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Number of gpio pins. Number of G\+P\+IO pins on the rp2040. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a57c0b773be8be16ef6615b3681275f09}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+P\+IN}}~29
 \begin{DoxyCompactList}\small\item\em Max valid pin number. The highest pin number on the rp2040. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_afd6d9e880e638aeffa3d7acb0f1a5047}{M\+Y\+\_\+\+D\+I\+R\+\_\+\+O\+U\+T\+P\+UT}}~1
+\begin{DoxyCompactList}\small\item\em Direction O\+U\+T\+P\+UT. The value to set, or the value read for output. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a740f7642eddf8f643baaecf088a68713}{M\+Y\+\_\+\+D\+I\+R\+\_\+\+I\+N\+P\+UT}}~0
+\begin{DoxyCompactList}\small\item\em Direction I\+N\+P\+UT. The value to set, or the value read for input. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_af77320068cd79bb2f68db075d5c214d6}{M\+Y\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0\+\_\+\+P\+IN}}~26
 \begin{DoxyCompactList}\small\item\em Channel 0 pin. The pin number for A\+DC channel 0. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_ace577d623ec1c3f4d8676feea056f22e}{M\+Y\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\+\_\+\+P\+IN}}~27
@@ -70,10 +74,92 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Timeout reached. A timeout has been reached. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a2932a50fea6f22d821215e6d34403aff}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+D\+IR}}~-\/8
 \begin{DoxyCompactList}\small\item\em Invalid direction A pin is set to wrong direction for operation requested. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a2cab069b533d2ead9349fadc253b76b7}{M\+Y\+\_\+\+V\+A\+L\+U\+E\+\_\+\+E\+R\+R\+OR}}~-\/9
+\begin{DoxyCompactList}\small\item\em Value error. A value is out of range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a9e35f5d686d60cb1a9e4641f012030f9}{M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+U\+NC}}~-\/10
+\begin{DoxyCompactList}\small\item\em Invalid function. A pin function is not set properly. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}}~1
 \begin{DoxyCompactList}\small\item\em bit order of M\+SB first. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_aa93c5c73d56a97871b8c595f38fabeba}{L\+S\+B\+\_\+\+F\+I\+R\+ST}}~0
 \begin{DoxyCompactList}\small\item\em bit order of L\+SB first. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a04c9259196292d83e2e357b11da068d9}{M\+Y\+\_\+\+D\+A\+Y\+S\+\_\+\+P\+E\+R\+\_\+\+Y\+E\+AR}}~365
+\begin{DoxyCompactList}\small\item\em Number of days in a common year. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ad117615abbfcd1fd65686ae9289d35d9}{M\+Y\+\_\+\+D\+A\+Y\+S\+\_\+\+P\+E\+R\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR}}~366
+\begin{DoxyCompactList}\small\item\em Number of days in a leap year. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a59949b9d5abc5090ea7710603df6ae73}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+S\+E\+C\+O\+ND}}~0
+\begin{DoxyCompactList}\small\item\em Minimum second value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a32a1c8595d11543b2e3e25bbac9ad93e}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C\+O\+ND}}~59
+\begin{DoxyCompactList}\small\item\em Maximum second value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a385a0bbe3f65c73433f78b8376b8e8e4}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+M\+I\+N\+U\+TE}}~0
+\begin{DoxyCompactList}\small\item\em Minimim minute value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a1dacd30135659e9e754a24cb63a9e08f}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+M\+I\+N\+U\+TE}}~59
+\begin{DoxyCompactList}\small\item\em Maximum minute value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ac916b52cd89bc47aee2cb331972ff8e3}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+H\+O\+U\+R\+\_\+12H}}~1
+\begin{DoxyCompactList}\small\item\em Minimum hour in 12h format. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a852d81eca6f5203d67ff2876f849acde}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+H\+O\+U\+R\+\_\+12H}}~12
+\begin{DoxyCompactList}\small\item\em Maximum hour in 12h format. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_aacf0be5beb5b4462ab0632c527bed0a9}{M\+Y\+\_\+\+I\+S\+\_\+\+AM}}~0
+\begin{DoxyCompactList}\small\item\em AM value. (false) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a3a63a3110d367a3559b98e05da728d4e}{M\+Y\+\_\+\+I\+S\+\_\+\+PM}}~1
+\begin{DoxyCompactList}\small\item\em PM value. (true) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a283b26a1633b9e667c6bbf5b0a510418}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+H\+O\+U\+R\+\_\+24H}}~0
+\begin{DoxyCompactList}\small\item\em Minimum hour value in 24h format. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ae03d7f8e3898d45ae799e6ba247a5d14}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+H\+O\+U\+R\+\_\+24H}}~23
+\begin{DoxyCompactList}\small\item\em Maximum hour value in 24h format. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_af2eb1b5479717c5c900b79c6ad96f41a}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+D\+O\+TW}}~1
+\begin{DoxyCompactList}\small\item\em Minimum day of the week value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a9325679f230bdd280200657bf5271a9f}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+D\+O\+TW}}~7
+\begin{DoxyCompactList}\small\item\em Maximum day of the week value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a0d63124bcf5b99f75931ac20be8a4544}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+D\+A\+TE}}~1
+\begin{DoxyCompactList}\small\item\em Minimum day of the month value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a65b38d53d456578919280012d0ac4b13}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+D\+A\+TE}}~31
+\begin{DoxyCompactList}\small\item\em Maximum day of the month value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a1cd34ab452c5f6d2105c618cb32ca31e}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+M\+O\+N\+TH}}~1
+\begin{DoxyCompactList}\small\item\em Minimum month value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a773032a94185cddd2dc18020aa1fbecc}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+M\+O\+N\+TH}}~12
+\begin{DoxyCompactList}\small\item\em Maximum month value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_aebf0e2b235ab1b217919f9f2069df238}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+S\+\_\+\+P\+E\+R\+\_\+\+Y\+E\+AR}}~12
+\begin{DoxyCompactList}\small\item\em Months per year. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_acc0093bed9d5a6090d7cc4c785247193}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+Y\+E\+AR}}~100
+\begin{DoxyCompactList}\small\item\em Minimum year value with Centuries, IE\+: 2020. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_aa349da31baf5021e70db62cc4276eeac}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+Y\+E\+AR}}~12799
+\begin{DoxyCompactList}\small\item\em Maximum year value with centuries, IE\+: 2202. N\+O\+TE\+: Centuries and year can be tracked using 2 int8\+\_\+t variables, one for centuries, and one for years. Valid Centuries would be 0-\/127, and valid years are 0-\/99 giving us a max year of 127$\ast$100+99 = 12799. You can also track this value with a single int16\+\_\+t allowing negative values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a1f4265b5b5fde73a6464e2b407438136}{M\+Y\+\_\+\+I\+S\+\_\+24H}}~0
+\begin{DoxyCompactList}\small\item\em Is 24 hour format (false). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_aec5264e1fce8ef3ee1334e4eb08357d8}{M\+Y\+\_\+\+I\+S\+\_\+12H}}~1
+\begin{DoxyCompactList}\small\item\em Is 12 hour format (true). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a087fcf0e3a559b19c990b3ab3dc74a90}{M\+Y\+\_\+\+Y\+E\+A\+R\+S\+\_\+\+P\+E\+R\+\_\+\+C\+E\+N\+T\+U\+RY}}~100
+\begin{DoxyCompactList}\small\item\em Years per century. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ae5b83133551075546322b97083736b63}{M\+Y\+\_\+\+M\+I\+N\+\_\+\+C\+E\+N\+T\+U\+RY}}~0
+\begin{DoxyCompactList}\small\item\em Min century value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a592f28b6c5392a1a4b9a8e1ea1d12032}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+C\+E\+N\+T\+U\+RY}}~127
+\begin{DoxyCompactList}\small\item\em Max century value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a252f6b5edf53d4c305907f9279b8f186}{M\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+E\+N\+T\+U\+RY}}~20
+\begin{DoxyCompactList}\small\item\em Default century if year in range of 00-\/99. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a0fdb80c3f369ef87db87b5465548899c}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+J\+AN}}~1
+\begin{DoxyCompactList}\small\item\em Month of January. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a27fc045664e07c4cdf0f5071bd021d98}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+F\+EB}}~2
+\begin{DoxyCompactList}\small\item\em Month of Febuary. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a200084140f81d8c248eca67fe2455db3}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+M\+AR}}~3
+\begin{DoxyCompactList}\small\item\em Month of March. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a51ad47f76a62afb090d37610e3e01182}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+A\+PR}}~4
+\begin{DoxyCompactList}\small\item\em Month of April. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a127fe0926ad0c699fe583d75073d5de9}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+M\+AY}}~5
+\begin{DoxyCompactList}\small\item\em Month of May. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ab19699186fb80352f58299b8c18cbac3}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+J\+UN}}~6
+\begin{DoxyCompactList}\small\item\em Month of June. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a81fe72f1cfb1dd2fddfba8298df62d36}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+J\+UL}}~7
+\begin{DoxyCompactList}\small\item\em Month of July. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a9aac9f6506a4871c3c32084855186ba4}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+A\+UG}}~8
+\begin{DoxyCompactList}\small\item\em Month of August. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a895984e7952d97dccb349d64e7b29208}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+S\+EP}}~9
+\begin{DoxyCompactList}\small\item\em Month of September. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a7825474036320cd1ce01957e8a43c098}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+O\+CT}}~10
+\begin{DoxyCompactList}\small\item\em Month of October. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a726a4583d461f8e99fc5c86636af83a2}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+N\+OV}}~11
+\begin{DoxyCompactList}\small\item\em Month of November. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a1863a193052d9aaad70b76e148eb5cc9}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+D\+EC}}~12
+\begin{DoxyCompactList}\small\item\em Month of December. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a11643f271076024c395a93800b3d9546}{\+\_\+\+BV}}(bit)~(1 $<$$<$ (bit))
 \begin{DoxyCompactList}\small\item\em Create a bit mask given a bit number. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -238,6 +324,56 @@ Number of user channels. The number for user channels (ie channels mapped to pin
 
 Temperature channel. The channel number for the internal temerature sensor. 
 
+\mbox{\Hypertarget{my_standard_defines_8hpp_ad117615abbfcd1fd65686ae9289d35d9}\label{my_standard_defines_8hpp_ad117615abbfcd1fd65686ae9289d35d9}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_DAYS\_PER\_LEAP\_YEAR@{MY\_DAYS\_PER\_LEAP\_YEAR}}
+\index{MY\_DAYS\_PER\_LEAP\_YEAR@{MY\_DAYS\_PER\_LEAP\_YEAR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_DAYS\_PER\_LEAP\_YEAR}{MY\_DAYS\_PER\_LEAP\_YEAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+D\+A\+Y\+S\+\_\+\+P\+E\+R\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR~366}
+
+
+
+Number of days in a leap year. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a04c9259196292d83e2e357b11da068d9}\label{my_standard_defines_8hpp_a04c9259196292d83e2e357b11da068d9}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_DAYS\_PER\_YEAR@{MY\_DAYS\_PER\_YEAR}}
+\index{MY\_DAYS\_PER\_YEAR@{MY\_DAYS\_PER\_YEAR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_DAYS\_PER\_YEAR}{MY\_DAYS\_PER\_YEAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+D\+A\+Y\+S\+\_\+\+P\+E\+R\+\_\+\+Y\+E\+AR~365}
+
+
+
+Number of days in a common year. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a252f6b5edf53d4c305907f9279b8f186}\label{my_standard_defines_8hpp_a252f6b5edf53d4c305907f9279b8f186}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_DEFAULT\_CENTURY@{MY\_DEFAULT\_CENTURY}}
+\index{MY\_DEFAULT\_CENTURY@{MY\_DEFAULT\_CENTURY}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_DEFAULT\_CENTURY}{MY\_DEFAULT\_CENTURY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+E\+N\+T\+U\+RY~20}
+
+
+
+Default century if year in range of 00-\/99. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a740f7642eddf8f643baaecf088a68713}\label{my_standard_defines_8hpp_a740f7642eddf8f643baaecf088a68713}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_DIR\_INPUT@{MY\_DIR\_INPUT}}
+\index{MY\_DIR\_INPUT@{MY\_DIR\_INPUT}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_DIR\_INPUT}{MY\_DIR\_INPUT}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+D\+I\+R\+\_\+\+I\+N\+P\+UT~0}
+
+
+
+Direction I\+N\+P\+UT. The value to set, or the value read for input. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_afd6d9e880e638aeffa3d7acb0f1a5047}\label{my_standard_defines_8hpp_afd6d9e880e638aeffa3d7acb0f1a5047}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_DIR\_OUTPUT@{MY\_DIR\_OUTPUT}}
+\index{MY\_DIR\_OUTPUT@{MY\_DIR\_OUTPUT}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_DIR\_OUTPUT}{MY\_DIR\_OUTPUT}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+D\+I\+R\+\_\+\+O\+U\+T\+P\+UT~1}
+
+
+
+Direction O\+U\+T\+P\+UT. The value to set, or the value read for output. 
+
 \mbox{\Hypertarget{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}\label{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_GENERAL\_ERROR@{MY\_GENERAL\_ERROR}}
 \index{MY\_GENERAL\_ERROR@{MY\_GENERAL\_ERROR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
@@ -291,6 +427,16 @@ invalid bit mask. An invalid bit mask was passed.
 
 Invalid direction A pin is set to wrong direction for operation requested. 
 
+\mbox{\Hypertarget{my_standard_defines_8hpp_a9e35f5d686d60cb1a9e4641f012030f9}\label{my_standard_defines_8hpp_a9e35f5d686d60cb1a9e4641f012030f9}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_INVALID\_FUNC@{MY\_INVALID\_FUNC}}
+\index{MY\_INVALID\_FUNC@{MY\_INVALID\_FUNC}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_INVALID\_FUNC}{MY\_INVALID\_FUNC}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+U\+NC~-\/10}
+
+
+
+Invalid function. A pin function is not set properly. 
+
 \mbox{\Hypertarget{my_standard_defines_8hpp_a1a2c7825740de47fb2c8572f6f81027c}\label{my_standard_defines_8hpp_a1a2c7825740de47fb2c8572f6f81027c}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_INVALID\_PIN@{MY\_INVALID\_PIN}}
 \index{MY\_INVALID\_PIN@{MY\_INVALID\_PIN}!myStandardDefines.hpp@{myStandardDefines.hpp}}
@@ -301,6 +447,116 @@ Invalid direction A pin is set to wrong direction for operation requested.
 
 invalid pin number. An invalid pin number was passed. 
 
+\mbox{\Hypertarget{my_standard_defines_8hpp_aec5264e1fce8ef3ee1334e4eb08357d8}\label{my_standard_defines_8hpp_aec5264e1fce8ef3ee1334e4eb08357d8}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_IS\_12H@{MY\_IS\_12H}}
+\index{MY\_IS\_12H@{MY\_IS\_12H}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_IS\_12H}{MY\_IS\_12H}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+S\+\_\+12H~1}
+
+
+
+Is 12 hour format (true). 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a1f4265b5b5fde73a6464e2b407438136}\label{my_standard_defines_8hpp_a1f4265b5b5fde73a6464e2b407438136}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_IS\_24H@{MY\_IS\_24H}}
+\index{MY\_IS\_24H@{MY\_IS\_24H}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_IS\_24H}{MY\_IS\_24H}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+S\+\_\+24H~0}
+
+
+
+Is 24 hour format (false). 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_aacf0be5beb5b4462ab0632c527bed0a9}\label{my_standard_defines_8hpp_aacf0be5beb5b4462ab0632c527bed0a9}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_IS\_AM@{MY\_IS\_AM}}
+\index{MY\_IS\_AM@{MY\_IS\_AM}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_IS\_AM}{MY\_IS\_AM}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+S\+\_\+\+AM~0}
+
+
+
+AM value. (false) 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a3a63a3110d367a3559b98e05da728d4e}\label{my_standard_defines_8hpp_a3a63a3110d367a3559b98e05da728d4e}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_IS\_PM@{MY\_IS\_PM}}
+\index{MY\_IS\_PM@{MY\_IS\_PM}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_IS\_PM}{MY\_IS\_PM}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+I\+S\+\_\+\+PM~1}
+
+
+
+PM value. (true) 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a592f28b6c5392a1a4b9a8e1ea1d12032}\label{my_standard_defines_8hpp_a592f28b6c5392a1a4b9a8e1ea1d12032}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_CENTURY@{MY\_MAX\_CENTURY}}
+\index{MY\_MAX\_CENTURY@{MY\_MAX\_CENTURY}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_CENTURY}{MY\_MAX\_CENTURY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+C\+E\+N\+T\+U\+RY~127}
+
+
+
+Max century value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a65b38d53d456578919280012d0ac4b13}\label{my_standard_defines_8hpp_a65b38d53d456578919280012d0ac4b13}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_DATE@{MY\_MAX\_DATE}}
+\index{MY\_MAX\_DATE@{MY\_MAX\_DATE}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_DATE}{MY\_MAX\_DATE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+D\+A\+TE~31}
+
+
+
+Maximum day of the month value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a9325679f230bdd280200657bf5271a9f}\label{my_standard_defines_8hpp_a9325679f230bdd280200657bf5271a9f}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_DOTW@{MY\_MAX\_DOTW}}
+\index{MY\_MAX\_DOTW@{MY\_MAX\_DOTW}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_DOTW}{MY\_MAX\_DOTW}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+D\+O\+TW~7}
+
+
+
+Maximum day of the week value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a852d81eca6f5203d67ff2876f849acde}\label{my_standard_defines_8hpp_a852d81eca6f5203d67ff2876f849acde}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_HOUR\_12H@{MY\_MAX\_HOUR\_12H}}
+\index{MY\_MAX\_HOUR\_12H@{MY\_MAX\_HOUR\_12H}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_HOUR\_12H}{MY\_MAX\_HOUR\_12H}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+H\+O\+U\+R\+\_\+12H~12}
+
+
+
+Maximum hour in 12h format. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_ae03d7f8e3898d45ae799e6ba247a5d14}\label{my_standard_defines_8hpp_ae03d7f8e3898d45ae799e6ba247a5d14}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_HOUR\_24H@{MY\_MAX\_HOUR\_24H}}
+\index{MY\_MAX\_HOUR\_24H@{MY\_MAX\_HOUR\_24H}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_HOUR\_24H}{MY\_MAX\_HOUR\_24H}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+H\+O\+U\+R\+\_\+24H~23}
+
+
+
+Maximum hour value in 24h format. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a1dacd30135659e9e754a24cb63a9e08f}\label{my_standard_defines_8hpp_a1dacd30135659e9e754a24cb63a9e08f}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_MINUTE@{MY\_MAX\_MINUTE}}
+\index{MY\_MAX\_MINUTE@{MY\_MAX\_MINUTE}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_MINUTE}{MY\_MAX\_MINUTE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+M\+I\+N\+U\+TE~59}
+
+
+
+Maximum minute value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a773032a94185cddd2dc18020aa1fbecc}\label{my_standard_defines_8hpp_a773032a94185cddd2dc18020aa1fbecc}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_MONTH@{MY\_MAX\_MONTH}}
+\index{MY\_MAX\_MONTH@{MY\_MAX\_MONTH}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_MONTH}{MY\_MAX\_MONTH}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+M\+O\+N\+TH~12}
+
+
+
+Maximum month value. 
+
 \mbox{\Hypertarget{my_standard_defines_8hpp_a57c0b773be8be16ef6615b3681275f09}\label{my_standard_defines_8hpp_a57c0b773be8be16ef6615b3681275f09}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_PIN@{MY\_MAX\_PIN}}
 \index{MY\_MAX\_PIN@{MY\_MAX\_PIN}!myStandardDefines.hpp@{myStandardDefines.hpp}}
@@ -310,6 +566,246 @@ invalid pin number. An invalid pin number was passed.
 
 
 Max valid pin number. The highest pin number on the rp2040. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a32a1c8595d11543b2e3e25bbac9ad93e}\label{my_standard_defines_8hpp_a32a1c8595d11543b2e3e25bbac9ad93e}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_SECOND@{MY\_MAX\_SECOND}}
+\index{MY\_MAX\_SECOND@{MY\_MAX\_SECOND}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_SECOND}{MY\_MAX\_SECOND}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+S\+E\+C\+O\+ND~59}
+
+
+
+Maximum second value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_aa349da31baf5021e70db62cc4276eeac}\label{my_standard_defines_8hpp_aa349da31baf5021e70db62cc4276eeac}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MAX\_YEAR@{MY\_MAX\_YEAR}}
+\index{MY\_MAX\_YEAR@{MY\_MAX\_YEAR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MAX\_YEAR}{MY\_MAX\_YEAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+A\+X\+\_\+\+Y\+E\+AR~12799}
+
+
+
+Maximum year value with centuries, IE\+: 2202. N\+O\+TE\+: Centuries and year can be tracked using 2 int8\+\_\+t variables, one for centuries, and one for years. Valid Centuries would be 0-\/127, and valid years are 0-\/99 giving us a max year of 127$\ast$100+99 = 12799. You can also track this value with a single int16\+\_\+t allowing negative values. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_ae5b83133551075546322b97083736b63}\label{my_standard_defines_8hpp_ae5b83133551075546322b97083736b63}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_CENTURY@{MY\_MIN\_CENTURY}}
+\index{MY\_MIN\_CENTURY@{MY\_MIN\_CENTURY}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_CENTURY}{MY\_MIN\_CENTURY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+C\+E\+N\+T\+U\+RY~0}
+
+
+
+Min century value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a0d63124bcf5b99f75931ac20be8a4544}\label{my_standard_defines_8hpp_a0d63124bcf5b99f75931ac20be8a4544}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_DATE@{MY\_MIN\_DATE}}
+\index{MY\_MIN\_DATE@{MY\_MIN\_DATE}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_DATE}{MY\_MIN\_DATE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+D\+A\+TE~1}
+
+
+
+Minimum day of the month value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_af2eb1b5479717c5c900b79c6ad96f41a}\label{my_standard_defines_8hpp_af2eb1b5479717c5c900b79c6ad96f41a}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_DOTW@{MY\_MIN\_DOTW}}
+\index{MY\_MIN\_DOTW@{MY\_MIN\_DOTW}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_DOTW}{MY\_MIN\_DOTW}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+D\+O\+TW~1}
+
+
+
+Minimum day of the week value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_ac916b52cd89bc47aee2cb331972ff8e3}\label{my_standard_defines_8hpp_ac916b52cd89bc47aee2cb331972ff8e3}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_HOUR\_12H@{MY\_MIN\_HOUR\_12H}}
+\index{MY\_MIN\_HOUR\_12H@{MY\_MIN\_HOUR\_12H}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_HOUR\_12H}{MY\_MIN\_HOUR\_12H}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+H\+O\+U\+R\+\_\+12H~1}
+
+
+
+Minimum hour in 12h format. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a283b26a1633b9e667c6bbf5b0a510418}\label{my_standard_defines_8hpp_a283b26a1633b9e667c6bbf5b0a510418}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_HOUR\_24H@{MY\_MIN\_HOUR\_24H}}
+\index{MY\_MIN\_HOUR\_24H@{MY\_MIN\_HOUR\_24H}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_HOUR\_24H}{MY\_MIN\_HOUR\_24H}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+H\+O\+U\+R\+\_\+24H~0}
+
+
+
+Minimum hour value in 24h format. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a385a0bbe3f65c73433f78b8376b8e8e4}\label{my_standard_defines_8hpp_a385a0bbe3f65c73433f78b8376b8e8e4}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_MINUTE@{MY\_MIN\_MINUTE}}
+\index{MY\_MIN\_MINUTE@{MY\_MIN\_MINUTE}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_MINUTE}{MY\_MIN\_MINUTE}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+M\+I\+N\+U\+TE~0}
+
+
+
+Minimim minute value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a1cd34ab452c5f6d2105c618cb32ca31e}\label{my_standard_defines_8hpp_a1cd34ab452c5f6d2105c618cb32ca31e}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_MONTH@{MY\_MIN\_MONTH}}
+\index{MY\_MIN\_MONTH@{MY\_MIN\_MONTH}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_MONTH}{MY\_MIN\_MONTH}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+M\+O\+N\+TH~1}
+
+
+
+Minimum month value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a59949b9d5abc5090ea7710603df6ae73}\label{my_standard_defines_8hpp_a59949b9d5abc5090ea7710603df6ae73}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_SECOND@{MY\_MIN\_SECOND}}
+\index{MY\_MIN\_SECOND@{MY\_MIN\_SECOND}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_SECOND}{MY\_MIN\_SECOND}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+S\+E\+C\+O\+ND~0}
+
+
+
+Minimum second value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_acc0093bed9d5a6090d7cc4c785247193}\label{my_standard_defines_8hpp_acc0093bed9d5a6090d7cc4c785247193}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MIN\_YEAR@{MY\_MIN\_YEAR}}
+\index{MY\_MIN\_YEAR@{MY\_MIN\_YEAR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MIN\_YEAR}{MY\_MIN\_YEAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+I\+N\+\_\+\+Y\+E\+AR~100}
+
+
+
+Minimum year value with Centuries, IE\+: 2020. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a51ad47f76a62afb090d37610e3e01182}\label{my_standard_defines_8hpp_a51ad47f76a62afb090d37610e3e01182}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_APR@{MY\_MONTH\_APR}}
+\index{MY\_MONTH\_APR@{MY\_MONTH\_APR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_APR}{MY\_MONTH\_APR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+A\+PR~4}
+
+
+
+Month of April. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a9aac9f6506a4871c3c32084855186ba4}\label{my_standard_defines_8hpp_a9aac9f6506a4871c3c32084855186ba4}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_AUG@{MY\_MONTH\_AUG}}
+\index{MY\_MONTH\_AUG@{MY\_MONTH\_AUG}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_AUG}{MY\_MONTH\_AUG}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+A\+UG~8}
+
+
+
+Month of August. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a1863a193052d9aaad70b76e148eb5cc9}\label{my_standard_defines_8hpp_a1863a193052d9aaad70b76e148eb5cc9}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_DEC@{MY\_MONTH\_DEC}}
+\index{MY\_MONTH\_DEC@{MY\_MONTH\_DEC}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_DEC}{MY\_MONTH\_DEC}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+D\+EC~12}
+
+
+
+Month of December. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a27fc045664e07c4cdf0f5071bd021d98}\label{my_standard_defines_8hpp_a27fc045664e07c4cdf0f5071bd021d98}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_FEB@{MY\_MONTH\_FEB}}
+\index{MY\_MONTH\_FEB@{MY\_MONTH\_FEB}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_FEB}{MY\_MONTH\_FEB}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+F\+EB~2}
+
+
+
+Month of Febuary. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a0fdb80c3f369ef87db87b5465548899c}\label{my_standard_defines_8hpp_a0fdb80c3f369ef87db87b5465548899c}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_JAN@{MY\_MONTH\_JAN}}
+\index{MY\_MONTH\_JAN@{MY\_MONTH\_JAN}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_JAN}{MY\_MONTH\_JAN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+J\+AN~1}
+
+
+
+Month of January. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a81fe72f1cfb1dd2fddfba8298df62d36}\label{my_standard_defines_8hpp_a81fe72f1cfb1dd2fddfba8298df62d36}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_JUL@{MY\_MONTH\_JUL}}
+\index{MY\_MONTH\_JUL@{MY\_MONTH\_JUL}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_JUL}{MY\_MONTH\_JUL}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+J\+UL~7}
+
+
+
+Month of July. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_ab19699186fb80352f58299b8c18cbac3}\label{my_standard_defines_8hpp_ab19699186fb80352f58299b8c18cbac3}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_JUN@{MY\_MONTH\_JUN}}
+\index{MY\_MONTH\_JUN@{MY\_MONTH\_JUN}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_JUN}{MY\_MONTH\_JUN}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+J\+UN~6}
+
+
+
+Month of June. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a200084140f81d8c248eca67fe2455db3}\label{my_standard_defines_8hpp_a200084140f81d8c248eca67fe2455db3}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_MAR@{MY\_MONTH\_MAR}}
+\index{MY\_MONTH\_MAR@{MY\_MONTH\_MAR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_MAR}{MY\_MONTH\_MAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+M\+AR~3}
+
+
+
+Month of March. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a127fe0926ad0c699fe583d75073d5de9}\label{my_standard_defines_8hpp_a127fe0926ad0c699fe583d75073d5de9}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_MAY@{MY\_MONTH\_MAY}}
+\index{MY\_MONTH\_MAY@{MY\_MONTH\_MAY}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_MAY}{MY\_MONTH\_MAY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+M\+AY~5}
+
+
+
+Month of May. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a726a4583d461f8e99fc5c86636af83a2}\label{my_standard_defines_8hpp_a726a4583d461f8e99fc5c86636af83a2}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_NOV@{MY\_MONTH\_NOV}}
+\index{MY\_MONTH\_NOV@{MY\_MONTH\_NOV}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_NOV}{MY\_MONTH\_NOV}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+N\+OV~11}
+
+
+
+Month of November. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a7825474036320cd1ce01957e8a43c098}\label{my_standard_defines_8hpp_a7825474036320cd1ce01957e8a43c098}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_OCT@{MY\_MONTH\_OCT}}
+\index{MY\_MONTH\_OCT@{MY\_MONTH\_OCT}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_OCT}{MY\_MONTH\_OCT}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+O\+CT~10}
+
+
+
+Month of October. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a895984e7952d97dccb349d64e7b29208}\label{my_standard_defines_8hpp_a895984e7952d97dccb349d64e7b29208}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTH\_SEP@{MY\_MONTH\_SEP}}
+\index{MY\_MONTH\_SEP@{MY\_MONTH\_SEP}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTH\_SEP}{MY\_MONTH\_SEP}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+S\+EP~9}
+
+
+
+Month of September. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_aebf0e2b235ab1b217919f9f2069df238}\label{my_standard_defines_8hpp_aebf0e2b235ab1b217919f9f2069df238}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_MONTHS\_PER\_YEAR@{MY\_MONTHS\_PER\_YEAR}}
+\index{MY\_MONTHS\_PER\_YEAR@{MY\_MONTHS\_PER\_YEAR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_MONTHS\_PER\_YEAR}{MY\_MONTHS\_PER\_YEAR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+M\+O\+N\+T\+H\+S\+\_\+\+P\+E\+R\+\_\+\+Y\+E\+AR~12}
+
+
+
+Months per year. 
 
 \mbox{\Hypertarget{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}\label{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_NO\_ERROR@{MY\_NO\_ERROR}}
@@ -403,4 +899,24 @@ Number of spi ports. Number of spi ports on the rp2040. There are 2 ports.
 
 
 Timeout reached. A timeout has been reached. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a2cab069b533d2ead9349fadc253b76b7}\label{my_standard_defines_8hpp_a2cab069b533d2ead9349fadc253b76b7}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_VALUE\_ERROR@{MY\_VALUE\_ERROR}}
+\index{MY\_VALUE\_ERROR@{MY\_VALUE\_ERROR}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_VALUE\_ERROR}{MY\_VALUE\_ERROR}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+V\+A\+L\+U\+E\+\_\+\+E\+R\+R\+OR~-\/9}
+
+
+
+Value error. A value is out of range. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a087fcf0e3a559b19c990b3ab3dc74a90}\label{my_standard_defines_8hpp_a087fcf0e3a559b19c990b3ab3dc74a90}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_YEARS\_PER\_CENTURY@{MY\_YEARS\_PER\_CENTURY}}
+\index{MY\_YEARS\_PER\_CENTURY@{MY\_YEARS\_PER\_CENTURY}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_YEARS\_PER\_CENTURY}{MY\_YEARS\_PER\_CENTURY}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+Y\+E\+A\+R\+S\+\_\+\+P\+E\+R\+\_\+\+C\+E\+N\+T\+U\+RY~100}
+
+
+
+Years per century. 
 

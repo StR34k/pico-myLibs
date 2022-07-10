@@ -113,12 +113,65 @@ Functions</h2></td></tr>
 <tr class="memitem:a24b232780b4b52e9b1bce28bedc847ad"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">map64</a> (int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max)</td></tr>
 <tr class="memdesc:a24b232780b4b52e9b1bce28bedc847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 64 Bit.  <a href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">More...</a><br /></td></tr>
 <tr class="separator:a24b232780b4b52e9b1bce28bedc847ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d967890f73eefdd3e06fff0a4d25ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a64d967890f73eefdd3e06fff0a4d25ff">mapFloat</a> (float x, float in_min, float in_max, float out_min, float out_max)</td></tr>
+<tr class="memdesc:a64d967890f73eefdd3e06fff0a4d25ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. Floating point.  <a href="namespacemy_helpers.html#a64d967890f73eefdd3e06fff0a4d25ff">More...</a><br /></td></tr>
+<tr class="separator:a64d967890f73eefdd3e06fff0a4d25ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">reverse8</a> (const uint8_t value)</td></tr>
 <tr class="memdesc:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">More...</a><br /></td></tr>
 <tr class="separator:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf69943e1bd4b5bf362a45915d4fcd33"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aaf69943e1bd4b5bf362a45915d4fcd33">reverse16</a> (const uint16_t value)</td></tr>
 <tr class="memdesc:aaf69943e1bd4b5bf362a45915d4fcd33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse a 16 bit word. Sets MSB = to LSB, and so on until the word is reversed. Used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#aaf69943e1bd4b5bf362a45915d4fcd33">More...</a><br /></td></tr>
 <tr class="separator:aaf69943e1bd4b5bf362a45915d4fcd33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed339b0bd3a45d1f0376c2ef93ef4697"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aed339b0bd3a45d1f0376c2ef93ef4697">isValidYear</a> (const int16_t value)</td></tr>
+<tr class="memdesc:aed339b0bd3a45d1f0376c2ef93ef4697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a year value with centuries, IE: 2020. Returns true if year is in the range 0-25599. Since years without a century are assumed to be year 2000-2099, they are treated as valid years.  <a href="namespacemy_helpers.html#aed339b0bd3a45d1f0376c2ef93ef4697">More...</a><br /></td></tr>
+<tr class="separator:aed339b0bd3a45d1f0376c2ef93ef4697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9cfb7258a1f10f66c7036c5292f7c00"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#ab9cfb7258a1f10f66c7036c5292f7c00">convertYear</a> (int16_t year)</td></tr>
+<tr class="memdesc:ab9cfb7258a1f10f66c7036c5292f7c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a year without centuries to a year with centuries. Years in the range 0-99 are assumed to be years 2000-2099. If a year with centuries is passed, then it's returned untouched. If an invalid year is passed, an error code is returned.  <a href="namespacemy_helpers.html#ab9cfb7258a1f10f66c7036c5292f7c00">More...</a><br /></td></tr>
+<tr class="separator:ab9cfb7258a1f10f66c7036c5292f7c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1204cc6345a3633fc30ec7ae4e6daf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a2a1204cc6345a3633fc30ec7ae4e6daf">isLeapYear</a> (const int16_t year)</td></tr>
+<tr class="memdesc:a2a1204cc6345a3633fc30ec7ae4e6daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check leap year. Check a year to see if it's a leap year. This works for both years with and without centuries, since years without centuries are assumed to be years 2000-2099. If an invalid year is passed, it will return False.  <a href="namespacemy_helpers.html#a2a1204cc6345a3633fc30ec7ae4e6daf">More...</a><br /></td></tr>
+<tr class="separator:a2a1204cc6345a3633fc30ec7ae4e6daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99a848117013d672c4af1d9226d9c54"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#ae99a848117013d672c4af1d9226d9c54">getDaysInYear</a> (int16_t year)</td></tr>
+<tr class="memdesc:ae99a848117013d672c4af1d9226d9c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of days in a year. Returns the number of days in a given year, if it's a common year it returns 365, if it's a leap year, it returns 366. This works for years with and without centuries as years without centuries are assumed to be 2000-2099. If an invalid year is passed, an error code is returned.  <a href="namespacemy_helpers.html#ae99a848117013d672c4af1d9226d9c54">More...</a><br /></td></tr>
+<tr class="separator:ae99a848117013d672c4af1d9226d9c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a3b6e7da206754521999ec6c31f76e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a73a3b6e7da206754521999ec6c31f76e">isValidMonth</a> (const int8_t value)</td></tr>
+<tr class="memdesc:a73a3b6e7da206754521999ec6c31f76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a month value. Returns true if value is in range (1-12).  <a href="namespacemy_helpers.html#a73a3b6e7da206754521999ec6c31f76e">More...</a><br /></td></tr>
+<tr class="separator:a73a3b6e7da206754521999ec6c31f76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312f388fa6beb708ac61710b4b1a7846"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a312f388fa6beb708ac61710b4b1a7846">getDaysInMonth</a> (const int16_t year, const int8_t month)</td></tr>
+<tr class="memdesc:a312f388fa6beb708ac61710b4b1a7846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of days in a month. Returns the number of days in a month given the year and month. This works for years with and without centuries.  <a href="namespacemy_helpers.html#a312f388fa6beb708ac61710b4b1a7846">More...</a><br /></td></tr>
+<tr class="separator:a312f388fa6beb708ac61710b4b1a7846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab2ec79efa18f6579ef520f0ad4f511b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aab2ec79efa18f6579ef520f0ad4f511b">isValidDayOfMonth</a> (const int16_t year, const int8_t month, const int8_t value)</td></tr>
+<tr class="memdesc:aab2ec79efa18f6579ef520f0ad4f511b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a day of month. Returns true if a day of the month is in the range (1-[28-31]) depending on year and month provided. If an invalid month or year value is passed, it will return false. This works for both years with and without centuries. as it assumes that values 0-99 are Century 2000.  <a href="namespacemy_helpers.html#aab2ec79efa18f6579ef520f0ad4f511b">More...</a><br /></td></tr>
+<tr class="separator:aab2ec79efa18f6579ef520f0ad4f511b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24fca77deadbaa4d51ba95b4d5c0a5c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24fca77deadbaa4d51ba95b4d5c0a5c9">isValidDayOfWeek</a> (int8_t value)</td></tr>
+<tr class="memdesc:a24fca77deadbaa4d51ba95b4d5c0a5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a day of the week value. Returns true if value in range (1-7), where 1=Sunday.  <a href="namespacemy_helpers.html#a24fca77deadbaa4d51ba95b4d5c0a5c9">More...</a><br /></td></tr>
+<tr class="separator:a24fca77deadbaa4d51ba95b4d5c0a5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7c504bd3433e74113d339490ecc56c"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#afe7c504bd3433e74113d339490ecc56c">getDayOfWeek</a> (const int16_t year, const int8_t month, const int8_t day)</td></tr>
+<tr class="memdesc:afe7c504bd3433e74113d339490ecc56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the day of the week. Returns the day of the week, where 1=Sunday. Years between 00-99 are assumed to be years 2000-2099.  <a href="namespacemy_helpers.html#afe7c504bd3433e74113d339490ecc56c">More...</a><br /></td></tr>
+<tr class="separator:afe7c504bd3433e74113d339490ecc56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe51ffbada8d843dd55aac58a43948bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#afe51ffbada8d843dd55aac58a43948bc">isValidDate</a> (const int8_t year, const int8_t month, const int8_t day)</td></tr>
+<tr class="memdesc:afe51ffbada8d843dd55aac58a43948bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a date. Returns true if a date given is valid. If a date with no centuries is provided (00-99), then it's assumed to be years 2000-2099.  <a href="namespacemy_helpers.html#afe51ffbada8d843dd55aac58a43948bc">More...</a><br /></td></tr>
+<tr class="separator:afe51ffbada8d843dd55aac58a43948bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8bd9c05c39786f53bd4271bcb61b440"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#ab8bd9c05c39786f53bd4271bcb61b440">isValidHour</a> (const int8_t value, const bool is12h)</td></tr>
+<tr class="memdesc:ab8bd9c05c39786f53bd4271bcb61b440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate an hour value. Returns true if value is in range (0-23) in 24h format, or (1-12) in 12h format.  <a href="namespacemy_helpers.html#ab8bd9c05c39786f53bd4271bcb61b440">More...</a><br /></td></tr>
+<tr class="separator:ab8bd9c05c39786f53bd4271bcb61b440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de31dc0a775a463467c0380cfc75d5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a3de31dc0a775a463467c0380cfc75d5d">isValidMinute</a> (const int8_t value)</td></tr>
+<tr class="memdesc:a3de31dc0a775a463467c0380cfc75d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a minute value. Returns true if minute is in range 0-59.  <a href="namespacemy_helpers.html#a3de31dc0a775a463467c0380cfc75d5d">More...</a><br /></td></tr>
+<tr class="separator:a3de31dc0a775a463467c0380cfc75d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eebe45f1e55177e76eb47e23737dce1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a4eebe45f1e55177e76eb47e23737dce1">isValidSecond</a> (const int8_t value)</td></tr>
+<tr class="memdesc:a4eebe45f1e55177e76eb47e23737dce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a second value. Returns true if second is in range 0-59.  <a href="namespacemy_helpers.html#a4eebe45f1e55177e76eb47e23737dce1">More...</a><br /></td></tr>
+<tr class="separator:a4eebe45f1e55177e76eb47e23737dce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2957aa41c22615453b55fc926bd45044"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a2957aa41c22615453b55fc926bd45044">isValidTime</a> (const int8_t hour, const int8_t minute, const int8_t second, const bool is12h=false)</td></tr>
+<tr class="memdesc:a2957aa41c22615453b55fc926bd45044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate a time. Returns true if a time is valid.  <a href="namespacemy_helpers.html#a2957aa41c22615453b55fc926bd45044">More...</a><br /></td></tr>
+<tr class="separator:a2957aa41c22615453b55fc926bd45044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fae86963a62077bced533e9fbf323b2"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a6fae86963a62077bced533e9fbf323b2">convert12hTo24h</a> (const uint8_t hours12, const bool isPM, uint8_t *hours24)</td></tr>
+<tr class="memdesc:a6fae86963a62077bced533e9fbf323b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from 12h format to 24h format. Converts from 12h format to 24h format. Returns 0 for convert okay, otherwise if an invlid hour is passed, an error code is returned.  <a href="namespacemy_helpers.html#a6fae86963a62077bced533e9fbf323b2">More...</a><br /></td></tr>
+<tr class="separator:a6fae86963a62077bced533e9fbf323b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787ea7da64c15140f736866f34ee038f"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a787ea7da64c15140f736866f34ee038f">convert24hTo12h</a> (const uint8_t hours24, uint8_t *hours12, bool *isPM)</td></tr>
+<tr class="memdesc:a787ea7da64c15140f736866f34ee038f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert from 24h format to 12h format. Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an invalid hour is passed, an error code is returned.  <a href="namespacemy_helpers.html#a787ea7da64c15140f736866f34ee038f">More...</a><br /></td></tr>
+<tr class="separator:a787ea7da64c15140f736866f34ee038f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81421e243793a0b8f6422c65aef186d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aa81421e243793a0b8f6422c65aef186d">shiftOut</a> (const uint8_t clockPin, const uint8_t dataPin, const uint8_t *buffer, const size_t len, const bool bitOrder=<a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>)</td></tr>
+<tr class="separator:aa81421e243793a0b8f6422c65aef186d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions. Define some helper functions for use within pico-myLibs. </p>
@@ -158,6 +211,270 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6fae86963a62077bced533e9fbf323b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fae86963a62077bced533e9fbf323b2">&#9670;&nbsp;</a></span>convert12hTo24h()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myHelpers::convert12hTo24h </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>hours12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>isPM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>hours24</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert from 12h format to 24h format. Converts from 12h format to 24h format. Returns 0 for convert okay, otherwise if an invlid hour is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hours12</td><td>Hours in 12h format. </td></tr>
+    <tr><td class="paramname">isPM</td><td>False = AM, True = PM </td></tr>
+    <tr><td class="paramname">hours24</td><td>Returned hours in 24h format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Retuns 0 for convert okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a787ea7da64c15140f736866f34ee038f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787ea7da64c15140f736866f34ee038f">&#9670;&nbsp;</a></span>convert24hTo12h()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myHelpers::convert24hTo12h </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>hours24</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>hours12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isPM</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert from 24h format to 12h format. Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an invalid hour is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hours24</td><td>Time in 24h format. </td></tr>
+    <tr><td class="paramname">hours12</td><td>Returned hours in 12h format. </td></tr>
+    <tr><td class="paramname">isPM</td><td>False = AM, True = PM. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Returns 0 (MY_NO_ERROR) if convert okay, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="ab9cfb7258a1f10f66c7036c5292f7c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9cfb7258a1f10f66c7036c5292f7c00">&#9670;&nbsp;</a></span>convertYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myHelpers::convertYear </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>year</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a year without centuries to a year with centuries. Years in the range 0-99 are assumed to be years 2000-2099. If a year with centuries is passed, then it's returned untouched. If an invalid year is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Postive converted year, negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="afe7c504bd3433e74113d339490ecc56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7c504bd3433e74113d339490ecc56c">&#9670;&nbsp;</a></span>getDayOfWeek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t myHelpers::getDayOfWeek </td>
+          <td>(</td>
+          <td class="paramtype">const int16_t&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>day</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the day of the week. Returns the day of the week, where 1=Sunday. Years between 00-99 are assumed to be years 2000-2099. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year day lands in. </td></tr>
+    <tr><td class="paramname">month</td><td>Month day lands in. </td></tr>
+    <tr><td class="paramname">day</td><td>Day of month. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int8_t Returns (1-7) where 1=Sunday. </dd></dl>
+
+</div>
+</div>
+<a id="a312f388fa6beb708ac61710b4b1a7846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a312f388fa6beb708ac61710b4b1a7846">&#9670;&nbsp;</a></span>getDaysInMonth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t myHelpers::getDaysInMonth </td>
+          <td>(</td>
+          <td class="paramtype">const int16_t&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>month</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of days in a month. Returns the number of days in a month given the year and month. This works for years with and without centuries. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year. </td></tr>
+    <tr><td class="paramname">month</td><td>Month. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t Number of days in the month. </dd></dl>
+
+</div>
+</div>
+<a id="ae99a848117013d672c4af1d9226d9c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99a848117013d672c4af1d9226d9c54">&#9670;&nbsp;</a></span>getDaysInYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t myHelpers::getDaysInYear </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>year</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of days in a year. Returns the number of days in a given year, if it's a common year it returns 365, if it's a leap year, it returns 366. This works for years with and without centuries as years without centuries are assumed to be 2000-2099. If an invalid year is passed, an error code is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year to get number of days. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int16_t Postivie is the number of days in the year. Negative for error code. </dd></dl>
+
+</div>
+</div>
+<a id="a2a1204cc6345a3633fc30ec7ae4e6daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1204cc6345a3633fc30ec7ae4e6daf">&#9670;&nbsp;</a></span>isLeapYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isLeapYear </td>
+          <td>(</td>
+          <td class="paramtype">const int16_t&#160;</td>
+          <td class="paramname"><em>year</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check leap year. Check a year to see if it's a leap year. This works for both years with and without centuries, since years without centuries are assumed to be years 2000-2099. If an invalid year is passed, it will return False. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Year is a leap year. </dd>
+<dd>
+false Year is not a leap year. Or is an invalid year. </dd></dl>
+
+</div>
+</div>
 <a id="a14451ade4ade2ad79e5a2bfd83ad8cac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14451ade4ade2ad79e5a2bfd83ad8cac">&#9670;&nbsp;</a></span>isPin()</h2>
 
@@ -192,6 +509,339 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true is a valid pin </dd>
 <dd>
 false is not a valid pin </dd></dl>
+
+</div>
+</div>
+<a id="afe51ffbada8d843dd55aac58a43948bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe51ffbada8d843dd55aac58a43948bc">&#9670;&nbsp;</a></span>isValidDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidDate </td>
+          <td>(</td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>day</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a date. Returns true if a date given is valid. If a date with no centuries is provided (00-99), then it's assumed to be years 2000-2099. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year of date. </td></tr>
+    <tr><td class="paramname">month</td><td>Month of date. </td></tr>
+    <tr><td class="paramname">day</td><td>Day of date. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Date is valid. </dd>
+<dd>
+false Date is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="aab2ec79efa18f6579ef520f0ad4f511b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab2ec79efa18f6579ef520f0ad4f511b">&#9670;&nbsp;</a></span>isValidDayOfMonth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidDayOfMonth </td>
+          <td>(</td>
+          <td class="paramtype">const int16_t&#160;</td>
+          <td class="paramname"><em>year</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a day of month. Returns true if a day of the month is in the range (1-[28-31]) depending on year and month provided. If an invalid month or year value is passed, it will return false. This works for both years with and without centuries. as it assumes that values 0-99 are Century 2000. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>Year day lands in. </td></tr>
+    <tr><td class="paramname">month</td><td>Month day lands in. </td></tr>
+    <tr><td class="paramname">value</td><td>Day value to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Day of month is valid. </dd>
+<dd>
+false Day of month is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="a24fca77deadbaa4d51ba95b4d5c0a5c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24fca77deadbaa4d51ba95b4d5c0a5c9">&#9670;&nbsp;</a></span>isValidDayOfWeek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidDayOfWeek </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a day of the week value. Returns true if value in range (1-7), where 1=Sunday. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Day of the week to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Day of the week is valid. </dd>
+<dd>
+false Day of the week is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="ab8bd9c05c39786f53bd4271bcb61b440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bd9c05c39786f53bd4271bcb61b440">&#9670;&nbsp;</a></span>isValidHour()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidHour </td>
+          <td>(</td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>is12h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate an hour value. Returns true if value is in range (0-23) in 24h format, or (1-12) in 12h format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Hour to validate. </td></tr>
+    <tr><td class="paramname">is12h</td><td>False = 24h format, True = 12h format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Hour is valid. </dd>
+<dd>
+false Hour is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="a3de31dc0a775a463467c0380cfc75d5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de31dc0a775a463467c0380cfc75d5d">&#9670;&nbsp;</a></span>isValidMinute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidMinute </td>
+          <td>(</td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a minute value. Returns true if minute is in range 0-59. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Minute to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Minute is valid. </dd>
+<dd>
+false Minute is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="a73a3b6e7da206754521999ec6c31f76e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a3b6e7da206754521999ec6c31f76e">&#9670;&nbsp;</a></span>isValidMonth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidMonth </td>
+          <td>(</td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a month value. Returns true if value is in range (1-12). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Month to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Month is valid. </dd>
+<dd>
+false Month is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="a4eebe45f1e55177e76eb47e23737dce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eebe45f1e55177e76eb47e23737dce1">&#9670;&nbsp;</a></span>isValidSecond()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidSecond </td>
+          <td>(</td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a second value. Returns true if second is in range 0-59. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Second to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Second is valid. </dd>
+<dd>
+false Second is not valid. </dd></dl>
+
+</div>
+</div>
+<a id="a2957aa41c22615453b55fc926bd45044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2957aa41c22615453b55fc926bd45044">&#9670;&nbsp;</a></span>isValidTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidTime </td>
+          <td>(</td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>hour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>minute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int8_t&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>is12h</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a time. Returns true if a time is valid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hour</td><td>Hour of time. </td></tr>
+    <tr><td class="paramname">minute</td><td>Minute of time. </td></tr>
+    <tr><td class="paramname">second</td><td>Second of time. </td></tr>
+    <tr><td class="paramname">is12h</td><td>Is 12hr format, False=24h, True=12h. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Time is valid. </dd>
+<dd>
+false Time is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="aed339b0bd3a45d1f0376c2ef93ef4697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed339b0bd3a45d1f0376c2ef93ef4697">&#9670;&nbsp;</a></span>isValidYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool myHelpers::isValidYear </td>
+          <td>(</td>
+          <td class="paramtype">const int16_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validate a year value with centuries, IE: 2020. Returns true if year is in the range 0-25599. Since years without a century are assumed to be year 2000-2099, they are treated as valid years. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Year to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Year is a valid year. </dd>
+<dd>
+false Year is an invalid year. </dd></dl>
 
 </div>
 </div>
@@ -310,6 +960,65 @@ false is not a valid pin </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int32_t The mapped value. </dd></dl>
+
+</div>
+</div>
+<a id="a64d967890f73eefdd3e06fff0a4d25ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d967890f73eefdd3e06fff0a4d25ff">&#9670;&nbsp;</a></span>mapFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float myHelpers::mapFloat </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>in_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>in_max</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>out_min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>out_max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Map a value from one range to another. Floating point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Value to map </td></tr>
+    <tr><td class="paramname">in_min</td><td>In range minimum </td></tr>
+    <tr><td class="paramname">in_max</td><td>In range maximum </td></tr>
+    <tr><td class="paramname">out_min</td><td>Out range minimum. </td></tr>
+    <tr><td class="paramname">out_max</td><td>Out range maximum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float The mapped value. </dd></dl>
 
 </div>
 </div>
@@ -489,6 +1198,52 @@ false is not a valid pin </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t Reversed word. </dd></dl>
+
+</div>
+</div>
+<a id="aa81421e243793a0b8f6422c65aef186d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81421e243793a0b8f6422c65aef186d">&#9670;&nbsp;</a></span>shiftOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t myHelpers::shiftOut </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>clockPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>dataPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>bitOrder</em> = <code><a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

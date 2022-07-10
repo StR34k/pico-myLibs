@@ -69,7 +69,7 @@ $(function() {
 <a href="my_error_codes_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef MY_ERROR_CODES_H</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #define MY_ERROR_CODES_H</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/************* General Error codes: 0-99 NOTE: error codes -1-&gt;-4 are used in &lt;pico/error.h&gt;*****************/</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/************* General Error codes: 4-49 NOTE: error codes -1-&gt;-4 are used in &lt;pico/error.h&gt;*****************/</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #ifndef MY_NO_ERROR</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">   24</a></span>&#160;<span class="preprocessor">        #define MY_NO_ERROR                                      0</span></div>
@@ -94,149 +94,175 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a2932a50fea6f22d821215e6d34403aff">   59</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_DIR                                  -8</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/************* myPWM error codes (100-149) ******************/</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a11e01fb1c6dbf4629c49bb2cba9a6c46">   66</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PIN_NOT_INIT                             -100</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a75a141fde6fc1a9e2bb3db5a0e52cebe">   71</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PIN_ALREADY_INIT                         -101</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ac71375e7477f37f39d332fac2227d70b">   76</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_SLICE                            -102</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1d6771a32ffe6ef30564ea059d347a5d">   81</a></span>&#160;<span class="preprocessor">    #define MY_PWM_SLICE_ALREADY_ENABLED                    -103</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a9db113318b599b3dd13335991ee91dca">   86</a></span>&#160;<span class="preprocessor">    #define MY_PWM_SLICE_ALREADY_DISABLED                   -104</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6edf2d69a1b5b8ca5bc5b05534fecb03">   91</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PHASE_CORRECT_ENABLED                    -105</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ad6d57812caa2870b0c9ccbde679dc44c">   96</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PHASE_CORRECT_DISABLED                   -106</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ada8a6894a90d962f6200dcf23fb86b48">  101</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_FREQ                             -107</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#accccb8d343b49374125b9dd8076abea4">  106</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_CHANNEL                          -108</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#af1768a00d26cf5529d6d71efc7603d44">  111</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_DUTY                             -109</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a653eb4fbdf5165dd91cb6865f1b6f656">  116</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_DIVISOR_INT                      -110</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#afd9d0443e3bfbb9c30f78687c74a98ff">  121</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_DIVISOR_FRAC                     -111</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#adc3b4358d7073c69d68408cdd89a99ee">  126</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_LEVEL                            -112</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">/************** mySPI error codes (150-199) ******************/</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ae5d91381bb62cabc3da94f7f35c7c13a">  132</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_CLOCK_PIN                        -150</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    #ifndef MY_VALUE_ERROR</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a2cab069b533d2ead9349fadc253b76b7">   66</a></span>&#160;<span class="preprocessor">        #define MY_VALUE_ERROR                                  -9</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/************** myHelpers error codes (50-99) **********************/</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#acf01d5a5f4362b3fc675a6c95be5cdc8">   74</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_SECOND                       -50</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ac74ba67bd29eca14769490b12f01c9c9">   79</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_MINUTE                       -51</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ad6f4636e0ac684df72d3c010166d3e01">   84</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_HOUR                         -52</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6a3c29aea051751cf341ffa915a3b113">   89</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_DOTW                         -53</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ae8215f3bea3353570d286a1035e8f4ad">   94</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_DATE                         -54</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa26b13d9919f04885f2a500f570bb43b">   99</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_MONTH                        -55</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a243e84cb9b665a641467e87d43ccbfee">  104</a></span>&#160;<span class="preprocessor">    #define MY_HELPERS_INVALID_YEAR                         -56</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/************* myPWM error codes (100-149) ******************/</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a11e01fb1c6dbf4629c49bb2cba9a6c46">  112</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PIN_NOT_INIT                             -100</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a75a141fde6fc1a9e2bb3db5a0e52cebe">  117</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PIN_ALREADY_INIT                         -101</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ac71375e7477f37f39d332fac2227d70b">  122</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_SLICE                            -102</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1d6771a32ffe6ef30564ea059d347a5d">  127</a></span>&#160;<span class="preprocessor">    #define MY_PWM_SLICE_ALREADY_ENABLED                    -103</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a9db113318b599b3dd13335991ee91dca">  132</a></span>&#160;<span class="preprocessor">    #define MY_PWM_SLICE_ALREADY_DISABLED                   -104</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a3bbfb58cffc41ccf814bde1e64c61b4b">  137</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_MISO_PIN                         -151</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6edf2d69a1b5b8ca5bc5b05534fecb03">  137</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PHASE_CORRECT_ENABLED                    -105</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a8ae7231d42f1d8ccb5ecf5539e909931">  142</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_MOSI_PIN                         -152</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ad6d57812caa2870b0c9ccbde679dc44c">  142</a></span>&#160;<span class="preprocessor">    #define MY_PWM_PHASE_CORRECT_DISABLED                   -106</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a424696301531a8b229a6bd302372ef56">  147</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_CS_PIN                           -153</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ada8a6894a90d962f6200dcf23fb86b48">  147</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_FREQ                             -107</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa23f96ee67b24cf723e2371f6fe093c2">  152</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INITIALIZED                              -154</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#accccb8d343b49374125b9dd8076abea4">  152</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_CHANNEL                          -108</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a95e1c66fee26c70a964858498f140c82">  157</a></span>&#160;<span class="preprocessor">    #define MY_SPI_NOT_INITIALIZED                          -155</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">/************* myADC error codes (200-249)  **************/</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">// *NOTE: Error codes are such a that the pico would stop operating</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">//          if the temperature were ever hit.</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a82dcf6aea656d7115fda3375f0ae17a4">  165</a></span>&#160;<span class="comment"></span><span class="preprocessor">    #define MY_ERROR_ADC_INVALID_CHANNEL                    -200</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ac886b8bb68eac8a1ec75c6fe4b859828">  170</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_INVALID_PIN                        -201</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#af0e1bae518d67d8dfff2d20e8bb36ebc">  175</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_ADC_NOT_INIT                       -202</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab8f5305db7c7e613e006fbb5932a2ae8">  180</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_CHANNEL_NOT_INIT                   -203</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aed50b26c1428d1e3874c01d97f6ae8cb">  185</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_CHANNEL_ALREADY_INIT               -204</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/************* my23LC1024 error codes (300-349) **********/</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a68128ecaa48f01a2db30302cd19d8ea1">  192</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_HELD                   -300</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab371af3d7428b37317d551b4d6c50256">  197</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_INVALID_ADDRESS             -301</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ae7cbc2ca373688e830504af590530f5a">  202</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_BUSY                   -302</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6655af5c393e4d2c8fbcdbf29a6eaeba">  207</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_IDLE                   -303</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a18df7484ab7267cdc69b6e934e944d82">  212</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED            -304</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ad29d2789a70c120ab1c81fa235d84711">  217</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED            -305</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab6261241ad8450ad81dc2184828821c5">  222</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_NOT_HELD               -306</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa669aa8b7269bd939b2237ffe07007b4">  227</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_NOT_READING                 -307</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6bc313204434598fff0a191c18170150">  232</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_NOT_WRITING                 -308</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#af4c46a80c254713ad590b7420033fef3">  237</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE          -309</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab12330b789b3b03c3f65b26ec53e3ea2">  242</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_COMM_CHECK_FAILED           -310</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">/*************** mySNx4HC165 error codes (350-399) *****************/</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a46b96dd35f551c00bbfbef9d40301cf0">  249</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY165_ENABLE_NOT_DEFINED               -350</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a282bdbe2e4c2246d3792f35571cef2a1">  254</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY165_ALREADY_ENABLED                  -351</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab3c6ab113035add569b2a064197b6426">  259</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY165_ADREADY_DISABLED                 -352</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">/*************** mySNx4HC595 error codes (400-449) ****************/</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a507132ce31f0514a87d1a09532012c64">  266</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_ENABLE_NOT_DEFINED               -400</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7d6340ef277d5e7013b79f1627e76eb9">  271</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_CLEAR_NOT_DEFINED                -401</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a782036dcdbcad4d43077ddcc6552cb72">  276</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_OPERATION_NOT_AVAILABLE          -402</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">/******************** myI2C error codes: (450-499) *******************/</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    </div>
-<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1bbf417895edcb9ae46b0f9a5ca6fd96">  284</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INVALID_SDA_PIN                  -450</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a52d85e2c2622ce3c9a96bdcb2a292f47">  289</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INVALID_SCL_PIN                  -451</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7a3a240f91934bfe848e1b698b45243a">  294</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INITIALIZED                      -452</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a449a5326c6c16744831175b982a84f22">  299</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_NOT_INITIALIZED                  -453</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a28677480dd2628a04419417ef62c7e80">  304</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_ADDRESS_NOT_RESPONDING           -454</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="comment">/******************** myBMx280 Error codes: (500-549) ***********************/</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">  310</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_ADDRESS               -500</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa0ed10176b27701107ab69ddfe67de52">  315</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_NO_RESPONSE                   -501</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7339cb72317d208de68e403672341025">  320</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_RESPONSE              -502</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a0ed16f2dad2d86386995987823917a4e">  325</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_NO_HUMIDITY                   -503</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7a9460e064bccd4c8debe788ea7ac75b">  330</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_STANDBY               -504</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#af1768a00d26cf5529d6d71efc7603d44">  157</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_DUTY                             -109</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a653eb4fbdf5165dd91cb6865f1b6f656">  162</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_DIVISOR_INT                      -110</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#afd9d0443e3bfbb9c30f78687c74a98ff">  167</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_DIVISOR_FRAC                     -111</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#adc3b4358d7073c69d68408cdd89a99ee">  172</a></span>&#160;<span class="preprocessor">    #define MY_PWM_INVALID_LEVEL                            -112</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">/************** mySPI error codes (150-199) ******************/</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ae5d91381bb62cabc3da94f7f35c7c13a">  178</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_CLOCK_PIN                        -150</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a3bbfb58cffc41ccf814bde1e64c61b4b">  183</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_MISO_PIN                         -151</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a8ae7231d42f1d8ccb5ecf5539e909931">  188</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_MOSI_PIN                         -152</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a424696301531a8b229a6bd302372ef56">  193</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INVALID_CS_PIN                           -153</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa23f96ee67b24cf723e2371f6fe093c2">  198</a></span>&#160;<span class="preprocessor">    #define MY_SPI_INITIALIZED                              -154</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a95e1c66fee26c70a964858498f140c82">  203</a></span>&#160;<span class="preprocessor">    #define MY_SPI_NOT_INITIALIZED                          -155</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">/************* myADC error codes (200-249)  **************/</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">// *NOTE: Error codes are such a that the pico would stop operating</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">//          if the temperature were ever hit.</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a82dcf6aea656d7115fda3375f0ae17a4">  211</a></span>&#160;<span class="comment"></span><span class="preprocessor">    #define MY_ERROR_ADC_INVALID_CHANNEL                    -200</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ac886b8bb68eac8a1ec75c6fe4b859828">  216</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_INVALID_PIN                        -201</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#af0e1bae518d67d8dfff2d20e8bb36ebc">  221</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_ADC_NOT_INIT                       -202</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab8f5305db7c7e613e006fbb5932a2ae8">  226</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_CHANNEL_NOT_INIT                   -203</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aed50b26c1428d1e3874c01d97f6ae8cb">  231</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_ADC_CHANNEL_ALREADY_INIT               -204</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">/************* my23LC1024 error codes (300-349) **********/</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a68128ecaa48f01a2db30302cd19d8ea1">  238</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_HELD                   -300</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab371af3d7428b37317d551b4d6c50256">  243</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_INVALID_ADDRESS             -301</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ae7cbc2ca373688e830504af590530f5a">  248</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_BUSY                   -302</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6655af5c393e4d2c8fbcdbf29a6eaeba">  253</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_IDLE                   -303</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a18df7484ab7267cdc69b6e934e944d82">  258</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_HOLD_NOT_DEFINED            -304</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ad29d2789a70c120ab1c81fa235d84711">  263</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SIO2_NOT_DEFINED            -305</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab6261241ad8450ad81dc2184828821c5">  268</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_SRAM_NOT_HELD               -306</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa669aa8b7269bd939b2237ffe07007b4">  273</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_NOT_READING                 -307</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a6bc313204434598fff0a191c18170150">  278</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_NOT_WRITING                 -308</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#af4c46a80c254713ad590b7420033fef3">  283</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_HOLD_NOT_AVAILABLE          -309</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab12330b789b3b03c3f65b26ec53e3ea2">  288</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY23LC1024_COMM_CHECK_FAILED           -310</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">/*************** mySNx4HC165 error codes (350-399) *****************/</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a46b96dd35f551c00bbfbef9d40301cf0">  295</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY165_ENABLE_NOT_DEFINED               -350</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a282bdbe2e4c2246d3792f35571cef2a1">  300</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY165_ALREADY_ENABLED                  -351</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#ab3c6ab113035add569b2a064197b6426">  305</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY165_ADREADY_DISABLED                 -352</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">/*************** mySNx4HC595 error codes (400-449) ****************/</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a507132ce31f0514a87d1a09532012c64">  312</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_ENABLE_NOT_DEFINED               -400</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7d6340ef277d5e7013b79f1627e76eb9">  317</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_CLEAR_NOT_DEFINED                -401</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a782036dcdbcad4d43077ddcc6552cb72">  322</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MY595_OPERATION_NOT_AVAILABLE          -402</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">/******************** myI2C error codes: (450-499) *******************/</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1bbf417895edcb9ae46b0f9a5ca6fd96">  330</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INVALID_SDA_PIN                  -450</span></div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a0f3b28a75e3af0a52cfb1caabf513719">  335</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_FILTER                -505</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a52d85e2c2622ce3c9a96bdcb2a292f47">  335</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INVALID_SCL_PIN                  -451</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#abb585545ee82ef1ed1560f5c3a47f1f3">  340</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_OSR                   -506</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7a3a240f91934bfe848e1b698b45243a">  340</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_INITIALIZED                      -452</span></div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">  345</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_MODE                  -507</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a449a5326c6c16744831175b982a84f22">  345</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_NOT_INITIALIZED                  -453</span></div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">/******************** myds1307 Error codes: (550-599) ***********************/</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a41098ce914489ceedd42ebd0e3a59cc1">  353</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_SECONDS               -550</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#afc02b32a71973abdf7e2f24d20414482">  358</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_MINUTES               -551</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7c86f942105825525ac778f7292eb213">  363</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_HOURS                 -552</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1e49bd046b48c5b32cb59c1069d793b8">  368</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_DAY                   -553</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a257408f5cee968af8d4fdd002049e80a">  373</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_DATE                  -554</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a5a14737b6900b1dda8720108613f2e91">  378</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_MONTH                 -555</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a3157240dbe198ab028061a25fea74a1f">  383</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_YEAR                  -556</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#acaa15a4bf4fae8da2e90730049de0ef0">  388</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_RATE                  -557</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a98291fb30d3b6b7ffbd46238f444d613">  393</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_COMMS_CHECK_FAILED            -558</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a28677480dd2628a04419417ef62c7e80">  350</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYI2C_ADDRESS_NOT_RESPONDING           -454</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">/******************** myBMx280 Error codes: (500-549) ***********************/</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1e971bd8921e843a02dbf5036f1c79db">  356</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_ADDRESS               -500</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aa0ed10176b27701107ab69ddfe67de52">  361</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_NO_RESPONSE                   -501</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7339cb72317d208de68e403672341025">  366</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_RESPONSE              -502</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a0ed16f2dad2d86386995987823917a4e">  371</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_NO_HUMIDITY                   -503</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7a9460e064bccd4c8debe788ea7ac75b">  376</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_STANDBY               -504</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a0f3b28a75e3af0a52cfb1caabf513719">  381</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_FILTER                -505</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#abb585545ee82ef1ed1560f5c3a47f1f3">  386</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_OSR                   -506</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a825d309de2b76d1525911ba1a05c08d7">  391</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYBMx280_INVALID_MODE                  -507</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="comment">/******************** myds1307 Error codes: (550-599) ***********************/</span></div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a9d655471c0c8911e96187245acd137f0">  398</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_BOUNDARY_CROSSED              -559</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="comment">/******************** myAT24C32 Error codes: (600-649) ***********************/</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a41098ce914489ceedd42ebd0e3a59cc1">  399</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_SECONDS               -550</span></div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a27e71fe8976c697eb9076ce240b219b7">  405</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYAT24C32_INVALID_ADDRESS              -600</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a630b31d0efc341e18998a2046bbe8ed3">  410</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYAT24C32_INVALID_LENGTH               -601</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#afc02b32a71973abdf7e2f24d20414482">  404</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_MINUTES               -551</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a7c86f942105825525ac778f7292eb213">  409</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_HOURS                 -552</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a1e49bd046b48c5b32cb59c1069d793b8">  414</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_DAY                   -553</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a257408f5cee968af8d4fdd002049e80a">  419</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_DATE                  -554</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a5a14737b6900b1dda8720108613f2e91">  424</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_MONTH                 -555</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a3157240dbe198ab028061a25fea74a1f">  429</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_YEAR                  -556</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#acaa15a4bf4fae8da2e90730049de0ef0">  434</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_INVALID_RATE                  -557</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00439"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a98291fb30d3b6b7ffbd46238f444d613">  439</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_COMMS_CHECK_FAILED            -558</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00444"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a9d655471c0c8911e96187245acd137f0">  444</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYDS1307_BOUNDARY_CROSSED              -559</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;<span class="comment">/******************** myAT24C32 Error codes: (600-649) ***********************/</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a27e71fe8976c697eb9076ce240b219b7">  451</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYAT24C32_INVALID_ADDRESS              -600</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a630b31d0efc341e18998a2046bbe8ed3">  456</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYAT24C32_INVALID_LENGTH               -601</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="comment">/******************* myMCP49x2 Error codes: (650-699) *************************/</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#a347e9877b987f5a6be687a9fadccc54f">  463</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYMCP49X2_VALUE_ERROR                  -650</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno"><a class="line" href="my_error_codes_8hpp.html#aad5689a917cb0c1915aa75d2961d9e8e">  468</a></span>&#160;<span class="preprocessor">    #define MY_ERROR_MYMCP49X2_INVALID_MODEL                -651</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

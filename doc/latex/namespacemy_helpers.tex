@@ -34,10 +34,46 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af96154907f93e9076b34629afd70a
 \begin{DoxyCompactList}\small\item\em Map a value from one range to another. 32 Bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}{map64}} (int64\+\_\+t x, int64\+\_\+t in\+\_\+min, int64\+\_\+t in\+\_\+max, int64\+\_\+t out\+\_\+min, int64\+\_\+t out\+\_\+max)
 \begin{DoxyCompactList}\small\item\em Map a value from one range to another. 64 Bit. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}{map\+Float}} (float x, float in\+\_\+min, float in\+\_\+max, float out\+\_\+min, float out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. Floating point. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a3940a47b8b5fc65aa17a62fe7a1c7d00}{reverse8}} (const uint8\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aaf69943e1bd4b5bf362a45915d4fcd33}{reverse16}} (const uint16\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Reverse a 16 bit word. Sets M\+SB = to L\+SB, and so on until the word is reversed. Used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reverse a 16 bit word. Sets M\+SB = to L\+SB, and so on until the word is reversed. Used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_aed339b0bd3a45d1f0376c2ef93ef4697}{is\+Valid\+Year}} (const int16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a year value with centuries, IE\+: 2020. Returns true if year is in the range 0-\/25599. Since years without a century are assumed to be year 2000-\/2099, they are treated as valid years. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_ab9cfb7258a1f10f66c7036c5292f7c00}{convert\+Year}} (int16\+\_\+t year)
+\begin{DoxyCompactList}\small\item\em Convert a year without centuries to a year with centuries. Years in the range 0-\/99 are assumed to be years 2000-\/2099. If a year with centuries is passed, then it\textquotesingle{}s returned untouched. If an invalid year is passed, an error code is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a2a1204cc6345a3633fc30ec7ae4e6daf}{is\+Leap\+Year}} (const int16\+\_\+t year)
+\begin{DoxyCompactList}\small\item\em Check leap year. Check a year to see if it\textquotesingle{}s a leap year. This works for both years with and without centuries, since years without centuries are assumed to be years 2000-\/2099. If an invalid year is passed, it will return False. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_ae99a848117013d672c4af1d9226d9c54}{get\+Days\+In\+Year}} (int16\+\_\+t year)
+\begin{DoxyCompactList}\small\item\em Get the number of days in a year. Returns the number of days in a given year, if it\textquotesingle{}s a common year it returns 365, if it\textquotesingle{}s a leap year, it returns 366. This works for years with and without centuries as years without centuries are assumed to be 2000-\/2099. If an invalid year is passed, an error code is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a73a3b6e7da206754521999ec6c31f76e}{is\+Valid\+Month}} (const int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a month value. Returns true if value is in range (1-\/12). \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a312f388fa6beb708ac61710b4b1a7846}{get\+Days\+In\+Month}} (const int16\+\_\+t year, const int8\+\_\+t month)
+\begin{DoxyCompactList}\small\item\em Get the number of days in a month. Returns the number of days in a month given the year and month. This works for years with and without centuries. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_aab2ec79efa18f6579ef520f0ad4f511b}{is\+Valid\+Day\+Of\+Month}} (const int16\+\_\+t year, const int8\+\_\+t month, const int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a day of month. Returns true if a day of the month is in the range (1-\/\mbox{[}28-\/31\mbox{]}) depending on year and month provided. If an invalid month or year value is passed, it will return false. This works for both years with and without centuries. as it assumes that values 0-\/99 are Century 2000. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a24fca77deadbaa4d51ba95b4d5c0a5c9}{is\+Valid\+Day\+Of\+Week}} (int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a day of the week value. Returns true if value in range (1-\/7), where 1=Sunday. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_afe7c504bd3433e74113d339490ecc56c}{get\+Day\+Of\+Week}} (const int16\+\_\+t year, const int8\+\_\+t month, const int8\+\_\+t day)
+\begin{DoxyCompactList}\small\item\em Get the day of the week. Returns the day of the week, where 1=Sunday. Years between 00-\/99 are assumed to be years 2000-\/2099. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_afe51ffbada8d843dd55aac58a43948bc}{is\+Valid\+Date}} (const int8\+\_\+t year, const int8\+\_\+t month, const int8\+\_\+t day)
+\begin{DoxyCompactList}\small\item\em Validate a date. Returns true if a date given is valid. If a date with no centuries is provided (00-\/99), then it\textquotesingle{}s assumed to be years 2000-\/2099. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_ab8bd9c05c39786f53bd4271bcb61b440}{is\+Valid\+Hour}} (const int8\+\_\+t value, const bool is12h)
+\begin{DoxyCompactList}\small\item\em Validate an hour value. Returns true if value is in range (0-\/23) in 24h format, or (1-\/12) in 12h format. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a3de31dc0a775a463467c0380cfc75d5d}{is\+Valid\+Minute}} (const int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a minute value. Returns true if minute is in range 0-\/59. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a4eebe45f1e55177e76eb47e23737dce1}{is\+Valid\+Second}} (const int8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Validate a second value. Returns true if second is in range 0-\/59. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespacemy_helpers_a2957aa41c22615453b55fc926bd45044}{is\+Valid\+Time}} (const int8\+\_\+t hour, const int8\+\_\+t minute, const int8\+\_\+t second, const bool is12h=false)
+\begin{DoxyCompactList}\small\item\em Validate a time. Returns true if a time is valid. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6fae86963a62077bced533e9fbf323b2}{convert12h\+To24h}} (const uint8\+\_\+t hours12, const bool is\+PM, uint8\+\_\+t $\ast$hours24)
+\begin{DoxyCompactList}\small\item\em Convert from 12h format to 24h format. Converts from 12h format to 24h format. Returns 0 for convert okay, otherwise if an invlid hour is passed, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a787ea7da64c15140f736866f34ee038f}{convert24h\+To12h}} (const uint8\+\_\+t hours24, uint8\+\_\+t $\ast$hours12, bool $\ast$is\+PM)
+\begin{DoxyCompactList}\small\item\em Convert from 24h format to 12h format. Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an invalid hour is passed, an error code is returned. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}{shift\+Out}} (const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t data\+Pin, const uint8\+\_\+t $\ast$buffer, const size\+\_\+t len, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -62,6 +98,148 @@ Return a pin number given a valid bit mask.
 \begin{DoxyReturn}{Returns}
 int8\+\_\+t The pin associated with the bitmask. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a6fae86963a62077bced533e9fbf323b2}\label{namespacemy_helpers_a6fae86963a62077bced533e9fbf323b2}} 
+\index{myHelpers@{myHelpers}!convert12hTo24h@{convert12hTo24h}}
+\index{convert12hTo24h@{convert12hTo24h}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{convert12hTo24h()}{convert12hTo24h()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Helpers\+::convert12h\+To24h (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{hours12,  }\item[{const bool}]{is\+PM,  }\item[{uint8\+\_\+t $\ast$}]{hours24 }\end{DoxyParamCaption})}
+
+
+
+Convert from 12h format to 24h format. Converts from 12h format to 24h format. Returns 0 for convert okay, otherwise if an invlid hour is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours12} & Hours in 12h format. \\
+\hline
+{\em is\+PM} & False = AM, True = PM \\
+\hline
+{\em hours24} & Returned hours in 24h format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Retuns 0 for convert okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a787ea7da64c15140f736866f34ee038f}\label{namespacemy_helpers_a787ea7da64c15140f736866f34ee038f}} 
+\index{myHelpers@{myHelpers}!convert24hTo12h@{convert24hTo12h}}
+\index{convert24hTo12h@{convert24hTo12h}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{convert24hTo12h()}{convert24hTo12h()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Helpers\+::convert24h\+To12h (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{hours24,  }\item[{uint8\+\_\+t $\ast$}]{hours12,  }\item[{bool $\ast$}]{is\+PM }\end{DoxyParamCaption})}
+
+
+
+Convert from 24h format to 12h format. Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an invalid hour is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours24} & Time in 24h format. \\
+\hline
+{\em hours12} & Returned hours in 12h format. \\
+\hline
+{\em is\+PM} & False = AM, True = PM. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR) if convert okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_ab9cfb7258a1f10f66c7036c5292f7c00}\label{namespacemy_helpers_ab9cfb7258a1f10f66c7036c5292f7c00}} 
+\index{myHelpers@{myHelpers}!convertYear@{convertYear}}
+\index{convertYear@{convertYear}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{convertYear()}{convertYear()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Helpers\+::convert\+Year (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{year }\end{DoxyParamCaption})}
+
+
+
+Convert a year without centuries to a year with centuries. Years in the range 0-\/99 are assumed to be years 2000-\/2099. If a year with centuries is passed, then it\textquotesingle{}s returned untouched. If an invalid year is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Postive converted year, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_afe7c504bd3433e74113d339490ecc56c}\label{namespacemy_helpers_afe7c504bd3433e74113d339490ecc56c}} 
+\index{myHelpers@{myHelpers}!getDayOfWeek@{getDayOfWeek}}
+\index{getDayOfWeek@{getDayOfWeek}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{getDayOfWeek()}{getDayOfWeek()}}
+{\footnotesize\ttfamily int8\+\_\+t my\+Helpers\+::get\+Day\+Of\+Week (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{year,  }\item[{const int8\+\_\+t}]{month,  }\item[{const int8\+\_\+t}]{day }\end{DoxyParamCaption})}
+
+
+
+Get the day of the week. Returns the day of the week, where 1=Sunday. Years between 00-\/99 are assumed to be years 2000-\/2099. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year day lands in. \\
+\hline
+{\em month} & Month day lands in. \\
+\hline
+{\em day} & Day of month. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int8\+\_\+t Returns (1-\/7) where 1=Sunday. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a312f388fa6beb708ac61710b4b1a7846}\label{namespacemy_helpers_a312f388fa6beb708ac61710b4b1a7846}} 
+\index{myHelpers@{myHelpers}!getDaysInMonth@{getDaysInMonth}}
+\index{getDaysInMonth@{getDaysInMonth}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{getDaysInMonth()}{getDaysInMonth()}}
+{\footnotesize\ttfamily int8\+\_\+t my\+Helpers\+::get\+Days\+In\+Month (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{year,  }\item[{const int8\+\_\+t}]{month }\end{DoxyParamCaption})}
+
+
+
+Get the number of days in a month. Returns the number of days in a month given the year and month. This works for years with and without centuries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year. \\
+\hline
+{\em month} & Month. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Number of days in the month. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_ae99a848117013d672c4af1d9226d9c54}\label{namespacemy_helpers_ae99a848117013d672c4af1d9226d9c54}} 
+\index{myHelpers@{myHelpers}!getDaysInYear@{getDaysInYear}}
+\index{getDaysInYear@{getDaysInYear}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{getDaysInYear()}{getDaysInYear()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Helpers\+::get\+Days\+In\+Year (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{year }\end{DoxyParamCaption})}
+
+
+
+Get the number of days in a year. Returns the number of days in a given year, if it\textquotesingle{}s a common year it returns 365, if it\textquotesingle{}s a leap year, it returns 366. This works for years with and without centuries as years without centuries are assumed to be 2000-\/2099. If an invalid year is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year to get number of days. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Postivie is the number of days in the year. Negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a2a1204cc6345a3633fc30ec7ae4e6daf}\label{namespacemy_helpers_a2a1204cc6345a3633fc30ec7ae4e6daf}} 
+\index{myHelpers@{myHelpers}!isLeapYear@{isLeapYear}}
+\index{isLeapYear@{isLeapYear}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isLeapYear()}{isLeapYear()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Leap\+Year (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check leap year. Check a year to see if it\textquotesingle{}s a leap year. This works for both years with and without centuries, since years without centuries are assumed to be years 2000-\/2099. If an invalid year is passed, it will return False. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Year is a leap year. 
+
+false Year is not a leap year. Or is an invalid year. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}\label{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}} 
 \index{myHelpers@{myHelpers}!isPin@{isPin}}
 \index{isPin@{isPin}!myHelpers@{myHelpers}}
@@ -81,6 +259,202 @@ Validate if the pin is a valid pin number for the rp2040.
 true is a valid pin 
 
 false is not a valid pin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_afe51ffbada8d843dd55aac58a43948bc}\label{namespacemy_helpers_afe51ffbada8d843dd55aac58a43948bc}} 
+\index{myHelpers@{myHelpers}!isValidDate@{isValidDate}}
+\index{isValidDate@{isValidDate}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidDate()}{isValidDate()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Date (\begin{DoxyParamCaption}\item[{const int8\+\_\+t}]{year,  }\item[{const int8\+\_\+t}]{month,  }\item[{const int8\+\_\+t}]{day }\end{DoxyParamCaption})}
+
+
+
+Validate a date. Returns true if a date given is valid. If a date with no centuries is provided (00-\/99), then it\textquotesingle{}s assumed to be years 2000-\/2099. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year of date. \\
+\hline
+{\em month} & Month of date. \\
+\hline
+{\em day} & Day of date. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Date is valid. 
+
+false Date is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_aab2ec79efa18f6579ef520f0ad4f511b}\label{namespacemy_helpers_aab2ec79efa18f6579ef520f0ad4f511b}} 
+\index{myHelpers@{myHelpers}!isValidDayOfMonth@{isValidDayOfMonth}}
+\index{isValidDayOfMonth@{isValidDayOfMonth}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidDayOfMonth()}{isValidDayOfMonth()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Day\+Of\+Month (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{year,  }\item[{const int8\+\_\+t}]{month,  }\item[{const int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a day of month. Returns true if a day of the month is in the range (1-\/\mbox{[}28-\/31\mbox{]}) depending on year and month provided. If an invalid month or year value is passed, it will return false. This works for both years with and without centuries. as it assumes that values 0-\/99 are Century 2000. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & Year day lands in. \\
+\hline
+{\em month} & Month day lands in. \\
+\hline
+{\em value} & Day value to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Day of month is valid. 
+
+false Day of month is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a24fca77deadbaa4d51ba95b4d5c0a5c9}\label{namespacemy_helpers_a24fca77deadbaa4d51ba95b4d5c0a5c9}} 
+\index{myHelpers@{myHelpers}!isValidDayOfWeek@{isValidDayOfWeek}}
+\index{isValidDayOfWeek@{isValidDayOfWeek}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidDayOfWeek()}{isValidDayOfWeek()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Day\+Of\+Week (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a day of the week value. Returns true if value in range (1-\/7), where 1=Sunday. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Day of the week to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Day of the week is valid. 
+
+false Day of the week is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_ab8bd9c05c39786f53bd4271bcb61b440}\label{namespacemy_helpers_ab8bd9c05c39786f53bd4271bcb61b440}} 
+\index{myHelpers@{myHelpers}!isValidHour@{isValidHour}}
+\index{isValidHour@{isValidHour}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidHour()}{isValidHour()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Hour (\begin{DoxyParamCaption}\item[{const int8\+\_\+t}]{value,  }\item[{const bool}]{is12h }\end{DoxyParamCaption})}
+
+
+
+Validate an hour value. Returns true if value is in range (0-\/23) in 24h format, or (1-\/12) in 12h format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Hour to validate. \\
+\hline
+{\em is12h} & False = 24h format, True = 12h format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Hour is valid. 
+
+false Hour is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a3de31dc0a775a463467c0380cfc75d5d}\label{namespacemy_helpers_a3de31dc0a775a463467c0380cfc75d5d}} 
+\index{myHelpers@{myHelpers}!isValidMinute@{isValidMinute}}
+\index{isValidMinute@{isValidMinute}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidMinute()}{isValidMinute()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Minute (\begin{DoxyParamCaption}\item[{const int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a minute value. Returns true if minute is in range 0-\/59. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Minute to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Minute is valid. 
+
+false Minute is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a73a3b6e7da206754521999ec6c31f76e}\label{namespacemy_helpers_a73a3b6e7da206754521999ec6c31f76e}} 
+\index{myHelpers@{myHelpers}!isValidMonth@{isValidMonth}}
+\index{isValidMonth@{isValidMonth}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidMonth()}{isValidMonth()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Month (\begin{DoxyParamCaption}\item[{const int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a month value. Returns true if value is in range (1-\/12). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Month to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Month is valid. 
+
+false Month is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a4eebe45f1e55177e76eb47e23737dce1}\label{namespacemy_helpers_a4eebe45f1e55177e76eb47e23737dce1}} 
+\index{myHelpers@{myHelpers}!isValidSecond@{isValidSecond}}
+\index{isValidSecond@{isValidSecond}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidSecond()}{isValidSecond()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Second (\begin{DoxyParamCaption}\item[{const int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a second value. Returns true if second is in range 0-\/59. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Second to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Second is valid. 
+
+false Second is not valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a2957aa41c22615453b55fc926bd45044}\label{namespacemy_helpers_a2957aa41c22615453b55fc926bd45044}} 
+\index{myHelpers@{myHelpers}!isValidTime@{isValidTime}}
+\index{isValidTime@{isValidTime}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidTime()}{isValidTime()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Time (\begin{DoxyParamCaption}\item[{const int8\+\_\+t}]{hour,  }\item[{const int8\+\_\+t}]{minute,  }\item[{const int8\+\_\+t}]{second,  }\item[{const bool}]{is12h = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Validate a time. Returns true if a time is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hour} & Hour of time. \\
+\hline
+{\em minute} & Minute of time. \\
+\hline
+{\em second} & Second of time. \\
+\hline
+{\em is12h} & Is 12hr format, False=24h, True=12h. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Time is valid. 
+
+false Time is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_aed339b0bd3a45d1f0376c2ef93ef4697}\label{namespacemy_helpers_aed339b0bd3a45d1f0376c2ef93ef4697}} 
+\index{myHelpers@{myHelpers}!isValidYear@{isValidYear}}
+\index{isValidYear@{isValidYear}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{isValidYear()}{isValidYear()}}
+{\footnotesize\ttfamily bool my\+Helpers\+::is\+Valid\+Year (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Validate a year value with centuries, IE\+: 2020. Returns true if year is in the range 0-\/25599. Since years without a century are assumed to be year 2000-\/2099, they are treated as valid years. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Year to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Year is a valid year. 
+
+false Year is an invalid year. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_af96154907f93e9076b34629afd70a862}\label{namespacemy_helpers_af96154907f93e9076b34629afd70a862}} 
 \index{myHelpers@{myHelpers}!map32@{map32}}
@@ -133,6 +507,32 @@ Map a value from one range to another. 64 Bit.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int32\+\_\+t The mapped value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}\label{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}} 
+\index{myHelpers@{myHelpers}!mapFloat@{mapFloat}}
+\index{mapFloat@{mapFloat}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{mapFloat()}{mapFloat()}}
+{\footnotesize\ttfamily float my\+Helpers\+::map\+Float (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{in\+\_\+min,  }\item[{float}]{in\+\_\+max,  }\item[{float}]{out\+\_\+min,  }\item[{float}]{out\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Map a value from one range to another. Floating point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Value to map \\
+\hline
+{\em in\+\_\+min} & In range minimum \\
+\hline
+{\em in\+\_\+max} & In range maximum \\
+\hline
+{\em out\+\_\+min} & Out range minimum. \\
+\hline
+{\em out\+\_\+max} & Out range maximum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float The mapped value. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}\label{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}} 
 \index{myHelpers@{myHelpers}!pinToBitMask@{pinToBitMask}}
@@ -232,6 +632,12 @@ Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is revers
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Reversed word. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}\label{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}} 
+\index{myHelpers@{myHelpers}!shiftOut@{shiftOut}}
+\index{shiftOut@{shiftOut}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{shiftOut()}{shiftOut()}}
+{\footnotesize\ttfamily int8\+\_\+t my\+Helpers\+::shift\+Out (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{clock\+Pin,  }\item[{const uint8\+\_\+t}]{data\+Pin,  }\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{const size\+\_\+t}]{len,  }\item[{const bool}]{bit\+Order = {\ttfamily \mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}}} }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}\label{namespacemy_helpers_af5c257b6614735aa6aff6053bf55540b}} 
 \index{myHelpers@{myHelpers}!waitForChange32@{waitForChange32}}
 \index{waitForChange32@{waitForChange32}!myHelpers@{myHelpers}}

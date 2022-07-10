@@ -76,103 +76,200 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a5759402c576f78019d1fbd429ae2802e">   35</a></span>&#160;<span class="preprocessor">    #define MY_NUM_PINS 30</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a57c0b773be8be16ef6615b3681275f09">   40</a></span>&#160;<span class="preprocessor">    #define MY_MAX_PIN 29</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * ################################ ADC Pin Defines:##################################</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#af77320068cd79bb2f68db075d5c214d6">   48</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_0_PIN    26</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ace577d623ec1c3f4d8676feea056f22e">   53</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_1_PIN    27</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a667141471f9f759b7b3380bc76e3f4b5">   58</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_2_PIN    28</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a57d38ca0bb1588e9c384466ff5c0e503">   63</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_3_PIN    29</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * ############################ ADC Channel Defines: ########################</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a5c745cff3c33fd026733383bdbde51c9">   71</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_0        0</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a9d982c461e30c99eed564905a1f03b39">   76</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_1        1</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#adc97438af5581fca2dcd583100ed615f">   81</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_2        2</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a620d30c6a3d12743b396fe5468ff92ea">   86</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_3        3</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#adea71b722ebe1461e2c42aa23bba8d11">   91</a></span>&#160;<span class="preprocessor">    #define MY_ADC_TEMP_CHANNEL     4</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a27d4451c9625aab5aafb406ae3f96ece">   96</a></span>&#160;<span class="preprocessor">    #define MY_ADC_NUM_USER_CHANNELS    4</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ac2d67489d89deaaf2c2831d1fcab1bdf">  101</a></span>&#160;<span class="preprocessor">    #define MY_ADC_NUM_CHANNELS     5</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * ############################ PWM Defines #####################################</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a0548fc588568158f43b35b915542f3d7">  109</a></span>&#160;<span class="preprocessor">    #define MY_PWM_NUM_SLICE    8</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a48de1a46427510f979d1cf48d34c2e89">  114</a></span>&#160;<span class="preprocessor">    #define MY_PWM_NUM_CHANNEL  2</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a7c2e0364c8daad6803ff16a9bc8edee3">  119</a></span>&#160;<span class="preprocessor">    #define MY_PWM_DEFAULT_FREQ 125000000</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"> * ############################# SPI Defines: ###############################</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a010c388af8af6a1b64c0cd19673a84f1">  128</a></span>&#160;<span class="preprocessor">    #define MY_SPI_NUM_PORTS 2</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    #ifdef RASPBERRYPI_PICO</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">        #define MY_MAX_PIN 28</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a57c0b773be8be16ef6615b3681275f09">   43</a></span>&#160;<span class="preprocessor">        #define MY_MAX_PIN 29</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#afd6d9e880e638aeffa3d7acb0f1a5047">   49</a></span>&#160;<span class="preprocessor">    #define MY_DIR_OUTPUT 1</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a740f7642eddf8f643baaecf088a68713">   54</a></span>&#160;<span class="preprocessor">    #define MY_DIR_INPUT 0</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * ################################ ADC Pin Defines:##################################</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#af77320068cd79bb2f68db075d5c214d6">   62</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_0_PIN    26</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ace577d623ec1c3f4d8676feea056f22e">   67</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_1_PIN    27</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a667141471f9f759b7b3380bc76e3f4b5">   72</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_2_PIN    28</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a57d38ca0bb1588e9c384466ff5c0e503">   77</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_3_PIN    29</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * ############################ ADC Channel Defines: ########################</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a5c745cff3c33fd026733383bdbde51c9">   85</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_0        0</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a9d982c461e30c99eed564905a1f03b39">   90</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_1        1</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#adc97438af5581fca2dcd583100ed615f">   95</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_2        2</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a620d30c6a3d12743b396fe5468ff92ea">  100</a></span>&#160;<span class="preprocessor">    #define MY_ADC_CHANNEL_3        3</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#adea71b722ebe1461e2c42aa23bba8d11">  105</a></span>&#160;<span class="preprocessor">    #define MY_ADC_TEMP_CHANNEL     4</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a27d4451c9625aab5aafb406ae3f96ece">  110</a></span>&#160;<span class="preprocessor">    #define MY_ADC_NUM_USER_CHANNELS    4</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ac2d67489d89deaaf2c2831d1fcab1bdf">  115</a></span>&#160;<span class="preprocessor">    #define MY_ADC_NUM_CHANNELS     5</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> * ############################ PWM Defines #####################################</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a0548fc588568158f43b35b915542f3d7">  123</a></span>&#160;<span class="preprocessor">    #define MY_PWM_NUM_SLICE    8</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a48de1a46427510f979d1cf48d34c2e89">  128</a></span>&#160;<span class="preprocessor">    #define MY_PWM_NUM_CHANNEL  2</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#addc19cea4d6a0d674e4c6c738cb6ff13">  134</a></span>&#160;<span class="preprocessor">    #define MY_SPI_NUM_PINS 4</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a7c2e0364c8daad6803ff16a9bc8edee3">  133</a></span>&#160;<span class="preprocessor">    #define MY_PWM_DEFAULT_FREQ 125000000</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> * ################################ I2C Defines: ###################################</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> * ############################# SPI Defines: ###############################</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ae054386debe2a25d19255a9a08dc6fc4">  143</a></span>&#160;<span class="preprocessor">    #define MY_I2C_NUM_PORTS 2</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a5a5a28ddd94d8e5821a8f5673ba6b4c6">  149</a></span>&#160;<span class="preprocessor">    #define MY_I2C_NUM_PINS 8</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"> * ############################## Error Defines: ####################################</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment"> * Note see myErrorCodes.hpp for a full list of codes for all error codes.</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    #ifndef MY_NO_ERROR</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">  159</a></span>&#160;<span class="preprocessor">        #define MY_NO_ERROR 0</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">    #ifndef MY_GENERAL_ERROR</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">  166</a></span>&#160;<span class="preprocessor">        #define MY_GENERAL_ERROR                                -4</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_PIN</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a010c388af8af6a1b64c0cd19673a84f1">  142</a></span>&#160;<span class="preprocessor">    #define MY_SPI_NUM_PORTS 2</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#addc19cea4d6a0d674e4c6c738cb6ff13">  148</a></span>&#160;<span class="preprocessor">    #define MY_SPI_NUM_PINS 4</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> * ################################ I2C Defines: ###################################</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ae054386debe2a25d19255a9a08dc6fc4">  157</a></span>&#160;<span class="preprocessor">    #define MY_I2C_NUM_PORTS 2</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a5a5a28ddd94d8e5821a8f5673ba6b4c6">  163</a></span>&#160;<span class="preprocessor">    #define MY_I2C_NUM_PINS 8</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"> * ############################## Error Defines: ####################################</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"> * Note see myErrorCodes.hpp for a full list of codes for all error codes.</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">    #ifndef MY_NO_ERROR</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a1a2c7825740de47fb2c8572f6f81027c">  173</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_PIN                                  -5</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aa0aa05b5f194b52a2bbe65e4b8acc206">  173</a></span>&#160;<span class="preprocessor">        #define MY_NO_ERROR 0</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_BIT_MASK</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">    #ifndef MY_GENERAL_ERROR</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a30c7699357e500c950a9a32a429e59bf">  180</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_BIT_MASK                             -6</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a6ab9569b2a283a5cd23b09c2c68b4b6b">  180</a></span>&#160;<span class="preprocessor">        #define MY_GENERAL_ERROR                                -4</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">    #ifndef MY_TIMEOUT</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_PIN</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">  187</a></span>&#160;<span class="preprocessor">        #define MY_TIMEOUT                                      -7</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a1a2c7825740de47fb2c8572f6f81027c">  187</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_PIN                                  -5</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_DIR</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_BIT_MASK</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a2932a50fea6f22d821215e6d34403aff">  194</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_DIR                                  -8</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a30c7699357e500c950a9a32a429e59bf">  194</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_BIT_MASK                             -6</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment"> * ################################ Bit orders: ##############################</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">    #ifndef MSB_FIRST</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">  204</a></span>&#160;<span class="preprocessor">        #define MSB_FIRST 1</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">    #ifndef LSB_FIRST</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aa93c5c73d56a97871b8c595f38fabeba">  210</a></span>&#160;<span class="preprocessor">        #define LSB_FIRST 0</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"> * ################################### Macros: #################################</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">    #ifndef _BV</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a11643f271076024c395a93800b3d9546">  219</a></span>&#160;<span class="preprocessor">        #define _BV(bit) (1 &lt;&lt; (bit))</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">    #ifndef MY_TIMEOUT</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a72dfe5bfae97efc2aae8d64482104a1e">  201</a></span>&#160;<span class="preprocessor">        #define MY_TIMEOUT                                      -7</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_DIR</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a2932a50fea6f22d821215e6d34403aff">  208</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_DIR                                  -8</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">    #ifndef MY_VALUE_ERROR</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a2cab069b533d2ead9349fadc253b76b7">  215</a></span>&#160;<span class="preprocessor">        #define MY_VALUE_ERROR                                  -9</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">    #ifndef MY_INVALID_FUNC</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a9e35f5d686d60cb1a9e4641f012030f9">  222</a></span>&#160;<span class="preprocessor">        #define MY_INVALID_FUNC                                 -10</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment"> * ################################ Bit orders: ##############################</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">    #ifndef MSB_FIRST</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">  231</a></span>&#160;<span class="preprocessor">        #define MSB_FIRST 1</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">    #ifndef LSB_FIRST</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aa93c5c73d56a97871b8c595f38fabeba">  237</a></span>&#160;<span class="preprocessor">        #define LSB_FIRST 0</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment"> * ############################# Date / Time defines: ###########################</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a04c9259196292d83e2e357b11da068d9">  246</a></span>&#160;<span class="preprocessor">    #define MY_DAYS_PER_YEAR 365</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ad117615abbfcd1fd65686ae9289d35d9">  250</a></span>&#160;<span class="preprocessor">    #define MY_DAYS_PER_LEAP_YEAR 366</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a59949b9d5abc5090ea7710603df6ae73">  254</a></span>&#160;<span class="preprocessor">    #define MY_MIN_SECOND 0</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a32a1c8595d11543b2e3e25bbac9ad93e">  258</a></span>&#160;<span class="preprocessor">    #define MY_MAX_SECOND 59</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a385a0bbe3f65c73433f78b8376b8e8e4">  262</a></span>&#160;<span class="preprocessor">    #define MY_MIN_MINUTE 0</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a1dacd30135659e9e754a24cb63a9e08f">  266</a></span>&#160;<span class="preprocessor">    #define MY_MAX_MINUTE 59</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ac916b52cd89bc47aee2cb331972ff8e3">  270</a></span>&#160;<span class="preprocessor">    #define MY_MIN_HOUR_12H 1</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a852d81eca6f5203d67ff2876f849acde">  274</a></span>&#160;<span class="preprocessor">    #define MY_MAX_HOUR_12H 12</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aacf0be5beb5b4462ab0632c527bed0a9">  278</a></span>&#160;<span class="preprocessor">    #define MY_IS_AM 0</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a3a63a3110d367a3559b98e05da728d4e">  282</a></span>&#160;<span class="preprocessor">    #define MY_IS_PM 1</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a283b26a1633b9e667c6bbf5b0a510418">  286</a></span>&#160;<span class="preprocessor">    #define MY_MIN_HOUR_24H 0</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ae03d7f8e3898d45ae799e6ba247a5d14">  290</a></span>&#160;<span class="preprocessor">    #define MY_MAX_HOUR_24H 23</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#af2eb1b5479717c5c900b79c6ad96f41a">  294</a></span>&#160;<span class="preprocessor">    #define MY_MIN_DOTW 1</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a9325679f230bdd280200657bf5271a9f">  298</a></span>&#160;<span class="preprocessor">    #define MY_MAX_DOTW 7</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a0d63124bcf5b99f75931ac20be8a4544">  302</a></span>&#160;<span class="preprocessor">    #define MY_MIN_DATE 1</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a65b38d53d456578919280012d0ac4b13">  306</a></span>&#160;<span class="preprocessor">    #define MY_MAX_DATE 31</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a1cd34ab452c5f6d2105c618cb32ca31e">  310</a></span>&#160;<span class="preprocessor">    #define MY_MIN_MONTH 1</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a773032a94185cddd2dc18020aa1fbecc">  314</a></span>&#160;<span class="preprocessor">    #define MY_MAX_MONTH 12</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aebf0e2b235ab1b217919f9f2069df238">  318</a></span>&#160;<span class="preprocessor">    #define MY_MONTHS_PER_YEAR 12</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#acc0093bed9d5a6090d7cc4c785247193">  322</a></span>&#160;<span class="preprocessor">    #define MY_MIN_YEAR 100</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aa349da31baf5021e70db62cc4276eeac">  329</a></span>&#160;<span class="preprocessor">    #define MY_MAX_YEAR 12799</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a1f4265b5b5fde73a6464e2b407438136">  333</a></span>&#160;<span class="preprocessor">    #define MY_IS_24H 0</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#aec5264e1fce8ef3ee1334e4eb08357d8">  337</a></span>&#160;<span class="preprocessor">    #define MY_IS_12H 1</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a087fcf0e3a559b19c990b3ab3dc74a90">  341</a></span>&#160;<span class="preprocessor">    #define MY_YEARS_PER_CENTURY 100</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ae5b83133551075546322b97083736b63">  345</a></span>&#160;<span class="preprocessor">    #define MY_MIN_CENTURY 0</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a592f28b6c5392a1a4b9a8e1ea1d12032">  349</a></span>&#160;<span class="preprocessor">    #define MY_MAX_CENTURY 127</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a252f6b5edf53d4c305907f9279b8f186">  353</a></span>&#160;<span class="preprocessor">    #define MY_DEFAULT_CENTURY 20</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a0fdb80c3f369ef87db87b5465548899c">  357</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_JAN 1</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a27fc045664e07c4cdf0f5071bd021d98">  361</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_FEB 2</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a200084140f81d8c248eca67fe2455db3">  365</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_MAR 3</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a51ad47f76a62afb090d37610e3e01182">  369</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_APR 4</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a127fe0926ad0c699fe583d75073d5de9">  373</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_MAY 5</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#ab19699186fb80352f58299b8c18cbac3">  377</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_JUN 6</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a81fe72f1cfb1dd2fddfba8298df62d36">  381</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_JUL 7</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a9aac9f6506a4871c3c32084855186ba4">  385</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_AUG 8</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a895984e7952d97dccb349d64e7b29208">  389</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_SEP 9</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a7825474036320cd1ce01957e8a43c098">  393</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_OCT 10</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a726a4583d461f8e99fc5c86636af83a2">  397</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_NOV 11</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a1863a193052d9aaad70b76e148eb5cc9">  401</a></span>&#160;<span class="preprocessor">    #define MY_MONTH_DEC 12</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="comment">/* </span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="comment"> * ################################### Macros: #################################</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">    #ifndef _BV</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="my_standard_defines_8hpp.html#a11643f271076024c395a93800b3d9546">  410</a></span>&#160;<span class="preprocessor">        #define _BV(bit) (1 &lt;&lt; (bit))</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

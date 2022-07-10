@@ -1,4 +1,5 @@
 <map id="mySPI/mySPI.hpp" name="mySPI/mySPI.hpp">
-<area shape="rect" id="node1" title="SPI Helper functions." alt="" coords="50,5,186,32"/>
+<area shape="rect" id="node1" title="SPI Helper functions." alt="" coords="173,5,309,32"/>
 <area shape="rect" id="node2" href="$spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="5,80,231,107"/>
+<area shape="rect" id="node3" href="$my_m_c_p49x2_8hpp.html" title="High level class for controling MCP4902/4912/4922 DAC." alt="" coords="255,80,474,107"/>
 </map>
