@@ -30,7 +30,7 @@ namespace myHelpers {
      * @return false is not a valid pin
      */
     bool inline isPin(const uint8_t pin) {
-        if (pin < MY_MAX_PIN) { return true; }
+        if (pin <= MY_MAX_PIN) { return true; }
         return false;
     }
     /**
@@ -778,7 +778,31 @@ namespace myHelpers {
         }
         return MY_NO_ERROR;
     }
-
+/*************************** Shift in / out functions ***************************/
+    int8_t shiftOut(const uint8_t clockPin, const uint8_t dataPin, const uint8_t *buffer, const size_t len, 
+                            const bool bitOrder=MSB_FIRST) {
+        if (isPin(clockPin) == false) { return MY_INVALID_PIN; }
+        if (isPin(dataPin) == false) { return MY_INVALID_PIN; }
+        if (gpio_get_function(clockPin) != GPIO_FUNC_SIO) { return MY_INVALID_FUNC; }
+        if (gpio_get_function(dataPin) != GPIO_FUNC_SIO) { return MY_INVALID_FUNC; }
+        if (gpio_get_dir(clockPin) != GPIO_OUT) { return MY_INVALID_DIR; }
+        if (gpio_get_dir(dataPin) != GPIO_OUT) { return MY_INVALID_DIR; }
+        for (size_t i=0; i<len; i++) {
+            for (uint8_t j=0; j<8; j++) {
+                uint8_t val = buffer[i];
+                if (bitOrder == MSB_FIRST) {
+                    gpio_put(dataPin, (bool)(val & 0x80));
+                    val <<= 1;
+                } else {
+                    gpio_put(dataPin, (bool)(val & 0x01));
+                    val >>= 1;
+                }
+                gpio_put(clockPin, true);
+                gpio_put(clockPin, false);
+            }
+        }
+        return MY_NO_ERROR;
+    }
 
 
 

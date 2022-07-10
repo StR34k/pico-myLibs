@@ -58,6 +58,13 @@
          */
         #define MY_INVALID_DIR                                  -8
     #endif
+    #ifndef MY_VALUE_ERROR
+        /**
+         * @brief Value error.
+         * A value is out of range.
+         */
+        #define MY_VALUE_ERROR                                  -9
+    #endif
 /************** myHelpers error codes (50-99) **********************/
 
     /**

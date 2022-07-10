@@ -16,7 +16,7 @@
 #include "../myErrorCodes.hpp"
 #include "../myHelpers.hpp"
 #include "../mySPI/mySPI.hpp"
-#include "../myBitBangSPI/myBitBangSPI.hpp"
+// #include "../myBitBangSPI/myBitBangSPI.hpp"
 /**
  * @brief High level class for controling MCP4902/4912/4922.
  * Class to control a MCP49x2 DAC
@@ -74,23 +74,23 @@ class myMCP49x2 {
          * @brief Construct a new my MCP49x2 object. Bit banged SPI.
          * Construct the object, uses bit banged spi. Load and shutdown pins are undefined.
          * @param sckPin Clock pin.
-         * @param misoPin Miso pin.
          * @param mosiPin Mosi pin.
+         * @param csPin Chip select pin.
          */
-        myMCP49x2(const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) : _sckPin (sckPin),
-                        _misoPin (misoPin), _mosiPin (mosiPin) {
+        myMCP49x2(const uint8_t sckPin, const uint8_t mosiPin, const uint8_t csPin) : _sckPin (sckPin),
+                        _mosiPin (mosiPin), _csPin (csPin) {
             _useHWSPI = false;
         }
         /**
          * @brief Construct a new my MCP49x2 object, bit banged SPI, with load pin.
          * Construct the object. Uses bit banged SPI, Load pin is defined, while shutdown is not.
          * @param sckPin Clock pin.
-         * @param misoPin Miso pin.
          * @param mosiPin Mosi pin.
+         * @param csPin Chip select pin.
          * @param loadPin Load pin.
          */
-        myMCP49x2(const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t loadPin) :
-                        _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin), _loadPin (loadPin) {
+        myMCP49x2(const uint8_t sckPin, const uint8_t mosiPin, const uint8_t csPin, const uint8_t loadPin) :
+                        _sckPin (sckPin), _mosiPin (mosiPin), _csPin (csPin), _loadPin (loadPin) {
             _useHWSPI = false;
         }
         /**
@@ -99,13 +99,13 @@ class myMCP49x2 {
          * functionality is not desired, the load pin can be set to an invalid value, IE: MY_NOT_A_PIN,
          * to disable.
          * @param sckPin Clock pin.
-         * @param misoPin Miso pin.
          * @param mosiPin Mosi pin.
+         * @param csPin Chip select pin.
          * @param loadPin Load pin.
          * @param shdnPin Shutdown pin.
          */
-        myMCP49x2(const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin, const uint8_t loadPin,
-                        const uint8_t shdnPin) : _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin),
+        myMCP49x2(const uint8_t sckPin, const uint8_t mosiPin, const uint8_t csPin, const uint8_t loadPin,
+                        const uint8_t shdnPin) : _sckPin (sckPin), _mosiPin (mosiPin), _csPin (csPin),
                         _loadPin (loadPin), _shdnPin (shdnPin) {
             _useHWSPI = false;
         }
@@ -116,9 +116,11 @@ class myMCP49x2 {
          * @param sckPin Clock pin.
          * @param misoPin Miso pin.
          * @param mosiPin Mosi pin.
+         * @param csPin Chip select pin.
          */
-        myMCP49x2(spi_inst_t *spiPort, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin) :
-                        _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin) {
+        myMCP49x2(spi_inst_t *spiPort, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
+                        const uint8_t csPin) : _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin),
+                        _csPin (csPin) {
             _spiPort = spiPort;
             _useHWSPI = true;
         }
@@ -129,11 +131,12 @@ class myMCP49x2 {
          * @param sckPin Clock pin.
          * @param misoPin Miso pin.
          * @param mosiPin Mosi pin.
+         * @param csPin Chip select pin.
          * @param loadPin Load pin.
          */
         myMCP49x2(spi_inst_t *spiPort, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
-                        const uint8_t loadPin) : _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin),
-                        _loadPin (loadPin) {
+                        const uint8_t csPin, const uint8_t loadPin) : _sckPin (sckPin), _misoPin (misoPin),
+                        _mosiPin (mosiPin), _csPin (csPin), _loadPin (loadPin) {
             _spiPort = spiPort;
             _useHWSPI = true;
         }
@@ -328,7 +331,6 @@ uint16_t myMCP49x2::getChannelB() {
 }
 
 int16_t myMCP49x2::setChannelB(const uint16_t value) {
-    // uint16_t outValue;
     if (isValidValue(value) == false) { return ERROR_VALUE_ERROR; }
     _values[1] = value;
     __writeDAC__(CHANNEL_B);
@@ -393,8 +395,16 @@ int16_t myMCP49x2::initialize(const models model, const bool initSPI) {
     _model = model; // Store model #
 // Init SPI:
     if (initSPI == true) {
-        returnValue = mySPI::initializeMaster(_spiPort, _sckPin, _misoPin, _mosiPin, 20000*1000);
-        if (returnValue < 0) { return returnValue; }
+        if (_useHWSPI == true) {
+            returnValue = mySPI::initializeMaster(_spiPort, _sckPin, _misoPin, _mosiPin, 20000*1000);
+            if (returnValue < 0) { return returnValue; }
+        } else {
+        // Check pins:
+            if (myHelpers::isPin(_sckPin) == false) { return ERROR_INVALID_PIN; }
+            if (myHelpers::isPin(_mosiPin) == false) { return ERROR_INVALID_PIN; }
+        // Add pins to bitMask:
+            pinMask |= (1 << _sckPin) | ( 1 << _mosiPin);
+        }
     }
 // Check pins:
     if (myHelpers::isPin(_csPin) == false) { return ERROR_INVALID_PIN; }
@@ -404,7 +414,10 @@ int16_t myMCP49x2::initialize(const models model, const bool initSPI) {
 // Init GPIO:
     gpio_init_mask(pinMask);
     gpio_set_dir_out_masked(pinMask);
-    gpio_put_masked(pinMask, pinMask);
+    if (_useHWSPI == false) {
+        pinMask &= ~(1 << _sckPin); // Leave pin low.
+    }
+    gpio_put_masked(pinMask, pinMask); // Set pins high.
     return NO_ERROR;
 }
 
@@ -440,12 +453,20 @@ uint16_t myMCP49x2::__shiftValue__(const uint16_t value) {
 void myMCP49x2::__writeDAC__(const bool channel) {
     int16_t returnValue;
     uint8_t dataBuffer[2];
+    uint8_t index = (uint8_t)channel;
     uint16_t outValue = __getSettings__(channel);
-    outValue |= __shiftValue__(_values[channel]);
+    outValue |= __shiftValue__(_values[index]);
     dataBuffer[0] = (uint8_t)(outValue >> 8);
     dataBuffer[1] = (uint8_t)outValue;
     gpio_put(_csPin, false);
-    spi_write_blocking(_spiPort, dataBuffer, 2);
+    if (_useHWSPI == true) {
+        spi_write_blocking(_spiPort, dataBuffer, 2);
+    } else {
+        returnValue = myHelpers::shiftOut(_sckPin, _mosiPin, dataBuffer, 2);
+        if (returnValue < 0) {
+            printf("Shift out error code: %i\n", returnValue);
+        }
+    }
     gpio_put(_csPin, true);
 }
 

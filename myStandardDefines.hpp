@@ -42,6 +42,16 @@
     #else
         #define MY_MAX_PIN 29
     #endif
+    /**
+     * @brief Direction OUTPUT.
+     * The value to set, or the value read for output.
+     */
+    #define MY_DIR_OUTPUT 1
+    /**
+     * @brief Direction INPUT.
+     * The value to set, or the value read for input.
+     */
+    #define MY_DIR_INPUT 0
 /*
  * ################################ ADC Pin Defines:##################################
  */
@@ -197,7 +207,20 @@
          */
         #define MY_INVALID_DIR                                  -8
     #endif
-
+    #ifndef MY_VALUE_ERROR
+        /**
+         * @brief Value error.
+         * A value is out of range.
+         */
+        #define MY_VALUE_ERROR                                  -9
+    #endif
+    #ifndef MY_INVALID_FUNC
+        /**
+         * @brief Invalid function.
+         * A pin function is not set properly.
+         */
+        #define MY_INVALID_FUNC                                 -10
+    #endif
 /* 
  * ################################ Bit orders: ##############################
  */
