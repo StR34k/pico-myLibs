@@ -37,7 +37,11 @@
      * @brief Max valid pin number.
      * The highest pin number on the rp2040.
      */
-    #define MY_MAX_PIN 29
+    #ifdef RASPBERRYPI_PICO
+        #define MY_MAX_PIN 28
+    #else
+        #define MY_MAX_PIN 29
+    #endif
 /*
  * ################################ ADC Pin Defines:##################################
  */

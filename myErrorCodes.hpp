@@ -447,4 +447,16 @@
      * The length provided is too long.
      */
     #define MY_ERROR_MYAT24C32_INVALID_LENGTH               -601
+/******************* myMCP49x2 Error codes: (650-699) *************************/
+
+    /**
+     * @brief Value error.
+     * Value out of range.
+     */
+    #define MY_ERROR_MYMCP49X2_VALUE_ERROR                  -650
+    /**
+     * @brief Invalid model number.
+     * Invalid model number was passed.
+     */
+    #define MY_ERROR_MYMCP49X2_INVALID_MODEL                -651
 #endif

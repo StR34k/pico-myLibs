@@ -336,7 +336,7 @@ namespace myADC {
         const float conversion_factor = vRef / (1 << 12);   // Calculate conversion factor
         int16_t reading = readPinRaw(pin);  // Get the raw reading.
         if (reading < 0) { return (float)reading; } // if error returned pass on the error.
-        return (float) ((float)reading*conversion_factor);
+        return (float) ((float)reading * conversion_factor);
     }
     /**
      * @brief Return temperature of sensor.

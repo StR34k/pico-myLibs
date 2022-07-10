@@ -434,6 +434,7 @@ namespace myHelpers {
     // Return the time delta:
         return (stopTime - startTime);
     }
+/************************** MAP functions: **************************/
     /**
      * @brief Map a value from one range to another. 32 Bit.
      * 
@@ -460,6 +461,21 @@ namespace myHelpers {
     int64_t map64(int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max) {
         return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
     }
+    /**
+     * @brief Map a value from one range to another. Floating point.
+     * 
+     * @param x Value to map
+     * @param in_min In range minimum
+     * @param in_max In range maximum
+     * @param out_min Out range minimum.
+     * @param out_max Out range maximum.
+     * @return float The mapped value.
+     */
+    float mapFloat(float x, float in_min, float in_max, float out_min, float out_max) {
+        return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
+    }
+
+/****************************** Reverse functions: ***********************************/
     /**
      * @brief Reverse an 8 bit word.
      * Sets the msb = to lsb. and so on until the word is reversed. used to convert
@@ -760,6 +776,7 @@ namespace myHelpers {
                 *isPM = false;
             }
         }
+        return MY_NO_ERROR;
     }
 
 

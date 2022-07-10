@@ -23,22 +23,18 @@ namespace myBBSPIMaster {
 /* Constants */
     /**
      * @brief SPI Mode 0
-     * 
      */
     const uint8_t   MODE_0 = 0x00;    // CPOL = 0     CPHA = 0
     /**
      * @brief SPI Mode 1
-     * 
      */
     const uint8_t   MODE_1 = 0x01;    // CPOL = 0     CPHA = 1
     /**
      * @brief SPI Mode 2
-     * 
      */
     const uint8_t   MODE_2 = 0x02;    // CPOL = 1     CPHA = 0
     /**
      * @brief SPI Mode 3
-     * 
      */
     const uint8_t   MODE_3 = 0x03;    // CPOL = 1     CPHA = 1
 /* Variables */
