@@ -30,8 +30,15 @@ namespace myHelpers {
      * @return false is not a valid pin
      */
     bool inline isPin(const uint8_t pin) {
+    #ifdef RASPBERRYPI_PICO
+        if (pin == 23) { return false; }
+        if (pin == 24) { return false; }
         if (pin <= MY_MAX_PIN) { return true; }
         return false;
+    #else
+        if (pin <= MY_MAX_PIN) { return true; }
+        return false;
+    #endif
     }
     /**
      * @brief Return the bit mask for a single pin.
@@ -436,7 +443,7 @@ namespace myHelpers {
     }
 /************************** MAP functions: **************************/
     /**
-     * @brief Map a value from one range to another. 32 Bit.
+     * @brief Map a value from one range to another. Template.
      * 
      * @param x Value to map
      * @param in_min In range minimum
@@ -445,33 +452,7 @@ namespace myHelpers {
      * @param out_max Out range maximum.
      * @return int32_t The mapped value.
      */
-    int32_t map32(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max) {
-        return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
-    }
-    /**
-     * @brief Map a value from one range to another. 64 Bit.
-     * 
-     * @param x Value to map
-     * @param in_min In range minimum
-     * @param in_max In range maximum
-     * @param out_min Out range minimum.
-     * @param out_max Out range maximum.
-     * @return int32_t The mapped value.
-     */
-    int64_t map64(int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max) {
-        return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
-    }
-    /**
-     * @brief Map a value from one range to another. Floating point.
-     * 
-     * @param x Value to map
-     * @param in_min In range minimum
-     * @param in_max In range maximum
-     * @param out_min Out range minimum.
-     * @param out_max Out range maximum.
-     * @return float The mapped value.
-     */
-    float mapFloat(float x, float in_min, float in_max, float out_min, float out_max) {
+    template <class T> T map( T x, T in_min, T in_max, T out_min, T out_max) {
         return (x - in_min) * (out_max-out_min) / (in_max - in_min) + out_min;
     }
 
@@ -804,8 +785,46 @@ namespace myHelpers {
         return MY_NO_ERROR;
     }
 
+    int8_t shiftIn(const uint8_t clockPin, const uint8_t dataPin, uint8_t *buffer, const size_t len,
+                        const bool bitOrder=MSB_FIRST) {
+        if (isPin(clockPin) == false) { return MY_INVALID_PIN; }
+        if (isPin(dataPin) == false) { return MY_INVALID_PIN; }
+        if (gpio_get_function(clockPin) != GPIO_FUNC_SIO) { return MY_INVALID_FUNC; }
+        if (gpio_get_function(dataPin) != GPIO_FUNC_SIO) { return MY_INVALID_FUNC; }
+        if (gpio_get_dir(clockPin) != GPIO_OUT) { return MY_INVALID_DIR; }
+        if (gpio_get_dir(dataPin) != GPIO_IN) { return MY_INVALID_DIR; }
+        for (size_t i=0; i< len; i++) {
+            uint8_t value;
+            for (uint8_t j=0; i<8; j++) {
+                gpio_put(clockPin, true);
+                if (bitOrder == MSB_FIRST) {
+                    value <<=1;
+                    value |= (gpio_get(dataPin) ? 0x01 : 0x00);
+                } else {
+                    value >>=1;
+                    value |= (gpio_get(dataPin) ? 0x80 : 0x00);
+                }
+                gpio_put(clockPin, false);
+            }
+            buffer[i] = value;
+        }
+        return MY_NO_ERROR;
+    }
 
-
+/****************** print Binary format: ******************************/
+    template <class T> void printBin(const T &value,const bool printSpaces=true,
+                                            const bool printPrefix=true) {
+        uint8_t size = 8 * sizeof(value);
+        if (printPrefix == true) {
+            printf("0b");
+            if (printSpaces == true) { printf(" "); }
+        }
+        for (uint8_t i=0; i<size; i++) {
+            if (i%4 == 0 and i != 0 and printSpaces == true) {printf(" "); }
+            bool bitValue = bitRead( value, (size-i-1) );
+            printf("%i",bitValue);
+        }
+    }
 
 
 

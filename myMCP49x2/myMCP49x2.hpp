@@ -24,6 +24,10 @@
 class myMCP49x2 {
     public:
 /* ################### Enums: ######################## */
+        /**
+         * @brief Models This class works with.
+         * Chip model numbers.
+         */
         enum models { MODEL_MCP4902, MODEL_MCP4912, MODEL_MCP4922 };
 /* ##################### Public Constants: ################### */
     // Channels:

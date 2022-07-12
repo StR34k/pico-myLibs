@@ -461,9 +461,14 @@
      * Value out of range.
      */
     #define MY_ERROR_MYMCP49X2_VALUE_ERROR                  -650
+
+/********************** myMCP3320x Error codes: (700-749) **********************/
+
     /**
-     * @brief Invalid model number.
-     * Invalid model number was passed.
+     * @brief Invalid channel.
+     * Invalid channel was passed.
      */
-    #define MY_ERROR_MYMCP49X2_INVALID_MODEL                -651
+    #define MY_ERROR_MYMCP320X_INVALID_CHANNEL              -700
+
+
 #endif

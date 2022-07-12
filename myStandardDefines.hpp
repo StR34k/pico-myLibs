@@ -409,4 +409,12 @@
          */
         #define _BV(bit) (1 << (bit))
     #endif
+
+    #ifndef bitRead
+        /**
+         * @brief Read a bit of a value.
+         */
+        #define bitRead(value, bit) (((value) >> (bit)) & 0x01)
+    #endif
+
 #endif
