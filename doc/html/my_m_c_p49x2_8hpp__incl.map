@@ -1,0 +1,11 @@
+<map id="myMCP49x2/myMCP49x2.hpp" name="myMCP49x2/myMCP49x2.hpp">
+<area shape="rect" id="node1" title="High level class for controling MCP4902/4912/4922 DAC." alt="" coords="279,5,498,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="220,229,347,256"/>
+<area shape="rect" id="node3" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="5,229,196,256"/>
+<area shape="rect" id="node4" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="647,229,802,256"/>
+<area shape="rect" id="node5" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="463,155,597,181"/>
+<area shape="rect" id="node8" href="$my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="315,80,463,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="490,229,623,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="371,229,465,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="320,155,439,181"/>
+</map>
