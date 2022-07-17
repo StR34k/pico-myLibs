@@ -161,6 +161,15 @@
      * @note I2C port 1 only has 5 possible options.
      */
     #define MY_I2C_NUM_PINS 8
+/*
+ * ########################### Spin Lock Defines: ########################## 
+ */
+    /**
+     * @brief Number of spinlocks.
+     * Total number of spinlocks on the rp2040.
+     */
+    #define MY_NUM_SPIN_LOCKS 32
+
 /* 
  * ############################## Error Defines: ####################################
  * Note see myErrorCodes.hpp for a full list of codes for all error codes.
@@ -416,5 +425,24 @@
          */
         #define bitRead(value, bit) (((value) >> (bit)) & 0x01)
     #endif
+    #ifndef bitSet
+        /**
+         * @brief Set a bit of a value.
+         */
+        #define bitSet(value, bit) ((value) |= (1UL << (bit)))
+    #endif
+    #ifndef bitClear
+        /**
+         * @brief Clear a bit of a value.
+         */
+        #define bitClear(value, bit) ((value) &= ~(1UL << (bit)))
+    #endif
+    #ifndef bitWrite
+        /**
+         * @brief Write a bit of a a value.
+         */
+        #define bitWrite(value, bit, bitvalue) (bitvalue ? bitSet(value, bit) : bitClear(value, bit))
+    #endif
+
 
 #endif

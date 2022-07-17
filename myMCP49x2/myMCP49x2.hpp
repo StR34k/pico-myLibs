@@ -172,13 +172,13 @@ class myMCP49x2 {
          * @return true Value is valid.
          * @return false Value is invalid
          */
-        bool isValidValue(const uint16_t value);
+        bool isValidValue(const int16_t value);
         /**
          * @brief Get the Channel A value.
          * Returns the value set for channel A.
          * @return uint16_t Value of channel A.
          */
-        uint16_t getChannelA();
+        int16_t getChannelA();
         /**
          * @brief Set the Channel A Value.
          * Sets the value for channel A. Valid values are dependant on model number initialized. Returns
@@ -186,13 +186,13 @@ class myMCP49x2 {
          * @param value Value to set DAC channel A to.
          * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
          */
-        int16_t setChannelA(const uint16_t value);
+        int16_t setChannelA(const int16_t value);
         /**
          * @brief Get the Channel B value.
          * Returns the value of channel B.
          * @return uint16_t Value of channel B.
          */
-        uint16_t getChannelB();
+        int16_t getChannelB();
         /**
          * @brief Set the Channel B Value.
          * Sets the value for channel B. Valid values are dependant on model number initialized. Returns
@@ -200,7 +200,7 @@ class myMCP49x2 {
          * @param value Value to set DAC channel B to.
          * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
          */
-        int16_t setChannelB(const uint16_t value);
+        int16_t setChannelB(const int16_t value);
         /**
          * @brief Set both channels.
          * Sets both channels to the given values. The order in which they are set is determined by the 
@@ -211,7 +211,7 @@ class myMCP49x2 {
          * @param firstChannel False = Channel A first. True = Channel B first.
          * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
          */
-        int16_t setChannels(const uint16_t valueA, const uint16_t valueB, const bool firstChannel=CHANNEL_A);
+        int16_t setChannels(const int16_t valueA, const int16_t valueB, const bool firstChannel=CHANNEL_A);
         /**
          * @brief Load the DAC
          * Loads values into the DAC if the load / LDAC pin is defined. Returns 0 (NO_ERROR) if loaded okay
@@ -304,7 +304,8 @@ class myMCP49x2 {
 
 /* ################################## Public Functions: ##################################### */
 
-bool myMCP49x2::isValidValue(const uint16_t value) {
+bool myMCP49x2::isValidValue(const int16_t value) {
+    if (value < 0) { return false; }
     switch (_model) {
         case MODEL_MCP4902:
             if (value > MAX_VALUE_02) { return false; }
@@ -319,29 +320,29 @@ bool myMCP49x2::isValidValue(const uint16_t value) {
     return true;
 }
 
-uint16_t myMCP49x2::getChannelA() {
-    return _values[0];
+int16_t myMCP49x2::getChannelA() {
+    return (int16_t)_values[0];
 }
 
-int16_t myMCP49x2::setChannelA(const uint16_t value) {
+int16_t myMCP49x2::setChannelA(const int16_t value) {
     if (isValidValue(value) == false) { return ERROR_VALUE_ERROR; }
     _values[0] = value;
     __writeDAC__(CHANNEL_A);
     return NO_ERROR;
 }
 
-uint16_t myMCP49x2::getChannelB() {
-    return _values[1];
+int16_t myMCP49x2::getChannelB() {
+    return (int16_t)_values[1];
 }
 
-int16_t myMCP49x2::setChannelB(const uint16_t value) {
+int16_t myMCP49x2::setChannelB(const int16_t value) {
     if (isValidValue(value) == false) { return ERROR_VALUE_ERROR; }
     _values[1] = value;
     __writeDAC__(CHANNEL_B);
     return NO_ERROR;
 }
 
-int16_t myMCP49x2::setChannels(const uint16_t valueA, const uint16_t valueB, const bool firstChannel) {
+int16_t myMCP49x2::setChannels(const int16_t valueA, const int16_t valueB, const bool firstChannel) {
     if (isValidValue(valueA) == false) { return ERROR_VALUE_ERROR; }
     if (isValidValue(valueB) == false) { return ERROR_VALUE_ERROR; }
     _values[0] = valueA;

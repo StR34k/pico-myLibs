@@ -41,67 +41,67 @@ namespace myPWM {
      * @brief Pin not initialized. Value -100.
      * The pin is not initialized as a PWM pin.
      */
-    static const int16_t ERROR_PIN_NOT_INIT = MY_PWM_PIN_NOT_INIT;
+    static const int16_t ERROR_PIN_NOT_INIT = MY_ERROR_PWM_PIN_NOT_INIT;
     /**
      * @brief Pin already initialized. Value -101.
      * The pin is already initialized as a PWM pin.
      */
-    static const int16_t ERROR_PIN_ALEREADY_INIT = MY_PWM_PIN_ALREADY_INIT;
+    static const int16_t ERROR_PIN_ALEREADY_INIT = MY_ERROR_PWM_PIN_ALREADY_INIT;
     /**
      * @brief Invalid slice number. Value -102.
      * An invalid slice number was passed.
      */
-    static const int16_t ERROR_INVALID_SLICE = MY_PWM_INVALID_SLICE;
+    static const int16_t ERROR_INVALID_SLICE = MY_ERROR_PWM_INVALID_SLICE;
     /**
      * @brief Slice already enabled. Value -103.
      * The slice has already been enabled.
      */
-    static const int16_t ERROR_ALREADY_ENABLED = MY_PWM_SLICE_ALREADY_ENABLED;
+    static const int16_t ERROR_ALREADY_ENABLED = MY_ERROR_PWM_SLICE_ALREADY_ENABLED;
     /**
      * @brief Slice already disabled. Value -104.
      * The slice has already been disabled.
      */
-    static const int16_t ERROR_ALREADY_DISABLED = MY_PWM_SLICE_ALREADY_DISABLED;
+    static const int16_t ERROR_ALREADY_DISABLED = MY_ERROR_PWM_SLICE_ALREADY_DISABLED;
     /**
      * @brief Phase correct enabled. Value -105.
      * Phase correct has already been enabled for this slice.
      */
-    static const int16_t ERROR_PHASE_CORRECT_ENABLED = MY_PWM_PHASE_CORRECT_ENABLED;
+    static const int16_t ERROR_PHASE_CORRECT_ENABLED = MY_ERROR_PWM_PHASE_CORRECT_ENABLED;
     /**
      * @brief Phase correct disabled. Value -106.
      * Phase correct is already disabled on this slice.
      */
-    static const int16_t ERROR_PHASE_CORRECT_DISABLED = MY_PWM_PHASE_CORRECT_DISABLED;
+    static const int16_t ERROR_PHASE_CORRECT_DISABLED = MY_ERROR_PWM_PHASE_CORRECT_DISABLED;
     /**
      * @brief Invalid frequency. Value -107.
      * An invalid frequency was passed.
      */
-    static const int16_t ERROR_INVALID_FREQUENCY = MY_PWM_INVALID_FREQ;
+    static const int16_t ERROR_INVALID_FREQUENCY = MY_ERROR_PWM_INVALID_FREQ;
     /**
      * @brief Invalid channel. Value -108.
      * An invalid channel was passed.
      */
-    static const int16_t ERROR_INVALID_CHANNEL = MY_PWM_INVALID_CHANNEL;
+    static const int16_t ERROR_INVALID_CHANNEL = MY_ERROR_PWM_INVALID_CHANNEL;
     /**
      * @brief Invalid duty. Value -109.
      * An invalid duty was passed. Valid values are 0-100 inclusive.
      */
-    static const int16_t ERROR_INVALID_DUTY = MY_PWM_INVALID_DUTY;
+    static const int16_t ERROR_INVALID_DUTY = MY_ERROR_PWM_INVALID_DUTY;
     /**
      * @brief Invalid divisor integer. Value -110.
      * The integer portion of the supplied divisor is invalid. Must be greater than 0.
      */
-    static const int16_t ERROR_INVALID_DIVISOR_INT = MY_PWM_INVALID_DIVISOR_INT;
+    static const int16_t ERROR_INVALID_DIVISOR_INT = MY_ERROR_PWM_INVALID_DIVISOR_INT;
     /**
      * @brief Invalid divisor fraction. Value -111.
      * The fraction portion of the supplied divisor is invalid. Must be 0-15 inclusive.
      */
-    static const int16_t ERROR_INVALID_DIVISOR_FRAC = MY_PWM_INVALID_DIVISOR_FRAC;
+    static const int16_t ERROR_INVALID_DIVISOR_FRAC = MY_ERROR_PWM_INVALID_DIVISOR_FRAC;
     /**
      * @brief Invalid level. Value -112.
      * The provided level must be less than or equal to wrap.
      */
-    static const int16_t ERROR_INVALID_LEVEL = MY_PWM_INVALID_LEVEL;
+    static const int16_t ERROR_INVALID_LEVEL = MY_ERROR_PWM_INVALID_LEVEL;
 /*
  * ####################### Variables: ###############################
  */

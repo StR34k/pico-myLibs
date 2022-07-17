@@ -41,32 +41,32 @@ namespace mySPI {
      * @brief Invalid clock pin. Value -150.
      * The provided clock pin is not a valid clock pin for the spi port.
      */
-    static const int16_t ERROR_INVALID_CLOCK_PIN = MY_SPI_INVALID_CLOCK_PIN;
+    static const int16_t ERROR_INVALID_CLOCK_PIN = MY_ERROR_SPI_INVALID_CLOCK_PIN;
     /**
      * @brief Invalid MISO pin. Value -151.
      * The provided MISO pin is not a valid MISO pin for the spi port.
      */
-    static const int16_t ERROR_INVALID_MISO_PIN = MY_SPI_INVALID_MISO_PIN;
+    static const int16_t ERROR_INVALID_MISO_PIN = MY_ERROR_SPI_INVALID_MISO_PIN;
     /**
      * @brief Invalid MOSI pin. Value -152.
      * The provided MOSI pin is not a valid MOSI pin for the spi port.
      */
-    static const int16_t ERROR_INVALID_MOSI_PIN = MY_SPI_INVALID_MOSI_PIN;
+    static const int16_t ERROR_INVALID_MOSI_PIN = MY_ERROR_SPI_INVALID_MOSI_PIN;
     /**
      * @brief Invalid chip select pin. Value -153.
      * The provided chip select pin is not a valid chip select pin for the spi port.
      */
-    static const int16_t ERROR_INVALID_CS_PIN = MY_SPI_INVALID_CS_PIN;
+    static const int16_t ERROR_INVALID_CS_PIN = MY_ERROR_SPI_INVALID_CS_PIN;
     /**
      * @brief SPI port initialized. Value -154.
      * The SPI port was already initalized when init called.
      */
-    static const int16_t ERROR_INITIALIZED = MY_SPI_INITIALIZED;
+    static const int16_t ERROR_INITIALIZED = MY_ERROR_SPI_INITIALIZED;
     /**
      * @brief SPI port no initialized. Value -155.
      * The SPI port is not initialized when de init called.
      */
-    static const int16_t ERROR_NOT_INITIALIZED = MY_SPI_NOT_INITIALIZED;
+    static const int16_t ERROR_NOT_INITIALIZED = MY_ERROR_SPI_NOT_INITIALIZED;
 // Pin type ids:
     /** @private */
     static const uint8_t _PIN_CLOCK = 0;

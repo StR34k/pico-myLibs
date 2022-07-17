@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/streak/pico/nnet/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/nnet/build/CMakeFiles /home/streak/pico/pico-myLibs/mySNx4HC595/CMakeFiles/progress.marks
-	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/mySNx4HC595/all
+	cd /home/streak/pico/nnet/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/nnet/build/CMakeFiles /home/streak/pico/pico-myLibs/myNRF2401/CMakeFiles/progress.marks
+	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myNRF2401/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/nnet/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/mySNx4HC595/clean
+	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myNRF2401/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/mySNx4HC595/preinstall
+	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myNRF2401/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/mySNx4HC595/preinstall
+	cd /home/streak/pico/nnet/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myNRF2401/preinstall
 .PHONY : preinstall/fast
 
 # clear depends

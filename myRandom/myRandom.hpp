@@ -13,16 +13,14 @@
 #ifndef MY_RANDOM_H
 #define MY_RANDOM_H
 
+#include <cstdlib>
 #include "hardware/structs/rosc.h"
 #include <pico/time.h>
 #include "../myStandardDefines.hpp"
 #include "../myADC/myADC.hpp"
 /**
  * @brief Random helper functions:
- *  Uses the unconditioned ring oscilator to set the
- *  random seed. We read once a microsecond beacuse
- *  the source is periodic if read too quickly.
- *  Random code provided by: https://github.com/raspberrypi/pico-sdk/issues/569
+ *  Uses the various sources to set the random seed. 
  * 
  */
 namespace myRandom {
@@ -36,7 +34,8 @@ namespace myRandom {
     // Return a single random bit from the random oscilator.
     /**
      * @brief Return a single random bit from the random oscilator
-     * 
+     * We read once a microsecond beacuse the source is periodic if read too quickly.
+     *  Random code provided by: https://github.com/raspberrypi/pico-sdk/issues/569
      * @return Random bit. 
      */
     bool roscRandomBit() {

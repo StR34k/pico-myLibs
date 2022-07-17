@@ -15,7 +15,7 @@
 
 #ifndef MY_ERROR_CODES_H
     #define MY_ERROR_CODES_H
-/************* General Error codes: 4-49 NOTE: error codes -1->-4 are used in <pico/error.h>*****************/
+/************* General Error codes: 4-24 NOTE: error codes -1->-4 are used in <pico/error.h>*****************/
     #ifndef MY_NO_ERROR
         /**
          * @brief No error value.
@@ -38,7 +38,7 @@
         #define MY_INVALID_PIN                                  -5
     #endif
     #ifndef MY_INVALID_BIT_MASK
-        /**
+        /**spin_lock_t
          * @brief invalid bit mask.
          * An invalid bit mask was passed.
          */
@@ -65,7 +65,8 @@
          */
         #define MY_VALUE_ERROR                                  -9
     #endif
-/************** myHelpers error codes (50-99) **********************/
+/*************** RESERVED (25-49) **************************/
+/************** myHelpers error codes (50-74) **********************/
 
     /**
      * @brief Invalid second.
@@ -102,105 +103,140 @@
      * A year value is invalid.
      */
     #define MY_HELPERS_INVALID_YEAR                         -56
-
+/************** RESERVED Error Codes: (75-99) *************/
     
-/************* myPWM error codes (100-149) ******************/
+
+/************* myPWM error codes (100-124) ******************/
     /**
      * @brief Pin not initialized.
      * Initialize has not been called for the pin.
      */
-    #define MY_PWM_PIN_NOT_INIT                             -100
+    #define MY_ERROR_PWM_PIN_NOT_INIT                             -100
     /**
      * @brief Pin already initialized.
      * The pin is already initialized as a PWM pin.
      */
-    #define MY_PWM_PIN_ALREADY_INIT                         -101
+    #define MY_ERROR_PWM_PIN_ALREADY_INIT                         -101
     /**
      * @brief Invalid slice number.
      * An invalid slice number was passed.
      */
-    #define MY_PWM_INVALID_SLICE                            -102
+    #define MY_ERROR_PWM_INVALID_SLICE                            -102
     /**
      * @brief Slice already enabled.
      * The slice has already been enabled.
      */
-    #define MY_PWM_SLICE_ALREADY_ENABLED                    -103
+    #define MY_ERROR_PWM_SLICE_ALREADY_ENABLED                    -103
     /**
      * @brief Slice already disabled.
      * The slice has already been disabled.
      */
-    #define MY_PWM_SLICE_ALREADY_DISABLED                   -104
+    #define MY_ERROR_PWM_SLICE_ALREADY_DISABLED                   -104
     /**
      * @brief Phase correct enabled.
      * Phase correct has already been enabled.
      */
-    #define MY_PWM_PHASE_CORRECT_ENABLED                    -105
+    #define MY_ERROR_PWM_PHASE_CORRECT_ENABLED                    -105
     /**
      * @brief Phase correct disabled.
      * Phase correct has already been disabled.
      */
-    #define MY_PWM_PHASE_CORRECT_DISABLED                   -106
+    #define MY_ERROR_PWM_PHASE_CORRECT_DISABLED                   -106
     /**
      * @brief Invalid frequency.
      * An invalid frequency was passed.
      */
-    #define MY_PWM_INVALID_FREQ                             -107
+    #define MY_ERROR_PWM_INVALID_FREQ                             -107
     /**
      * @brief Invalid channel.
      * An invalid channel was passed.
      */
-    #define MY_PWM_INVALID_CHANNEL                          -108
+    #define MY_ERROR_PWM_INVALID_CHANNEL                          -108
     /**
      * @brief Invalid duty.
      * An invalid duty value was passed (must be between 0-100 inclusive).
      */
-    #define MY_PWM_INVALID_DUTY                             -109
+    #define MY_ERROR_PWM_INVALID_DUTY                             -109
     /**
      * @brief Invalid divisor integer.
      * The provided divisor integer is invalid (must be greater than 0).
      */
-    #define MY_PWM_INVALID_DIVISOR_INT                      -110
+    #define MY_ERROR_PWM_INVALID_DIVISOR_INT                      -110
     /**
      * @brief Invalid divisor fraction.
      * The provided divisor fraction is invalid (must be 0-15 inclusive).
      */
-    #define MY_PWM_INVALID_DIVISOR_FRAC                     -111
+    #define MY_ERROR_PWM_INVALID_DIVISOR_FRAC                     -111
     /**
      * @brief Invalid level.
      * The provided level is greater than wrap value.
      */
-    #define MY_PWM_INVALID_LEVEL                            -112
+    #define MY_ERROR_PWM_INVALID_LEVEL                            -112
+
+/**************** mySpinLock Error codes: (125-149) ************************/
+    /**
+     * @brief No spin lock available.
+     * Pico reports no spinlock unclaimed.
+     */
+    #define MY_ERROR_SPIN_LOCK_NO_LOCK_AVAILABLE                    -125
+    /**
+     * @brief Spin lock not claimed.
+     * Provided spin lock is not claimed.
+     */
+    #define MY_ERROR_SPIN_LOCK_NOT_CLAIMED                          -126
+    /**
+     * @brief Spin lock number invalid.
+     * The spin lock number provided is invalid.
+     */
+    #define MY_ERROR_SPIN_LOCK_INVALID_LOCK_NUM                     -127
+    /**
+     * @brief Spin lock unlocked.
+     * The spin lock is already unlocked.
+     */
+    #define MY_ERROR_SPIN_LOCK_IS_UNLOCKED                          -128
+    /**
+     * @brief Spin lock locked.
+     * The spin lock is already locked.
+     */
+    #define MY_ERROR_SPIN_LOCK_IS_LOCKED                            -129
+    /**
+     * @brief Spin lock is Initialized.
+     * Spin lock is already initialized.
+     */
+    #define MY_ERROR_SPIN_LOCK_IS_INITIALIZED                       -130
+
 /************** mySPI error codes (150-199) ******************/
     /**
      * @brief Invalid clock pin.
      * The provided clock pin is not a valid clock pin for the spi port.
      */
-    #define MY_SPI_INVALID_CLOCK_PIN                        -150
+    #define MY_ERROR_SPI_INVALID_CLOCK_PIN                        -150
     /**
      * @brief Invalid MISO pin.
      * The provided MISO pin is not a valid MISO pin for the spi port.
      */
-    #define MY_SPI_INVALID_MISO_PIN                         -151
+    #define MY_ERROR_SPI_INVALID_MISO_PIN                         -151
     /**
      * @brief Invalid MOSI pin.
      * The provided MOSI pin is not a valid MOSI pin for the spi port.
      */
-    #define MY_SPI_INVALID_MOSI_PIN                         -152
+    #define MY_ERROR_SPI_INVALID_MOSI_PIN                         -152
     /**
      * @brief Invalid chip select pin
      * The provided chip select pin is not a valid chip select pin for the spi port.
      */
-    #define MY_SPI_INVALID_CS_PIN                           -153
+    #define MY_ERROR_SPI_INVALID_CS_PIN                           -153
     /**
      * @brief Port already initialized.
      * The spi port is already initialized.
      */
-    #define MY_SPI_INITIALIZED                              -154
+    #define MY_ERROR_SPI_INITIALIZED                              -154
     /**
      * @brief Port already deinitialized.
      * The spi port is already deinialized.
      */
-    #define MY_SPI_NOT_INITIALIZED                          -155
+    #define MY_ERROR_SPI_NOT_INITIALIZED                          -155
+
 /************* myADC error codes (200-249)  **************/
 // *NOTE: Error codes are such a that the pico would stop operating
 //          if the temperature were ever hit.
