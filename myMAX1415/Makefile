@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/streak/pico/test25aa640a/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/test25aa640a/build/CMakeFiles /home/streak/pico/pico-myLibs/my23LC1024/CMakeFiles/progress.marks
-	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/my23LC1024/all
+	cd /home/streak/pico/test25aa640a/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/test25aa640a/build/CMakeFiles /home/streak/pico/pico-myLibs/myMAX1415/CMakeFiles/progress.marks
+	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myMAX1415/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/streak/pico/test25aa640a/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/my23LC1024/clean
+	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myMAX1415/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/my23LC1024/preinstall
+	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myMAX1415/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/my23LC1024/preinstall
+	cd /home/streak/pico/test25aa640a/build && $(MAKE) -f CMakeFiles/Makefile2 /home/streak/pico/pico-myLibs/myMAX1415/preinstall
 .PHONY : preinstall/fast
 
 # clear depends

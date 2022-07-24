@@ -11,4 +11,6 @@ add_subdirectory("/home/streak/pico/pico-myLibs/myI2C/" "/home/streak/pico/pico-
 add_subdirectory("/home/streak/pico/pico-myLibs/myDS1307/" "/home/streak/pico/pico-myLibs/myDS1307/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myAT24C32/" "/home/streak/pico/pico-myLibs/myAT24C32/")
 add_subdirectory("/home/streak/pico/pico-myLibs/myMCP49x2/" "/home/streak/pico/pico-myLibs/myMCP49x2/")
-add_subdirectory("/home/streak/pico/pico-myLibs/myNRF2401/" "/home/streak/pico/pico-myLibs/myNRF2401/")
+# add_subdirectory("/home/streak/pico/pico-myLibs/myNRF2401/" "/home/streak/pico/pico-myLibs/myNRF2401/")
+add_subdirectory("/home/streak/pico/pico-myLibs/myMAX1415" "/home/streak/pico/pico-myLibs/myMAX1415")
+add_subdirectory("/home/streak/pico/pico-myLibs/my25xx640A" "/home/streak/pico/pico-myLibs/my25xx640A")

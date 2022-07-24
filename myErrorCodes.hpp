@@ -205,7 +205,7 @@
      */
     #define MY_ERROR_SPIN_LOCK_IS_INITIALIZED                       -130
 
-/************** mySPI error codes (150-199) ******************/
+/************** mySPI error codes (150-174) ******************/
     /**
      * @brief Invalid clock pin.
      * The provided clock pin is not a valid clock pin for the spi port.
@@ -236,8 +236,8 @@
      * The spi port is already deinialized.
      */
     #define MY_ERROR_SPI_NOT_INITIALIZED                          -155
-
-/************* myADC error codes (200-249)  **************/
+/*************** RESERVERED (175-199) ****************************/
+/************* myADC error codes (200-224)  **************/
 // *NOTE: Error codes are such a that the pico would stop operating
 //          if the temperature were ever hit.
     /**
@@ -265,8 +265,20 @@
      * The channel was already initialized when operation requested.
      */
     #define MY_ERROR_ADC_CHANNEL_ALREADY_INIT               -204
-
-/************* my23LC1024 error codes (300-349) **********/
+/************** myMAX1415 error codes (225-249) *****************/
+    /**
+     * @brief Invalid update frequency.
+     * The provided frequency is invalid.
+     */
+    #define MY_ERROR_MYMAX1415_INVALID_UPDATE_FREQUENCY     -225
+    /**
+     * @brief Invalid gain.
+     * The provided gain value is invalid.
+     */
+    #define MY_ERROR_MYMAX1415_INVALID_GAIN                 -226
+/************** RESERVED error codes (250-274) *******************/
+/************** RESERVED error codes (275-299) *******************/
+/************* my23LC1024 error codes (300-324) **********/
     /**
      * @brief Sram held.
      * Sram is set to HOLD when operation was requested.
@@ -322,7 +334,42 @@
      * Communications couldn't be verified.
      */
     #define MY_ERROR_MY23LC1024_COMM_CHECK_FAILED           -310
-
+/*************** my25xx640A Error codes (325-349)*******************/
+    /**
+     * @brief Invalid address.
+     * Invalid address was provided.
+     */
+    #define MY_ERROR_MY25xx640A_INVALID_ADDRESS             -325
+    /**
+     * @brief EEPROM is held.
+     * The EEPROM is held.
+     */
+    #define MY_ERROR_MY25xx640A_EEPROM_HELD                 -326
+    /**
+     * @brief EEPROM is busy.
+     * The EEPROM is already BUSY, or BUSY when action requested.
+     */
+    #define MY_ERROR_MY25xx640A_EEPROM_BUSY                 -327
+    /**
+     * @brief EEPROM idle.
+     * The EEPROM is already IDLE, or IDLE when action requested.
+     */
+    #define MY_ERROR_MY25xx640A_EEPROM_IDLE                 -328
+    /**
+     * @brief Hold pin not defined.
+     * The Hold pin wasn't defined during construction.
+     */
+    #define MY_ERROR_MY25xx640A_HOLD_NOT_DEFINED            -329
+    /**
+     * @brief Not reading.
+     * EEPROM is not in reading state when action requested.
+     */
+    #define MY_ERROR_MY25xx640A_NOT_READING                 -330
+    /**
+     * @brief Not writing.
+     * EEPROM is not in writing state when action requested.
+     */
+    #define MY_ERROR_MY25xx640A_NOT_WRITING                 -331
 /*************** mySNx4HC165 error codes (350-399) *****************/
     /**
      * @brief Enable pin not defined.

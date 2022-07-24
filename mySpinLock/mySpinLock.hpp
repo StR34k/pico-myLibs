@@ -16,11 +16,21 @@
 #include "../myStandardDefines.hpp"
 #include "../myErrorCodes.hpp"
 
+volatile uint32_t _myLocksInit; // What locks have been initialized on a class wide basis.
+volatile uint32_t _myLocksClaimed; // What locks have been claimed on a class wide basis.
+
+
+
+
 class mySpinLock {
     
     public:
 
 /* ################ Constants: ################## */
+        /**
+         * @brief Generate lock number value
+         */
+        static const int16_t GENERATE_LOCK_NUM = -1;
     // Status Codes:
         /**
          * @brief Lock is unlocked.
@@ -72,26 +82,10 @@ class mySpinLock {
          */
         static const int16_t ERROR_IS_INITIALIZED = MY_ERROR_SPIN_LOCK_IS_INITIALIZED;
 
-/* ##################### Constructor ################### */
-        mySpinLock(const int16_t lockNum) : _lockNum (lockNum) {};
+/* ##################### Constructors: ################### */
+        mySpinLock(const int16_t lockNum);
 
 /* ######################## Public Functions: ############### */
-        
-        /**
-         * @brief Get the Free Lock number.
-         * Static method to get and claim the next free lock.
-         * @param required True = panic if no lock available, False, returns error if no lock available.
-         * @return int16_t Positive = Lock number, Negative  = error code.
-         */
-        static int16_t getFreeLock(const bool required=false);
-        /**
-         * @brief Validate a lock number.
-         * Validate a lock number. Returns true if valid, false if  not.
-         * @param lockNum Lock number to verify.
-         * @return true Lock number is valid.
-         * @return false Lock number is invalid. 
-         */
-        bool isValidLockNum(const int16_t lockNum);
         /**
          * @brief Lock the spin lock, blocking
          * Returns 0 (NO_ERROR) if locked okay, otherwise returns an error code.
@@ -105,27 +99,25 @@ class mySpinLock {
          */
         int16_t unlock();
         /**
-         * @brief Get if the spin lock has been initialized.
-         * Returns true if the spin lock has been initialized, otherwise it returns false.
-         * @return true Spin lock initialized.
-         * @return false Spin lock not initialized or invalid lockNUM.
+         * @brief Check if the spin lock is locked.
+         * Checks if the spin lock is locked. Returns 0 (STATUS_UNLOCKED) if unlocked,
+         * 1 (STATUS_LOCKED_REMOTELY) if lock is held some where other than this instance, or
+         * 2 (STATUS_LOCKED_LOCALLY) if lock is held by this instance.
+         * @return int16_t Returns 0(STATUS_UNLOCKED), 1 (STATUS_LOCKED_REMOTELY), or 2 
+         * (STATUS_LOCKED_LOCALLY).
          */
-        bool getInitialized();
+        int16_t isLocked();
         /**
-         * @brief Initialize the spin lock.
-         * Returns 0 (NO_ERROR) if initialized okay, otherwise if already initialized or an
-         * invalid lockNum is passed during construction, an error code is returned.
-         * @return int16_t Returns 0 (NO_ERROR) if initialized okay, negative for error code.
+         * @brief Get the Lock number.
+         * Returns the lock number.
+         * @return int16_t Lock number.
          */
-        int16_t initialize();
+        int16_t getLockNum();
 
     private:
-/* ############### Private Constants: ################## */
-        const int16_t _lockNum;
 /* ############### Private Variables: #################### */
 
-        static uint32_t _myLocksInit; // What locks have been initialized on a class wide basis.
-        static uint32_t _myLocksClaimed; // What locks have been claimed on a class wide basis.
+        int _lockNum; // The lock number.
         spin_lock_t *_lock; // My spin lock instance.
         uint32_t _irq;      // Saved IRQ's
         uint32_t _isLocked=false; // If we've locked .
@@ -136,23 +128,33 @@ class mySpinLock {
         static bool __getClaimed__(const int16_t lockNum);
 };
 
-/* ################# Public Functions: ################## */
-int16_t mySpinLock::getFreeLock(const bool required=false) {
-    int lockNum;
-    lockNum = spin_lock_claim_unused(required);
-    if (lockNum < 0) { return ERROR_NO_LOCK_AVAILABLE; }
-    __setClaimed__(lockNum, true);
-    return (int16_t)lockNum;
+
+/* ################# Constructors: ##################### */
+
+mySpinLock::mySpinLock(const int16_t lockNum) {
+
+    if (lockNum < 0) {
+        _lockNum = spin_lock_claim_unused(true);
+        __setClaimed__(_lockNum, true);
+        _lock = spin_lock_init(_lockNum);
+        __setInit__(_lockNum, true);
+    } else {
+        _lockNum = lockNum;
+        _lock = spin_lock_instance(_lockNum);
+        if (__getClaimed__(_lockNum) == false) {
+            spin_lock_claim(_lockNum);
+            __setClaimed__(_lockNum, true);
+        }
+        if (__getInit__(_lockNum) == false) {
+            spin_lock_init(_lockNum);
+            __setInit__(_lockNum, true);
+        }
+    }
 }
 
-bool mySpinLock::isValidLockNum(const int16_t lockNum) {
-    if (lockNum < 0 or lockNum >= MY_NUM_SPIN_LOCKS) { return false; }
-    return true;
-}
+/* ################# Public Functions: ################## */
 
 int16_t mySpinLock::lockBlocking() {
-    if (isValidLockNum(_lockNum) == false) { return ERROR_INVALID_LOCK_NUM; }
-    if (__getClaimed__(_lockNum) == false) { return ERROR_NOT_CLAIMED; }
     if (_isLocked == true) { return ERROR_IS_LOCKED; }
     _irq = spin_lock_blocking(_lock);
     _isLocked = true;
@@ -160,52 +162,20 @@ int16_t mySpinLock::lockBlocking() {
 }
 
 int16_t mySpinLock::unlock() {
-    if (isValidLockNum(_lockNum) == false) { return ERROR_INVALID_LOCK_NUM; }
-    if (__getClaimed__(_lockNum) == false) { return ERROR_NOT_CLAIMED; }
     if (_isLocked == false) { return ERROR_IS_UNLOCKED; }
     spin_unlock(_lock, _irq);
     _isLocked = false;
     return NO_ERROR;
 }
 
-bool mySpinLock::getInitialized() {
-    if (isValidLockNum(_lockNum) == false) { return false; }
-    return __getInit__(_lockNum);
+int16_t mySpinLock::isLocked() {
+    if (_isLocked == true) { return STATUS_LOCKED_LOCALLY; }
+    return (int16_t)is_spin_locked(_lock);
 }
 
-int16_t mySpinLock::initialize() {
-    if (isValidLockNum(_lockNum) == false) { return ERROR_INVALID_LOCK_NUM; }
-    if (__getInit__(_lockNum) == true) {
-        _lock = spin_lock_instance(_lockNum);
-        return ERROR_IS_INITIALIZED;
-    }
-    spin_lock_claim(_lockNum);
-    _lock = spin_lock_init(_lockNum);
-    __setInit__(_lockNum, true);
+int16_t mySpinLock::getLockNum() {
+    return _lockNum;
 }
-
-
-
-
-// int16_t isLocked(const int16_t lockNum) {
-//     if (isValidLockNum(lockNum) == false) {return ERROR_INVALID_LOCK_NUM; }
-//     if (__getClaimed__(lockNum) == false) { return ERROR_NOT_CLAIMED; }
-//     if (__getLocked__(lockNum) == true) { return STATUS_LOCKED_LOCALLY; }
-//     return is_spin_locked(_locks[lockNum]);
-// }
-
-// }
-
-// int16_t unlock(const int16_t lockNum) {
-//     if (isValidLockNum(lockNum) == false) { return ERROR_INVALID_LOCK_NUM; }
-//     if (__getClaimed__(lockNum) == false) { return ERROR_NOT_CLAIMED; }
-//     if (__getLocked__(lockNum) == false) { return ERROR_IS_UNLOCKED; }
-//     spin_unlock(_locks[lockNum], _irqs[lockNum]);
-//     __setLocked__(lockNum, false);
-//     return NO_ERROR;
-// }
-
-
 /* ################# Private Functions: ##################### */
 
 void mySpinLock::__setInit__(const int16_t lockNum, const bool value) {
