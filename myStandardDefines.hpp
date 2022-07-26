@@ -20,6 +20,16 @@
   */
 #ifndef MY_STANDARD_DEFINES_H
     #define MY_STANDARD_DEFINES_H
+
+/*
+ * ############# HIGH / LOW defines ##################
+ */
+    #ifndef HIGH
+        #define HIGH 1
+    #endif
+    #ifndef LOW
+        #define LOW 0
+    #endif
 /*
  * ############################# General Pin defines  ############################
  */

@@ -370,6 +370,26 @@
      * EEPROM is not in writing state when action requested.
      */
     #define MY_ERROR_MY25xx640A_NOT_WRITING                 -331
+    /**
+     * @brief EEPROM not held.
+     * EEPROM is not held when action requested.
+     */
+    #define MY_ERROR_MY25xx640A_NOT_HELD                    -332
+    /**
+     * @brief Invalid write protect block.
+     * Invalid write protect block passed.
+     */
+    #define MY_ERROR_MY25xx640A_INVALID_BLOCK               -333
+    /**
+     * @brief Write protected.
+     * The address is write protected at time of write, or already write protected.
+     */
+    #define MY_ERROR_MY25xx640A_WRITE_PROTECTED             -334
+    /**
+     * @brief Not write protected.
+     * The write protect is already disabled.
+     */
+    #define MY_ERROR_MY25xx640A_NOT_WRITE_PROTECTED         -335
 /*************** mySNx4HC165 error codes (350-399) *****************/
     /**
      * @brief Enable pin not defined.

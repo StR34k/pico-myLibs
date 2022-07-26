@@ -24,6 +24,11 @@ class my25xx640A {
     // EEPROM constants:
         static const int16_t MAX_ADDRESS = 0x1FFF; // 0b ---1 1111 1111 1111
         static const int8_t PAGE_SIZE = 32; // Write page size.
+    // Block protect constants: (Shifted by 2)
+        static const uint8_t BP_NONE            = 0x00; // 0b ---- 00--
+        static const uint8_t BP_UPPER_QUARTER   = 0x01; // 0b ---- 01--
+        static const uint8_t BP_UPPER_HALF      = 0x02; // 0b ---- 10--
+        static const uint8_t BP_ALL             = 0x03; // 0b ---- 11--
     // Error Codes:
         /**
          * @brief No error. Value 0.
@@ -60,10 +65,70 @@ class my25xx640A {
          * Hold pin was not defined during construction.
          */
         static const int16_t ERROR_HOLD_NOT_DEFINED = MY_ERROR_MY25xx640A_HOLD_NOT_DEFINED;
+        /**
+         * @brief Not in reading state. Value -330.
+         * Not in reading state when read requested.
+         */
         static const int16_t ERROR_NOT_READING = MY_ERROR_MY25xx640A_NOT_READING;
+        /**
+         * @brief Not in writing state. Value -331.
+         * Not in writing state when write requested.
+         */
         static const int16_t ERROR_NOT_WRITING = MY_ERROR_MY25xx640A_NOT_WRITING;
-
+        /**
+         * @brief Not held. Value -332.
+         * EEPROM not held when action requested.
+         */
+        static const int16_t ERROR_NOT_HELD = MY_ERROR_MY25xx640A_NOT_HELD;
+        /**
+         * @brief Invalid block protect value. Value -333.
+         * Invalid block protect value passed.
+         */
+        static const int16_t ERROR_INVALID_BLOCK = MY_ERROR_MY25xx640A_INVALID_BLOCK;
+        /**
+         * @brief Address write protected. Value -334.
+         * The address is write protected at time of write, or is already write protected
+         * when write protect was called.
+         */
+        static const int16_t ERROR_WRITE_PROTECTED = MY_ERROR_MY25xx640A_WRITE_PROTECTED;
+        /**
+         * @brief Not write protected. Value -335.
+         * The write protect was already disabled when write protect clear was called.
+         */
+        static const int16_t ERROR_NOT_WRITE_PROTECTED = MY_ERROR_MY25xx640A_NOT_WRITE_PROTECTED;
 /* ############ Constructors: ############### */
+        /**
+         * @brief Construct a new my25xx640A object, no hold, no write protect.
+         * Create a new my25xx640A object. Without hold and write protect pin. When writing assumes
+         * wp is disabled, and attempts the write, and assumes success. If write prtotect is enabled
+         * no data is actually written.
+         * @param spiPort SPI instance.
+         * @param sckPin Clock pin.
+         * @param misoPin MISO pin.
+         * @param mosiPin MOSI pin.
+         * @param csPin Chip select pin.
+         */
+        my25xx640A(spi_inst_t *spiPort, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
+                        const uint8_t csPin) : _sckPin (sckPin), _misoPin (misoPin), _mosiPin (mosiPin),
+                        _csPin (csPin) {
+            _spiPort = spiPort;
+        }
+        /**
+         * @brief Construct a new my25xx640A object, with hold, no write protect.
+         * Creates a new my25xx640A object with hold, and without write protect. If write protection is
+         * enabled and write is called, the write assumes success, even though no data is written.
+         * @param spiPort SPI port instance.
+         * @param sckPin Clock pin.
+         * @param misoPin MISO pin.
+         * @param mosiPin MOSI pin.
+         * @param csPin Chip select pin.
+         * @param holdPin Hold pin.
+         */
+        my25xx640A(spi_inst_t *spiPort, const uint8_t sckPin, const uint8_t misoPin, const uint8_t mosiPin,
+                        const uint8_t csPin, const uint8_t holdPin) : _sckPin (sckPin), _misoPin (misoPin),
+                        _mosiPin (mosiPin), _csPin (csPin), _holdPin (holdPin) {
+            _spiPort = spiPort;
+        }
         /**
          * @brief Construct a new my25xx640A Object.
          * Create a new my25xx640A object. If holdPin, or wpPin are set to invalid pins, then their
@@ -92,6 +157,14 @@ class my25xx640A {
          */
         bool isValidAddress(const int16_t address);
         /**
+         * @brief Check if a block is valid.
+         * Verifies a block setting for write protection mode.
+         * @param block Block to verify
+         * @return true Block is valid.
+         * @return false Block is invalid.
+         */
+        bool isValidBlock(const uint8_t block);
+        /**
          * @brief Start a read.
          * Starts a read from the EEPROM, returns 0 (NO_ERROR) if started okay, otherwise if the EEPROM
          * is held, or EEPROM is not idle, or an invalid address is passed, an error code is returned.
@@ -116,6 +189,76 @@ class my25xx640A {
          */
         int16_t readByte();
         /**
+         * @brief Start a write.
+         * Starts a write at given address. Returns 0 (NO_ERROR) if started okay, otherwise if
+         * not idle an error code is returned.
+         * @param address Address to start write at
+         * @return int16_t Returns 0 (NO_ERROR) if started okay, negative for error code.
+         */
+        int16_t startWrite(const int16_t address);
+        /**
+         * @brief Write a buffer to the EEPROM.
+         * Writes a buffer to the EEPROM. Returns 0 if written okay, otherwise if not writing or
+         * if held, an error code is returned.  TODO: Add write protect error.
+         * @param sendBuffer Buffer to send to EEPROM
+         * @param len Length of buffer.
+         * @return int16_t Return 0 (NO_ERROR) if written okay, negative for error code.
+         */
+        int16_t write(const uint8_t *sendBuffer, size_t len);
+        /**
+         * @brief Write a byte to the EEPROM.
+         * Writes a single byte to the EEPROM. Retuns 0 if written okay, Otherwise if not writing, or
+         * is held, an error code is returned. TODO: Add write protect error.
+         * @param value Value to write to the EEPROM.
+         * @return int16_t Returns 0 (NO_ERROR) for okay, negaitve for error code.
+         */
+        int16_t writeByte(const uint8_t value);
+        /**
+         * @brief Stop a read / write.
+         * Stops a read / write, returns 0 (NO_ERROR) if stopped okay, otherwise if idle, or if
+         * held an error code is returned.
+         * @return int16_t Return 0 (NO_ERROR) if stopped okay, negative of error code.
+         */
+        int16_t stop();
+        /**
+         * @brief Set the hold pin.
+         * Sets the hold pin. Returns 0 (NO_ERROR) if held okay, otherwise if already held, or
+         * not in an active state, an error code is returned.
+         * @return int16_t Return 0 (NO_ERROR) on success, negative for error code.
+         */
+        int16_t setHold();
+        /**
+         * @brief Clear the hold pin.
+         * Clears the hold. Returns 0 (NO_ERROR) on success, otherwise if not held, or idle,
+         * an error code is returned.
+         * @return int16_t Returns 0 (NO_ERROR) on success, negative for error code.
+         */
+        int16_t clearHold();
+        /**
+         * @brief Set the Write Protect Block.
+         * Sets the write protect block. Returns 0 (NO_ERROR) if set okay, otherwise if busy, or if
+         * the write protect is enabled, an error code is returned.
+         * @param block Block value to set. Valid values (0x00-0x03), BP_* values are provided.
+         * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
+         */
+        int16_t setWriteProtectBlock(const uint8_t block);
+        /**
+         * @brief Enable write protect.
+         * Enables the write protect. If the Write protect pin is not defined, the pin is assumed to be
+         * tied high. Returns 0 (NO_ERROR) if set okay, otherwise if the write protect is already enabled,
+         * or if the deviece is busy, an error code is returned.
+         * @return int16_t Returns 0 (NO_ERROR) if set okay, negative for error code.
+         */
+        int16_t setWriteProtect();
+        /**
+         * @brief Disable write protect.
+         * Disables the write protect. If the write protect pin is not defined, the pin is assue to be
+         * tied high.  Returns 0 (NO_ERROR) if cleared okay, otherwise if already disabled, or if the
+         * device is busy an error code is returned.
+         * @return int16_t Returns 0 (NO_ERROR) if cleared okay, negative for error code.
+         */
+        int16_t clearWriteProtect();
+        /**
          * @brief Initialize the EEPROM.
          * Initializes the SPI bus, and sets the current state. Returns 0 (NO_ERROR) if intialized okay, otherwise
          * if an invalid pin is passed during construction, an error code is returned.
@@ -136,6 +279,14 @@ class my25xx640A {
         const uint8_t CMD_WRSR  = 0x01;      // Write status register.
     // Timing:
         const uint8_t WRITE_TIME_MS = 5; // Internal write cyce time.
+    // Status byte masks:
+        const uint8_t STATUS_WPEN_MASK  = 0x80; // 0b 1--- ----
+        const uint8_t STATUS_BP_MASK    = 0x0C; // 0b ---- 11--
+        const uint8_t STATUS_WEL_MASK   = 0x02; // 0b ---- --1-
+        const uint8_t STATUS_WIP_MASK   = 0x01; // 0b ---- ---1
+    // Block protection addresses:
+        const int16_t BP_UPPER_QUARTER_ADDR = 0x1800;
+        const int16_t BP_UPPER_HALF_ADDR    = 0x1000;
     // State masks and values:
         const uint8_t STATE_READ_WRITE_MASK = 0x03; // 0b ---- --11
         const uint8_t STATE_IDLE_VALUE      = 0x00; // 0b ---- --00
@@ -157,6 +308,8 @@ class my25xx640A {
         bool _haveHold = false;
         bool _haveWP = false;
         uint8_t _state = 0x00;
+        int16_t _address = 0x0000;
+        uint8_t _block = 0x00;
 /* ############### Private Functions: ############# */
     // State functions:
         inline bool __isIdle__();      // Check read write bits = Idle.
@@ -169,6 +322,11 @@ class my25xx640A {
         inline void __setHold__(const bool value); // Set / clear hold bit.
         inline bool __isWriteProtect__(); // Check write protect bit.
         inline void __setWriteProtect__(const bool value); // Set / clear write protect bit.
+        inline int16_t __incAddress__(); // Increment the stored address.
+        int16_t __calculateNextBoundary__(); // Use _address to calculate the next boundary.
+        void __writeByte__(const uint8_t value); // Write a single byte, and restart write if boundary crossed. Increments address.
+        uint8_t __readStatus__(); // Read and return the status byte.
+        void __writeStatus__(const uint8_t value); // Write the status register to value.
 
 };
 
@@ -178,23 +336,147 @@ bool my25xx640A::isValidAddress(const int16_t address) {
     return true;
 }
 
+bool my25xx640A::isValidBlock(const uint8_t block) {
+    if (block > BP_ALL) { return false; }
+    return true;
+}
+
 int16_t my25xx640A::startRead(const int16_t address) {
     uint8_t dataBuffer[3];
     if (isValidAddress(address) == false) { return ERROR_INVALID_ADDRESS; }
-    if (__isHeld__() == true) { return ERROR_HELD; }
     if (__isIdle__() == false) { return ERROR_BUSY; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
     dataBuffer[0] = CMD_READ;
     dataBuffer[1] = uint8_t(address >> 8);
     dataBuffer[2] = uint8_t(address);
     gpio_put(_csPin, false);
     spi_write_blocking(_spiPort, dataBuffer, 3);
+    _address = address;
     __setReading__();
     return NO_ERROR;
 }
 
 int16_t my25xx640A::read(uint8_t *recvBuffer, size_t len) {
     if (__isReading__() == false) { return ERROR_NOT_READING; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
     spi_read_blocking(_spiPort, 0x00, recvBuffer, len);
+    _address += len;
+    if (_address > MAX_ADDRESS) { _address -= MAX_ADDRESS; }
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::readByte() {
+    if (__isReading__() == false) { return ERROR_NOT_READING; }
+    if (__isHeld__() == true ) { return ERROR_HELD; }
+    uint8_t readValue;
+    spi_read_blocking(_spiPort, 0x00, &readValue, 1);
+    __incAddress__();
+    return int16_t(readValue);
+}
+
+int16_t my25xx640A::startWrite(const int16_t address) {
+    uint8_t dataBuffer[3];
+    if (isValidAddress(address) == false) { return ERROR_INVALID_ADDRESS; }
+    if (__isIdle__() == false) { return ERROR_BUSY; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
+    gpio_put(_csPin, false);
+    spi_write_blocking(_spiPort, &CMD_WREN, 1);
+    gpio_put(_csPin, true);
+    dataBuffer[0] = CMD_WRITE;
+    dataBuffer[1] = uint8_t(address >> 8);
+    dataBuffer[2] = uint8_t(address);
+    gpio_put(_csPin, false);
+    spi_write_blocking(_spiPort, dataBuffer, 3);
+    _address = address;
+    __setWriting__();
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::write(const uint8_t *sendBuffer, size_t len) {
+    uint8_t pageBuffer[PAGE_SIZE];
+    if (__isWriting__() == false) { return ERROR_NOT_WRITING; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
+    for (size_t i=0; i<len; i++) {
+        __writeByte__(sendBuffer[i]);
+    }
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::writeByte(const uint8_t value) {
+    if (__isWriting__() == false) { return ERROR_NOT_WRITING; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
+    __writeByte__(value);
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::stop() {
+    if (__isIdle__() == true) { return ERROR_IDLE; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
+    gpio_put(_csPin, true);
+    if (__isWriting__() == true) {
+        sleep_ms(WRITE_TIME_MS);
+    }
+    __setIdle__();
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::setHold() {
+    if (_haveHold == false) { return ERROR_HOLD_NOT_DEFINED; }
+    if (__isHeld__() == true) { return ERROR_HELD; }
+    if (__isIdle__() == true) { return ERROR_IDLE; }
+    gpio_put(_holdPin, false);
+    __setHold__(true);
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::clearHold() {
+    if (_haveHold == false) { return ERROR_HOLD_NOT_DEFINED; }
+    if (__isHeld__() == false) { return ERROR_NOT_HELD; }
+    if (__isIdle__() == true) { return ERROR_IDLE; }
+    gpio_put(_holdPin, true);
+    __setHold__(false);
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::setWriteProtectBlock(const uint8_t block) {
+    uint8_t status;
+    if (isValidBlock(block) == false) { return ERROR_INVALID_BLOCK; }
+    if (__isIdle__() == false) { return ERROR_BUSY; }
+    if (__isWriteProtect__() == true) { return ERROR_WRITE_PROTECTED; }
+    status = __readStatus__();
+    status &= ~STATUS_BP_MASK; // Clear block protect.
+    status |= block << 2; // Set block protect.
+    __writeStatus__(status);
+    _block = block;
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::setWriteProtect() {
+    uint8_t status;
+    if (__isWriteProtect__() == true) { return ERROR_WRITE_PROTECTED; }
+    if (__isIdle__() == false) { return ERROR_BUSY; }
+    status = __readStatus__();
+    status |= STATUS_WPEN_MASK;
+    __writeStatus__(status);
+    if (_haveWP == true) {
+        gpio_put(_wpPin, false);
+    }
+    __setWriteProtect__(true);
+    return NO_ERROR;
+}
+
+int16_t my25xx640A::clearWriteProtect() {
+    uint8_t status;
+    if (__isIdle__() == false) { return ERROR_BUSY; }
+    if (__isWriteProtect__() == false) { return ERROR_NOT_WRITE_PROTECTED; }
+    if (_haveWP == true) {
+        gpio_put(_wpPin, true);
+    }
+    status = __readStatus__();
+    status &= ~STATUS_WPEN_MASK;
+    __writeStatus__(status);
+    __setWriteProtect__(false);
+    return NO_ERROR;
 }
 
 int16_t my25xx640A::initialize(const bool initSPI, const float VCC) {
@@ -217,20 +499,19 @@ int16_t my25xx640A::initialize(const bool initSPI, const float VCC) {
     gpio_init(_csPin);
     gpio_set_dir(_csPin, GPIO_OUT);
     gpio_put(_csPin, true);
-    // Hold pin.
+
     if (myHelpers::isPin(_holdPin) == true) {
         gpio_init(_holdPin);
         gpio_set_dir(_holdPin, GPIO_OUT);
         gpio_put(_holdPin, true);
-        _haveHold = true;
     }
-    // Write protect pin:
+
     if (myHelpers::isPin(_wpPin) == true) {
         gpio_init(_wpPin);
         gpio_set_dir(_wpPin, GPIO_OUT);
         gpio_put(_wpPin, true);
-        _haveWP = true;
     }
+    return NO_ERROR;
 }
 
 /* ############## Private Functions: #################### */
@@ -284,5 +565,51 @@ inline void my25xx640A::__setWriteProtect__(const bool value) {
     }
 }
 
+inline int16_t my25xx640A::__incAddress__() {
+    int16_t returnValue = _address++;
+    if (_address > MAX_ADDRESS) { _address = 0; }
+    return returnValue;
+}
 
+int16_t my25xx640A::__calculateNextBoundary__() {
+    return (_address + (PAGE_SIZE - (_address % PAGE_SIZE) -1));
+}
+
+
+void my25xx640A::__writeByte__(const uint8_t value) {
+    uint8_t addressBuffer[3];
+    spi_write_blocking(_spiPort, &value, 1);
+    int16_t boundary = __calculateNextBoundary__();
+    if (_address == boundary) {
+        gpio_put(_csPin, true);
+        sleep_ms(WRITE_TIME_MS);
+        gpio_put(_csPin, false);
+        spi_write_blocking(_spiPort, &CMD_WREN, 1);
+        gpio_put(_csPin, true);
+        __incAddress__();
+        addressBuffer[0] = CMD_WRITE;
+        addressBuffer[1] = uint8_t(_address >> 8);
+        addressBuffer[2] = uint8_t(_address);
+        gpio_put(_csPin, false);
+        spi_write_blocking(_spiPort, addressBuffer, 3);
+    } else {
+        __incAddress__();
+    }
+}
+
+uint8_t my25xx640A::__readStatus__() {
+    uint8_t status;
+    gpio_put(_csPin, false);
+    spi_write_blocking(_spiPort, &CMD_RDSR, 1);
+    spi_read_blocking(_spiPort, 0x00, &status, 1);
+    gpio_put(_csPin, true);
+    return status;
+}
+
+uint8_t my25xx640A::__writeStatus__(const uint8_t value) {
+    gpio_put(_csPin, false);
+    spi_write_blocking(_spiPort, &CMD_WRSR, 1);
+    spi_write_blocking(_spiPort, &value, 1);
+    gpio_put(_csPin, true);
+}
 #endif
