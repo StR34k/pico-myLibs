@@ -376,6 +376,7 @@ bool my25xx640A::isAddressWriteProtected(const int16_t address) {
         case BP_NONE:
             return false;
     }
+    return false;
 }
 
 int16_t my25xx640A::startRead(const int16_t address) {
