@@ -5,6 +5,7 @@
 Random helpers.  
 
 
+{\ttfamily \#include $<$cstdlib$>$}\newline
 {\ttfamily \#include \char`\"{}hardware/structs/rosc.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$pico/time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
@@ -20,12 +21,12 @@ Include dependency graph for my\+Random.\+hpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacemy_random}{my\+Random}}
-\begin{DoxyCompactList}\small\item\em Random helper functions\+: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Random helper functions\+: Uses the various sources to set the random seed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespacemy_random_ae848cb202320c7f66c45510dac700d51}{my\+Random\+::rosc\+Random\+Bit}} ()
-\begin{DoxyCompactList}\small\item\em Return a single random bit from the random oscilator. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Return a single random bit from the random oscilator We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_random_a6235e7827e6c3d291181b9382e52e343}{my\+Random\+::rosc\+Random\+Byte}} ()
 \begin{DoxyCompactList}\small\item\em Return a random byte from the random oscilator. \end{DoxyCompactList}\item 
 uint \mbox{\hyperlink{namespacemy_random_a51f5ef73de0142d0678191c18baf73d6}{my\+Random\+::rosc\+Random\+Word}} ()

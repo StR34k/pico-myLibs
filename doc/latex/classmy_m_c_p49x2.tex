@@ -16,7 +16,7 @@ enum \mbox{\hyperlink{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409}{model
 \mbox{\hyperlink{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409a6efeda393307332fb1e44ce17f31e28e}{M\+O\+D\+E\+L\+\_\+\+M\+C\+P4912}}, 
 \mbox{\hyperlink{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409ac7df410ce237f6956b36717556507d82}{M\+O\+D\+E\+L\+\_\+\+M\+C\+P4922}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Models This class works with. Chip model numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,17 +32,17 @@ enum \mbox{\hyperlink{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409}{model
 \begin{DoxyCompactList}\small\item\em Construct a new my M\+C\+P49x2 object, HW S\+PI with load pin. Construct the object. Uses hardware S\+PI, with a load pin. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classmy_m_c_p49x2_abd5905ec171d22c911879d4198f095e5}{my\+M\+C\+P49x2}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t load\+Pin, const uint8\+\_\+t shdn\+Pin)
 \begin{DoxyCompactList}\small\item\em Construct a new my M\+C\+P49x2 object, HW S\+PI with load and shutdown pins. Construct the object. Uses hardware S\+PI, with load and shutdown pins, if the load pin functionality isn\textquotesingle{}t desired, then it can be set to an invalid value, IE\+: M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN, to disable it. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classmy_m_c_p49x2_aa7f7535c7f4c072e85e75b06178efe85}{is\+Valid\+Value}} (const uint16\+\_\+t value)
+bool \mbox{\hyperlink{classmy_m_c_p49x2_a8ac6bf01c9e3e9d355f9d1bd5ac63991}{is\+Valid\+Value}} (const int16\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Check value. Check that a given value is valid for the model initialized. \end{DoxyCompactList}\item 
-uint16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_adaa31631ed0715ee5cd29d64647669b4}{get\+ChannelA}} ()
+int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_a99883d95dce73ac20dec5db40a036cd3}{get\+ChannelA}} ()
 \begin{DoxyCompactList}\small\item\em Get the Channel A value. Returns the value set for channel A. \end{DoxyCompactList}\item 
-int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_acaedf8eda26d5359ce7e52aaec2e9f3a}{set\+ChannelA}} (const uint16\+\_\+t value)
+int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_a447b0e8a06f71363c8b50c9e2927873e}{set\+ChannelA}} (const int16\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Set the Channel A Value. Sets the value for channel A. Valid values are dependant on model number initialized. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed an error code is returned. \end{DoxyCompactList}\item 
-uint16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_a9e4c8773604bc2b030acf0d71d1fbeea}{get\+ChannelB}} ()
+int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_a7ad0f001cc45c8278412c836df8200ea}{get\+ChannelB}} ()
 \begin{DoxyCompactList}\small\item\em Get the Channel B value. Returns the value of channel B. \end{DoxyCompactList}\item 
-int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_ae8ca9bb9c2949c21b39aa21dfb5cbfdf}{set\+ChannelB}} (const uint16\+\_\+t value)
+int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_a0249348768b195817542c3ada3c1cfe1}{set\+ChannelB}} (const int16\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Set the Channel B Value. Sets the value for channel B. Valid values are dependant on model number initialized. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed, an error code is returned. \end{DoxyCompactList}\item 
-int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_a2e8f50a6cb70120055f917fd1d196b34}{set\+Channels}} (const uint16\+\_\+t valueA, const uint16\+\_\+t valueB, const bool first\+Channel=\mbox{\hyperlink{classmy_m_c_p49x2_aa4f07acff5f273303cc2afe11aacc07f}{C\+H\+A\+N\+N\+E\+L\+\_\+A}})
+int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_afdb63cca3f3e33015545d4b6a7a802a7}{set\+Channels}} (const int16\+\_\+t valueA, const int16\+\_\+t valueB, const bool first\+Channel=\mbox{\hyperlink{classmy_m_c_p49x2_aa4f07acff5f273303cc2afe11aacc07f}{C\+H\+A\+N\+N\+E\+L\+\_\+A}})
 \begin{DoxyCompactList}\small\item\em Set both channels. Sets both channels to the given values. The order in which they are set is determined by the first\+Channel parameter. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if an invalid value is passed an error code is returned. \end{DoxyCompactList}\item 
 int16\+\_\+t \mbox{\hyperlink{classmy_m_c_p49x2_aa41857b5b9bc7a349a5b5f50d21488cd}{load}} ()
 \begin{DoxyCompactList}\small\item\em Load the D\+AC Loads values into the D\+AC if the load / L\+D\+AC pin is defined. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if loaded okay otherwise if the load pin is not defined, an error code is returned. \end{DoxyCompactList}\item 
@@ -88,6 +88,10 @@ High level class for controling M\+C\+P4902/4912/4922. Class to control a M\+C\+
 \index{models@{models}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{models}{models}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409}{my\+M\+C\+P49x2\+::models}}}
+
+
+
+Models This class works with. Chip model numbers. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MODEL\_MCP4902@{MODEL\_MCP4902}!myMCP49x2@{myMCP49x2}}\index{myMCP49x2@{myMCP49x2}!MODEL\_MCP4902@{MODEL\_MCP4902}}}\mbox{\Hypertarget{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409a11075eae1480eaeb2c189ce55e4e277b}\label{classmy_m_c_p49x2_a4d97f418f61a0bb3c5685c245e477409a11075eae1480eaeb2c189ce55e4e277b}} 
@@ -286,11 +290,11 @@ Enable / disable the D\+AC. Uses the shutdown pin to enable / disable the D\+AC.
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy_m_c_p49x2_adaa31631ed0715ee5cd29d64647669b4}\label{classmy_m_c_p49x2_adaa31631ed0715ee5cd29d64647669b4}} 
+\mbox{\Hypertarget{classmy_m_c_p49x2_a99883d95dce73ac20dec5db40a036cd3}\label{classmy_m_c_p49x2_a99883d95dce73ac20dec5db40a036cd3}} 
 \index{myMCP49x2@{myMCP49x2}!getChannelA@{getChannelA}}
 \index{getChannelA@{getChannelA}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{getChannelA()}{getChannelA()}}
-{\footnotesize\ttfamily uint16\+\_\+t my\+M\+C\+P49x2\+::get\+ChannelA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::get\+ChannelA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -299,11 +303,11 @@ Get the Channel A value. Returns the value set for channel A.
 \begin{DoxyReturn}{Returns}
 uint16\+\_\+t Value of channel A. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy_m_c_p49x2_a9e4c8773604bc2b030acf0d71d1fbeea}\label{classmy_m_c_p49x2_a9e4c8773604bc2b030acf0d71d1fbeea}} 
+\mbox{\Hypertarget{classmy_m_c_p49x2_a7ad0f001cc45c8278412c836df8200ea}\label{classmy_m_c_p49x2_a7ad0f001cc45c8278412c836df8200ea}} 
 \index{myMCP49x2@{myMCP49x2}!getChannelB@{getChannelB}}
 \index{getChannelB@{getChannelB}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{getChannelB()}{getChannelB()}}
-{\footnotesize\ttfamily uint16\+\_\+t my\+M\+C\+P49x2\+::get\+ChannelB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::get\+ChannelB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -332,11 +336,11 @@ Initialze chip. Initialize the chip. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for ini
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns 0 for initialized okay. Negative for error code. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy_m_c_p49x2_aa7f7535c7f4c072e85e75b06178efe85}\label{classmy_m_c_p49x2_aa7f7535c7f4c072e85e75b06178efe85}} 
+\mbox{\Hypertarget{classmy_m_c_p49x2_a8ac6bf01c9e3e9d355f9d1bd5ac63991}\label{classmy_m_c_p49x2_a8ac6bf01c9e3e9d355f9d1bd5ac63991}} 
 \index{myMCP49x2@{myMCP49x2}!isValidValue@{isValidValue}}
 \index{isValidValue@{isValidValue}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{isValidValue()}{isValidValue()}}
-{\footnotesize\ttfamily bool my\+M\+C\+P49x2\+::is\+Valid\+Value (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool my\+M\+C\+P49x2\+::is\+Valid\+Value (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -382,11 +386,11 @@ Set the V\+R\+EF input buffer. Sets the Buffer bit for the Vref input buffer. De
 {\em value} & True = Buffered, False = Unbuffered. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classmy_m_c_p49x2_acaedf8eda26d5359ce7e52aaec2e9f3a}\label{classmy_m_c_p49x2_acaedf8eda26d5359ce7e52aaec2e9f3a}} 
+\mbox{\Hypertarget{classmy_m_c_p49x2_a447b0e8a06f71363c8b50c9e2927873e}\label{classmy_m_c_p49x2_a447b0e8a06f71363c8b50c9e2927873e}} 
 \index{myMCP49x2@{myMCP49x2}!setChannelA@{setChannelA}}
 \index{setChannelA@{setChannelA}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{setChannelA()}{setChannelA()}}
-{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::set\+ChannelA (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::set\+ChannelA (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -400,11 +404,11 @@ Set the Channel A Value. Sets the value for channel A. Valid values are dependan
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy_m_c_p49x2_ae8ca9bb9c2949c21b39aa21dfb5cbfdf}\label{classmy_m_c_p49x2_ae8ca9bb9c2949c21b39aa21dfb5cbfdf}} 
+\mbox{\Hypertarget{classmy_m_c_p49x2_a0249348768b195817542c3ada3c1cfe1}\label{classmy_m_c_p49x2_a0249348768b195817542c3ada3c1cfe1}} 
 \index{myMCP49x2@{myMCP49x2}!setChannelB@{setChannelB}}
 \index{setChannelB@{setChannelB}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{setChannelB()}{setChannelB()}}
-{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::set\+ChannelB (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::set\+ChannelB (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -418,11 +422,11 @@ Set the Channel B Value. Sets the value for channel B. Valid values are dependan
 \begin{DoxyReturn}{Returns}
 int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmy_m_c_p49x2_a2e8f50a6cb70120055f917fd1d196b34}\label{classmy_m_c_p49x2_a2e8f50a6cb70120055f917fd1d196b34}} 
+\mbox{\Hypertarget{classmy_m_c_p49x2_afdb63cca3f3e33015545d4b6a7a802a7}\label{classmy_m_c_p49x2_afdb63cca3f3e33015545d4b6a7a802a7}} 
 \index{myMCP49x2@{myMCP49x2}!setChannels@{setChannels}}
 \index{setChannels@{setChannels}!myMCP49x2@{myMCP49x2}}
 \doxysubsubsection{\texorpdfstring{setChannels()}{setChannels()}}
-{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::set\+Channels (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{valueA,  }\item[{const uint16\+\_\+t}]{valueB,  }\item[{const bool}]{first\+Channel = {\ttfamily \mbox{\hyperlink{classmy_m_c_p49x2_aa4f07acff5f273303cc2afe11aacc07f}{C\+H\+A\+N\+N\+E\+L\+\_\+A}}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+C\+P49x2\+::set\+Channels (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{valueA,  }\item[{const int16\+\_\+t}]{valueB,  }\item[{const bool}]{first\+Channel = {\ttfamily \mbox{\hyperlink{classmy_m_c_p49x2_aa4f07acff5f273303cc2afe11aacc07f}{C\+H\+A\+N\+N\+E\+L\+\_\+A}}} }\end{DoxyParamCaption})}
 
 
 

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['rate_5f1hz_864',['RATE_1HZ',['../classmy_d_s1307.html#a9aa6a48c47c663b00f942f277ed94e4a',1,'myDS1307']]],
-  ['rate_5f32khz_865',['RATE_32KHZ',['../classmy_d_s1307.html#aa6a643aab4a3f61440dbcb399320edb0',1,'myDS1307']]],
-  ['rate_5f4khz_866',['RATE_4KHZ',['../classmy_d_s1307.html#a7eda929a5e6cac97fb418699d9a8af7f',1,'myDS1307']]],
-  ['rate_5f8khz_867',['RATE_8KHZ',['../classmy_d_s1307.html#ab74f0a412a6d93a15f5f8563153dd33d',1,'myDS1307']]]
+  ['osr_5foff_1029',['OSR_OFF',['../classmy_b_mx280.html#a1bc4cfd3fe981d0aa1dc92f2e1419a34',1,'myBMx280']]],
+  ['osr_5fx1_1030',['OSR_X1',['../classmy_b_mx280.html#a268b3751104337f333647a79652d9462',1,'myBMx280']]],
+  ['osr_5fx16_1031',['OSR_X16',['../classmy_b_mx280.html#acb32fe99475cce6ab62d22dae56d1c0d',1,'myBMx280']]],
+  ['osr_5fx2_1032',['OSR_X2',['../classmy_b_mx280.html#a9e7bf96cd3b75a2bc7be7620c1f461b0',1,'myBMx280']]],
+  ['osr_5fx4_1033',['OSR_X4',['../classmy_b_mx280.html#a49dc648af8f575eb977cf434923e70c3',1,'myBMx280']]],
+  ['osr_5fx8_1034',['OSR_X8',['../classmy_b_mx280.html#a763453b503a3b235f9c5dcf0cbd0319f',1,'myBMx280']]]
 ];

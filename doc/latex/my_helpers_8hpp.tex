@@ -55,12 +55,8 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaeda
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{my\+Helpers\+::pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 64 bit. \end{DoxyCompactList}\item 
-int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af96154907f93e9076b34629afd70a862}{my\+Helpers\+::map32}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 32 Bit. \end{DoxyCompactList}\item 
-int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}{my\+Helpers\+::map64}} (int64\+\_\+t x, int64\+\_\+t in\+\_\+min, int64\+\_\+t in\+\_\+max, int64\+\_\+t out\+\_\+min, int64\+\_\+t out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 64 Bit. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}{my\+Helpers\+::map\+Float}} (float x, float in\+\_\+min, float in\+\_\+max, float out\+\_\+min, float out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. Floating point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{namespacemy_helpers_a1637e81f05cc6009ef52673de9688ce8}{my\+Helpers\+::map}} (T x, T in\+\_\+min, T in\+\_\+max, T out\+\_\+min, T out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. Template. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a3940a47b8b5fc65aa17a62fe7a1c7d00}{my\+Helpers\+::reverse8}} (const uint8\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aaf69943e1bd4b5bf362a45915d4fcd33}{my\+Helpers\+::reverse16}} (const uint16\+\_\+t value)
@@ -98,6 +94,10 @@ int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6fae86963a62077bced533e9fbf32
 int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a787ea7da64c15140f736866f34ee038f}{my\+Helpers\+::convert24h\+To12h}} (const uint8\+\_\+t hours24, uint8\+\_\+t $\ast$hours12, bool $\ast$is\+PM)
 \begin{DoxyCompactList}\small\item\em Convert from 24h format to 12h format. Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an invalid hour is passed, an error code is returned. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}{my\+Helpers\+::shift\+Out}} (const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t data\+Pin, const uint8\+\_\+t $\ast$buffer, const size\+\_\+t len, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\item 
+int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a2230ab4557684348a067f1317206e431}{my\+Helpers\+::shift\+In}} (const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t data\+Pin, uint8\+\_\+t $\ast$buffer, const size\+\_\+t len, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespacemy_helpers_a598c906e9bfe5be2010bac35a632df3d}{my\+Helpers\+::print\+Bin}} (const T \&value, const bool print\+Spaces=true, const bool print\+Prefix=true)
 \end{DoxyCompactItemize}
 
 

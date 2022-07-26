@@ -1,0 +1,591 @@
+\hypertarget{classmy25xx640_a}{}\doxysection{my25xx640A Class Reference}
+\label{classmy25xx640_a}\index{my25xx640A@{my25xx640A}}
+
+
+{\ttfamily \#include $<$my25xx640\+A.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy25xx640_a_a84617c581c2d8e95332e31b034af6e28}{my25xx640A}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t cs\+Pin)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object, no hold, no write protect. Create a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object. Without hold and write protect pin. When writing assumes wp is disabled, and attempts the write, and assumes success. If write prtotect is enabled no data is actually written. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy25xx640_a_af6d811579e0635a100371dd179e0d9aa}{my25xx640A}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t hold\+Pin)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object, with hold, no write protect. Creates a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object with hold, and without write protect. If write protection is enabled and write is called, the write assumes success, even though no data is written. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmy25xx640_a_af3b75117ab27563c7359c26d9bd104a4}{my25xx640A}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t hold\+Pin, const uint8\+\_\+t wp\+Pin)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} Object. Create a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object. If hold\+Pin, or wp\+Pin are set to invalid pins, then their functionality is disabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy25xx640_a_a1b4e9087cecc97beb72669d533b6bb87}{is\+Valid\+Address}} (const int16\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Check if an address is valid. Verifies a passed address is valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmy25xx640_a_a8c4ff25dc072d3380e8c020926dab13a}{is\+Valid\+Block}} (const uint8\+\_\+t block)
+\begin{DoxyCompactList}\small\item\em Check if a block is valid. Verifies a block setting for write protection mode. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_acfbcbaf647b20f2ae95cf20a1302420f}{start\+Read}} (const int16\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Start a read. Starts a read from the E\+E\+P\+R\+OM, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if started okay, otherwise if the E\+E\+P\+R\+OM is held, or E\+E\+P\+R\+OM is not idle, or an invalid address is passed, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a23a7dba6bc8e41f8df5ff4e4c9d5d9bd}{read}} (uint8\+\_\+t $\ast$recv\+Buffer, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read a buffer from the E\+E\+P\+R\+OM Reads a buffer from the E\+E\+P\+R\+OM. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, otherwise if the E\+E\+P\+R\+OM is idle, or held an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a115c2db7d05214ad3a75744a8a8f7e79}{read\+Byte}} ()
+\begin{DoxyCompactList}\small\item\em Read and return a single byte. Reads and returns a single byte. Returns 0-\/255 (positive) for byte read, otherwise if not reading, or held an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a2d89356b3a6f8ef20fbb0926917e9396}{start\+Write}} (const int16\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Start a write. Starts a write at given address. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if started okay, otherwise if not idle an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a669a4cb2b3e68776fa6e1ecd94afeaa8}{write}} (const uint8\+\_\+t $\ast$send\+Buffer, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Write a buffer to the E\+E\+P\+R\+OM. Writes a buffer to the E\+E\+P\+R\+OM. Returns 0 if written okay, otherwise if not writing or if held, an error code is returned. T\+O\+DO\+: Add write protect error. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_ae0fb1a7817f1bc6e4724709f7ef08d3a}{write\+Byte}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write a byte to the E\+E\+P\+R\+OM. Writes a single byte to the E\+E\+P\+R\+OM. Retuns 0 if written okay, Otherwise if not writing, or is held, an error code is returned. T\+O\+DO\+: Add write protect error. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_aecf50123a98797778a5fb89428bcd9c7}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop a read / write. Stops a read / write, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if stopped okay, otherwise if idle, or if held an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a63b3ef93e6a73625e05d9f9d2e2f44e6}{set\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Set the hold pin. Sets the hold pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if held okay, otherwise if already held, or not in an active state, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a8c64b4dd572c0c4a726d90a4c5d7d90e}{clear\+Hold}} ()
+\begin{DoxyCompactList}\small\item\em Clear the hold pin. Clears the hold. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) on success, otherwise if not held, or idle, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a0900b01a357a8ccfc9b826a5ddba7260}{set\+Write\+Protect\+Block}} (const uint8\+\_\+t block)
+\begin{DoxyCompactList}\small\item\em Set the Write Protect Block. Sets the write protect block. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if busy, or if the write protect is enabled, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_af5959f8945747ad6f8e151f6dc9dd7f1}{set\+Write\+Protect}} ()
+\begin{DoxyCompactList}\small\item\em Enable write protect. Enables the write protect. If the Write protect pin is not defined, the pin is assumed to be tied high. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if the write protect is already enabled, or if the deviece is busy, an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a01a173dc537434283a4fd66001f2d4a1}{clear\+Write\+Protect}} ()
+\begin{DoxyCompactList}\small\item\em Disable write protect. Disables the write protect. If the write protect pin is not defined, the pin is assue to be tied high. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if cleared okay, otherwise if already disabled, or if the device is busy an error code is returned. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_ae3ee765504478f32ab8673efcf0396e8}{initialize}} (const bool init\+S\+PI=true, const float V\+CC=3.\+3f)
+\begin{DoxyCompactList}\small\item\em Initialize the E\+E\+P\+R\+OM. Initializes the S\+PI bus, and sets the current state. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if intialized okay, otherwise if an invalid pin is passed during construction, an error code is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a445b156ef766de98d063f12c17f66a98}{M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS}} = 0x1\+F\+FF
+\item 
+static const int8\+\_\+t \mbox{\hyperlink{classmy25xx640_a_aa9c8329980b42187bf52c8ffc77d8723}{P\+A\+G\+E\+\_\+\+S\+I\+ZE}} = 32
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a0c295f00d94ce5e34f95fae81eb1107d}{B\+P\+\_\+\+N\+O\+NE}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a8d36baf4e946b4ac495a5947153a2d22}{B\+P\+\_\+\+U\+P\+P\+E\+R\+\_\+\+Q\+U\+A\+R\+T\+ER}} = 0x01
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy25xx640_a_acba92390ce333b5204f510df0921efb1}{B\+P\+\_\+\+U\+P\+P\+E\+R\+\_\+\+H\+A\+LF}} = 0x02
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a46251ad505730bb95c93877c04c2713a}{B\+P\+\_\+\+A\+LL}} = 0x03
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a714447914f26f7481d6e1ff69a4624aa}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\begin{DoxyCompactList}\small\item\em No error. Value 0. No error occured. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a533cfa25b6b1fe762ceac0a64a20732d}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a945e0a48734267b45b300b0ac26a7d0c}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid chip select pin. Value -\/153. Invalid cs pin was passed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_afb17a20c98451b282ac46c370d40ed80}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} = \mbox{\hyperlink{my_error_codes_8hpp_a89b9e36cbb11a8d965b47f3b12d1c51a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\begin{DoxyCompactList}\small\item\em Invalid address. Value -\/325. Invalid address was passed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a8f831ca38083acea6a89e95fdc2de90c}{E\+R\+R\+O\+R\+\_\+\+H\+E\+LD}} = \mbox{\hyperlink{my_error_codes_8hpp_a339e0d932ad83e7561acf50ead28976f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+E\+E\+P\+R\+O\+M\+\_\+\+H\+E\+LD}}
+\begin{DoxyCompactList}\small\item\em E\+E\+P\+R\+OM is held. Value -\/326. E\+E\+P\+R\+OM is held when action requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a17785fb1779c4dd367af20866477e7f7}{E\+R\+R\+O\+R\+\_\+\+B\+U\+SY}} = \mbox{\hyperlink{my_error_codes_8hpp_adec6243c2d9d331b8b5d3f1972ec6f44}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+E\+E\+P\+R\+O\+M\+\_\+\+B\+U\+SY}}
+\begin{DoxyCompactList}\small\item\em E\+E\+P\+R\+OM is busy. Value -\/327. E\+E\+P\+R\+OM is already busy, or busy when action requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_ad52d0752f07369d728316ddca057ce73}{E\+R\+R\+O\+R\+\_\+\+I\+D\+LE}} = \mbox{\hyperlink{my_error_codes_8hpp_af584e809e9af7b3a0159bf8f4413d3f7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+E\+E\+P\+R\+O\+M\+\_\+\+I\+D\+LE}}
+\begin{DoxyCompactList}\small\item\em E\+E\+P\+R\+OM is idle. Value -\/328. E\+E\+P\+R\+OM is already idle, or idle when action requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_ae0bc9b1af13cad7332c6386b95dc1ae0}{E\+R\+R\+O\+R\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a6d113b288748826e84f14fa6855a087f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}
+\begin{DoxyCompactList}\small\item\em Hold not defined. Value -\/329. Hold pin was not defined during construction. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a257a98c1aeaa585b2d0adb5f7225753c}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG}} = \mbox{\hyperlink{my_error_codes_8hpp_a37b3947219c6c626a58edd171d8ec53e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em Not in reading state. Value -\/330. Not in reading state when read requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_abc651b60f6cfff5869dcb7e9c8276b9c}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG}} = \mbox{\hyperlink{my_error_codes_8hpp_a09167dc5555eeaa0c7af7f291bf508ba}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em Not in writing state. Value -\/331. Not in writing state when write requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a758c8693742620fc53e067b99cf05644}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD}} = \mbox{\hyperlink{my_error_codes_8hpp_aa516f561c796155824cf4e28bdcf7b39}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD}}
+\begin{DoxyCompactList}\small\item\em Not held. Value -\/332. E\+E\+P\+R\+OM not held when action requested. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_aea604eac409c4fa6db95002e93c46b7f}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+L\+O\+CK}} = \mbox{\hyperlink{my_error_codes_8hpp_a794d2efe0f9c2ee0634c4bb1de8a68db}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+L\+O\+CK}}
+\begin{DoxyCompactList}\small\item\em Invalid block protect value. Value -\/333. Invalid block protect value passed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_a69d54b90b781f2736497325c7a50f21c}{E\+R\+R\+O\+R\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a729dc550d84d28c164b41cd737bec6f3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}}
+\begin{DoxyCompactList}\small\item\em Address write protected. Value -\/334. The address is write protected at time of write, or is already write protected when write protect was called. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy25xx640_a_aba407c2a3366b608947dbe6b9b79f2b3}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a2e51988900196c8a15bcb7a37fd1e01a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}}
+\begin{DoxyCompactList}\small\item\em Not write protected. Value -\/335. The write protect was already disabled when write protect clear was called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy25xx640_a_a84617c581c2d8e95332e31b034af6e28}\label{classmy25xx640_a_a84617c581c2d8e95332e31b034af6e28}} 
+\index{my25xx640A@{my25xx640A}!my25xx640A@{my25xx640A}}
+\index{my25xx640A@{my25xx640A}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{my25xx640A()}{my25xx640A()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily my25xx640\+A\+::my25xx640A (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{cs\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object, no hold, no write protect. Create a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object. Without hold and write protect pin. When writing assumes wp is disabled, and attempts the write, and assumes success. If write prtotect is enabled no data is actually written. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI instance. \\
+\hline
+{\em sck\+Pin} & Clock pin. \\
+\hline
+{\em miso\+Pin} & M\+I\+SO pin. \\
+\hline
+{\em mosi\+Pin} & M\+O\+SI pin. \\
+\hline
+{\em cs\+Pin} & Chip select pin. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy25xx640_a_af6d811579e0635a100371dd179e0d9aa}\label{classmy25xx640_a_af6d811579e0635a100371dd179e0d9aa}} 
+\index{my25xx640A@{my25xx640A}!my25xx640A@{my25xx640A}}
+\index{my25xx640A@{my25xx640A}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{my25xx640A()}{my25xx640A()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily my25xx640\+A\+::my25xx640A (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{hold\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object, with hold, no write protect. Creates a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object with hold, and without write protect. If write protection is enabled and write is called, the write assumes success, even though no data is written. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port instance. \\
+\hline
+{\em sck\+Pin} & Clock pin. \\
+\hline
+{\em miso\+Pin} & M\+I\+SO pin. \\
+\hline
+{\em mosi\+Pin} & M\+O\+SI pin. \\
+\hline
+{\em cs\+Pin} & Chip select pin. \\
+\hline
+{\em hold\+Pin} & Hold pin. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy25xx640_a_af3b75117ab27563c7359c26d9bd104a4}\label{classmy25xx640_a_af3b75117ab27563c7359c26d9bd104a4}} 
+\index{my25xx640A@{my25xx640A}!my25xx640A@{my25xx640A}}
+\index{my25xx640A@{my25xx640A}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{my25xx640A()}{my25xx640A()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily my25xx640\+A\+::my25xx640A (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{hold\+Pin,  }\item[{const uint8\+\_\+t}]{wp\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} Object. Create a new \mbox{\hyperlink{classmy25xx640_a}{my25xx640A}} object. If hold\+Pin, or wp\+Pin are set to invalid pins, then their functionality is disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spi\+Port} & S\+PI port to use. \\
+\hline
+{\em sck\+Pin} & Clock pin. \\
+\hline
+{\em miso\+Pin} & M\+I\+SO pin. \\
+\hline
+{\em mosi\+Pin} & M\+O\+SI pin. \\
+\hline
+{\em cs\+Pin} & Chip Select pin. \\
+\hline
+{\em hold\+Pin} & Hold pin. \\
+\hline
+{\em wp\+Pin} & Write protect pin. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy25xx640_a_a8c64b4dd572c0c4a726d90a4c5d7d90e}\label{classmy25xx640_a_a8c64b4dd572c0c4a726d90a4c5d7d90e}} 
+\index{my25xx640A@{my25xx640A}!clearHold@{clearHold}}
+\index{clearHold@{clearHold}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{clearHold()}{clearHold()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::clear\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the hold pin. Clears the hold. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) on success, otherwise if not held, or idle, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) on success, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a01a173dc537434283a4fd66001f2d4a1}\label{classmy25xx640_a_a01a173dc537434283a4fd66001f2d4a1}} 
+\index{my25xx640A@{my25xx640A}!clearWriteProtect@{clearWriteProtect}}
+\index{clearWriteProtect@{clearWriteProtect}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{clearWriteProtect()}{clearWriteProtect()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::clear\+Write\+Protect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disable write protect. Disables the write protect. If the write protect pin is not defined, the pin is assue to be tied high. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if cleared okay, otherwise if already disabled, or if the device is busy an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if cleared okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_ae3ee765504478f32ab8673efcf0396e8}\label{classmy25xx640_a_ae3ee765504478f32ab8673efcf0396e8}} 
+\index{my25xx640A@{my25xx640A}!initialize@{initialize}}
+\index{initialize@{initialize}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::initialize (\begin{DoxyParamCaption}\item[{const bool}]{init\+S\+PI = {\ttfamily true},  }\item[{const float}]{V\+CC = {\ttfamily 3.3f} }\end{DoxyParamCaption})}
+
+
+
+Initialize the E\+E\+P\+R\+OM. Initializes the S\+PI bus, and sets the current state. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if intialized okay, otherwise if an invalid pin is passed during construction, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+S\+PI} & True = initialize S\+PI bus, False = do not initialize S\+PI bus, assumes already initialized. \\
+\hline
+{\em V\+CC} & Float, V\+CC for the E\+E\+P\+R\+OM, determines clock speed, defaults to 3.\+3v. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 if initialized okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a1b4e9087cecc97beb72669d533b6bb87}\label{classmy25xx640_a_a1b4e9087cecc97beb72669d533b6bb87}} 
+\index{my25xx640A@{my25xx640A}!isValidAddress@{isValidAddress}}
+\index{isValidAddress@{isValidAddress}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{isValidAddress()}{isValidAddress()}}
+{\footnotesize\ttfamily bool my25xx640\+A\+::is\+Valid\+Address (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Check if an address is valid. Verifies a passed address is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to validate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Address is valid. 
+
+false Address is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a8c4ff25dc072d3380e8c020926dab13a}\label{classmy25xx640_a_a8c4ff25dc072d3380e8c020926dab13a}} 
+\index{my25xx640A@{my25xx640A}!isValidBlock@{isValidBlock}}
+\index{isValidBlock@{isValidBlock}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{isValidBlock()}{isValidBlock()}}
+{\footnotesize\ttfamily bool my25xx640\+A\+::is\+Valid\+Block (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{block }\end{DoxyParamCaption})}
+
+
+
+Check if a block is valid. Verifies a block setting for write protection mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & Block to verify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Block is valid. 
+
+false Block is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a23a7dba6bc8e41f8df5ff4e4c9d5d9bd}\label{classmy25xx640_a_a23a7dba6bc8e41f8df5ff4e4c9d5d9bd}} 
+\index{my25xx640A@{my25xx640A}!read@{read}}
+\index{read@{read}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{recv\+Buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Read a buffer from the E\+E\+P\+R\+OM Reads a buffer from the E\+E\+P\+R\+OM. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if read okay, otherwise if the E\+E\+P\+R\+OM is idle, or held an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recv\+Buffer} & Buffer to store read data in. \\
+\hline
+{\em len} & Length of buffer to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0(N\+O\+\_\+\+E\+R\+R\+OR) if read okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a115c2db7d05214ad3a75744a8a8f7e79}\label{classmy25xx640_a_a115c2db7d05214ad3a75744a8a8f7e79}} 
+\index{my25xx640A@{my25xx640A}!readByte@{readByte}}
+\index{readByte@{readByte}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{readByte()}{readByte()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::read\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read and return a single byte. Reads and returns a single byte. Returns 0-\/255 (positive) for byte read, otherwise if not reading, or held an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0-\/255 (Positive) for value read, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a63b3ef93e6a73625e05d9f9d2e2f44e6}\label{classmy25xx640_a_a63b3ef93e6a73625e05d9f9d2e2f44e6}} 
+\index{my25xx640A@{my25xx640A}!setHold@{setHold}}
+\index{setHold@{setHold}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{setHold()}{setHold()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::set\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the hold pin. Sets the hold pin. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if held okay, otherwise if already held, or not in an active state, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) on success, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_af5959f8945747ad6f8e151f6dc9dd7f1}\label{classmy25xx640_a_af5959f8945747ad6f8e151f6dc9dd7f1}} 
+\index{my25xx640A@{my25xx640A}!setWriteProtect@{setWriteProtect}}
+\index{setWriteProtect@{setWriteProtect}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{setWriteProtect()}{setWriteProtect()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::set\+Write\+Protect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Enable write protect. Enables the write protect. If the Write protect pin is not defined, the pin is assumed to be tied high. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if the write protect is already enabled, or if the deviece is busy, an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a0900b01a357a8ccfc9b826a5ddba7260}\label{classmy25xx640_a_a0900b01a357a8ccfc9b826a5ddba7260}} 
+\index{my25xx640A@{my25xx640A}!setWriteProtectBlock@{setWriteProtectBlock}}
+\index{setWriteProtectBlock@{setWriteProtectBlock}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{setWriteProtectBlock()}{setWriteProtectBlock()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::set\+Write\+Protect\+Block (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{block }\end{DoxyParamCaption})}
+
+
+
+Set the Write Protect Block. Sets the write protect block. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, otherwise if busy, or if the write protect is enabled, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & Block value to set. Valid values (0x00-\/0x03), B\+P\+\_\+$\ast$ values are provided. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if set okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_acfbcbaf647b20f2ae95cf20a1302420f}\label{classmy25xx640_a_acfbcbaf647b20f2ae95cf20a1302420f}} 
+\index{my25xx640A@{my25xx640A}!startRead@{startRead}}
+\index{startRead@{startRead}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{startRead()}{startRead()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::start\+Read (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Start a read. Starts a read from the E\+E\+P\+R\+OM, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if started okay, otherwise if the E\+E\+P\+R\+OM is held, or E\+E\+P\+R\+OM is not idle, or an invalid address is passed, an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to start read at. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if started okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a2d89356b3a6f8ef20fbb0926917e9396}\label{classmy25xx640_a_a2d89356b3a6f8ef20fbb0926917e9396}} 
+\index{my25xx640A@{my25xx640A}!startWrite@{startWrite}}
+\index{startWrite@{startWrite}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{startWrite()}{startWrite()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::start\+Write (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{address }\end{DoxyParamCaption})}
+
+
+
+Start a write. Starts a write at given address. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if started okay, otherwise if not idle an error code is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address to start write at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if started okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_aecf50123a98797778a5fb89428bcd9c7}\label{classmy25xx640_a_aecf50123a98797778a5fb89428bcd9c7}} 
+\index{my25xx640A@{my25xx640A}!stop@{stop}}
+\index{stop@{stop}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stop a read / write. Stops a read / write, returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if stopped okay, otherwise if idle, or if held an error code is returned. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if stopped okay, negative of error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_a669a4cb2b3e68776fa6e1ecd94afeaa8}\label{classmy25xx640_a_a669a4cb2b3e68776fa6e1ecd94afeaa8}} 
+\index{my25xx640A@{my25xx640A}!write@{write}}
+\index{write@{write}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{send\+Buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Write a buffer to the E\+E\+P\+R\+OM. Writes a buffer to the E\+E\+P\+R\+OM. Returns 0 if written okay, otherwise if not writing or if held, an error code is returned. T\+O\+DO\+: Add write protect error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em send\+Buffer} & Buffer to send to E\+E\+P\+R\+OM \\
+\hline
+{\em len} & Length of buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if written okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy25xx640_a_ae0fb1a7817f1bc6e4724709f7ef08d3a}\label{classmy25xx640_a_ae0fb1a7817f1bc6e4724709f7ef08d3a}} 
+\index{my25xx640A@{my25xx640A}!writeByte@{writeByte}}
+\index{writeByte@{writeByte}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{writeByte()}{writeByte()}}
+{\footnotesize\ttfamily int16\+\_\+t my25xx640\+A\+::write\+Byte (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Write a byte to the E\+E\+P\+R\+OM. Writes a single byte to the E\+E\+P\+R\+OM. Retuns 0 if written okay, Otherwise if not writing, or is held, an error code is returned. T\+O\+DO\+: Add write protect error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to write to the E\+E\+P\+R\+OM. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) for okay, negaitve for error code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy25xx640_a_a46251ad505730bb95c93877c04c2713a}\label{classmy25xx640_a_a46251ad505730bb95c93877c04c2713a}} 
+\index{my25xx640A@{my25xx640A}!BP\_ALL@{BP\_ALL}}
+\index{BP\_ALL@{BP\_ALL}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{BP\_ALL}{BP\_ALL}}
+{\footnotesize\ttfamily const uint8\+\_\+t my25xx640\+A\+::\+B\+P\+\_\+\+A\+LL = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy25xx640_a_a0c295f00d94ce5e34f95fae81eb1107d}\label{classmy25xx640_a_a0c295f00d94ce5e34f95fae81eb1107d}} 
+\index{my25xx640A@{my25xx640A}!BP\_NONE@{BP\_NONE}}
+\index{BP\_NONE@{BP\_NONE}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{BP\_NONE}{BP\_NONE}}
+{\footnotesize\ttfamily const uint8\+\_\+t my25xx640\+A\+::\+B\+P\+\_\+\+N\+O\+NE = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy25xx640_a_acba92390ce333b5204f510df0921efb1}\label{classmy25xx640_a_acba92390ce333b5204f510df0921efb1}} 
+\index{my25xx640A@{my25xx640A}!BP\_UPPER\_HALF@{BP\_UPPER\_HALF}}
+\index{BP\_UPPER\_HALF@{BP\_UPPER\_HALF}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{BP\_UPPER\_HALF}{BP\_UPPER\_HALF}}
+{\footnotesize\ttfamily const uint8\+\_\+t my25xx640\+A\+::\+B\+P\+\_\+\+U\+P\+P\+E\+R\+\_\+\+H\+A\+LF = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy25xx640_a_a8d36baf4e946b4ac495a5947153a2d22}\label{classmy25xx640_a_a8d36baf4e946b4ac495a5947153a2d22}} 
+\index{my25xx640A@{my25xx640A}!BP\_UPPER\_QUARTER@{BP\_UPPER\_QUARTER}}
+\index{BP\_UPPER\_QUARTER@{BP\_UPPER\_QUARTER}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{BP\_UPPER\_QUARTER}{BP\_UPPER\_QUARTER}}
+{\footnotesize\ttfamily const uint8\+\_\+t my25xx640\+A\+::\+B\+P\+\_\+\+U\+P\+P\+E\+R\+\_\+\+Q\+U\+A\+R\+T\+ER = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy25xx640_a_a17785fb1779c4dd367af20866477e7f7}\label{classmy25xx640_a_a17785fb1779c4dd367af20866477e7f7}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_BUSY@{ERROR\_BUSY}}
+\index{ERROR\_BUSY@{ERROR\_BUSY}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_BUSY}{ERROR\_BUSY}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+B\+U\+SY = \mbox{\hyperlink{my_error_codes_8hpp_adec6243c2d9d331b8b5d3f1972ec6f44}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+E\+E\+P\+R\+O\+M\+\_\+\+B\+U\+SY}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+E\+E\+P\+R\+OM is busy. Value -\/327. E\+E\+P\+R\+OM is already busy, or busy when action requested. 
+
+\mbox{\Hypertarget{classmy25xx640_a_a8f831ca38083acea6a89e95fdc2de90c}\label{classmy25xx640_a_a8f831ca38083acea6a89e95fdc2de90c}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_HELD@{ERROR\_HELD}}
+\index{ERROR\_HELD@{ERROR\_HELD}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_HELD}{ERROR\_HELD}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+H\+E\+LD = \mbox{\hyperlink{my_error_codes_8hpp_a339e0d932ad83e7561acf50ead28976f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+E\+E\+P\+R\+O\+M\+\_\+\+H\+E\+LD}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+E\+E\+P\+R\+OM is held. Value -\/326. E\+E\+P\+R\+OM is held when action requested. 
+
+\mbox{\Hypertarget{classmy25xx640_a_ae0bc9b1af13cad7332c6386b95dc1ae0}\label{classmy25xx640_a_ae0bc9b1af13cad7332c6386b95dc1ae0}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_HOLD\_NOT\_DEFINED@{ERROR\_HOLD\_NOT\_DEFINED}}
+\index{ERROR\_HOLD\_NOT\_DEFINED@{ERROR\_HOLD\_NOT\_DEFINED}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_HOLD\_NOT\_DEFINED}{ERROR\_HOLD\_NOT\_DEFINED}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a6d113b288748826e84f14fa6855a087f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+H\+O\+L\+D\+\_\+\+N\+O\+T\+\_\+\+D\+E\+F\+I\+N\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Hold not defined. Value -\/329. Hold pin was not defined during construction. 
+
+\mbox{\Hypertarget{classmy25xx640_a_ad52d0752f07369d728316ddca057ce73}\label{classmy25xx640_a_ad52d0752f07369d728316ddca057ce73}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_IDLE@{ERROR\_IDLE}}
+\index{ERROR\_IDLE@{ERROR\_IDLE}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_IDLE}{ERROR\_IDLE}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+I\+D\+LE = \mbox{\hyperlink{my_error_codes_8hpp_af584e809e9af7b3a0159bf8f4413d3f7}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+E\+E\+P\+R\+O\+M\+\_\+\+I\+D\+LE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+E\+E\+P\+R\+OM is idle. Value -\/328. E\+E\+P\+R\+OM is already idle, or idle when action requested. 
+
+\mbox{\Hypertarget{classmy25xx640_a_afb17a20c98451b282ac46c370d40ed80}\label{classmy25xx640_a_afb17a20c98451b282ac46c370d40ed80}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_INVALID\_ADDRESS@{ERROR\_INVALID\_ADDRESS}}
+\index{ERROR\_INVALID\_ADDRESS@{ERROR\_INVALID\_ADDRESS}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_ADDRESS}{ERROR\_INVALID\_ADDRESS}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS = \mbox{\hyperlink{my_error_codes_8hpp_a89b9e36cbb11a8d965b47f3b12d1c51a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid address. Value -\/325. Invalid address was passed. 
+
+\mbox{\Hypertarget{classmy25xx640_a_aea604eac409c4fa6db95002e93c46b7f}\label{classmy25xx640_a_aea604eac409c4fa6db95002e93c46b7f}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_INVALID\_BLOCK@{ERROR\_INVALID\_BLOCK}}
+\index{ERROR\_INVALID\_BLOCK@{ERROR\_INVALID\_BLOCK}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_BLOCK}{ERROR\_INVALID\_BLOCK}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+L\+O\+CK = \mbox{\hyperlink{my_error_codes_8hpp_a794d2efe0f9c2ee0634c4bb1de8a68db}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+B\+L\+O\+CK}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid block protect value. Value -\/333. Invalid block protect value passed. 
+
+\mbox{\Hypertarget{classmy25xx640_a_a533cfa25b6b1fe762ceac0a64a20732d}\label{classmy25xx640_a_a533cfa25b6b1fe762ceac0a64a20732d}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_INVALID\_CS\_PIN@{ERROR\_INVALID\_CS\_PIN}}
+\index{ERROR\_INVALID\_CS\_PIN@{ERROR\_INVALID\_CS\_PIN}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_CS\_PIN}{ERROR\_INVALID\_CS\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a945e0a48734267b45b300b0ac26a7d0c}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid chip select pin. Value -\/153. Invalid cs pin was passed. 
+
+\mbox{\Hypertarget{classmy25xx640_a_a758c8693742620fc53e067b99cf05644}\label{classmy25xx640_a_a758c8693742620fc53e067b99cf05644}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_NOT\_HELD@{ERROR\_NOT\_HELD}}
+\index{ERROR\_NOT\_HELD@{ERROR\_NOT\_HELD}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_HELD}{ERROR\_NOT\_HELD}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD = \mbox{\hyperlink{my_error_codes_8hpp_aa516f561c796155824cf4e28bdcf7b39}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+H\+E\+LD}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Not held. Value -\/332. E\+E\+P\+R\+OM not held when action requested. 
+
+\mbox{\Hypertarget{classmy25xx640_a_a257a98c1aeaa585b2d0adb5f7225753c}\label{classmy25xx640_a_a257a98c1aeaa585b2d0adb5f7225753c}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_NOT\_READING@{ERROR\_NOT\_READING}}
+\index{ERROR\_NOT\_READING@{ERROR\_NOT\_READING}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_READING}{ERROR\_NOT\_READING}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG = \mbox{\hyperlink{my_error_codes_8hpp_a37b3947219c6c626a58edd171d8ec53e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+R\+E\+A\+D\+I\+NG}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Not in reading state. Value -\/330. Not in reading state when read requested. 
+
+\mbox{\Hypertarget{classmy25xx640_a_aba407c2a3366b608947dbe6b9b79f2b3}\label{classmy25xx640_a_aba407c2a3366b608947dbe6b9b79f2b3}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_NOT\_WRITE\_PROTECTED@{ERROR\_NOT\_WRITE\_PROTECTED}}
+\index{ERROR\_NOT\_WRITE\_PROTECTED@{ERROR\_NOT\_WRITE\_PROTECTED}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_WRITE\_PROTECTED}{ERROR\_NOT\_WRITE\_PROTECTED}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a2e51988900196c8a15bcb7a37fd1e01a}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Not write protected. Value -\/335. The write protect was already disabled when write protect clear was called. 
+
+\mbox{\Hypertarget{classmy25xx640_a_abc651b60f6cfff5869dcb7e9c8276b9c}\label{classmy25xx640_a_abc651b60f6cfff5869dcb7e9c8276b9c}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_NOT\_WRITING@{ERROR\_NOT\_WRITING}}
+\index{ERROR\_NOT\_WRITING@{ERROR\_NOT\_WRITING}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_WRITING}{ERROR\_NOT\_WRITING}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG = \mbox{\hyperlink{my_error_codes_8hpp_a09167dc5555eeaa0c7af7f291bf508ba}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+N\+O\+T\+\_\+\+W\+R\+I\+T\+I\+NG}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Not in writing state. Value -\/331. Not in writing state when write requested. 
+
+\mbox{\Hypertarget{classmy25xx640_a_a69d54b90b781f2736497325c7a50f21c}\label{classmy25xx640_a_a69d54b90b781f2736497325c7a50f21c}} 
+\index{my25xx640A@{my25xx640A}!ERROR\_WRITE\_PROTECTED@{ERROR\_WRITE\_PROTECTED}}
+\index{ERROR\_WRITE\_PROTECTED@{ERROR\_WRITE\_PROTECTED}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{ERROR\_WRITE\_PROTECTED}{ERROR\_WRITE\_PROTECTED}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+E\+R\+R\+O\+R\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a729dc550d84d28c164b41cd737bec6f3}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y25xx640\+A\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Address write protected. Value -\/334. The address is write protected at time of write, or is already write protected when write protect was called. 
+
+\mbox{\Hypertarget{classmy25xx640_a_a445b156ef766de98d063f12c17f66a98}\label{classmy25xx640_a_a445b156ef766de98d063f12c17f66a98}} 
+\index{my25xx640A@{my25xx640A}!MAX\_ADDRESS@{MAX\_ADDRESS}}
+\index{MAX\_ADDRESS@{MAX\_ADDRESS}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{MAX\_ADDRESS}{MAX\_ADDRESS}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+M\+A\+X\+\_\+\+A\+D\+D\+R\+E\+SS = 0x1\+F\+FF\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy25xx640_a_a714447914f26f7481d6e1ff69a4624aa}\label{classmy25xx640_a_a714447914f26f7481d6e1ff69a4624aa}} 
+\index{my25xx640A@{my25xx640A}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my25xx640\+A\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No error. Value 0. No error occured. 
+
+\mbox{\Hypertarget{classmy25xx640_a_aa9c8329980b42187bf52c8ffc77d8723}\label{classmy25xx640_a_aa9c8329980b42187bf52c8ffc77d8723}} 
+\index{my25xx640A@{my25xx640A}!PAGE\_SIZE@{PAGE\_SIZE}}
+\index{PAGE\_SIZE@{PAGE\_SIZE}!my25xx640A@{my25xx640A}}
+\doxysubsubsection{\texorpdfstring{PAGE\_SIZE}{PAGE\_SIZE}}
+{\footnotesize\ttfamily const int8\+\_\+t my25xx640\+A\+::\+P\+A\+G\+E\+\_\+\+S\+I\+ZE = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my25xx640\+A/\mbox{\hyperlink{my25xx640_a_8hpp}{my25xx640\+A.\+hpp}}\end{DoxyCompactItemize}

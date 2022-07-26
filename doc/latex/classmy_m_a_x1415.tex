@@ -1,0 +1,588 @@
+\hypertarget{classmy_m_a_x1415}{}\doxysection{my\+M\+A\+X1415 Class Reference}
+\label{classmy_m_a_x1415}\index{myMAX1415@{myMAX1415}}
+
+
+{\ttfamily \#include $<$my\+M\+A\+X1415.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_m_a_x1415_ac97898354ebc390283e316bf8060db68}{my\+M\+A\+X1415}} (spi\+\_\+inst\+\_\+t $\ast$spi\+Port, const uint8\+\_\+t sck\+Pin, const uint8\+\_\+t miso\+Pin, const uint8\+\_\+t mosi\+Pin, const uint8\+\_\+t cs\+Pin, const uint8\+\_\+t reset\+Pin, const uint8\+\_\+t drdy\+Pin)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_aa91aa8189c40650617d69159fc4fc231}{read\+ChannelA}} ()
+\begin{DoxyCompactList}\small\item\em Read channel A. Reads and returns the value of channel A. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a82bcc101e90123449b0f508b51c97110}{read\+ChannelB}} ()
+\begin{DoxyCompactList}\small\item\em Read channel B. Reads and returns the value of channel B. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a890a545e70cd56e3d7f8e6245ebb4892}{read\+Channel}} (const bool channel)
+\begin{DoxyCompactList}\small\item\em Read a channel. Reads the given channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_a92cd45886f957a4ad3fb2c3cc395d60f}{read\+Channels}} (uint16\+\_\+t readingA, uint16\+\_\+t readingB, const bool first\+Channel=\mbox{\hyperlink{classmy_m_a_x1415_a058c2710190ba3bede3347c146338bd0}{C\+H\+A\+N\+N\+E\+L\+\_\+A}})
+\begin{DoxyCompactList}\small\item\em Read both channels. Reads both channels. Sets readingA to reading of Channel A, and readingB to reading of Channel B. First channel is the first channel to sample, either a or b. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmy_m_a_x1415_a89d326971be6e797518d6c5dd541bbe9}{read\+Channel\+A\+Voltage}} (const float vref=3.\+3f)
+\begin{DoxyCompactList}\small\item\em Read channel A voltage. Reads and calculates voltage given V\+R\+EF in volts. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmy_m_a_x1415_ad6c6cfa6cbb08a7fb85c79131c468501}{read\+Channel\+B\+Voltage}} (const float vref=3.\+3f)
+\begin{DoxyCompactList}\small\item\em Read channel B voltage. Reads and calculates voltage given V\+R\+EF in volts. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classmy_m_a_x1415_a0dc3d43371c96d9d55e62cb41f7a9eb3}{read\+Channel\+Voltage}} (const bool channel, const float vref=3.\+3f)
+\begin{DoxyCompactList}\small\item\em Reads channel voltage. Reads and calculates a channels voltage, given V\+R\+EF in volts. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ae34ee96232717a91e667d1914e929cf8}{set\+Update\+Freq}} (const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the Update frequency. Sets the update frequency. Valid values are 0x00-\/0x03. Frequency is dependant on clock freqency. If an invalid frequency is passed, an error code is returned and no action is taken. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_ad20c39eaf1d9e7d7b267f088fd538077}{enable\+Clock\+Output}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Enable / disable the clock output. Enables / disables the clock output on the clock output pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_a79b2610e9842d7d4e8fc3c3cd8dbf7ee}{enable\+Clock\+Division}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Enable / disable clock division. Enables / disables clock division. Ignored when using internal clock. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ae6dd1e9cc63e978730735c73e473fda4}{set\+Gain}} (const bool channel, const uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the channel gain. Sets the gain for the given channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_a7fa6f5f003b2e7e16fee2aa74ada3a76}{set\+Buffer}} (const bool channel, const bool value)
+\begin{DoxyCompactList}\small\item\em Set the buffer setting. Enables / disables buffering. True = Buffer enabled, False = buffer disabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_aa12606893a6ba50caaa3c07cd634e785}{set\+Polar\+Mode}} (const bool channel, const bool value)
+\begin{DoxyCompactList}\small\item\em Set the unipolar / bipolar mode. Sets the unipolar / bipolar mode for a given channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_a7198496baba0449b95532fd879add3d7}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Preform hardware reset. Preforms a hardware reset if the reset pin has been defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_ace56eeda18e56b2e987065174d86fe01}{power\+Down}} (const bool value)
+\begin{DoxyCompactList}\small\item\em Sets the powerdown bit. Sets / clears the power down bit, and puts A\+DC in low power mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmy_m_a_x1415_a3d6e5dd76360c4b0998c20a6b7d64ae8}{set\+Free\+Running}} (const bool channel, const bool value)
+\begin{DoxyCompactList}\small\item\em Set the Free Running mode. Starts or stops the free running mode. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a40f1b20fb2a78881125ac98edabbf2db}{initialize}} (const bool init\+S\+PI=true, const bool int\+Clock=true, const bool clk\+Freq=\mbox{\hyperlink{classmy_m_a_x1415_aebe9241b8d18265b67022efffb2a3ab1}{C\+L\+O\+C\+K\+\_\+\+F\+R\+E\+Q\+\_\+2\+M\+HZ}}, const uint8\+\_\+t update\+Freq=\mbox{\hyperlink{classmy_m_a_x1415_aa497a1aeb3d4bf2ea8c37cecd5c75ceb}{F\+R\+E\+Q\+\_\+60\+HZ}}, const bool clk\+Div=false)
+\begin{DoxyCompactList}\small\item\em Initialize the chip. Initializes the S\+PI bus, and calibrates the A\+DC channels. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, otherwise if an invalid S\+PI pin was passed during construction an error code is returned. if an invalid reset pin, or data ready pin is passed, hardware reset, and hardware polling is disabled respectivly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a058c2710190ba3bede3347c146338bd0}{C\+H\+A\+N\+N\+E\+L\+\_\+A}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a8787ecc476c84d008d11cfe18c8829e6}{C\+H\+A\+N\+N\+E\+L\+\_\+B}} = 0x01
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_af94e2914d9c2984d3d2735c2c864ba50}{M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a2a501aef5d4881e6d961b85b4d999371}{M\+O\+D\+E\+\_\+\+S\+E\+L\+F\+\_\+\+C\+AL}} = 0x40
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a8ddb7385d69e6e7551998bc3b27da638}{M\+O\+D\+E\+\_\+\+Z\+E\+R\+O\+\_\+\+C\+AL}} = 0x80
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a15d45a58732c5a8e931ebb31f50c79f1}{M\+O\+D\+E\+\_\+\+F\+U\+L\+L\+\_\+\+C\+AL}} = 0x\+C0
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a46ddd32e6b7c103097796300a7024649}{G\+A\+I\+N\+\_\+1}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_aec2e3928efe3dc7341e2bccc525a43c9}{G\+A\+I\+N\+\_\+2}} = 0x01
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ab9fae931f0e5e41234ac598a635cabbe}{G\+A\+I\+N\+\_\+4}} = 0x02
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ac205ad2b65063ed68629c0843d9de9ea}{G\+A\+I\+N\+\_\+8}} = 0x03
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_aafe5518e010184e2845e9be7a75d7c2c}{G\+A\+I\+N\+\_\+16}} = 0x04
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ac7a89f5cac0bf507257f3b079dd54a00}{G\+A\+I\+N\+\_\+32}} = 0x05
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a66a302a9a6b2cb98da1486b44e2109b2}{G\+A\+I\+N\+\_\+64}} = 0x06
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a26eda1983abedac13df638ed93c4bea9}{G\+A\+I\+N\+\_\+128}} = 0x07
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ae729daa446e2c2caac0b82f05216f7a9}{C\+L\+O\+C\+K\+\_\+\+F\+R\+E\+Q\+\_\+1\+M\+HZ}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_aebe9241b8d18265b67022efffb2a3ab1}{C\+L\+O\+C\+K\+\_\+\+F\+R\+E\+Q\+\_\+2\+M\+HZ}} = 0x01
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a12a416c5762edaa5863dfd59209a14c4}{F\+R\+E\+Q\+\_\+20\+HZ}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ad244cdadb3bd5bd1d383fd673d40f4d4}{F\+R\+E\+Q\+\_\+25\+HZ}} = 0x01
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a8d61cc4fa6f7a796432dd98c82803e88}{F\+R\+E\+Q\+\_\+100\+HZ}} = 0x02
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ab34743376abb5c700af300442ed157fa}{F\+R\+E\+Q\+\_\+200\+HZ}} = 0x03
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ab3cac3f98af50662baeeddb496941af6}{F\+R\+E\+Q\+\_\+50\+HZ}} = 0x00
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_aa497a1aeb3d4bf2ea8c37cecd5c75ceb}{F\+R\+E\+Q\+\_\+60\+HZ}} = 0x01
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_aa2cfd23525c870e51c835bb778eda530}{F\+R\+E\+Q\+\_\+250\+HZ}} = 0x02
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a93ebe04747561d52a0a4a69c13799ff3}{F\+R\+E\+Q\+\_\+500\+HZ}} = 0x03
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a2432eacee46cbcfbc5999064d7944284}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_a41d106dd1a55e2ee642ef909059b879e}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a945e0a48734267b45b300b0ac26a7d0c}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid Chip Select pin. Value -\/153. Invalid Chip Select pin was passed during construction. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_accf3d13098145231ef7370fa09814f35}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+R\+EQ}} = \mbox{\hyperlink{my_error_codes_8hpp_a211daa3f025252fadbb783f8992608fd}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+M\+A\+X1415\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}}
+\begin{DoxyCompactList}\small\item\em Invalid update frequency. Value -\/225. The provided update frequency is invalid. Valid values (0x00-\/0x03). Use F\+R\+E\+Q\+\_\+$\ast$ values. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_m_a_x1415_ae6fb75dfc84da3e44816e0feaf80157c}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+G\+A\+IN}} = \mbox{\hyperlink{my_error_codes_8hpp_a32bba2278786b16347628fe91df8e4f0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+M\+A\+X1415\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+G\+A\+IN}}
+\begin{DoxyCompactList}\small\item\em Invalid gain. Value -\/226. The provided gain value is invalid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_m_a_x1415_ac97898354ebc390283e316bf8060db68}\label{classmy_m_a_x1415_ac97898354ebc390283e316bf8060db68}} 
+\index{myMAX1415@{myMAX1415}!myMAX1415@{myMAX1415}}
+\index{myMAX1415@{myMAX1415}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{myMAX1415()}{myMAX1415()}}
+{\footnotesize\ttfamily my\+M\+A\+X1415\+::my\+M\+A\+X1415 (\begin{DoxyParamCaption}\item[{spi\+\_\+inst\+\_\+t $\ast$}]{spi\+Port,  }\item[{const uint8\+\_\+t}]{sck\+Pin,  }\item[{const uint8\+\_\+t}]{miso\+Pin,  }\item[{const uint8\+\_\+t}]{mosi\+Pin,  }\item[{const uint8\+\_\+t}]{cs\+Pin,  }\item[{const uint8\+\_\+t}]{reset\+Pin,  }\item[{const uint8\+\_\+t}]{drdy\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy_m_a_x1415_a79b2610e9842d7d4e8fc3c3cd8dbf7ee}\label{classmy_m_a_x1415_a79b2610e9842d7d4e8fc3c3cd8dbf7ee}} 
+\index{myMAX1415@{myMAX1415}!enableClockDivision@{enableClockDivision}}
+\index{enableClockDivision@{enableClockDivision}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{enableClockDivision()}{enableClockDivision()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::enable\+Clock\+Division (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Enable / disable clock division. Enables / disables clock division. Ignored when using internal clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & True = Enable clock division. False = Disable clock division. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_m_a_x1415_ad20c39eaf1d9e7d7b267f088fd538077}\label{classmy_m_a_x1415_ad20c39eaf1d9e7d7b267f088fd538077}} 
+\index{myMAX1415@{myMAX1415}!enableClockOutput@{enableClockOutput}}
+\index{enableClockOutput@{enableClockOutput}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{enableClockOutput()}{enableClockOutput()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::enable\+Clock\+Output (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Enable / disable the clock output. Enables / disables the clock output on the clock output pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & True = enable clock, False = disable clock. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_m_a_x1415_a40f1b20fb2a78881125ac98edabbf2db}\label{classmy_m_a_x1415_a40f1b20fb2a78881125ac98edabbf2db}} 
+\index{myMAX1415@{myMAX1415}!initialize@{initialize}}
+\index{initialize@{initialize}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+A\+X1415\+::initialize (\begin{DoxyParamCaption}\item[{const bool}]{init\+S\+PI = {\ttfamily true},  }\item[{const bool}]{int\+Clock = {\ttfamily true},  }\item[{const bool}]{clk\+Freq = {\ttfamily \mbox{\hyperlink{classmy_m_a_x1415_aebe9241b8d18265b67022efffb2a3ab1}{C\+L\+O\+C\+K\+\_\+\+F\+R\+E\+Q\+\_\+2\+M\+HZ}}},  }\item[{const uint8\+\_\+t}]{update\+Freq = {\ttfamily \mbox{\hyperlink{classmy_m_a_x1415_aa497a1aeb3d4bf2ea8c37cecd5c75ceb}{F\+R\+E\+Q\+\_\+60\+HZ}}},  }\item[{const bool}]{clk\+Div = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Initialize the chip. Initializes the S\+PI bus, and calibrates the A\+DC channels. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, otherwise if an invalid S\+PI pin was passed during construction an error code is returned. if an invalid reset pin, or data ready pin is passed, hardware reset, and hardware polling is disabled respectivly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+S\+PI} & True = Initialize S\+PI bus, False = Don\textquotesingle{}t initialize S\+PI bus. \\
+\hline
+{\em int\+Clock} & True (default) = Enable internal clock. False = External clock. \\
+\hline
+{\em clk\+Freq} & True (default) = Frequency of 2.\+4576\+M\+Hz, False = Frequency of 1M\+Hz \\
+\hline
+{\em update\+Freq} & The update frequency, one of the F\+R\+E\+Q\+\_\+$\ast$ values. Defaults to 0x01, (F\+R\+E\+Q\+\_\+25/ F\+R\+E\+Q\+\_\+60\+HZ) depending on the Clock frequency. \\
+\hline
+{\em clk\+Div} & True = Use clock division, False(default) = Do not use clock division. Ignored if using the internal clock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if initialized okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_ace56eeda18e56b2e987065174d86fe01}\label{classmy_m_a_x1415_ace56eeda18e56b2e987065174d86fe01}} 
+\index{myMAX1415@{myMAX1415}!powerDown@{powerDown}}
+\index{powerDown@{powerDown}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{powerDown()}{powerDown()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::power\+Down (\begin{DoxyParamCaption}\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets the powerdown bit. Sets / clears the power down bit, and puts A\+DC in low power mode. 
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a890a545e70cd56e3d7f8e6245ebb4892}\label{classmy_m_a_x1415_a890a545e70cd56e3d7f8e6245ebb4892}} 
+\index{myMAX1415@{myMAX1415}!readChannel@{readChannel}}
+\index{readChannel@{readChannel}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannel()}{readChannel()}}
+{\footnotesize\ttfamily uint16\+\_\+t my\+M\+A\+X1415\+::read\+Channel (\begin{DoxyParamCaption}\item[{const bool}]{channel }\end{DoxyParamCaption})}
+
+
+
+Read a channel. Reads the given channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & True = Channel B, False = Channel A. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t Channel reading. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_aa91aa8189c40650617d69159fc4fc231}\label{classmy_m_a_x1415_aa91aa8189c40650617d69159fc4fc231}} 
+\index{myMAX1415@{myMAX1415}!readChannelA@{readChannelA}}
+\index{readChannelA@{readChannelA}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannelA()}{readChannelA()}}
+{\footnotesize\ttfamily uint16\+\_\+t my\+M\+A\+X1415\+::read\+ChannelA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read channel A. Reads and returns the value of channel A. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t The value of channel A. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_a89d326971be6e797518d6c5dd541bbe9}\label{classmy_m_a_x1415_a89d326971be6e797518d6c5dd541bbe9}} 
+\index{myMAX1415@{myMAX1415}!readChannelAVoltage@{readChannelAVoltage}}
+\index{readChannelAVoltage@{readChannelAVoltage}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannelAVoltage()}{readChannelAVoltage()}}
+{\footnotesize\ttfamily float my\+M\+A\+X1415\+::read\+Channel\+A\+Voltage (\begin{DoxyParamCaption}\item[{const float}]{vref = {\ttfamily 3.3f} }\end{DoxyParamCaption})}
+
+
+
+Read channel A voltage. Reads and calculates voltage given V\+R\+EF in volts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vref} & V\+R\+EF in volts. Default=3.\+3v. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Voltage in volts. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_a82bcc101e90123449b0f508b51c97110}\label{classmy_m_a_x1415_a82bcc101e90123449b0f508b51c97110}} 
+\index{myMAX1415@{myMAX1415}!readChannelB@{readChannelB}}
+\index{readChannelB@{readChannelB}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannelB()}{readChannelB()}}
+{\footnotesize\ttfamily uint16\+\_\+t my\+M\+A\+X1415\+::read\+ChannelB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read channel B. Reads and returns the value of channel B. 
+
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t The value of channel B. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_ad6c6cfa6cbb08a7fb85c79131c468501}\label{classmy_m_a_x1415_ad6c6cfa6cbb08a7fb85c79131c468501}} 
+\index{myMAX1415@{myMAX1415}!readChannelBVoltage@{readChannelBVoltage}}
+\index{readChannelBVoltage@{readChannelBVoltage}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannelBVoltage()}{readChannelBVoltage()}}
+{\footnotesize\ttfamily float my\+M\+A\+X1415\+::read\+Channel\+B\+Voltage (\begin{DoxyParamCaption}\item[{const float}]{vref = {\ttfamily 3.3f} }\end{DoxyParamCaption})}
+
+
+
+Read channel B voltage. Reads and calculates voltage given V\+R\+EF in volts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vref} & V\+R\+EF in volts. Default=3.\+3v. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Voltage in volts. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_a92cd45886f957a4ad3fb2c3cc395d60f}\label{classmy_m_a_x1415_a92cd45886f957a4ad3fb2c3cc395d60f}} 
+\index{myMAX1415@{myMAX1415}!readChannels@{readChannels}}
+\index{readChannels@{readChannels}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannels()}{readChannels()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::read\+Channels (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{readingA,  }\item[{uint16\+\_\+t}]{readingB,  }\item[{const bool}]{first\+Channel = {\ttfamily \mbox{\hyperlink{classmy_m_a_x1415_a058c2710190ba3bede3347c146338bd0}{C\+H\+A\+N\+N\+E\+L\+\_\+A}}} }\end{DoxyParamCaption})}
+
+
+
+Read both channels. Reads both channels. Sets readingA to reading of Channel A, and readingB to reading of Channel B. First channel is the first channel to sample, either a or b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em readingA} & Variable to set to reading of channelA. \\
+\hline
+{\em readingB} & Valiable to set to reading of cahnnelB. \\
+\hline
+{\em first\+Channel} & True = Read Channel B then A, false = Read Channel A then B. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_m_a_x1415_a0dc3d43371c96d9d55e62cb41f7a9eb3}\label{classmy_m_a_x1415_a0dc3d43371c96d9d55e62cb41f7a9eb3}} 
+\index{myMAX1415@{myMAX1415}!readChannelVoltage@{readChannelVoltage}}
+\index{readChannelVoltage@{readChannelVoltage}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{readChannelVoltage()}{readChannelVoltage()}}
+{\footnotesize\ttfamily float my\+M\+A\+X1415\+::read\+Channel\+Voltage (\begin{DoxyParamCaption}\item[{const bool}]{channel,  }\item[{const float}]{vref = {\ttfamily 3.3f} }\end{DoxyParamCaption})}
+
+
+
+Reads channel voltage. Reads and calculates a channels voltage, given V\+R\+EF in volts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & True = Channel B, False = Channel A. \\
+\hline
+{\em vref} & V\+R\+EF in volts. Default 3.\+3v. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Voltage in volts. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_a7198496baba0449b95532fd879add3d7}\label{classmy_m_a_x1415_a7198496baba0449b95532fd879add3d7}} 
+\index{myMAX1415@{myMAX1415}!reset@{reset}}
+\index{reset@{reset}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Preform hardware reset. Preforms a hardware reset if the reset pin has been defined. 
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a7fa6f5f003b2e7e16fee2aa74ada3a76}\label{classmy_m_a_x1415_a7fa6f5f003b2e7e16fee2aa74ada3a76}} 
+\index{myMAX1415@{myMAX1415}!setBuffer@{setBuffer}}
+\index{setBuffer@{setBuffer}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{setBuffer()}{setBuffer()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::set\+Buffer (\begin{DoxyParamCaption}\item[{const bool}]{channel,  }\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the buffer setting. Enables / disables buffering. True = Buffer enabled, False = buffer disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & True = Channel B, False = Channel A \\
+\hline
+{\em value} & True = Buffer enabled. False = Buffer disabled. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_m_a_x1415_a3d6e5dd76360c4b0998c20a6b7d64ae8}\label{classmy_m_a_x1415_a3d6e5dd76360c4b0998c20a6b7d64ae8}} 
+\index{myMAX1415@{myMAX1415}!setFreeRunning@{setFreeRunning}}
+\index{setFreeRunning@{setFreeRunning}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{setFreeRunning()}{setFreeRunning()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::set\+Free\+Running (\begin{DoxyParamCaption}\item[{const bool}]{channel,  }\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Free Running mode. Starts or stops the free running mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & True = Channel B, False = Channel A. \\
+\hline
+{\em value} & True = Enable Free running mode, False = Disable free running mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_m_a_x1415_ae6dd1e9cc63e978730735c73e473fda4}\label{classmy_m_a_x1415_ae6dd1e9cc63e978730735c73e473fda4}} 
+\index{myMAX1415@{myMAX1415}!setGain@{setGain}}
+\index{setGain@{setGain}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{setGain()}{setGain()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+A\+X1415\+::set\+Gain (\begin{DoxyParamCaption}\item[{const bool}]{channel,  }\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the channel gain. Sets the gain for the given channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & True = Channel B, False = Channel A. \\
+\hline
+{\em value} & Gain value to set. Valid Values 0x00-\/$>$0x07 inclusive. Can use G\+A\+I\+N\+\_\+$\ast$ for appropriate values. Returns the gain factor as int if successful. Otherwise an error code is returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Positive = Gain factor. Negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_m_a_x1415_aa12606893a6ba50caaa3c07cd634e785}\label{classmy_m_a_x1415_aa12606893a6ba50caaa3c07cd634e785}} 
+\index{myMAX1415@{myMAX1415}!setPolarMode@{setPolarMode}}
+\index{setPolarMode@{setPolarMode}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{setPolarMode()}{setPolarMode()}}
+{\footnotesize\ttfamily void my\+M\+A\+X1415\+::set\+Polar\+Mode (\begin{DoxyParamCaption}\item[{const bool}]{channel,  }\item[{const bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the unipolar / bipolar mode. Sets the unipolar / bipolar mode for a given channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & True = Channel B, False = Channel A. \\
+\hline
+{\em value} & True = Unipolar mode, False = Bipolar mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmy_m_a_x1415_ae34ee96232717a91e667d1914e929cf8}\label{classmy_m_a_x1415_ae34ee96232717a91e667d1914e929cf8}} 
+\index{myMAX1415@{myMAX1415}!setUpdateFreq@{setUpdateFreq}}
+\index{setUpdateFreq@{setUpdateFreq}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{setUpdateFreq()}{setUpdateFreq()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+M\+A\+X1415\+::set\+Update\+Freq (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the Update frequency. Sets the update frequency. Valid values are 0x00-\/0x03. Frequency is dependant on clock freqency. If an invalid frequency is passed, an error code is returned and no action is taken. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to set the update frequency to. Valid values 0x00-\/$>$0x03. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns achieved freqency in Hz if set okay, negative for error code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy_m_a_x1415_a058c2710190ba3bede3347c146338bd0}\label{classmy_m_a_x1415_a058c2710190ba3bede3347c146338bd0}} 
+\index{myMAX1415@{myMAX1415}!CHANNEL\_A@{CHANNEL\_A}}
+\index{CHANNEL\_A@{CHANNEL\_A}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{CHANNEL\_A}{CHANNEL\_A}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+C\+H\+A\+N\+N\+E\+L\+\_\+A = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a8787ecc476c84d008d11cfe18c8829e6}\label{classmy_m_a_x1415_a8787ecc476c84d008d11cfe18c8829e6}} 
+\index{myMAX1415@{myMAX1415}!CHANNEL\_B@{CHANNEL\_B}}
+\index{CHANNEL\_B@{CHANNEL\_B}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{CHANNEL\_B}{CHANNEL\_B}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+C\+H\+A\+N\+N\+E\+L\+\_\+B = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ae729daa446e2c2caac0b82f05216f7a9}\label{classmy_m_a_x1415_ae729daa446e2c2caac0b82f05216f7a9}} 
+\index{myMAX1415@{myMAX1415}!CLOCK\_FREQ\_1MHZ@{CLOCK\_FREQ\_1MHZ}}
+\index{CLOCK\_FREQ\_1MHZ@{CLOCK\_FREQ\_1MHZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_FREQ\_1MHZ}{CLOCK\_FREQ\_1MHZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+C\+L\+O\+C\+K\+\_\+\+F\+R\+E\+Q\+\_\+1\+M\+HZ = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_aebe9241b8d18265b67022efffb2a3ab1}\label{classmy_m_a_x1415_aebe9241b8d18265b67022efffb2a3ab1}} 
+\index{myMAX1415@{myMAX1415}!CLOCK\_FREQ\_2MHZ@{CLOCK\_FREQ\_2MHZ}}
+\index{CLOCK\_FREQ\_2MHZ@{CLOCK\_FREQ\_2MHZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_FREQ\_2MHZ}{CLOCK\_FREQ\_2MHZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+C\+L\+O\+C\+K\+\_\+\+F\+R\+E\+Q\+\_\+2\+M\+HZ = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a41d106dd1a55e2ee642ef909059b879e}\label{classmy_m_a_x1415_a41d106dd1a55e2ee642ef909059b879e}} 
+\index{myMAX1415@{myMAX1415}!ERROR\_INVALID\_CS\_PIN@{ERROR\_INVALID\_CS\_PIN}}
+\index{ERROR\_INVALID\_CS\_PIN@{ERROR\_INVALID\_CS\_PIN}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_CS\_PIN}{ERROR\_INVALID\_CS\_PIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+M\+A\+X1415\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a945e0a48734267b45b300b0ac26a7d0c}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+S\+\_\+\+P\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid Chip Select pin. Value -\/153. Invalid Chip Select pin was passed during construction. 
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ae6fb75dfc84da3e44816e0feaf80157c}\label{classmy_m_a_x1415_ae6fb75dfc84da3e44816e0feaf80157c}} 
+\index{myMAX1415@{myMAX1415}!ERROR\_INVALID\_GAIN@{ERROR\_INVALID\_GAIN}}
+\index{ERROR\_INVALID\_GAIN@{ERROR\_INVALID\_GAIN}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_GAIN}{ERROR\_INVALID\_GAIN}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+M\+A\+X1415\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+G\+A\+IN = \mbox{\hyperlink{my_error_codes_8hpp_a32bba2278786b16347628fe91df8e4f0}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+M\+A\+X1415\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+G\+A\+IN}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid gain. Value -\/226. The provided gain value is invalid. 
+
+\mbox{\Hypertarget{classmy_m_a_x1415_accf3d13098145231ef7370fa09814f35}\label{classmy_m_a_x1415_accf3d13098145231ef7370fa09814f35}} 
+\index{myMAX1415@{myMAX1415}!ERROR\_INVALID\_UPDATE\_FREQ@{ERROR\_INVALID\_UPDATE\_FREQ}}
+\index{ERROR\_INVALID\_UPDATE\_FREQ@{ERROR\_INVALID\_UPDATE\_FREQ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_UPDATE\_FREQ}{ERROR\_INVALID\_UPDATE\_FREQ}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+M\+A\+X1415\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+R\+EQ = \mbox{\hyperlink{my_error_codes_8hpp_a211daa3f025252fadbb783f8992608fd}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+Y\+M\+A\+X1415\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+CY}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Invalid update frequency. Value -\/225. The provided update frequency is invalid. Valid values (0x00-\/0x03). Use F\+R\+E\+Q\+\_\+$\ast$ values. 
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a8d61cc4fa6f7a796432dd98c82803e88}\label{classmy_m_a_x1415_a8d61cc4fa6f7a796432dd98c82803e88}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_100HZ@{FREQ\_100HZ}}
+\index{FREQ\_100HZ@{FREQ\_100HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_100HZ}{FREQ\_100HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+100\+HZ = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ab34743376abb5c700af300442ed157fa}\label{classmy_m_a_x1415_ab34743376abb5c700af300442ed157fa}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_200HZ@{FREQ\_200HZ}}
+\index{FREQ\_200HZ@{FREQ\_200HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_200HZ}{FREQ\_200HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+200\+HZ = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a12a416c5762edaa5863dfd59209a14c4}\label{classmy_m_a_x1415_a12a416c5762edaa5863dfd59209a14c4}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_20HZ@{FREQ\_20HZ}}
+\index{FREQ\_20HZ@{FREQ\_20HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_20HZ}{FREQ\_20HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+20\+HZ = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_aa2cfd23525c870e51c835bb778eda530}\label{classmy_m_a_x1415_aa2cfd23525c870e51c835bb778eda530}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_250HZ@{FREQ\_250HZ}}
+\index{FREQ\_250HZ@{FREQ\_250HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_250HZ}{FREQ\_250HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+250\+HZ = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ad244cdadb3bd5bd1d383fd673d40f4d4}\label{classmy_m_a_x1415_ad244cdadb3bd5bd1d383fd673d40f4d4}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_25HZ@{FREQ\_25HZ}}
+\index{FREQ\_25HZ@{FREQ\_25HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_25HZ}{FREQ\_25HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+25\+HZ = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a93ebe04747561d52a0a4a69c13799ff3}\label{classmy_m_a_x1415_a93ebe04747561d52a0a4a69c13799ff3}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_500HZ@{FREQ\_500HZ}}
+\index{FREQ\_500HZ@{FREQ\_500HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_500HZ}{FREQ\_500HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+500\+HZ = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ab3cac3f98af50662baeeddb496941af6}\label{classmy_m_a_x1415_ab3cac3f98af50662baeeddb496941af6}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_50HZ@{FREQ\_50HZ}}
+\index{FREQ\_50HZ@{FREQ\_50HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_50HZ}{FREQ\_50HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+50\+HZ = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_aa497a1aeb3d4bf2ea8c37cecd5c75ceb}\label{classmy_m_a_x1415_aa497a1aeb3d4bf2ea8c37cecd5c75ceb}} 
+\index{myMAX1415@{myMAX1415}!FREQ\_60HZ@{FREQ\_60HZ}}
+\index{FREQ\_60HZ@{FREQ\_60HZ}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{FREQ\_60HZ}{FREQ\_60HZ}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+F\+R\+E\+Q\+\_\+60\+HZ = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a46ddd32e6b7c103097796300a7024649}\label{classmy_m_a_x1415_a46ddd32e6b7c103097796300a7024649}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_1@{GAIN\_1}}
+\index{GAIN\_1@{GAIN\_1}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_1}{GAIN\_1}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+1 = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a26eda1983abedac13df638ed93c4bea9}\label{classmy_m_a_x1415_a26eda1983abedac13df638ed93c4bea9}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_128@{GAIN\_128}}
+\index{GAIN\_128@{GAIN\_128}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_128}{GAIN\_128}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+128 = 0x07\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_aafe5518e010184e2845e9be7a75d7c2c}\label{classmy_m_a_x1415_aafe5518e010184e2845e9be7a75d7c2c}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_16@{GAIN\_16}}
+\index{GAIN\_16@{GAIN\_16}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_16}{GAIN\_16}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+16 = 0x04\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_aec2e3928efe3dc7341e2bccc525a43c9}\label{classmy_m_a_x1415_aec2e3928efe3dc7341e2bccc525a43c9}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_2@{GAIN\_2}}
+\index{GAIN\_2@{GAIN\_2}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_2}{GAIN\_2}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+2 = 0x01\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ac7a89f5cac0bf507257f3b079dd54a00}\label{classmy_m_a_x1415_ac7a89f5cac0bf507257f3b079dd54a00}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_32@{GAIN\_32}}
+\index{GAIN\_32@{GAIN\_32}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_32}{GAIN\_32}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+32 = 0x05\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ab9fae931f0e5e41234ac598a635cabbe}\label{classmy_m_a_x1415_ab9fae931f0e5e41234ac598a635cabbe}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_4@{GAIN\_4}}
+\index{GAIN\_4@{GAIN\_4}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_4}{GAIN\_4}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+4 = 0x02\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a66a302a9a6b2cb98da1486b44e2109b2}\label{classmy_m_a_x1415_a66a302a9a6b2cb98da1486b44e2109b2}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_64@{GAIN\_64}}
+\index{GAIN\_64@{GAIN\_64}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_64}{GAIN\_64}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+64 = 0x06\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_ac205ad2b65063ed68629c0843d9de9ea}\label{classmy_m_a_x1415_ac205ad2b65063ed68629c0843d9de9ea}} 
+\index{myMAX1415@{myMAX1415}!GAIN\_8@{GAIN\_8}}
+\index{GAIN\_8@{GAIN\_8}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{GAIN\_8}{GAIN\_8}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+G\+A\+I\+N\+\_\+8 = 0x03\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a15d45a58732c5a8e931ebb31f50c79f1}\label{classmy_m_a_x1415_a15d45a58732c5a8e931ebb31f50c79f1}} 
+\index{myMAX1415@{myMAX1415}!MODE\_FULL\_CAL@{MODE\_FULL\_CAL}}
+\index{MODE\_FULL\_CAL@{MODE\_FULL\_CAL}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{MODE\_FULL\_CAL}{MODE\_FULL\_CAL}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+M\+O\+D\+E\+\_\+\+F\+U\+L\+L\+\_\+\+C\+AL = 0x\+C0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_af94e2914d9c2984d3d2735c2c864ba50}\label{classmy_m_a_x1415_af94e2914d9c2984d3d2735c2c864ba50}} 
+\index{myMAX1415@{myMAX1415}!MODE\_NORMAL@{MODE\_NORMAL}}
+\index{MODE\_NORMAL@{MODE\_NORMAL}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{MODE\_NORMAL}{MODE\_NORMAL}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+M\+O\+D\+E\+\_\+\+N\+O\+R\+M\+AL = 0x00\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a2a501aef5d4881e6d961b85b4d999371}\label{classmy_m_a_x1415_a2a501aef5d4881e6d961b85b4d999371}} 
+\index{myMAX1415@{myMAX1415}!MODE\_SELF\_CAL@{MODE\_SELF\_CAL}}
+\index{MODE\_SELF\_CAL@{MODE\_SELF\_CAL}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{MODE\_SELF\_CAL}{MODE\_SELF\_CAL}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+M\+O\+D\+E\+\_\+\+S\+E\+L\+F\+\_\+\+C\+AL = 0x40\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a8ddb7385d69e6e7551998bc3b27da638}\label{classmy_m_a_x1415_a8ddb7385d69e6e7551998bc3b27da638}} 
+\index{myMAX1415@{myMAX1415}!MODE\_ZERO\_CAL@{MODE\_ZERO\_CAL}}
+\index{MODE\_ZERO\_CAL@{MODE\_ZERO\_CAL}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{MODE\_ZERO\_CAL}{MODE\_ZERO\_CAL}}
+{\footnotesize\ttfamily const uint8\+\_\+t my\+M\+A\+X1415\+::\+M\+O\+D\+E\+\_\+\+Z\+E\+R\+O\+\_\+\+C\+AL = 0x80\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmy_m_a_x1415_a2432eacee46cbcfbc5999064d7944284}\label{classmy_m_a_x1415_a2432eacee46cbcfbc5999064d7944284}} 
+\index{myMAX1415@{myMAX1415}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!myMAX1415@{myMAX1415}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+M\+A\+X1415\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+M\+A\+X1415/\mbox{\hyperlink{my_m_a_x1415_8hpp}{my\+M\+A\+X1415.\+hpp}}\end{DoxyCompactItemize}

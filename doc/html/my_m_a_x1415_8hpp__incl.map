@@ -1,0 +1,11 @@
+<map id="myMAX1415/myMAX1415.hpp" name="myMAX1415/myMAX1415.hpp">
+<area shape="rect" id="node1" title="Class to use a MAX1415 16bit ADC." alt="" coords="436,5,656,32"/>
+<area shape="rect" id="node2" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="635,229,790,256"/>
+<area shape="rect" id="node3" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="322,155,455,181"/>
+<area shape="rect" id="node8" href="$my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="472,80,620,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="124,229,251,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="275,229,409,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,229,100,256"/>
+<area shape="rect" id="node7" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="433,229,611,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="531,155,649,181"/>
+</map>

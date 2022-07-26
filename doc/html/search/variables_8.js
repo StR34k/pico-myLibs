@@ -1,9 +1,21 @@
 var searchData=
 [
-  ['osr_5foff_856',['OSR_OFF',['../classmy_b_mx280.html#a1bc4cfd3fe981d0aa1dc92f2e1419a34',1,'myBMx280']]],
-  ['osr_5fx1_857',['OSR_X1',['../classmy_b_mx280.html#a268b3751104337f333647a79652d9462',1,'myBMx280']]],
-  ['osr_5fx16_858',['OSR_X16',['../classmy_b_mx280.html#acb32fe99475cce6ab62d22dae56d1c0d',1,'myBMx280']]],
-  ['osr_5fx2_859',['OSR_X2',['../classmy_b_mx280.html#a9e7bf96cd3b75a2bc7be7620c1f461b0',1,'myBMx280']]],
-  ['osr_5fx4_860',['OSR_X4',['../classmy_b_mx280.html#a49dc648af8f575eb977cf434923e70c3',1,'myBMx280']]],
-  ['osr_5fx8_861',['OSR_X8',['../classmy_b_mx280.html#a763453b503a3b235f9c5dcf0cbd0319f',1,'myBMx280']]]
+  ['max_5faddress_1009',['MAX_ADDRESS',['../classmy23_l_c1024.html#ae13240a11b0288cc0f67a6cec6821f8f',1,'my23LC1024::MAX_ADDRESS()'],['../classmy25xx640_a.html#a445b156ef766de98d063f12c17f66a98',1,'my25xx640A::MAX_ADDRESS()'],['../classmy_a_t24_c32.html#ad6e0ea6669139954f66d653fbcd6f1c0',1,'myAT24C32::MAX_ADDRESS()']]],
+  ['max_5fvalue_5f02_1010',['MAX_VALUE_02',['../classmy_m_c_p49x2.html#aa4b1a39f3857faea49f8164e004e14cb',1,'myMCP49x2']]],
+  ['max_5fvalue_5f12_1011',['MAX_VALUE_12',['../classmy_m_c_p49x2.html#abb5d51a28a17f6d4647847e78dc6ea0d',1,'myMCP49x2']]],
+  ['max_5fvalue_5f22_1012',['MAX_VALUE_22',['../classmy_m_c_p49x2.html#a7652b97d0344580ecae38c1cffe39cc1',1,'myMCP49x2']]],
+  ['meas_5fmode_5fmask_1013',['MEAS_MODE_MASK',['../classmy_b_mx280.html#a1e22fa9fea60767bce31014064d5e954',1,'myBMx280']]],
+  ['meas_5fpres_5fosr_5fmask_1014',['MEAS_PRES_OSR_MASK',['../classmy_b_mx280.html#a4c9d94fb145fd9844dee4a6cd4c10a9d',1,'myBMx280']]],
+  ['meas_5ftemp_5fosr_5fmask_1015',['MEAS_TEMP_OSR_MASK',['../classmy_b_mx280.html#aa62edb95c6d1934e42546ede22ac7bbe',1,'myBMx280']]],
+  ['min_5fvalue_1016',['MIN_VALUE',['../classmy_m_c_p49x2.html#a650c124008e4fdaef1dcdd15be24ee31',1,'myMCP49x2']]],
+  ['mode_5f0_1017',['MODE_0',['../namespacemy_b_b_s_p_i_master.html#a0a3d20a44c65443baba63078d120eba6',1,'myBBSPIMaster']]],
+  ['mode_5f1_1018',['MODE_1',['../namespacemy_b_b_s_p_i_master.html#a93765bc01c7439803145b754642b9020',1,'myBBSPIMaster']]],
+  ['mode_5f2_1019',['MODE_2',['../namespacemy_b_b_s_p_i_master.html#ac549376b8e48aa6bdcefb06a7dcf364d',1,'myBBSPIMaster']]],
+  ['mode_5f3_1020',['MODE_3',['../namespacemy_b_b_s_p_i_master.html#a93365fba1ada5ddb6bbc73f8842f62ce',1,'myBBSPIMaster']]],
+  ['mode_5fforced_1021',['MODE_FORCED',['../classmy_b_mx280.html#a49c59031e2edf388c60aaea5866a6119',1,'myBMx280']]],
+  ['mode_5ffull_5fcal_1022',['MODE_FULL_CAL',['../classmy_m_a_x1415.html#a15d45a58732c5a8e931ebb31f50c79f1',1,'myMAX1415']]],
+  ['mode_5fnormal_1023',['MODE_NORMAL',['../classmy_b_mx280.html#a49159f29102f1007166688414ba25075',1,'myBMx280::MODE_NORMAL()'],['../classmy_m_a_x1415.html#af94e2914d9c2984d3d2735c2c864ba50',1,'myMAX1415::MODE_NORMAL()']]],
+  ['mode_5fself_5fcal_1024',['MODE_SELF_CAL',['../classmy_m_a_x1415.html#a2a501aef5d4881e6d961b85b4d999371',1,'myMAX1415']]],
+  ['mode_5fsleep_1025',['MODE_SLEEP',['../classmy_b_mx280.html#a787f933fdef28f9e6730908344842ca3',1,'myBMx280']]],
+  ['mode_5fzero_5fcal_1026',['MODE_ZERO_CAL',['../classmy_m_a_x1415.html#a8ddb7385d69e6e7551998bc3b27da638',1,'myMAX1415']]]
 ];

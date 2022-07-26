@@ -1,0 +1,61 @@
+\hypertarget{my_spin_lock_8hpp}{}\doxysection{my\+Spin\+Lock/my\+Spin\+Lock.hpp File Reference}
+\label{my_spin_lock_8hpp}\index{mySpinLock/mySpinLock.hpp@{mySpinLock/mySpinLock.hpp}}
+
+
+Spin lock helper functions.  
+
+
+{\ttfamily \#include $<$hardware/sync.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../my\+Standard\+Defines.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../my\+Error\+Codes.\+hpp\char`\"{}}\newline
+Include dependency graph for my\+Spin\+Lock.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{my_spin_lock_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmy_spin_lock}{my\+Spin\+Lock}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{my_spin_lock_8hpp_a0d1da3e838a8f060848c91b56e0fca05}{\+\_\+my\+Locks\+Init}}
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{my_spin_lock_8hpp_ab4ff17c9f46148b81d181b1055c30468}{\+\_\+my\+Locks\+Claimed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Spin lock helper functions. 
+
+\begin{DoxyAuthor}{Author}
+Peter Nearing (\href{mailto:pnearing@protonmail.com}{\texttt{ pnearing@protonmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/07-\/13
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{my_spin_lock_8hpp_ab4ff17c9f46148b81d181b1055c30468}\label{my_spin_lock_8hpp_ab4ff17c9f46148b81d181b1055c30468}} 
+\index{mySpinLock.hpp@{mySpinLock.hpp}!\_myLocksClaimed@{\_myLocksClaimed}}
+\index{\_myLocksClaimed@{\_myLocksClaimed}!mySpinLock.hpp@{mySpinLock.hpp}}
+\doxysubsubsection{\texorpdfstring{\_myLocksClaimed}{\_myLocksClaimed}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t \+\_\+my\+Locks\+Claimed}
+
+\mbox{\Hypertarget{my_spin_lock_8hpp_a0d1da3e838a8f060848c91b56e0fca05}\label{my_spin_lock_8hpp_a0d1da3e838a8f060848c91b56e0fca05}} 
+\index{mySpinLock.hpp@{mySpinLock.hpp}!\_myLocksInit@{\_myLocksInit}}
+\index{\_myLocksInit@{\_myLocksInit}!mySpinLock.hpp@{mySpinLock.hpp}}
+\doxysubsubsection{\texorpdfstring{\_myLocksInit}{\_myLocksInit}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t \+\_\+my\+Locks\+Init}
+

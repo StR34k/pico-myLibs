@@ -5,10 +5,10 @@ var indexSectionsWithContent =
   2: "m",
   3: "cm",
   4: "bcdegilmprstuvw",
-  5: "_cefhlmnoprst",
+  5: "_bcefghlmnoprst",
   6: "m",
   7: "m",
-  8: "_lm"
+  8: "_bhlm"
 };
 
 var indexSectionNames =

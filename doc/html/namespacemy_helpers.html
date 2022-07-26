@@ -107,15 +107,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a90d7c32f82edecaad34f24de7435033f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">pulseIn64</a> (const uint8_t pin, const bool state, uint64_t timeout=0)</td></tr>
 <tr class="memdesc:a90d7c32f82edecaad34f24de7435033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 64 bit.  <a href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">More...</a><br /></td></tr>
 <tr class="separator:a90d7c32f82edecaad34f24de7435033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96154907f93e9076b34629afd70a862"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">map32</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
-<tr class="memdesc:af96154907f93e9076b34629afd70a862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 32 Bit.  <a href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">More...</a><br /></td></tr>
-<tr class="separator:af96154907f93e9076b34629afd70a862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24b232780b4b52e9b1bce28bedc847ad"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">map64</a> (int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max)</td></tr>
-<tr class="memdesc:a24b232780b4b52e9b1bce28bedc847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 64 Bit.  <a href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">More...</a><br /></td></tr>
-<tr class="separator:a24b232780b4b52e9b1bce28bedc847ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64d967890f73eefdd3e06fff0a4d25ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a64d967890f73eefdd3e06fff0a4d25ff">mapFloat</a> (float x, float in_min, float in_max, float out_min, float out_max)</td></tr>
-<tr class="memdesc:a64d967890f73eefdd3e06fff0a4d25ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. Floating point.  <a href="namespacemy_helpers.html#a64d967890f73eefdd3e06fff0a4d25ff">More...</a><br /></td></tr>
-<tr class="separator:a64d967890f73eefdd3e06fff0a4d25ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1637e81f05cc6009ef52673de9688ce8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1637e81f05cc6009ef52673de9688ce8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a1637e81f05cc6009ef52673de9688ce8">map</a> (T x, T in_min, T in_max, T out_min, T out_max)</td></tr>
+<tr class="memdesc:a1637e81f05cc6009ef52673de9688ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. Template.  <a href="namespacemy_helpers.html#a1637e81f05cc6009ef52673de9688ce8">More...</a><br /></td></tr>
+<tr class="separator:a1637e81f05cc6009ef52673de9688ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">reverse8</a> (const uint8_t value)</td></tr>
 <tr class="memdesc:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">More...</a><br /></td></tr>
 <tr class="separator:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,6 +167,11 @@ Functions</h2></td></tr>
 <tr class="separator:a787ea7da64c15140f736866f34ee038f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa81421e243793a0b8f6422c65aef186d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aa81421e243793a0b8f6422c65aef186d">shiftOut</a> (const uint8_t clockPin, const uint8_t dataPin, const uint8_t *buffer, const size_t len, const bool bitOrder=<a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>)</td></tr>
 <tr class="separator:aa81421e243793a0b8f6422c65aef186d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2230ab4557684348a067f1317206e431"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a2230ab4557684348a067f1317206e431">shiftIn</a> (const uint8_t clockPin, const uint8_t dataPin, uint8_t *buffer, const size_t len, const bool bitOrder=<a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>)</td></tr>
+<tr class="separator:a2230ab4557684348a067f1317206e431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598c906e9bfe5be2010bac35a632df3d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a598c906e9bfe5be2010bac35a632df3d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a598c906e9bfe5be2010bac35a632df3d">printBin</a> (const T &amp;value, const bool printSpaces=true, const bool printPrefix=true)</td></tr>
+<tr class="separator:a598c906e9bfe5be2010bac35a632df3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions. Define some helper functions for use within pico-myLibs. </p>
@@ -845,40 +845,42 @@ false Year is an invalid year. </dd></dl>
 
 </div>
 </div>
-<a id="af96154907f93e9076b34629afd70a862"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af96154907f93e9076b34629afd70a862">&#9670;&nbsp;</a></span>map32()</h2>
+<a id="a1637e81f05cc6009ef52673de9688ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1637e81f05cc6009ef52673de9688ce8">&#9670;&nbsp;</a></span>map()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int32_t myHelpers::map32 </td>
+          <td class="memname">T myHelpers::map </td>
           <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>in_min</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>in_max</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>out_min</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>out_max</em>&#160;</td>
         </tr>
         <tr>
@@ -889,7 +891,7 @@ false Year is an invalid year. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Map a value from one range to another. 32 Bit. </p>
+<p>Map a value from one range to another. Template. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Value to map </td></tr>
@@ -901,124 +903,6 @@ false Year is an invalid year. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int32_t The mapped value. </dd></dl>
-
-</div>
-</div>
-<a id="a24b232780b4b52e9b1bce28bedc847ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24b232780b4b52e9b1bce28bedc847ad">&#9670;&nbsp;</a></span>map64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int64_t myHelpers::map64 </td>
-          <td>(</td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>in_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>in_max</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>out_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int64_t&#160;</td>
-          <td class="paramname"><em>out_max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Map a value from one range to another. 64 Bit. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>Value to map </td></tr>
-    <tr><td class="paramname">in_min</td><td>In range minimum </td></tr>
-    <tr><td class="paramname">in_max</td><td>In range maximum </td></tr>
-    <tr><td class="paramname">out_min</td><td>Out range minimum. </td></tr>
-    <tr><td class="paramname">out_max</td><td>Out range maximum. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int32_t The mapped value. </dd></dl>
-
-</div>
-</div>
-<a id="a64d967890f73eefdd3e06fff0a4d25ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64d967890f73eefdd3e06fff0a4d25ff">&#9670;&nbsp;</a></span>mapFloat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float myHelpers::mapFloat </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>in_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>in_max</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>out_min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>out_max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Map a value from one range to another. Floating point. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>Value to map </td></tr>
-    <tr><td class="paramname">in_min</td><td>In range minimum </td></tr>
-    <tr><td class="paramname">in_max</td><td>In range maximum </td></tr>
-    <tr><td class="paramname">out_min</td><td>Out range minimum. </td></tr>
-    <tr><td class="paramname">out_max</td><td>Out range maximum. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>float The mapped value. </dd></dl>
 
 </div>
 </div>
@@ -1054,6 +938,42 @@ false Year is an invalid year. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Postive = bitmask, Negaitve = error code. </dd></dl>
+
+</div>
+</div>
+<a id="a598c906e9bfe5be2010bac35a632df3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598c906e9bfe5be2010bac35a632df3d">&#9670;&nbsp;</a></span>printBin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void myHelpers::printBin </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>printSpaces</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>printPrefix</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1198,6 +1118,52 @@ false Year is an invalid year. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t Reversed word. </dd></dl>
+
+</div>
+</div>
+<a id="a2230ab4557684348a067f1317206e431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2230ab4557684348a067f1317206e431">&#9670;&nbsp;</a></span>shiftIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t myHelpers::shiftIn </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>clockPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>dataPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>bitOrder</em> = <code><a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

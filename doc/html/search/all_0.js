@@ -13,6 +13,8 @@ var searchData=
   ['_5fmy_5fchannel_5f2_5fmask_10',['_MY_CHANNEL_2_MASK',['../my_a_d_c_8hpp.html#af070f7298de98381999cf8a1b9767f0c',1,'myADC.hpp']]],
   ['_5fmy_5fchannel_5f3_5fmask_11',['_MY_CHANNEL_3_MASK',['../my_a_d_c_8hpp.html#af3a5a86680b29a7953c8424573894459',1,'myADC.hpp']]],
   ['_5fmy_5ftemp_5fchannel_5fmask_12',['_MY_TEMP_CHANNEL_MASK',['../my_a_d_c_8hpp.html#aa11fcbcceb2e7f41fc22770cdc747c94',1,'myADC.hpp']]],
-  ['_5fpins_13',['_pins',['../namespacemy_i2_c.html#acf5fa1e2602297110b8fba6fe104f1dd',1,'myI2C']]],
-  ['_5fsck_14',['_sck',['../namespacemy_b_b_s_p_i_master.html#acd8b7376728970fcbddafdf1f9f22dbd',1,'myBBSPIMaster']]]
+  ['_5fmylocksclaimed_13',['_myLocksClaimed',['../my_spin_lock_8hpp.html#ab4ff17c9f46148b81d181b1055c30468',1,'mySpinLock.hpp']]],
+  ['_5fmylocksinit_14',['_myLocksInit',['../my_spin_lock_8hpp.html#a0d1da3e838a8f060848c91b56e0fca05',1,'mySpinLock.hpp']]],
+  ['_5fpins_15',['_pins',['../namespacemy_i2_c.html#acf5fa1e2602297110b8fba6fe104f1dd',1,'myI2C']]],
+  ['_5fsck_16',['_sck',['../namespacemy_b_b_s_p_i_master.html#acd8b7376728970fcbddafdf1f9f22dbd',1,'myBBSPIMaster']]]
 ];

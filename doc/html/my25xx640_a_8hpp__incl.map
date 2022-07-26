@@ -1,0 +1,11 @@
+<map id="my25xx640A/my25xx640A.hpp" name="my25xx640A/my25xx640A.hpp">
+<area shape="rect" id="node1" title="Class to use my 25xx640A EEPROM spi chip." alt="" coords="229,5,455,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,229,132,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="535,155,653,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="156,229,251,256"/>
+<area shape="rect" id="node5" href="$my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="372,80,520,107"/>
+<area shape="rect" id="node6" href="$my_standard_defines_8hpp.html" title="Standard defines for pico&#45;myLibs." alt="" coords="433,229,624,256"/>
+<area shape="rect" id="node7" href="$my_error_codes_8hpp.html" title="Define all error codes used in pico&#45;myLibs." alt="" coords="649,229,803,256"/>
+<area shape="rect" id="node8" href="$my_helpers_8hpp.html" title="Helper functions." alt="" coords="275,155,409,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="275,229,409,256"/>
+</map>

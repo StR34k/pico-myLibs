@@ -1,0 +1,226 @@
+\hypertarget{classmy_spin_lock}{}\doxysection{my\+Spin\+Lock Class Reference}
+\label{classmy_spin_lock}\index{mySpinLock@{mySpinLock}}
+
+
+{\ttfamily \#include $<$my\+Spin\+Lock.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_spin_lock_a53ceac4461ebc6d8135700cc1ddf0ef4}{my\+Spin\+Lock}} (const int16\+\_\+t lock\+Num)
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a60292921f1a5ac7cd046b0848ba9521b}{lock\+Blocking}} ()
+\begin{DoxyCompactList}\small\item\em Lock the spin lock, blocking Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if locked okay, otherwise returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a40b82d7a795c27c6eb646091cdb913dd}{unlock}} ()
+\begin{DoxyCompactList}\small\item\em Unlock the spin lock. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if unlocked okay, otherwise returns an error code. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_ada61cf5f1454e65d7ce715b7802d3d34}{is\+Locked}} ()
+\begin{DoxyCompactList}\small\item\em Check if the spin lock is locked. Checks if the spin lock is locked. Returns 0 (S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED) if unlocked, 1 (S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+R\+E\+M\+O\+T\+E\+LY) if lock is held some where other than this instance, or 2 (S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+L\+O\+C\+A\+L\+LY) if lock is held by this instance. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a597c2a2b695e3c42e395983d3c54bc2b}{get\+Lock\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Get the Lock number. Returns the lock number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a999f1ca4327ce785741f7ebcfa5fdd18}{G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+L\+O\+C\+K\+\_\+\+N\+UM}} = -\/1
+\begin{DoxyCompactList}\small\item\em Generate lock number value. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a7cce102d07f1b672faaf7404c9fe5c8f}{S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED}} = 0
+\begin{DoxyCompactList}\small\item\em Lock is unlocked. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a7411fd5d6d039a61f6940f699aad31b9}{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+R\+E\+M\+O\+T\+E\+LY}} = 1
+\begin{DoxyCompactList}\small\item\em Lock is locked remotely. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a6ae2606b55005c61eaeb820178b4e63c}{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+L\+O\+C\+A\+L\+LY}} = 2
+\begin{DoxyCompactList}\small\item\em Lock is locked by this instance. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_ad46491ed9baa585a5b2e3d18e3eccb85}{N\+O\+\_\+\+E\+R\+R\+OR}} = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}
+\begin{DoxyCompactList}\small\item\em No Error. Value 0. No error occured. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a8f98eb7ffcf93acf0cafa9cf18676859}{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+L\+O\+C\+K\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}} = \mbox{\hyperlink{my_error_codes_8hpp_a2ab6e3286586f09b6115be08272b85d2}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+N\+O\+\_\+\+L\+O\+C\+K\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}
+\begin{DoxyCompactList}\small\item\em No lock available. Value -\/125. No Spin lock unclaimed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a67617325a5a81b7795e8be9f942f52e6}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+L\+A\+I\+M\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a28f57fd24338b08260759ac764eb6fbb}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+N\+O\+T\+\_\+\+C\+L\+A\+I\+M\+ED}}
+\begin{DoxyCompactList}\small\item\em Spin lock not claimed. Value -\/126. Spin lock is not claimed. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_a61340215a0619f50787387a334b5cb06}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+K\+\_\+\+N\+UM}} = \mbox{\hyperlink{my_error_codes_8hpp_ad3b3f97932377a8bb93867be3d4cbe9d}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+K\+\_\+\+N\+UM}}
+\begin{DoxyCompactList}\small\item\em Spin lock number invalid. Value -\/127. Spin lock number provided is invalid. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_afe9ce82cb0b9929dde9a7255908932d1}{E\+R\+R\+O\+R\+\_\+\+I\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_ab886c98503e914b39f6168a33e6781fa}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED}}
+\begin{DoxyCompactList}\small\item\em Spin lock is unlocked. Value -\/128. Spin lock is already unlocked. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_aa029191c9e396cb3d6d3ec03fcc84034}{E\+R\+R\+O\+R\+\_\+\+I\+S\+\_\+\+L\+O\+C\+K\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_ac6de160f6008f5b9f375da67fce6656f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+S\+\_\+\+L\+O\+C\+K\+ED}}
+\begin{DoxyCompactList}\small\item\em Spin lock is locked. Value -\/129. Spin lock is already locked. \end{DoxyCompactList}\item 
+static const int16\+\_\+t \mbox{\hyperlink{classmy_spin_lock_ac138643089276758e6f1d6b3373f8266}{E\+R\+R\+O\+R\+\_\+\+I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}} = \mbox{\hyperlink{my_error_codes_8hpp_a4add51eab8e651d3126cfcccb3fb8a4e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\begin{DoxyCompactList}\small\item\em Spin lock is initialized. Value -\/130. Spin lock is already initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_spin_lock_a53ceac4461ebc6d8135700cc1ddf0ef4}\label{classmy_spin_lock_a53ceac4461ebc6d8135700cc1ddf0ef4}} 
+\index{mySpinLock@{mySpinLock}!mySpinLock@{mySpinLock}}
+\index{mySpinLock@{mySpinLock}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{mySpinLock()}{mySpinLock()}}
+{\footnotesize\ttfamily my\+Spin\+Lock\+::my\+Spin\+Lock (\begin{DoxyParamCaption}\item[{const int16\+\_\+t}]{lock\+Num }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy_spin_lock_a597c2a2b695e3c42e395983d3c54bc2b}\label{classmy_spin_lock_a597c2a2b695e3c42e395983d3c54bc2b}} 
+\index{mySpinLock@{mySpinLock}!getLockNum@{getLockNum}}
+\index{getLockNum@{getLockNum}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{getLockNum()}{getLockNum()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Spin\+Lock\+::get\+Lock\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Lock number. Returns the lock number. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Lock number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_spin_lock_ada61cf5f1454e65d7ce715b7802d3d34}\label{classmy_spin_lock_ada61cf5f1454e65d7ce715b7802d3d34}} 
+\index{mySpinLock@{mySpinLock}!isLocked@{isLocked}}
+\index{isLocked@{isLocked}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{isLocked()}{isLocked()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Spin\+Lock\+::is\+Locked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the spin lock is locked. Checks if the spin lock is locked. Returns 0 (S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED) if unlocked, 1 (S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+R\+E\+M\+O\+T\+E\+LY) if lock is held some where other than this instance, or 2 (S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+L\+O\+C\+A\+L\+LY) if lock is held by this instance. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Returns 0(S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED), 1 (S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+R\+E\+M\+O\+T\+E\+LY), or 2 (S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+L\+O\+C\+A\+L\+LY). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_spin_lock_a60292921f1a5ac7cd046b0848ba9521b}\label{classmy_spin_lock_a60292921f1a5ac7cd046b0848ba9521b}} 
+\index{mySpinLock@{mySpinLock}!lockBlocking@{lockBlocking}}
+\index{lockBlocking@{lockBlocking}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{lockBlocking()}{lockBlocking()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Spin\+Lock\+::lock\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lock the spin lock, blocking Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if locked okay, otherwise returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if locked okay, negative for error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmy_spin_lock_a40b82d7a795c27c6eb646091cdb913dd}\label{classmy_spin_lock_a40b82d7a795c27c6eb646091cdb913dd}} 
+\index{mySpinLock@{mySpinLock}!unlock@{unlock}}
+\index{unlock@{unlock}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily int16\+\_\+t my\+Spin\+Lock\+::unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unlock the spin lock. Returns 0 (N\+O\+\_\+\+E\+R\+R\+OR) if unlocked okay, otherwise returns an error code. 
+
+\begin{DoxyReturn}{Returns}
+int16\+\_\+t Return 0 (N\+O\+\_\+\+E\+R\+R\+OR) if unlocked okay, negative for error code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmy_spin_lock_a61340215a0619f50787387a334b5cb06}\label{classmy_spin_lock_a61340215a0619f50787387a334b5cb06}} 
+\index{mySpinLock@{mySpinLock}!ERROR\_INVALID\_LOCK\_NUM@{ERROR\_INVALID\_LOCK\_NUM}}
+\index{ERROR\_INVALID\_LOCK\_NUM@{ERROR\_INVALID\_LOCK\_NUM}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{ERROR\_INVALID\_LOCK\_NUM}{ERROR\_INVALID\_LOCK\_NUM}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+K\+\_\+\+N\+UM = \mbox{\hyperlink{my_error_codes_8hpp_ad3b3f97932377a8bb93867be3d4cbe9d}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+L\+O\+C\+K\+\_\+\+N\+UM}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spin lock number invalid. Value -\/127. Spin lock number provided is invalid. 
+
+\mbox{\Hypertarget{classmy_spin_lock_ac138643089276758e6f1d6b3373f8266}\label{classmy_spin_lock_ac138643089276758e6f1d6b3373f8266}} 
+\index{mySpinLock@{mySpinLock}!ERROR\_IS\_INITIALIZED@{ERROR\_IS\_INITIALIZED}}
+\index{ERROR\_IS\_INITIALIZED@{ERROR\_IS\_INITIALIZED}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{ERROR\_IS\_INITIALIZED}{ERROR\_IS\_INITIALIZED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+E\+R\+R\+O\+R\+\_\+\+I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a4add51eab8e651d3126cfcccb3fb8a4e}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spin lock is initialized. Value -\/130. Spin lock is already initialized. 
+
+\mbox{\Hypertarget{classmy_spin_lock_aa029191c9e396cb3d6d3ec03fcc84034}\label{classmy_spin_lock_aa029191c9e396cb3d6d3ec03fcc84034}} 
+\index{mySpinLock@{mySpinLock}!ERROR\_IS\_LOCKED@{ERROR\_IS\_LOCKED}}
+\index{ERROR\_IS\_LOCKED@{ERROR\_IS\_LOCKED}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{ERROR\_IS\_LOCKED}{ERROR\_IS\_LOCKED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+E\+R\+R\+O\+R\+\_\+\+I\+S\+\_\+\+L\+O\+C\+K\+ED = \mbox{\hyperlink{my_error_codes_8hpp_ac6de160f6008f5b9f375da67fce6656f}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+S\+\_\+\+L\+O\+C\+K\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spin lock is locked. Value -\/129. Spin lock is already locked. 
+
+\mbox{\Hypertarget{classmy_spin_lock_afe9ce82cb0b9929dde9a7255908932d1}\label{classmy_spin_lock_afe9ce82cb0b9929dde9a7255908932d1}} 
+\index{mySpinLock@{mySpinLock}!ERROR\_IS\_UNLOCKED@{ERROR\_IS\_UNLOCKED}}
+\index{ERROR\_IS\_UNLOCKED@{ERROR\_IS\_UNLOCKED}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{ERROR\_IS\_UNLOCKED}{ERROR\_IS\_UNLOCKED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+E\+R\+R\+O\+R\+\_\+\+I\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED = \mbox{\hyperlink{my_error_codes_8hpp_ab886c98503e914b39f6168a33e6781fa}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+I\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spin lock is unlocked. Value -\/128. Spin lock is already unlocked. 
+
+\mbox{\Hypertarget{classmy_spin_lock_a8f98eb7ffcf93acf0cafa9cf18676859}\label{classmy_spin_lock_a8f98eb7ffcf93acf0cafa9cf18676859}} 
+\index{mySpinLock@{mySpinLock}!ERROR\_NO\_LOCK\_AVAILABLE@{ERROR\_NO\_LOCK\_AVAILABLE}}
+\index{ERROR\_NO\_LOCK\_AVAILABLE@{ERROR\_NO\_LOCK\_AVAILABLE}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NO\_LOCK\_AVAILABLE}{ERROR\_NO\_LOCK\_AVAILABLE}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+L\+O\+C\+K\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE = \mbox{\hyperlink{my_error_codes_8hpp_a2ab6e3286586f09b6115be08272b85d2}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+N\+O\+\_\+\+L\+O\+C\+K\+\_\+\+A\+V\+A\+I\+L\+A\+B\+LE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No lock available. Value -\/125. No Spin lock unclaimed. 
+
+\mbox{\Hypertarget{classmy_spin_lock_a67617325a5a81b7795e8be9f942f52e6}\label{classmy_spin_lock_a67617325a5a81b7795e8be9f942f52e6}} 
+\index{mySpinLock@{mySpinLock}!ERROR\_NOT\_CLAIMED@{ERROR\_NOT\_CLAIMED}}
+\index{ERROR\_NOT\_CLAIMED@{ERROR\_NOT\_CLAIMED}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{ERROR\_NOT\_CLAIMED}{ERROR\_NOT\_CLAIMED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+L\+A\+I\+M\+ED = \mbox{\hyperlink{my_error_codes_8hpp_a28f57fd24338b08260759ac764eb6fbb}{M\+Y\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+K\+\_\+\+N\+O\+T\+\_\+\+C\+L\+A\+I\+M\+ED}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spin lock not claimed. Value -\/126. Spin lock is not claimed. 
+
+\mbox{\Hypertarget{classmy_spin_lock_a999f1ca4327ce785741f7ebcfa5fdd18}\label{classmy_spin_lock_a999f1ca4327ce785741f7ebcfa5fdd18}} 
+\index{mySpinLock@{mySpinLock}!GENERATE\_LOCK\_NUM@{GENERATE\_LOCK\_NUM}}
+\index{GENERATE\_LOCK\_NUM@{GENERATE\_LOCK\_NUM}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{GENERATE\_LOCK\_NUM}{GENERATE\_LOCK\_NUM}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+L\+O\+C\+K\+\_\+\+N\+UM = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate lock number value. 
+
+\mbox{\Hypertarget{classmy_spin_lock_ad46491ed9baa585a5b2e3d18e3eccb85}\label{classmy_spin_lock_ad46491ed9baa585a5b2e3d18e3eccb85}} 
+\index{mySpinLock@{mySpinLock}!NO\_ERROR@{NO\_ERROR}}
+\index{NO\_ERROR@{NO\_ERROR}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{NO\_ERROR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+N\+O\+\_\+\+E\+R\+R\+OR = \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+No Error. Value 0. No error occured. 
+
+\mbox{\Hypertarget{classmy_spin_lock_a6ae2606b55005c61eaeb820178b4e63c}\label{classmy_spin_lock_a6ae2606b55005c61eaeb820178b4e63c}} 
+\index{mySpinLock@{mySpinLock}!STATUS\_LOCKED\_LOCALLY@{STATUS\_LOCKED\_LOCALLY}}
+\index{STATUS\_LOCKED\_LOCALLY@{STATUS\_LOCKED\_LOCALLY}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{STATUS\_LOCKED\_LOCALLY}{STATUS\_LOCKED\_LOCALLY}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+L\+O\+C\+A\+L\+LY = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lock is locked by this instance. 
+
+\mbox{\Hypertarget{classmy_spin_lock_a7411fd5d6d039a61f6940f699aad31b9}\label{classmy_spin_lock_a7411fd5d6d039a61f6940f699aad31b9}} 
+\index{mySpinLock@{mySpinLock}!STATUS\_LOCKED\_REMOTELY@{STATUS\_LOCKED\_REMOTELY}}
+\index{STATUS\_LOCKED\_REMOTELY@{STATUS\_LOCKED\_REMOTELY}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{STATUS\_LOCKED\_REMOTELY}{STATUS\_LOCKED\_REMOTELY}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+K\+E\+D\+\_\+\+R\+E\+M\+O\+T\+E\+LY = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lock is locked remotely. 
+
+\mbox{\Hypertarget{classmy_spin_lock_a7cce102d07f1b672faaf7404c9fe5c8f}\label{classmy_spin_lock_a7cce102d07f1b672faaf7404c9fe5c8f}} 
+\index{mySpinLock@{mySpinLock}!STATUS\_UNLOCKED@{STATUS\_UNLOCKED}}
+\index{STATUS\_UNLOCKED@{STATUS\_UNLOCKED}!mySpinLock@{mySpinLock}}
+\doxysubsubsection{\texorpdfstring{STATUS\_UNLOCKED}{STATUS\_UNLOCKED}}
+{\footnotesize\ttfamily const int16\+\_\+t my\+Spin\+Lock\+::\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+L\+O\+C\+K\+ED = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lock is unlocked. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+my\+Spin\+Lock/\mbox{\hyperlink{my_spin_lock_8hpp}{my\+Spin\+Lock.\+hpp}}\end{DoxyCompactItemize}

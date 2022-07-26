@@ -71,6 +71,12 @@ $(function() {
 <li>enableChannel()
 : <a class="el" href="classmy_m_c_p49x2.html#ac6eed4ab4d8ff232f2eda92bee883030">myMCP49x2</a>
 </li>
+<li>enableClockDivision()
+: <a class="el" href="classmy_m_a_x1415.html#a79b2610e9842d7d4e8fc3c3cd8dbf7ee">myMAX1415</a>
+</li>
+<li>enableClockOutput()
+: <a class="el" href="classmy_m_a_x1415.html#ad20c39eaf1d9e7d7b267f088fd538077">myMAX1415</a>
+</li>
 <li>enableDAC()
 : <a class="el" href="classmy_m_c_p49x2.html#a6e80c3487a90feebe2e59d7c9c6f9bdd">myMCP49x2</a>
 </li>
@@ -82,6 +88,9 @@ $(function() {
 </li>
 <li>ERROR_BOUNDARY_CROSSED
 : <a class="el" href="classmy_d_s1307.html#a47640a94bcbfc9f1a1865218549c4bff">myDS1307</a>
+</li>
+<li>ERROR_BUSY
+: <a class="el" href="classmy25xx640_a.html#a17785fb1779c4dd367af20866477e7f7">my25xx640A</a>
 </li>
 <li>ERROR_CLEAR_NOT_DEFINED
 : <a class="el" href="classmy595.html#a347e44e1395b941004a7b512f6c6cb65">my595</a>
@@ -96,11 +105,18 @@ $(function() {
 : <a class="el" href="classmy165.html#ae623c16db4860d21d07b85987a720d68">my165</a>
 , <a class="el" href="classmy595.html#aa4834ba78a8f8139c06852ebd934d6b6">my595</a>
 </li>
+<li>ERROR_HELD
+: <a class="el" href="classmy25xx640_a.html#a8f831ca38083acea6a89e95fdc2de90c">my25xx640A</a>
+</li>
 <li>ERROR_HOLD_NOT_AVAILABLE
 : <a class="el" href="classmy23_l_c1024.html#a575d6c6eb0fa3fc88ce78c0680d74d8d">my23LC1024</a>
 </li>
 <li>ERROR_HOLD_NOT_DEFINED
 : <a class="el" href="classmy23_l_c1024.html#ad47a3f8226c3fa040d9bcda7ad93e4cd">my23LC1024</a>
+, <a class="el" href="classmy25xx640_a.html#ae0bc9b1af13cad7332c6386b95dc1ae0">my25xx640A</a>
+</li>
+<li>ERROR_IDLE
+: <a class="el" href="classmy25xx640_a.html#ad52d0752f07369d728316ddca057ce73">my25xx640A</a>
 </li>
 <li>ERROR_INITIALIZED
 : <a class="el" href="classmy_a_t24_c32.html#af2859be4eac1ea8b6fc7f929c1559f40">myAT24C32</a>
@@ -114,8 +130,16 @@ $(function() {
 : <a class="el" href="classmy_b_mx280.html#a378fe001c8fa0bc0208de0e2335bdb87">myBMx280</a>
 </li>
 <li>ERROR_INVALID_ADDRESS
-: <a class="el" href="classmy_a_t24_c32.html#a1c1844905e35fa8f20118c35f595fbba">myAT24C32</a>
+: <a class="el" href="classmy25xx640_a.html#afb17a20c98451b282ac46c370d40ed80">my25xx640A</a>
+, <a class="el" href="classmy_a_t24_c32.html#a1c1844905e35fa8f20118c35f595fbba">myAT24C32</a>
 , <a class="el" href="classmy_b_mx280.html#ae61963aa1939bc665365daa65878dc63">myBMx280</a>
+</li>
+<li>ERROR_INVALID_BLOCK
+: <a class="el" href="classmy25xx640_a.html#aea604eac409c4fa6db95002e93c46b7f">my25xx640A</a>
+</li>
+<li>ERROR_INVALID_CS_PIN
+: <a class="el" href="classmy25xx640_a.html#a533cfa25b6b1fe762ceac0a64a20732d">my25xx640A</a>
+, <a class="el" href="classmy_m_a_x1415.html#a41d106dd1a55e2ee642ef909059b879e">myMAX1415</a>
 </li>
 <li>ERROR_INVALID_DATE
 : <a class="el" href="classmy_d_s1307.html#aaf4de534364a56d8ccd112921aa8a2c2">myDS1307</a>
@@ -126,11 +150,17 @@ $(function() {
 <li>ERROR_INVALID_FILTER
 : <a class="el" href="classmy_b_mx280.html#a13411d27017210019e5de7ac0d17c518">myBMx280</a>
 </li>
+<li>ERROR_INVALID_GAIN
+: <a class="el" href="classmy_m_a_x1415.html#ae6fb75dfc84da3e44816e0feaf80157c">myMAX1415</a>
+</li>
 <li>ERROR_INVALID_HOURS
 : <a class="el" href="classmy_d_s1307.html#a63760132f239f15c666904f213dec59e">myDS1307</a>
 </li>
 <li>ERROR_INVALID_LENGTH
 : <a class="el" href="classmy_a_t24_c32.html#ab91722843956fbb787abec4bf40dba34">myAT24C32</a>
+</li>
+<li>ERROR_INVALID_LOCK_NUM
+: <a class="el" href="classmy_spin_lock.html#a61340215a0619f50787387a334b5cb06">mySpinLock</a>
 </li>
 <li>ERROR_INVALID_MINUTES
 : <a class="el" href="classmy_d_s1307.html#a4fe223e87777511a4ecf8ede340a131c">myDS1307</a>
@@ -166,24 +196,50 @@ $(function() {
 <li>ERROR_INVALID_STANDBY
 : <a class="el" href="classmy_b_mx280.html#a2ef14c3a61d53c9dc24d66f7c85be669">myBMx280</a>
 </li>
+<li>ERROR_INVALID_UPDATE_FREQ
+: <a class="el" href="classmy_m_a_x1415.html#accf3d13098145231ef7370fa09814f35">myMAX1415</a>
+</li>
 <li>ERROR_INVALID_YEAR
 : <a class="el" href="classmy_d_s1307.html#ae5d27caf482cf9e42ee6671f2c50093a">myDS1307</a>
+</li>
+<li>ERROR_IS_INITIALIZED
+: <a class="el" href="classmy_spin_lock.html#ac138643089276758e6f1d6b3373f8266">mySpinLock</a>
+</li>
+<li>ERROR_IS_LOCKED
+: <a class="el" href="classmy_spin_lock.html#aa029191c9e396cb3d6d3ec03fcc84034">mySpinLock</a>
+</li>
+<li>ERROR_IS_UNLOCKED
+: <a class="el" href="classmy_spin_lock.html#afe9ce82cb0b9929dde9a7255908932d1">mySpinLock</a>
 </li>
 <li>ERROR_NO_HUMIDITY
 : <a class="el" href="classmy_b_mx280.html#a131efd827386c96cd5429ba3ff38b87f">myBMx280</a>
 </li>
+<li>ERROR_NO_LOCK_AVAILABLE
+: <a class="el" href="classmy_spin_lock.html#a8f98eb7ffcf93acf0cafa9cf18676859">mySpinLock</a>
+</li>
 <li>ERROR_NO_RESPONSE
 : <a class="el" href="classmy_b_mx280.html#afb00942ae29d43eabc590010cb8538fb">myBMx280</a>
 </li>
+<li>ERROR_NOT_CLAIMED
+: <a class="el" href="classmy_spin_lock.html#a67617325a5a81b7795e8be9f942f52e6">mySpinLock</a>
+</li>
+<li>ERROR_NOT_HELD
+: <a class="el" href="classmy25xx640_a.html#a758c8693742620fc53e067b99cf05644">my25xx640A</a>
+</li>
 <li>ERROR_NOT_READING
 : <a class="el" href="classmy23_l_c1024.html#abb69160b0c8329e02eaaa1a1be3e82be">my23LC1024</a>
+, <a class="el" href="classmy25xx640_a.html#a257a98c1aeaa585b2d0adb5f7225753c">my25xx640A</a>
 </li>
 <li>ERROR_NOT_RESPONDING
 : <a class="el" href="classmy_a_t24_c32.html#aed5b6196af9b0eb92ed50ac773469e2c">myAT24C32</a>
 , <a class="el" href="classmy_d_s1307.html#a961345eda13a14cf382fce5c20c653f1">myDS1307</a>
 </li>
+<li>ERROR_NOT_WRITE_PROTECTED
+: <a class="el" href="classmy25xx640_a.html#aba407c2a3366b608947dbe6b9b79f2b3">my25xx640A</a>
+</li>
 <li>ERROR_NOT_WRITING
 : <a class="el" href="classmy23_l_c1024.html#afdafd89f07b219aac85b34aef86aba17">my23LC1024</a>
+, <a class="el" href="classmy25xx640_a.html#abc651b60f6cfff5869dcb7e9c8276b9c">my25xx640A</a>
 </li>
 <li>ERROR_OPERATION_NOT_AVAILABLE
 : <a class="el" href="classmy595.html#a9e1fe4c83adac141803e75c49ba7eb43">my595</a>
@@ -210,6 +266,9 @@ $(function() {
 </li>
 <li>ERROR_VALUE_ERROR
 : <a class="el" href="classmy_m_c_p49x2.html#a7f6391ec84b42d9c98cc841c23b84105">myMCP49x2</a>
+</li>
+<li>ERROR_WRITE_PROTECTED
+: <a class="el" href="classmy25xx640_a.html#a69d54b90b781f2736497325c7a50f21c">my25xx640A</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -2,14 +2,14 @@
 \label{namespacemy_random}\index{myRandom@{myRandom}}
 
 
-Random helper functions\+: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}.  
+Random helper functions\+: Uses the various sources to set the random seed.  
 
 
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespacemy_random_ae848cb202320c7f66c45510dac700d51}{rosc\+Random\+Bit}} ()
-\begin{DoxyCompactList}\small\item\em Return a single random bit from the random oscilator. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Return a single random bit from the random oscilator We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_random_a6235e7827e6c3d291181b9382e52e343}{rosc\+Random\+Byte}} ()
 \begin{DoxyCompactList}\small\item\em Return a random byte from the random oscilator. \end{DoxyCompactList}\item 
 uint \mbox{\hyperlink{namespacemy_random_a51f5ef73de0142d0678191c18baf73d6}{rosc\+Random\+Word}} ()
@@ -30,7 +30,7 @@ int16\+\_\+t \mbox{\hyperlink{namespacemy_random_a33a40b83686ad71b89a618cb755977
 
 
 \doxysubsection{Detailed Description}
-Random helper functions\+: Uses the unconditioned ring oscilator to set the random seed. We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}. 
+Random helper functions\+: Uses the various sources to set the random seed. 
 
 
 
@@ -43,7 +43,7 @@ Random helper functions\+: Uses the unconditioned ring oscilator to set the rand
 
 
 
-Return a single random bit from the random oscilator. 
+Return a single random bit from the random oscilator We read once a microsecond beacuse the source is periodic if read too quickly. Random code provided by\+: \href{https://github.com/raspberrypi/pico-sdk/issues/569}{\texttt{ https\+://github.\+com/raspberrypi/pico-\/sdk/issues/569}}. 
 
 \begin{DoxyReturn}{Returns}
 Random bit. 

@@ -16,8 +16,12 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}~0x\+FF
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}{H\+I\+GH}}~1
 \begin{DoxyCompactList}\small\item\em Standard defines\+: Set some defines used by pico-\/my\+Libs. Some error values overlap with \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}, values here take precidence over \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_ab811d8c6ff3a505312d3276590444289}{L\+OW}}~0
+\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a63d864d514c4553329aa333b23e9eef7}{M\+Y\+\_\+\+N\+O\+T\+\_\+\+A\+\_\+\+P\+IN}}~0x\+FF
+\begin{DoxyCompactList}\small\item\em Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin()}} \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~30
 \begin{DoxyCompactList}\small\item\em Number of gpio pins. Number of G\+P\+IO pins on the rp2040. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a57c0b773be8be16ef6615b3681275f09}{M\+Y\+\_\+\+M\+A\+X\+\_\+\+P\+IN}}~29
@@ -62,6 +66,8 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactList}\small\item\em Number of I2C ports on the rp2040 Number of I2C ports on the rp2040, there are 2. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a5a5a28ddd94d8e5821a8f5673ba6b4c6}{M\+Y\+\_\+\+I2\+C\+\_\+\+N\+U\+M\+\_\+\+P\+I\+NS}}~8
 \begin{DoxyCompactList}\small\item\em Number of possible I2C pins. Number of possible options for each type of I2C pin. IE\+: I2\+C0 S\+DA can be set to 1 of 8 pins. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a2d5538a683cc328d78b5d03eab0795e1}{M\+Y\+\_\+\+N\+U\+M\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+KS}}~32
+\begin{DoxyCompactList}\small\item\em Number of spinlocks. Total number of spinlocks on the rp2040. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_aa0aa05b5f194b52a2bbe65e4b8acc206}{M\+Y\+\_\+\+N\+O\+\_\+\+E\+R\+R\+OR}}~0
 \begin{DoxyCompactList}\small\item\em No error value. Value to use to represent no error. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a6ab9569b2a283a5cd23b09c2c68b4b6b}{M\+Y\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+E\+R\+R\+OR}}~-\/4
@@ -161,7 +167,15 @@ This graph shows which files directly or indirectly include this file\+:
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a1863a193052d9aaad70b76e148eb5cc9}{M\+Y\+\_\+\+M\+O\+N\+T\+H\+\_\+\+D\+EC}}~12
 \begin{DoxyCompactList}\small\item\em Month of December. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{my_standard_defines_8hpp_a11643f271076024c395a93800b3d9546}{\+\_\+\+BV}}(bit)~(1 $<$$<$ (bit))
-\begin{DoxyCompactList}\small\item\em Create a bit mask given a bit number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Create a bit mask given a bit number. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_aff20d8c0a05ad3043afa2e4ad9ebe768}{bit\+Read}}(value,  bit)~(((value) $>$$>$ (bit)) \& 0x01)
+\begin{DoxyCompactList}\small\item\em Read a bit of a value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a6a8195c0e930f86c6af03ba6af8b41dd}{bit\+Set}}(value,  bit)~((value) $\vert$= (1UL $<$$<$ (bit)))
+\begin{DoxyCompactList}\small\item\em Set a bit of a value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_abbe843c0521806a4ab2e7cffe44769e2}{bit\+Clear}}(value,  bit)~((value) \&= $\sim$(1UL $<$$<$ (bit)))
+\begin{DoxyCompactList}\small\item\em Clear a bit of a value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my_standard_defines_8hpp_a42c17f59f3f9a3112d01246760067a8e}{bit\+Write}}(value,  bit,  bitvalue)~(bitvalue ? \mbox{\hyperlink{my_standard_defines_8hpp_a6a8195c0e930f86c6af03ba6af8b41dd}{bit\+Set}}(value, bit) \+: \mbox{\hyperlink{my_standard_defines_8hpp_abbe843c0521806a4ab2e7cffe44769e2}{bit\+Clear}}(value, bit))
+\begin{DoxyCompactList}\small\item\em Write a bit of a a value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -193,6 +207,62 @@ Copyright (c) 2022
 
 
 Create a bit mask given a bit number. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_abbe843c0521806a4ab2e7cffe44769e2}\label{my_standard_defines_8hpp_abbe843c0521806a4ab2e7cffe44769e2}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!bitClear@{bitClear}}
+\index{bitClear@{bitClear}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{bitClear}{bitClear}}
+{\footnotesize\ttfamily \#define bit\+Clear(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit }\end{DoxyParamCaption})~((value) \&= $\sim$(1UL $<$$<$ (bit)))}
+
+
+
+Clear a bit of a value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_aff20d8c0a05ad3043afa2e4ad9ebe768}\label{my_standard_defines_8hpp_aff20d8c0a05ad3043afa2e4ad9ebe768}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!bitRead@{bitRead}}
+\index{bitRead@{bitRead}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{bitRead}{bitRead}}
+{\footnotesize\ttfamily \#define bit\+Read(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit }\end{DoxyParamCaption})~(((value) $>$$>$ (bit)) \& 0x01)}
+
+
+
+Read a bit of a value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a6a8195c0e930f86c6af03ba6af8b41dd}\label{my_standard_defines_8hpp_a6a8195c0e930f86c6af03ba6af8b41dd}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!bitSet@{bitSet}}
+\index{bitSet@{bitSet}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{bitSet}{bitSet}}
+{\footnotesize\ttfamily \#define bit\+Set(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit }\end{DoxyParamCaption})~((value) $\vert$= (1UL $<$$<$ (bit)))}
+
+
+
+Set a bit of a value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a42c17f59f3f9a3112d01246760067a8e}\label{my_standard_defines_8hpp_a42c17f59f3f9a3112d01246760067a8e}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!bitWrite@{bitWrite}}
+\index{bitWrite@{bitWrite}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{bitWrite}{bitWrite}}
+{\footnotesize\ttfamily \#define bit\+Write(\begin{DoxyParamCaption}\item[{}]{value,  }\item[{}]{bit,  }\item[{}]{bitvalue }\end{DoxyParamCaption})~(bitvalue ? \mbox{\hyperlink{my_standard_defines_8hpp_a6a8195c0e930f86c6af03ba6af8b41dd}{bit\+Set}}(value, bit) \+: \mbox{\hyperlink{my_standard_defines_8hpp_abbe843c0521806a4ab2e7cffe44769e2}{bit\+Clear}}(value, bit))}
+
+
+
+Write a bit of a a value. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}\label{my_standard_defines_8hpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!HIGH@{HIGH}}
+\index{HIGH@{HIGH}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{HIGH}{HIGH}}
+{\footnotesize\ttfamily \#define H\+I\+GH~1}
+
+
+
+Standard defines\+: Set some defines used by pico-\/my\+Libs. Some error values overlap with \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}, values here take precidence over \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_ab811d8c6ff3a505312d3276590444289}\label{my_standard_defines_8hpp_ab811d8c6ff3a505312d3276590444289}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!LOW@{LOW}}
+\index{LOW@{LOW}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{LOW}{LOW}}
+{\footnotesize\ttfamily \#define L\+OW~0}
 
 \mbox{\Hypertarget{my_standard_defines_8hpp_aa93c5c73d56a97871b8c595f38fabeba}\label{my_standard_defines_8hpp_aa93c5c73d56a97871b8c595f38fabeba}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!LSB\_FIRST@{LSB\_FIRST}}
@@ -825,9 +895,9 @@ No error value. Value to use to represent no error.
 
 
 
-Standard defines\+: Set some defines used by pico-\/my\+Libs. Some error values overlap with \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}, values here take precidence over \mbox{\hyperlink{my_error_codes_8hpp}{my\+Error\+Codes.\+hpp}}. 
+Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin()}} 
 
-Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{namespacemy_helpers_a14451ade4ade2ad79e5a2bfd83ad8cac}{my\+Helpers\+::is\+Pin()}} \mbox{\Hypertarget{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}\label{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}} 
+\mbox{\Hypertarget{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}\label{my_standard_defines_8hpp_a5759402c576f78019d1fbd429ae2802e}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_NUM\_PINS@{MY\_NUM\_PINS}}
 \index{MY\_NUM\_PINS@{MY\_NUM\_PINS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
 \doxysubsubsection{\texorpdfstring{MY\_NUM\_PINS}{MY\_NUM\_PINS}}
@@ -836,6 +906,16 @@ Not a pin value. Value to use for an undefined pin, fails \mbox{\hyperlink{names
 
 
 Number of gpio pins. Number of G\+P\+IO pins on the rp2040. 
+
+\mbox{\Hypertarget{my_standard_defines_8hpp_a2d5538a683cc328d78b5d03eab0795e1}\label{my_standard_defines_8hpp_a2d5538a683cc328d78b5d03eab0795e1}} 
+\index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_NUM\_SPIN\_LOCKS@{MY\_NUM\_SPIN\_LOCKS}}
+\index{MY\_NUM\_SPIN\_LOCKS@{MY\_NUM\_SPIN\_LOCKS}!myStandardDefines.hpp@{myStandardDefines.hpp}}
+\doxysubsubsection{\texorpdfstring{MY\_NUM\_SPIN\_LOCKS}{MY\_NUM\_SPIN\_LOCKS}}
+{\footnotesize\ttfamily \#define M\+Y\+\_\+\+N\+U\+M\+\_\+\+S\+P\+I\+N\+\_\+\+L\+O\+C\+KS~32}
+
+
+
+Number of spinlocks. Total number of spinlocks on the rp2040. 
 
 \mbox{\Hypertarget{my_standard_defines_8hpp_a7c2e0364c8daad6803ff16a9bc8edee3}\label{my_standard_defines_8hpp_a7c2e0364c8daad6803ff16a9bc8edee3}} 
 \index{myStandardDefines.hpp@{myStandardDefines.hpp}!MY\_PWM\_DEFAULT\_FREQ@{MY\_PWM\_DEFAULT\_FREQ}}

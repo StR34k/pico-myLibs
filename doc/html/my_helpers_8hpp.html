@@ -95,17 +95,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="my_helpers_8hpp__dep__incl.png" border="0" usemap="#my_helpers_8hppdep" alt=""/></div>
 <map name="my_helpers_8hppdep" id="my_helpers_8hppdep">
-<area shape="rect" title="Helper functions." alt="" coords="625,5,746,32"/>
-<area shape="rect" href="my_a_t24_c32_8hpp.html" title="Class to use an AT24C32 32K EEPROM." alt="" coords="5,155,216,181"/>
-<area shape="rect" href="my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="159,80,297,107"/>
-<area shape="rect" href="my_d_s1307_8hpp.html" title="Class to use a DS1307 Real time clock." alt="" coords="241,155,437,181"/>
-<area shape="rect" href="i2c_2my_b_mx280_8hpp.html" title="Class to handle BMx280 chips in i2c mode." alt="" coords="371,80,597,107"/>
-<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="671,80,807,107"/>
-<area shape="rect" href="spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="502,155,727,181"/>
-<area shape="rect" href="my_m_c_p49x2_8hpp.html" title="High level class for controling MCP4902/4912/4922 DAC." alt="" coords="752,155,971,181"/>
-<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="881,80,1044,107"/>
-<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1068,80,1319,107"/>
-<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1343,80,1593,107"/>
+<area shape="rect" title="Helper functions." alt="" coords="1017,5,1139,32"/>
+<area shape="rect" href="my_s_p_i_8hpp.html" title="SPI Helper functions." alt="" coords="549,80,685,107"/>
+<area shape="rect" href="spi_2my_b_mx280_8hpp.html" title="Class to handle BMx280 devices in SPI mode." alt="" coords="5,155,231,181"/>
+<area shape="rect" href="my_m_a_x1415_8hpp.html" title="Class to use a MAX1415 16bit ADC." alt="" coords="507,155,727,181"/>
+<area shape="rect" href="my_m_c_p49x2_8hpp.html" title="High level class for controling MCP4902/4912/4922 DAC." alt="" coords="751,155,970,181"/>
+<area shape="rect" href="my_a_t24_c32_8hpp.html" title="Class to use an AT24C32 32K EEPROM." alt="" coords="994,155,1205,181"/>
+<area shape="rect" href="my_i2_c_8hpp.html" title="I2C helper functions." alt="" coords="1009,80,1147,107"/>
+<area shape="rect" href="my_d_s1307_8hpp.html" title="Class to use a DS1307 Real time clock." alt="" coords="1229,155,1425,181"/>
+<area shape="rect" href="i2c_2my_b_mx280_8hpp.html" title="Class to handle BMx280 chips in i2c mode." alt="" coords="1221,80,1447,107"/>
+<area shape="rect" href="my_p_w_m_8hpp.html" title="Namespace for PWM helper functions." alt="" coords="1471,80,1634,107"/>
+<area shape="rect" href="my_s_nx4_h_c165_8hpp.html" title="Class to handle a 165 piso shift register." alt="" coords="1658,80,1909,107"/>
+<area shape="rect" href="my_s_nx4_h_c595_8hpp.html" title="Class to use a 595 shift register." alt="" coords="1933,80,2183,107"/>
+<area shape="rect" href="my25xx640_a_8hpp.html" title="Class to use my 25xx640A EEPROM spi chip." alt="" coords="255,155,482,181"/>
 </map>
 </div>
 </div>
@@ -152,15 +154,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a90d7c32f82edecaad34f24de7435033f"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">myHelpers::pulseIn64</a> (const uint8_t pin, const bool state, uint64_t timeout=0)</td></tr>
 <tr class="memdesc:a90d7c32f82edecaad34f24de7435033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a pulse on a pin 64 bit.  <a href="namespacemy_helpers.html#a90d7c32f82edecaad34f24de7435033f">More...</a><br /></td></tr>
 <tr class="separator:a90d7c32f82edecaad34f24de7435033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96154907f93e9076b34629afd70a862"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">myHelpers::map32</a> (int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)</td></tr>
-<tr class="memdesc:af96154907f93e9076b34629afd70a862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 32 Bit.  <a href="namespacemy_helpers.html#af96154907f93e9076b34629afd70a862">More...</a><br /></td></tr>
-<tr class="separator:af96154907f93e9076b34629afd70a862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24b232780b4b52e9b1bce28bedc847ad"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">myHelpers::map64</a> (int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max)</td></tr>
-<tr class="memdesc:a24b232780b4b52e9b1bce28bedc847ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. 64 Bit.  <a href="namespacemy_helpers.html#a24b232780b4b52e9b1bce28bedc847ad">More...</a><br /></td></tr>
-<tr class="separator:a24b232780b4b52e9b1bce28bedc847ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64d967890f73eefdd3e06fff0a4d25ff"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a64d967890f73eefdd3e06fff0a4d25ff">myHelpers::mapFloat</a> (float x, float in_min, float in_max, float out_min, float out_max)</td></tr>
-<tr class="memdesc:a64d967890f73eefdd3e06fff0a4d25ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. Floating point.  <a href="namespacemy_helpers.html#a64d967890f73eefdd3e06fff0a4d25ff">More...</a><br /></td></tr>
-<tr class="separator:a64d967890f73eefdd3e06fff0a4d25ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1637e81f05cc6009ef52673de9688ce8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1637e81f05cc6009ef52673de9688ce8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a1637e81f05cc6009ef52673de9688ce8">myHelpers::map</a> (T x, T in_min, T in_max, T out_min, T out_max)</td></tr>
+<tr class="memdesc:a1637e81f05cc6009ef52673de9688ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map a value from one range to another. Template.  <a href="namespacemy_helpers.html#a1637e81f05cc6009ef52673de9688ce8">More...</a><br /></td></tr>
+<tr class="separator:a1637e81f05cc6009ef52673de9688ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">myHelpers::reverse8</a> (const uint8_t value)</td></tr>
 <tr class="memdesc:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from MSB_FIRST to LSB_FIRST because the hardware SPI doesn't support LSB_FIRST.  <a href="namespacemy_helpers.html#a3940a47b8b5fc65aa17a62fe7a1c7d00">More...</a><br /></td></tr>
 <tr class="separator:a3940a47b8b5fc65aa17a62fe7a1c7d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,6 +214,11 @@ Functions</h2></td></tr>
 <tr class="separator:a787ea7da64c15140f736866f34ee038f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa81421e243793a0b8f6422c65aef186d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#aa81421e243793a0b8f6422c65aef186d">myHelpers::shiftOut</a> (const uint8_t clockPin, const uint8_t dataPin, const uint8_t *buffer, const size_t len, const bool bitOrder=<a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>)</td></tr>
 <tr class="separator:aa81421e243793a0b8f6422c65aef186d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2230ab4557684348a067f1317206e431"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a2230ab4557684348a067f1317206e431">myHelpers::shiftIn</a> (const uint8_t clockPin, const uint8_t dataPin, uint8_t *buffer, const size_t len, const bool bitOrder=<a class="el" href="my_standard_defines_8hpp.html#ad2f1093563dc14c2923f33412a982e83">MSB_FIRST</a>)</td></tr>
+<tr class="separator:a2230ab4557684348a067f1317206e431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598c906e9bfe5be2010bac35a632df3d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a598c906e9bfe5be2010bac35a632df3d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy_helpers.html#a598c906e9bfe5be2010bac35a632df3d">myHelpers::printBin</a> (const T &amp;value, const bool printSpaces=true, const bool printPrefix=true)</td></tr>
+<tr class="separator:a598c906e9bfe5be2010bac35a632df3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions. </p>

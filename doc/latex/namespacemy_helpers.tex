@@ -30,12 +30,8 @@ int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a8ed812889291962e16cc8826eaeda
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 32 bit. \end{DoxyCompactList}\item 
 int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a90d7c32f82edecaad34f24de7435033f}{pulse\+In64}} (const uint8\+\_\+t pin, const bool state, uint64\+\_\+t timeout=0)
 \begin{DoxyCompactList}\small\item\em Read a pulse on a pin 64 bit. \end{DoxyCompactList}\item 
-int32\+\_\+t \mbox{\hyperlink{namespacemy_helpers_af96154907f93e9076b34629afd70a862}{map32}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 32 Bit. \end{DoxyCompactList}\item 
-int64\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}{map64}} (int64\+\_\+t x, int64\+\_\+t in\+\_\+min, int64\+\_\+t in\+\_\+max, int64\+\_\+t out\+\_\+min, int64\+\_\+t out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. 64 Bit. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}{map\+Float}} (float x, float in\+\_\+min, float in\+\_\+max, float out\+\_\+min, float out\+\_\+max)
-\begin{DoxyCompactList}\small\item\em Map a value from one range to another. Floating point. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{namespacemy_helpers_a1637e81f05cc6009ef52673de9688ce8}{map}} (T x, T in\+\_\+min, T in\+\_\+max, T out\+\_\+min, T out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. Template. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a3940a47b8b5fc65aa17a62fe7a1c7d00}{reverse8}} (const uint8\+\_\+t value)
 \begin{DoxyCompactList}\small\item\em Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is reversed. used to convert from M\+S\+B\+\_\+\+F\+I\+R\+ST to L\+S\+B\+\_\+\+F\+I\+R\+ST because the hardware S\+PI doesn\textquotesingle{}t support L\+S\+B\+\_\+\+F\+I\+R\+ST. \end{DoxyCompactList}\item 
 uint16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aaf69943e1bd4b5bf362a45915d4fcd33}{reverse16}} (const uint16\+\_\+t value)
@@ -73,6 +69,10 @@ int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a6fae86963a62077bced533e9fbf32
 int16\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a787ea7da64c15140f736866f34ee038f}{convert24h\+To12h}} (const uint8\+\_\+t hours24, uint8\+\_\+t $\ast$hours12, bool $\ast$is\+PM)
 \begin{DoxyCompactList}\small\item\em Convert from 24h format to 12h format. Converts from 24h format to 12h format, returns 0 if converted okay, otherwise if an invalid hour is passed, an error code is returned. \end{DoxyCompactList}\item 
 int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}{shift\+Out}} (const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t data\+Pin, const uint8\+\_\+t $\ast$buffer, const size\+\_\+t len, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\item 
+int8\+\_\+t \mbox{\hyperlink{namespacemy_helpers_a2230ab4557684348a067f1317206e431}{shift\+In}} (const uint8\+\_\+t clock\+Pin, const uint8\+\_\+t data\+Pin, uint8\+\_\+t $\ast$buffer, const size\+\_\+t len, const bool bit\+Order=\mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}})
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{namespacemy_helpers_a598c906e9bfe5be2010bac35a632df3d}{print\+Bin}} (const T \&value, const bool print\+Spaces=true, const bool print\+Prefix=true)
 \end{DoxyCompactItemize}
 
 
@@ -456,41 +456,16 @@ true Year is a valid year.
 
 false Year is an invalid year. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{namespacemy_helpers_af96154907f93e9076b34629afd70a862}\label{namespacemy_helpers_af96154907f93e9076b34629afd70a862}} 
-\index{myHelpers@{myHelpers}!map32@{map32}}
-\index{map32@{map32}!myHelpers@{myHelpers}}
-\doxysubsubsection{\texorpdfstring{map32()}{map32()}}
-{\footnotesize\ttfamily int32\+\_\+t my\+Helpers\+::map32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x,  }\item[{int32\+\_\+t}]{in\+\_\+min,  }\item[{int32\+\_\+t}]{in\+\_\+max,  }\item[{int32\+\_\+t}]{out\+\_\+min,  }\item[{int32\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{namespacemy_helpers_a1637e81f05cc6009ef52673de9688ce8}\label{namespacemy_helpers_a1637e81f05cc6009ef52673de9688ce8}} 
+\index{myHelpers@{myHelpers}!map@{map}}
+\index{map@{map}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T my\+Helpers\+::map (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{in\+\_\+min,  }\item[{T}]{in\+\_\+max,  }\item[{T}]{out\+\_\+min,  }\item[{T}]{out\+\_\+max }\end{DoxyParamCaption})}
 
 
 
-Map a value from one range to another. 32 Bit. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em x} & Value to map \\
-\hline
-{\em in\+\_\+min} & In range minimum \\
-\hline
-{\em in\+\_\+max} & In range maximum \\
-\hline
-{\em out\+\_\+min} & Out range minimum. \\
-\hline
-{\em out\+\_\+max} & Out range maximum. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int32\+\_\+t The mapped value. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}\label{namespacemy_helpers_a24b232780b4b52e9b1bce28bedc847ad}} 
-\index{myHelpers@{myHelpers}!map64@{map64}}
-\index{map64@{map64}!myHelpers@{myHelpers}}
-\doxysubsubsection{\texorpdfstring{map64()}{map64()}}
-{\footnotesize\ttfamily int64\+\_\+t my\+Helpers\+::map64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{x,  }\item[{int64\+\_\+t}]{in\+\_\+min,  }\item[{int64\+\_\+t}]{in\+\_\+max,  }\item[{int64\+\_\+t}]{out\+\_\+min,  }\item[{int64\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
-
-
-
-Map a value from one range to another. 64 Bit. 
+Map a value from one range to another. Template. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -507,32 +482,6 @@ Map a value from one range to another. 64 Bit.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int32\+\_\+t The mapped value. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}\label{namespacemy_helpers_a64d967890f73eefdd3e06fff0a4d25ff}} 
-\index{myHelpers@{myHelpers}!mapFloat@{mapFloat}}
-\index{mapFloat@{mapFloat}!myHelpers@{myHelpers}}
-\doxysubsubsection{\texorpdfstring{mapFloat()}{mapFloat()}}
-{\footnotesize\ttfamily float my\+Helpers\+::map\+Float (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{in\+\_\+min,  }\item[{float}]{in\+\_\+max,  }\item[{float}]{out\+\_\+min,  }\item[{float}]{out\+\_\+max }\end{DoxyParamCaption})}
-
-
-
-Map a value from one range to another. Floating point. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em x} & Value to map \\
-\hline
-{\em in\+\_\+min} & In range minimum \\
-\hline
-{\em in\+\_\+max} & In range maximum \\
-\hline
-{\em out\+\_\+min} & Out range minimum. \\
-\hline
-{\em out\+\_\+max} & Out range maximum. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-float The mapped value. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}\label{namespacemy_helpers_a3ff7638a4a3ab33a41ff1c42f6788424}} 
 \index{myHelpers@{myHelpers}!pinToBitMask@{pinToBitMask}}
@@ -552,6 +501,13 @@ Return the bit mask for a single pin.
 \begin{DoxyReturn}{Returns}
 Postive = bitmask, Negaitve = error code. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a598c906e9bfe5be2010bac35a632df3d}\label{namespacemy_helpers_a598c906e9bfe5be2010bac35a632df3d}} 
+\index{myHelpers@{myHelpers}!printBin@{printBin}}
+\index{printBin@{printBin}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{printBin()}{printBin()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void my\+Helpers\+::print\+Bin (\begin{DoxyParamCaption}\item[{const T \&}]{value,  }\item[{const bool}]{print\+Spaces = {\ttfamily true},  }\item[{const bool}]{print\+Prefix = {\ttfamily true} }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}\label{namespacemy_helpers_a8ed812889291962e16cc8826eaedaa25}} 
 \index{myHelpers@{myHelpers}!pulseIn32@{pulseIn32}}
 \index{pulseIn32@{pulseIn32}!myHelpers@{myHelpers}}
@@ -632,6 +588,12 @@ Reverse an 8 bit word. Sets the msb = to lsb. and so on until the word is revers
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Reversed word. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespacemy_helpers_a2230ab4557684348a067f1317206e431}\label{namespacemy_helpers_a2230ab4557684348a067f1317206e431}} 
+\index{myHelpers@{myHelpers}!shiftIn@{shiftIn}}
+\index{shiftIn@{shiftIn}!myHelpers@{myHelpers}}
+\doxysubsubsection{\texorpdfstring{shiftIn()}{shiftIn()}}
+{\footnotesize\ttfamily int8\+\_\+t my\+Helpers\+::shift\+In (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{clock\+Pin,  }\item[{const uint8\+\_\+t}]{data\+Pin,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{const size\+\_\+t}]{len,  }\item[{const bool}]{bit\+Order = {\ttfamily \mbox{\hyperlink{my_standard_defines_8hpp_ad2f1093563dc14c2923f33412a982e83}{M\+S\+B\+\_\+\+F\+I\+R\+ST}}} }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}\label{namespacemy_helpers_aa81421e243793a0b8f6422c65aef186d}} 
 \index{myHelpers@{myHelpers}!shiftOut@{shiftOut}}
 \index{shiftOut@{shiftOut}!myHelpers@{myHelpers}}
